@@ -1,0 +1,10 @@
+<div>
+    <mat-form-field style="width:100%">
+        <mat-select placeholder="Faction" (selectionChange)="factionChanged($event)" [(value)]="selectedFaction">
+            <mat-option *ngFor="let faction of factions" [value]="faction">{{faction}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field style="width:100%">
+        <input matInput placeholder="Freeband Limit" [(ngModel)]="freebandLimit" (change)="limitChanged($event)">
+    </mat-form-field>
+</div>

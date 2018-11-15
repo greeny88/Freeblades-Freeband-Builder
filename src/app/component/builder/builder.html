@@ -1,0 +1,41 @@
+<mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav mode="side" opened="true">
+        <freeband-setup (onFactionChange)="freebandChanged($event)" (onLimitChange)="limitChanged($event)"></freeband-setup>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="mdc-layout-grid">
+            <div class="mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
+                    <button mat-raised-button (click)="sidenav.toggle()">&lt;--&gt;</button>
+                </div>
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-11">
+                    <ng-container *ngIf="faction && limit; else setup">
+                        <div *ngFor="let msg of errorMessages" class="bg-danger">{{msg}}</div>
+                        <freeband-stats [freebandBaseValue]="freebandBaseValue" [totalLifePoints]="totalLifePoints"></freeband-stats>
+                        <model-selector [faction]="faction" type="Leader" (onModelSelected)="modelSelected($event)" componentId="Leader"></model-selector>
+                        <model-selector [faction]="faction" type="Caster" (onModelSelected)="modelSelected($event)" componentId="Caster"></model-selector>
+                        <ng-container *ngFor="let id of extraModels">
+                            <model-selector [faction]="faction" type="Standard" (onModelSelected)="modelSelected($event)" [componentId]="id" (onModelRemoved)="removeModel($event)"></model-selector>
+                        </ng-container>
+                        <button mat-raised-button (click)="addModel()">Add Model</button>
+                        <div *ngFor="let msg of errorMessages" class="bg-danger">{{msg}}</div>
+                        <freeband-stats [freebandBaseValue]="freebandBaseValue" [totalLifePoints]="totalLifePoints"></freeband-stats>
+                    </ng-container>
+                    <ng-template #setup>
+                        <p>Start by selecting the values on the left so that you can begin building your freeband.</p>
+                        <mat-list>
+                            <mat-list-item>
+                                <h1 matLine>Faction - required</h1>
+                                <p matLine>Choose from any of the currently available factions</p>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <h1 matLine>Limit - required</h1>
+                                <p matLine>The maximum size of the freeband based on the total value of the models picked.</p>
+                            </mat-list-item>
+                        </mat-list>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
