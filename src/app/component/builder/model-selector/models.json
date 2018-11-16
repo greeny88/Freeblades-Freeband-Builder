@@ -177,13 +177,19 @@
         "factions": ["Kuzaarik"],
         "name": "Hinterguard",
         "stats": {
-            "abilities": {},
-            "talents": [],
+            "abilities": {
+                "endurance": 10
+            },
+            "talents": ["Die Hard","Hardened","March","Alpine"],
             "melee": [{
-                "rating": 12,
-                "damage": 8,
-                "name": "Warhammer"
+                "rating": 10,
+                "damage": 10,
+                "name": "Banehammer",
+                "abilities": ["swp"]
             }],
+            "armor": 6,
+            "discipline": 10,
+            "speed": 5,
             "type": "Hero"
         },
         "type": "Standard",
@@ -195,9 +201,17 @@
         "stats": {
             "abilities": {
                 "agility": 10,
-                "strength": 10
+                "dexterity": 10
             },
-            "talents": [],
+            "talents": ["Die Hard","Ambush","Elude","Opportune Strike","Dodge","Dodge","Expert[Dodge]","Wayfinder"],
+            "speed": 5,
+            "melee": [{
+                "name": "Ice Axe",
+                "rating": 10,
+                "damage": 6
+            }],
+            "armor": 3,
+            "discipline": 10,
             "type": "Hero"
         },
         "type": "Standard",

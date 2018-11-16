@@ -9,6 +9,7 @@ import { filterQueryId } from '../../../../node_modules/@angular/core/src/view/u
     template
 })
 export class BuilderComponent {
+    altLeader: boolean;
     errorMessages: string[];
     extraModels: string[];
     faction: string;
@@ -31,6 +32,11 @@ export class BuilderComponent {
 
     addModel() {
         this.extraModels.push(this.uuidv4());
+    }
+
+    altLeaderChange(enabled: boolean) {
+        this.altLeader = enabled;
+        this.reset();
     }
 
     calculateFreeband() {
@@ -72,15 +78,11 @@ export class BuilderComponent {
     }
 
     freebandChanged(faction: string) {
-        console.log('freebandChanged');
-        console.log(faction);
         this.faction = faction;
         this.reset();
     }
 
     limitChanged(limit: number) {
-        console.log('limitChanged');
-        console.log(limit);
         this.limit = limit;
         this.calculateFreeband();
     }

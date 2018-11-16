@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 
+import { ModelStats } from '../../model';
+
 interface stats {
     abilities: Object,
     defense: number,
@@ -13,11 +15,11 @@ interface stats {
 @Injectable()
 export class ModelSelectorService {
     private abilityList: string[] = ['agility', 'dexterity', 'endurance', 'knowledge', 'spirit', 'strength'];
-    private abilityTiers = [10, 14, 20, 30];
+    private abilityTiers: number[] = [10, 14, 20, 30];
 
     constructor() {}
 
-    calculateStats(stats) {
+    calculateStats(stats: ModelStats) {
         let ability: number = (stats.type === 'Hero') ? 8 : 6;
         let abilities: {agility?: number, dexterity?: number, endurance?: number, knowledge?: number, spirit?: number, strength?: number} = {};
         for (let abilityName of this.abilityList) {
@@ -67,7 +69,7 @@ export class ModelSelectorService {
             }
         }
 
-        let damageBonus: number = (stats.damageBonus) ? stats.damageBonus : 0;
+        let damageBonus: number = 0;
         for (let i=0; this.abilityTiers.length > i; i++) {
             if (abilities.strength === this.abilityTiers[i]) {
                 damageBonus = damageBonus + i + 1;
@@ -88,7 +90,7 @@ export class ModelSelectorService {
             let melee = stats.melee;
             for (let weapon of melee) {
                 weapon.ratingBonus = ratingBonus;
-                weapon.damageBonus = damageBonus;
+                weapon.damageBonus = damageBonus + weapon.damageBonus;
             }
             updatedStats.melee = melee;
         }
@@ -97,7 +99,7 @@ export class ModelSelectorService {
             let range = stats.range;
             for (let weapon of range) {
                 weapon.ratingBonus = ratingBonus;
-                weapon.damageBonus = damageBonus;
+                weapon.damageBonus = damageBonus + weapon.damageBonus;
             }
             updatedStats.range = range;
         }

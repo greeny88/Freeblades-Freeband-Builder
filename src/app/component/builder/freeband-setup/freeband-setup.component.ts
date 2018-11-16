@@ -7,8 +7,10 @@ import template from './freeband-setup.html';
     template
 })
 export class FreebandSetupComponent {
+    @Output() onAltLeaderChange = new EventEmitter<any>();
     @Output() onFactionChange = new EventEmitter<any>();
     @Output() onLimitChange = new EventEmitter<any>();
+    altLeader : boolean;
     factions : string[];
     freebandLimit : number;
     selectedFaction : string;
@@ -20,13 +22,18 @@ export class FreebandSetupComponent {
             'Kuzaarik',
             'Traazorite'
         ];
+        this.altLeader = false;
     }
+
+    enableAlternateLeader() {
+        this.onAltLeaderChange.emit(this.altLeader);
+    }
+
     factionChanged() {
-        console.log('factionChanged');
         this.onFactionChange.emit(this.selectedFaction);
     }
+
     limitChanged() {
-        console.log('limitChanged');
         this.onLimitChange.emit(this.freebandLimit);
     }
 }
