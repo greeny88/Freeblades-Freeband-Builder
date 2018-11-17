@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const packageInfo = require('./package.json');
 
-const dist = path.resolve(__dirname, 'docs'); // Using for github pages
+const dist = path.resolve(__dirname, 'dist');
 const root = path.resolve(__dirname, 'src');
 const paths = {
 	app: path.resolve(root, 'app'),
@@ -25,7 +25,11 @@ const extractSassPlugin = new MiniCssExtractPlugin({
 const htmlPlugin = new HtmlWebpackPlugin({
 	template: paths.index
 });
-const cleanDistPlugin = new CleanPlugin([dist]);
+const cleanDistPlugin = new CleanPlugin([
+    dist
+], {
+    exclude: ['.git']
+});
 const definePlugin = new webpack.DefinePlugin({
 	VERSION: JSON.stringify(packageInfo.version)
 });
