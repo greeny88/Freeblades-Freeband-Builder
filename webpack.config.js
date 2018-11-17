@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const packageInfo = require('./package.json');
 
-const dist = path.resolve(__dirname, 'doc'); // Using for github pages
+const dist = path.resolve(__dirname, 'docs'); // Using for github pages
 const root = path.resolve(__dirname, 'src');
 const paths = {
 	app: path.resolve(root, 'app'),
