@@ -141,12 +141,12 @@ let config = {
 	output: {
 		filename: paths.output.js,
 		path: dist,
-		publicPath: '/'
+		publicPath: ''
 	},
 	devServer: {
 		contentBase: dist,
 		port: 8090,
-		publicPath: '/',
+		publicPath: '',
 		historyApiFallback: true,
 		watchOptions: {
 			aggregateTimeout: 3000

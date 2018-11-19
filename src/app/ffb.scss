@@ -12,25 +12,73 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$candy-app-primary: mat-palette($mat-indigo);
-$candy-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+$ffb-app-primary: mat-palette($mat-indigo);
+$ffb-app-accent:  mat-palette($mat-pink, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$candy-app-warn:    mat-palette($mat-red);
+$ffb-app-warn:    mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
+$ffb-app-theme: mat-light-theme($ffb-app-primary, $ffb-app-accent, $ffb-app-warn);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($candy-app-theme);
+@include angular-material-theme($ffb-app-theme);
 
-mat-sidenav-container.example-container {
+mat-sidenav-container#mainContainer {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     background: #eee;
+}
+
+@mixin border-top {
+    border-top: 1px solid black;
+}
+
+@mixin border-bottom {
+    border-bottom: 1px solid black;
+}
+
+@mixin border-right {
+    border-right: 1px solid black;
+}
+
+@mixin border-left {
+    border-left: 1px solid black;
+}
+
+.border-top {
+    @include border-top();
+}
+
+.border-bottom {
+    @include border-bottom();
+}
+
+.border-left {
+    @include border-left();
+}
+
+.border-right {
+    @include border-right();
+}
+
+.border-x {
+    @include border-top();
+    @include border-bottom();
+}
+
+.border-y {
+    @include border-right();
+    @include border-left();
+}
+.border {
+    @include border-top();
+    @include border-bottom();
+    @include border-right();
+    @include border-left();
 }

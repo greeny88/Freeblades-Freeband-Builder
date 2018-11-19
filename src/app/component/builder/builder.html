@@ -1,4 +1,4 @@
-<mat-sidenav-container class="example-container">
+<mat-sidenav-container id="mainContainer">
     <mat-sidenav #sidenav mode="side" opened="true">
         <freeband-setup (onFactionChange)="freebandChanged($event)" (onLimitChange)="limitChanged($event)" (onAltLeaderChange)="altLeaderChange($event)"></freeband-setup>
     </mat-sidenav>
@@ -22,7 +22,7 @@
                         <freeband-stats [freebandBaseValue]="freebandBaseValue" [totalLifePoints]="totalLifePoints"></freeband-stats>
                     </ng-container>
                     <ng-template #setup>
-                        <p>Start by selecting the values on the left so that you can begin building your freeband.</p>
+                        <p>Start by selecting the values on the left menu so that you can begin building your freeband.</p>
                         <mat-list>
                             <mat-list-item>
                                 <h1 matLine>Faction - required</h1>
@@ -37,7 +37,7 @@
                                 <p matLine>Enables the alternate leader rule by which additional models can be promoted to leader and leader models can be demoted to regular models.</p>
                             </mat-list-item>
                         </mat-list>
-                        <p>A full description on Freeband construction rules can be found in the Living Rulebook version 18-2 starting on page 87.</p>
+                        <p>A full description on Freeband construction rules can be found in the Living Rulebook (v18-2) starting on page 87.</p>
                     </ng-template>
                 </div>
             </div>
