@@ -90,7 +90,7 @@ export class ModelSelectorService {
             let melee = stats.melee;
             for (let weapon of melee) {
                 weapon.ratingBonus = ratingBonus;
-                weapon.damageBonus = damageBonus + weapon.damageBonus;
+                weapon.damageBonus = (weapon.damageBonus) ? damageBonus + weapon.damageBonus : damageBonus;
             }
             updatedStats.melee = melee;
         }
@@ -99,7 +99,7 @@ export class ModelSelectorService {
             let range = stats.range;
             for (let weapon of range) {
                 weapon.ratingBonus = ratingBonus;
-                weapon.damageBonus = damageBonus + weapon.damageBonus;
+                weapon.damageBonus = (weapon.damageBonus) ? damageBonus + weapon.damageBonus : damageBonus;
             }
             updatedStats.range = range;
         }
