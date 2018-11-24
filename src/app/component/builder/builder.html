@@ -1,46 +1,46 @@
+<mat-toolbar>
+    <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <h1>Freeblades Freeband Builder</h1>
+</mat-toolbar>
 <mat-sidenav-container id="mainContainer">
     <mat-sidenav #sidenav mode="side" opened="true">
-        <freeband-setup (onFactionChange)="freebandChanged($event)" (onLimitChange)="limitChanged($event)" (onAltLeaderChange)="altLeaderChange($event)"></freeband-setup>
+        <freeband-setup (onOptionsSet)="optionsSet($event)"></freeband-setup>
     </mat-sidenav>
     <mat-sidenav-content>
-        <div class="mdc-layout-grid">
-            <div class="mdc-layout-grid__inner">
-                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
-                    <button mat-raised-button style="position:absolute;left:0;" (click)="sidenav.toggle()">Menu</button>
-                </div>
-                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-11">
-                    <ng-container *ngIf="faction && limit; else setup">
-                        <div *ngFor="let msg of errorMessages" class="bg-danger">{{msg}}</div>
-                        <freeband-stats [freebandBaseValue]="freebandBaseValue" [totalLifePoints]="totalLifePoints"></freeband-stats>
-                        <model-selector [faction]="faction" type="Leader" [altLeader]="altLeader" (onModelSelected)="modelSelected($event)" componentId="Leader"></model-selector>
-                        <model-selector [faction]="faction" type="Caster" (onModelSelected)="modelSelected($event)" componentId="Caster"></model-selector>
-                        <ng-container *ngFor="let id of extraModels">
-                            <model-selector [faction]="faction" type="Standard" [altLeader]="altLeader" (onModelSelected)="modelSelected($event)" [componentId]="id" (onModelRemoved)="removeModel($event)"></model-selector>
-                        </ng-container>
-                        <button mat-raised-button (click)="addModel()">Add Model</button>
-                        <div *ngFor="let msg of errorMessages" class="bg-danger">{{msg}}</div>
-                        <freeband-stats [freebandBaseValue]="freebandBaseValue" [totalLifePoints]="totalLifePoints"></freeband-stats>
-                    </ng-container>
-                    <ng-template #setup>
-                        <p>Start by selecting the values on the left menu so that you can begin building your freeband.</p>
-                        <mat-list>
-                            <mat-list-item>
-                                <h1 matLine>Faction - required</h1>
-                                <p matLine>Choose from any of the currently available factions</p>
-                            </mat-list-item>
-                            <mat-list-item>
-                                <h1 matLine>Limit - required</h1>
-                                <p matLine>The maximum size of the freeband based on the total value of the models picked.</p>
-                            </mat-list-item>
-                            <mat-list-item>
-                                <h1 matLine>Alternate Leader</h1>
-                                <p matLine>Enables the alternate leader rule by which additional models can be promoted to leader and leader models can be demoted to regular models.</p>
-                            </mat-list-item>
-                        </mat-list>
-                        <p>A full description on Freeband construction rules can be found in the Living Rulebook (v18-2) starting on page 87.</p>
-                    </ng-template>
-                </div>
-            </div>
-        </div>
+        <ng-container *ngIf="faction && limit; else setup">
+            <div *ngFor="let msg of errorMessages" class="bg-danger">{{msg}}</div>
+            <freeband-stats [freebandBaseValue]="freebandBaseValue" [totalLifePoints]="totalLifePoints"></freeband-stats>
+            <model-selector [faction]="faction" type="Leader" [altLeader]="altLeader" (onModelSelected)="modelSelected($event)" componentId="Leader"></model-selector>
+            <model-selector [faction]="faction" type="Caster" (onModelSelected)="modelSelected($event)" componentId="Caster"></model-selector>
+            <ng-container *ngFor="let id of extraModels">
+                <model-selector [faction]="faction" type="Standard" [altLeader]="altLeader" (onModelSelected)="modelSelected($event)" [componentId]="id"
+                    (onModelRemoved)="removeModel($event)"></model-selector>
+            </ng-container>
+            <button mat-raised-button (click)="addModel()">Add Model</button>
+            <div *ngFor="let msg of errorMessages" class="bg-danger">{{msg}}</div>
+            <freeband-stats [freebandBaseValue]="freebandBaseValue" [totalLifePoints]="totalLifePoints"></freeband-stats>
+        </ng-container>
+        <ng-template #setup>
+            <p>Start by selecting the values in the menu so that you can begin building your freeband.</p>
+            <mat-list>
+                <mat-list-item>
+                    <h1 matLine>Faction - required</h1>
+                    <p matLine>Choose from any of the currently available factions</p>
+                </mat-list-item>
+                <mat-list-item>
+                    <h1 matLine>Limit - required</h1>
+                    <p matLine>The maximum size of the freeband based on the total value of the models picked.</p>
+                </mat-list-item>
+                <mat-list-item>
+                    <h1 matLine>Alternate Leader</h1>
+                    <p matLine>Enables the alternate leader rule by which additional models can be promoted to leader and leader models
+                        can be demoted to regular models.</p>
+                </mat-list-item>
+            </mat-list>
+            <p>A full description on Freeband construction rules can be found in the Living Rulebook (v18-2) starting on page
+                87.</p>
+        </ng-template>
     </mat-sidenav-content>
 </mat-sidenav-container>

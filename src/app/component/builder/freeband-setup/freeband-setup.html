@@ -1,11 +1,14 @@
 <div>
     <mat-form-field style="width:100%">
-        <mat-select placeholder="Faction" (selectionChange)="factionChanged($event)" [(value)]="selectedFaction">
+        <mat-select placeholder="Faction" [(value)]="selectedFaction">
             <mat-option *ngFor="let faction of factions" [value]="faction">{{faction}}</mat-option>
         </mat-select>
     </mat-form-field>
     <mat-form-field style="width:100%">
-        <input matInput placeholder="Freeband Limit" [(ngModel)]="freebandLimit" (change)="limitChanged($event)">
+        <input matInput placeholder="Freeband Limit" [(ngModel)]="freebandLimit" >
     </mat-form-field>
-    <mat-checkbox [(ngModel)]="altLeader" (change)="enableAlternateLeader($event)">Enable Alternate Leader Rule</mat-checkbox>
+    <mat-checkbox [(ngModel)]="altLeader">Enable Alternate Leader Rule</mat-checkbox>
+    <div>
+        <button mat-raised-button (click)="optionsSet()" [disabled]="updateDisabled()">Update Settings</button>
+    </div>
 </div>

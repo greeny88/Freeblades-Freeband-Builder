@@ -26,14 +26,14 @@ $ffb-app-theme: mat-light-theme($ffb-app-primary, $ffb-app-accent, $ffb-app-warn
 // that you are using.
 @include angular-material-theme($ffb-app-theme);
 
-mat-sidenav-container#mainContainer {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #eee;
-}
+// mat-sidenav-container#mainContainer {
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//     background: #eee;
+// }
 
 @mixin border-top {
     border-top: 1px solid black;
@@ -81,4 +81,22 @@ mat-sidenav-container#mainContainer {
     @include border-bottom();
     @include border-right();
     @include border-left();
+}
+
+builder {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+h1.example-app-name {
+    margin-left: 8px;
+}
+
+mat-sidenav-container#mainContainer {
+    flex: 1;
 }

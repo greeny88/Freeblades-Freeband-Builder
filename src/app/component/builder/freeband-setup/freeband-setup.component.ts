@@ -7,15 +7,15 @@ import template from './freeband-setup.html';
     template
 })
 export class FreebandSetupComponent {
-    @Output() onAltLeaderChange = new EventEmitter<any>();
-    @Output() onFactionChange = new EventEmitter<any>();
-    @Output() onLimitChange = new EventEmitter<any>();
+    @Output() onOptionsSet = new EventEmitter<any>();
     altLeader : boolean;
     factions : string[];
     freebandLimit : number;
     selectedFaction : string;
+    private options : {freebandLimit: number, faction: string, altLeader: boolean};
 
     constructor() {
+        // TODO: change to list based on available factions in model file
         this.factions = [
             'Black Rose Bandits', 
             'Black Thorn Bandits',
@@ -23,17 +23,23 @@ export class FreebandSetupComponent {
             'Traazorite'
         ];
         this.altLeader = false;
+        this.options = {
+            freebandLimit: undefined,
+            faction: undefined,
+            altLeader: false
+        };
     }
 
-    enableAlternateLeader() {
-        this.onAltLeaderChange.emit(this.altLeader);
+    optionsSet() {
+        this.options = {
+            freebandLimit: this.freebandLimit,
+            faction: this.selectedFaction,
+            altLeader: this.altLeader
+        };
+        this.onOptionsSet.emit(this.options);
     }
 
-    factionChanged() {
-        this.onFactionChange.emit(this.selectedFaction);
-    }
-
-    limitChanged() {
-        this.onLimitChange.emit(this.freebandLimit);
+    updateDisabled() {
+        return ((this.freebandLimit === undefined || this.freebandLimit < 1) || this.selectedFaction === undefined) || (this.options.altLeader === this.altLeader && this.options.faction === this.selectedFaction && this.options.freebandLimit === this.freebandLimit);
     }
 }

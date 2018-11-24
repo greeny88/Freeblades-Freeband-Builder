@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 
 import { Model } from '../model';
 import template from './builder.html';
-import { filterQueryId } from '../../../../node_modules/@angular/core/src/view/util';
 
 @Component({
     selector: 'builder',
     template
 })
 export class BuilderComponent {
+    @ViewChild('sidenav') sidenav: MatSidenav;
     altLeader: boolean;
     errorMessages: string[];
     extraModels: string[];
@@ -32,11 +33,6 @@ export class BuilderComponent {
 
     addModel() {
         this.extraModels.push(this.uuidv4());
-    }
-
-    altLeaderChange(enabled: boolean) {
-        this.altLeader = enabled;
-        this.reset();
     }
 
     calculateFreeband() {
@@ -77,19 +73,18 @@ export class BuilderComponent {
         }
     }
 
-    freebandChanged(faction: string) {
-        this.faction = faction;
-        this.reset();
-    }
-
-    limitChanged(limit: number) {
-        this.limit = limit;
-        this.calculateFreeband();
-    }
-
     modelSelected(model: Model) {
         this.models[model.component_id] = model;
         this.calculateFreeband();
+    }
+
+    optionsSet(options: {freebandLimit: number, faction: string, altLeader: boolean}) {
+        this.limit = options.freebandLimit;
+        this.faction = options.faction;
+        this.altLeader = options.altLeader;
+        this.reset();
+        this.calculateFreeband();
+        this.sidenav.close();
     }
 
     removeModel(id: string) {
