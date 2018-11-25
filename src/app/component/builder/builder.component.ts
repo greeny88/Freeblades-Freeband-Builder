@@ -69,7 +69,12 @@ export class BuilderComponent {
                 this.addErrorMessage('You can only have two of any hero model.');
             }
 
-            this.addErrorMessage(this.factionRules[this.faction].call(this, model));
+            try {
+                this.addErrorMessage(this.factionRules[this.faction].call(this, model));
+            } catch {
+                console.log(`No special rule for ${this.faction}`);
+            }
+            
         }
     }
 

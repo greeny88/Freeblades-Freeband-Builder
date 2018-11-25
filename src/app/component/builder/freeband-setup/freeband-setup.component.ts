@@ -19,8 +19,9 @@ export class FreebandSetupComponent {
         this.factions = [
             'Black Rose Bandits', 
             'Black Thorn Bandits',
-            'Kuzaarik',
-            'Traazorite'
+            'Kuzaarik Foragers',
+            'Mershael Corsairs',
+            'Traazorite Crusaders'
         ];
         this.altLeader = false;
         this.options = {
