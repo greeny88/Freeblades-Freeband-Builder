@@ -22,6 +22,7 @@ export class BuilderComponent {
     totalLifePoints: number;
 
     constructor() {
+        //TODO: add the rest of the faction specific rules
         this.factionRules = {
             'Black Rose Bandits': this.blackRoseBanditsRule,
             'Black Thorn Bandits': this.blackThornBanditsRule,
