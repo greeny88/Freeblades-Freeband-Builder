@@ -21,6 +21,7 @@ export class FreebandSetupComponent {
             'Black Thorn Bandits',
             'Demons of Karelon',
             'Eclipse Sisterhood',
+            'Falkaaran Adventurers',
             'Kuzaarik Foragers',
             'Mershael Corsairs',
             'Traazorite Crusaders'

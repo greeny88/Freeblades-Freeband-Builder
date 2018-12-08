@@ -26,8 +26,9 @@ export class BuilderComponent {
         this.factionRules = {
             'Black Rose Bandits': this.blackRoseBanditsRule,
             'Black Thorn Bandits': this.blackThornBanditsRule,
-            'Kuzaarik': this.kuzaarikRules,
-            'Traazorite': this.traazoriteRules
+            'Falkaaran Adventurers': this.falkaaranRules,
+            'Kuzaarik Foragers': this.kuzaarikRules,
+            'Traazorite Crusaders': this.traazoriteRules
         };
         this.reset()
     }
@@ -121,6 +122,22 @@ export class BuilderComponent {
         }
         const checkForDups = models.filter(model => model.name !== 'Highwayman');
         return ((new Set(checkForDups)).size !== checkForDups.length) ? 'Bandits may not have duplicate heroes except for the Highwayman.' : undefined;
+    }
+
+    private falkaaranRules(model: Model): string | undefined {
+        let levyCount = 0;
+        for (let key in this.models) {
+            if (this.models[key]['name'] === "Sheriff's Levy") {
+                levyCount++;
+            }
+        }
+        if (levyCount > 0 && (this.limit / levyCount) < 75) {
+            return "Falkaaran can only have one Sheriff's Levy for each 75 points in the freeband's base value.";
+        }
+
+        // TODO: add rule on jhenkar selection
+
+        return undefined;
     }
 
     private kuzaarikRules(model: Model): string | undefined {

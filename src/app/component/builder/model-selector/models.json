@@ -1884,5 +1884,344 @@
         },
         "type": "Standard",
         "value": 9
+    },
+    {
+        "factions": ["Falkaaran Adventurers"],
+        "name": "Jendal Bladeseeker",
+        "stats": {
+            "discipline": 12,
+            "type": "Hero",
+            "talents": ["Leader","Active Defense","Parry","Parry","Swordcatcher","Counterattack","Missle Parry"],
+            "abilities": {
+                "agility": 10
+            },
+            "speed": 6,
+            "melee": [{
+                "rating": 12,
+                "damage": 10,
+                "name": "Kolekar"
+            }],
+            "armor": 5
+        },
+        "type": "Leader",
+        "value": 39
+    },
+    {
+        "factions": ["Falkaaran Adventurers"],
+        "name": "Fire Wizard",
+        "stats": {
+            "discipline": 8,
+            "type": "Hero",
+            "talents": ["Fire Magic","Spellguider"],
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Staff",
+                "abilities": ["te"]
+            }],
+            "casting": {
+                "rating": 10,
+                "power": 15
+            },
+            "armor": 2
+        },
+        "type": "Caster",
+        "value": 31
+    },
+    {
+        "factions": ["Falkaaran Adventurers"],
+        "name": "Shadow Hunter",
+        "stats": {
+            "discipline": 12,
+            "type": "Hero",
+            "talents": ["Leader","Varanic Rites: Hunter","Spelldancer"],
+            "speed": 6,
+            "melee": [{
+                "rating": 8,
+                "damage": 8,
+                "damageBonus": 1,
+                "name": "Longsword"
+            }],
+            "casting": {
+                "rating": 10,
+                "power": 15
+            },
+            "armor": 4
+        },
+        "type": "Leader",
+        "value": 39
+    },
+    {
+        "factions": ["Falkaaran Adventurers"],
+        "name": "Shadow Hunter",
+        "stats": {
+            "discipline": 8,
+            "type": "Hero",
+            "talents": ["Varanic Rites: Hunter","Spelldancer"],
+            "speed": 6,
+            "melee": [{
+                "rating": 6,
+                "damage": 8,
+                "name": "Longsword"
+            }],
+            "casting": {
+                "rating": 10,
+                "power": 15
+            },
+            "armor": 4
+        },
+        "type": "Caster",
+        "value": 31
+    },
+    {
+        "factions": ["Falkaaran Adventurers"],
+        "name": "Jhenkar (Leader Companion)",
+        "stats": {
+            "discipline": 10,
+            "type": "Hero",
+            "talents": ["Spirit","Dodge","Dodge","Protector","Bonded[Shadow Hunter]","Witchsight","Demon"],
+            "speed": 7,
+            "melee": [{
+                "rating": 12,
+                "damage": 8,
+                "name": "Bite"
+            }],
+            "abilities": {
+                "agility": 12
+            },
+            "armor": 2
+        },
+        "type": "Standard",
+        "value": 34
+    },
+    {
+        "factions": ["Falkaaran Adventurers"],
+        "name": "Jhenkar (Caster Companion)",
+        "stats": {
+            "discipline": 8,
+            "type": "Hero",
+            "talents": ["Spirit","Dodge","Dodge","Protector","Bonded[Shadow Hunter]","Witchsight","Demon"],
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Bite"
+            }],
+            "abilities": {
+                "agility": 12
+            },
+            "armor": 2
+        },
+        "type": "Standard",
+        "value": 31
+    },
+    {
+        "factions": ["Falkaaran Adventurers"],
+        "name": "Karadal Bladesister",
+        "stats": {
+            "discipline": 10,
+            "type": "Hero",
+            "talents": ["Parry","Parry","Accurate Strike","Accurate Strike"],
+            "speed": 6,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "damageBonus": 1,
+                "name": "Longsword"
+            }],
+            "abilities": {
+                "agility": 10
+            },
+            "armor": 5
+        },
+        "type": "Standard",
+        "value": 28
+    },
+    {
+        "factions": ["Falkaaran Adventurers"],
+        "name": "Knight Defender",
+        "stats": {
+            "discipline": 10,
+            "type": "Hero",
+            "talents": ["Parry","Hardened","Fortress","Mountaineer"],
+            "speed": 5,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "damageBonus": 1,
+                "name": "Warhammer"
+            }],
+            "abilities": {
+                "strength": 10
+            },
+            "armor": 6,
+            "shield": "S"
+        },
+        "type": "Standard",
+        "value": 29
+    },
+    {
+        "factions": ["Falkaaran Adventurers"],
+        "name": "Forester",
+        "stats": {
+            "discipline": 10,
+            "type": "Hero",
+            "talents": ["Arboreal","Block","Rapid Reload","Scout","Sharpshooter"],
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Longsword"
+            }],
+            "range": {
+                "rating": 10,
+                "damage": 8,
+                "name": "Longbow",
+                "range": 12
+            },
+            "abilities": {
+                "agility": 10,
+                "dexterity": 10
+            },
+            "skills": [{
+                "name": "Hunt",
+                "rating": 8
+            }],
+            "armor": 3
+        },
+        "type": "Standard",
+        "value": 29
+    },
+    {
+        "factions": ["Falkaaran Adventurers"],
+        "name": "Witchcat",
+        "stats": {
+            "discipline": 8,
+            "type": "Hero",
+            "talents": ["Arboreal","Infiltrate","Witchsight","Bonded[Forester]","Dodge","Animal","Fast"],
+            "speed": 8,
+            "melee": [{
+                "rating": 8,
+                "damage": 8,
+                "name": "2x Claws"
+            }],
+            "abilities": {
+                "agility": 10
+            },
+            "armor": 2
+        },
+        "type": "Standard",
+        "value": 26
+    },
+    {
+        "factions": ["Falkaaran Adventurers"],
+        "name": "Knight Mariner",
+        "stats": {
+            "discipline": 10,
+            "type": "Hero",
+            "talents": ["Parry", "Dodge","Fient","Accurate Strike","Sergeant[Sailor, Marine]","Amphibious"],
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 6,
+                "damageBonus": 1,
+                "name": "Cutlass"
+            }],
+            "abilities": {
+                "agility": 12
+            },
+            "armor": 3
+        },
+        "type": "Standard",
+        "value": 29
+    },
+    {
+        "factions": ["Falkaaran Adventurers"],
+        "name": "Pikeman",
+        "stats": {
+            "discipline": 6,
+            "type": "Follower",
+            "speed": 6,
+            "melee": [{
+                "rating": 6,
+                "damage": 8,
+                "name": "Pike",
+                "abilities": ["imp","so2","unw"]
+            }],
+            "armor": 5,
+            "shield": "S"
+        },
+        "type": "Standard",
+        "value": 15
+    },
+    {
+        "factions": ["Falkaaran Adventurers"],
+        "name": "Pikeman",
+        "stats": {
+            "discipline": 6,
+            "type": "Follower",
+            "speed": 6,
+            "melee": [{
+                "rating": 6,
+                "damage": 8,
+                "name": "Pike",
+                "abilities": ["imp","so2","unw"]
+            }],
+            "armor": 5,
+            "shield": "S"
+        },
+        "type": "Standard",
+        "value": 15
+    },
+    {
+        "factions": ["Falkaaran Adventurers"],
+        "name": "Sailor",
+        "stats": {
+            "discipline": 6,
+            "type": "Follower",
+            "speed": 6,
+            "talents": ["Amphibious"],
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "damageBonus": 1,
+                "name": "Cutlass"
+            }],
+            "range": {
+                "rating": 6,
+                "damage": 6,
+                "name": "Grappler",
+                "abilities": ["pul","scl","thr"],
+                "range": 2
+            },
+            "armor": 2
+        },
+        "type": "Standard",
+        "value": 8
+    },
+    {
+        "factions": ["Falkaaran Adventurers"],
+        "name": "Sheriff's Levy",
+        "stats": {
+            "discipline": 6,
+            "type": "Follower",
+            "speed": 7,
+            "talents": ["Scout"],
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Short Sword"
+            }],
+            "range": {
+                "rating": 8,
+                "damage": 8,
+                "name": "Longbow",
+                "range": 12
+            },
+            "armor": 3
+        },
+        "type": "Standard",
+        "value": 16
     }
 ]
