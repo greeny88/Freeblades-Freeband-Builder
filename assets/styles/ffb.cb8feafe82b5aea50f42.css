@@ -11642,3 +11642,7 @@ mat-sidenav-container#mainContainer {
       -ms-flex: 1;
           flex: 1; }
 
+.errorMessage {
+  padding: 24px;
+  background-color: red; }
+
