@@ -14,6 +14,7 @@ export interface ModelStats {
     },
     defense: number,
     discipline: number,
+    displayName: string,
     lifePoints: number,
     melee?: {
         abilities?: string[],

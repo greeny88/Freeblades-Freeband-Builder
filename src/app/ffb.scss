@@ -100,3 +100,8 @@ h1.example-app-name {
 mat-sidenav-container#mainContainer {
     flex: 1;
 }
+
+.errorMessage {
+    padding: 24px;
+    background-color: red;
+}

@@ -2,6 +2,7 @@
     {
         "factions": ["Kuzaarik Forgers"],
         "name": "Forge Warden",
+        "displayName": "Forge Warden",
         "stats": {
             "abilities": {
                 "strength": 10
@@ -29,6 +30,7 @@
     {
         "factions": ["Kuzaarik Forgers"],
         "name": "Kryomancer",
+        "displayName": "Kryomancer",
         "stats": {
             "discipline": 8,
             "type": "Hero",
@@ -52,6 +54,7 @@
     {
         "factions": ["Kuzaarik Forgers"],
         "name": "Grenadier",
+        "displayName": "Grenadier",
         "stats": {
             "abilities": {
                 "knowledge": 10
@@ -85,6 +88,7 @@
     {
         "factions": ["Kuzaarik Forgers"],
         "name": "Huskarl",
+        "displayName": "Huskarl",
         "stats": {
             "abilities": {
                 "endurance": 10
@@ -107,6 +111,7 @@
     {
         "factions": ["Kuzaarik Forgers"],
         "name": "Explorer",
+        "displayName": "Explorer",
         "stats": {
             "discipline": 6,
             "talents": ["Die Hard", "Infiltrate", "Wayfinder"],
@@ -130,6 +135,7 @@
     {
         "factions": ["Kuzaarik Forgers"],
         "name": "Quarreler",
+        "displayName": "Quarreler",
         "stats": {
             "discipline": 6,
             "talents": ["Die Hard", "March", "Alpine"],
@@ -156,6 +162,7 @@
     {
         "factions": ["Kuzaarik Forgers"],
         "name": "Wayblocker",
+        "displayName": "Wayblocker",
         "stats": {
             "discipline": 6,
             "talents": ["Die Hard", "March", "Alpine"],
@@ -176,6 +183,7 @@
     {
         "factions": ["Kuzaarik Forgers"],
         "name": "Hinterguard",
+        "displayName": "Hinterguard",
         "stats": {
             "abilities": {
                 "endurance": 10
@@ -198,6 +206,7 @@
     {
         "factions": ["Kuzaarik Forgers"],
         "name": "Field Agent",
+        "displayName": "Field Agent",
         "stats": {
             "abilities": {
                 "agility": 10,
@@ -221,6 +230,7 @@
     {
         "factions": ["Black Rose Bandits"],
         "name": "Black Rose",
+        "displayName": "Black Rose",
         "stats": {
             "abilities": {
                 "agility": 10,
@@ -248,6 +258,7 @@
     {
         "factions": ["Black Rose Bandits"],
         "name": "Enchantress",
+        "displayName": "Enchantress",
         "stats": {
             "abilities": {
                 "agility": 12
@@ -273,6 +284,7 @@
     {
         "factions": ["Black Rose Bandits"],
         "name": "Duelist",
+        "displayName": "Duelist",
         "stats": {
             "abilities": {
                 "agility": 10
@@ -299,6 +311,7 @@
     {
         "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
         "name": "Highwayman",
+        "displayName": "Highwayman",
         "stats": {
             "abilities": {
                 "agility": 10,
@@ -327,6 +340,7 @@
     {
         "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
         "name": "Poacher",
+        "displayName": "Poacher",
         "stats": {
             "abilities": {
                 "agility": 10
@@ -350,12 +364,12 @@
                 "rating": 8,
                 "damage": 6
             }],
-            "range": {
+            "range": [{
                 "name": "Longbow",
                 "rating": 10,
                 "damage": 8,
-                "range": 12
-            },
+                "distance": 12
+            }],
             "armor": 3
         },
         "type": "Standard",
@@ -364,6 +378,7 @@
     {
         "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
         "name": "Head Hunter",
+        "displayName": "Head Hunter",
         "stats": {
             "abilities": {
                 "dexterity": 10,
@@ -387,6 +402,7 @@
     {
         "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
         "name": "Bodyguard",
+        "displayName": "Bodyguard",
         "stats": {
             "abilities": {
                 "agility": 10
@@ -408,6 +424,7 @@
     {
         "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
         "name": "Huskarl",
+        "displayName": "Huskarl",
         "stats": {
             "abilities": {
                 "endurance": 10
@@ -430,6 +447,7 @@
     {
         "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
         "name": "Bounty Hunter",
+        "displayName": "Bounty Hunter",
         "stats": {
             "abilities": {
                 "agility": 12
@@ -459,6 +477,7 @@
     {
         "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
         "name": "Mercenary Crossbowman",
+        "displayName": "Mercenary Crossbowman",
         "stats": {
             "discipline": 8,
             "type": "Hero",
@@ -473,13 +492,13 @@
                 "rating": 10,
                 "damage": 8
             }],
-            "range": {
+            "range": [{
                 "name": "Crossbow",
                 "rating": 12,
                 "damage": 8,
-                "range": 10,
+                "distance": 10,
                 "abilities": ["re"]
-            },
+            }],
             "armor": 3
         },
         "type": "Standard",
@@ -488,6 +507,7 @@
     {
         "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
         "name": "Outlaw",
+        "displayName": "Outlaw",
         "stats": {
             "discipline": 6,
             "type": "Follower",
@@ -497,21 +517,22 @@
                 "rating": 6,
                 "damage": 6
             }],
-            "range": {
+            "range": [{
                 "name": "Crossbow",
                 "rating": 6,
                 "damage": 8,
-                "range": 10,
+                "distance": 10,
                 "abilities": ["re"]
-            },
+            }],
             "armor": 3
         },
         "type": "Standard",
         "value": 11
     },
     {
-        "factions": ["Black Rose Bandits", "Black Thorn Bandits", "Falkaaran Adventures"],
+        "factions": ["Black Rose Bandits", "Black Thorn Bandits", "Falkaaran Adventurers"],
         "name": "Faeler Swordsman",
+        "displayName": "Faeler Swordsman",
         "stats": {
             "discipline": 6,
             "type": "Follower",
@@ -531,6 +552,7 @@
     {
         "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
         "name": "Rustler",
+        "displayName": "Rustler",
         "stats": {
             "discipline": 6,
             "type": "Follower",
@@ -553,6 +575,7 @@
     {
         "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
         "name": "Thief",
+        "displayName": "Thief",
         "stats": {
             "discipline": 4,
             "type": "Follower",
@@ -578,6 +601,7 @@
     {
         "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
         "name": "Thug",
+        "displayName": "Thug",
         "stats": {
             "discipline": 4,
             "type": "Follower",
@@ -599,6 +623,7 @@
     {
         "factions": ["Black Thorn Bandits"],
         "name": "Black Thorn",
+        "displayName": "Black Thorn",
         "stats": {
             "discipline": 12,
             "type": "Hero",
@@ -626,6 +651,7 @@
     {
         "factions": ["Black Thorn Bandits","Mershael Corsairs"],
         "name": "Illusionist",
+        "displayName": "Illusionist",
         "stats": {
             "discipline": 8,
             "type": "Hero",
@@ -649,7 +675,8 @@
     },
     {
         "factions": ["Traazorite Crusaders"],
-        "name": "Keshark (Mounted)",
+        "name": "Keshark",
+        "displayName": "Keshark (Mounted)",
         "stats": {
             "discipline": 12,
             "type": "Hero",
@@ -675,7 +702,8 @@
     },
     {
         "factions": ["Traazorite Crusaders"],
-        "name": "Keshark (Dismounted)",
+        "name": "Keshark",
+        "displayName": "Keshark (Dismounted)",
         "stats": {
             "discipline": 12,
             "type": "Hero",
@@ -698,6 +726,7 @@
     {
         "factions": ["Traazorite Crusaders"],
         "name": "Sunbringer",
+        "displayName": "Sunbringer",
         "stats": {
             "discipline": 8,
             "type": "Hero",
@@ -722,6 +751,7 @@
     {
         "factions": ["Traazorite Crusaders"],
         "name": "Bladebrother",
+        "displayName": "Bladebrother",
         "stats": {
             "discipline": 10,
             "type": "Hero",
@@ -744,6 +774,7 @@
     {
         "factions": ["Traazorite Crusaders"],
         "name": "Packmaster",
+        "displayName": "Packmaster",
         "stats": {
             "discipline": 10,
             "type": "Hero",
@@ -767,7 +798,8 @@
     },
     {
         "factions": ["Traazorite Crusaders"],
-        "name": "Velozar Knight (Mounted)",
+        "name": "Velozar Knight",
+        "displayName": "Velozar Knight (Mounted)",
         "stats": {
             "discipline": 10,
             "type": "Hero",
@@ -798,7 +830,8 @@
     },
     {
         "factions": ["Traazorite Crusaders"],
-        "name": "Velozar Knight (Dismounted)",
+        "name": "Velozar Knight",
+        "displayName": "Velozar Knight (Dismounted)",
         "stats": {
             "discipline": 10,
             "type": "Hero",
@@ -821,6 +854,7 @@
     {
         "factions": ["Traazorite Crusaders"],
         "name": "Azarim Scout",
+        "displayName": "Azarim Scout",
         "stats": {
             "discipline": 8,
             "type": "Hero",
@@ -854,7 +888,8 @@
     },
     {
         "factions": ["Traazorite Crusaders"],
-        "name": "Daklos Ravager",
+        "name": "Ravager",
+        "displayName": "Daklos Ravager",
         "stats": {
             "discipline": 10,
             "type": "Hero",
@@ -887,6 +922,7 @@
     {
         "factions": ["Traazorite Crusaders"],
         "name": "Ravager",
+        "displayName": "Ravager",
         "stats": {
             "discipline": 10,
             "type": "Hero",
@@ -919,6 +955,7 @@
     {
         "factions": ["Traazorite Crusaders"],
         "name": "Legionnaire",
+        "displayName": "Legionnaire",
         "stats": {
             "discipline": 8,
             "type": "Follower",
@@ -948,6 +985,7 @@
     {
         "factions": ["Traazorite Crusaders"],
         "name": "Cohort Archer",
+        "displayName": "Cohort Archer",
         "stats": {
             "discipline": 6,
             "type": "Follower",
@@ -972,6 +1010,7 @@
     {
         "factions": ["Traazorite Crusaders"],
         "name": "Vezarin",
+        "displayName": "Vezarin",
         "stats": {
             "discipline": 4,
             "type": "Follower",
@@ -991,6 +1030,7 @@
     {
         "factions": ["Mershael Corsairs"],
         "name": "Shaikan",
+        "displayName": "Shaikan",
         "stats": {
             "abilities": {
                 "agility": 12
@@ -1014,6 +1054,7 @@
     {
         "factions": ["Mershael Corsairs"],
         "name": "Mender",
+        "displayName": "Mender",
         "stats": {
             "discipline": 8,
             "type": "Hero",
@@ -1036,8 +1077,34 @@
         "gender": "F"
     },
     {
+        "factions": ["Eclipse Sisterhood"],
+        "name": "Mender",
+        "displayName": "Mender",
+        "stats": {
+            "discipline": 8,
+            "type": "Hero",
+            "talents": ["Ancestral Rites","Medicine","Quick","Ally[Independent]"],
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Staff",
+                "abilities": ["te"]
+            }],
+            "casting": {
+                "power": 15,
+                "rating": 10
+            },
+            "armor": 2
+        },
+        "type": "Caster Ally",
+        "value": 31,
+        "gender": "F"
+    },
+    {
         "factions": ["Mershael Corsairs"],
         "name": "Kayhar",
+        "displayName": "Kayhar",
         "stats": {
             "abilities": {
                 "agility": 12
@@ -1061,6 +1128,7 @@
     {
         "factions": ["Mershael Corsairs"],
         "name": "Takar Hunter",
+        "displayName": "Takar Hunter",
         "stats": {
             "abilities": {
                 "agility": 10
@@ -1079,13 +1147,13 @@
                 "name": "Taumari",
                 "abilities": ["qs"]
             }],
-            "range": {
+            "range": [{
                 "rating": 6,
                 "damage": 4,
                 "damageBonus": 1,
                 "name": "Talon",
-                "range": 4
-            },
+                "distance": 4
+            }],
             "armor": 4
         },
         "type": "Standard",
@@ -1095,6 +1163,7 @@
     {
         "factions": ["Mershael Corsairs"],
         "name": "Seafarer",
+        "displayName": "Seafarer",
         "stats": {
             "discipline": 6,
             "type": "Follower",
@@ -1114,6 +1183,7 @@
     {
         "factions": ["Mershael Corsairs"],
         "name": "Sentinel",
+        "displayName": "Sentinel",
         "stats": {
             "discipline": 8,
             "type": "Follower",
@@ -1135,6 +1205,7 @@
     {
         "factions": ["Mershael Corsairs"],
         "name": "Takar Lookout",
+        "displayName": "Takar Lookout",
         "stats": {
             "discipline": 6,
             "type": "Follower",
@@ -1149,12 +1220,12 @@
                 "damage": 6,
                 "name": "Long Knife"
             }],
-            "range": {
+            "range": [{
                 "rating": 6,
                 "damage": 4,
                 "name": "Talon",
-                "range": 4
-            },
+                "distance": 4
+            }],
             "armor": 4
         },
         "type": "Standard",
@@ -1164,6 +1235,7 @@
     {
         "factions": ["Black Rose Bandits","Black Thorn Bandits","Urdaggar"],
         "name": "Snake Mystic",
+        "displayName": "Snake Mystic",
         "stats": {
             "discipline": 6,
             "type": "Hero",
@@ -1186,8 +1258,9 @@
         "gender": "F"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventures","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Wandering Wizard",
+        "displayName": "Wandering Wizard",
         "stats": {
             "discipline": 8,
             "type": "Hero",
@@ -1210,8 +1283,9 @@
         "gender": "F"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventures","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Takar Hunter",
+        "displayName": "Takar Hunter",
         "stats": {
             "abilities": {
                 "agility": 10
@@ -1230,13 +1304,13 @@
                 "name": "Taumari",
                 "abilities": ["qs"]
             }],
-            "range": {
+            "range": [{
                 "rating": 6,
                 "damage": 4,
                 "damageBonus": 1,
                 "name": "Talon",
-                "range": 4
-            },
+                "distance": 4
+            }],
             "armor": 4
         },
         "type": "Standard Ally",
@@ -1244,8 +1318,9 @@
         "gender": "M"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventures","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
-        "name": "Takar Hunter",
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "name": "Takar Lookout",
+        "displayName": "Takar Lookout",
         "stats": {
             "discipline": 6,
             "type": "Follower",
@@ -1260,12 +1335,12 @@
                 "damage": 6,
                 "name": "Long Knife"
             }],
-            "range": {
+            "range": [{
                 "rating": 6,
                 "damage": 4,
                 "name": "Talon",
-                "range": 4
-            },
+                "distance": 4
+            }],
             "armor": 4
         },
         "type": "Standard Ally",
@@ -1273,8 +1348,9 @@
         "gender": "M"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventures","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Merchant",
+        "displayName": "Merchant",
         "stats": {
             "discipline": 6,
             "type": "Follower",
@@ -1302,6 +1378,7 @@
     {
         "factions": ["Demons of Karelon"],
         "name": "Azalakar",
+        "displayName": "Azalakar",
         "stats": {
             "discipline": 12,
             "type": "Hero",
@@ -1325,6 +1402,7 @@
     {
         "factions": ["Demons of Karelon","Grular Invaders"],
         "name": "Mokruhl",
+        "displayName": "Mokruhl",
         "stats": {
             "discipline": 8,
             "type": "Hero",
@@ -1351,6 +1429,7 @@
     {
         "factions": ["Demons of Karelon","Grular Invaders"],
         "name": "Gadarl",
+        "displayName": "Gadarl",
         "stats": {
             "discipline": 10,
             "type": "Hero",
@@ -1365,12 +1444,12 @@
                 "damage": 0,
                 "name": "Morph"
             }],
-            "range": {
+            "range": [{
                 "rating": 8,
                 "damage": 0,
                 "name": "Morph",
-                "range": 1
-            },
+                "distance": 1
+            }],
             "armor": 3
         },
         "type": "Standard",
@@ -1379,6 +1458,7 @@
     {
         "factions": ["Demons of Karelon","Grular Invaders"],
         "name": "Skethar",
+        "displayName": "Skethar",
         "stats": {
             "discipline": 8,
             "type": "Hero",
@@ -1405,6 +1485,7 @@
     {
         "factions": ["Demons of Karelon","Grular Invaders"],
         "name": "Ventarx",
+        "displayName": "Ventarx",
         "stats": {
             "discipline": 8,
             "type": "Hero",
@@ -1427,6 +1508,7 @@
     {
         "factions": ["Demons of Karelon","Grular Invaders"],
         "name": "Saryad",
+        "displayName": "Saryad",
         "stats": {
             "discipline": 10,
             "type": "Hero",
@@ -1441,13 +1523,13 @@
                 "damage": 8,
                 "name": "Claw"
             }],
-            "range": {
+            "range": [{
                 "rating": 10,
                 "damage": 6,
                 "name": "Thorny Vines",
                 "abilities": ["ent","thr"],
-                "range": 3
-            },
+                "distance": 3
+            }],
             "armor": 3
         },
         "type": "Standard",
@@ -1456,6 +1538,7 @@
     {
         "factions": ["Demons of Karelon"],
         "name": "Alpha Plakhra",
+        "displayName": "Alpha Plakhra",
         "stats": {
             "discipline": 10,
             "type": "Hero",
@@ -1477,24 +1560,7 @@
     {
         "factions": ["Demons of Karelon"],
         "name": "Zakerlash",
-        "stats": {
-            "discipline": 4,
-            "type": "Hero",
-            "talents": ["Fearsome","Bonecrusher","Tireless","Fearless","Mountaineer","Demon"],
-            "speed": 5,
-            "melee": [{
-                "rating": 10,
-                "damage": 10,
-                "name": "Fist"
-            }],
-            "armor": 6
-        },
-        "type": "Standard",
-        "value": 28
-    },
-    {
-        "factions": ["Demons of Karelon"],
-        "name": "Zakerlash",
+        "displayName": "Zakerlash",
         "stats": {
             "discipline": 4,
             "type": "Hero",
@@ -1513,6 +1579,7 @@
     {
         "factions": ["Demons of Karelon"],
         "name": "Borgat",
+        "displayName": "Borgat",
         "stats": {
             "discipline": 6,
             "type": "Follower",
@@ -1532,6 +1599,7 @@
     {
         "factions": ["Demons of Karelon"],
         "name": "Skrot",
+        "displayName": "Skrot",
         "stats": {
             "discipline": 4,
             "type": "Follower",
@@ -1550,6 +1618,7 @@
     {
         "factions": ["Demons of Karelon"],
         "name": "Dryad",
+        "displayName": "Dryad",
         "stats": {
             "discipline": 6,
             "type": "Follower",
@@ -1564,13 +1633,13 @@
                 "damage": 8,
                 "name": "Claw"
             }],
-            "range": {
+            "range": [{
                 "rating": 8,
                 "damage": 6,
                 "name": "Thorny Vines",
-                "range": 3,
+                "distance": 3,
                 "abilities": ["ent","thr"]
-            },
+            }],
             "armor": 3
         },
         "type": "Standard",
@@ -1579,6 +1648,7 @@
     {
         "factions": ["Demons of Karelon"],
         "name": "Plakhra",
+        "displayName": "Plakhra",
         "stats": {
             "discipline": 6,
             "type": "Follower",
@@ -1600,6 +1670,7 @@
     {
         "factions": ["Eclipse Sisterhood"],
         "name": "Nemesis",
+        "displayName": "Nemesis",
         "stats": {
             "discipline": 12,
             "type": "Hero",
@@ -1624,6 +1695,7 @@
     {
         "factions": ["Eclipse Sisterhood"],
         "name": "Suneater",
+        "displayName": "Suneater",
         "stats": {
             "discipline": 8,
             "type": "Hero",
@@ -1646,6 +1718,7 @@
     {
         "factions": ["Eclipse Sisterhood"],
         "name": "Shadow Dancer",
+        "displayName": "Shadow Dancer",
         "stats": {
             "discipline": 10,
             "type": "Hero",
@@ -1669,6 +1742,7 @@
     {
         "factions": ["Eclipse Sisterhood"],
         "name": "Secret Sister",
+        "displayName": "Secret Sister",
         "stats": {
             "discipline": 10,
             "type": "Hero",
@@ -1692,6 +1766,7 @@
     {
         "factions": ["Eclipse Sisterhood"],
         "name": "Nightwhisper",
+        "displayName": "Nightwhisper",
         "stats": {
             "discipline": 8,
             "type": "Hero",
@@ -1705,14 +1780,14 @@
                 "damage": 6,
                 "name": "Long Knife"
             }],
-            "range": {
+            "range": [{
                 "rating": 10,
                 "damage": 6,
                 "damageBonus": 1,
                 "name": "Roondar",
                 "abilities": ["sb"],
-                "range": 8
-            },
+                "distance": 8
+            }],
             "armor": 3
         },
         "type": "Standard",
@@ -1721,6 +1796,7 @@
     {
         "factions": ["Eclipse Sisterhood"],
         "name": "Izchaki Chaser",
+        "displayName": "Izchaki Chaser",
         "stats": {
             "discipline": 8,
             "type": "Hero",
@@ -1739,14 +1815,14 @@
                 "damageBonus": 1,
                 "name": "Barbed Javelin"
             }],
-            "range": {
+            "range": [{
                 "rating": 10,
                 "damage": 6,
                 "damageBonus": 1,
                 "name": "Barbed Javelin",
                 "abilities": ["thr"],
-                "range": 4
-            },
+                "distance": 4
+            }],
             "armor": 3
         },
         "type": "Standard",
@@ -1755,6 +1831,7 @@
     {
         "factions": ["Eclipse Sisterhood"],
         "name": "Manslayer",
+        "displayName": "Manslayer",
         "stats": {
             "discipline": 8,
             "type": "Hero",
@@ -1775,14 +1852,14 @@
                 "damage": 6,
                 "name": "Long Knife"
             }],
-            "range": {
+            "range": [{
                 "rating": 10,
                 "damage": 6,
                 "damageBonus": 1,
                 "name": "Roondar",
                 "abilities": ["sb"],
-                "range": 8
-            },
+                "distance": 8
+            }],
             "armor": 2
         },
         "type": "Standard",
@@ -1791,6 +1868,7 @@
     {
         "factions": ["Eclipse Sisterhood"],
         "name": "Rebel Maiden",
+        "displayName": "Rebel Maiden",
         "stats": {
             "discipline": 8,
             "type": "Follower",
@@ -1814,6 +1892,7 @@
     {
         "factions": ["Eclipse Sisterhood"],
         "name": "Throatseeker",
+        "displayName": "Throatseeker",
         "stats": {
             "discipline": 6,
             "type": "Follower",
@@ -1832,6 +1911,7 @@
     {
         "factions": ["Eclipse Sisterhood"],
         "name": "Manhunter",
+        "displayName": "Manhunter",
         "stats": {
             "discipline": 6,
             "type": "Follower",
@@ -1849,12 +1929,12 @@
                 "damage": 6,
                 "name": "Long Knife"
             }],
-            "range": {
+            "range": [{
                 "rating": 6,
                 "damage": 6,
                 "name": "Bow",
-                "range": 8
-            },
+                "distance": 8
+            }],
             "armor": 2
         },
         "type": "Standard",
@@ -1863,6 +1943,7 @@
     {
         "factions": ["Eclipse Sisterhood"],
         "name": "Untamed",
+        "displayName": "Untamed",
         "stats": {
             "discipline": 4,
             "type": "Follower",
@@ -1888,6 +1969,7 @@
     {
         "factions": ["Falkaaran Adventurers"],
         "name": "Jendal Bladeseeker",
+        "displayName": "Jendal Bladeseeker",
         "stats": {
             "discipline": 12,
             "type": "Hero",
@@ -1909,6 +1991,7 @@
     {
         "factions": ["Falkaaran Adventurers"],
         "name": "Fire Wizard",
+        "displayName": "Fire Wizard",
         "stats": {
             "discipline": 8,
             "type": "Hero",
@@ -1932,6 +2015,7 @@
     {
         "factions": ["Falkaaran Adventurers"],
         "name": "Shadow Hunter",
+        "displayName": "Shadow Hunter",
         "stats": {
             "discipline": 12,
             "type": "Hero",
@@ -1955,6 +2039,7 @@
     {
         "factions": ["Falkaaran Adventurers"],
         "name": "Shadow Hunter",
+        "displayName": "Shadow Hunter",
         "stats": {
             "discipline": 8,
             "type": "Hero",
@@ -1977,6 +2062,7 @@
     {
         "factions": ["Falkaaran Adventurers"],
         "name": "Jhenkar (Leader Companion)",
+        "displayName": "Jhenkar (Leader Companion)",
         "stats": {
             "discipline": 10,
             "type": "Hero",
@@ -1998,6 +2084,7 @@
     {
         "factions": ["Falkaaran Adventurers"],
         "name": "Jhenkar (Caster Companion)",
+        "displayName": "Jhenkar (Caster Companion)",
         "stats": {
             "discipline": 8,
             "type": "Hero",
@@ -2019,6 +2106,7 @@
     {
         "factions": ["Falkaaran Adventurers"],
         "name": "Karadal Bladesister",
+        "displayName": "Karadal Bladesister",
         "stats": {
             "discipline": 10,
             "type": "Hero",
@@ -2041,6 +2129,7 @@
     {
         "factions": ["Falkaaran Adventurers"],
         "name": "Knight Defender",
+        "displayName": "Knight Defender",
         "stats": {
             "discipline": 10,
             "type": "Hero",
@@ -2064,6 +2153,7 @@
     {
         "factions": ["Falkaaran Adventurers"],
         "name": "Forester",
+        "displayName": "Forester",
         "stats": {
             "discipline": 10,
             "type": "Hero",
@@ -2074,12 +2164,12 @@
                 "damage": 8,
                 "name": "Longsword"
             }],
-            "range": {
+            "range": [{
                 "rating": 10,
                 "damage": 8,
                 "name": "Longbow",
-                "range": 12
-            },
+                "distance": 12
+            }],
             "abilities": {
                 "agility": 10,
                 "dexterity": 10
@@ -2096,6 +2186,7 @@
     {
         "factions": ["Falkaaran Adventurers"],
         "name": "Witchcat",
+        "displayName": "Witchcat",
         "stats": {
             "discipline": 8,
             "type": "Hero",
@@ -2117,6 +2208,7 @@
     {
         "factions": ["Falkaaran Adventurers"],
         "name": "Knight Mariner",
+        "displayName": "Knight Mariner",
         "stats": {
             "discipline": 10,
             "type": "Hero",
@@ -2139,25 +2231,7 @@
     {
         "factions": ["Falkaaran Adventurers"],
         "name": "Pikeman",
-        "stats": {
-            "discipline": 6,
-            "type": "Follower",
-            "speed": 6,
-            "melee": [{
-                "rating": 6,
-                "damage": 8,
-                "name": "Pike",
-                "abilities": ["imp","so2","unw"]
-            }],
-            "armor": 5,
-            "shield": "S"
-        },
-        "type": "Standard",
-        "value": 15
-    },
-    {
-        "factions": ["Falkaaran Adventurers"],
-        "name": "Pikeman",
+        "displayName": "Pikeman",
         "stats": {
             "discipline": 6,
             "type": "Follower",
@@ -2177,6 +2251,7 @@
     {
         "factions": ["Falkaaran Adventurers"],
         "name": "Sailor",
+        "displayName": "Sailor",
         "stats": {
             "discipline": 6,
             "type": "Follower",
@@ -2188,13 +2263,13 @@
                 "damageBonus": 1,
                 "name": "Cutlass"
             }],
-            "range": {
+            "range": [{
                 "rating": 6,
                 "damage": 6,
                 "name": "Grappler",
                 "abilities": ["pul","scl","thr"],
-                "range": 2
-            },
+                "distance": 2
+            }],
             "armor": 2
         },
         "type": "Standard",
@@ -2213,12 +2288,12 @@
                 "damage": 6,
                 "name": "Short Sword"
             }],
-            "range": {
+            "range": [{
                 "rating": 8,
                 "damage": 8,
                 "name": "Longbow",
-                "range": 12
-            },
+                "distance": 12
+            }],
             "armor": 3
         },
         "type": "Standard",

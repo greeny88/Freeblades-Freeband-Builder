@@ -22,7 +22,7 @@ export class FreebandSetupComponent {
             'Demons of Karelon',
             'Eclipse Sisterhood',
             'Falkaaran Adventurers',
-            'Kuzaarik Foragers',
+            'Kuzaarik Forgers',
             'Mershael Corsairs',
             'Traazorite Crusaders'
         ];

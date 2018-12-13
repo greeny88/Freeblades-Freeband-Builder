@@ -10,7 +10,7 @@
     </mat-sidenav>
     <mat-sidenav-content>
         <ng-container *ngIf="faction && limit; else setup">
-            <div *ngFor="let msg of errorMessages" class="bg-danger">{{msg}}</div>
+            <div *ngFor="let msg of errorMessages" class="errorMessage">{{msg}}</div>
             <freeband-stats [freebandBaseValue]="freebandBaseValue" [totalLifePoints]="totalLifePoints"></freeband-stats>
             <model-selector [faction]="faction" type="Leader" [altLeader]="altLeader" (onModelSelected)="modelSelected($event)" componentId="Leader"></model-selector>
             <model-selector [faction]="faction" type="Caster" (onModelSelected)="modelSelected($event)" componentId="Caster"></model-selector>
@@ -18,8 +18,8 @@
                 <model-selector [faction]="faction" type="Standard" [altLeader]="altLeader" (onModelSelected)="modelSelected($event)" [componentId]="id"
                     (onModelRemoved)="removeModel($event)"></model-selector>
             </ng-container>
-            <button mat-raised-button (click)="addModel()">Add Model</button>
-            <div *ngFor="let msg of errorMessages" class="bg-danger">{{msg}}</div>
+            <button mat-raised-button style="margin:24px;" (click)="addModel()">Add Model</button>
+            <div *ngFor="let msg of errorMessages" class="errorMessage">{{msg}}</div>
             <freeband-stats [freebandBaseValue]="freebandBaseValue" [totalLifePoints]="totalLifePoints"></freeband-stats>
         </ng-container>
         <ng-template #setup>

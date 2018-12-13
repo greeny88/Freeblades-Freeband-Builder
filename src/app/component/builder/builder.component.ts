@@ -3,6 +3,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 
 import { Model } from '../model';
 import template from './builder.html';
+import { summaryFileName } from '../../../../node_modules/@angular/compiler/src/aot/util';
 
 @Component({
     selector: 'builder',
@@ -26,8 +27,11 @@ export class BuilderComponent {
         this.factionRules = {
             'Black Rose Bandits': this.blackRoseBanditsRule,
             'Black Thorn Bandits': this.blackThornBanditsRule,
+            'Demons of Karelon': this.demonsRules,
+            'Eclipse Sisterhood': this.eclipseRules,
             'Falkaaran Adventurers': this.falkaaranRules,
-            'Kuzaarik Foragers': this.kuzaarikRules,
+            'Kuzaarik Forgers': this.kuzaarikRules,
+            'Mershael Corsairs': this.mershaelRules,
             'Traazorite Crusaders': this.traazoriteRules
         };
         this.reset()
@@ -52,7 +56,7 @@ export class BuilderComponent {
             }
     
             if (this.freebandBaseValue > this.limit) {
-                this.addErrorMessage('Model value is too high. Remove models until value comes under the limit.');
+                this.addErrorMessage('Total model value is too high. Remove models until value comes under the limit.');
             }
     
             let allowedHeroCount = Math.floor((this.freebandBaseValue - 1) / 50);
@@ -62,13 +66,13 @@ export class BuilderComponent {
             }
     
             let heroFound = 0;
-            for(let key in this.models) {
+            for (let key in this.models) {
                 if(this.models[key]['name'] === model.name && model.stats.type === 'Hero') {
                     heroFound++;
                 }
             }
-            if(heroFound > 1) {
-                this.addErrorMessage('You can only have two of any hero model.');
+            if (heroFound > 2) {
+                this.addErrorMessage(`You can only have two of any hero model (${model.name}).`);
             }
 
             try {
@@ -124,6 +128,14 @@ export class BuilderComponent {
         return ((new Set(checkForDups)).size !== checkForDups.length) ? 'Bandits may not have duplicate heroes except for the Highwayman.' : undefined;
     }
 
+    private demonsRules(model: Model): string | undefined {
+        return undefined;
+    }
+
+    private eclipseRules(model: Model): string | undefined {
+        return undefined;
+    }
+
     private falkaaranRules(model: Model): string | undefined {
         let levyCount = 0;
         for (let key in this.models) {
@@ -135,7 +147,20 @@ export class BuilderComponent {
             return "Falkaaran can only have one Sheriff's Levy for each 75 points in the freeband's base value.";
         }
 
-        // TODO: add rule on jhenkar selection
+        if (model.name.indexOf('Jhenkar') > -1) {
+            let shadowFound: boolean = false;
+            for (let key in this.models) {
+                if (this.models[key]['name'] === 'Shadow Hunter') {
+                    shadowFound = true;
+                    if (model.name.indexOf(this.models[key]['type']) < 0) {
+                        return 'The Jhenkar selection must match the selected Shadow Hunter.';
+                    }
+                }
+            }
+            if (!shadowFound) {
+                return 'Jhenkar can only be used along side a Shadow Hunter.';
+            }
+        }
 
         return undefined;
     }
@@ -150,6 +175,10 @@ export class BuilderComponent {
         if (quarrelerCount > 0 && (this.limit / quarrelerCount) < 75) {
             return "Kuzaarik can only have one Quarreller for each 75 points in the freeband's base value.";
         }
+        return undefined;
+    }
+
+    private mershaelRules(model: Model): string | undefined {
         return undefined;
     }
 

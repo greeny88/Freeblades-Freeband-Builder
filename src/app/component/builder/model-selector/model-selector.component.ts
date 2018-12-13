@@ -66,11 +66,7 @@ export class ModelSelectorComponent {
                 }
             }
         } else {
-            for (let model of this.factionModels) {
-                if (model.type === this.type && model.factions.indexOf(this.faction) > -1) {
-                    this.models.push(model);
-                }
-            }
+            this.models = this.factionModels.filter(model => model.type === this.type && model.factions.indexOf(this.faction) > -1);
         }
         this.models.sort((a,b) => {
             if (a.name < b.name) {
@@ -96,7 +92,6 @@ export class ModelSelectorComponent {
             this.selected.stats.skillList = this.selected.stats.skills.map(skill => `${skill.name} - d${skill.rating}`).join(', ');
         }
         if (this.selected.stats.talents) {
-            //TODO: group duplicate talents before creating string
             const talents = this.selected.stats.talents.map((m) => {
                 const count = this.selected.stats.talents.reduce((sum, r) => (r === m) ? sum + 1 : sum, 0);
                 return (count > 1) ? `${m}[${count}]` : m;
