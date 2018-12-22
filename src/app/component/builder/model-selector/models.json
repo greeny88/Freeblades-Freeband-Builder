@@ -1233,7 +1233,7 @@
         "gender": "M"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Urdaggar"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Urdaggar Tribes of Valor"],
         "name": "Snake Mystic",
         "displayName": "Snake Mystic",
         "stats": {
@@ -1616,7 +1616,7 @@
         "value": 5
     },
     {
-        "factions": ["Demons of Karelon"],
+        "factions": ["Demons of Karelon","Grular Invaders"],
         "name": "Dryad",
         "displayName": "Dryad",
         "stats": {
@@ -2278,6 +2278,7 @@
     {
         "factions": ["Falkaaran Adventurers"],
         "name": "Sheriff's Levy",
+        "displayName": "Sheriff's Levy",
         "stats": {
             "discipline": 6,
             "type": "Follower",
@@ -2298,5 +2299,967 @@
         },
         "type": "Standard",
         "value": 16
+    },
+    {
+        "factions": ["Grular Invaders"],
+        "name": "Kor-Khan",
+        "displayName": "Kor-Khan",
+        "stats": {
+            "discipline": 12,
+            "type": "Hero",
+            "speed": 6,
+            "talents": ["Leader","Parry","Taunt"],
+            "melee": [{
+                "rating": 12,
+                "damage": 8,
+                "name": "Spikedrakh",
+                "abilities": ["de"]
+            },{
+                "rating": 12,
+                "damage": 8,
+                "name": "Morning Star",
+                "abilities": ["sb"]
+            }],
+            "armor": 5
+        },
+        "type": "Leader",
+        "value": 39
+    },
+    {
+        "factions": ["Grular Invaders"],
+        "name": "Warlock",
+        "displayName": "Warlock",
+        "stats": {
+            "discipline": 8,
+            "type": "Hero",
+            "speed": 7,
+            "talents": ["Shadow Magic","Fear Craver"],
+            "melee": [{
+                "rating": 6,
+                "damage": 8,
+                "name": "Shadowspear",
+                "abilities": ["su"]
+            }],
+            "armor": 2,
+            "abilities": {
+                "strength": 4
+            },
+            "casting": {
+                "power": 15,
+                "rating": 10
+            }
+        },
+        "type": "Caster",
+        "value": 31
+    },
+    {
+        "factions": ["Grular Invaders"],
+        "name": "Marauder",
+        "displayName": "Marauder (Mounted)",
+        "stats": {
+            "discipline": 8,
+            "type": "Hero",
+            "speed": 10,
+            "talents": ["Cavalry","Light Cavalry","Scout","Harasser","Fast"],
+            "melee": [{
+                "rating": 8,
+                "damage": 8,
+                "name": "Morning Star",
+                "abilities": ["sb"]
+            }],
+            "range": [{
+                "rating": 10,
+                "damage": 8,
+                "distance": 10,
+                "name": "Composite Bow"
+            }],
+            "armor": 4
+        },
+        "type": "Standard",
+        "value": 29
+    },
+    {
+        "factions": ["Grular Invaders"],
+        "name": "Marauder",
+        "displayName": "Marauder (Dismounted)",
+        "stats": {
+            "discipline": 8,
+            "type": "Hero",
+            "speed": 6,
+            "talents": ["Scout","Harasser","Elusive","Dodge"],
+            "abilities": {
+                "agility": 10
+            },
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Morning Star",
+                "abilities": ["sb"]
+            }],
+            "range": [{
+                "rating": 10,
+                "damage": 8,
+                "distance": 10,
+                "name": "Composite Bow"
+            }],
+            "armor": 4
+        },
+        "type": "Standard",
+        "value": 29
+    },
+    {
+        "factions": ["Grular Invaders"],
+        "name": "Bludgeoneer",
+        "displayName": "Bludgeoneer",
+        "stats": {
+            "discipline": 4,
+            "type": "Follower",
+            "speed": 7,
+            "melee": [{
+                "rating": 8,
+                "damage": 10,
+                "name": "Flail",
+                "abilities": ["sb"]
+            }],
+            "armor": 3
+        },
+        "type": "Standard",
+        "value": 11
+    },
+    {
+        "factions": ["Grular Invaders"],
+        "name": "Krang",
+        "displayName": "Bludgeoneer",
+        "stats": {
+            "discipline": 6,
+            "type": "Follower",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 8,
+                "name": "Spikedrakh",
+                "abilities": ["de"]
+            }],
+            "armor": 3,
+            "shield": "AN",
+            "talents": ["Flurry","Wild Charge"]
+        },
+        "type": "Standard",
+        "value": 13
+    },
+    {
+        "factions": ["Grular Invaders"],
+        "name": "Lifetaker",
+        "displayName": "Lifetaker",
+        "stats": {
+            "discipline": 6,
+            "type": "Follower",
+            "speed": 7,
+            "talents": ["Ambush"],
+            "melee": [{
+                "rating": 6,
+                "damage": 4,
+                "name": "Dagger"
+            }],
+            "range": [{
+                "rating": 6,
+                "damage": 6,
+                "distance": 8,
+                "name": "Bow"
+            }],
+            "armor": 3
+        },
+        "type": "Standard",
+        "value": 12
+    },
+    {
+        "factions": ["Haradelan Questers"],
+        "name": "High Questor of Tahnar",
+        "displayName": "High Questor of Tahnar",
+        "stats": {
+            "type": "Hero",
+            "speed": 5,
+            "melee": [{
+                "rating": 12,
+                "damage": 8,
+                "name": "Longsword"
+            }],
+            "shield": "S",
+            "armor": 6,
+            "discipline": 12,
+            "talents": ["Leader","Steadfast","Parry","Parry","Shield Bash"]
+        },
+        "type": "Leader",
+        "value": 39
+    },
+    {
+        "factions": ["Haradelan Questers"],
+        "name": "High Questor of Vidunar",
+        "displayName": "High Questor of Vidunar",
+        "stats": {
+            "type": "Hero",
+            "speed": 5,
+            "melee": [{
+                "rating": 12,
+                "damage": 10,
+                "name": "Greatsword"
+            }],
+            "armor": 7,
+            "discipline": 12,
+            "talents": ["Leader","Steadfast","Parry","Lion's Roar","Bold"],
+            "abilities": {
+                "strength": 10
+            }
+        },
+        "type": "Leader",
+        "value": 39
+    },
+    {
+        "factions": ["Haradelan Questers"],
+        "name": "High Questor of Barek",
+        "displayName": "High Questor of Barek",
+        "stats": {
+            "type": "Hero",
+            "speed": 5,
+            "melee": [{
+                "rating": 12,
+                "damage": 10,
+                "name": "Battleaxe"
+            }],
+            "armor": 7,
+            "discipline": 12,
+            "talents": ["Leader","Steadfast","Die Hard","Die Hard","Wild Charge","Bull Rush","Impact","Impetuous"]
+        },
+        "type": "Leader",
+        "value": 39
+    },
+    {
+        "factions": ["Haradelan Questers"],
+        "name": "High Questor of Glareyn",
+        "displayName": "High Questor of Glareyn",
+        "stats": {
+            "type": "Hero",
+            "speed": 5,
+            "melee": [{
+                "rating": 12,
+                "damage": 8,
+                "name": "2x War Axe"
+            }],
+            "armor": 6,
+            "discipline": 12,
+            "talents": ["Leader","Steadfast","Block","Protector"],
+            "abilities": {
+                "endurance": 10
+            }
+        },
+        "type": "Leader",
+        "value": 39
+    },
+    {
+        "factions": ["Haradelan Questers"],
+        "name": "High Questor of Vasilar",
+        "displayName": "High Questor of Vasilar (Mounted)",
+        "stats": {
+            "type": "Hero",
+            "speed": 9,
+            "melee": [{
+                "rating": 12,
+                "damage": 10,
+                "name": "Lance",
+                "abilities": ["shk"]
+            },{
+                "rating": 12,
+                "damage": 8,
+                "name": "Longsword"
+            },{
+                "rating": 6,
+                "damage": 6,
+                "name": "Warhorse"
+            }],
+            "shield": "S",
+            "armor": 6,
+            "discipline": 12,
+            "talents": ["Leader","Steadfast","Parry","Bladeflash","Cavalry","Warhorse","Fast"],
+            "abilities": {
+                "dexterity": 10,
+                "spirit": 10
+            }
+        },
+        "type": "Leader",
+        "value": 50
+    },
+    {
+        "factions": ["Haradelan Questers"],
+        "name": "Fist of Vidunar",
+        "displayName": "Fist of Vidunar",
+        "type": "Caster",
+        "stats": {
+            "type": "Hero",
+            "speed": 5,
+            "melee": [{
+                "rating": 8,
+                "damage": 10,
+                "name": "War Mattock"
+            }],
+            "armor": 6,
+            "discipline": 8,
+            "talents": ["Varanic Rites", "Chosen Warrior","Armored Casting[-2]"],
+            "abilities": {
+                "dexterity": 6
+            },
+            "casting": {
+                "power": 15,
+                "rating": 10
+            }
+        },
+        "value": 33
+    },
+    {
+        "factions": ["Haradelan Questers"],
+        "name": "Questing Knight of Tahnar",
+        "displayName": "Questing Knight of Tahnar",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 5,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Longsword"
+            }],
+            "shield": "S",
+            "armor": 6,
+            "discipline": 10,
+            "talents": ["Parry","Parry","Shield Bash"],
+            "abilities": {
+                "dexterity": 10
+            }
+        },
+        "value": 30
+    },
+    {
+        "factions": ["Haradelan Questers"],
+        "name": "Questing Knight of Vidunar",
+        "displayName": "Questing Knight of Vidunar",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 5,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "Greatsword"
+            }],
+            "armor": 7,
+            "discipline": 10,
+            "talents": ["Parry","Steadfast","Bold"],
+            "abilities": {
+                "strength": 10
+            }
+        },
+        "value": 30
+    },
+    {
+        "factions": ["Haradelan Questers"],
+        "name": "Questing Knight of Barek",
+        "displayName": "Questing Knight of Barek",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 5,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "Battleaxe"
+            }],
+            "armor": 7,
+            "discipline": 10,
+            "talents": ["Die Hard","Die Hard","Wild Charge","Bull Rush","Impact","Impetuous"]
+        },
+        "value": 30
+    },
+    {
+        "factions": ["Haradelan Questers"],
+        "name": "Questing Knight of Glareyn",
+        "displayName": "Questing Knight of Glareyn",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 5,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "2x War Axe"
+            }],
+            "armor": 6,
+            "discipline": 10,
+            "talents": ["Block","Protector"],
+            "abilities": {
+                "endurance": 10
+            }
+        },
+        "value": 30
+    },
+    {
+        "factions": ["Haradelan Questers"],
+        "name": "Questing Knight of Sylvia",
+        "displayName": "Questing Knight of Sylvia",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Longsword"
+            }],
+            "shield": "S",
+            "armor": 5,
+            "discipline": 10,
+            "talents": ["Lucky","Dodge","Dodge","Raven Stance"],
+            "abilities": {
+                "agility": 12
+            },
+            "skills": [{
+                "name": "Find",
+                "rating": 10
+            }]
+        },
+        "value": 30
+    },
+    {
+        "factions": ["Haradelan Questers"],
+        "name": "Questing Knight of Vasilar",
+        "displayName": "Questing Knight of Vasilar",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 9,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "Lance",
+                "abilities": ["shk"]
+            },{
+                "rating": 10,
+                "damage": 8,
+                "name": "Longsword"
+            },{
+                "rating": 6,
+                "damage": 6,
+                "name": "Warhorse"
+            }],
+            "shield": "S",
+            "armor": 6,
+            "discipline": 10,
+            "talents": ["Steadfast","Parry","Bladeflash","Cavalry","Warhorse","Fast"],
+            "abilities": {
+                "dexterity": 10
+            }
+        },
+        "value": 41
+    },
+    {
+        "factions": ["Haradelan Questers"],
+        "name": "Apprentice Knight of Tahnar",
+        "displayName": "Apprentice Knight of Tahnar",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 5,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Longsword"
+            }],
+            "shield": "S",
+            "armor": 6,
+            "discipline": 8,
+            "talents": ["Parry","Sergeant[Muster]","Shield Bash"]
+        },
+        "value": 26
+    },
+    {
+        "factions": ["Haradelan Questers"],
+        "name": "Apprentice Knight of Vidunar",
+        "displayName": "Apprentice Knight of Vidunar",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 5,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "Greatsword"
+            }],
+            "armor": 6,
+            "discipline": 8,
+            "talents": ["Parry","Sergeant[Muster]"],
+            "abilities": {
+                "strength": 10
+            }
+        },
+        "value": 26
+    },
+    {
+        "factions": ["Haradelan Questers"],
+        "name": "Apprentice Knight of Barek",
+        "displayName": "Apprentice Knight of Barek",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 5,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "Battleaxe"
+            }],
+            "armor": 6,
+            "discipline": 8,
+            "talents": ["Die Hard","Sergeant[Muster]","Bull Rush","Impact","Impetuous"]
+        },
+        "value": 26
+    },
+    {
+        "factions": ["Haradelan Questers"],
+        "name": "Militia Spearman",
+        "displayName": "Militia Spearman",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 6,
+            "melee": [{
+                "rating": 6,
+                "damage": 8,
+                "name": "Longspear",
+                "abilities": ["so"]
+            }],
+            "shield": "S",
+            "armor": 4,
+            "discipline": 6
+        },
+        "value": 12
+    },
+    {
+        "factions": ["Haradelan Questers"],
+        "name": "Muster Archer",
+        "displayName": "Muster Archer",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 7,
+            "melee": [{
+                "rating": 4,
+                "damage": 4,
+                "name": "Dagger"
+            }],
+            "range": [{
+                "rating": 6,
+                "damage": 6,
+                "distance": 8,
+                "name": "Bow"
+            }],
+            "armor": 2,
+            "discipline": 4
+        },
+        "value": 6
+    },
+    {
+        "factions": ["Haradelan Questers"],
+        "name": "Muster Thresher",
+        "displayName": "Muster Thresher",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 7,
+            "melee": [{
+                "rating": 8,
+                "damage": 6,
+                "damageBonus": 1,
+                "name": "Thresher",
+                "abilities": ["sb"]
+            }],
+            "armor": 2,
+            "discipline": 4
+        },
+        "value": 8
+    },
+    {
+        "factions": ["Trilian Seekers"],
+        "name": "Starseeker",
+        "displayName": "Starseeker",
+        "type": "Leader",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 12,
+                "damage": 10,
+                "name": "Toloron",
+                "abilities": ["sw"]
+            }],
+            "armor": 5,
+            "discipline": 12,
+            "talents": ["Leader","Arboreal","Parry","Parry","Bold","Elusive","Deflect"],
+            "abilities": {
+                "agility": 10
+            }
+        },
+        "value": 39
+    },
+    {
+        "factions": ["Trilian Seekers"],
+        "name": "Bladerider First",
+        "displayName": "Bladerider First (Mounted)",
+        "type": "Leader",
+        "stats": {
+            "type": "Hero",
+            "speed": 10,
+            "melee": [{
+                "rating": 12,
+                "damage": 10,
+                "name": "Toloron",
+                "abilities": ["sw"]
+            }],
+            "range": [{
+                "rating": 10,
+                "damage": 8,
+                "distance": 12,
+                "name": "Longbow"
+            }],
+            "armor": 4,
+            "discipline": 12,
+            "talents": ["Cavalry","Leader","Parry","Bladedancer","Scout","Fast"]
+        },
+        "value": 44
+    },
+    {
+        "factions": ["Trilian Seekers"],
+        "name": "Bladerider First",
+        "displayName": "Bladerider First (Dismounted)",
+        "type": "Leader",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 12,
+                "damage": 10,
+                "name": "Toloron",
+                "abilities": ["sw"]
+            }],
+            "range": [{
+                "rating": 10,
+                "damage": 8,
+                "distance": 12,
+                "name": "Longbow"
+            }],
+            "armor": 4,
+            "discipline": 12,
+            "talents": ["Leader","Parry","Bladedancer","Scout"]
+        },
+        "value": 39
+    },
+    {
+        "factions": ["Trilian Seekers"],
+        "name": "Treespeaker",
+        "displayName": "Treespeaker",
+        "type": "Caster",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Staff",
+                "abilities": ["te"]
+            }],
+            "armor": 4,
+            "discipline": 8,
+            "talents": ["Treespeaking","Tree Bond","Arboreal"],
+            "casting": {
+                "power": 15,
+                "rating": 10
+            }
+        },
+        "value": 32
+    },
+    {
+        "factions": ["Trilian Seekers"],
+        "name": "Stargazer",
+        "displayName": "Stargazer",
+        "type": "Caster",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Staff",
+                "abilities": ["te"]
+            }],
+            "armor": 4,
+            "discipline": 8,
+            "talents": ["Celestial Magic","Spellbracer","Arboreal"],
+            "casting": {
+                "power": 15,
+                "rating": 10
+            }
+        },
+        "value": 32
+    },
+    {
+        "factions": ["Trilian Seekers"],
+        "name": "Bladerider",
+        "displayName": "Bladerider (Mounted)",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 10,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "Toloron",
+                "abilities": ["sw"]
+            }],
+            "range": [{
+                "rating": 10,
+                "damage": 8,
+                "distance": 12,
+                "name": "Longbow"
+            }],
+            "armor": 4,
+            "discipline": 10,
+            "talents": ["Cavalry","Parry","Bladedancer","Scout","Fast"]
+        },
+        "value": 37
+    },
+    {
+        "factions": ["Trilian Seekers"],
+        "name": "Bladerider",
+        "displayName": "Bladerider (Dismounted)",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "Toloron",
+                "abilities": ["sw"]
+            }],
+            "range": [{
+                "rating": 10,
+                "damage": 8,
+                "distance": 12,
+                "name": "Longbow"
+            }],
+            "armor": 4,
+            "discipline": 10,
+            "talents": ["Parry","Bladedancer","Scout"]
+        },
+        "value": 32
+    },
+    {
+        "factions": ["Trilian Seekers"],
+        "name": "Enforcer",
+        "displayName": "Enforcer",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "Toloron",
+                "abilities": ["sw"]
+            }],
+            "armor": 4,
+            "discipline": 10,
+            "talents": ["Contain","Arboreal","Parry","Parry"],
+            "abilities": {
+                "agility": 10
+            },
+            "skills": [{
+                "name": "Hunt",
+                "rating": 8
+            }]
+        },
+        "value": 30
+    },
+    {
+        "factions": ["Trilian Seekers"],
+        "name": "Searcher",
+        "displayName": "Searcher",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 8,
+                "damage": 6,
+                "damageBonus": 1,
+                "name": "Herenkai"
+            }],
+            "range": [{
+                "rating": 12,
+                "damage": 8,
+                "distance": 12,
+                "name": "Longbow"
+            }],
+            "armor": 4,
+            "discipline": 8,
+            "talents": ["Arboreal","Scout","Marksman"],
+            "abilities": {
+                "agility": 10
+            },
+            "skills": [{
+                "name": "Find",
+                "rating": 10
+            },{
+                "name": "Hunt",
+                "rating": 10
+            }]
+        },
+        "value": 34
+    },
+    {
+        "factions": ["Trilian Seekers"],
+        "name": "Mist Dancer",
+        "displayName": "Mist Dancer",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 6,
+                "damageBonus": 1,
+                "name": "2x Herenkai"
+            }],
+            "range": [{
+                "rating": 8,
+                "damage": 6,
+                "damageBonus": 1,
+                "distance": 2,
+                "name": "Herenkai",
+                "abilities": ["thr"]
+            }],
+            "armor": 2,
+            "discipline": 10,
+            "talents": ["Covert Charge","Arboreal","Tough","Parry","Dodge","Bladedancer"],
+            "abilities": {
+                "agility": 10
+            }
+        },
+        "value": 37
+    },
+    {
+        "factions": ["Trilian Seekers"],
+        "name": "Veteran Defender",
+        "displayName": "Veteran Defender",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 6,
+                "damageBonus": 1,
+                "name": "Herenkai"
+            }],
+            "range": [{
+                "rating": 10,
+                "damage": 6,
+                "distance": 4,
+                "name": "Javelin",
+                "abilities": ["thr"]
+            }],
+            "armor": 3,
+            "discipline": 10,
+            "talents": ["Treefall","Sergeant[Defender]","Dodge","Dodge"],
+            "abilities": {
+                "agility": 12
+            }
+        },
+        "value": 30
+    },
+    {
+        "factions": ["Trilian Seekers"],
+        "name": "Wanderer",
+        "displayName": "Wanderer",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 6,
+            "melee": [{
+                "rating": 6,
+                "damage": 8,
+                "name": "Longspear",
+                "abilities": ["so"]
+            }],
+            "range": [{
+                "rating": 6,
+                "damage": 8,
+                "distance": 12,
+                "name": "Longbow"
+            }],
+            "armor": 4,
+            "discipline": 6,
+            "talents": ["Arboreal"]
+        },
+        "value":16
+    },
+    {
+        "factions": ["Trilian Seekers"],
+        "name": "Defender",
+        "displayName": "Defender",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "damageBonus": 1,
+                "name": "Herenkai"
+            }],
+            "range": [{
+                "rating": 8,
+                "damage": 6,
+                "distance": 4,
+                "name": "Javelin",
+                "abilities": ["thr"]
+            }],
+            "armor": 3,
+            "discipline": 6,
+            "talents": ["Treefall"]
+        },
+        "value":13
+    },
+    {
+        "factions": ["Trilian Seekers"],
+        "name": "Tree Runner",
+        "displayName": "Tree Runner",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "damageBonus": 1,
+                "name": "Herenkai"
+            }],
+            "range": [{
+                "rating": 6,
+                "damage": 8,
+                "distance": 12,
+                "name": "Longbow"
+            }],
+            "armor": 3,
+            "discipline": 6,
+            "talents": ["Arboreal","Scout"]
+        },
+        "value":17
     }
 ]
