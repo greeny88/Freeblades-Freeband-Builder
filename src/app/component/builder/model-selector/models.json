@@ -3261,5 +3261,265 @@
             "talents": ["Arboreal","Scout"]
         },
         "value":17
+    },
+    {
+        "factions": ["Urdaggar Tribes of Valor"],
+        "name": "Wolfkarl",
+        "displayName": "Wolfkarl",
+        "type": "Leader",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 12,
+                "damage": 10,
+                "name": "Wolfsword",
+                "abilities": ["ml"]
+            }],
+            "armor": 5,
+            "discipline": 12,
+            "talents": ["Leader","Parry","Fearsome","Battlecry"],
+            "abilities": {
+                "strength": 10
+            },
+            "skills": [{
+                "name": "Hunt",
+                "rating": 8
+            }]
+        },
+        "value":39
+    },
+    {
+        "factions": ["Urdaggar Tribes of Valor"],
+        "name": "Valkyrie",
+        "displayName": "Valkyrie",
+        "type": "Leader",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 12,
+                "damage": 8,
+                "name": "Longspear",
+                "abilities": ["so"]
+            }],
+            "shield":"S",
+            "armor": 3,
+            "discipline": 12,
+            "talents": ["Leader","Scout","Spotter","Parry","Deft","Backstep"],
+            "abilities": {
+                "agility": 10,
+                "spirit": 10
+            }
+        },
+        "value":39
+    },
+    {
+        "factions": ["Urdaggar Tribes of Valor"],
+        "name": "Bear Mystic",
+        "displayName": "Bear Mystic",
+        "type": "Caster",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 4,
+                "name": "2x Handclaws"
+            }],
+            "armor": 2,
+            "discipline": 8,
+            "talents": ["Bear Magic","Mystic Dance"],
+            "casting": {
+                "power":15,
+                "rating":10
+            }
+        },
+        "value":31
+    },
+    {
+        "factions": ["Urdaggar Tribes of Valor"],
+        "name": "Boar Warrior",
+        "displayName": "Boar Warrior",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "Battleaxe"
+            }],
+            "armor": 2,
+            "discipline": 10,
+            "talents": ["Bold","Bull Rush","Hardened","Die Hard","Die Hard","Wild Charge"],
+            "abilities": {
+                "endurance": 10
+            }
+        },
+        "value":28
+    },
+    {
+        "factions": ["Urdaggar Tribes of Valor"],
+        "name": "Beserker",
+        "displayName": "Beserker",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 6,
+                "name": "2x Dire Claws"
+            }],
+            "armor": 3,
+            "discipline": 10,
+            "talents": ["Fearsome","Frenzy","Tough"],
+            "abilities": {
+                "strength": 10
+            }
+        },
+        "value":32
+    },
+    {
+        "factions": ["Urdaggar Tribes of Valor"],
+        "name": "Night Hunter",
+        "displayName": "Night Hunter",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 8,
+                "damage": 6,
+                "name": "Short sword"
+            }],
+            "range":[{
+                "rating":12,
+                "damage":6,
+                "distance":8,
+                "name": "Bow"
+            }],
+            "armor": 2,
+            "discipline": 8,
+            "talents": ["Accurate Shot","Accurate Shot","Dodge","Scout","Sniper"],
+            "abilities": {
+                "agility": 10
+            },
+            "skills": [{
+                "name":"Hunt",
+                "rating":8
+            },{
+                "name":"Stealth",
+                "rating":8
+            }]
+        },
+        "value":28
+    },
+    {
+        "factions": ["Urdaggar Tribes of Valor"],
+        "name": "Lioness",
+        "displayName": "Lioness",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "Greatsword"
+            }],
+            "armor": 3,
+            "discipline": 10,
+            "talents": ["Infiltrate","Pouncer","Arboreal","Assault","Tough"],
+            "abilities": {
+                "agility": 10
+            },
+            "skills": [{
+                "name":"Hunt",
+                "rating":8
+            },{
+                "name":"Stealth",
+                "rating":10
+            }]
+        },
+        "value":32
+    },
+    {
+        "factions": ["Urdaggar Tribes of Valor"],
+        "name": "Slinger",
+        "displayName": "Slinger",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 7,
+            "melee": [{
+                "rating": 4,
+                "damage": 4,
+                "name": "Knife"
+            }],
+            "range":[{
+                "rating":6,
+                "damage":8,
+                "range":6,
+                "name":"Sling"
+            }],
+            "armor": 2,
+            "discipline": 6,
+            "skills": [{
+                "name":"Find",
+                "rating":8
+            }]
+        },
+        "value":8
+    },
+    {
+        "factions": ["Urdaggar Tribes of Valor"],
+        "name": "Unproven",
+        "displayName": "Unproven",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 8,
+                "name": "Longspear",
+                "abilities":["so"]
+            }],
+            "shield": "S",
+            "armor": 3,
+            "discipline": 6
+        },
+        "value":12
+    },
+    {
+        "factions": ["Urdaggar Tribes of Valor"],
+        "name": "Hunter",
+        "displayName": "Hunter",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Shortsword"
+            }],
+            "range":[{
+                "rating":8,
+                "damage":6,
+                "range":8,
+                "name":"Bow"
+            }],
+            "armor": 2,
+            "discipline": 6,
+            "talents": ["Scout"],
+            "skills": [{
+                "name":"Hunt",
+                "rating":6
+            }]
+        },
+        "value":8
     }
 ]

@@ -22,9 +22,13 @@ export class FreebandSetupComponent {
             'Demons of Karelon',
             'Eclipse Sisterhood',
             'Falkaaran Adventurers',
+            'Grular Invaders',
+            'Haradelan Questers',
             'Kuzaarik Forgers',
             'Mershael Corsairs',
-            'Traazorite Crusaders'
+            'Traazorite Crusaders',
+            'Trilian Seekers',
+            'Urdaggar Tribes of Valor'
         ];
         this.altLeader = false;
         this.options = {

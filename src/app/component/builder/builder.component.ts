@@ -30,9 +30,13 @@ export class BuilderComponent {
             'Demons of Karelon': this.demonsRules,
             'Eclipse Sisterhood': this.eclipseRules,
             'Falkaaran Adventurers': this.falkaaranRules,
+            'Grular Invaders': this.grularRules,
+            'Haradelan Questers': this.haradelanRules,
             'Kuzaarik Forgers': this.kuzaarikRules,
             'Mershael Corsairs': this.mershaelRules,
-            'Traazorite Crusaders': this.traazoriteRules
+            'Traazorite Crusaders': this.traazoriteRules,
+            'Trilian Seekers': this.trilianRules,
+            'Urdaggar Tribes of Valor': this.urdaggarRules
         };
         this.reset()
     }
@@ -165,6 +169,17 @@ export class BuilderComponent {
         return undefined;
     }
 
+    private grularRules(model: Model): string | undefined {
+        //TODO: may not have more demon heroes than other heroes
+        //TODO: may have one additional Marauder at 251+
+        return undefined;
+    }
+
+    private haradelanRules(model: Model): string | undefined {
+        //TODO: may be only one more questor than apprentice knight
+        return undefined;
+    }
+
     private kuzaarikRules(model: Model): string | undefined {
         let quarrelerCount = 0;
         for (let key in this.models) {
@@ -182,19 +197,45 @@ export class BuilderComponent {
         return undefined;
     }
 
+    private traazoriteRules(model: Model): string | undefined {
+        if (model.gender === 'F') {
+            return 'Traazorites cannot have female models in their freeband.';
+        }
+        return undefined;
+    }
+
+    private trilianRules(model: Model): string | undefined {
+        let runnerCount = 0;
+        for (let key in this.models) {
+            if (this.models[key]['name'] === 'Quarreler') {
+                runnerCount++;
+            }
+        }
+        if (runnerCount > 0 && (this.limit / runnerCount) < 75) {
+            return "Trilian can only have one Tree Runner for each 75 points in the freeband's base value.";
+        }
+        return undefined;
+    }
+
+    private urdaggarRules(model: Model): string | undefined {
+        let hunterCount = 0;
+        for (let key in this.models) {
+            if (this.models[key]['name'] === 'Quarreler') {
+                hunterCount++;
+            }
+        }
+        if (hunterCount > 0 && (this.limit / hunterCount) < 75) {
+            return "Urdaggar can only have one Hunter for each 75 points in the freeband's base value.";
+        }
+        return undefined;
+    }
+
     private reset() {
         this.extraModels = [];
         this.extraModels.push(this.uuidv4());
         this.freebandBaseValue = 0;
         this.models = {};
         this.totalLifePoints = 0;
-    }
-
-    private traazoriteRules(model: Model): string | undefined {
-        if (model.gender === 'F') {
-            return 'Traazorites cannot have female models in their freeband.';
-        }
-        return undefined;
     }
 
     // https://stackoverflow.com/a/2117523
