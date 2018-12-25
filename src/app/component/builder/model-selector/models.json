@@ -1258,7 +1258,7 @@
         "gender": "F"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Wandering Wizard",
         "displayName": "Wandering Wizard",
         "stats": {
@@ -1283,7 +1283,7 @@
         "gender": "F"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Takar Hunter",
         "displayName": "Takar Hunter",
         "stats": {
@@ -1318,7 +1318,7 @@
         "gender": "M"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Takar Lookout",
         "displayName": "Takar Lookout",
         "stats": {
@@ -1348,7 +1348,7 @@
         "gender": "M"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Merchant",
         "displayName": "Merchant",
         "stats": {
