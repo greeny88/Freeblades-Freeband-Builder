@@ -49,14 +49,34 @@ export class BuilderComponent {
         this.freebandBaseValue = 0;
         this.totalLifePoints = 0;
         this.errorMessages = [];
+        let heroCount: number = 0;
+        let completeHeroCount: number = 0;
+        let allyHeroCount: number = 0;
+        let completeFollowerCount: number = 0;
+        let allyFollowerCount: number = 0;
+
         for (let modelId in this.models) {
             let model: Model = this.models[modelId];
 
             this.freebandBaseValue += model.value;
             this.totalLifePoints += model.stats.lifePoints;
 
+            if (model.stats.type === 'Hero') {
+                completeHeroCount++;
+                if (model.stats.talentList.indexOf('Ally') > -1) {
+                    allyHeroCount++;
+                }
+            }
+
+            if (model.stats.type === 'Follower') {
+                completeFollowerCount++;
+                if (model.stats.talentList.indexOf('Ally') > -1) {
+                    allyFollowerCount++;
+                }
+            }
+
             if (model.type === 'Standard' && model.stats.type === 'Hero') {
-                this.heroCount +=1;
+                heroCount++;
             }
     
             if (this.freebandBaseValue > this.limit) {
@@ -65,7 +85,7 @@ export class BuilderComponent {
     
             let allowedHeroCount = Math.floor((this.freebandBaseValue - 1) / 50);
             allowedHeroCount = (allowedHeroCount < 4) ? 4 : allowedHeroCount;
-            if (allowedHeroCount < this.heroCount) {
+            if (allowedHeroCount < heroCount) {
                 this.addErrorMessage('Too many hero units added. You can only have four plus one for each 50 points over 251.');
             }
     
@@ -84,7 +104,10 @@ export class BuilderComponent {
             } catch {
                 console.log(`No special rule for ${this.faction}`);
             }
-            
+        }
+
+        if ( (( (completeHeroCount-allyHeroCount) / 2) < allyHeroCount) || (( (completeFollowerCount-allyFollowerCount) / 2) < allyFollowerCount) ) {
+            this.addErrorMessage('Too many ally models selected. There must be a 2:1 ratio of ally to non-ally models for a given type.');
         }
     }
 
@@ -170,13 +193,35 @@ export class BuilderComponent {
     }
 
     private grularRules(model: Model): string | undefined {
-        //TODO: may not have more demon heroes than other heroes
+        let demonCount = 0;
+        let totalCount = 0;
+        for (let key in this.models) {
+            if (this.models[key].stats.talentList.indexOf('Demon') > -1) {
+                demonCount++;
+            }
+            totalCount++;
+        }
+        if (demonCount > totalCount) {
+            return 'Grular many not have more demon models than non-demon models.';
+        }
         //TODO: may have one additional Marauder at 251+
         return undefined;
     }
 
     private haradelanRules(model: Model): string | undefined {
-        //TODO: may be only one more questor than apprentice knight
+        let questorCount = 0;
+        let apprenticeCount = 0;
+        for (let key in this.models) {
+            if (this.models[key].name.indexOf('Questing') > -1) {
+                questorCount++;
+            }
+            if (this.models[key].name.indexOf('Apprentice') > -1) {
+                apprenticeCount++;
+            }
+        }
+        if (questorCount > 0 && questorCount > (apprenticeCount+1)) {
+            return 'Haradelan many only have one more Questing knight than Apprentice knight.';
+        }
         return undefined;
     }
 
@@ -207,7 +252,7 @@ export class BuilderComponent {
     private trilianRules(model: Model): string | undefined {
         let runnerCount = 0;
         for (let key in this.models) {
-            if (this.models[key]['name'] === 'Quarreler') {
+            if (this.models[key]['name'] === 'Tree Runner') {
                 runnerCount++;
             }
         }
@@ -220,7 +265,7 @@ export class BuilderComponent {
     private urdaggarRules(model: Model): string | undefined {
         let hunterCount = 0;
         for (let key in this.models) {
-            if (this.models[key]['name'] === 'Quarreler') {
+            if (this.models[key]['name'] === 'Hunter') {
                 hunterCount++;
             }
         }

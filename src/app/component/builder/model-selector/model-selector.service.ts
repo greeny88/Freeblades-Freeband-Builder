@@ -9,7 +9,9 @@ interface stats {
     melee?: Object,
     moraleBonus: number,
     range?: Object,
-    skillBonus: number
+    skillBonus: number,
+    skillList: string,
+    talentList: string
 };
 
 @Injectable()
@@ -76,14 +78,27 @@ export class ModelSelectorService {
             }
         }
 
-        //TODO: group duplicate talents
+        let skillList: string;
+        let talentList: string;
+        if (stats.skills) {
+            skillList = stats.skills.map(skill => `${skill.name} - d${skill.rating}`).join(', ');
+        }
+        if (stats.talents) {
+            const talents = stats.talents.map((m) => {
+                const count = stats.talents.reduce((sum, r) => (r === m) ? sum + 1 : sum, 0);
+                return (count > 1) ? `${m}[${count}]` : m;
+            });
+            talentList = Array.from(new Set(talents)).join(', ');
+        }
         
         let updatedStats: stats = {
             abilities,
             defense,
             lifePoints,
             moraleBonus,
-            skillBonus
+            skillBonus,
+            skillList,
+            talentList
         };
 
         if (stats.melee) {

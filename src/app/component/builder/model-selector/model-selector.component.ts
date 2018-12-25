@@ -88,16 +88,6 @@ export class ModelSelectorComponent {
         let model = this.selected;
         model.component_id = this.componentId;
         this.selected.stats = (<any>Object).assign(this.selected.stats, this.modelSelectorService.calculateStats(this.selected.stats));
-        if (this.selected.stats.skills) {
-            this.selected.stats.skillList = this.selected.stats.skills.map(skill => `${skill.name} - d${skill.rating}`).join(', ');
-        }
-        if (this.selected.stats.talents) {
-            const talents = this.selected.stats.talents.map((m) => {
-                const count = this.selected.stats.talents.reduce((sum, r) => (r === m) ? sum + 1 : sum, 0);
-                return (count > 1) ? `${m}[${count}]` : m;
-            });
-            this.selected.stats.talentList = Array.from(new Set(talents)).join(', ');
-        }
         this.onModelSelected.emit(model);
     }
 }

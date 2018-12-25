@@ -1097,7 +1097,7 @@
             },
             "armor": 2
         },
-        "type": "Caster Ally",
+        "type": "Caster",
         "value": 31,
         "gender": "F"
     },
@@ -1253,7 +1253,7 @@
             },
             "armor": 2
         },
-        "type": "Caster Ally",
+        "type": "Caster",
         "value": 31,
         "gender": "F"
     },
@@ -1278,7 +1278,7 @@
             },
             "armor": 2
         },
-        "type": "Caster Ally",
+        "type": "Caster",
         "value": 31,
         "gender": "F"
     },
@@ -1313,7 +1313,7 @@
             }],
             "armor": 4
         },
-        "type": "Standard Ally",
+        "type": "Standard",
         "value": 36,
         "gender": "M"
     },
@@ -1343,7 +1343,7 @@
             }],
             "armor": 4
         },
-        "type": "Standard Ally",
+        "type": "Standard",
         "value": 18,
         "gender": "M"
     },
@@ -1371,7 +1371,7 @@
             }],
             "armor": 2
         },
-        "type": "Standard Ally",
+        "type": "Standard",
         "value": 15,
         "gender": "M"
     },
