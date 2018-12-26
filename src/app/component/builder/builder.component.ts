@@ -12,6 +12,8 @@ import { summaryFileName } from '../../../../node_modules/@angular/compiler/src/
 export class BuilderComponent {
     @ViewChild('sidenav') sidenav: MatSidenav;
     altLeader: boolean;
+    completeFollowerCount: number;
+    completeHeroCount: number;
     errorMessages: string[];
     extraModels: string[];
     faction: string;
@@ -50,9 +52,9 @@ export class BuilderComponent {
         this.totalLifePoints = 0;
         this.errorMessages = [];
         let heroCount: number = 0;
-        let completeHeroCount: number = 0;
+        this.completeHeroCount = 0;
         let allyHeroCount: number = 0;
-        let completeFollowerCount: number = 0;
+        this.completeFollowerCount = 0;
         let allyFollowerCount: number = 0;
 
         for (let modelId in this.models) {
@@ -62,31 +64,25 @@ export class BuilderComponent {
             this.totalLifePoints += model.stats.lifePoints;
 
             if (model.stats.type === 'Hero') {
-                completeHeroCount++;
+                this.completeHeroCount++;
                 if (model.stats.talentList.indexOf('Ally') > -1) {
                     allyHeroCount++;
                 }
             }
 
             if (model.stats.type === 'Follower') {
-                completeFollowerCount++;
+                this.completeFollowerCount++;
                 if (model.stats.talentList.indexOf('Ally') > -1) {
                     allyFollowerCount++;
                 }
             }
 
-            if (model.type === 'Standard' && model.stats.type === 'Hero') {
+            if (model.stats.talentList.indexOf('Leader') < 0 && model.type !== 'Caster' && model.stats.type === 'Hero') {
                 heroCount++;
             }
     
             if (this.freebandBaseValue > this.limit) {
                 this.addErrorMessage('Total model value is too high. Remove models until value comes under the limit.');
-            }
-    
-            let allowedHeroCount = Math.floor((this.freebandBaseValue - 1) / 50);
-            allowedHeroCount = (allowedHeroCount < 4) ? 4 : allowedHeroCount;
-            if (allowedHeroCount < heroCount) {
-                this.addErrorMessage('Too many hero units added. You can only have four plus one for each 50 points over 251.');
             }
     
             let heroFound = 0;
@@ -105,8 +101,14 @@ export class BuilderComponent {
                 console.log(`No special rule for ${this.faction}`);
             }
         }
+    
+        let allowedHeroCount = Math.floor((this.limit - 1) / 50);
+        allowedHeroCount = (allowedHeroCount < 4) ? 4 : allowedHeroCount;
+        if (allowedHeroCount < heroCount) {
+            this.addErrorMessage('Too many hero units added. You can only have four plus one for each 50 points over 251.');
+        }
 
-        if ( (( (completeHeroCount-allyHeroCount) / 2) < allyHeroCount) || (( (completeFollowerCount-allyFollowerCount) / 2) < allyFollowerCount) ) {
+        if ( (( (this.completeHeroCount - allyHeroCount) / 2) < allyHeroCount) || (( (this.completeFollowerCount - allyFollowerCount) / 2) < allyFollowerCount) ) {
             this.addErrorMessage('Too many ally models selected. There must be a 2:1 ratio of ally to non-ally models for a given type.');
         }
     }

@@ -22,18 +22,22 @@ export class ModelSelectorComponent {
 
     constructor(private modelSelectorService: ModelSelectorService) {
         this.models = [];
-        //this.factionModels = factionModels;
     }
 
     ngOnChanges() {
+        console.log(this.type);
         this.models = [];
         if (this.altLeader) {
+            const factionModels = JSON.parse(JSON.stringify(this.factionModels));
             // LRB 18-2 pg 90
-            for (let currentmodel of this.factionModels) {
+            for (let currentmodel of factionModels) {
                 let model = Object.assign({}, currentmodel);
                 if (model.factions.indexOf(this.faction) > -1) {
                     //TODO: specific models can't be changed according to this rule
-                    if (this.type === 'Leader' && model.type === 'Standard' && model.stats.type === 'Hero' && ['Animal','Demon','Feral','Warbeast'].some(v=> model.stats.talents.indexOf(v) < 0)) {
+                    if (this.type === 'Leader' && model.type === 'Standard' 
+                            && model.stats.type === 'Hero' 
+                            && ['Animal','Demon','Feral','Warbeast'].some(v=> model.stats.talents.indexOf(v) < 0)
+                            && model.stats.talents.every(t => t.indexOf('Ally') < 0) ) {
                         model.stats.talents.push('Leader');
                         //TODO: attempt to determine which value is better to increase: melee or range
                         //TODO: even better, find way of allowing user to pick per model
@@ -51,7 +55,7 @@ export class ModelSelectorComponent {
                         }
                         this.models.push(model);
                     } else if (this.type === 'Standard' && model.type === 'Leader') {
-                        model.stats.talents.filter((tal) => tal !== 'Leader');
+                        model.stats.talents = model.stats.talents.filter((tal) => tal !== 'Leader');
                         //TODO: determine which value is higher before decreasing: melee or range
                         model.stats.melee = model.stats.melee.map((mAtk) => {
                             mAtk.rating -= 2;

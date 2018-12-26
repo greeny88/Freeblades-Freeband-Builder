@@ -104,4 +104,12 @@ mat-sidenav-container#mainContainer {
 .errorMessage {
     padding: 24px;
     background-color: red;
+    flex: 1;
+}
+
+.floatingTopInfo {
+    position:fixed;
+    z-index:2;
+    background-color:#fafafa;
+    width:100%;
 }

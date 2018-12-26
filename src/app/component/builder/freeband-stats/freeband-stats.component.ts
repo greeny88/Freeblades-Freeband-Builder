@@ -7,7 +7,9 @@ import template from './freeband-stats.html';
     template
 })
 export class FreebandStatsComponent {
+    @Input() followerTotal: number;
     @Input() freebandBaseValue: number;
+    @Input() heroTotal: number;
     @Input() totalLifePoints: number;
     breakValue: number;
 

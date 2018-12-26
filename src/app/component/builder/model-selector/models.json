@@ -1258,7 +1258,7 @@
         "gender": "F"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Wandering Wizard",
         "displayName": "Wandering Wizard",
         "stats": {
@@ -1348,7 +1348,7 @@
         "gender": "M"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Merchant",
         "displayName": "Merchant",
         "stats": {
@@ -3521,5 +3521,168 @@
             }]
         },
         "value":8
+    },
+    {
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "name": "Mizrakai",
+        "displayName": "Mizrakai",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Longspear",
+                "abilities": ["so"]
+            }],
+            "shield": "S",
+            "armor": 5,
+            "discipline": 10,
+            "talents": ["Parry","Accurate Strike","Backstep","Impact","Ally[Independent]"],
+            "abilities": {
+                "dexterity": 10
+            }
+        },
+        "value":30
+    },
+    {
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Urdaggar Tribes of Valor"],
+        "name": "Stag Warrior",
+        "displayName": "Stag Warrior",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "Hartblade",
+                "abilities": ["let"]
+            }],
+            "armor": 3,
+            "discipline": 10,
+            "talents": ["Parry","Assault","Restore","Heroic Attack","Ally[Trusted]"],
+            "abilities": {
+                "endurance": 10,
+                "spirit": 10
+            },
+            "skills": [{
+                "name": "Hunt",
+                "rating": 8
+            }]
+        },
+        "gender": "F",
+        "value": 31
+    },
+    {
+        "factions": ["Kuzaarik Forgers"],
+        "name": "Truthseeker",
+        "displayName": "Truthseeker",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 6,
+                "name": "2x Sanghara"
+            }],
+            "armor": 2,
+            "discipline": 10,
+            "talents": ["Bladedancer","Accurate Strike","Swordsman[Sanghara]","Dodge","Ally[Trusted]"],
+            "abilities": {
+                "agility": 14,
+                "knowledge": 10
+            },
+            "skills": [{
+                "name": "Find",
+                "rating": 10
+            }]
+        },
+        "gender": "F",
+        "value": 35
+    },
+    {
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Mershael Corsairs","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "name": "Truthseeker",
+        "displayName": "Truthseeker",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 6,
+                "name": "2x Sanghara"
+            }],
+            "armor": 2,
+            "discipline": 10,
+            "talents": ["Bladedancer","Accurate Strike","Swordsman[Sanghara]","Dodge","Ally[Independent]"],
+            "abilities": {
+                "agility": 14,
+                "knowledge": 10
+            },
+            "skills": [{
+                "name": "Find",
+                "rating": 10
+            }]
+        },
+        "gender": "F",
+        "value": 35
+    },
+    {
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "name": "Wandering Bard",
+        "displayName": "Wandering Bard",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 4,
+                "name": "Dagger"
+            }],
+            "armor": 2,
+            "discipline": 8,
+            "talents": ["Perform[Bardsong,3]","Dodge","Elusive","Outperform","Protected","Ally[Trusted]"],
+            "abilities": {
+                "agility": 10
+            },
+            "skills": [{
+                "name": "Perform",
+                "rating": 10
+            }]
+        },
+        "gender": "F",
+        "value": 25
+    },
+    {
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "name": "Wandering Bard",
+        "displayName": "Wandering Bard",
+        "type": "Caster",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 4,
+                "name": "Dagger"
+            }],
+            "armor": 2,
+            "discipline": 8,
+            "talents": ["Perform[Bardsong,3]","Dodge","Elusive","Outperform","Protected","Ally[Trusted]"],
+            "abilities": {
+                "agility": 10
+            },
+            "skills": [{
+                "name": "Perform",
+                "rating": 10
+            }]
+        },
+        "gender": "F",
+        "value": 25
     }
 ]

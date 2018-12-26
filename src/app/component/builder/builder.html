@@ -1,8 +1,16 @@
 <mat-toolbar>
-    <button mat-icon-button (click)="sidenav.toggle()">
-        <mat-icon>menu</mat-icon>
-    </button>
-    <h1>Freeblades Freeband Builder</h1>
+    <mat-toolbar-row>
+        <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <h1>Freeblades Freeband Builder</h1>
+    </mat-toolbar-row>
+    <mat-toolbar-row *ngIf="faction && limit">
+        <div style="display:flex;flex-wrap:wrap;">
+            <freeband-stats [freebandBaseValue]="freebandBaseValue" [totalLifePoints]="totalLifePoints" [heroTotal]="completeHeroCount" [followerTotal]="completeFollowerCount"></freeband-stats>
+            <div *ngFor="let msg of errorMessages" class="errorMessage">{{msg}}</div>
+        </div>
+    </mat-toolbar-row>
 </mat-toolbar>
 <mat-sidenav-container id="mainContainer">
     <mat-sidenav #sidenav mode="side" opened="true">
@@ -10,8 +18,6 @@
     </mat-sidenav>
     <mat-sidenav-content>
         <ng-container *ngIf="faction && limit; else setup">
-            <div *ngFor="let msg of errorMessages" class="errorMessage">{{msg}}</div>
-            <freeband-stats [freebandBaseValue]="freebandBaseValue" [totalLifePoints]="totalLifePoints"></freeband-stats>
             <model-selector [faction]="faction" type="Leader" [altLeader]="altLeader" (onModelSelected)="modelSelected($event)" componentId="Leader"></model-selector>
             <model-selector [faction]="faction" type="Caster" (onModelSelected)="modelSelected($event)" componentId="Caster"></model-selector>
             <ng-container *ngFor="let id of extraModels">
@@ -19,8 +25,6 @@
                     (onModelRemoved)="removeModel($event)"></model-selector>
             </ng-container>
             <button mat-raised-button style="margin:24px;" (click)="addModel()">Add Model</button>
-            <div *ngFor="let msg of errorMessages" class="errorMessage">{{msg}}</div>
-            <freeband-stats [freebandBaseValue]="freebandBaseValue" [totalLifePoints]="totalLifePoints"></freeband-stats>
         </ng-container>
         <ng-template #setup>
             <p>Start by selecting the values in the menu so that you can begin building your freeband.</p>
