@@ -5,11 +5,16 @@
         </button>
         <h1>Freeblades Freeband Builder</h1>
     </mat-toolbar-row>
-    <mat-toolbar-row *ngIf="faction && limit">
-        <div style="display:flex;flex-wrap:wrap;">
-            <freeband-stats [freebandBaseValue]="freebandBaseValue" [totalLifePoints]="totalLifePoints" [heroTotal]="completeHeroCount" [followerTotal]="completeFollowerCount"></freeband-stats>
-            <div *ngFor="let msg of errorMessages" class="errorMessage">{{msg}}</div>
+    <mat-toolbar-row *ngIf="faction && limit" class="noSetHeight">
+        <div style="display:flex;flex-wrap:wrap;width:100%;">
+            <span style="flex: 1 1 250px;padding-right:10px;">Freeband Base Value: {{freebandBaseValue}}</span>
+            <span style="flex: 1 1 150px;padding-right:10px;">Break Value: {{breakValue}}</span>
+            <span style="flex: 1 1 150px;padding-right:10px;">Hero Total: {{completeHeroCount}}</span>
+            <span style="flex: 1 1 150px;padding-right:10px;">Follower Total: {{completeFollowerCount}}</span>
         </div>
+    </mat-toolbar-row>
+    <mat-toolbar-row *ngFor="let msg of errorMessages" class="noSetHeight errorMessage">
+        <span>{{msg}}</span>
     </mat-toolbar-row>
 </mat-toolbar>
 <mat-sidenav-container id="mainContainer">

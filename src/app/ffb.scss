@@ -101,15 +101,27 @@ mat-sidenav-container#mainContainer {
     flex: 1;
 }
 
-.errorMessage {
-    padding: 24px;
-    background-color: red;
-    flex: 1;
-}
+// .errorMessage {
+//     padding: 24px;
+//     background-color: red;
+//     flex: 1;
+// }
+
 
 .floatingTopInfo {
     position:fixed;
     z-index:2;
     background-color:#fafafa;
     width:100%;
+}
+
+mat-toolbar-row {
+    &.noSetHeight {
+        height: initial;
+    }
+
+    &.errorMessage {
+        white-space: normal;
+        background-color: red;
+    }
 }

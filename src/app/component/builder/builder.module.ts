@@ -9,7 +9,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { BuilderComponent } from './builder.component';
 import { FreebandSetupModule } from './freeband-setup/freeband-setup.module';
-import { FreebandStatsModule } from './freeband-stats/freeband-stats.module';
 import { ModelSelectorModule } from './model-selector/model-selector.module';
 
 @NgModule({
@@ -22,7 +21,6 @@ import { ModelSelectorModule } from './model-selector/model-selector.module';
         MatSidenavModule,
         MatToolbarModule,
         FreebandSetupModule,
-        FreebandStatsModule,
         ModelSelectorModule
     ],
     declarations: [

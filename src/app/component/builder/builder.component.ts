@@ -12,6 +12,7 @@ import { summaryFileName } from '../../../../node_modules/@angular/compiler/src/
 export class BuilderComponent {
     @ViewChild('sidenav') sidenav: MatSidenav;
     altLeader: boolean;
+    breakValue: number;
     completeFollowerCount: number;
     completeHeroCount: number;
     errorMessages: string[];
@@ -111,6 +112,8 @@ export class BuilderComponent {
         if ( (( (this.completeHeroCount - allyHeroCount) / 2) < allyHeroCount) || (( (this.completeFollowerCount - allyFollowerCount) / 2) < allyFollowerCount) ) {
             this.addErrorMessage('Too many ally models selected. There must be a 2:1 ratio of ally to non-ally models for a given type.');
         }
+
+        this.breakValue = Math.ceil(this.totalLifePoints / 2);
     }
 
     modelSelected(model: Model) {
