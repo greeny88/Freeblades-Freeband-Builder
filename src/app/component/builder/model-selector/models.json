@@ -201,7 +201,8 @@
             "type": "Hero"
         },
         "type": "Standard",
-        "value": 29
+        "value": 29,
+        "gender": "M"
     },
     {
         "factions": ["Kuzaarik Forgers"],
@@ -253,7 +254,8 @@
             "armor": 4
         },
         "type": "Leader",
-        "value": 39
+        "value": 39,
+        "gender": "F"
     },
     {
         "factions": ["Black Rose Bandits"],
@@ -279,7 +281,8 @@
             "armor": 2
         },
         "type": "Caster",
-        "value": 31
+        "value": 31,
+        "gender": "F"
     },
     {
         "factions": ["Black Rose Bandits"],
@@ -306,7 +309,8 @@
             "armor": 3
         },
         "type": "Standard",
-        "value": 32
+        "value": 32,
+        "gender": "M"
     },
     {
         "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
@@ -335,7 +339,8 @@
             "armor": 4
         },
         "type": "Standard",
-        "value":27
+        "value":27,
+        "gender": "M"
     },
     {
         "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
@@ -373,7 +378,8 @@
             "armor": 3
         },
         "type": "Standard",
-        "value": 33
+        "value": 33,
+        "gender": "M"
     },
     {
         "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
@@ -397,7 +403,8 @@
             "armor": 4
         },
         "type": "Standard",
-        "value": 25
+        "value": 25,
+        "gender": "M"
     },
     {
         "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
@@ -419,7 +426,8 @@
             "armor": 3
         },
         "type": "Standard",
-        "value": 30
+        "value": 30,
+        "gender": "F"
     },
     {
         "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
@@ -472,7 +480,8 @@
             "armor": 3
         },
         "type": "Standard",
-        "value": 33
+        "value": 33,
+        "gender": "M"
     },
     {
         "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
@@ -502,7 +511,8 @@
             "armor": 3
         },
         "type": "Standard",
-        "value": 28
+        "value": 28,
+        "gender": "M"
     },
     {
         "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
@@ -527,7 +537,8 @@
             "armor": 3
         },
         "type": "Standard",
-        "value": 11
+        "value": 11,
+        "gender": "E"
     },
     {
         "factions": ["Black Rose Bandits", "Black Thorn Bandits", "Falkaaran Adventurers"],
@@ -547,7 +558,8 @@
             "shield": "S"
         },
         "type": "Standard",
-        "value": 11
+        "value": 11,
+        "gender": "M"
     },
     {
         "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
@@ -570,7 +582,8 @@
             "armor": 3
         },
         "type": "Standard",
-        "value": 12
+        "value": 12,
+        "gender": "M"
     },
     {
         "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
@@ -596,7 +609,8 @@
             }]
         },
         "type": "Standard",
-        "value": 9
+        "value": 9,
+        "gender": "F"
     },
     {
         "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
@@ -618,7 +632,8 @@
             }]
         },
         "type": "Standard",
-        "value": 12
+        "value": 12,
+        "gender": "M"
     },
     {
         "factions": ["Black Thorn Bandits"],
@@ -1397,7 +1412,8 @@
             "armor": 4
         },
         "type": "Leader",
-        "value": 50
+        "value": 50,
+        "gender": "M"
     },
     {
         "factions": ["Demons of Karelon","Grular Invaders"],
@@ -1424,7 +1440,8 @@
             "armor": 4
         },
         "type": "Caster",
-        "value": 40
+        "value": 40,
+        "gender": "M"
     },
     {
         "factions": ["Demons of Karelon","Grular Invaders"],
@@ -1453,7 +1470,8 @@
             "armor": 3
         },
         "type": "Standard",
-        "value": 27
+        "value": 27,
+        "gender": "M"
     },
     {
         "factions": ["Demons of Karelon","Grular Invaders"],
@@ -1480,7 +1498,8 @@
             "armor": 3
         },
         "type": "Standard",
-        "value": 34
+        "value": 34,
+        "gender": "M"
     },
     {
         "factions": ["Demons of Karelon","Grular Invaders"],
@@ -1503,7 +1522,8 @@
             "armor": 3
         },
         "type": "Standard",
-        "value": 36
+        "value": 36,
+        "gender": "M"
     },
     {
         "factions": ["Demons of Karelon","Grular Invaders"],
@@ -1533,7 +1553,8 @@
             "armor": 3
         },
         "type": "Standard",
-        "value": 41
+        "value": 41,
+        "gender": "F"
     },
     {
         "factions": ["Demons of Karelon"],
@@ -1555,7 +1576,8 @@
             "armor": 3
         },
         "type": "Standard",
-        "value": 33
+        "value": 33,
+        "gender": "M"
     },
     {
         "factions": ["Demons of Karelon"],
@@ -1574,7 +1596,8 @@
             "armor": 6
         },
         "type": "Standard",
-        "value": 28
+        "value": 28,
+        "gender": "M"
     },
     {
         "factions": ["Demons of Karelon"],
@@ -1594,7 +1617,8 @@
             "armor": 2
         },
         "type": "Standard",
-        "value": 9
+        "value": 9,
+        "gender": "M"
     },
     {
         "factions": ["Demons of Karelon"],
@@ -1613,7 +1637,8 @@
             "armor": 2
         },
         "type": "Standard",
-        "value": 5
+        "value": 5,
+        "gender": "M"
     },
     {
         "factions": ["Demons of Karelon","Grular Invaders"],
@@ -1643,7 +1668,8 @@
             "armor": 3
         },
         "type": "Standard",
-        "value": 28
+        "value": 28,
+        "gender": "F"
     },
     {
         "factions": ["Demons of Karelon"],
@@ -1665,7 +1691,8 @@
             "armor": 3
         },
         "type": "Standard",
-        "value": 25
+        "value": 25,
+        "gender": "M"
     },
     {
         "factions": ["Eclipse Sisterhood"],
@@ -1690,7 +1717,8 @@
             "armor": 3
         },
         "type": "Leader",
-        "value": 39
+        "value": 39,
+        "gender": "F"
     },
     {
         "factions": ["Eclipse Sisterhood"],
@@ -1713,7 +1741,8 @@
             "rating": 10
         },
         "type": "Caster",
-        "value": 31
+        "value": 31,
+        "gender": "F"
     },
     {
         "factions": ["Eclipse Sisterhood"],
@@ -1737,7 +1766,8 @@
             "armor": 3
         },
         "type": "Standard",
-        "value": 30
+        "value": 30,
+        "gender": "F"
     },
     {
         "factions": ["Eclipse Sisterhood"],
@@ -1761,7 +1791,8 @@
             "armor": 3
         },
         "type": "Standard",
-        "value": 29
+        "value": 29,
+        "gender": "F"
     },
     {
         "factions": ["Eclipse Sisterhood"],
@@ -1791,7 +1822,8 @@
             "armor": 3
         },
         "type": "Standard",
-        "value": 30
+        "value": 30,
+        "gender": "F"
     },
     {
         "factions": ["Eclipse Sisterhood"],
@@ -1826,7 +1858,8 @@
             "armor": 3
         },
         "type": "Standard",
-        "value": 35
+        "value": 35,
+        "gender": "F"
     },
     {
         "factions": ["Eclipse Sisterhood"],
@@ -1863,7 +1896,8 @@
             "armor": 2
         },
         "type": "Standard",
-        "value": 30
+        "value": 30,
+        "gender": "F"
     },
     {
         "factions": ["Eclipse Sisterhood"],
@@ -1887,7 +1921,8 @@
             "armor": 2
         },
         "type": "Standard",
-        "value": 12
+        "value": 12,
+        "gender": "F"
     },
     {
         "factions": ["Eclipse Sisterhood"],
@@ -1906,7 +1941,8 @@
             "armor": 2
         },
         "type": "Standard",
-        "value": 9
+        "value": 9,
+        "gender": "F"
     },
     {
         "factions": ["Eclipse Sisterhood"],
@@ -1938,7 +1974,8 @@
             "armor": 2
         },
         "type": "Standard",
-        "value": 11
+        "value": 11,
+        "gender": "F"
     },
     {
         "factions": ["Eclipse Sisterhood"],
@@ -1964,7 +2001,8 @@
             "armor": 2
         },
         "type": "Standard",
-        "value": 9
+        "value": 9,
+        "gender": "F"
     },
     {
         "factions": ["Falkaaran Adventurers"],
@@ -1986,7 +2024,8 @@
             "armor": 5
         },
         "type": "Leader",
-        "value": 39
+        "value": 39,
+        "gender": "M"
     },
     {
         "factions": ["Falkaaran Adventurers"],
@@ -2010,7 +2049,8 @@
             "armor": 2
         },
         "type": "Caster",
-        "value": 31
+        "value": 31,
+        "gender": "M"
     },
     {
         "factions": ["Falkaaran Adventurers"],
@@ -2034,7 +2074,8 @@
             "armor": 4
         },
         "type": "Leader",
-        "value": 39
+        "value": 39,
+        "gender": "M"
     },
     {
         "factions": ["Falkaaran Adventurers"],
@@ -2057,7 +2098,8 @@
             "armor": 4
         },
         "type": "Caster",
-        "value": 31
+        "value": 31,
+        "gender": "M"
     },
     {
         "factions": ["Falkaaran Adventurers"],
@@ -2079,7 +2121,8 @@
             "armor": 2
         },
         "type": "Standard",
-        "value": 34
+        "value": 34,
+        "gender": "M"
     },
     {
         "factions": ["Falkaaran Adventurers"],
@@ -2101,7 +2144,8 @@
             "armor": 2
         },
         "type": "Standard",
-        "value": 31
+        "value": 31,
+        "gender": "M"
     },
     {
         "factions": ["Falkaaran Adventurers"],
@@ -2124,7 +2168,8 @@
             "armor": 5
         },
         "type": "Standard",
-        "value": 28
+        "value": 28,
+        "gender": "F"
     },
     {
         "factions": ["Falkaaran Adventurers"],
@@ -2148,7 +2193,8 @@
             "shield": "S"
         },
         "type": "Standard",
-        "value": 29
+        "value": 29,
+        "gender": "M"
     },
     {
         "factions": ["Falkaaran Adventurers"],
@@ -2181,7 +2227,8 @@
             "armor": 3
         },
         "type": "Standard",
-        "value": 29
+        "value": 29,
+        "gender": "M"
     },
     {
         "factions": ["Falkaaran Adventurers"],
@@ -2203,7 +2250,8 @@
             "armor": 2
         },
         "type": "Standard",
-        "value": 26
+        "value": 26,
+        "gender": "M"
     },
     {
         "factions": ["Falkaaran Adventurers"],
@@ -2226,7 +2274,8 @@
             "armor": 3
         },
         "type": "Standard",
-        "value": 29
+        "value": 29,
+        "gender": "F"
     },
     {
         "factions": ["Falkaaran Adventurers"],
@@ -2246,7 +2295,8 @@
             "shield": "S"
         },
         "type": "Standard",
-        "value": 15
+        "value": 15,
+        "gender": "M"
     },
     {
         "factions": ["Falkaaran Adventurers"],
@@ -2273,7 +2323,8 @@
             "armor": 2
         },
         "type": "Standard",
-        "value": 8
+        "value": 8,
+        "gender": "M"
     },
     {
         "factions": ["Falkaaran Adventurers"],
@@ -2298,7 +2349,8 @@
             "armor": 3
         },
         "type": "Standard",
-        "value": 16
+        "value": 16,
+        "gender": "F"
     },
     {
         "factions": ["Grular Invaders"],
@@ -2323,7 +2375,8 @@
             "armor": 5
         },
         "type": "Leader",
-        "value": 39
+        "value": 39,
+        "gender": "M"
     },
     {
         "factions": ["Grular Invaders"],
@@ -2350,7 +2403,8 @@
             }
         },
         "type": "Caster",
-        "value": 31
+        "value": 31,
+        "gender": "M"
     },
     {
         "factions": ["Grular Invaders"],
@@ -2376,7 +2430,8 @@
             "armor": 4
         },
         "type": "Standard",
-        "value": 29
+        "value": 29,
+        "gender": "M"
     },
     {
         "factions": ["Grular Invaders"],
@@ -2405,7 +2460,8 @@
             "armor": 4
         },
         "type": "Standard",
-        "value": 29
+        "value": 29,
+        "gender": "M"
     },
     {
         "factions": ["Grular Invaders"],
@@ -2424,7 +2480,8 @@
             "armor": 3
         },
         "type": "Standard",
-        "value": 11
+        "value": 11,
+        "gender": "M"
     },
     {
         "factions": ["Grular Invaders"],
@@ -2445,7 +2502,8 @@
             "talents": ["Flurry","Wild Charge"]
         },
         "type": "Standard",
-        "value": 13
+        "value": 13,
+        "gender": "M"
     },
     {
         "factions": ["Grular Invaders"],
@@ -2470,7 +2528,8 @@
             "armor": 3
         },
         "type": "Standard",
-        "value": 12
+        "value": 12,
+        "gender": "M"
     },
     {
         "factions": ["Haradelan Questers"],
@@ -3287,7 +3346,8 @@
                 "rating": 8
             }]
         },
-        "value":39
+        "value":39,
+        "gender": "M"
     },
     {
         "factions": ["Urdaggar Tribes of Valor"],
@@ -3312,7 +3372,8 @@
                 "spirit": 10
             }
         },
-        "value":39
+        "value":39,
+        "gender": "F"
     },
     {
         "factions": ["Urdaggar Tribes of Valor"],
@@ -3335,7 +3396,8 @@
                 "rating":10
             }
         },
-        "value":31
+        "value":31,
+        "gender": "F"
     },
     {
         "factions": ["Urdaggar Tribes of Valor"],
@@ -3357,7 +3419,8 @@
                 "endurance": 10
             }
         },
-        "value":28
+        "value":28,
+        "gender": "M"
     },
     {
         "factions": ["Urdaggar Tribes of Valor"],
@@ -3379,7 +3442,8 @@
                 "strength": 10
             }
         },
-        "value":32
+        "value":32,
+        "gender": "M"
     },
     {
         "factions": ["Urdaggar Tribes of Valor"],
@@ -3443,7 +3507,8 @@
                 "rating":10
             }]
         },
-        "value":32
+        "value":32,
+        "gender": "F"
     },
     {
         "factions": ["Urdaggar Tribes of Valor"],
@@ -3544,7 +3609,8 @@
                 "dexterity": 10
             }
         },
-        "value":30
+        "value":30,
+        "gender": "M"
     },
     {
         "factions": ["Black Rose Bandits","Black Thorn Bandits","Urdaggar Tribes of Valor"],
