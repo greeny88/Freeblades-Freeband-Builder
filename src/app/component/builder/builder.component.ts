@@ -49,14 +49,17 @@ export class BuilderComponent {
     }
 
     calculateFreeband() {
-        this.freebandBaseValue = 0;
-        this.totalLifePoints = 0;
-        this.errorMessages = [];
-        let heroCount: number = 0;
-        this.completeHeroCount = 0;
+        let allyFollowerCount: number = 0;
         let allyHeroCount: number = 0;
         this.completeFollowerCount = 0;
-        let allyFollowerCount: number = 0;
+        this.completeHeroCount = 0;
+        this.errorMessages = [];
+        this.freebandBaseValue = 0;
+        let heroCount: number = 0;
+        let leaderGender: string;
+        let nightwhisperFound: boolean = false;
+        this.totalLifePoints = 0;
+        let zetakorFound: boolean = false;
 
         for (let modelId in this.models) {
             let model: Model = this.models[modelId];
@@ -68,6 +71,12 @@ export class BuilderComponent {
                 this.completeHeroCount++;
                 if (model.stats.talentList.indexOf('Ally') > -1) {
                     allyHeroCount++;
+                    if (model.name === 'Nightwhisper') {
+                        nightwhisperFound = true;
+                    }
+                    if (model.name === 'Zetakor') {
+                        zetakorFound = true;
+                    }
                 }
             }
 
@@ -80,6 +89,10 @@ export class BuilderComponent {
 
             if (model.stats.talentList.indexOf('Leader') < 0 && model.type !== 'Caster' && model.stats.type === 'Hero') {
                 heroCount++;
+            }
+
+            if (model.stats.talentList.indexOf('Leader') > -1) {
+                leaderGender = model.gender;
             }
     
             if (this.freebandBaseValue > this.limit) {
@@ -111,6 +124,14 @@ export class BuilderComponent {
 
         if ( (( (this.completeHeroCount - allyHeroCount) / 2) < allyHeroCount) || (( (this.completeFollowerCount - allyFollowerCount) / 2) < allyFollowerCount) ) {
             this.addErrorMessage('Too many ally models selected. There must be a 2:1 ratio of ally to non-ally models for a given type.');
+        }
+
+        if (nightwhisperFound && leaderGender !== 'F') {
+            this.addErrorMessage('Nightwhisper can only be in a freeband lead by a female leader.')
+        }
+
+        if (zetakorFound && leaderGender !== 'M') {
+            this.addErrorMessage('Zetakor can only be in a freeband lead by a male.')
         }
 
         this.breakValue = Math.ceil(this.totalLifePoints / 2);

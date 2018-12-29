@@ -2529,7 +2529,7 @@
         },
         "type": "Standard",
         "value": 12,
-        "gender": "M"
+        "gender": "F"
     },
     {
         "factions": ["Haradelan Questers"],
@@ -2549,7 +2549,8 @@
             "talents": ["Leader","Steadfast","Parry","Parry","Shield Bash"]
         },
         "type": "Leader",
-        "value": 39
+        "value": 39,
+        "gender": "M"
     },
     {
         "factions": ["Haradelan Questers"],
@@ -2571,7 +2572,8 @@
             }
         },
         "type": "Leader",
-        "value": 39
+        "value": 39,
+        "gender": "M"
     },
     {
         "factions": ["Haradelan Questers"],
@@ -2590,7 +2592,8 @@
             "talents": ["Leader","Steadfast","Die Hard","Die Hard","Wild Charge","Bull Rush","Impact","Impetuous"]
         },
         "type": "Leader",
-        "value": 39
+        "value": 39,
+        "gender": "M"
     },
     {
         "factions": ["Haradelan Questers"],
@@ -2612,7 +2615,8 @@
             }
         },
         "type": "Leader",
-        "value": 39
+        "value": 39,
+        "gender": "M"
     },
     {
         "factions": ["Haradelan Questers"],
@@ -2645,7 +2649,8 @@
             }
         },
         "type": "Leader",
-        "value": 50
+        "value": 50,
+        "gender": "F"
     },
     {
         "factions": ["Haradelan Questers"],
@@ -2671,7 +2676,8 @@
                 "rating": 10
             }
         },
-        "value": 33
+        "value": 33,
+        "gender": "M"
     },
     {
         "factions": ["Haradelan Questers"],
@@ -2694,7 +2700,8 @@
                 "dexterity": 10
             }
         },
-        "value": 30
+        "value": 30,
+        "gender": "M"
     },
     {
         "factions": ["Haradelan Questers"],
@@ -2716,7 +2723,8 @@
                 "strength": 10
             }
         },
-        "value": 30
+        "value": 30,
+        "gender": "M"
     },
     {
         "factions": ["Haradelan Questers"],
@@ -2735,7 +2743,8 @@
             "discipline": 10,
             "talents": ["Die Hard","Die Hard","Wild Charge","Bull Rush","Impact","Impetuous"]
         },
-        "value": 30
+        "value": 30,
+        "gender": "M"
     },
     {
         "factions": ["Haradelan Questers"],
@@ -2757,7 +2766,8 @@
                 "endurance": 10
             }
         },
-        "value": 30
+        "value": 30,
+        "gender": "M"
     },
     {
         "factions": ["Haradelan Questers"],
@@ -2784,7 +2794,8 @@
                 "rating": 10
             }]
         },
-        "value": 30
+        "value": 30,
+        "gender": "M"
     },
     {
         "factions": ["Haradelan Questers"],
@@ -2816,7 +2827,8 @@
                 "dexterity": 10
             }
         },
-        "value": 41
+        "value": 41,
+        "gender": "F"
     },
     {
         "factions": ["Haradelan Questers"],
@@ -2836,7 +2848,8 @@
             "discipline": 8,
             "talents": ["Parry","Sergeant[Muster]","Shield Bash"]
         },
-        "value": 26
+        "value": 26,
+        "gender": "F"
     },
     {
         "factions": ["Haradelan Questers"],
@@ -2858,7 +2871,8 @@
                 "strength": 10
             }
         },
-        "value": 26
+        "value": 26,
+        "gender": "M"
     },
     {
         "factions": ["Haradelan Questers"],
@@ -2877,7 +2891,8 @@
             "discipline": 8,
             "talents": ["Die Hard","Sergeant[Muster]","Bull Rush","Impact","Impetuous"]
         },
-        "value": 26
+        "value": 26,
+        "gender": "M"
     },
     {
         "factions": ["Haradelan Questers"],
@@ -2897,7 +2912,8 @@
             "armor": 4,
             "discipline": 6
         },
-        "value": 12
+        "value": 12,
+        "gender": "M"
     },
     {
         "factions": ["Haradelan Questers"],
@@ -2921,7 +2937,8 @@
             "armor": 2,
             "discipline": 4
         },
-        "value": 6
+        "value": 6,
+        "gender": "M"
     },
     {
         "factions": ["Haradelan Questers"],
@@ -2941,7 +2958,8 @@
             "armor": 2,
             "discipline": 4
         },
-        "value": 8
+        "value": 8,
+        "gender": "M"
     },
     {
         "factions": ["Trilian Seekers"],
@@ -2964,7 +2982,8 @@
                 "agility": 10
             }
         },
-        "value": 39
+        "value": 39,
+        "gender": "M"
     },
     {
         "factions": ["Trilian Seekers"],
@@ -2990,7 +3009,8 @@
             "discipline": 12,
             "talents": ["Cavalry","Leader","Parry","Bladedancer","Scout","Fast"]
         },
-        "value": 44
+        "value": 44,
+        "gender": "F"
     },
     {
         "factions": ["Trilian Seekers"],
@@ -3016,7 +3036,8 @@
             "discipline": 12,
             "talents": ["Leader","Parry","Bladedancer","Scout"]
         },
-        "value": 39
+        "value": 39,
+        "gender": "F"
     },
     {
         "factions": ["Trilian Seekers"],
@@ -3040,7 +3061,8 @@
                 "rating": 10
             }
         },
-        "value": 32
+        "value": 32,
+        "gender": "F"
     },
     {
         "factions": ["Trilian Seekers"],
@@ -3064,7 +3086,8 @@
                 "rating": 10
             }
         },
-        "value": 32
+        "value": 32,
+        "gender": "M"
     },
     {
         "factions": ["Trilian Seekers"],
@@ -3090,7 +3113,8 @@
             "discipline": 10,
             "talents": ["Cavalry","Parry","Bladedancer","Scout","Fast"]
         },
-        "value": 37
+        "value": 37,
+        "gender": "F"
     },
     {
         "factions": ["Trilian Seekers"],
@@ -3116,7 +3140,8 @@
             "discipline": 10,
             "talents": ["Parry","Bladedancer","Scout"]
         },
-        "value": 32
+        "value": 32,
+        "gender": "F"
     },
     {
         "factions": ["Trilian Seekers"],
@@ -3143,7 +3168,8 @@
                 "rating": 8
             }]
         },
-        "value": 30
+        "value": 30,
+        "gender": "M"
     },
     {
         "factions": ["Trilian Seekers"],
@@ -3179,7 +3205,8 @@
                 "rating": 10
             }]
         },
-        "value": 34
+        "value": 34,
+        "gender": "F"
     },
     {
         "factions": ["Trilian Seekers"],
@@ -3210,7 +3237,8 @@
                 "agility": 10
             }
         },
-        "value": 37
+        "value": 37,
+        "gender": "M"
     },
     {
         "factions": ["Trilian Seekers"],
@@ -3240,7 +3268,8 @@
                 "agility": 12
             }
         },
-        "value": 30
+        "value": 30,
+        "gender": "M"
     },
     {
         "factions": ["Trilian Seekers"],
@@ -3266,7 +3295,8 @@
             "discipline": 6,
             "talents": ["Arboreal"]
         },
-        "value":16
+        "value":16,
+        "gender": "M"
     },
     {
         "factions": ["Trilian Seekers"],
@@ -3293,7 +3323,8 @@
             "discipline": 6,
             "talents": ["Treefall"]
         },
-        "value":13
+        "value":13,
+        "gender": "F"
     },
     {
         "factions": ["Trilian Seekers"],
@@ -3319,7 +3350,8 @@
             "discipline": 6,
             "talents": ["Arboreal","Scout"]
         },
-        "value":17
+        "value":17,
+        "gender": "M"
     },
     {
         "factions": ["Urdaggar Tribes of Valor"],
@@ -3478,7 +3510,8 @@
                 "rating":8
             }]
         },
-        "value":28
+        "value":28,
+        "gender": "F"
     },
     {
         "factions": ["Urdaggar Tribes of Valor"],
@@ -3536,7 +3569,8 @@
                 "rating":8
             }]
         },
-        "value":8
+        "value":8,
+        "gender": "F"
     },
     {
         "factions": ["Urdaggar Tribes of Valor"],
@@ -3556,7 +3590,8 @@
             "armor": 3,
             "discipline": 6
         },
-        "value":12
+        "value":12,
+        "gender": "M"
     },
     {
         "factions": ["Urdaggar Tribes of Valor"],
@@ -3585,7 +3620,8 @@
                 "rating":6
             }]
         },
-        "value":8
+        "value":8,
+        "gender": "M"
     },
     {
         "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Trilian Seekers","Urdaggar Tribes of Valor"],
@@ -3750,5 +3786,86 @@
         },
         "gender": "F",
         "value": 25
+    },
+    {
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "name": "Nightwhisper",
+        "displayName": "Nightwhisper",
+        "stats": {
+            "discipline": 8,
+            "type": "Hero",
+            "talents": ["Running Shot","Dodge","Scout","Darkvision","Elusive","Harasser","Freerunner","Leaper","Ally[Independent]"],
+            "abilities": {
+                "agility": 12
+            },
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Long Knife"
+            }],
+            "range": [{
+                "rating": 10,
+                "damage": 6,
+                "damageBonus": 1,
+                "name": "Roondar",
+                "abilities": ["sb"],
+                "distance": 8
+            }],
+            "armor": 3
+        },
+        "type": "Standard",
+        "value": 30,
+        "gender": "F"
+    },
+    {
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "name": "Zetakor",
+        "displayName": "Zetakor",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "damageBonus": 1,
+                "name": "Sakhazet",
+                "abilities": ["let"]
+            }],
+            "shield": "L",
+            "armor": 5,
+            "discipline": 10,
+            "talents": ["Parry","Bladeflash","Conquer","Taunt","Ally[Independent]"]
+        },
+        "gender": "M",
+        "value": 30
+    },
+    {
+        "factions": ["Black Rose Bandits","Black Thorn Bandits"],
+        "name": "Bard of the Arlian",
+        "displayName": "Bard of the Arlian",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 4,
+                "name": "Dagger"
+            }],
+            "armor": 2,
+            "discipline": 8,
+            "talents": ["Perform[Bardsong,6]","Dodge","Elusive","Outperform","Protected"],
+            "abilities": {
+                "agility": 12
+            },
+            "skills": [{
+                "name": "Perform",
+                "rating": 10
+            }]
+        },
+        "gender": "F",
+        "value": 33
     }
 ]
