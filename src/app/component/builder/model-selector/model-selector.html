@@ -1,6 +1,7 @@
 <div class="mdc-layout-grid">
     <mat-form-field>
         <mat-select [placeholder]="type !== 'Standard' ? type : 'Model'" (selectionChange)="modelSelected($event)" [(value)]="selected">
+            <mat-option>None</mat-option>
             <mat-option *ngFor="let model of models" [value]="model">{{model.displayName}} - {{model.stats.type}} - {{model.value}}</mat-option>
         </mat-select>
     </mat-form-field>

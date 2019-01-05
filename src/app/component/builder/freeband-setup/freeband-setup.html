@@ -1,11 +1,11 @@
 <div>
     <mat-form-field style="width:100%">
-        <mat-select placeholder="Faction" [(value)]="selectedFaction">
+        <mat-select placeholder="Faction*" [(value)]="selectedFaction">
             <mat-option *ngFor="let faction of factions" [value]="faction">{{faction}}</mat-option>
         </mat-select>
     </mat-form-field>
     <mat-form-field style="width:100%">
-        <input matInput placeholder="Freeband Limit" [(ngModel)]="freebandLimit" >
+        <input matInput type="number" placeholder="Freeband Limit*" [(ngModel)]="freebandLimit" >
     </mat-form-field>
     <mat-checkbox [(ngModel)]="altLeader">Enable Alternate Leader Rule</mat-checkbox>
     <div>

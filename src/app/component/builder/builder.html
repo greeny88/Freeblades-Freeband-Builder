@@ -23,8 +23,8 @@
     </mat-sidenav>
     <mat-sidenav-content>
         <ng-container *ngIf="faction && limit; else setup">
-            <model-selector [faction]="faction" type="Leader" [altLeader]="altLeader" (onModelSelected)="modelSelected($event)" componentId="Leader"></model-selector>
-            <model-selector [faction]="faction" type="Caster" (onModelSelected)="modelSelected($event)" componentId="Caster"></model-selector>
+            <model-selector [faction]="faction" type="Leader" [altLeader]="altLeader" (onModelSelected)="modelSelected($event)" [componentId]="leaderId"></model-selector>
+            <model-selector [faction]="faction" type="Caster" (onModelSelected)="modelSelected($event)" [componentId]="casterId"></model-selector>
             <ng-container *ngFor="let id of extraModels">
                 <model-selector [faction]="faction" type="Standard" [altLeader]="altLeader" (onModelSelected)="modelSelected($event)" [componentId]="id"
                     (onModelRemoved)="removeModel($event)"></model-selector>
@@ -53,3 +53,4 @@
         </ng-template>
     </mat-sidenav-content>
 </mat-sidenav-container>
+<footer>This is a fan created tool based on the rules and models from Freeblades Fantasy Skirmish Game which is owned and created by DGS Games LLC (<a href="https://www.dgsgames.com/" target="_blank">https://www.dgsgames.com/</a>).</footer>

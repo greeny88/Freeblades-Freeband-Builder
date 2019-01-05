@@ -3,7 +3,6 @@ import { MatSidenav } from '@angular/material/sidenav';
 
 import { Model } from '../model';
 import template from './builder.html';
-import { summaryFileName } from '../../../../node_modules/@angular/compiler/src/aot/util';
 
 @Component({
     selector: 'builder',
@@ -13,6 +12,7 @@ export class BuilderComponent {
     @ViewChild('sidenav') sidenav: MatSidenav;
     altLeader: boolean;
     breakValue: number;
+    casterId: string;
     completeFollowerCount: number;
     completeHeroCount: number;
     errorMessages: string[];
@@ -21,12 +21,12 @@ export class BuilderComponent {
     private factionRules: Object;
     freebandBaseValue: number;
     private heroCount: number;
+    leaderId: string;
     limit: number;
     models: {[key: string]: Model};
     totalLifePoints: number;
 
     constructor() {
-        //TODO: add the rest of the faction specific rules
         this.factionRules = {
             'Black Rose Bandits': this.blackRoseBanditsRule,
             'Black Thorn Bandits': this.blackThornBanditsRule,
@@ -56,6 +56,7 @@ export class BuilderComponent {
         this.errorMessages = [];
         this.freebandBaseValue = 0;
         let heroCount: number = 0;
+        let leader: Model;
         let leaderGender: string;
         let nightwhisperFound: boolean = false;
         this.totalLifePoints = 0;
@@ -69,7 +70,7 @@ export class BuilderComponent {
 
             if (model.stats.type === 'Hero') {
                 this.completeHeroCount++;
-                if (model.stats.talentList.indexOf('Ally') > -1) {
+                if ('talentList' in model.stats && model.stats.talentList.indexOf('Ally') > -1) {
                     allyHeroCount++;
                     if (model.name === 'Nightwhisper') {
                         nightwhisperFound = true;
@@ -82,31 +83,32 @@ export class BuilderComponent {
 
             if (model.stats.type === 'Follower') {
                 this.completeFollowerCount++;
-                if (model.stats.talentList.indexOf('Ally') > -1) {
+                if ('talentList' in model.stats && model.stats.talentList.indexOf('Ally') > -1) {
                     allyFollowerCount++;
                 }
             }
 
-            if (model.stats.talentList.indexOf('Leader') < 0 && model.type !== 'Caster' && model.stats.type === 'Hero') {
+            if ('talentList' in model.stats && model.stats.talentList.indexOf('Leader') < 0 && model.type !== 'Caster' && model.stats.type === 'Hero') {
                 heroCount++;
             }
 
-            if (model.stats.talentList.indexOf('Leader') > -1) {
+            if ('talentList' in model.stats && model.stats.talentList.indexOf('Leader') > -1) {
+                leader = model;
                 leaderGender = model.gender;
-            }
-    
-            if (this.freebandBaseValue > this.limit) {
-                this.addErrorMessage('Total model value is too high. Remove models until value comes under the limit.');
             }
     
             let heroFound = 0;
             for (let key in this.models) {
+                //TODO: check for multiple casters
+
                 if(this.models[key]['name'] === model.name && model.stats.type === 'Hero') {
                     heroFound++;
                 }
             }
-            if (heroFound > 2) {
-                this.addErrorMessage(`You can only have two of any hero model (${model.name}).`);
+            // Grular Marauder exception
+            const heroLimit: number = (model.name === 'Marauder' && this.limit > 250) ? 3 : 2;
+            if (heroFound > heroLimit) {
+                this.addErrorMessage(`You can only have ${heroLimit} of a hero model (${model.name}).`);
             }
 
             try {
@@ -116,8 +118,15 @@ export class BuilderComponent {
             }
         }
     
+        if (this.freebandBaseValue > this.limit) {
+            this.addErrorMessage('Total model value is too high. Remove models until value comes under the limit.');
+        }
+    
         let allowedHeroCount = Math.floor((this.limit - 1) / 50);
         allowedHeroCount = (allowedHeroCount < 4) ? 4 : allowedHeroCount;
+        if (leader && 'stats' in leader && 'casting' in leader.stats) {
+            allowedHeroCount++;
+        }
         if (allowedHeroCount < heroCount) {
             this.addErrorMessage('Too many hero units added. You can only have four plus one for each 50 points over 251.');
         }
@@ -126,19 +135,23 @@ export class BuilderComponent {
             this.addErrorMessage('Too many ally models selected. There must be a 2:1 ratio of ally to non-ally models for a given type.');
         }
 
-        if (nightwhisperFound && leaderGender !== 'F') {
+        if (nightwhisperFound && leader.gender !== 'F') {
             this.addErrorMessage('Nightwhisper can only be in a freeband lead by a female leader.')
         }
 
-        if (zetakorFound && leaderGender !== 'M') {
+        if (zetakorFound && leader.gender !== 'M') {
             this.addErrorMessage('Zetakor can only be in a freeband lead by a male.')
         }
 
         this.breakValue = Math.ceil(this.totalLifePoints / 2);
     }
 
-    modelSelected(model: Model) {
-        this.models[model.component_id] = model;
+    modelSelected(model: Model | {component_id: string}) {
+        if ('type' in model) {
+            this.models[model.component_id] = model;
+        } else {
+            delete this.models[model.component_id];
+        }
         this.calculateFreeband();
     }
 
@@ -304,6 +317,8 @@ export class BuilderComponent {
     private reset() {
         this.extraModels = [];
         this.extraModels.push(this.uuidv4());
+        this.casterId = this.uuidv4();
+        this.leaderId = this.uuidv4();
         this.freebandBaseValue = 0;
         this.models = {};
         this.totalLifePoints = 0;

@@ -19,25 +19,32 @@ export class ModelSelectorComponent {
     factionModels : Model[] = factionModels;
     models : Model[];
     selected : Model;
+    private disallowedAltLeaders: String[] = [
+        'Duelist',
+        'Black Thorn',
+        'Bladerider First',
+        'Bladerider',
+        'Shadow Hunter',
+        'Azalakar'
+    ];
 
     constructor(private modelSelectorService: ModelSelectorService) {
         this.models = [];
     }
 
     ngOnChanges() {
-        console.log(this.type);
         this.models = [];
-        if (this.altLeader) {
+        if (this.altLeader && this.faction !== 'Haradelan Questers') {
             const factionModels = JSON.parse(JSON.stringify(this.factionModels));
             // LRB 18-2 pg 90
             for (let currentmodel of factionModels) {
                 let model = Object.assign({}, currentmodel);
                 if (model.factions.indexOf(this.faction) > -1) {
-                    //TODO: specific models can't be changed according to this rule
                     if (this.type === 'Leader' && model.type === 'Standard' 
                             && model.stats.type === 'Hero' 
-                            && ['Animal','Demon','Feral','Warbeast'].some(v=> model.stats.talents.indexOf(v) < 0)
-                            && model.stats.talents.every(t => t.indexOf('Ally') < 0) ) {
+                            && ['Animal','Demon','Feral','Warbeast'].every(v=> model.stats.talents.indexOf(v) < 0)
+                            && model.stats.talents.every(t => t.indexOf('Ally') < 0) 
+                            && this.disallowedAltLeaders.indexOf(model.name) < 0) {
                         model.stats.talents.push('Leader');
                         //TODO: attempt to determine which value is better to increase: melee or range
                         //TODO: even better, find way of allowing user to pick per model
@@ -54,7 +61,7 @@ export class ModelSelectorComponent {
                             model.value += 7;
                         }
                         this.models.push(model);
-                    } else if (this.type === 'Standard' && model.type === 'Leader') {
+                    } else if (this.type === 'Standard' && model.type === 'Leader' && this.disallowedAltLeaders.indexOf(model.name) < 0) {
                         model.stats.talents = model.stats.talents.filter((tal) => tal !== 'Leader');
                         //TODO: determine which value is higher before decreasing: melee or range
                         model.stats.melee = model.stats.melee.map((mAtk) => {
@@ -89,9 +96,12 @@ export class ModelSelectorComponent {
     }
 
     modelSelected() {
-        let model = this.selected;
+        let model: any = {};
+        if (this.selected) {
+            model = this.selected;
+            model.stats = (<any>Object).assign(this.selected.stats, this.modelSelectorService.calculateStats(this.selected.stats));
+        }
         model.component_id = this.componentId;
-        this.selected.stats = (<any>Object).assign(this.selected.stats, this.modelSelectorService.calculateStats(this.selected.stats));
         this.onModelSelected.emit(model);
     }
 }
