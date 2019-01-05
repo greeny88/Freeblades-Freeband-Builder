@@ -11656,3 +11656,8 @@ mat-toolbar-row.errorMessage {
   white-space: normal;
   background-color: red; }
 
+footer {
+  text-align: center;
+  font-size: 12px;
+  font-size: 0.75rem; }
+
