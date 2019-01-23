@@ -83,7 +83,7 @@ $ffb-app-theme: mat-light-theme($ffb-app-primary, $ffb-app-accent, $ffb-app-warn
     @include border-left();
 }
 
-builder {
+#mainDisplay {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -100,12 +100,6 @@ h1.example-app-name {
 mat-sidenav-container#mainContainer {
     flex: 1;
 }
-
-// .errorMessage {
-//     padding: 24px;
-//     background-color: red;
-//     flex: 1;
-// }
 
 
 .floatingTopInfo {
@@ -129,4 +123,18 @@ mat-toolbar-row {
 footer {
     text-align: center;
     font-size: 0.75rem;
+}
+
+#printModelList {
+    display: none;
+}
+
+@media print {
+    #mainDisplay {
+        display: none;
+    }
+
+    #printModelList {
+        display: initial;
+    }
 }

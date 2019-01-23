@@ -1,56 +1,164 @@
-<mat-toolbar>
-    <mat-toolbar-row>
-        <button mat-icon-button (click)="sidenav.toggle()">
-            <mat-icon>menu</mat-icon>
-        </button>
-        <h1>Freeblades Freeband Builder</h1>
-    </mat-toolbar-row>
-    <mat-toolbar-row *ngIf="faction && limit" class="noSetHeight">
-        <div style="display:flex;flex-wrap:wrap;width:100%;">
-            <span style="flex: 1 1 250px;padding-right:10px;">Freeband Base Value: {{freebandBaseValue}}</span>
-            <span style="flex: 1 1 150px;padding-right:10px;">Break Value: {{breakValue}}</span>
-            <span style="flex: 1 1 150px;padding-right:10px;">Hero Total: {{completeHeroCount}}</span>
-            <span style="flex: 1 1 150px;padding-right:10px;">Follower Total: {{completeFollowerCount}}</span>
-        </div>
-    </mat-toolbar-row>
-    <mat-toolbar-row *ngFor="let msg of errorMessages" class="noSetHeight errorMessage">
-        <span>{{msg}}</span>
-    </mat-toolbar-row>
-</mat-toolbar>
-<mat-sidenav-container id="mainContainer">
-    <mat-sidenav #sidenav mode="side" opened="true">
-        <freeband-setup (onOptionsSet)="optionsSet($event)"></freeband-setup>
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <ng-container *ngIf="faction && limit; else setup">
-            <model-selector [faction]="faction" type="Leader" [altLeader]="altLeader" (onModelSelected)="modelSelected($event)" [componentId]="leaderId"></model-selector>
-            <model-selector [faction]="faction" type="Caster" (onModelSelected)="modelSelected($event)" [componentId]="casterId"></model-selector>
-            <ng-container *ngFor="let id of extraModels">
-                <model-selector [faction]="faction" type="Standard" [altLeader]="altLeader" (onModelSelected)="modelSelected($event)" [componentId]="id"
-                    (onModelRemoved)="removeModel($event)"></model-selector>
+<div id="mainDisplay">
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <h1>Freeblades Freeband Builder</h1>
+        </mat-toolbar-row>
+        <mat-toolbar-row *ngIf="faction && limit" class="noSetHeight">
+            <div style="display:flex;flex-wrap:wrap;width:100%;">
+                <span style="flex: 1 1 250px;padding-right:10px;">Freeband Base Value: {{freebandBaseValue}}</span>
+                <span style="flex: 1 1 150px;padding-right:10px;">Break Value: {{breakValue}}</span>
+                <span style="flex: 1 1 150px;padding-right:10px;">Hero Total: {{completeHeroCount}}</span>
+                <span style="flex: 1 1 150px;padding-right:10px;">Follower Total: {{completeFollowerCount}}</span>
+            </div>
+        </mat-toolbar-row>
+        <mat-toolbar-row *ngFor="let msg of errorMessages" class="noSetHeight errorMessage">
+            <span>{{msg}}</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-sidenav-container id="mainContainer">
+        <mat-sidenav #sidenav mode="side" opened="true">
+            <freeband-setup (onOptionsSet)="optionsSet($event)"></freeband-setup>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <ng-container *ngIf="faction && limit; else setup">
+                <model-selector [faction]="faction" type="Leader" [altLeader]="altLeader" (onModelSelected)="modelSelected($event)" [componentId]="leaderId"></model-selector>
+                <model-selector [faction]="faction" type="Caster" (onModelSelected)="modelSelected($event)" [componentId]="casterId"></model-selector>
+                <ng-container *ngFor="let id of extraModels">
+                    <model-selector [faction]="faction" type="Standard" [altLeader]="altLeader" (onModelSelected)="modelSelected($event)" [componentId]="id"
+                        (onModelRemoved)="removeModel($event)"></model-selector>
+                </ng-container>
+                <button mat-raised-button style="margin:24px;" (click)="addModel()">Add Model</button>
             </ng-container>
-            <button mat-raised-button style="margin:24px;" (click)="addModel()">Add Model</button>
-        </ng-container>
-        <ng-template #setup>
-            <p>Start by selecting the values in the menu so that you can begin building your freeband.</p>
-            <mat-list>
-                <mat-list-item>
-                    <h1 matLine>Faction - required</h1>
-                    <p matLine>Choose from any of the currently available factions</p>
-                </mat-list-item>
-                <mat-list-item>
-                    <h1 matLine>Limit - required</h1>
-                    <p matLine>The maximum size of the freeband based on the total value of the models picked.</p>
-                </mat-list-item>
-                <mat-list-item>
-                    <h1 matLine>Alternate Leader</h1>
-                    <p matLine>Enables the alternate leader rule by which additional models can be promoted to leader and leader models
-                        can be demoted to regular models.</p>
-                </mat-list-item>
-            </mat-list>
-            <p>A full description on Freeband construction rules can be found in the Living Rulebook (v18-2) starting on page
-                87.</p>
-        </ng-template>
-    </mat-sidenav-content>
-</mat-sidenav-container>
-<footer>This is a fan created tool based on the rules and models from Freeblades Fantasy Skirmish Game which is owned and created by DGS Games LLC (<a href="https://www.dgsgames.com/" target="_blank">https://www.dgsgames.com/</a>).</footer>
+            <ng-template #setup>
+                <p>Start by selecting the values in the menu so that you can begin building your freeband.</p>
+                <mat-list>
+                    <mat-list-item>
+                        <h1 matLine>Faction - required</h1>
+                        <p matLine>Choose from any of the currently available factions</p>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <h1 matLine>Limit - required</h1>
+                        <p matLine>The maximum size of the freeband based on the total value of the models picked.</p>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <h1 matLine>Alternate Leader</h1>
+                        <p matLine>Enables the alternate leader rule by which additional models can be promoted to leader and leader models
+                            can be demoted to regular models.</p>
+                    </mat-list-item>
+                </mat-list>
+                <p>A full description on Freeband construction rules can be found in the Living Rulebook (v18-2) starting on page
+                    87.</p>
+            </ng-template>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+    <footer>This is a fan created tool based on the rules and models from Freeblades Fantasy Skirmish Game which is owned and created by DGS Games LLC (<a href="https://www.dgsgames.com/" target="_blank">https://www.dgsgames.com/</a>).</footer>
+</div>
+<div id="printModelList">
+    <div class="mdc-layout-grid">
+        <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell--span-1">Freeband Base Value</div>
+            <div class="mdc-layout-grid__cell--span-1">{{freebandBaseValue}}</div>
+            <div class="mdc-layout-grid__cell--span-1">Break Value</div>
+            <div class="mdc-layout-grid__cell--span-1">{{breakValue}}</div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+        </div>
+    </div>
+    <div class="mdc-layout-grid" *ngFor="let model of modelList">
+        <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell--span-1">Type</div>
+            <div class="mdc-layout-grid__cell--span-1">{{model.displayName}}</div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+        </div>
+        <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell--span-1">Spd</div>
+            <div class="mdc-layout-grid__cell--span-1">{{model.stats.speed}}</div>
+            <div class="mdc-layout-grid__cell--span-1">Disc</div>
+            <div class="mdc-layout-grid__cell--span-1">d{{model.stats.discipline}}</div>
+            <div class="mdc-layout-grid__cell--span-1">Def</div>
+            <div class="mdc-layout-grid__cell--span-1">{{model.stats.defense}}<span *ngIf="model.stats.shield">{{model.stats.shield}}</span></div>
+            <div class="mdc-layout-grid__cell--span-1">AV</div>
+            <div class="mdc-layout-grid__cell--span-1">{{model.stats.armor}}</div>
+            <div class="mdc-layout-grid__cell--span-1">LP</div>
+            <div class="mdc-layout-grid__cell--span-1">{{model.stats.lifePoints}}</div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+        </div>
+        <div class="mdc-layout-grid__inner" *ngFor="let weapon of model.stats.melee">
+            <div class="mdc-layout-grid__cell--span-1">MAR</div>
+            <div class="mdc-layout-grid__cell--span-1">d{{weapon.rating}}</div>
+            <div class="mdc-layout-grid__cell--span-1">Weapon</div>
+            <div class="mdc-layout-grid__cell--span-3">{{weapon.name}}<span *ngFor="let ability of weapon.abilities"> {{ability}},</span></div>
+            <div class="mdc-layout-grid__cell--span-1">MW</div>
+            <div class="mdc-layout-grid__cell--span-1">d{{weapon.damage}}<span *ngIf="weapon.damageBonus > 0">&nbsp;+{{weapon.damageBonus}}</span></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+        </div>
+        <div class="mdc-layout-grid__inner" *ngFor="let weapon of model.stats.range">
+            <div class="mdc-layout-grid__cell--span-1">RAR</div>
+            <div class="mdc-layout-grid__cell--span-1">d{{weapon.rating}}</div>
+            <div class="mdc-layout-grid__cell--span-1">Weapon</div>
+            <div class="mdc-layout-grid__cell--span-3">{{weapon.name}}<span *ngFor="let ability of weapon.abilities"> {{ability}},</span> {{weapon.distance}}in-{{weapon.distance*2}}in-{{weapon.distance*3}}in</div>
+            <div class="mdc-layout-grid__cell--span-1">MW</div>
+            <div class="mdc-layout-grid__cell--span-1">d{{weapon.damage}}<span *ngIf="weapon.damageBonus > 0">&nbsp;+{{weapon.damageBonus}}</span></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+        </div>
+        <div class="mdc-layout-grid__inner" *ngIf="model.stats.casting">
+            <div class="mdc-layout-grid__cell--span-1">CAR</div>
+            <div class="mdc-layout-grid__cell--span-1">d{{model.stats.casting.rating}}</div>
+            <div class="mdc-layout-grid__cell--span-1">Power</div>
+            <div class="mdc-layout-grid__cell--span-1">{{model.stats.casting.power}}</div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+            <div class="mdc-layout-grid__cell--span-1"></div>
+        </div>
+        <div class="mdc-layout-grid__inner" *ngIf="model.stats.talents?.length > 0">
+            <div class="mdc-layout-grid__cell--span-1">Talents</div>
+            <div class="mdc-layout-grid__cell--span-11">{{model.stats.talentList}}</div>
+        </div>
+        <div class="mdc-layout-grid__inner" *ngIf="model.stats.skills?.length > 0">
+            <div class="mdc-layout-grid__cell--span-1">Skills</div>
+            <div class="mdc-layout-grid__cell--span-11">{{model.stats.skillList}}</div>
+        </div>
+        <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell--span-1">Agl</div>
+            <div class="mdc-layout-grid__cell--span-1">d{{model.stats.abilities.agility}}</div>
+            <div class="mdc-layout-grid__cell--span-1">Dex</div>
+            <div class="mdc-layout-grid__cell--span-1">d{{model.stats.abilities.dexterity}}</div>
+            <div class="mdc-layout-grid__cell--span-1">End</div>
+            <div class="mdc-layout-grid__cell--span-1">d{{model.stats.abilities.endurance}}</div>
+            <div class="mdc-layout-grid__cell--span-1">Knw</div>
+            <div class="mdc-layout-grid__cell--span-1">d{{model.stats.abilities.knowledge}}</div>
+            <div class="mdc-layout-grid__cell--span-1">Spr</div>
+            <div class="mdc-layout-grid__cell--span-1">d{{model.stats.abilities.spirit}}</div>
+            <div class="mdc-layout-grid__cell--span-1">Str</div>
+            <div class="mdc-layout-grid__cell--span-1">d{{model.stats.abilities.strength}}</div>
+        </div>
+    </div>
+</div>

@@ -23,6 +23,7 @@ export class BuilderComponent {
     private heroCount: number;
     leaderId: string;
     limit: number;
+    modelList: Model[];
     models: {[key: string]: Model};
     totalLifePoints: number;
 
@@ -57,13 +58,15 @@ export class BuilderComponent {
         this.freebandBaseValue = 0;
         let heroCount: number = 0;
         let leader: Model;
-        let leaderGender: string;
+        this.modelList = [];
         let nightwhisperFound: boolean = false;
         this.totalLifePoints = 0;
         let zetakorFound: boolean = false;
 
         for (let modelId in this.models) {
             let model: Model = this.models[modelId];
+
+            this.modelList.push(model);
 
             this.freebandBaseValue += model.value;
             this.totalLifePoints += model.stats.lifePoints;
@@ -94,7 +97,6 @@ export class BuilderComponent {
 
             if ('talentList' in model.stats && model.stats.talentList.indexOf('Leader') > -1) {
                 leader = model;
-                leaderGender = model.gender;
             }
     
             let heroFound = 0;
@@ -164,6 +166,13 @@ export class BuilderComponent {
         this.sidenav.close();
     }
 
+    printModelList() {
+        // let pwa = window.open(Pagelink, "_new");
+        // pwa.document.open();
+        // pwa.document.write(data);
+        // pwa.print();
+    }
+
     removeModel(id: string) {
         this.extraModels.splice(this.extraModels.indexOf(id), 1);
         delete this.models[id];
@@ -179,7 +188,9 @@ export class BuilderComponent {
     private blackRoseBanditsRule(model: Model): string | undefined {
         const models: Model[] = [];
         for (let key in this.models) {
-            models.push(this.models[key]);
+            if (this.models[key].stats.type === 'Hero') {
+                models.push(this.models[key]);
+            }
         }
         const checkForDups = models.filter(model => model.name !== 'Highwayman');
         return ((new Set(checkForDups)).size !== checkForDups.length) ? 'Bandits may not have duplicate heroes except for the Highwayman.' : undefined;
@@ -188,7 +199,9 @@ export class BuilderComponent {
     private blackThornBanditsRule(model: Model): string | undefined {
         const models: Model[] = [];
         for (let key in this.models) {
-            models.push(this.models[key]);
+            if (this.models[key].stats.type === 'Hero') {
+                models.push(this.models[key]);
+            }
         }
         const checkForDups = models.filter(model => model.name !== 'Highwayman');
         return ((new Set(checkForDups)).size !== checkForDups.length) ? 'Bandits may not have duplicate heroes except for the Highwayman.' : undefined;
