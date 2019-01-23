@@ -11620,7 +11620,7 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
   border-right: 1px solid black;
   border-left: 1px solid black; }
 
-builder {
+#mainDisplay {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11660,4 +11660,14 @@ footer {
   text-align: center;
   font-size: 12px;
   font-size: 0.75rem; }
+
+#printModelList {
+  display: none; }
+
+@media print {
+  #mainDisplay {
+    display: none; }
+  #printModelList {
+    display: inline;
+    display: initial; } }
 
