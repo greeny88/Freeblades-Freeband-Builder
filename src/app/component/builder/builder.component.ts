@@ -146,6 +146,8 @@ export class BuilderComponent {
         }
 
         this.breakValue = Math.ceil(this.totalLifePoints / 2);
+
+        //TODO: sort this.modelList for the print list
     }
 
     modelSelected(model: Model | {component_id: string}) {
@@ -164,13 +166,6 @@ export class BuilderComponent {
         this.reset();
         this.calculateFreeband();
         this.sidenav.close();
-    }
-
-    printModelList() {
-        // let pwa = window.open(Pagelink, "_new");
-        // pwa.document.open();
-        // pwa.document.write(data);
-        // pwa.print();
     }
 
     removeModel(id: string) {

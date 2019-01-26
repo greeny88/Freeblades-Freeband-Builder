@@ -62,7 +62,7 @@ const markup = {
 const cssLoader = {
 	loader: 'css-loader',
 	options: {
-		minimize: true,
+		//minimize: true,
 		importLoaders: 1
 	}
 };

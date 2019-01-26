@@ -1734,11 +1734,11 @@
                 "damage": 6,
                 "name": "Long Knife"
             }],
+            "casting": {
+                "power": 15,
+                "rating": 10
+            },
             "armor": 2
-        },
-        "casting": {
-            "power": 15,
-            "rating": 10
         },
         "type": "Caster",
         "value": 31,
@@ -3866,6 +3866,45 @@
             }]
         },
         "gender": "F",
+        "value": 33
+    },
+    {
+        "factions": ["Kuzaarik Forgers"],
+        "name": "Operative",
+        "displayName": "Operative",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 5,
+            "melee": [{
+                "rating": 10,
+                "damage": 6,
+                "damageBonus": 1,
+                "name": "Gadget"
+            }],
+            "range": [{
+                "rating": 8,
+                "damage": 6,
+                "name": "Grappler",
+                "abilities": ["pul","scl","thr"],
+                "distance": 2
+            }],
+            "armor": 4,
+            "discipline": 10,
+            "talents": ["Die Hard","Die Hard","Weaponeer","Wayfinder"],
+            "abilities": {
+                "dexterity": 10,
+                "endurance": 10
+            },
+            "skills": [{
+                "name": "Devices",
+                "rating": 8
+            },{
+                "name": "Stealth",
+                "rating": 10
+            }]
+        },
+        "gender": "M",
         "value": 33
     }
 ]

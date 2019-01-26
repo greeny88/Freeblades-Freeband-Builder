@@ -38,12 +38,6 @@
             <div class="mdc-layout-grid__cell--span-2">{{selected.stats.casting.power}}</div>
         </div>
         <div class="mdc-layout-grid__inner" style="margin-bottom:1rem;">
-            <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">DEF</div>
-            <div class="mdc-layout-grid__cell--span-1">{{selected.stats.defense}}<span *ngIf="selected?.stats.shield">{{selected?.stats.shield}}</span></div>
-            <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">AV</div>
-            <div class="mdc-layout-grid__cell--span-1">{{selected.stats.armor}}</div>
-            <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">LP</div>
-            <div class="mdc-layout-grid__cell--span-1">{{selected.stats.lifePoints}}</div>
             <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">SPD</div>
             <div class="mdc-layout-grid__cell--span-1">{{selected.stats.speed}}</div>
             <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">DISC</div>
@@ -52,6 +46,12 @@
                 <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">Morale/Fear Bonus</div>
                 <div class="mdc-layout-grid__cell--span-1">{{selected.stats.moraleBonus}}</div>
             </ng-container>
+            <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">DEF</div>
+            <div class="mdc-layout-grid__cell--span-1">{{selected.stats.defense}}<span *ngIf="selected?.stats.shield">{{selected?.stats.shield}}</span></div>
+            <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">AV</div>
+            <div class="mdc-layout-grid__cell--span-1">{{selected.stats.armor}}</div>
+            <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">LP</div>
+            <div class="mdc-layout-grid__cell--span-1">{{selected.stats.lifePoints}}</div>
         </div>
         <div class="mdc-layout-grid__inner" style="margin-bottom:1rem;">
             <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">AGL</div>
