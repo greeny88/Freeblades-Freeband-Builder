@@ -298,13 +298,20 @@ export class BuilderComponent {
 
     private trilianRules(model: Model): string | undefined {
         let runnerCount = 0;
+        let guardianCount = 0;
         for (let key in this.models) {
             if (this.models[key]['name'] === 'Tree Runner') {
                 runnerCount++;
             }
+            if (this.models[key]['name'] === 'Guardian') {
+                guardianCount++;
+            }
         }
         if (runnerCount > 0 && (this.limit / runnerCount) < 75) {
             return "Trilian can only have one Tree Runner for each 75 points in the freeband's base value.";
+        }
+        if (guardianCount > 0 && (this.limit / guardianCount) < 75) {
+            return "Trilian can only have one Guardian for each 75 points in the freeband's base value.";
         }
         return undefined;
     }

@@ -3034,9 +3034,12 @@
             }],
             "armor": 4,
             "discipline": 12,
-            "talents": ["Leader","Parry","Bladedancer","Scout"]
+            "talents": ["Leader","Parry","Bladedancer","Scout"],
+            "abilities": {
+                "agility": 10
+            }
         },
-        "value": 39,
+        "value": 41,
         "gender": "F"
     },
     {
@@ -3138,9 +3141,12 @@
             }],
             "armor": 4,
             "discipline": 10,
-            "talents": ["Parry","Bladedancer","Scout"]
+            "talents": ["Parry","Bladedancer","Scout"],
+            "abilities": {
+                "agility": 10
+            }
         },
-        "value": 32,
+        "value": 34,
         "gender": "F"
     },
     {
@@ -3906,5 +3912,31 @@
         },
         "gender": "M",
         "value": 33
+    },
+    {
+        "factions": ["Trilian Seekers"],
+        "name": "Guardian",
+        "displayName": "Guardian",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 6,
+            "melee": [{
+                "rating": 4,
+                "damage": 4,
+                "name": "Knife"
+            }],
+            "range": [{
+                "rating": 8,
+                "damage": 8,
+                "name": "Longbow",
+                "distance": 12
+            }],
+            "armor": 4,
+            "discipline": 6,
+            "talents": ["Guardian Shot"]
+        },
+        "gender": "M",
+        "value": 13
     }
 ]
