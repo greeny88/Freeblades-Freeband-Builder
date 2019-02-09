@@ -13,7 +13,10 @@
             <div class="mdc-layout-grid__cell--span-2" style="font-weight:bold;">Type</div>
             <div class="mdc-layout-grid__cell--span-2">{{selected.stats.type}}</div>
             <div class="mdc-layout-grid__cell--span-2" style="font-weight:bold;">Value</div>
-            <div class="mdc-layout-grid__cell--span-2">{{selected.value}}</div>
+            <div class="mdc-layout-grid__cell--span-1">{{selected.value}}</div>
+            <div class="mdc-layout-grid__cell--span-1">
+                <button mat-raised-button (click)="openEditWindow()">Edit model</button>
+            </div>
         </div>
         <div class="mdc-layout-grid__inner" style="margin-bottom:1rem;" *ngFor="let weapon of selected.stats.melee">
             <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">MAR</div>

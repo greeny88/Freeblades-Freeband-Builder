@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
+import { EditModelComponent } from './edit-model.component';
 import { ModelSelectorService } from './model-selector.service';
 import { Model } from '../../model';
 import factionModels from './models.json';
@@ -28,7 +30,7 @@ export class ModelSelectorComponent {
         'Azalakar'
     ];
 
-    constructor(private modelSelectorService: ModelSelectorService) {
+    constructor(private dialog: MatDialog, private modelSelectorService: ModelSelectorService) {
         this.models = [];
     }
 
@@ -103,5 +105,21 @@ export class ModelSelectorComponent {
         }
         model.component_id = this.componentId;
         this.onModelSelected.emit(model);
+    }
+
+    openEditWindow() {
+        let model: any = this.selected;
+        model.stats = (<any>Object).assign(this.selected.stats, this.modelSelectorService.calculateStats(this.selected.stats));
+        model.component_id = this.componentId;
+
+        const dialogRef = this.dialog.open(EditModelComponent, {
+            width: '250px',
+            data: this.selected
+          });
+      
+          dialogRef.afterClosed().subscribe(result => {
+            console.log('The dialog was closed');
+            this.onModelSelected.emit(result);
+          });
     }
 }
