@@ -1,6 +1,6 @@
 {
   "name": "freeblades-freeband-builder",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Tool to construct a Freeblades freeband",
   "main": "index.html",
   "scripts": {
