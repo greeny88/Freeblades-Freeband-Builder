@@ -14,10 +14,10 @@ export interface ModelStats {
     },
     defense: number,
     discipline: number,
-    displayName: string,
     lifePoints: number,
     melee?: {
         abilities?: string[],
+        abilityList?: string,
         damage: number,
         damageBonus?: number,
         name: string,
@@ -27,6 +27,7 @@ export interface ModelStats {
     moraleBonus?: number,
     range?: {
         abilities?: string[],
+        abilityList?: string,
         damage: number,
         damageBonus?: number,
         distance: number,
@@ -48,7 +49,8 @@ export interface ModelStats {
 }
 
 export interface Model {
-    component_id: string;
+    component_id?: string,
+    displayName: string,
     factions: string[],
     gender: "M" | "F",
     name: string,

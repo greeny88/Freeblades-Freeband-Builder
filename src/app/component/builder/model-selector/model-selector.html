@@ -17,17 +17,17 @@
         </div>
         <div class="mdc-layout-grid__inner" style="margin-bottom:1rem;" *ngFor="let weapon of selected.stats.melee">
             <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">MAR</div>
-            <div class="mdc-layout-grid__cell--span-2">d{{weapon.rating}}</div>
+            <div class="mdc-layout-grid__cell--span-2">d{{weapon.rating}}<span *ngIf="weapon.ratingBonus > 0">&nbsp;+{{weapon.ratingBonus}}</span></div>
             <div class="mdc-layout-grid__cell--span-2" style="font-weight:bold;">Weapon</div>
-            <div class="mdc-layout-grid__cell--span-4">{{weapon.name}}<span *ngFor="let ability of weapon.abilities"> {{ability}},</span></div>
+            <div class="mdc-layout-grid__cell--span-4">{{weapon.name}} {{weapon.abilityList}}</div>
             <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">Dmg</div>
             <div class="mdc-layout-grid__cell--span-2">d{{weapon.damage}}<span *ngIf="weapon.damageBonus > 0">&nbsp;+{{weapon.damageBonus}}</span></div>
         </div>
         <div class="mdc-layout-grid__inner" style="margin-bottom:1rem;" *ngFor="let weapon of selected.stats.range">
             <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">RAR</div>
-            <div class="mdc-layout-grid__cell--span-2">d{{weapon.rating}}</div>
+            <div class="mdc-layout-grid__cell--span-2">d{{weapon.rating}}<span *ngIf="weapon.ratingBonus > 0">&nbsp;+{{weapon.ratingBonus}}</span></div>
             <div class="mdc-layout-grid__cell--span-2" style="font-weight:bold;">Weapon</div>
-            <div class="mdc-layout-grid__cell--span-4">{{weapon.name}}<span *ngFor="let ability of weapon.abilities"> {{ability}},</span> {{weapon.distance}}in-{{weapon.distance*2}}in-{{weapon.distance*3}}in</div>
+            <div class="mdc-layout-grid__cell--span-4">{{weapon.name}} {{weapon.abilityList}} {{weapon.distance}}in-{{weapon.distance*2}}in-{{weapon.distance*3}}in</div>
             <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">Dmg</div>
             <div class="mdc-layout-grid__cell--span-2">d{{weapon.damage}}<span *ngIf="weapon.damageBonus > 0">&nbsp;+{{weapon.damageBonus}}</span></div>
         </div>

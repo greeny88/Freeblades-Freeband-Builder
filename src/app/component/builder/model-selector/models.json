@@ -538,10 +538,10 @@
         },
         "type": "Standard",
         "value": 11,
-        "gender": "E"
+        "gender": "M"
     },
     {
-        "factions": ["Black Rose Bandits", "Black Thorn Bandits", "Falkaaran Adventurers"],
+        "factions": ["Black Rose Bandits", "Black Thorn Bandits", "Falkaaran Adventurers", "Haradelan Questers"],
         "name": "Faeler Swordsman",
         "displayName": "Faeler Swordsman",
         "stats": {

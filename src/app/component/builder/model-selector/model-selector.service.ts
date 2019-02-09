@@ -106,6 +106,9 @@ export class ModelSelectorService {
             for (let weapon of melee) {
                 weapon.ratingBonus = ratingBonus;
                 weapon.damageBonus = (weapon.damageBonus) ? damageBonus + weapon.damageBonus : damageBonus;
+                if (weapon.abilities) {
+                    weapon.abilityList = weapon.abilities.join(', ');
+                }
             }
             updatedStats.melee = melee;
         }
@@ -115,6 +118,9 @@ export class ModelSelectorService {
             for (let weapon of range) {
                 weapon.ratingBonus = ratingBonus;
                 weapon.damageBonus = (weapon.damageBonus) ? damageBonus + weapon.damageBonus : damageBonus;
+                if (weapon.abilities) {
+                    weapon.abilityList = weapon.abilities.join(', ');
+                }
             }
             updatedStats.range = range;
         }
