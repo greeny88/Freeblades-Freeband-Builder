@@ -10,5 +10,9 @@ import template from './edit-model.html';
 })
 export class EditModelComponent {
 
-    constructor(private dialogRef: MatDialogRef<any>, @Inject(MAT_DIALOG_DATA) public data: Model) {}
+    constructor(private dialogRef: MatDialogRef<any>, @Inject(MAT_DIALOG_DATA) public model: Model) {}
+
+    ngOnInit() {
+        console.log(this.model);
+    }
 }

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 
 import { EditModelComponent } from './edit-model.component';
@@ -15,6 +16,7 @@ import { ModelSelectorService } from './model-selector.service';
         FormsModule,
         MatButtonModule,
         MatDialogModule,
+        MatInputModule,
         MatSelectModule
     ],
     declarations: [

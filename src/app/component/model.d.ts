@@ -49,6 +49,7 @@ export interface ModelStats {
 }
 
 export interface Model {
+    characterName: string,
     component_id?: string,
     displayName: string,
     factions: string[],
