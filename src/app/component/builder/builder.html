@@ -97,18 +97,18 @@
         </tr>
         <tr *ngFor="let weapon of model.stats.melee">
             <th>MAR</th>
-            <td>d{{weapon.rating}}</td>
+            <td>d{{weapon.rating}}<span *ngIf="weapon.ratingBonus > 0">&nbsp;+{{weapon.ratingBonus}}</span></td>
             <th>Weapon</th>
-            <td colspan="4">{{weapon.name}}<span *ngFor="let ability of weapon.abilities"> {{ability}},</span></td>
+            <td colspan="4">{{weapon.name}} {{weapon.abilityList}}</td>
             <th>MW</th>
             <td colspan="2">d{{weapon.damage}}<span *ngIf="weapon.damageBonus > 0">&nbsp;+{{weapon.damageBonus}}</span></td>
             <td colspan="2" class="no-border">&nbsp;</td>
         </tr>
         <tr *ngFor="let weapon of model.stats.range">
             <th>RAR</th>
-            <td>d{{weapon.rating}}</td>
+            <td>d{{weapon.rating}}<span *ngIf="weapon.ratingBonus > 0">&nbsp;+{{weapon.ratingBonus}}</span></td>
             <th>Weapon</th>
-            <td colspan="4">{{weapon.name}}<span *ngFor="let ability of weapon.abilities"> {{ability}},</span> {{weapon.distance}}in-{{weapon.distance*2}}in-{{weapon.distance*3}}in</td>
+            <td colspan="4">{{weapon.name}} {{weapon.abilityList}} {{weapon.distance}}in-{{weapon.distance*2}}in-{{weapon.distance*3}}in</td>
             <th>MW</th>
             <td colspan="2">d{{weapon.damage}}<span *ngIf="weapon.damageBonus > 0">&nbsp;+{{weapon.damageBonus}}</span></td>
             <td colspan="2" class="no-border">&nbsp;</td>
