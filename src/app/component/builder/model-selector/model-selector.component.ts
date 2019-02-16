@@ -108,19 +108,21 @@ export class ModelSelectorComponent {
     }
 
     openEditWindow() {
-        let model: any = this.selected;
+        let model: Model = this.selected;
         model.stats = (<any>Object).assign(this.selected.stats, this.modelSelectorService.calculateStats(this.selected.stats));
         model.component_id = this.componentId;
 
         const dialogRef = this.dialog.open(EditModelComponent, {
-            width: '250px',
             data: this.selected
           });
       
           dialogRef.afterClosed().subscribe(result => {
             console.log('The dialog was closed');
             console.log(result);
-            this.onModelSelected.emit(result);
+            if (result) {
+                this.selected = result;
+                this.onModelSelected.emit(result);
+            }
           });
     }
 }

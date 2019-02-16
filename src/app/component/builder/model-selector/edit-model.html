@@ -3,6 +3,16 @@
   <mat-form-field style="width:100%">
     <input matInput type="text" placeholder="Character Name" [(ngModel)]="model.characterName" >
   </mat-form-field>
+  <mat-form-field style="width:100%">
+    <input matInput type="number" placeholder="# of Advancements" [(ngModel)]="advancementCount" (change)="updateAdvancementCount()" >
+  </mat-form-field>
+  <div *ngFor="let count of advancementNumber">
+    <mat-form-field>
+      <mat-select>
+          <mat-option *ngFor="let adv of advancements" [value]="adv">{{adv}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
   <!-- <mat-form-field>
     <mat-select (selectionChange)="" [(value)]="foobar">
         <mat-option>None</mat-option>
@@ -10,5 +20,6 @@
   </mat-form-field> -->
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">Close</button>
+  <button mat-button [mat-dialog-close]="model">Update</button>
+  <button mat-button (click)="cancel()">Cancel</button>
 </div>
