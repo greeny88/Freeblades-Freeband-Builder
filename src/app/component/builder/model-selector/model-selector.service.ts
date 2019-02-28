@@ -29,17 +29,25 @@ export class ModelSelectorService {
         }
         abilities = (<any>Object).assign(abilities, stats.abilities);
 
-        let defense: number = (stats.shield === 'S') ? 5 : (stats.shield === 'L') ? 6 : 4;
-        for (let i=0; this.abilityTiers.length > i; i++) {
-            if (abilities.agility === this.abilityTiers[i]) {
-                defense = defense + i + 1;
+        let defense: number = (stats.shield === 'S' || stats.shield === 'AN') ? 5 : (stats.shield === 'L') ? 6 : 4;
+        if (abilities.agility === 4) {
+            defense = -1;
+        } else {
+            for (let i=0; this.abilityTiers.length > i; i++) {
+                if (abilities.agility === this.abilityTiers[i]) {
+                    defense = defense + i + 1;
+                }
             }
         }
 
         let ratingBonus: number = 0;
-        for (let i=0; this.abilityTiers.length > i; i++) {
-            if (abilities.dexterity === this.abilityTiers[i]) {
-                ratingBonus = ratingBonus + i + 1;
+        if (abilities.dexterity === 4) {
+            ratingBonus = -1;
+        } else {
+            for (let i=0; this.abilityTiers.length > i; i++) {
+                if (abilities.dexterity === this.abilityTiers[i]) {
+                    ratingBonus = ratingBonus + i + 1;
+                }
             }
         }
 
@@ -51,35 +59,51 @@ export class ModelSelectorService {
                 }
             }
         }
-        for (let i=0; this.abilityTiers.length > i; i++) {
-            if (abilities.endurance === this.abilityTiers[i]) {
-                lifePoints = lifePoints + i + 1;
+        if (abilities.endurance === 4) {
+            lifePoints--;
+        } else {
+            for (let i=0; this.abilityTiers.length > i; i++) {
+                if (abilities.endurance === this.abilityTiers[i]) {
+                    lifePoints = lifePoints + i + 1;
+                }
             }
         }
 
         let skillBonus: number = 0;
-        for (let i=0; this.abilityTiers.length > i; i++) {
-            if (abilities.knowledge === this.abilityTiers[i]) {
-                skillBonus = skillBonus + i + 1;
+        if (abilities.knowledge === 4) {
+            skillBonus = -1;
+        } else {
+            for (let i=0; this.abilityTiers.length > i; i++) {
+                if (abilities.knowledge === this.abilityTiers[i]) {
+                    skillBonus = skillBonus + i + 1;
+                }
             }
         }
 
         let moraleBonus: number = 0;
-        for (let i=0; this.abilityTiers.length > i; i++) {
-            if (abilities.spirit === this.abilityTiers[i]) {
-                moraleBonus = moraleBonus + i + 1;
+        if (abilities.spirit === 4) {
+            moraleBonus = -1;
+        } else {
+            for (let i=0; this.abilityTiers.length > i; i++) {
+                if (abilities.spirit === this.abilityTiers[i]) {
+                    moraleBonus = moraleBonus + i + 1;
+                }
             }
         }
 
         let damageBonus: number = 0;
-        for (let i=0; this.abilityTiers.length > i; i++) {
-            if (abilities.strength === this.abilityTiers[i]) {
-                damageBonus = damageBonus + i + 1;
+        if (abilities.strength === 4) {
+            damageBonus = -1;
+        } else {
+            for (let i=0; this.abilityTiers.length > i; i++) {
+                if (abilities.strength === this.abilityTiers[i]) {
+                    damageBonus = damageBonus + i + 1;
+                }
             }
         }
 
         let skillList: string;
-        let talentList: string;
+        let talentList: string = '';
         if (stats.skills) {
             skillList = stats.skills.map(skill => `${skill.name} - d${skill.rating}`).join(', ');
         }
