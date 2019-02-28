@@ -2355,7 +2355,7 @@
     {
         "factions": ["Grular Invaders"],
         "name": "Kor-Khan",
-        "displayName": "Kor-Khan",
+        "displayName": "Kor-Khan (Dismounted)",
         "stats": {
             "discipline": 12,
             "type": "Hero",
@@ -2380,8 +2380,34 @@
     },
     {
         "factions": ["Grular Invaders"],
+        "name": "Kor-Khan",
+        "displayName": "Kor-Khan (Mounted)",
+        "stats": {
+            "discipline": 12,
+            "type": "Hero",
+            "speed": 9,
+            "talents": ["Leader","Parry","Taunt","Cavalry","Fast"],
+            "melee": [{
+                "rating": 12,
+                "damage": 8,
+                "name": "Spikedrakh",
+                "abilities": ["de"]
+            },{
+                "rating": 12,
+                "damage": 8,
+                "name": "Morning Star",
+                "abilities": ["sb"]
+            }],
+            "armor": 5
+        },
+        "type": "Leader",
+        "value": 43,
+        "gender": "M"
+    },
+    {
+        "factions": ["Grular Invaders"],
         "name": "Warlock",
-        "displayName": "Warlock",
+        "displayName": "Warlock (Dismounted)",
         "stats": {
             "discipline": 8,
             "type": "Hero",
@@ -2390,6 +2416,7 @@
             "melee": [{
                 "rating": 6,
                 "damage": 8,
+                "damageBonus": 1,
                 "name": "Shadowspear",
                 "abilities": ["su"]
             }],
@@ -2404,6 +2431,35 @@
         },
         "type": "Caster",
         "value": 31,
+        "gender": "M"
+    },
+    {
+        "factions": ["Grular Invaders"],
+        "name": "Warlock",
+        "displayName": "Warlock (Mounted)",
+        "stats": {
+            "discipline": 8,
+            "type": "Hero",
+            "speed": 10,
+            "talents": ["Shadow Magic","Fear Craver","Cavalry","Fast"],
+            "melee": [{
+                "rating": 6,
+                "damage": 8,
+                "damageBonus": 1,
+                "name": "Shadowspear",
+                "abilities": ["su"]
+            }],
+            "armor": 2,
+            "abilities": {
+                "strength": 4
+            },
+            "casting": {
+                "power": 15,
+                "rating": 10
+            }
+        },
+        "type": "Caster",
+        "value": 35,
         "gender": "M"
     },
     {
@@ -3938,5 +3994,113 @@
         },
         "gender": "M",
         "value": 13
+    },
+    {
+        "factions": ["Grular Invaders"],
+        "name": "Impaler",
+        "displayName": "Impaler (Mounted)",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 10,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "damageBonus": 1,
+                "name": "Impaler",
+                "abilities": ["imp"]
+            }],
+            "shield": "S",
+            "armor": 4,
+            "discipline": 10,
+            "talents": ["Cavalry","Assault","Hit and Run","Nimble","Fast"],
+            "abilities": {
+                "agility": 10
+            }
+        },
+        "gender": "M",
+        "value": 32
+    },
+    {
+        "factions": ["Grular Invaders"],
+        "name": "Impaler",
+        "displayName": "Impaler (Dismounted)",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "damageBonus": 1,
+                "name": "Impaler",
+                "abilities": ["imp"]
+            }],
+            "shield": "S",
+            "armor": 4,
+            "discipline": 10,
+            "talents": ["Assault","Backstep","Dodge"],
+            "abilities": {
+                "agility": 10
+            }
+        },
+        "gender": "M",
+        "value": 27
+    },
+    {
+        "factions": ["Grular Invaders"],
+        "name": "Raider",
+        "displayName": "Raider (Mounted)",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 10,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Javelin"
+            }],
+            "range": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Javelin",
+                "abilities": ["thr"],
+                "distance": 4
+            }],
+            "shield": "S",
+            "armor": 3,
+            "discipline": 6,
+            "talents": ["Cavalry","Harasser","Light Cavalry","Elusive","Fast"]
+        },
+        "gender": "M",
+        "value": 18
+    },
+    {
+        "factions": ["Grular Invaders"],
+        "name": "Raider",
+        "displayName": "Raider (Dismounted)",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Javelin"
+            }],
+            "range": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Javelin",
+                "abilities": ["thr"],
+                "distance": 4
+            }],
+            "shield": "S",
+            "armor": 3,
+            "discipline": 6,
+            "talents": ["Harasser","Elusive"]
+        },
+        "gender": "M",
+        "value": 14
     }
 ]
