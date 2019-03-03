@@ -25,6 +25,7 @@ export class BuilderComponent {
     limit: number;
     modelList: Model[];
     models: {[key: string]: Model};
+    scoutingPoints: number;
     totalLifePoints: number;
 
     constructor() {
@@ -52,6 +53,7 @@ export class BuilderComponent {
     calculateFreeband() {
         let allyFollowerCount: number = 0;
         let allyHeroCount: number = 0;
+        let casterCount: number = 0;
         this.completeFollowerCount = 0;
         this.completeHeroCount = 0;
         this.errorMessages = [];
@@ -61,6 +63,7 @@ export class BuilderComponent {
         this.modelList = [];
         let nightwhisperFound: boolean = false;
         this.totalLifePoints = 0;
+        this.scoutingPoints = 0;
         let zetakorFound: boolean = false;
 
         for (let modelId in this.models) {
@@ -69,7 +72,7 @@ export class BuilderComponent {
             this.modelList.push(model);
 
             this.freebandBaseValue += model.value;
-            this.totalLifePoints += model.stats.lifePoints;
+            this.totalLifePoints += ('talentList' in model.stats && model.stats.talentList.indexOf('Expendable') > -1) ? (model.stats.lifePoints / 2) : model.stats.lifePoints;
 
             if (model.stats.type === 'Hero') {
                 this.completeHeroCount++;
@@ -98,12 +101,19 @@ export class BuilderComponent {
             if ('talentList' in model.stats && model.stats.talentList.indexOf('Leader') > -1) {
                 leader = model;
             }
+
+            if ('talentList' in model.stats && model.stats.talentList.indexOf('Scout') > -1) {
+                this.scoutingPoints += 2;
+            }
+
+            if ('casting' in model.stats) {
+                casterCount++;
+            }
     
             let heroFound = 0;
             for (let key in this.models) {
-                //TODO: check for multiple casters
 
-                if(this.models[key]['name'] === model.name && model.stats.type === 'Hero') {
+                if(this.models[key].name === model.name && model.stats.type === 'Hero') {
                     heroFound++;
                 }
             }
@@ -143,6 +153,10 @@ export class BuilderComponent {
 
         if (zetakorFound && leader.gender !== 'M') {
             this.addErrorMessage('Zetakor can only be in a freeband lead by a male.')
+        }
+
+        if (casterCount > 1) {
+            this.addErrorMessage('You can only have one caster.');
         }
 
         this.breakValue = Math.ceil(this.totalLifePoints / 2);
@@ -203,6 +217,20 @@ export class BuilderComponent {
     }
 
     private demonsRules(model: Model): string | undefined {
+        let heroCount: number = 0;
+        let skrotCount: number = 0;
+        for (let key in this.models) {
+            if (this.models[key].stats.type === 'Hero') {
+                heroCount++;
+            }
+            if (this.models[key].name === 'Skrot') {
+                skrotCount++;
+            }
+        }
+        if (skrotCount > (heroCount*2)) {
+            return 'You may not have more than twice as many skrots as heroes.';
+        }
+
         return undefined;
     }
 

@@ -4102,5 +4102,36 @@
         },
         "gender": "M",
         "value": 14
+    },
+    {
+        "factions": ["Mershael Corsairs"],
+        "name": "Reaver's Kindred",
+        "displayName": "Reaver's Kindred",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "Taumari",
+                "abilities": ["qs"]
+            }],
+            "range": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Tennko",
+                "abilities": ["de"],
+                "distance": 10
+            }],
+            "armor": 5,
+            "discipline": 10,
+            "talents": ["Parry","Quick"],
+            "abilities": {
+                "agility": 10
+            }
+        },
+        "gender": "M",
+        "value": 32
     }
 ]
