@@ -3,12 +3,17 @@
   <mat-form-field style="width:100%">
     <input matInput type="text" placeholder="Character Name" [(ngModel)]="model.characterName" >
   </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Gender" [(value)]="model.gender">
+        <mat-option *ngFor="let gender of ['M','F']" [value]="gender">{{gender}}</mat-option>
+    </mat-select>
+  </mat-form-field>
   <mat-form-field style="width:100%">
     <input matInput type="number" placeholder="# of Advancements" [(ngModel)]="advancementCount" (change)="updateAdvancementCount()" >
   </mat-form-field>
-  <div *ngFor="let count of advancementNumber">
+  <div *ngFor="let count of advancementNumber; let i = index">
     <mat-form-field>
-      <mat-select>
+      <mat-select (selectionChange)="addAdvancement(adv, i)">
           <mat-option *ngFor="let adv of advancements" [value]="adv">{{adv}}</mat-option>
       </mat-select>
     </mat-form-field>

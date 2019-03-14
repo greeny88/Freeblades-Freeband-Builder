@@ -2183,7 +2183,6 @@
             "melee": [{
                 "rating": 10,
                 "damage": 8,
-                "damageBonus": 1,
                 "name": "Warhammer"
             }],
             "abilities": {

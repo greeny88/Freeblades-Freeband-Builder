@@ -9,8 +9,8 @@ import template from './edit-model.html';
     template
 })
 export class EditModelComponent {
-    private abilities: String[] = ['AGL 1dl','DEX 1dl','END 1dl','KNW 1dl','SPR 1dl','STR 1dl'];
-    private skills: String[] = [
+    private abilities: string[] = ['AGL 1dl','DEX 1dl','END 1dl','KNW 1dl','SPR 1dl','STR 1dl'];
+    private skills: string[] = [
         'Camouflage',
         'Climb',
         'Devices',
@@ -21,7 +21,7 @@ export class EditModelComponent {
         'Swim',
         'Thievery'
     ];
-    private talents: String[] = [
+    private talents: string[] = [
         'Accurate Shot',
         'Accurate Strike',
         'Active Defense',
@@ -110,14 +110,32 @@ export class EditModelComponent {
         'Teammate[Type]',
         'Tough'
     ];
-    advancements: String[] = ['MAR','RAR','CAR',...this.abilities,...this.skills,...this.talents].sort();
-    advancementNumber: Number[];
-    advancementCount: Number;
+    advancements: string[] = ['MAR','RAR','CAR',...this.abilities,...this.skills,...this.talents].sort();
+    advancementNumber: number[];
+    advancementCount: number;
+    modelAdvancements: string[];
 
     constructor(private dialogRef: MatDialogRef<any>, @Inject(MAT_DIALOG_DATA) public model: Model) {}
 
     ngOnInit() {
         // console.log(this.model);
+    }
+
+    addAdvancement(advancement: string, index: number) {
+        this.modelAdvancements.splice(index, 0, advancement);
+        for (let adv of this.modelAdvancements) {
+            // if (this.skills.includes(adv)) {
+            //     if ('skills' in this.model.stats) {
+            //         if (adv in this.model.stats) {
+            //             this.model.stats.skills[adv] += 2;
+            //         } else {
+            //             this.model.stats.skills[adv] = 6;
+            //         }
+            //     } else {
+            //         // this.model.stats.skills = {adv: 6};
+            //     }
+            // }
+        }
     }
 
     cancel(): void {
