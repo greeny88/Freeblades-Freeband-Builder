@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
-import { Model } from '../../model';
+import { Model, ModelStats } from '../../model';
 import template from './edit-model.html';
 
 @Component({
@@ -9,7 +9,7 @@ import template from './edit-model.html';
     template
 })
 export class EditModelComponent {
-    private abilities: string[] = ['AGL 1dl','DEX 1dl','END 1dl','KNW 1dl','SPR 1dl','STR 1dl'];
+    private abilities: string[] = ['AGL','DEX','END','KNW','SPR','STR'];
     private skills: string[] = [
         'Camouflage',
         'Climb',
@@ -114,27 +114,65 @@ export class EditModelComponent {
     advancementNumber: number[];
     advancementCount: number;
     modelAdvancements: string[];
+    originalModelStats: ModelStats;
 
-    constructor(private dialogRef: MatDialogRef<any>, @Inject(MAT_DIALOG_DATA) public model: Model) {}
-
-    ngOnInit() {
-        // console.log(this.model);
+    constructor(private dialogRef: MatDialogRef<any>, @Inject(MAT_DIALOG_DATA) public model: Model) {
+        this.originalModelStats = JSON.parse(JSON.stringify(this.model.stats));
+        if ('advancements' in this.model.stats) {
+            this.advancementCount = this.model.stats.advancements.length;
+            this.updateAdvancementCount();
+            this.modelAdvancements = this.model.stats.advancements;
+        }
     }
 
+    ngOnInit() { }
+
     addAdvancement(advancement: string, index: number) {
-        this.modelAdvancements.splice(index, 0, advancement);
+        // TODO: move to calculateStats
+        this.model.stats = JSON.parse(JSON.stringify(this.originalModelStats));
+        this.model.stats.advancements = this.modelAdvancements;
         for (let adv of this.modelAdvancements) {
-            // if (this.skills.includes(adv)) {
-            //     if ('skills' in this.model.stats) {
-            //         if (adv in this.model.stats) {
-            //             this.model.stats.skills[adv] += 2;
-            //         } else {
-            //             this.model.stats.skills[adv] = 6;
-            //         }
-            //     } else {
-            //         // this.model.stats.skills = {adv: 6};
-            //     }
-            // }
+            if (this.skills.includes(adv)) {
+                if ('skills' in this.model.stats) {
+                    let skillFound: boolean = false;
+                    for (let skill of this.model.stats.skills) {
+                        if (skill.name === adv) {
+                            skill.rating += 2;
+                            skillFound = true;
+                        }
+                    }
+                    if (!skillFound) {
+                        this.model.stats.skills.push({"name":adv,"rating":6});
+                    }
+                } else {
+                    this.model.stats.skills = [{"name":adv,"rating":6}];
+                }
+            } else if (this.abilities.includes(adv)) {
+                const abilityReference = {'AGL':'agility','DEX':'dexterity','END':'endurance','KNW':'knowledge','SPR':'spirit','STR':'strength'};
+                if (this.model.stats.abilities[abilityReference[adv]]) {
+                    this.model.stats.abilities[abilityReference[adv]] += 2;
+                } else {
+                    this.model.stats.abilities[abilityReference[adv]] = (this.model.stats.type === 'Hero') ? 10 : 8;
+                }
+            } else if (this.talents.includes(adv)) {
+                this.model.stats.talents.push(adv);
+            } else {
+                if (adv === 'MAR') {
+                    this.model.stats.melee.map(melee => {
+                        melee.damage += 2;
+                        return melee;
+                    });
+                }
+                if (adv === 'RAR') {
+                    this.model.stats.range.map(range => {
+                        range.damage += 2;
+                        return range;
+                    });
+                }
+                if (adv === 'CAR') {
+                    this.model.stats.casting.rating += 2;
+                }
+            }
         }
     }
 
@@ -144,5 +182,6 @@ export class EditModelComponent {
 
     updateAdvancementCount(): void {
         this.advancementNumber = Array(this.advancementCount).fill(0);
+        this.modelAdvancements = Array(this.advancementCount).fill(undefined);
     }
 }

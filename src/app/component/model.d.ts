@@ -1,3 +1,36 @@
+
+// declare var {
+//     factionList = ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"];
+// }
+// export default factionList
+// declare const factionList: string[] = ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"];;
+
+export interface MeleeWeapon {
+    abilities?: string[],
+    abilityList?: string,
+    damage: number,
+    damageBonus?: number,
+    name: string,
+    rating: number,
+    ratingBonus?: number
+}
+
+export interface RangeWeapon {
+    abilities?: string[],
+    abilityList?: string,
+    damage: number,
+    damageBonus?: number,
+    distance: number,
+    name: string,
+    rating: number,
+    ratingBonus?: number
+}
+
+export interface Skill {
+    name: string,
+    rating: number
+}
+
 export interface ModelStats {
     abilities?: {
         agility?: number,
@@ -7,6 +40,7 @@ export interface ModelStats {
         spirit?: number,
         strength?: number
     },
+    advancements?: string[],
     armor: number,
     casting?: {
         power: number,
@@ -15,37 +49,17 @@ export interface ModelStats {
     defense: number,
     discipline: number,
     lifePoints: number,
-    melee?: {
-        abilities?: string[],
-        abilityList?: string,
-        damage: number,
-        damageBonus?: number,
-        name: string,
-        rating: number,
-        ratingBonus?: number
-    }[],
+    melee?: MeleeWeapon[],
     moraleBonus?: number,
-    range?: {
-        abilities?: string[],
-        abilityList?: string,
-        damage: number,
-        damageBonus?: number,
-        distance: number,
-        name: string,
-        rating: number,
-        ratingBonus?: number
-    }[],
-    shield?: string,
+    range?: RangeWeapon[],
+    shield?: "AN" | "L" | "S",
     skillBonus?: number,
-    skills?: {
-        name: string,
-        rating: number
-    }[],
+    skills?: Skill[],
     skillList?: string,
     speed: number,
     talents?: string[],
     talentList?: string,
-    type: "Hero" | "Follower"
+    type: "Follower" | "Hero"
 }
 
 export interface Model {
@@ -55,7 +69,8 @@ export interface Model {
     factions: string[],
     gender: "M" | "F",
     name: string,
+    race: "Beast" | "Chaler" | "Demon" | "Faeler" | "Kuzaarik" | "Shakrim" | "Symker" | "Trillian"
     stats: ModelStats,
-    type: "Leader" | "Caster" | "Standard",
+    type: "Caster" | "Leader" | "Standard",
     value: number
 }
