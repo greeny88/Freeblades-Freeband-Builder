@@ -8,11 +8,12 @@
         </mat-toolbar-row>
         <mat-toolbar-row *ngIf="faction && limit" class="noSetHeight">
             <div style="display:flex;flex-wrap:wrap;width:100%;">
-                <span style="flex: 1 1 250px;padding-right:10px;">Freeband Base Value: {{freebandBaseValue}}</span>
+                <span style="flex: 1 1 200px;padding-right:10px;">Freeband Base Value: {{freebandBaseValue}}</span>
+                <span style="flex: 1 1 200px;padding-right:10px;">Freeband Total Value: {{freebandTotalValue}}</span>
                 <span style="flex: 1 1 150px;padding-right:10px;">Break Value: {{breakValue}}</span>
-                <span style="flex: 1 1 100px;padding-right:10px;">Hero Total: {{completeHeroCount}}</span>
-                <span style="flex: 1 1 100px;padding-right:10px;">Follower Total: {{completeFollowerCount}}</span>
-                <span style="flex: 1 1 100px;padding-right:10px;">Scouting Points: {{scoutingPoints}}</span>
+                <span style="flex: 1 1 80px;padding-right:10px;">Hero Total: {{completeHeroCount}}</span>
+                <span style="flex: 1 1 80px;padding-right:10px;">Follower Total: {{completeFollowerCount}}</span>
+                <span style="flex: 1 1 80px;padding-right:10px;">Scouting Points: {{scoutingPoints}}</span>
             </div>
         </mat-toolbar-row>
         <mat-toolbar-row *ngFor="let msg of errorMessages" class="noSetHeight errorMessage">

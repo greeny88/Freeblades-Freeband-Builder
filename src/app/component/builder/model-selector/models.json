@@ -573,7 +573,7 @@
                 "rating": 6,
                 "damage": 8
             }],
-            "talents": ["Veteran[+1dl DISC, 1]", "Veteran[Squire, 1]"],
+            "talents": ["Veteran[DISC,1]", "Veteran[Squire,1]"],
             "armor": 3,
             "shield": "S"
         },
@@ -799,7 +799,7 @@
         "stats": {
             "discipline": 10,
             "type": "Hero",
-            "talents": ["Parry","Bladeflash","Veteran[Conquer,+1]", "Veteran[Taunt+1]"],
+            "talents": ["Parry","Bladeflash","Veteran[Conquer,1]", "Veteran[Taunt,1]"],
             "speed": 6,
             "melee": [{
                 "rating": 12,
@@ -4288,5 +4288,29 @@
         "gender": "M",
         "value": 32,
         "race": "Chaler"
+    },
+    {
+        "factions": ["Demons of Karelon"],
+        "name": "Karbazaal",
+        "displayName": "Karbazaal",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "2x Claws"
+            }],
+            "armor": 5,
+            "discipline": 10,
+            "talents": ["Fearless","Fearsome","Tough","Tough","Demon"],
+            "abilities": {
+                "strength": 10
+            }
+        },
+        "gender": "M",
+        "value": 37,
+        "race": "Demon"
     }
 ]

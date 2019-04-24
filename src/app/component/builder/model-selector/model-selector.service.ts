@@ -1,16 +1,19 @@
 import { Injectable } from '@angular/core';
 
+import { Abilities, Skills, Talents } from './advancements';
 import { ModelStats } from '../../model';
 
 interface stats {
     abilities: Object,
     defense: number,
+    discipline: number,
     lifePoints: number,
     melee?: Object,
     moraleBonus: number,
     range?: Object,
     skillBonus: number,
     skillList: string,
+    speed: number,
     talentList: string
 };
 
@@ -28,6 +31,55 @@ export class ModelSelectorService {
             abilities[abilityName] = ability;
         }
         abilities = (<any>Object).assign(abilities, stats.abilities);
+
+        if (!('advancements' in stats)) {
+            stats.advancements = [];
+        }
+        for (let adv of stats.advancements) {
+            if (Skills.includes(adv)) {
+                if ('skills' in stats) {
+                    let skillFound: boolean = false;
+                    for (let skill of stats.skills) {
+                        if (skill.name === adv) {
+                            skill.rating += 2;
+                            skillFound = true;
+                        }
+                    }
+                    if (!skillFound) {
+                        stats.skills.push({"name":adv,"rating":6});
+                    }
+                } else {
+                    stats.skills = [{"name":adv,"rating":6}];
+                }
+            } else if (Abilities.includes(adv)) {
+                const abilityReference = {'AGL':'agility','DEX':'dexterity','END':'endurance','KNW':'knowledge','SPR':'spirit','STR':'strength'};
+                abilities[abilityReference[adv]] += 2;
+            } else if (Talents.includes(adv)) {
+                stats.talents.push(adv);
+            } else {
+                if (adv === 'MAR') {
+                    stats.melee.map(melee => {
+                        melee.rating += 2;
+                        return melee;
+                    });
+                }
+                if (adv === 'RAR') {
+                    stats.range.map(range => {
+                        range.rating += 2;
+                        return range;
+                    });
+                }
+                if (adv === 'CAR') {
+                    stats.casting.rating += 2;
+                }
+                if (adv === 'DISC') {
+                    stats.discipline += 2;
+                }
+                if (adv === 'SPD') {
+                    stats.speed += 1;
+                }
+            }
+        }
 
         let defense: number = (stats.shield === 'S' || stats.shield === 'AN') ? 5 : (stats.shield === 'L') ? 6 : 4;
         if (abilities.agility === 4) {
@@ -103,10 +155,11 @@ export class ModelSelectorService {
         }
 
         let skillList: string;
-        let talentList: string = '';
         if (stats.skills) {
             skillList = stats.skills.map(skill => `${skill.name} - d${skill.rating}`).join(', ');
         }
+
+        let talentList: string = '';
         if (stats.talents) {
             const talents = stats.talents.map((m) => {
                 const count = stats.talents.reduce((sum, r) => (r === m) ? sum + 1 : sum, 0);
@@ -118,10 +171,12 @@ export class ModelSelectorService {
         let updatedStats: stats = {
             abilities,
             defense,
+            'discipline': stats.discipline,
             lifePoints,
             moraleBonus,
             skillBonus,
             skillList,
+            'speed': stats.speed,
             talentList
         };
 

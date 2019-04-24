@@ -1,27 +1,32 @@
 <h1 mat-dialog-title>Edit Model: {{model.displayName}}</h1>
 <div mat-dialog-content>
-  <mat-form-field style="width:100%">
-    <input matInput type="text" placeholder="Character Name" [(ngModel)]="model.characterName">
-  </mat-form-field>
-  <mat-form-field>
-    <mat-select placeholder="Gender" [(value)]="model.gender">
-      <mat-option *ngFor="let gender of ['M','F']" [value]="gender">{{gender}}</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field style="width:100%">
-    <input matInput type="number" placeholder="# of Advancements" [(ngModel)]="advancementCount">
-  </mat-form-field>
-  <button mat-button (click)="updateAdvancementCount()">Add advancements</button>
-  <div *ngFor="let count of advancementNumber; let i = index">
-    <mat-form-field>
-      <mat-select (selectionChange)="addAdvancement(adv, i)" [(value)]="modelAdvancements[i]">
-        <mat-option value="">None</mat-option>
-        <mat-option *ngFor="let adv of advancements" [value]="adv">{{adv}}</mat-option>
-      </mat-select>
+    <mat-form-field style="width:100%">
+        <input matInput type="text" placeholder="Character Name" [(ngModel)]="model.characterName">
     </mat-form-field>
-  </div>
+    <mat-form-field>
+        <mat-select placeholder="Gender" [(value)]="model.gender">
+            <mat-option *ngFor="let gender of ['M','F']" [value]="gender">{{gender}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <h1 *ngIf="veteranAdvancements.length > 0">Veteran Upgrades</h1>
+    <ng-container *ngFor="let vet of veteranAdvancements; let i = index">
+        <mat-checkbox [(ngModel)]="modelVeteran[i]">{{vet.name}} Cost:{{vet.cost}}</mat-checkbox>
+    </ng-container>
+    <mat-form-field style="width:100%">
+        <input matInput type="number" placeholder="# of Advancements" [(ngModel)]="advancementCount">
+    </mat-form-field>
+    <button mat-button (click)="updateAdvancementCount()">Add advancements</button>
+    <ng-container *ngFor="let count of advancementNumber; let i = index">
+        <br/>
+        <mat-form-field>
+            <mat-select (selectionChange)="addAdvancement(adv, i)" [(value)]="modelAdvancements[i]">
+                <mat-option value="">None</mat-option>
+                <mat-option *ngFor="let adv of advancements" [value]="adv">{{adv}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </ng-container>
 </div>
 <div mat-dialog-actions>
-  <button mat-button [mat-dialog-close]="model">Update</button>
-  <button mat-button (click)="cancel()">Cancel</button>
+    <button mat-button [mat-dialog-close]="model">Update</button>
+    <button mat-button (click)="cancel()">Cancel</button>
 </div>

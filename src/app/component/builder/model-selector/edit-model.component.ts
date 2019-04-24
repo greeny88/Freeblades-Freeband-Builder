@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
+import { Abilities, Skills, Talents } from './advancements';
 import { Model, ModelStats } from '../../model';
 import template from './edit-model.html';
 
@@ -9,112 +10,13 @@ import template from './edit-model.html';
     template
 })
 export class EditModelComponent {
-    private abilities: string[] = ['AGL','DEX','END','KNW','SPR','STR'];
-    private skills: string[] = [
-        'Camouflage',
-        'Climb',
-        'Devices',
-        'Find',
-        'Hunt',
-        'Jump',
-        'Stealth',
-        'Swim',
-        'Thievery'
-    ];
-    private talents: string[] = [
-        'Accurate Shot',
-        'Accurate Strike',
-        'Active Defense',
-        'Agile Charge',
-        'Alpine',
-        'Ambush',
-        'Amphiibious',
-        'Arboreal',
-        'Assult',
-        'Awareness',
-        'Backstep',
-        'Battler',
-        'Bladedancer',
-        'Bladeflash',
-        'Block',
-        'Bloodstruck',
-        'Bold',
-        'Bribery',
-        'Bull Rush',
-        'Confine',
-        'Counterattack',
-        'Deceptive Strike',
-        'Deflect',
-        'Deft',
-        'Die Hard',
-        'Disguise',
-        'Dodge',
-        'Elusive',
-        'Enhanced Disguise',
-        'Far Shot',
-        'Feint',
-        'Flurry',
-        'Fortress',
-        'Freerunner',
-        'Frostfoot',
-        'Furious',
-        'Harasser',
-        'Hardened',
-        'Heroic Attack',
-        'Hit and Run',
-        'Impact',
-        'Impetuous',
-        'Infiltrate',
-        'Intensify Spell',
-        'Leaper',
-        'March',
-        'Marksman',
-        'Medicine',
-        'Merchant',
-        'Missle Parry',
-        'Mountaineer',
-        'Nimble',
-        'Opportune Strike',
-        'Parry',
-        'Pouncer',
-        'Power Attack',
-        'Precise Shot',
-        'Protector',
-        'Punish',
-        'Rapid Fire',
-        'Rapid Reload',
-        'Raven Stance',
-        'Recover',
-        'Reluctant',
-        'Retrograde',
-        'Re-engage',
-        'Running Shot',
-        'Scout',
-        'Scrounge',
-        'Sharpshooter',
-        'Shield Bash',
-        'Sergeant[Follower type]',
-        'Sidestep',
-        'Sniper',
-        'Spellbender',
-        'Spellblocker',
-        'Spellbracer',
-        'Spelldancer',
-        'Spellguider',
-        'Spellhammer',
-        'Spell Riposte',
-        'Spotter',
-        'Steadfast',
-        'Subdue',
-        'Taunt',
-        'Teammate[Type]',
-        'Tough'
-    ];
-    advancements: string[] = ['MAR','RAR','CAR',...this.abilities,...this.skills,...this.talents].sort();
+    advancements: string[] = ['MAR','RAR','CAR','DISC','SPD',...Abilities,...Skills,...Talents].sort();
     advancementNumber: number[];
     advancementCount: number;
     modelAdvancements: string[];
+    modelVeteran: {name: string, cost:string}[];
     originalModelStats: ModelStats;
+    veteranAdvancements: {name: string, cost:string}[];
 
     constructor(private dialogRef: MatDialogRef<any>, @Inject(MAT_DIALOG_DATA) public model: Model) {
         this.originalModelStats = JSON.parse(JSON.stringify(this.model.stats));
@@ -123,58 +25,30 @@ export class EditModelComponent {
             this.updateAdvancementCount();
             this.modelAdvancements = this.model.stats.advancements;
         }
+        let veteranTalents = this.model.stats.talents.filter(talent => talent.indexOf('Veteran') > -1);
+        this.veteranAdvancements = veteranTalents.map(adv => {
+            let advStats = adv.slice(8,-1).split(',', 2);
+            console.log(advStats);
+            let advName = advStats[0];
+            let advCost = advStats[1];
+            return {'name':advName, 'cost':advCost};
+        });
+        console.log(this.veteranAdvancements);
+        this.modelVeteran = Array(this.veteranAdvancements.length).fill(undefined);
     }
 
     ngOnInit() { }
 
     addAdvancement(advancement: string, index: number) {
-        // TODO: move to calculateStats
         this.model.stats = JSON.parse(JSON.stringify(this.originalModelStats));
         this.model.stats.advancements = this.modelAdvancements;
-        for (let adv of this.modelAdvancements) {
-            if (this.skills.includes(adv)) {
-                if ('skills' in this.model.stats) {
-                    let skillFound: boolean = false;
-                    for (let skill of this.model.stats.skills) {
-                        if (skill.name === adv) {
-                            skill.rating += 2;
-                            skillFound = true;
-                        }
-                    }
-                    if (!skillFound) {
-                        this.model.stats.skills.push({"name":adv,"rating":6});
-                    }
-                } else {
-                    this.model.stats.skills = [{"name":adv,"rating":6}];
-                }
-            } else if (this.abilities.includes(adv)) {
-                const abilityReference = {'AGL':'agility','DEX':'dexterity','END':'endurance','KNW':'knowledge','SPR':'spirit','STR':'strength'};
-                if (this.model.stats.abilities[abilityReference[adv]]) {
-                    this.model.stats.abilities[abilityReference[adv]] += 2;
-                } else {
-                    this.model.stats.abilities[abilityReference[adv]] = (this.model.stats.type === 'Hero') ? 10 : 8;
-                }
-            } else if (this.talents.includes(adv)) {
-                this.model.stats.talents.push(adv);
-            } else {
-                if (adv === 'MAR') {
-                    this.model.stats.melee.map(melee => {
-                        melee.damage += 2;
-                        return melee;
-                    });
-                }
-                if (adv === 'RAR') {
-                    this.model.stats.range.map(range => {
-                        range.damage += 2;
-                        return range;
-                    });
-                }
-                if (adv === 'CAR') {
-                    this.model.stats.casting.rating += 2;
-                }
-            }
-        }
     }
+
+    //TODO: addEquipment()
+
+    //TODO: addInjury()
+
+    //TODO: addVeteranTalent()
 
     cancel(): void {
         this.dialogRef.close();

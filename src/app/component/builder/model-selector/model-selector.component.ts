@@ -20,6 +20,7 @@ export class ModelSelectorComponent {
     @Output() onModelSelected = new EventEmitter<any>();
     factionModels : Model[] = factionModels;
     models : Model[];
+    originalModel: Model;
     selected : Model;
     private disallowedAltLeaders: String[] = [
         'Duelist',
@@ -100,29 +101,31 @@ export class ModelSelectorComponent {
     modelSelected() {
         let model: any = {};
         if (this.selected) {
+            if (!this.originalModel) {
+                this.originalModel = JSON.parse(JSON.stringify(this.selected)); 
+            }
             model = this.selected;
-            model.stats = (<any>Object).assign(this.selected.stats, this.modelSelectorService.calculateStats(this.selected.stats));
+            model.stats = (<any>Object).assign(this.selected.stats, this.modelSelectorService.calculateStats(this.originalModel.stats));
         }
         model.component_id = this.componentId;
         this.onModelSelected.emit(model);
     }
 
     openEditWindow() {
-        let model: Model = this.selected;
-        model.stats = (<any>Object).assign(this.selected.stats, this.modelSelectorService.calculateStats(this.selected.stats));
-        model.component_id = this.componentId;
+        // let model: Model = this.originalModel;
+        // model.stats = (<any>Object).assign(this.selected.stats, this.modelSelectorService.calculateStats(this.selected.stats));
+        // model.component_id = this.componentId;
 
         const dialogRef = this.dialog.open(EditModelComponent, {
-            data: this.selected
-          });
-      
-          dialogRef.afterClosed().subscribe(result => {
-            console.log('The dialog was closed');
-            console.log(result);
+            data: this.originalModel
+        });
+
+        dialogRef.afterClosed().subscribe((result: Model) => {
             if (result) {
+                result.stats = (<any>Object).assign(result.stats, this.modelSelectorService.calculateStats(this.originalModel.stats));
                 this.selected = result;
                 this.onModelSelected.emit(result);
             }
-          });
+        });
     }
 }

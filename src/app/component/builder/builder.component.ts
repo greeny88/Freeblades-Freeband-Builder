@@ -20,7 +20,7 @@ export class BuilderComponent {
     faction: string;
     private factionRules: Object;
     freebandBaseValue: number;
-    private heroCount: number;
+    freebandTotalValue: number;
     leaderId: string;
     limit: number;
     modelList: Model[];
@@ -58,6 +58,7 @@ export class BuilderComponent {
         this.completeHeroCount = 0;
         this.errorMessages = [];
         this.freebandBaseValue = 0;
+        this.freebandTotalValue = 0
         let heroCount: number = 0;
         let leader: Model;
         this.modelList = [];
@@ -72,6 +73,8 @@ export class BuilderComponent {
             this.modelList.push(model);
 
             this.freebandBaseValue += model.value;
+            const extraValue = ('advancements' in model.stats) ? model.stats.advancements.length * 3 : 0;
+            this.freebandTotalValue += model.value + extraValue;
             this.totalLifePoints += ('talentList' in model.stats && model.stats.talentList.indexOf('Expendable') > -1) ? (model.stats.lifePoints / 2) : model.stats.lifePoints;
 
             if (model.stats.type === 'Hero') {

@@ -3,7 +3,9 @@
 //     factionList = ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"];
 // }
 // export default factionList
-// declare const factionList: string[] = ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"];;
+// const factionList: string[] = ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"];
+// export { factionList };
+// export { var factionList: string[] = ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"] };
 
 export interface MeleeWeapon {
     abilities?: string[],
