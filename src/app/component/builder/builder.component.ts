@@ -170,6 +170,7 @@ export class BuilderComponent {
     modelSelected(model: Model | {component_id: string}) {
         if ('type' in model) {
             this.models[model.component_id] = model;
+            console.log(model);
         } else {
             delete this.models[model.component_id];
         }

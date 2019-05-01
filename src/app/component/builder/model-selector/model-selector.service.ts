@@ -24,7 +24,8 @@ export class ModelSelectorService {
 
     constructor() {}
 
-    calculateStats(stats: ModelStats) {
+    calculateStats(originalStats: ModelStats) {
+        let stats = JSON.parse(JSON.stringify(originalStats));
         let ability: number = (stats.type === 'Hero') ? 8 : 6;
         let abilities: {agility?: number, dexterity?: number, endurance?: number, knowledge?: number, spirit?: number, strength?: number} = {};
         for (let abilityName of this.abilityList) {
@@ -86,7 +87,7 @@ export class ModelSelectorService {
             defense = -1;
         } else {
             for (let i=0; this.abilityTiers.length > i; i++) {
-                if (abilities.agility === this.abilityTiers[i]) {
+                if (abilities.agility >= this.abilityTiers[i]) {
                     defense = defense + i + 1;
                 }
             }
@@ -97,7 +98,7 @@ export class ModelSelectorService {
             ratingBonus = -1;
         } else {
             for (let i=0; this.abilityTiers.length > i; i++) {
-                if (abilities.dexterity === this.abilityTiers[i]) {
+                if (abilities.dexterity >= this.abilityTiers[i]) {
                     ratingBonus = ratingBonus + i + 1;
                 }
             }
@@ -115,7 +116,7 @@ export class ModelSelectorService {
             lifePoints--;
         } else {
             for (let i=0; this.abilityTiers.length > i; i++) {
-                if (abilities.endurance === this.abilityTiers[i]) {
+                if (abilities.endurance >= this.abilityTiers[i]) {
                     lifePoints = lifePoints + i + 1;
                 }
             }
@@ -126,7 +127,7 @@ export class ModelSelectorService {
             skillBonus = -1;
         } else {
             for (let i=0; this.abilityTiers.length > i; i++) {
-                if (abilities.knowledge === this.abilityTiers[i]) {
+                if (abilities.knowledge >= this.abilityTiers[i]) {
                     skillBonus = skillBonus + i + 1;
                 }
             }
@@ -137,7 +138,7 @@ export class ModelSelectorService {
             moraleBonus = -1;
         } else {
             for (let i=0; this.abilityTiers.length > i; i++) {
-                if (abilities.spirit === this.abilityTiers[i]) {
+                if (abilities.spirit >= this.abilityTiers[i]) {
                     moraleBonus = moraleBonus + i + 1;
                 }
             }
@@ -148,7 +149,7 @@ export class ModelSelectorService {
             damageBonus = -1;
         } else {
             for (let i=0; this.abilityTiers.length > i; i++) {
-                if (abilities.strength === this.abilityTiers[i]) {
+                if (abilities.strength >= this.abilityTiers[i]) {
                     damageBonus = damageBonus + i + 1;
                 }
             }

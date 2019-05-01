@@ -4312,5 +4312,35 @@
         "gender": "M",
         "value": 37,
         "race": "Demon"
+    },
+    {
+        "factions": ["Kuzaarik Forgers"],
+        "name": "Stoneclaw Savage",
+        "displayName": "Stoneclaw Savage",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 8,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Zeradrakh",
+                "abilities": ["te"]
+            },{
+                "rating": 8,
+                "damage": 6,
+                "name": "Bite"
+            }],
+            "armor": 5,
+            "discipline": 10,
+            "talents": ["Die Hard", "Die Hard","Fearsome","Bull Rush","Cavalry","Fast","Alpine"],
+            "abilities": {
+                "endurance": 12,
+                "strength": 12
+            }
+        },
+        "gender": "M",
+        "value": 43,
+        "race": "Kuzaarik"
     }
 ]
