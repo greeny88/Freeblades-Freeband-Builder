@@ -12404,5 +12404,7 @@ footer {
         #printModelList table td[colspan="4"], #printModelList table th[colspan="4"] {
           width: 32%; }
         #printModelList table td[colspan="5"], #printModelList table th[colspan="5"] {
-          width: 40%; } }
+          width: 40%; }
+      #printModelList table th {
+        background-color: #DDD; } }
 
