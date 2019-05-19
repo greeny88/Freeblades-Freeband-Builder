@@ -2309,7 +2309,7 @@
             "armor": 3
         },
         "type": "Standard",
-        "value": 29,
+        "value": 35,
         "gender": "M",
         "race": "Faeler"
     },
@@ -2637,7 +2637,7 @@
     {
         "factions": ["Grular Invaders"],
         "name": "Krang",
-        "displayName": "Bludgeoneer",
+        "displayName": "Krang",
         "stats": {
             "discipline": 6,
             "type": "Follower",
