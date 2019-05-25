@@ -67,13 +67,16 @@ export class BuilderComponent {
         this.scoutingPoints = 0;
         let zetakorFound: boolean = false;
 
+        console.log(this.models);
+
         for (let modelId in this.models) {
             let model: Model = this.models[modelId];
 
             this.modelList.push(model);
 
             this.freebandBaseValue += model.value;
-            const extraValue = ('advancements' in model.stats) ? model.stats.advancements.length * 3 : 0;
+            const extraValue = ('advancements' in model.stats) ? model.stats.advancements.reduce( ((sum,adv) => sum += adv.cost), 0) : 0;
+            // console.log(`extraValue: ${extraValue}`);
             this.freebandTotalValue += model.value + extraValue;
             this.totalLifePoints += ('talentList' in model.stats && model.stats.talentList.indexOf('Expendable') > -1) ? (model.stats.lifePoints / 2) : model.stats.lifePoints;
 
@@ -170,7 +173,6 @@ export class BuilderComponent {
     modelSelected(model: Model | {component_id: string}) {
         if ('type' in model) {
             this.models[model.component_id] = model;
-            console.log(model);
         } else {
             delete this.models[model.component_id];
         }

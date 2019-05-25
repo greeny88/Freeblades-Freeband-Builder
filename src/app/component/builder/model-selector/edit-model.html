@@ -8,25 +8,28 @@
             <mat-option *ngFor="let gender of ['M','F']" [value]="gender">{{gender}}</mat-option>
         </mat-select>
     </mat-form-field>
-    <h1 *ngIf="veteranAdvancements.length > 0">Veteran Upgrades</h1>
+    <!-- <h1 *ngIf="veteranAdvancements.length > 0">Veteran Upgrades</h1>
     <ng-container *ngFor="let vet of veteranAdvancements; let i = index">
-        <mat-checkbox [(ngModel)]="modelVeteran[i]">{{vet.name}} Cost:{{vet.cost}}</mat-checkbox>
-    </ng-container>
-    <mat-form-field style="width:100%">
-        <input matInput type="number" placeholder="# of Advancements" [(ngModel)]="advancementCount">
-    </mat-form-field>
-    <button mat-button (click)="updateAdvancementCount()">Add advancements</button>
-    <ng-container *ngFor="let count of advancementNumber; let i = index">
+        <mat-checkbox [(ngModel)]="modelVeteranAdvancements[i]">{{vet.name}} Cost:{{vet.cost}}</mat-checkbox>
+    </ng-container> -->
+    <div>
+        <button mat-button class="mat-raised-button" (click)="updateAdvancementCount()">Add advancements</button>
+    </div>
+    <ng-container *ngFor="let ma of modelAdvancements">
         <br/>
         <mat-form-field>
-            <mat-select (selectionChange)="addAdvancement(adv, i)" [(value)]="modelAdvancements[i]">
+            <mat-select (selectionChange)="addAdvancement()" [(value)]="ma.name">
                 <mat-option value="">None</mat-option>
                 <mat-option *ngFor="let adv of advancements" [value]="adv">{{adv}}</mat-option>
             </mat-select>
         </mat-form-field>
+        <mat-form-field>
+            <input matInput type="number" placeholder="Cost" [(ngModel)]="ma.cost">
+        </mat-form-field>
+        <button mat-button class="mat-raised-button" (click)="removeAdvancement(ma)">Remove</button>
     </ng-container>
 </div>
 <div mat-dialog-actions>
-    <button mat-button [mat-dialog-close]="model">Update</button>
-    <button mat-button (click)="cancel()">Cancel</button>
+    <button mat-button class="mat-raised-button" [mat-dialog-close]="model">Update</button>
+    <button mat-button class="mat-raised-button" (click)="cancel()">Cancel</button>
 </div>

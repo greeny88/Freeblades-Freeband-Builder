@@ -2,7 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 import { Abilities, Skills, Talents } from './advancements';
-import { Model, ModelStats } from '../../model';
+import { Advancement, Model, ModelStats } from '../../model';
 import template from './edit-model.html';
 
 @Component({
@@ -13,12 +13,13 @@ export class EditModelComponent {
     advancements: string[] = ['MAR','RAR','CAR','DISC','SPD',...Abilities,...Skills,...Talents].sort();
     advancementNumber: number[];
     advancementCount: number;
-    modelAdvancements: string[];
-    modelVeteran: {name: string, cost:string}[];
+    modelAdvancements: Advancement[];
+    modelVeteranAdvancements: Advancement[];
     originalModelStats: ModelStats;
-    veteranAdvancements: {name: string, cost:string}[];
+    veteranAdvancements: Advancement[];
 
     constructor(private dialogRef: MatDialogRef<any>, @Inject(MAT_DIALOG_DATA) public model: Model) {
+        this.modelAdvancements = [];
         this.originalModelStats = JSON.parse(JSON.stringify(this.model.stats));
         if ('advancements' in this.model.stats) {
             this.advancementCount = this.model.stats.advancements.length;
@@ -28,18 +29,18 @@ export class EditModelComponent {
         let veteranTalents = this.model.stats.talents.filter(talent => talent.indexOf('Veteran') > -1);
         this.veteranAdvancements = veteranTalents.map(adv => {
             let advStats = adv.slice(8,-1).split(',', 2);
-            console.log(advStats);
-            let advName = advStats[0];
-            let advCost = advStats[1];
-            return {'name':advName, 'cost':advCost};
+            // console.log(`advStats: ${advStats}`);
+            let name: string = advStats[0];
+            let cost: number = parseInt(advStats[1]);
+            return {name, cost};
         });
-        console.log(this.veteranAdvancements);
-        this.modelVeteran = Array(this.veteranAdvancements.length).fill(undefined);
+        // console.log(`this.veteranAdvancements: ${this.veteranAdvancements}`);
+        this.modelVeteranAdvancements = Array(this.veteranAdvancements.length).fill({'name':undefined,'cost':0});
     }
 
     ngOnInit() { }
 
-    addAdvancement(advancement: string, index: number) {
+    addAdvancement() {
         this.model.stats = JSON.parse(JSON.stringify(this.originalModelStats));
         this.model.stats.advancements = this.modelAdvancements;
     }
@@ -48,14 +49,21 @@ export class EditModelComponent {
 
     //TODO: addInjury()
 
-    //TODO: addVeteranTalent()
+    addVeteranTalent() {
+        this.model.stats = JSON.parse(JSON.stringify(this.originalModelStats));
+        this.model.stats.veteranAdvancements = this.modelVeteranAdvancements;
+    }
+
+    removeAdvancement(adv: Advancement) {
+        this.modelAdvancements.splice(this.modelAdvancements.indexOf(adv), 1);
+    }
 
     cancel(): void {
+        this.model.stats = JSON.parse(JSON.stringify(this.originalModelStats));
         this.dialogRef.close();
     }
 
     updateAdvancementCount(): void {
-        this.advancementNumber = Array(this.advancementCount).fill(0);
-        this.modelAdvancements = Array(this.advancementCount).fill(undefined);
+        this.modelAdvancements.push({'name':undefined,'cost':3});
     }
 }

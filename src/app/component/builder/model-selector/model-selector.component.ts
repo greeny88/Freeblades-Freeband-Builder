@@ -19,6 +19,7 @@ export class ModelSelectorComponent {
     @Output() onModelRemoved = new EventEmitter<any>();
     @Output() onModelSelected = new EventEmitter<any>();
     factionModels : Model[] = factionModels;
+    model: Model | any;
     models : Model[];
     originalModel: Model;
     selected : Model;
@@ -99,16 +100,14 @@ export class ModelSelectorComponent {
     }
 
     modelSelected() {
-        let model: any = {};
+        this.model = {};
         if (this.selected) {
-            if (!this.originalModel) {
-                this.originalModel = JSON.parse(JSON.stringify(this.selected)); 
-            }
-            model = this.selected;
-            model.stats = (<any>Object).assign(this.selected.stats, this.modelSelectorService.calculateStats(this.originalModel.stats));
+            this.originalModel = JSON.parse(JSON.stringify(this.selected));
+            this.model = JSON.parse(JSON.stringify(this.selected));
+            this.model.stats = (<any>Object).assign(this.model.stats, this.modelSelectorService.calculateStats(this.selected.stats));
         }
-        model.component_id = this.componentId;
-        this.onModelSelected.emit(model);
+        this.model.component_id = this.componentId;
+        this.onModelSelected.emit(this.model);
     }
 
     openEditWindow() {
@@ -118,8 +117,10 @@ export class ModelSelectorComponent {
 
         dialogRef.afterClosed().subscribe((result: Model) => {
             if (result) {
-                this.selected.stats = (<any>Object).assign(this.selected.stats, this.modelSelectorService.calculateStats(this.originalModel.stats));
-                this.onModelSelected.emit(this.selected);
+                this.model = JSON.parse(JSON.stringify(result));
+                this.model.stats = (<any>Object).assign(this.model.stats, this.modelSelectorService.calculateStats(result.stats));
+                this.model.component_id = this.componentId;
+                this.onModelSelected.emit(this.model);
             }
         });
     }

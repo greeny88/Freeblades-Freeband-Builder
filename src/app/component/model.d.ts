@@ -1,11 +1,7 @@
-
-// declare var {
-//     factionList = ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"];
-// }
-// export default factionList
-// const factionList: string[] = ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"];
-// export { factionList };
-// export { var factionList: string[] = ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"] };
+export interface Advancement {
+    name: string,
+    cost: number
+}
 
 export interface MeleeWeapon {
     abilities?: string[],
@@ -42,11 +38,12 @@ export interface ModelStats {
         spirit?: number,
         strength?: number
     },
-    advancements?: string[],
+    advancements?: Advancement[],
     armor: number,
     casting?: {
         power: number,
-        rating: number
+        rating: number,
+        ratingBonus?: number
     },
     defense: number,
     discipline: number,
@@ -61,7 +58,8 @@ export interface ModelStats {
     speed: number,
     talents?: string[],
     talentList?: string,
-    type: "Follower" | "Hero"
+    type: "Follower" | "Hero",
+    veteranAdvancements?: Advancement[]
 }
 
 export interface Model {

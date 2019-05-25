@@ -5,6 +5,7 @@ import { ModelStats } from '../../model';
 
 interface stats {
     abilities: Object,
+    casting?: Object,
     defense: number,
     discipline: number,
     lifePoints: number,
@@ -37,46 +38,46 @@ export class ModelSelectorService {
             stats.advancements = [];
         }
         for (let adv of stats.advancements) {
-            if (Skills.includes(adv)) {
+            if (Skills.includes(adv.name)) {
                 if ('skills' in stats) {
                     let skillFound: boolean = false;
                     for (let skill of stats.skills) {
-                        if (skill.name === adv) {
+                        if (skill.name === adv.name) {
                             skill.rating += 2;
                             skillFound = true;
                         }
                     }
                     if (!skillFound) {
-                        stats.skills.push({"name":adv,"rating":6});
+                        stats.skills.push({"name":adv.name,"rating":6});
                     }
                 } else {
-                    stats.skills = [{"name":adv,"rating":6}];
+                    stats.skills = [{"name":adv.name,"rating":6}];
                 }
-            } else if (Abilities.includes(adv)) {
+            } else if (Abilities.includes(adv.name)) {
                 const abilityReference = {'AGL':'agility','DEX':'dexterity','END':'endurance','KNW':'knowledge','SPR':'spirit','STR':'strength'};
-                abilities[abilityReference[adv]] += 2;
-            } else if (Talents.includes(adv)) {
-                stats.talents.push(adv);
+                abilities[abilityReference[adv.name]] += 2;
+            } else if (Talents.includes(adv.name)) {
+                stats.talents.push(adv.name);
             } else {
-                if (adv === 'MAR') {
+                if (adv.name === 'MAR') {
                     stats.melee.map(melee => {
                         melee.rating += 2;
                         return melee;
                     });
                 }
-                if (adv === 'RAR') {
+                if (adv.name === 'RAR') {
                     stats.range.map(range => {
                         range.rating += 2;
                         return range;
                     });
                 }
-                if (adv === 'CAR') {
+                if (adv.name === 'CAR') {
                     stats.casting.rating += 2;
                 }
-                if (adv === 'DISC') {
+                if (adv.name === 'DISC') {
                     stats.discipline += 2;
                 }
-                if (adv === 'SPD') {
+                if (adv.name === 'SPD') {
                     stats.speed += 1;
                 }
             }
@@ -203,6 +204,12 @@ export class ModelSelectorService {
                 }
             }
             updatedStats.range = range;
+        }
+
+        if (stats.casting) {
+            let casting = stats.casting;
+            casting.ratingBonus = skillBonus;
+            updatedStats.casting = casting;
         }
         
         return updatedStats;
