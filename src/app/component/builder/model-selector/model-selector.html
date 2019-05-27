@@ -77,5 +77,8 @@
         <div class="mdc-layout-grid__inner" style="margin-bottom:1rem;" *ngIf="model.stats.talents?.length > 0">
             <div class="mdc-layout-grid__cell--span-12"><span style="font-weight:bold;">Talents:</span> {{model.stats.talentList}}</div>
         </div>
+        <div class="mdc-layout-grid__inner" style="margin-bottom:1rem;" *ngIf="model.stats.items?.length > 0">
+            <div class="mdc-layout-grid__cell--span-12"><span style="font-weight:bold;">Items:</span> {{model.stats.itemList}}</div>
+        </div>
     </ng-container>
 </div>

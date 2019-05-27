@@ -67,7 +67,7 @@
             <td>{{freebandBaseValue}}</td>
             <th colspan="2">Freeband Total Value</th>
             <td>&nbsp;</td>
-            <td colspan="2">&nbsp;</td>
+            <!-- <td colspan="2">&nbsp;</td> -->
         </tr>
         <tr>
             <th colspan="2">Break Value</th>
@@ -76,7 +76,7 @@
             <td>&nbsp;</td>
             <th colspan="2">Scouting Points</th>
             <td>{{scoutingPoints}}</td>
-            <td colspan="3">&nbsp;</td>
+            <!-- <td colspan="3">&nbsp;</td> -->
         </tr>
         <tr>
             <td colspan="12" class="no-border">&nbsp;</td>
@@ -142,7 +142,7 @@
             <th colspan="5">Skills</th>
             <ng-container *ngIf="model.stats.casting; else noCAR">
                 <th>CAR</th>
-                <td>d{{model.stats.casting.rating}}</td>
+                <td>d{{model.stats.casting.rating}}<span *ngIf="model.stats.casting.ratingBonus > 0">&nbsp;+{{model.stats.casting.ratingBonus}}</span></td>
             </ng-container>
         </tr>
         <tr>
@@ -152,6 +152,10 @@
                 <th>Power</th>
                 <td>{{model.stats.casting.power}}</td>
             </ng-container>
+        </tr>
+        <tr *ngIf="model.stats.itemList">
+            <th colspan="2">Items</th>
+            <td colspan="10">{{model.stats.itemList}}</td>
         </tr>
         <tr>
             <td colspan="12" class="no-border">&nbsp;</td>

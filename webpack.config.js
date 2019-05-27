@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const CleanPlugin = require('clean-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -25,10 +25,8 @@ const extractSassPlugin = new MiniCssExtractPlugin({
 const htmlPlugin = new HtmlWebpackPlugin({
 	template: paths.index
 });
-const cleanDistPlugin = new CleanPlugin([
-    dist
-], {
-    exclude: ['.git']
+const cleanDistPlugin = new CleanWebpackPlugin({
+    cleanOnceBeforeBuildPatterns: ['!.git']
 });
 const definePlugin = new webpack.DefinePlugin({
 	VERSION: JSON.stringify(packageInfo.version)

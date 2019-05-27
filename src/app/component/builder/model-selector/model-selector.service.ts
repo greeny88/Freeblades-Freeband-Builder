@@ -8,6 +8,7 @@ interface stats {
     casting?: Object,
     defense: number,
     discipline: number,
+    itemList: string,
     lifePoints: number,
     melee?: Object,
     moraleBonus: number,
@@ -25,6 +26,52 @@ export class ModelSelectorService {
 
     constructor() {}
 
+    private addAdvancement(stats: ModelStats, abilities, advancementName: string) {
+        if (Skills.includes(advancementName)) {
+            if ('skills' in stats) {
+                let skillFound: boolean = false;
+                for (let skill of stats.skills) {
+                    if (skill.name === advancementName) {
+                        skill.rating += 2;
+                        skillFound = true;
+                    }
+                }
+                if (!skillFound) {
+                    stats.skills.push({'name':advancementName, 'rating':6});
+                }
+            } else {
+                stats.skills = [{'name':advancementName,'rating':6}];
+            }
+        } else if (Abilities.includes(advancementName)) {
+            const abilityReference = {'AGL':'agility','DEX':'dexterity','END':'endurance','KNW':'knowledge','SPR':'spirit','STR':'strength'};
+            abilities[abilityReference[advancementName]] += 2;
+        } else if (Talents.includes(advancementName)) {
+            stats.talents.push(advancementName);
+        } else {
+            if (advancementName === 'MAR') {
+                stats.melee.map(melee => {
+                    melee.rating += 2;
+                    return melee;
+                });
+            }
+            if (advancementName === 'RAR') {
+                stats.range.map(range => {
+                    range.rating += 2;
+                    return range;
+                });
+            }
+            if (advancementName === 'CAR') {
+                stats.casting.rating += 2;
+            }
+            if (advancementName === 'DISC') {
+                stats.discipline += 2;
+            }
+            if (advancementName === 'SPD') {
+                stats.speed += 1;
+            }
+        }
+    }
+
     calculateStats(originalStats: ModelStats) {
         let stats = JSON.parse(JSON.stringify(originalStats));
         let ability: number = (stats.type === 'Hero') ? 8 : 6;
@@ -37,48 +84,38 @@ export class ModelSelectorService {
         if (!('advancements' in stats)) {
             stats.advancements = [];
         }
+        // console.log(stats.advancements);
         for (let adv of stats.advancements) {
-            if (Skills.includes(adv.name)) {
-                if ('skills' in stats) {
-                    let skillFound: boolean = false;
-                    for (let skill of stats.skills) {
-                        if (skill.name === adv.name) {
-                            skill.rating += 2;
-                            skillFound = true;
-                        }
-                    }
-                    if (!skillFound) {
-                        stats.skills.push({"name":adv.name,"rating":6});
-                    }
-                } else {
-                    stats.skills = [{"name":adv.name,"rating":6}];
-                }
-            } else if (Abilities.includes(adv.name)) {
+            this.addAdvancement(stats, abilities, adv.name);
+        }
+        
+        if (!('items' in stats)) {
+            stats.items = [];
+        }
+        // console.log(stats.items);
+        for (let item of stats.items) {
+            if (!item || !('advancement' in item)) {
+                break;
+            }
+            this.addAdvancement(stats, abilities, item.advancement);
+        }
+
+        if (!('injuries' in stats)) {
+            stats.injuries = [];
+        }
+        // console.log(stats.injuries);
+        for (let inj of stats.injuries) {
+            if (Abilities.includes(inj)) {
                 const abilityReference = {'AGL':'agility','DEX':'dexterity','END':'endurance','KNW':'knowledge','SPR':'spirit','STR':'strength'};
-                abilities[abilityReference[adv.name]] += 2;
-            } else if (Talents.includes(adv.name)) {
-                stats.talents.push(adv.name);
+                abilities[abilityReference[inj]] -= 2;
+            } else if (['Hate[faction]','Reluctant'].includes(inj)) {
+                stats.talents.push(inj);
             } else {
-                if (adv.name === 'MAR') {
-                    stats.melee.map(melee => {
-                        melee.rating += 2;
-                        return melee;
-                    });
+                if (inj === 'DISC') {
+                    stats.discipline -= 2;
                 }
-                if (adv.name === 'RAR') {
-                    stats.range.map(range => {
-                        range.rating += 2;
-                        return range;
-                    });
-                }
-                if (adv.name === 'CAR') {
-                    stats.casting.rating += 2;
-                }
-                if (adv.name === 'DISC') {
-                    stats.discipline += 2;
-                }
-                if (adv.name === 'SPD') {
-                    stats.speed += 1;
+                if (inj === 'SPD') {
+                    stats.speed -= 1;
                 }
             }
         }
@@ -169,11 +206,17 @@ export class ModelSelectorService {
             });
             talentList = Array.from(new Set(talents)).join(', ');
         }
+
+        let itemList: string;
+        if (stats.items) {
+            itemList = stats.items.map(item => `${item.name}`).join(', ');
+        }
         
         let updatedStats: stats = {
             abilities,
             defense,
             'discipline': stats.discipline,
+            itemList,
             lifePoints,
             moraleBonus,
             skillBonus,

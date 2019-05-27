@@ -1,6 +1,12 @@
 export interface Advancement {
-    name: string,
-    cost: number
+    cost: number,
+    name: string
+}
+
+export interface Items {
+    advancement?: string,
+    cost: number,
+    name: string
 }
 
 export interface MeleeWeapon {
@@ -47,6 +53,9 @@ export interface ModelStats {
     },
     defense: number,
     discipline: number,
+    injuries?: string[],
+    items?: Items[],
+    itemList: string,
     lifePoints: number,
     melee?: MeleeWeapon[],
     moraleBonus?: number,

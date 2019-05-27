@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
-import { Abilities, Skills, Talents } from './advancements';
+import { Abilities, Equipment, MagicItems, Skills, Talents } from './advancements';
 import { Advancement, Model, ModelStats } from '../../model';
 import template from './edit-model.html';
 
@@ -11,20 +11,39 @@ import template from './edit-model.html';
 })
 export class EditModelComponent {
     advancements: string[] = ['MAR','RAR','CAR','DISC','SPD',...Abilities,...Skills,...Talents].sort();
-    advancementNumber: number[];
-    advancementCount: number;
+    injuries: string[] = [...Abilities, 'DISC', 'SPD', 'Reluctant', 'Hate[faction]'].sort();
+    items: any = [...Equipment, ...MagicItems].sort((a,b) => {
+        if (a.name.toLowerCase() > b.name.toLowerCase()) {
+            return 1;
+        }
+        if (a.name.toLowerCase() < b.name.toLowerCase()) {
+            return -1;
+        }
+        return 0;
+    });
     modelAdvancements: Advancement[];
+    modelInjuries: string[];
+    modelItems: any[];
     modelVeteranAdvancements: Advancement[];
     originalModelStats: ModelStats;
     veteranAdvancements: Advancement[];
 
     constructor(private dialogRef: MatDialogRef<any>, @Inject(MAT_DIALOG_DATA) public model: Model) {
         this.modelAdvancements = [];
+        this.modelInjuries = [];
+        this.modelItems = [];
         this.originalModelStats = JSON.parse(JSON.stringify(this.model.stats));
         if ('advancements' in this.model.stats) {
-            this.advancementCount = this.model.stats.advancements.length;
             this.updateAdvancementCount();
             this.modelAdvancements = this.model.stats.advancements;
+        }
+        if ('injuries' in this.model.stats) {
+            this.updateItemCount();
+            this.modelInjuries = this.model.stats.injuries;
+        }
+        if ('items' in this.model.stats) {
+            this.updateItemCount();
+            this.modelItems = this.model.stats.items;
         }
         let veteranTalents = this.model.stats.talents.filter(talent => talent.indexOf('Veteran') > -1);
         this.veteranAdvancements = veteranTalents.map(adv => {
@@ -41,21 +60,31 @@ export class EditModelComponent {
     ngOnInit() { }
 
     addAdvancement() {
-        this.model.stats = JSON.parse(JSON.stringify(this.originalModelStats));
+        // this.model.stats = JSON.parse(JSON.stringify(this.originalModelStats));
         this.model.stats.advancements = this.modelAdvancements;
     }
 
-    //TODO: addEquipment()
+    addItem(item, index) {
+        // this.model.stats = JSON.parse(JSON.stringify(this.originalModelStats));
+        if (!('items' in this.model.stats)) {
+            this.model.stats.items = [];
+        }
+        this.model.stats.items[index] = item;
+    }
 
-    //TODO: addInjury()
+    addInjury(injury, index) {
+        // this.model.stats = JSON.parse(JSON.stringify(this.originalModelStats));
+        // console.log(injury);
+        // console.log(this.modelInjuries);
+        if (!('injuries' in this.model.stats)) {
+            this.model.stats.injuries = [];
+        }
+        this.model.stats.injuries[index] = injury;
+    }
 
     addVeteranTalent() {
         this.model.stats = JSON.parse(JSON.stringify(this.originalModelStats));
         this.model.stats.veteranAdvancements = this.modelVeteranAdvancements;
-    }
-
-    removeAdvancement(adv: Advancement) {
-        this.modelAdvancements.splice(this.modelAdvancements.indexOf(adv), 1);
     }
 
     cancel(): void {
@@ -63,7 +92,27 @@ export class EditModelComponent {
         this.dialogRef.close();
     }
 
+    removeAdvancement(adv: Advancement) {
+        this.modelAdvancements.splice(this.modelAdvancements.indexOf(adv), 1);
+    }
+
+    removeInjuries(injury) {
+        this.modelInjuries.splice(this.modelInjuries.indexOf(injury), 1);
+    }
+
+    removeItem(item) {
+        this.modelItems.splice(this.modelItems.indexOf(item), 1);
+    }
+
     updateAdvancementCount(): void {
         this.modelAdvancements.push({'name':undefined,'cost':3});
+    }
+
+    updateInjuryCount(): void {
+        this.modelInjuries.push(undefined);
+    }
+
+    updateItemCount(): void {
+        this.modelItems.push(undefined);
     }
 }

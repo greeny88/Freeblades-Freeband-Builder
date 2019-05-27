@@ -67,16 +67,14 @@ export class BuilderComponent {
         this.scoutingPoints = 0;
         let zetakorFound: boolean = false;
 
-        console.log(this.models);
-
         for (let modelId in this.models) {
             let model: Model = this.models[modelId];
 
             this.modelList.push(model);
 
             this.freebandBaseValue += model.value;
-            const extraValue = ('advancements' in model.stats) ? model.stats.advancements.reduce( ((sum,adv) => sum += adv.cost), 0) : 0;
-            // console.log(`extraValue: ${extraValue}`);
+            let extraValue = ('advancements' in model.stats) ? model.stats.advancements.reduce( ((sum,adv) => sum += adv.cost), 0) : 0;
+            extraValue += ('items' in model.stats) ? model.stats.items.reduce( ((sum,itm) => sum += itm.cost), 0) : 0;
             this.freebandTotalValue += model.value + extraValue;
             this.totalLifePoints += ('talentList' in model.stats && model.stats.talentList.indexOf('Expendable') > -1) ? (model.stats.lifePoints / 2) : model.stats.lifePoints;
 
@@ -201,24 +199,24 @@ export class BuilderComponent {
     }
 
     private blackRoseBanditsRule(model: Model): string | undefined {
-        const models: Model[] = [];
+        const models: string[] = [];
         for (let key in this.models) {
             if (this.models[key].stats.type === 'Hero') {
-                models.push(this.models[key]);
+                models.push(this.models[key].name);
             }
         }
-        const checkForDups = models.filter(model => model.name !== 'Highwayman');
+        const checkForDups = models.filter(modelName => modelName !== 'Highwayman');
         return ((new Set(checkForDups)).size !== checkForDups.length) ? 'Bandits may not have duplicate heroes except for the Highwayman.' : undefined;
     }
 
     private blackThornBanditsRule(model: Model): string | undefined {
-        const models: Model[] = [];
+        const models: string[] = [];
         for (let key in this.models) {
             if (this.models[key].stats.type === 'Hero') {
-                models.push(this.models[key]);
+                models.push(this.models[key].name);
             }
         }
-        const checkForDups = models.filter(model => model.name !== 'Highwayman');
+        const checkForDups = models.filter(modelName => modelName !== 'Highwayman');
         return ((new Set(checkForDups)).size !== checkForDups.length) ? 'Bandits may not have duplicate heroes except for the Highwayman.' : undefined;
     }
 
@@ -285,7 +283,6 @@ export class BuilderComponent {
         if (demonCount > totalCount) {
             return 'Grular many not have more demon models than non-demon models.';
         }
-        //TODO: may have one additional Marauder at 251+
         return undefined;
     }
 
