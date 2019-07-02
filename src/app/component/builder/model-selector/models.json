@@ -4342,5 +4342,36 @@
         "gender": "M",
         "value": 43,
         "race": "Kuzaarik"
+    },
+    {
+        "factions": ["Traazorite Crusaders"],
+        "name": "Viper Veteran",
+        "displayName": "Viper Veteran",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "damageBonus": 1,
+                "name": "Sakhazet",
+                "abilities": ["let"]
+            }],
+            "range": [{
+                "rating": 8,
+                "damage": 4,
+                "name": "Blogun",
+                "abilities": ["ven"],
+                "range": 6
+            }],
+            "shield": "L",
+            "armor": 5,
+            "discipline": 10,
+            "talents": ["Parry", "Bladeflash","Conquer","Taunt","Arboreal"]
+        },
+        "gender": "M",
+        "value": 34,
+        "race": "Chaler"
     }
 ]

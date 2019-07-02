@@ -159,6 +159,126 @@ const MagicItems: {name: string, advancement: string, cost: number}[] = [{
     'name':'Ring of Evarin',
     'advancement':'Counterspell', // d8 counterspell
     'cost':3
+},{
+    'name':'Gallan\'s Gloves',
+    'advancement':'Contain',
+    'cost':3
+},{
+    'name':'Boots of Sabhir',
+    'advancement':'Amphibious',
+    'cost':3
+},{
+    'name':'Eyes of Ariemi',
+    'advancement':'Accurate Shot',
+    'cost':3
+},{
+    'name':'Loin\'s Mane',
+    'advancement':'Assault',
+    'cost':3
+},{
+    'name':'Horn of the Wolflord',
+    'advancement':'Battlecry',
+    'cost':3
+},{
+    'name':'Circlet of Fury',
+    'advancement':'Furious',
+    'cost':3
+},{
+    'name':'Togon\'s Mirror',
+    'advancement':'Deflect',
+    'cost':3
+},{
+    'name':'Mara\'s Mask',
+    'advancement':'Disuise',
+    'cost':3
+},{
+    'name':'Belt of Fazik-kel',
+    'advancement':'Dodge',
+    'cost':3
+},{
+    'name':'Heartmender',
+    'advancement':'Casualty reroll',
+    'cost':3
+},{
+    'name':'Belt of Contempt',
+    'advancement':'Hate[MAR]',
+    'cost':3
+},{
+    'name':'Soldier\'s Boots',
+    'advancement':'March',
+    'cost':3
+},{
+    'name':'Zakzin\'s Bones',
+    'advancement':'Intensify Spell',
+    'cost':3
+},{
+    'name':'Bracers of Darien',
+    'advancement':'Missle Parry',
+    'cost':3
+},{
+    'name':'Goblet of Glory',
+    'advancement':'Bloodstruck',
+    'cost':3
+},{
+    'name':'Ring of Fire',
+    'advancement':'Flaming Weapon',
+    'cost':3
+},{
+    'name':'Mirazham\'s Cloak',
+    'advancement':'Opportune Strike',
+    'cost':3
+},{
+    'name':'Raven\'s Wings',
+    'advancement':'Raven Stance',
+    'cost':3
+},{
+    'name':'Darkwand',
+    'advancement':'Gloom 6in',
+    'cost':3
+},{
+    'name':'Amulet of Guard',
+    'advancement':'Protector',
+    'cost':3
+},{
+    'name':'Lens of Sep',
+    'advancement':'Sharpshooter',
+    'cost':3
+},{
+    'name':'Tinor\'s Torque',
+    'advancement':'1dl counterspell',
+    'cost':3
+},{
+    'name':'Ghost Veil',
+    'advancement':'Spirit',
+    'cost':3
+},{
+    'name':'Hunter\'s Lasso',
+    'advancement':'Subdue',
+    'cost':3
+},{
+    'name':'Necklace of Fate',
+    'advancement':'Lucky',
+    'cost':3
+},{
+    'name':'Scales of Nespetos',
+    'advancement':'Cheaper Gear',
+    'cost':3
+},{
+    'name':'Eliopor\'s Ring',
+    'advancement':'1dl spell damage',
+    'cost':3
+},{
+    'name':'Bracelet of Ilvayn',
+    'advancement':'Accurate Strike',
+    'cost':3
+},{
+    'name':'Goggles of Mer',
+    'advancement':'Witchsight',
+    'cost':3
+},{
+    'name':'Mirror Gem',
+    'advancement':'Spell Riposte',
+    'cost':3
 }];
 const Skills: string[] = [
     'Camouflage',
