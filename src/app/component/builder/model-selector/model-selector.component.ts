@@ -29,7 +29,8 @@ export class ModelSelectorComponent {
         'Bladerider First',
         'Bladerider',
         'Shadow Hunter',
-        'Azalakar'
+        'Azalakar',
+        'Oppressor'
     ];
 
     constructor(private dialog: MatDialog, private modelSelectorService: ModelSelectorService) {

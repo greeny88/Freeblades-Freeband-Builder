@@ -37,8 +37,10 @@ export class BuilderComponent {
             'Falkaaran Adventurers': this.falkaaranRules,
             'Grular Invaders': this.grularRules,
             'Haradelan Questers': this.haradelanRules,
+            'Kandoran Deathmasters': this.kandoranRules,
             'Kuzaarik Forgers': this.kuzaarikRules,
             'Mershael Corsairs': this.mershaelRules,
+            'Shakrim Wavestalkers': this.shakrimRules,
             'Traazorite Crusaders': this.traazoriteRules,
             'Trilian Seekers': this.trilianRules,
             'Urdaggar Tribes of Valor': this.urdaggarRules
@@ -122,7 +124,7 @@ export class BuilderComponent {
                 }
             }
             // Grular Marauder exception
-            const heroLimit: number = (model.name === 'Marauder' && this.limit > 250) ? 3 : 2;
+            const heroLimit: number = ((model.name === 'Marauder' || model.name === 'Impaler') && this.limit > 250) ? 3 : 2;
             if (heroFound > heroLimit) {
                 this.addErrorMessage(`You can only have ${heroLimit} of a hero model (${model.name}).`);
             }
@@ -274,14 +276,26 @@ export class BuilderComponent {
     private grularRules(model: Model): string | undefined {
         let demonCount = 0;
         let totalCount = 0;
+        let nonMarauderMountedFound = false;
+        let gadarlFound = false;
         for (let key in this.models) {
             if (this.models[key].stats.talentList.indexOf('Demon') > -1) {
                 demonCount++;
+                if (this.models[key].name === 'Gadarl') {
+                    gadarlFound = true;
+                }
+            }
+            if (this.models[key].displayName.indexOf('Mounted') > -1 && this.models[key].name !== 'Marauder') {
+                nonMarauderMountedFound = true;
             }
             totalCount++;
         }
         if (demonCount > totalCount) {
-            return 'Grular many not have more demon models than non-demon models.';
+            return 'Grular may not have more demon models than non-demon models.';
+        }
+        const demonCountMinusGadarl = (gadarlFound) ? demonCount - 1 : demonCount;
+        if (nonMarauderMountedFound && demonCountMinusGadarl > 0) {
+            return 'Grular may not have demon models with non-Marauder mounted models.';
         }
         return undefined;
     }
@@ -303,6 +317,24 @@ export class BuilderComponent {
         return undefined;
     }
 
+    private kandoranRules(model: Model): string | undefined {
+        let heroCount: number = 0;
+        let shamblerCount: number = 0;
+        for (let key in this.models) {
+            if (this.models[key].stats.type === 'Hero') {
+                heroCount++;
+            }
+            if (this.models[key].name === 'Skrot') {
+                shamblerCount++;
+            }
+        }
+        if (shamblerCount > (heroCount*2)) {
+            return 'You may not have more than twice as many shamblers as heroes.';
+        }
+
+        return undefined;
+    }
+
     private kuzaarikRules(model: Model): string | undefined {
         let quarrelerCount = 0;
         for (let key in this.models) {
@@ -317,6 +349,10 @@ export class BuilderComponent {
     }
 
     private mershaelRules(model: Model): string | undefined {
+        return undefined;
+    }
+
+    private shakrimRules(model: Model): string | undefined {
         return undefined;
     }
 

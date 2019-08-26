@@ -1295,7 +1295,7 @@
         "race": "Chaler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Shakrim Wavestalkers","Urdaggar Tribes of Valor"],
         "name": "Snake Mystic",
         "displayName": "Snake Mystic",
         "stats": {
@@ -4316,7 +4316,7 @@
     {
         "factions": ["Kuzaarik Forgers"],
         "name": "Stoneclaw Savage",
-        "displayName": "Stoneclaw Savage",
+        "displayName": "Stoneclaw Savage (Mounted)",
         "type": "Standard",
         "stats": {
             "type": "Hero",
@@ -4341,6 +4341,32 @@
         },
         "gender": "M",
         "value": 43,
+        "race": "Kuzaarik"
+    },
+    {
+        "factions": ["Kuzaarik Forgers"],
+        "name": "Stoneclaw Savage",
+        "displayName": "Stoneclaw Savage (Dismounted)",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 5,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Zeradrakh",
+                "abilities": ["te"]
+            }],
+            "armor": 5,
+            "discipline": 10,
+            "talents": ["Die Hard", "Die Hard","Alpine"],
+            "abilities": {
+                "endurance": 10,
+                "strength": 10
+            }
+        },
+        "gender": "M",
+        "value": 27,
         "race": "Kuzaarik"
     },
     {
@@ -4373,5 +4399,401 @@
         "gender": "M",
         "value": 34,
         "race": "Chaler"
+    },
+    {
+        "factions": ["Demons of Karelon"],
+        "name": "Karbazaal",
+        "displayName": "Karbazaal",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "2x Claws"
+            }],
+            "armor": 5,
+            "discipline": 10,
+            "talents": ["Fearsome","Tough","Tough","Fearless","Demon"],
+            "abilities":{
+                "strength": 10
+            }
+        },
+        "gender": "M",
+        "value": 37,
+        "race": "Demon"
+    },
+    {
+        "factions": ["Kandoran Deathmasters"],
+        "name": "Oppressor",
+        "displayName": "Oppressor",
+        "type": "Leader",
+        "stats": {
+            "type": "Hero",
+            "speed": 5,
+            "melee": [{
+                "rating": 12,
+                "damage": 8,
+                "name": "Spikedrakh",
+                "abilities": ["de"]
+            }],
+            "range": [{
+                "rating":8,
+                "damage":0,
+                "name":"Lasso",
+                "distance":4,
+                "abilities": ["thr","ent","pul"]
+            }],
+            "armor": 6,
+            "discipline": 12,
+            "talents": ["Leader","Strong-arm","Die Hard","Tough","Steadfast"],
+            "abilities":{
+                "endurance": 10
+            }
+        },
+        "gender": "M",
+        "value": 39,
+        "race": "Kandoran"
+    },
+    {
+        "factions": ["Kandoran Deathmasters"],
+        "name": "Jackal-Priest",
+        "displayName": "Jackal-Priest",
+        "type": "Caster",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Staff",
+                "abilities": ["te"]
+            }],
+            "armor": 2,
+            "discipline": 6,
+            "talents": ["Necromancy","Deathshaper","Deathbinder"],
+            "casting":{
+                "rating":10,
+                "power":15
+            }
+        },
+        "gender": "M",
+        "value": 31,
+        "race": "Kandoran"
+    },
+    {
+        "factions": ["Kandoran Deathmasters"],
+        "name": "Krayech's Reaper",
+        "displayName": "Krayech's Reaper",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 5,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "Scythe",
+                "abilities": ["swp"]
+            }],
+            "armor": 6,
+            "discipline": 10,
+            "talents": ["Undead","Hardened","Tough","Protector","Slow"]
+        },
+        "gender": "M",
+        "value": 30,
+        "race": "Kandoran"
+    },
+    {
+        "factions": ["Kandoran Deathmasters"],
+        "name": "Awakened",
+        "displayName": "Awakened",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 5,
+            "melee": [{
+                "rating": 8,
+                "damage": 8,
+                "name": "2x Claws",
+                "abilities": ["dec"]
+            }],
+            "armor": 5,
+            "discipline": 8,
+            "talents": ["Undead","Hardened","Tough","Slow","Fearsome"]
+        },
+        "gender": "M",
+        "value": 29,
+        "race": "Kandoran"
+    },
+    {
+        "factions": ["Kandoran Deathmasters"],
+        "name": "Levy Spearman",
+        "displayName": "Levy Spearman",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 5,
+            "melee": [{
+                "rating": 6,
+                "damage": 8,
+                "name": "Spear",
+                "abilities": ["so"]
+            }],
+            "range":[{
+                "rating":6,
+                "damage":6,
+                "name":"Bow",
+                "distance":8
+            }],
+            "shield": "P",
+            "armor": 4,
+            "discipline": 4
+        },
+        "gender": "M",
+        "value": 13,
+        "race": "Kandoran"
+    },
+    {
+        "factions": ["Kandoran Deathmasters"],
+        "name": "Wretch",
+        "displayName": "Wretch",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Claw"
+            }],
+            "armor": 2,
+            "discipline": 6,
+            "talents": ["Infiltrate","Scavenger"]
+        },
+        "gender": "M",
+        "value": 8,
+        "race": "Kandoran"
+    },
+    {
+        "factions": ["Kandoran Deathmasters"],
+        "name": "Shambler",
+        "displayName": "Shambler",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 5,
+            "melee": [{
+                "rating": 4,
+                "damage": 4,
+                "name": "Claw"
+            }],
+            "armor": 2,
+            "discipline": 4,
+            "talents": ["Undead","Slow","Mindless","Expendable","Pack Attack","Feral"]
+        },
+        "gender": "M",
+        "value": 6,
+        "race": "Kandoran"
+    },
+    {
+        "factions": ["Kandoran Deathmasters"],
+        "name": "Bonethrall",
+        "displayName": "Bonethrall",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 5,
+            "melee": [{
+                "rating": 4,
+                "damage": 6,
+                "name": "Rusty Blade"
+            }],
+            "armor": 2,
+            "discipline": 4,
+            "talents": ["Undead","Die Hard","Slow"],
+            "abilities":{
+                "endurance":8
+            }
+        },
+        "gender": "M",
+        "value": 10,
+        "race": "Kandoran"
+    },
+    {
+        "factions": ["Kandoran Deathmasters"],
+        "name": "Bonethrall Guard",
+        "displayName": "Bonethrall Guard",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 5,
+            "melee": [{
+                "rating": 8,
+                "damage": 6,
+                "name": "Rusty Blade"
+            }],
+            "shield": "S",
+            "armor": 2,
+            "discipline": 4,
+            "talents": ["Undead","Die Hard","Slow"],
+            "abilities":{
+                "endurance":8
+            }
+        },
+        "gender": "M",
+        "value": 14,
+        "race": "Kandoran"
+    },
+    {
+        "factions": ["Shakrim Wavestalkers"],
+        "name": "Steel Fang",
+        "displayName": "Steel Fang",
+        "type": "Leader",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 12,
+                "damage": 10,
+                "name": "Razorfang",
+                "abilities":["swp"]
+            }],
+            "armor": 5,
+            "discipline": 12,
+            "talents": ["Leader","Parry","Dodge","Sidestep","Awareness","Backstep","Slither"],
+            "abilities":{
+                "agility":10
+            }
+        },
+        "gender": "F",
+        "value": 39,
+        "race": "Shakrim"
+    },
+    {
+        "factions": ["Shakrim Wavestalkers"],
+        "name": "Nerodix",
+        "displayName": "Nerodix",
+        "type": "Caster",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Staff",
+                "abilities":["te"]
+            }],
+            "armor": 2,
+            "discipline": 8,
+            "talents": ["Water Magic","Amphibious","Immune[Poison]","Water Bond"],
+            "casting":{
+                "power":15,
+                "rating":10
+            }
+        },
+        "gender": "M",
+        "value": 31,
+        "race": "Shakrim"
+    },
+    {
+        "factions": ["Shakrim Wavestalkers"],
+        "name": "Shellback",
+        "displayName": "Shellback",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 5,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "damageBonus":1,
+                "name": "Heavy Falchion"
+            }],
+            "armor": 6,
+            "discipline": 10,
+            "talents": ["Parry","Tough","Hardened","Tenacious","Amphibious"],
+            "abilities":{
+                "strength":10
+            }
+        },
+        "gender": "M",
+        "value": 30,
+        "race": "Shakrim"
+    },
+    {
+        "factions": ["Shakrim Wavestalkers"],
+        "name": "Viperon",
+        "displayName": "Viperon",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 8,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Bite",
+                "abilities":["ven"]
+            }],
+            "armor": 4,
+            "discipline": 10,
+            "talents": ["Dodge","Slither","Hit and Run","Fast","Animal"],
+            "abilities":{
+                "abilities":12
+            }
+        },
+        "gender": "M",
+        "value": 28,
+        "race": "Shakrim"
+    },
+    {
+        "factions": ["Shakrim Wavestalkers"],
+        "name": "Tilik",
+        "displayName": "Tilik",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 8,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Bite"
+            }],
+            "armor": 2,
+            "discipline": 6,
+            "talents": ["Animal","Elusive","Fast","Amphibious"]
+        },
+        "gender": "M",
+        "value": 9,
+        "race": "Shakrim"
+    },
+    {
+        "factions": ["Shakrim Wavestalkers"],
+        "name": "Spitter",
+        "displayName": "Spitter",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Bite",
+                "abilities":["ven"]
+            }],
+            "range":[{
+                "rating":8,
+                "damage":4,
+                "name":"Poison Spit",
+                "distance":4,
+                "abilities":["ven"]
+            }],
+            "armor": 3,
+            "discipline": 6,
+            "talents": ["Amphibious"]
+        },
+        "gender": "M",
+        "value": 13,
+        "race": "Shakrim"
     }
 ]

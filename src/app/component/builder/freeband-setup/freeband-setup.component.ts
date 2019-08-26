@@ -24,8 +24,10 @@ export class FreebandSetupComponent {
             'Falkaaran Adventurers',
             'Grular Invaders',
             'Haradelan Questers',
+            'Kandoran Deathmasters',
             'Kuzaarik Forgers',
             'Mershael Corsairs',
+            'Shakrim Wavestalkers',
             'Traazorite Crusaders',
             'Trilian Seekers',
             'Urdaggar Tribes of Valor'
