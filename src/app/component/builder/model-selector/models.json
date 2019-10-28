@@ -4838,7 +4838,7 @@
             }],
             "armor": 2,
             "discipline": 8,
-            "talents": ["Dodge","Cunning","Outperform","Protected","Perform[Wing Dances,5]"],
+            "talents": ["Dodge","Cunning","Outperform","Protected","Perform[Wing Dances,5]","Ally[Trusted]"],
             "abilities":{
                 "agility":12
             }
@@ -4862,7 +4862,7 @@
             }],
             "armor": 2,
             "discipline": 8,
-            "talents": ["Dodge","Cunning","Outperform","Protected","Perform[Wing Dances,5]"],
+            "talents": ["Dodge","Cunning","Outperform","Protected","Perform[Wing Dances,5]","Ally[Trusted]"],
             "abilities":{
                 "agility":12
             }
