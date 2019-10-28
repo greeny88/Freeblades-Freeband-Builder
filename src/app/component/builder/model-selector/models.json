@@ -4795,5 +4795,80 @@
         "gender": "M",
         "value": 13,
         "race": "Shakrim"
+    },
+    {
+        "factions": ["Eclipse Sisterhood"],
+        "name": "Battle Sister",
+        "displayName": "Battle Sister",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Sakhazet",
+                "damageBonus": 1,
+                "abilities":["let"]
+            }],
+            "shield":"L",
+            "armor": 5,
+            "discipline": 10,
+            "talents": ["Parry","Veteran[Fortress,1]","Veteran[Raven Stance,1]"],
+            "abilities":{
+                "strength":10
+            }
+        },
+        "gender": "F",
+        "value": 28,
+        "race": "Chaler"
+    },
+    {
+        "factions": ["Falkaaran Adventurers","Haradelan Questers","Urdaggar Tribes of Valor"],
+        "name": "Wildwing",
+        "displayName": "Wildwing",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 4,
+                "name": "Dagger"
+            }],
+            "armor": 2,
+            "discipline": 8,
+            "talents": ["Dodge","Cunning","Outperform","Protected","Perform[Wing Dances,5]"],
+            "abilities":{
+                "agility":12
+            }
+        },
+        "gender": "F",
+        "value": 31,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Falkaaran Adventurers","Haradelan Questers","Urdaggar Tribes of Valor"],
+        "name": "Wildwing",
+        "displayName": "Wildwing",
+        "type": "Caster",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 4,
+                "name": "Dagger"
+            }],
+            "armor": 2,
+            "discipline": 8,
+            "talents": ["Dodge","Cunning","Outperform","Protected","Perform[Wing Dances,5]"],
+            "abilities":{
+                "agility":12
+            }
+        },
+        "gender": "F",
+        "value": 31,
+        "race": "Faeler"
     }
 ]
