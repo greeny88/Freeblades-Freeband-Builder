@@ -4870,5 +4870,37 @@
         "gender": "F",
         "value": 31,
         "race": "Faeler"
+    },
+    {
+        "factions": ["Demons of Karelon"],
+        "name": "Zarfonax",
+        "displayName": "Zarfonax",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 0,
+            "melee": [{
+                "rating": 8,
+                "damage": 8,
+                "name": "Claw"
+            }],
+            "range":[{
+                "rating": 10,
+                "damage": 8,
+                "name": "Water Blast",
+                "distance":10,
+                "abilities":["mag","aoe 2in"]
+            }],
+            "armor": 4,
+            "discipline": 8,
+            "talents": ["Dodge","Marksman","Phase Shift","Phase Shift","Phase Shift","Phase Shift","Phase Shift","Phase Shift","Amphibious","Demon"],
+            "abilities":{
+                "agility":12,
+                "spirit":10
+            }
+        },
+        "gender": "M",
+        "value": 31,
+        "race": "Demon"
     }
 ]
