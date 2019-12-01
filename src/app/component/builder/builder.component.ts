@@ -9,7 +9,7 @@ import template from './builder.html';
     template
 })
 export class BuilderComponent {
-    @ViewChild('sidenav') sidenav: MatSidenav;
+    @ViewChild('sidenav', {'static':false}) sidenav: MatSidenav;
     altLeader: boolean;
     breakValue: number;
     casterId: string;

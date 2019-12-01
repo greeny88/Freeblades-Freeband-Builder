@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -70,7 +70,9 @@ const postcssLoader = {
 const sassLoader = {
 	loader: 'sass-loader',
 	options: {
-		includePaths: ['./node_modules']
+		sassOptions: {
+			includePaths: ['./node_modules']
+		}
 	}
 };
 const styles = {
