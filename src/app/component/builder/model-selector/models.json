@@ -4934,5 +4934,91 @@
         "gender": "M",
         "value": 31,
         "race": "Demon"
+    },
+    {
+        "factions": ["Kandoran Deathmasters"],
+        "name": "Varazyr",
+        "displayName": "Varazyr",
+        "type": "Caster",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Skull Staff",
+                "abilities":["te","mgc"]
+            }],
+            "armor": 2,
+            "discipline": 6,
+            "talents": ["Necromancy","Skull Staff"],
+            "casting": {
+                "power": 15,
+                "rating": 10
+            }
+        },
+        "gender": "M",
+        "value": 31,
+        "race": "Kandoran"
+    },
+    {
+        "factions": ["Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Kandoran Deathmasters","Kuzaarik Forgers","Mershael Corsairs","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "name": "Stalker",
+        "displayName": "Stalker",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Longsword"
+            }],
+            "range":[{
+                "rating":12,
+                "damage":8,
+                "name":"Longbow",
+                "distance":12
+            }],
+            "armor": 3,
+            "discipline": 8,
+            "talents": ["Dodge","Scout","Sharpshooter","Shoot Them!","Subdue","Quarry","Arboreal","Ally[Independent]"],
+            "abilities":{
+                "agility":10
+            }
+        },
+        "gender": "M",
+        "value": 34,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Haradelan Questers"],
+        "name": "Stalker",
+        "displayName": "Stalker",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Longsword"
+            }],
+            "range":[{
+                "rating":12,
+                "damage":8,
+                "name":"Longbow",
+                "distance":12
+            }],
+            "armor": 3,
+            "discipline": 8,
+            "talents": ["Dodge","Scout","Sharpshooter","Shoot Them!","Subdue","Quarry","Arboreal","Ally[Trusted]"],
+            "abilities":{
+                "agility":10
+            }
+        },
+        "gender": "M",
+        "value": 34,
+        "race": "Faeler"
     }
 ]
