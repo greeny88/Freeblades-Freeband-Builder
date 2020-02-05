@@ -12,14 +12,16 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$ffb-app-primary: mat-palette($mat-indigo);
-$ffb-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+// green #73c169
+// gold #f8cd6e
+$ffb-app-primary: mat-palette($mat-green);
+$ffb-app-accent:  mat-palette($mat-amber);
 
 // The warn palette is optional (defaults to red).
 $ffb-app-warn:    mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$ffb-app-theme: mat-light-theme($ffb-app-primary, $ffb-app-accent, $ffb-app-warn);
+$ffb-app-theme: mat-dark-theme($ffb-app-primary, $ffb-app-accent, $ffb-app-warn);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -58,7 +60,7 @@ mat-toolbar-row {
 footer {
     text-align: center;
     font-size: 0.75rem;
-    background-color: #f5f5f5;
+    // background-color: #f5f5f5;
     padding-top: 1rem;
     padding-bottom: 0.5rem;
     border-top: 1px solid rgba(0, 0, 0, .42);
@@ -66,6 +68,27 @@ footer {
 
 #printModelList {
     display: none;
+}
+
+// .modelDisplay .mdc-layout-grid__inner {
+//     margin-bottom:1rem;
+//     color: #000;
+
+//     &:nth-child(odd) {
+//         background-color: #DDD;
+//     }
+
+//     &:nth-child(even) {
+//         background-color: #BBB;
+//     }
+// }
+
+a, a:visited {
+    color: #FFF;
+}
+
+a:hover {
+    color: #ffc107;
 }
 
 @media print {

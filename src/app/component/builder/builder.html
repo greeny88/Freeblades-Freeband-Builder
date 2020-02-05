@@ -1,5 +1,5 @@
 <div id="mainDisplay">
-    <mat-toolbar class="top-bar">
+    <mat-toolbar class="top-bar mat-primary">
         <mat-toolbar-row>
             <button mat-icon-button (click)="sidenav.toggle()">
                 <mat-icon>menu</mat-icon>
@@ -21,10 +21,13 @@
         </mat-toolbar-row>
     </mat-toolbar>
     <mat-sidenav-container id="mainContainer">
-        <mat-sidenav #sidenav mode="side" opened="true">
-            <freeband-setup (onOptionsSet)="optionsSet($event)"></freeband-setup>
+        <mat-sidenav #sidenav mode="side">
+            <p>Builder link</p>
+            <p>Name Generator link</p>
+            <p>Browse Prebuilt Freebands link</p>
         </mat-sidenav>
         <mat-sidenav-content>
+            <freeband-setup (onOptionsSet)="optionsSet($event)"></freeband-setup>
             <ng-container *ngIf="faction && limit; else setup">
                 <model-selector [faction]="faction" type="Leader" [altLeader]="altLeader" (onModelSelected)="modelSelected($event)" [componentId]="leaderId"></model-selector>
                 <model-selector [faction]="faction" type="Caster" (onModelSelected)="modelSelected($event)" [componentId]="casterId"></model-selector>
@@ -32,10 +35,10 @@
                     <model-selector [faction]="faction" type="Standard" [altLeader]="altLeader" (onModelSelected)="modelSelected($event)" [componentId]="id"
                         (onModelRemoved)="removeModel($event)"></model-selector>
                 </ng-container>
-                <button mat-raised-button style="margin:24px;" (click)="addModel()">Add Model</button>
+                <button mat-raised-button  class="mat-accent" style="margin-left:16px;margin-bottom:16px;" (click)="addModel()">Add Model</button>
             </ng-container>
             <ng-template #setup>
-                <p>Start by selecting the values in the menu so that you can begin building your freeband.</p>
+                <p>Start by selecting the values above so that you can begin building your freeband.</p>
                 <mat-list>
                     <mat-list-item>
                         <h1 matLine>Faction - required</h1>
@@ -47,12 +50,10 @@
                     </mat-list-item>
                     <mat-list-item>
                         <h1 matLine>Alternate Leader</h1>
-                        <p matLine>Enables the alternate leader rule by which additional models can be promoted to leader and leader models
-                            can be demoted to regular models.</p>
+                        <p matLine>Enables the alternate leader rule by which additional models can be promoted to leader and leader models can be demoted to regular models.</p>
                     </mat-list-item>
                 </mat-list>
-                <p>A full description on Freeband construction rules can be found in the Living Rulebook (v18-2) starting on page
-                    87.</p>
+                <p>A full description on Freeband construction rules can be found in the Living Rulebook (v18-2) starting on page 87.</p>
             </ng-template>
         </mat-sidenav-content>
     </mat-sidenav-container>
