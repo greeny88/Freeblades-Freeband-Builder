@@ -5020,5 +5020,27 @@
         "gender": "M",
         "value": 34,
         "race": "Faeler"
+    },
+    {
+        "factions": ["Shakrim Wavestalkers"],
+        "name": "Ghora",
+        "displayName": "Ghora",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 6,
+            "melee": [{
+                "rating": 8,
+                "damage": 6,
+                "damageBonus": 1,
+                "name": "Cutlass"
+            }],
+            "armor": 4,
+            "discipline": 6,
+            "talents": ["Amphibious"]
+        },
+        "gender": "M",
+        "value": 10,
+        "race": "Shakrim"
     }
 ]
