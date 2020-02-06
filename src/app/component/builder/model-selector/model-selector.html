@@ -1,84 +1,84 @@
-<div class="mdc-layout-grid modelDisplay">
-    <mat-form-field>
-        <mat-select [placeholder]="type !== 'Standard' ? type : 'Model'" (selectionChange)="modelSelected($event)" [(value)]="selected">
-            <mat-option>None</mat-option>
-            <mat-option *ngFor="let m of models" [value]="m">{{m.displayName}} - {{m.stats.type}} - {{m.value}}</mat-option>
-        </mat-select>
-    </mat-form-field>
-    <button mat-raised-button class="mat-accent" (click)="modelRemoved()" *ngIf="type === 'Standard'">Remove model</button>
+<div class="modelDisplay" fxLayout="row" fxLayout.xs="column">
+    <div fxLayout="column">
+        <mat-form-field>
+            <mat-select [placeholder]="type !== 'Standard' ? type : 'Model'" (selectionChange)="modelSelected($event)" [(value)]="selected">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let m of models" [value]="m">{{m.displayName}} - {{m.stats.type}} - {{m.value}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-raised-button class="mat-accent" (click)="modelRemoved()" *ngIf="type === 'Standard'">Remove model</button>
+        <button mat-raised-button class="mat-accent" (click)="openEditWindow()" *ngIf="model">Edit model</button>
+    </div>
     <ng-container *ngIf="model">
-        <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell--span-2" style="font-weight:bold;">Name</div>
-            <div class="mdc-layout-grid__cell--span-2">{{model.displayName}}<span *ngIf="model.characterName">&nbsp;:({{model.characterName}})</span></div>
-            <div class="mdc-layout-grid__cell--span-2" style="font-weight:bold;">Type</div>
-            <div class="mdc-layout-grid__cell--span-2">{{model.stats.type}}</div>
-            <div class="mdc-layout-grid__cell--span-2" style="font-weight:bold;">Value</div>
-            <div class="mdc-layout-grid__cell--span-1">{{model.value}}</div>
-            <div class="mdc-layout-grid__cell--span-1">
-                <button mat-raised-button class="mat-accent" (click)="openEditWindow()">Edit model</button>
-            </div>
+        <div fxLayout="column">
+            <div style="font-weight:bold;">Name</div>
+            <div>{{model.displayName}}<span *ngIf="model.characterName">&nbsp;:({{model.characterName}})</span></div>
+            <div style="font-weight:bold;">Type</div>
+            <div>{{model.stats.type}}</div>
+            <div style="font-weight:bold;">Value</div>
+            <div>{{model.value}}</div>
         </div>
-        <div class="mdc-layout-grid__inner" *ngFor="let weapon of model.stats.melee">
-            <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">MAR</div>
-            <div class="mdc-layout-grid__cell--span-2">d{{weapon.rating}}<span *ngIf="weapon.ratingBonus > 0">&nbsp;+{{weapon.ratingBonus}}</span></div>
-            <div class="mdc-layout-grid__cell--span-2" style="font-weight:bold;">Weapon</div>
-            <div class="mdc-layout-grid__cell--span-4">{{weapon.name}} {{weapon.abilityList}}</div>
-            <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">Dmg</div>
-            <div class="mdc-layout-grid__cell--span-2">d{{weapon.damage}}<span *ngIf="weapon.damageBonus > 0">&nbsp;+{{weapon.damageBonus}}</span></div>
+        <div class="" *ngFor="let weapon of model.stats.melee">
+            <div class="" style="font-weight:bold;">MAR</div>
+            <div class="">d{{weapon.rating}}<span *ngIf="weapon.ratingBonus > 0">&nbsp;+{{weapon.ratingBonus}}</span></div>
+            <div class="" style="font-weight:bold;">Weapon</div>
+            <div class="">{{weapon.name}} {{weapon.abilityList}}</div>
+            <div class="" style="font-weight:bold;">Dmg</div>
+            <div class="">d{{weapon.damage}}<span *ngIf="weapon.damageBonus > 0">&nbsp;+{{weapon.damageBonus}}</span></div>
         </div>
-        <div class="mdc-layout-grid__inner" *ngFor="let weapon of model.stats.range">
-            <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">RAR</div>
-            <div class="mdc-layout-grid__cell--span-2">d{{weapon.rating}}<span *ngIf="weapon.ratingBonus > 0">&nbsp;+{{weapon.ratingBonus}}</span></div>
-            <div class="mdc-layout-grid__cell--span-2" style="font-weight:bold;">Weapon</div>
-            <div class="mdc-layout-grid__cell--span-4">{{weapon.name}} {{weapon.abilityList}} {{weapon.distance}}in-{{weapon.distance*2}}in-{{weapon.distance*3}}in</div>
-            <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">Dmg</div>
-            <div class="mdc-layout-grid__cell--span-2">d{{weapon.damage}}<span *ngIf="weapon.damageBonus > 0">&nbsp;+{{weapon.damageBonus}}</span></div>
+        <div class="" *ngFor="let weapon of model.stats.range">
+            <div class="" style="font-weight:bold;">RAR</div>
+            <div class="">d{{weapon.rating}}<span *ngIf="weapon.ratingBonus > 0">&nbsp;+{{weapon.ratingBonus}}</span></div>
+            <div class="" style="font-weight:bold;">Weapon</div>
+            <div class="">{{weapon.name}} {{weapon.abilityList}} {{weapon.distance}}in-{{weapon.distance*2}}in-{{weapon.distance*3}}in</div>
+            <div class="" style="font-weight:bold;">Dmg</div>
+            <div class="">d{{weapon.damage}}<span *ngIf="weapon.damageBonus > 0">&nbsp;+{{weapon.damageBonus}}</span></div>
         </div>
-        <div class="mdc-layout-grid__inner" *ngIf="model.stats.casting">
-            <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">CAR</div>
-            <div class="mdc-layout-grid__cell--span-2">d{{model.stats.casting.rating}}<span *ngIf="model.stats.casting.ratingBonus > 0">&nbsp;+{{model.stats.casting.ratingBonus}}</span></div>
-            <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">Power</div>
-            <div class="mdc-layout-grid__cell--span-2">{{model.stats.casting.power}}</div>
+        <div class="" *ngIf="model.stats.casting">
+            <div class="" style="font-weight:bold;">CAR</div>
+            <div class="">d{{model.stats.casting.rating}}<span *ngIf="model.stats.casting.ratingBonus > 0">&nbsp;+{{model.stats.casting.ratingBonus}}</span></div>
+            <div class="" style="font-weight:bold;">Power</div>
+            <div class="">{{model.stats.casting.power}}</div>
         </div>
-        <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">SPD</div>
-            <div class="mdc-layout-grid__cell--span-1">{{model.stats.speed}}</div>
-            <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">DISC</div>
-            <div class="mdc-layout-grid__cell--span-1">d{{model.stats.discipline}}</div>
+        <div class="">
+            <div class="" style="font-weight:bold;">SPD</div>
+            <div class="">{{model.stats.speed}}</div>
+            <div class="" style="font-weight:bold;">DISC</div>
+            <div class="">d{{model.stats.discipline}}</div>
             <ng-container *ngIf="model.stats.moraleBonus > 0">
-                <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">Morale/Fear Bonus</div>
-                <div class="mdc-layout-grid__cell--span-1">{{model.stats.moraleBonus}}</div>
+                <div class="" style="font-weight:bold;">Morale/Fear Bonus</div>
+                <div class="">{{model.stats.moraleBonus}}</div>
             </ng-container>
-            <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">DEF</div>
-            <div class="mdc-layout-grid__cell--span-1">{{model.stats.defense}}<span *ngIf="model?.stats.shield">{{model?.stats.shield}}</span></div>
-            <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">AV</div>
-            <div class="mdc-layout-grid__cell--span-1">{{model.stats.armor}}</div>
-            <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">LP</div>
-            <div class="mdc-layout-grid__cell--span-1">{{model.stats.lifePoints}}</div>
+            <div class="" style="font-weight:bold;">DEF</div>
+            <div class="">{{model.stats.defense}}<span *ngIf="model?.stats.shield">{{model?.stats.shield}}</span></div>
+            <div class="" style="font-weight:bold;">AV</div>
+            <div class="">{{model.stats.armor}}</div>
+            <div class="" style="font-weight:bold;">LP</div>
+            <div class="">{{model.stats.lifePoints}}</div>
         </div>
-        <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">AGL</div>
-            <div class="mdc-layout-grid__cell--span-1">d{{model.stats.abilities.agility}}</div>
-            <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">DEX</div>
-            <div class="mdc-layout-grid__cell--span-1">d{{model.stats.abilities.dexterity}}</div>
-            <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">END</div>
-            <div class="mdc-layout-grid__cell--span-1">d{{model.stats.abilities.endurance}}</div>
-            <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">KNW</div>
-            <div class="mdc-layout-grid__cell--span-1">d{{model.stats.abilities.knowledge}}</div>
-            <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">SPR</div>
-            <div class="mdc-layout-grid__cell--span-1">d{{model.stats.abilities.spirit}}</div>
-            <div class="mdc-layout-grid__cell--span-1" style="font-weight:bold;">STR</div>
-            <div class="mdc-layout-grid__cell--span-1">d{{model.stats.abilities.strength}}</div>
+        <div class="">
+            <div class="" style="font-weight:bold;">AGL</div>
+            <div class="">d{{model.stats.abilities.agility}}</div>
+            <div class="" style="font-weight:bold;">DEX</div>
+            <div class="">d{{model.stats.abilities.dexterity}}</div>
+            <div class="" style="font-weight:bold;">END</div>
+            <div class="">d{{model.stats.abilities.endurance}}</div>
+            <div class="" style="font-weight:bold;">KNW</div>
+            <div class="">d{{model.stats.abilities.knowledge}}</div>
+            <div class="" style="font-weight:bold;">SPR</div>
+            <div class="">d{{model.stats.abilities.spirit}}</div>
+            <div class="" style="font-weight:bold;">STR</div>
+            <div class="">d{{model.stats.abilities.strength}}</div>
         </div>
-        <div class="mdc-layout-grid__inner" *ngIf="model.stats.skills?.length > 0">
-            <div class="mdc-layout-grid__cell--span-6"><span style="font-weight:bold;">Skills:</span> {{model.stats.skillList}}</div>
-            <div class="mdc-layout-grid__cell--span-6"><span style="font-weight:bold;">Skill Bonus:</span> {{model.stats.skillBonus}}</div>
+        <div class="" *ngIf="model.stats.skills?.length > 0">
+            <div class=""><span style="font-weight:bold;">Skills:</span> {{model.stats.skillList}}</div>
+            <div class=""><span style="font-weight:bold;">Skill Bonus:</span> {{model.stats.skillBonus}}</div>
         </div>
-        <div class="mdc-layout-grid__inner" *ngIf="model.stats.talents?.length > 0">
-            <div class="mdc-layout-grid__cell--span-12"><span style="font-weight:bold;">Talents:</span> {{model.stats.talentList}}</div>
+        <div class="" *ngIf="model.stats.talents?.length > 0">
+            <div class="2"><span style="font-weight:bold;">Talents:</span> {{model.stats.talentList}}</div>
         </div>
-        <div class="mdc-layout-grid__inner" *ngIf="model.stats.items?.length > 0">
-            <div class="mdc-layout-grid__cell--span-12"><span style="font-weight:bold;">Items:</span> {{model.stats.itemList}}</div>
+        <div class="" *ngIf="model.stats.items?.length > 0">
+            <div class="2"><span style="font-weight:bold;">Items:</span> {{model.stats.itemList}}</div>
         </div>
     </ng-container>
 </div>

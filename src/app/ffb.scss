@@ -29,8 +29,8 @@ $ffb-app-theme: mat-dark-theme($ffb-app-primary, $ffb-app-accent, $ffb-app-warn)
 @include angular-material-theme($ffb-app-theme);
 
 #mainDisplay {
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -38,9 +38,9 @@ $ffb-app-theme: mat-dark-theme($ffb-app-primary, $ffb-app-accent, $ffb-app-warn)
     right: 0;
 }
 
-mat-sidenav-container#mainContainer {
-    flex: 1;
-}
+// mat-sidenav-container#mainContainer {
+//     flex: 1;
+// }
 
 .top-bar {
     border-bottom: 1px solid rgba(0, 0, 0, .42);
