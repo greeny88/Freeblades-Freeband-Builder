@@ -70,18 +70,22 @@ footer {
     display: none;
 }
 
-// .modelDisplay .mdc-layout-grid__inner {
-//     margin-bottom:1rem;
-//     color: #000;
+.modelDisplay > div {
+    // margin-bottom:1rem;
+    color: #000;
 
-//     &:nth-child(odd) {
-//         background-color: #DDD;
-//     }
+    &:nth-child(1) {
+        background-color: inherit !important;
+    }
 
-//     &:nth-child(even) {
-//         background-color: #BBB;
-//     }
-// }
+    &:nth-child(odd) {
+        background-color: #EEE;
+    }
+
+    &:nth-child(even) {
+        background-color: #AAA;
+    }
+}
 
 a, a:visited {
     color: #FFF;
@@ -89,6 +93,19 @@ a, a:visited {
 
 a:hover {
     color: #ffc107;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+mat-sidenav-container {
+    mat-sidenav {
+        padding: 0.5rem;
+    }
+    mat-sidenav-content {
+        margin: 0.5rem;
+    }
 }
 
 @media print {
