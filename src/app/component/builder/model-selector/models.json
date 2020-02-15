@@ -3230,7 +3230,7 @@
                 "name": "Staff",
                 "abilities": ["te"]
             }],
-            "armor": 4,
+            "armor": 2,
             "discipline": 8,
             "talents": ["Treespeaking","Tree Bond","Arboreal"],
             "casting": {
