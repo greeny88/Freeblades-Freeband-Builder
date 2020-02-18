@@ -10,6 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { BuilderComponent } from './builder.component';
 import { FreebandSetupModule } from './freeband-setup/freeband-setup.module';
 import { ModelSelectorModule } from './model-selector/model-selector.module';
+import './builder.scss';
 
 @NgModule({
     imports: [

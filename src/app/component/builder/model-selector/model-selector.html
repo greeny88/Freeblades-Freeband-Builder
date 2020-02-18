@@ -1,5 +1,5 @@
 <div class="modelDisplay" fxLayout="column">
-    <div fxLayout="row" fxLayoutAlign="space-between stretch">
+    <div fxLayout="row" fxLayoutAlign="space-between start">
         <mat-form-field>
             <mat-select [placeholder]="type !== 'Standard' ? type : 'Model'" (selectionChange)="modelSelected($event)" [(value)]="selected">
                 <mat-option>None</mat-option>
@@ -10,72 +10,52 @@
         <button mat-raised-button class="mat-accent" (click)="openEditWindow()" *ngIf="model">Edit model</button>
     </div>
     <ng-container *ngIf="model">
-        <div fxLayout="row" fxLayoutAlign="space-between stretch">
+        <div fxLayout="row" fxLayoutAlign="space-between start">
             <div><span class="bold-text">Name: </span>{{model.displayName}}<span *ngIf="model.characterName">&nbsp;:({{model.characterName}})</span></div>
             <div><span class="bold-text">Type: </span>{{model.stats.type}}</div>
             <div><span class="bold-text">Value: </span>{{model.value}}</div>
         </div>
-        <div fxLayout="row" fxLayoutAlign="space-between stretch" *ngFor="let weapon of model.stats.melee">
-            <div style="font-weight:bold;">MAR</div>
-            <div>d{{weapon.rating}}<span *ngIf="weapon.ratingBonus > 0">&nbsp;+{{weapon.ratingBonus}}</span></div>
-            <div style="font-weight:bold;">Weapon</div>
-            <div>{{weapon.name}} {{weapon.abilityList}}</div>
-            <div style="font-weight:bold;">Dmg</div>
-            <div>d{{weapon.damage}}<span *ngIf="weapon.damageBonus > 0">&nbsp;+{{weapon.damageBonus}}</span></div>
+        <div fxLayout="row" fxLayoutAlign="space-between start" *ngFor="let weapon of model.stats.melee">
+            <div><span class="bold-text">MAR: </span>d{{weapon.rating}}<span *ngIf="weapon.ratingBonus > 0">&nbsp;+{{weapon.ratingBonus}}</span></div>
+            <div><span class="bold-text">Weapon: </span>{{weapon.name}} {{weapon.abilityList}}</div>
+            <div><span class="bold-text">Dmg: </span>d{{weapon.damage}}<span *ngIf="weapon.damageBonus > 0">&nbsp;+{{weapon.damageBonus}}</span></div>
         </div>
-        <div fxLayout="row" fxLayoutAlign="space-between stretch" *ngFor="let weapon of model.stats.range">
-            <div style="font-weight:bold;">RAR</div>
-            <div>d{{weapon.rating}}<span *ngIf="weapon.ratingBonus > 0">&nbsp;+{{weapon.ratingBonus}}</span></div>
-            <div style="font-weight:bold;">Weapon</div>
-            <div>{{weapon.name}} {{weapon.abilityList}} {{weapon.distance}}in-{{weapon.distance*2}}in-{{weapon.distance*3}}in</div>
-            <div style="font-weight:bold;">Dmg</div>
-            <div>d{{weapon.damage}}<span *ngIf="weapon.damageBonus > 0">&nbsp;+{{weapon.damageBonus}}</span></div>
+        <div fxLayout="row" fxLayoutAlign="space-between start" *ngFor="let weapon of model.stats.range">
+            <div><span class="bold-text">RAR: </span>d{{weapon.rating}}<span *ngIf="weapon.ratingBonus > 0">&nbsp;+{{weapon.ratingBonus}}</span></div>
+            <div><span class="bold-text">Weapon: </span>{{weapon.name}} {{weapon.abilityList}} {{weapon.distance}}in-{{weapon.distance*2}}in-{{weapon.distance*3}}in</div>
+            <div><span class="bold-text">Dmg: </span>d{{weapon.damage}}<span *ngIf="weapon.damageBonus > 0">&nbsp;+{{weapon.damageBonus}}</span></div>
         </div>
-        <div fxLayout="row" fxLayoutAlign="space-between stretch" *ngIf="model.stats.casting">
-            <div style="font-weight:bold;">CAR</div>
-            <div>d{{model.stats.casting.rating}}<span *ngIf="model.stats.casting.ratingBonus > 0">&nbsp;+{{model.stats.casting.ratingBonus}}</span></div>
-            <div style="font-weight:bold;">Power</div>
-            <div>{{model.stats.casting.power}}</div>
+        <div fxLayout="row" fxLayoutAlign="space-between start" *ngIf="model.stats.casting">
+            <div><span class="bold-text">CAR: </span>d{{model.stats.casting.rating}}<span *ngIf="model.stats.casting.ratingBonus > 0">&nbsp;+{{model.stats.casting.ratingBonus}}</span></div>
+            <div><span class="bold-text">Power: </span>{{model.stats.casting.power}}</div>
         </div>
-        <div fxLayout="row" fxLayoutAlign="space-between stretch">
-            <div style="font-weight:bold;">SPD</div>
-            <div>{{model.stats.speed}}</div>
-            <div style="font-weight:bold;">DISC</div>
-            <div>d{{model.stats.discipline}}</div>
+        <div fxLayout="row" fxLayoutAlign="space-between start">
+            <div><span class="bold-text">SPD: </span>{{model.stats.speed}}</div>
+            <div><span class="bold-text">DISC: </span>d{{model.stats.discipline}}</div>
             <ng-container *ngIf="model.stats.moraleBonus > 0">
-                <div style="font-weight:bold;">Morale/Fear Bonus</div>
-                <div>{{model.stats.moraleBonus}}</div>
+                <div><span class="bold-text">Morale/Fear Bonus</span>{{model.stats.moraleBonus}}</div>
             </ng-container>
-            <div style="font-weight:bold;">DEF</div>
-            <div>{{model.stats.defense}}<span *ngIf="model?.stats.shield">{{model?.stats.shield}}</span></div>
-            <div style="font-weight:bold;">AV</div>
-            <div>{{model.stats.armor}}</div>
-            <div style="font-weight:bold;">LP</div>
-            <div>{{model.stats.lifePoints}}</div>
+            <div><span class="bold-text">DEF: </span>{{model.stats.defense}}<span *ngIf="model?.stats.shield">{{model?.stats.shield}}</span></div>
+            <div><span class="bold-text">AV: </span>{{model.stats.armor}}</div>
+            <div><span class="bold-text">LP: </span>{{model.stats.lifePoints}}</div>
         </div>
-        <div fxLayout="row" fxLayoutAlign="space-between stretch">
-            <div style="font-weight:bold;">AGL</div>
-            <div>d{{model.stats.abilities.agility}}</div>
-            <div style="font-weight:bold;">DEX</div>
-            <div>d{{model.stats.abilities.dexterity}}</div>
-            <div style="font-weight:bold;">END</div>
-            <div>d{{model.stats.abilities.endurance}}</div>
-            <div style="font-weight:bold;">KNW</div>
-            <div>d{{model.stats.abilities.knowledge}}</div>
-            <div style="font-weight:bold;">SPR</div>
-            <div>d{{model.stats.abilities.spirit}}</div>
-            <div style="font-weight:bold;">STR</div>
-            <div>d{{model.stats.abilities.strength}}</div>
+        <div fxLayout="row" fxLayoutAlign="space-between start">
+            <div><span class="bold-text">AGL: </span>d{{model.stats.abilities.agility}}</div>
+            <div><span class="bold-text">DEX: </span>d{{model.stats.abilities.dexterity}}</div>
+            <div><span class="bold-text">END: </span>d{{model.stats.abilities.endurance}}</div>
+            <div><span class="bold-text">KNW: </span>d{{model.stats.abilities.knowledge}}</div>
+            <div><span class="bold-text">SPR: </span>d{{model.stats.abilities.spirit}}</div>
+            <div><span class="bold-text">STR: </span>d{{model.stats.abilities.strength}}</div>
         </div>
-        <div fxLayout="row" fxLayoutAlign="space-between stretch" *ngIf="model.stats.skills?.length > 0">
-            <div><span style="font-weight:bold;">Skills:</span> {{model.stats.skillList}}</div>
-            <div><span style="font-weight:bold;">Skill Bonus:</span> {{model.stats.skillBonus}}</div>
+        <div fxLayout="row" fxLayoutAlign="space-between start" *ngIf="model.stats.skills?.length > 0">
+            <div><span class="bold-text">Skills:</span> {{model.stats.skillList}}</div>
+            <div><span class="bold-text">Skill Bonus:</span> {{model.stats.skillBonus}}</div>
         </div>
-        <div fxLayout="row" fxLayoutAlign="space-between stretch" *ngIf="model.stats.talents?.length > 0">
-            <div class="2"><span style="font-weight:bold;">Talents:</span> {{model.stats.talentList}}</div>
+        <div fxLayout="row" fxLayoutAlign="space-between start" *ngIf="model.stats.talents?.length > 0">
+            <div class="2"><span class="bold-text">Talents:</span> {{model.stats.talentList}}</div>
         </div>
-        <div fxLayout="row" fxLayoutAlign="space-between stretch" *ngIf="model.stats.items?.length > 0">
-            <div class="2"><span style="font-weight:bold;">Items:</span> {{model.stats.itemList}}</div>
+        <div fxLayout="row" fxLayoutAlign="space-between start" *ngIf="model.stats.items?.length > 0">
+            <div class="2"><span class="bold-text">Items:</span> {{model.stats.itemList}}</div>
         </div>
     </ng-container>
 </div>
