@@ -27,6 +27,7 @@ export class FreebandSetupComponent {
             'Kandoran Deathmasters',
             'Kuzaarik Forgers',
             'Mershael Corsairs',
+            'Ravenblade Mercenaries',
             'Shakrim Wavestalkers',
             'Traazorite Crusaders',
             'Trilian Seekers',
