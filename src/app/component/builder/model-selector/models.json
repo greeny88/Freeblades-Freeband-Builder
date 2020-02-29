@@ -534,7 +534,7 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
+        "factions": ["Black Rose Bandits", "Black Thorn Bandits", "Ravenblade Mercenaries"],
         "name": "Outlaw",
         "displayName": "Outlaw",
         "stats": {
@@ -561,7 +561,7 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits", "Black Thorn Bandits", "Falkaaran Adventurers", "Haradelan Questers"],
+        "factions": ["Black Rose Bandits", "Black Thorn Bandits", "Falkaaran Adventurers", "Haradelan Questers", "Ravenblade Mercenaries"],
         "name": "Faeler Swordsman",
         "displayName": "Faeler Swordsman",
         "stats": {
@@ -1184,7 +1184,7 @@
         "race": "Chaler"
     },
     {
-        "factions": ["Mershael Corsairs"],
+        "factions": ["Mershael Corsairs","Ravenblade Mercenaries"],
         "name": "Takar Hunter",
         "displayName": "Takar Hunter",
         "stats": {
@@ -1321,7 +1321,7 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Wandering Wizard",
         "displayName": "Wandering Wizard",
         "stats": {
@@ -1383,7 +1383,7 @@
         "race": "Chaler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Ravenblade Mercenaries","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Takar Lookout",
         "displayName": "Takar Lookout",
         "stats": {
@@ -1414,7 +1414,7 @@
         "race": "Chaler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Merchant",
         "displayName": "Merchant",
         "stats": {
@@ -1863,7 +1863,7 @@
         "race": "Chaler"
     },
     {
-        "factions": ["Eclipse Sisterhood"],
+        "factions": ["Eclipse Sisterhood","Ravenblade Mercenaries"],
         "name": "Nightwhisper",
         "displayName": "Nightwhisper",
         "stats": {
@@ -2104,7 +2104,7 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Falkaaran Adventurers"],
+        "factions": ["Falkaaran Adventurers","Ravenblade Mercenaries"],
         "name": "Fire Wizard",
         "displayName": "Fire Wizard",
         "stats": {
@@ -2385,7 +2385,7 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Falkaaran Adventurers"],
+        "factions": ["Falkaaran Adventurers","Ravenblade Mercenaries"],
         "name": "Sailor",
         "displayName": "Sailor",
         "stats": {
@@ -2811,7 +2811,7 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Haradelan Questers"],
+        "factions": ["Haradelan Questers","Ravenblade Mercenaries"],
         "name": "Fist of Vidunar",
         "displayName": "Fist of Vidunar",
         "type": "Caster",
@@ -3063,7 +3063,7 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Haradelan Questers"],
+        "factions": ["Haradelan Questers","Ravenblade Mercenaries"],
         "name": "Militia Spearman",
         "displayName": "Militia Spearman",
         "type": "Standard",
@@ -3460,7 +3460,7 @@
         "race": "Trillian"
     },
     {
-        "factions": ["Trilian Seekers"],
+        "factions": ["Trilian Seekers","Ravenblade Mercenaries"],
         "name": "Wanderer",
         "displayName": "Wanderer",
         "type": "Standard",
@@ -3851,6 +3851,32 @@
         "race": "Faeler"
     },
     {
+        "factions": ["Ravenblade Mercenaries"],
+        "name": "Mizrakai",
+        "displayName": "Mizrakai",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Longspear",
+                "abilities": ["so"]
+            }],
+            "shield": "S",
+            "armor": 5,
+            "discipline": 10,
+            "talents": ["Parry","Accurate Strike","Backstep","Impact"],
+            "abilities": {
+                "dexterity": 10
+            }
+        },
+        "value":30,
+        "gender": "M",
+        "race": "Faeler"
+    },
+    {
         "factions": ["Black Rose Bandits","Black Thorn Bandits","Urdaggar Tribes of Valor"],
         "name": "Stag Warrior",
         "displayName": "Stag Warrior",
@@ -3879,6 +3905,65 @@
         "gender": "F",
         "value": 31,
         "race": "Faeler"
+    },
+    {
+        "factions": ["Ravenblade Mercenaries"],
+        "name": "Stag Warrior",
+        "displayName": "Stag Warrior",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "Hartblade",
+                "abilities": ["let"]
+            }],
+            "armor": 3,
+            "discipline": 10,
+            "talents": ["Parry","Assault","Restore","Heroic Attack"],
+            "abilities": {
+                "endurance": 10,
+                "spirit": 10
+            },
+            "skills": [{
+                "name": "Hunt",
+                "rating": 8
+            }]
+        },
+        "gender": "F",
+        "value": 31,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Ravenblade Mercenaries"],
+        "name": "Truthseeker",
+        "displayName": "Truthseeker",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 6,
+                "name": "2x Sanghara"
+            }],
+            "armor": 2,
+            "discipline": 10,
+            "talents": ["Bladedancer","Accurate Strike","Swordsman[Sanghara]","Dodge"],
+            "abilities": {
+                "agility": 14,
+                "knowledge": 10
+            },
+            "skills": [{
+                "name": "Find",
+                "rating": 10
+            }]
+        },
+        "gender": "F",
+        "value": 35,
+        "race": "Symker"
     },
     {
         "factions": ["Kuzaarik Forgers"],
@@ -3939,7 +4024,7 @@
         "race": "Symker"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Wandering Bard",
         "displayName": "Wandering Bard",
         "type": "Standard",
@@ -4027,7 +4112,7 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Zetakor",
         "displayName": "Zetakor",
         "type": "Standard",
@@ -4288,30 +4373,6 @@
         "gender": "M",
         "value": 32,
         "race": "Chaler"
-    },
-    {
-        "factions": ["Demons of Karelon"],
-        "name": "Karbazaal",
-        "displayName": "Karbazaal",
-        "type": "Standard",
-        "stats": {
-            "type": "Hero",
-            "speed": 6,
-            "melee": [{
-                "rating": 10,
-                "damage": 8,
-                "name": "2x Claws"
-            }],
-            "armor": 5,
-            "discipline": 10,
-            "talents": ["Fearless","Fearsome","Tough","Tough","Demon"],
-            "abilities": {
-                "strength": 10
-            }
-        },
-        "gender": "M",
-        "value": 37,
-        "race": "Demon"
     },
     {
         "factions": ["Kuzaarik Forgers"],
@@ -4962,7 +5023,37 @@
         "race": "Kandoran"
     },
     {
-        "factions": ["Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Kandoran Deathmasters","Kuzaarik Forgers","Mershael Corsairs","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Ravenblade Mercenaries"],
+        "name": "Stalker",
+        "displayName": "Stalker",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Longsword"
+            }],
+            "range":[{
+                "rating":12,
+                "damage":8,
+                "name":"Longbow",
+                "distance":12
+            }],
+            "armor": 3,
+            "discipline": 8,
+            "talents": ["Dodge","Scout","Sharpshooter","Shoot Them!","Subdue","Quarry","Arboreal"],
+            "abilities":{
+                "agility":10
+            }
+        },
+        "gender": "M",
+        "value": 34,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Kandoran Deathmasters","Kuzaarik Forgers","Mershael Corsairs","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Stalker",
         "displayName": "Stalker",
         "type": "Standard",
@@ -5042,5 +5133,217 @@
         "gender": "M",
         "value": 10,
         "race": "Shakrim"
+    },
+    {
+        "factions": ["Falkaaran Adventurers","Haradelan Questers","Ravenblade Mercenaries"],
+        "name": "Ravenblade Lieutenant",
+        "displayName": "Ravenblade Lieutenant",
+        "type": "Leader",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 12,
+                "damage": 8,
+                "name": "Longsword"
+            }],
+            "shield": "S",
+            "armor": 5,
+            "discipline": 12,
+            "talents": ["Leader","Parry","Parry","Bold","Deflect","Deft","Shield Bash"],
+            "abilities": {
+                "dexterity": 10
+            }
+        },
+        "gender": "F",
+        "value": 39,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Falkaaran Adventurers"],
+        "name": "Perakkir",
+        "displayName": "Perakkir (Mounted)",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 5,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "damageBonus": 1,
+                "abilities": ["let"],
+                "name": "Sakhazet"
+            }],
+            "range": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Composite Bow",
+                "distance": 10
+            }],
+            "armor": 3,
+            "discipline": 10,
+            "talents": ["Dodge","Scout","Harasser","Fly[Low,SPD 10]","Light Cavalry"],
+            "abilities": {
+                "agility": 10,
+                "dexterity": 10
+            }
+        },
+        "gender": "M",
+        "value": 38,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Falkaaran Adventurers"],
+        "name": "Perakkir",
+        "displayName": "Perakkir (Dismounted)",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "damageBonus": 1,
+                "abilities": ["let"],
+                "name": "Sakhazet"
+            }],
+            "range": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Composite Bow",
+                "distance": 10
+            }],
+            "armor": 4,
+            "discipline": 10,
+            "talents": ["Parry","Elusive","Scout","Harasser","Wayfinder"],
+            "abilities": {
+                "dexterity": 10
+            }
+        },
+        "gender": "M",
+        "value": 33,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Ravenblade Mercenaries"],
+        "name": "Ravenblade Soldier",
+        "displayName": "Ravenblade Soldier",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Longsword"
+            }],
+            "shield": "S",
+            "armor": 5,
+            "discipline": 12,
+            "talents": ["Parry","Parry","Deflect","Shield Bash","Veteran[Sergeant[Faeler Swordsman],2]"]
+        },
+        "gender": "M",
+        "value": 28,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Falkaaran Adventurers","Haradelan Questers"],
+        "name": "Ravenblade Soldier",
+        "displayName": "Ravenblade Soldier",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Longsword"
+            }],
+            "shield": "S",
+            "armor": 5,
+            "discipline": 12,
+            "talents": ["Parry","Parry","Deflect","Shield Bash","Veteran[Sergeant[Faeler Swordsman],2]","Ally[Trusted]"]
+        },
+        "gender": "M",
+        "value": 28,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Trilian Seekers"],
+        "name": "Talsytar",
+        "displayName": "Talsytar (Mounted)",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 10,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "Toloron",
+                "abilities": ["sw"]
+            },{
+                "rating":8,
+                "damage":6,
+                "name":"Warhorse"
+            }],
+            "armor": 4,
+            "discipline": 10,
+            "talents": ["Cavalry","Fly[Low,SPD 10]","Parry","Parry","Assault","Missle Parry","Warhorse"],
+            "abilities": {
+                "agility":10,
+                "dexterity":10
+            }
+        },
+        "gender": "M",
+        "value": 46,
+        "race": "Trillian"
+    },
+    {
+        "factions": ["Trilian Seekers"],
+        "name": "Talsytar",
+        "displayName": "Talsytar (Dismounted)",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 10,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "Toloron",
+                "abilities": ["sw"]
+            }],
+            "armor": 4,
+            "discipline": 10,
+            "talents": ["Parry","Parry","Assault","Missle Parry"],
+            "abilities": {
+                "agility":10,
+                "dexterity":10
+            }
+        },
+        "gender": "M",
+        "value": 32,
+        "race": "Trillian"
+    },
+    {
+        "factions": ["Urdaggar Tribes of Valor"],
+        "name": "Kaorl",
+        "displayName": "Kaorl",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 8,
+                "name": "War Axe"
+            }],
+            "shield": "S",
+            "armor": 2,
+            "discipline": 6,
+            "talents": ["Kinship","Veteran[RAR d6 War Axe d8 thr 2in,3]"]
+        },
+        "gender": "M",
+        "value": 9,
+        "race": "Faeler"
     }
 ]

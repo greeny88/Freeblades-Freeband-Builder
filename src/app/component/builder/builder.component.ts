@@ -40,6 +40,7 @@ export class BuilderComponent {
             'Kandoran Deathmasters': this.kandoranRules,
             'Kuzaarik Forgers': this.kuzaarikRules,
             'Mershael Corsairs': this.mershaelRules,
+            'Ravenblade Mercenaries': this.ravenbladeRules,
             'Shakrim Wavestalkers': this.shakrimRules,
             'Traazorite Crusaders': this.traazoriteRules,
             'Trilian Seekers': this.trilianRules,
@@ -350,6 +351,17 @@ export class BuilderComponent {
 
     private mershaelRules(model: Model): string | undefined {
         return undefined;
+    }
+
+    private ravenbladeRules(model: Model): string | undefined {
+        const models: string[] = [];
+        for (let key in this.models) {
+            if (this.models[key].stats.type === 'Hero') {
+                models.push(this.models[key].name);
+            }
+        }
+        const checkForDups = models.filter(modelName => modelName !== 'Ravenblade Soldier');
+        return ((new Set(checkForDups)).size !== checkForDups.length) ? 'Mercenaries may not have duplicate heroes except for the Ravenblade Soldier.' : undefined;
     }
 
     private shakrimRules(model: Model): string | undefined {
