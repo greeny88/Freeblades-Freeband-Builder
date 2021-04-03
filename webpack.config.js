@@ -145,7 +145,7 @@ let config = {
 	},
 	devServer: {
 		contentBase: dist,
-		port: 8090,
+		port: 8091,
 		publicPath: '',
 		historyApiFallback: true,
 		watchOptions: {
