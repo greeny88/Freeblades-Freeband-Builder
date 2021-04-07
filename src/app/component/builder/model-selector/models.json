@@ -1321,7 +1321,7 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Wandering Wizard",
         "displayName": "Wandering Wizard",
         "stats": {
@@ -1347,7 +1347,7 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Koronnan Moonsworn","Kuzaarik Forgers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Takar Hunter",
         "displayName": "Takar Hunter",
         "stats": {
@@ -1383,7 +1383,7 @@
         "race": "Chaler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Ravenblade Mercenaries","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Ravenblade Mercenaries","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Takar Lookout",
         "displayName": "Takar Lookout",
         "stats": {
@@ -1414,7 +1414,7 @@
         "race": "Chaler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Merchant",
         "displayName": "Merchant",
         "stats": {
@@ -3825,7 +3825,7 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Kuzaarik Forgers","Mershael Corsairs","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Mizrakai",
         "displayName": "Mizrakai",
         "type": "Standard",
@@ -3995,7 +3995,7 @@
         "race": "Symker"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Mershael Corsairs","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Mershael Corsairs","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Truthseeker",
         "displayName": "Truthseeker",
         "type": "Standard",
@@ -4024,7 +4024,7 @@
         "race": "Symker"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Wandering Bard",
         "displayName": "Wandering Bard",
         "type": "Standard",
@@ -4080,7 +4080,7 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Nightwhisper",
         "displayName": "Nightwhisper",
         "stats": {
@@ -4112,7 +4112,7 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Zetakor",
         "displayName": "Zetakor",
         "type": "Standard",
@@ -5053,7 +5053,7 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Kandoran Deathmasters","Kuzaarik Forgers","Mershael Corsairs","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Stalker",
         "displayName": "Stalker",
         "type": "Standard",

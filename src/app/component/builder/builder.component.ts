@@ -65,6 +65,8 @@ export class BuilderComponent {
         this.freebandBaseValue = 0;
         this.freebandTotalValue = 0
         let heroCount: number = 0;
+        let irvlorCount: number = 0;
+        let keldanCount: number = 0;
         let leader: Model;
         this.modelList = [];
         let nightwhisperFound: boolean = false;
@@ -93,6 +95,12 @@ export class BuilderComponent {
                     if (model.name === 'Zetakor') {
                         zetakorFound = true;
                     }
+                    if (model.name === 'Irvlor') {
+                        irvlorCount++;
+                    }
+                    if (model.name === 'Keldan') {
+                        keldanCount++;
+                    }
                 }
             }
 
@@ -118,14 +126,14 @@ export class BuilderComponent {
             if ('casting' in model.stats) {
                 casterCount++;
             }
-    
+
             let heroFound = 0;
             for (let key in this.models) {
-
                 if(this.models[key].name === model.name && model.stats.type === 'Hero') {
                     heroFound++;
                 }
             }
+
             // Grular Marauder exception
             const heroLimit: number = ((model.name === 'Marauder' || model.name === 'Impaler') && this.limit > 250) ? 3 : 2;
             if (heroFound > heroLimit) {
@@ -164,10 +172,18 @@ export class BuilderComponent {
             this.addErrorMessage('Zetakor can only be in a freeband lead by a male.')
         }
 
+        if (irvlorCount > 1) {
+            this.addErrorMessage('There is only one Irvlor.')
+        }
+
+        if (keldanCount > 1) {
+            this.addErrorMessage('There is only one Keldan.')
+        }
+
         // Exception for Koronnan Moonsworn
         const casterLimit: number = (this.faction === 'Koronnan Moonsworn') ? 2 : 1;
         if (casterCount > casterLimit) {
-            this.addErrorMessage('You can only have one caster.');
+            this.addErrorMessage('You have too many casters.');
         }
 
         this.breakValue = Math.ceil(this.totalLifePoints / 2);

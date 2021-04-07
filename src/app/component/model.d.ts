@@ -60,7 +60,7 @@ export interface ModelStats {
     melee?: MeleeWeapon[],
     moraleBonus?: number,
     range?: RangeWeapon[],
-    shield?: "AN" | "L" | "P" | "S",
+    shield?: "AN" | "AS" | "B" | "L" | "P" | "S",
     skillBonus?: number,
     skills?: Skill[],
     skillList?: string,
@@ -78,7 +78,7 @@ export interface Model {
     factions: string[],
     gender: "M" | "F",
     name: string,
-    race: "Beast" | "Chaler" | "Demon" | "Faeler" | "Kandoran" | "Kuzaarik" | "Shakrim" | "Symker" | "Trillian"
+    race: "Beast" | "Chaler" | "Demon" | "Faeler" | "Kandoran" | "Koronnan" | "Kuzaarik" | "Shakrim" | "Symker" | "Trillian"
     stats: ModelStats,
     type: "Caster" | "Leader" | "Standard",
     value: number
