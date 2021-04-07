@@ -28,9 +28,14 @@ export class ModelSelectorComponent {
         'Black Thorn',
         'Bladerider First',
         'Bladerider',
-        'Shadow Hunter',
-        'Azalakar',
-        'Oppressor'
+        'Shadow Hunter'
+    ];
+    private disallowedAltLeadersFactions: String[] = [
+        'Darkgrove Demons',
+        'Demons of Karelon',
+        'Haradelan Questers',
+        'Koronnan Moonsworn',
+        'Ravenblade Mercenaries'
     ];
 
     constructor(private dialog: MatDialog, private modelSelectorService: ModelSelectorService) {
@@ -39,31 +44,44 @@ export class ModelSelectorComponent {
 
     ngOnChanges() {
         this.models = [];
-        if (this.altLeader && this.faction !== 'Haradelan Questers') {
+        if (this.altLeader && this.disallowedAltLeadersFactions.indexOf(this.faction)) {
             const factionModels = JSON.parse(JSON.stringify(this.factionModels));
-            // LRB 18-2 pg 90
+            // LRB 21-1 pg 99
             for (let currentmodel of factionModels) {
-                let model = Object.assign({}, currentmodel);
+                let model: Model = Object.assign({}, currentmodel);
                 if (model.factions.indexOf(this.faction) > -1) {
                     if (this.type === 'Leader' && model.type === 'Standard' 
                             && model.stats.type === 'Hero' 
-                            && ['Animal','Demon','Feral','Warbeast'].every(v=> model.stats.talents.indexOf(v) < 0)
+                            && ['Animal','Demon','Feral','Warbeast','Undead'].every(v=> model.stats.talents.indexOf(v) < 0)
                             && model.stats.talents.every(t => t.indexOf('Ally') < 0) 
                             && this.disallowedAltLeaders.indexOf(model.name) < 0) {
                         model.stats.talents.push('Leader');
                         //TODO: attempt to determine which value is better to increase: melee or range
                         //TODO: even better, find way of allowing user to pick per model
                         //TODO: only increase melee for non-calvary attack
-                        model.stats.melee = model.stats.melee.map((mAtk) => {
-                            mAtk.rating += 2;
-                            return mAtk;
-                        });
+                        // model.stats.melee = model.stats.melee.map((mAtk) => {
+                        //     mAtk.rating += 2;
+                        //     return mAtk;
+                        // });
+                        model.stats.melee[0].rating += 2;
                         if (model.stats.discipline === 8) {
                             model.stats.discipline += 4;
                             model.value += 8;
                         } else {
                             model.stats.discipline += 2;
                             model.value += 7;
+                        }
+                        for (let talent of model.stats.talents) {
+                            // Only add +1 for Shield Bash if MAR increase
+                            if (['Die Hard', 'Dodge', 'Wraith', 'Shield Bash'].indexOf(talent) > -1) {
+                                model.value += 1;
+                            }
+                        }
+                        // Only add +1 for two-ended if MAR increase
+                        for (let melee of model.stats.melee) {
+                            if ('abilities' in melee && melee.abilities.indexOf('te') < -1) {
+                                model.value += 1;
+                            }
                         }
                         this.models.push(model);
                     } else if (this.type === 'Standard' && model.type === 'Leader' && this.disallowedAltLeaders.indexOf(model.name) < 0) {

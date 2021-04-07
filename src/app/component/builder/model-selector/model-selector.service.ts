@@ -73,7 +73,7 @@ export class ModelSelectorService {
     }
 
     calculateStats(originalStats: ModelStats) {
-        let stats = JSON.parse(JSON.stringify(originalStats));
+        let stats: ModelStats = JSON.parse(JSON.stringify(originalStats));
         let ability: number = (stats.type === 'Hero') ? 8 : 6;
         let abilities: {agility?: number, dexterity?: number, endurance?: number, knowledge?: number, spirit?: number, strength?: number} = {};
         for (let abilityName of this.abilityList) {
@@ -120,7 +120,7 @@ export class ModelSelectorService {
             }
         }
 
-        let defense: number = (stats.shield === 'S' || stats.shield === 'AN') ? 5 : (stats.shield === 'L') ? 6 : 4;
+        let defense: number = (stats.shield === 'S' || stats.shield === 'AN' || stats.shield === 'B' || stats.shield === 'AS') ? 5 : (stats.shield === 'L') ? 6 : 4;
         if (abilities.agility === 4) {
             defense = -1;
         } else {

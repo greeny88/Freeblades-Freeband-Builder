@@ -1321,7 +1321,7 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Wandering Wizard",
         "displayName": "Wandering Wizard",
         "stats": {
@@ -1347,7 +1347,7 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Koronnan Moonsworn","Kuzaarik Forgers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Takar Hunter",
         "displayName": "Takar Hunter",
         "stats": {
@@ -1383,7 +1383,7 @@
         "race": "Chaler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Ravenblade Mercenaries","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Ravenblade Mercenaries","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Takar Lookout",
         "displayName": "Takar Lookout",
         "stats": {
@@ -1414,7 +1414,7 @@
         "race": "Chaler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Merchant",
         "displayName": "Merchant",
         "stats": {
@@ -1583,7 +1583,7 @@
         "race": "Demon"
     },
     {
-        "factions": ["Demons of Karelon","Grular Invaders"],
+        "factions": ["Darkgrove Demons","Demons of Karelon","Grular Invaders"],
         "name": "Saryad",
         "displayName": "Saryad",
         "stats": {
@@ -1703,7 +1703,7 @@
         "race": "Demon"
     },
     {
-        "factions": ["Demons of Karelon","Grular Invaders"],
+        "factions": ["Darkgrove Demons", "Demons of Karelon","Grular Invaders"],
         "name": "Dryad",
         "displayName": "Dryad",
         "stats": {
@@ -3825,7 +3825,7 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Kuzaarik Forgers","Mershael Corsairs","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Mizrakai",
         "displayName": "Mizrakai",
         "type": "Standard",
@@ -3851,7 +3851,7 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Ravenblade Mercenaries"],
+        "factions": ["Koronnan Moonsworn","Ravenblade Mercenaries"],
         "name": "Mizrakai",
         "displayName": "Mizrakai",
         "type": "Standard",
@@ -3995,7 +3995,7 @@
         "race": "Symker"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Mershael Corsairs","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Mershael Corsairs","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Truthseeker",
         "displayName": "Truthseeker",
         "type": "Standard",
@@ -4024,7 +4024,7 @@
         "race": "Symker"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Wandering Bard",
         "displayName": "Wandering Bard",
         "type": "Standard",
@@ -4080,7 +4080,7 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Nightwhisper",
         "displayName": "Nightwhisper",
         "stats": {
@@ -4112,7 +4112,7 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Zetakor",
         "displayName": "Zetakor",
         "type": "Standard",
@@ -5053,7 +5053,7 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Kandoran Deathmasters","Kuzaarik Forgers","Mershael Corsairs","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
         "name": "Stalker",
         "displayName": "Stalker",
         "type": "Standard",
@@ -5344,6 +5344,776 @@
         },
         "gender": "M",
         "value": 9,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
+        "name": "Freebooter",
+        "displayName": "Freebooter",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Boarding Pike",
+                "abilities": ["pin"]
+            }],
+            "armor": 2,
+            "discipline": 10,
+            "talents": ["Deflect","Dodge","Dodge","Agile Charge","Tough","Amphibious"],
+            "abilities": {
+                "agility":12,
+                "dexterity":10
+            }
+        },
+        "gender": "M",
+        "value": 29,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
+        "name": "Roughrider",
+        "displayName": "Roughrider",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 10,
+            "melee": [{
+                "rating": 8,
+                "damage": 8,
+                "name": "Saber"
+            }],
+            "range": [{
+                "rating":12,
+                "damage":4,
+                "distance":6,
+                "name":"Bolas",
+                "abilities":["thr","ent"]
+            }],
+            "armor": 3,
+            "discipline": 8,
+            "talents": ["Deft Rider","Dodge","Harasser","Scout","Cavalry","Light Cavalry","Fast"],
+            "skills": [{
+                "name": "Hunt",
+                "rating": 8
+            }],
+            "abilities": {
+                "agility":10
+            }
+        },
+        "gender": "M",
+        "value": 33,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Darkgrove Demons", "Demons of Karelon"],
+        "name": "Karyad",
+        "displayName": "Karyad",
+        "type": "Leader",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Claw"
+            }],
+            "armor": 3,
+            "discipline": 12,
+            "talents": ["Leader", "Vinespawn", "Regenerate", "Dodge", "Arboreal", "Demon", "Darkgrove Sorcery"],
+            "casting": {
+                "power": 15,
+                "rating": 10
+            },
+            "abilities": {
+                "agility":10
+            }
+        },
+        "gender": "F",
+        "value": 50,
+        "race": "Demon"
+    },
+    {
+        "factions": ["Darkgrove Demons"],
+        "name": "Ironbark",
+        "displayName": "Ironbark",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Claw"
+            }],
+            "range": [{
+                "rating":10,
+                "damage":6,
+                "distance":3,
+                "name":"Thorny Vines",
+                "abilities":["ent","thr"]
+            }],
+            "armor": 4,
+            "discipline": 10,
+            "talents": ["Dodge","Dodge","Feint","Opportune Strike","Arboreal","Demon"],
+            "abilities": {
+                "agility":12,
+                "strength":10
+            }
+        },
+        "gender": "M",
+        "value": 34,
+        "race": "Demon"
+    },
+    {
+        "factions": ["Darkgrove Demons"],
+        "name": "Razorthorne",
+        "displayName": "Razorthorne",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 4,
+                "name": "Barbed Whip",
+                "abilities": ["ent","qs"]
+            }],
+            "range": [{
+                "rating":10,
+                "damage":6,
+                "distance":3,
+                "name":"Thorny Vines",
+                "abilities":["ent","thr"]
+            }],
+            "armor": 3,
+            "discipline": 10,
+            "talents": ["Dodge","Dodge","Lash Attack","Arboreal","Demon"],
+            "abilities": {
+                "agility":12
+            }
+        },
+        "gender": "F",
+        "value": 31,
+        "race": "Demon"
+    },
+    {
+        "factions": ["Darkgrove Demons"],
+        "name": "Groveguard",
+        "displayName": "Groveguard",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 8,
+                "damage": 8,
+                "name": "Claw"
+            }],
+            "range": [{
+                "rating":8,
+                "damage":6,
+                "distance":3,
+                "name":"Thorny Vines",
+                "abilities":["ent","thr"]
+            }],
+            "armor": 3,
+            "discipline": 8,
+            "talents": ["Dodge","Scout","Pouncer","Sidestep","Arboreal","Demon"],
+            "skills": [{
+                "name":"Stealth",
+                "rating":8
+            }],
+            "abilities": {
+                "agility":12
+            }
+        },
+        "gender": "F",
+        "value": 30,
+        "race": "Demon"
+    },
+    {
+        "factions": ["Darkgrove Demons"],
+        "name": "Wildwood Encroacher",
+        "displayName": "Wildwood Encroacher",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 8,
+                "name": "Claw"
+            }],
+            "range": [{
+                "rating":8,
+                "damage":6,
+                "distance":3,
+                "name":"Thorny Vines",
+                "abilities":["ent","thr"]
+            }],
+            "armor": 2,
+            "discipline": 6,
+            "talents": ["Dodge","Infiltrate","Arboreal","Demon"],
+            "abilities": {
+                "agility":8
+            }
+        },
+        "gender": "M",
+        "value": 15,
+        "race": "Demon"
+    },
+    {
+        "factions": ["Darkgrove Demons", "Demons of Karelon"],
+        "name": "Vineling",
+        "displayName": "Vineling",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 5,
+            "melee": [{
+                "rating": 4,
+                "damage": 4,
+                "name": "Thorn"
+            }],
+            "range": [{
+                "rating":6,
+                "damage":6,
+                "distance":3,
+                "name":"Thorny Vines",
+                "abilities":["ent","thr"]
+            }],
+            "armor": 2,
+            "discipline": 4,
+            "talents": ["Elusive","Harasser","Warbeast","Arboreal","Demon"]
+        },
+        "gender": "F",
+        "value": 8,
+        "race": "Demon"
+    },
+    {
+        "factions": ["Grular Invaders"],
+        "name": "Pain Bringer",
+        "displayName": "Pain Bringer",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 10,
+                "damage": 4,
+                "name": "Barbed Whip",
+                "abilities": ["ent","qs"]
+            }],
+            "shield":"AN",
+            "armor": 4,
+            "discipline": 10,
+            "talents": ["Sergeant[Bludgeoneers,Krang]", "Accurate Strike", "Tough", "Tough", "Strong-arm","Active Defense","Lash Attack"]
+        },
+        "gender": "M",
+        "value": 30,
+        "race": "Symker"
+    },
+    {
+        "factions": ["Haradelan Questers"],
+        "name": "Kantor",
+        "displayName": "Kantor",
+        "type": "Caster",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 8,
+                "name": "Mace"
+            }],
+            "armor": 2,
+            "discipline": 8,
+            "talents": ["Varanic Rites: Kantor","Battle Hymn"],
+            "casting": {
+                "rating": 10,
+                "power": 15
+            }
+        },
+        "gender": "M",
+        "value": 31,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Haradelan Questers"],
+        "name": "Sword of Vidunar",
+        "displayName": "Sword of Vidunar",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "Greatsword",
+                "ratingBonus":1
+            }],
+            "armor": 5,
+            "discipline": 10,
+            "talents": ["Parry","Parry","Champion[Kantor]","Active Defense","Confine","Contain","Protector"]
+        },
+        "gender": "F",
+        "value": 33,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Koronnan Moonsworn"],
+        "name": "Moons Priestess",
+        "displayName": "Moons Priestess",
+        "type": "Leader",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 8,
+                "damage": 8,
+                "name": "Moonsglave",
+                "abilities": ["te"]
+            }],
+            "armor": 2,
+            "discipline": 12,
+            "talents": ["Leader","Moons Magic: Priestess", "Dodge","Hate[Traazorites]","Spelldancer","Spell Projector[Moons Priest]"],
+            "casting": {
+                "power":15,
+                "rating":10
+            },
+            "abilities":{
+                "agility":10
+            }
+        },
+        "gender": "F",
+        "value": 41,
+        "race": "Koronnan"
+    },
+    {
+        "factions": ["Koronnan Moonsworn"],
+        "name": "Moons Priestess",
+        "displayName": "Moons Priestess",
+        "type": "Caster",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 8,
+                "damage": 8,
+                "name": "Moonsglave",
+                "abilities": ["te"]
+            }],
+            "armor": 2,
+            "discipline": 8,
+            "talents": ["Moons Magic: Priestess", "Dodge","Hate[Traazorites]","Spelldancer","Spell Projector[Moons Priest]"],
+            "casting": {
+                "power":15,
+                "rating":10
+            },
+            "abilities":{
+                "agility":10
+            }
+        },
+        "gender": "F",
+        "value": 35,
+        "race": "Koronnan"
+    },
+    {
+        "factions": ["Koronnan Moonsworn"],
+        "name": "Moons Priest",
+        "displayName": "Moons Priest",
+        "type": "Leader",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 8,
+                "damage": 8,
+                "name": "Moonsglave",
+                "abilities": ["te"]
+            }],
+            "armor": 2,
+            "discipline": 12,
+            "talents": ["Leader","Moons Magic: Priest", "Dodge","Hate[Traazorites]","Spelldancer","Spell Projector[Moons Priestess]"],
+            "casting": {
+                "power":15,
+                "rating":10
+            },
+            "abilities":{
+                "agility":10
+            }
+        },
+        "gender": "M",
+        "value": 41,
+        "race": "Koronnan"
+    },
+    {
+        "factions": ["Koronnan Moonsworn"],
+        "name": "Moons Priest",
+        "displayName": "Moons Priest",
+        "type": "Caster",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 8,
+                "damage": 8,
+                "name": "Moonsglave",
+                "abilities": ["te"]
+            }],
+            "armor": 2,
+            "discipline": 8,
+            "talents": ["Moons Magic: Priest", "Dodge","Hate[Traazorites]","Spelldancer","Spell Projector[Moons Priestess]"],
+            "casting": {
+                "power":15,
+                "rating":10
+            },
+            "abilities":{
+                "agility":10
+            }
+        },
+        "gender": "M",
+        "value": 35,
+        "race": "Koronnan"
+    },
+    {
+        "factions": ["Koronnan Moonsworn"],
+        "name": "Koronnan Bladebrother",
+        "displayName": "Koronnan Bladebrother",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Saber"
+            }],
+            "shield":"S",
+            "armor": 5,
+            "discipline": 10,
+            "talents": ["Parry","Parry","Sidestep","Replace","Teammate[Bladesister]"]
+        },
+        "gender": "M",
+        "value": 28,
+        "race": "Koronnan"
+    },
+    {
+        "factions": ["Koronnan Moonsworn"],
+        "name": "Koronnan Bladesister",
+        "displayName": "Koronnan Bladesister",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Saber"
+            }],
+            "shield":"S",
+            "armor": 5,
+            "discipline": 10,
+            "talents": ["Parry","Sidestep","Replace","Raven Stance","Hate[Traazorites]","Bladeflash","Teammate[Bladebrother]"]
+        },
+        "gender": "F",
+        "value": 28,
+        "race": "Koronnan"
+    },
+    {
+        "factions": ["Koronnan Moonsworn"],
+        "name": "Koromen's Shadow",
+        "displayName": "Koromen's Shadow",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 6,
+                "name": "Moonsickle",
+                "damageBonus":1
+            }],
+            "armor": 3,
+            "discipline": 10,
+            "talents": ["Dodge","Dodge","Flurry","Weaponeer","Sidestep","Shadow","Hate[Traazorites]"],
+            "abilities":{
+                "agility":12
+            }
+        },
+        "gender": "M",
+        "value": 27,
+        "race": "Koronnan"
+    },
+    {
+        "factions": ["Koronnan Moonsworn"],
+        "name": "Black Spear",
+        "displayName": "Black Spear",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 5,
+            "melee": [{
+                "rating": 12,
+                "damage": 8,
+                "name": "Longspear",
+                "abilities":["so"]
+            }],
+            "shield":"L",
+            "armor": 6,
+            "discipline": 10,
+            "talents": ["Shield Bash","Shield Parry","Protector"]
+        },
+        "gender": "M",
+        "value": 28,
+        "race": "Koronnan"
+    },
+    {
+        "factions": ["Koronnan Moonsworn"],
+        "name": "Red Archer",
+        "displayName": "Red Archer",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 6,
+            "melee": [{
+                "rating": 6,
+                "damage": 8,
+                "name": "Saber"
+            }],
+            "range":[{
+                "rating":6,
+                "damage":6,
+                "name":"Bow",
+                "distance":8
+            }],
+            "shield":"AS",
+            "armor": 4,
+            "discipline": 6,
+            "talents": ["Veteran[Teammate[Red Spear],1]","Veteran[Shieldmate,1]","Hate[Traazorites]"]
+        },
+        "gender": "M",
+        "value": 12,
+        "race": "Koronnan"
+    },
+    {
+        "factions": ["Koronnan Moonsworn"],
+        "name": "Red Spear",
+        "displayName": "Red Spear",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 6,
+            "melee": [{
+                "rating": 6,
+                "damage": 8,
+                "name": "Longspear",
+                "abilities":["so"]
+            }],
+            "shield":"S",
+            "armor": 4,
+            "discipline": 6,
+            "talents": ["Veteran[MAR +1dl,1]","Veteran[Shieldmate,1]"]
+        },
+        "gender": "M",
+        "value": 12,
+        "race": "Koronnan"
+    },
+    {
+        "factions": ["Kuzaarik Forgers"],
+        "name": "Lightbringer",
+        "displayName": "Lightbringer",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 5,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Zeradrakh",
+                "abilities":["te"]
+            }],
+            "armor": 5,
+            "discipline": 10,
+            "talents": ["Parry","Die Hard","Alpine","Demonlore","Warden"],
+            "abilities":{
+                "agility":10,
+                "endurance":10
+            }
+        },
+        "gender": "M",
+        "value": 33,
+        "race": "Kuzaarik"
+    },
+    {
+        "factions": ["Haradelan Questers"],
+        "name": "Lightbringer",
+        "displayName": "Lightbringer",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 5,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Zeradrakh",
+                "abilities":["te"]
+            }],
+            "armor": 5,
+            "discipline": 10,
+            "talents": ["Parry","Die Hard","Alpine","Demonlore","Warden","Ally[Independent]"],
+            "abilities":{
+                "agility":10,
+                "endurance":10
+            }
+        },
+        "gender": "M",
+        "value": 33,
+        "race": "Kuzaarik"
+    },
+    {
+        "factions": ["Mershael Corsairs"],
+        "name": "Riktokar",
+        "displayName": "Riktokar (Mounted)",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 9,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "Taumari",
+                "abilities":["qs"]
+            }],
+            "range":[{
+                "rating":10,
+                "damage":8,
+                "name":"Tennko",
+                "distance":10,
+                "abilities":["de"]
+            }],
+            "armor": 4,
+            "discipline": 10,
+            "talents": ["Cavalry","Dodge","Dodge","Crafty Dodge","Sidestep","Teammate[Riktokar]","Fast"],
+            "abilities":{
+                "agility":12
+            }
+        },
+        "gender": "F",
+        "value": 38,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Mershael Corsairs"],
+        "name": "Riktokar",
+        "displayName": "Riktokar (Dismounted)",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "Taumari",
+                "abilities":["qs"]
+            }],
+            "range":[{
+                "rating":10,
+                "damage":8,
+                "name":"Tennko",
+                "distance":10,
+                "abilities":["de"]
+            }],
+            "armor": 5,
+            "discipline": 10,
+            "talents": ["Dodge","Dodge","Crafty Dodge","Sidestep","Teammate[Riktokar]","Quick"],
+            "abilities":{
+                "agility":12
+            }
+        },
+        "gender": "F",
+        "value": 37,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Traazorite Crusaders"],
+        "name": "Pit Fighter",
+        "displayName": "Pit Fighter",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Pit Glave",
+                "damageBonus":1,
+                "abilities":["hin"]
+            }],
+            "shield":"B",
+            "armor": 2,
+            "discipline": 12,
+            "talents": ["Dodge","Dodge","Tough","Steadfast"],
+            "abilities":{
+                "agility":12,
+                "dexterity":10
+            }
+        },
+        "gender": "M",
+        "value": 30,
+        "race": "Chaler"
+    },
+    {
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "name": "Irvlor",
+        "displayName": "Irvlor",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 10,
+                "damage": 6,
+                "name": "Club"
+            }],
+            "armor": 4,
+            "discipline": 8,
+            "talents": ["Bribery","Die Hard","Merchant","Peddler","Ally[Independent]"],
+            "abilities":{
+                "endurance":12,
+                "strength":10
+            }
+        },
+        "gender": "M",
+        "value": 26,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "name": "Keldan",
+        "displayName": "Keldan",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 8,
+                "damage": 4,
+                "name": "2x Fists"
+            }],
+            "armor": 4,
+            "discipline": 8,
+            "talents": ["Bribery","Die Hard","Merchant","Recruiter","Ally[Independent]"],
+            "abilities":{
+                "endurance":12,
+                "strength":10
+            }
+        },
+        "gender": "M",
+        "value": 26,
         "race": "Faeler"
     }
 ]

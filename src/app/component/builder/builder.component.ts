@@ -32,12 +32,14 @@ export class BuilderComponent {
         this.factionRules = {
             'Black Rose Bandits': this.blackRoseBanditsRule,
             'Black Thorn Bandits': this.blackThornBanditsRule,
+            'Darkgrove Demons': this.darkgroveRules,
             'Demons of Karelon': this.demonsRules,
             'Eclipse Sisterhood': this.eclipseRules,
             'Falkaaran Adventurers': this.falkaaranRules,
             'Grular Invaders': this.grularRules,
             'Haradelan Questers': this.haradelanRules,
             'Kandoran Deathmasters': this.kandoranRules,
+            'Koronnan Moonsworn': this.koronnanRules,
             'Kuzaarik Forgers': this.kuzaarikRules,
             'Mershael Corsairs': this.mershaelRules,
             'Ravenblade Mercenaries': this.ravenbladeRules,
@@ -63,6 +65,8 @@ export class BuilderComponent {
         this.freebandBaseValue = 0;
         this.freebandTotalValue = 0
         let heroCount: number = 0;
+        let irvlorCount: number = 0;
+        let keldanCount: number = 0;
         let leader: Model;
         this.modelList = [];
         let nightwhisperFound: boolean = false;
@@ -91,6 +95,12 @@ export class BuilderComponent {
                     if (model.name === 'Zetakor') {
                         zetakorFound = true;
                     }
+                    if (model.name === 'Irvlor') {
+                        irvlorCount++;
+                    }
+                    if (model.name === 'Keldan') {
+                        keldanCount++;
+                    }
                 }
             }
 
@@ -116,14 +126,14 @@ export class BuilderComponent {
             if ('casting' in model.stats) {
                 casterCount++;
             }
-    
+
             let heroFound = 0;
             for (let key in this.models) {
-
                 if(this.models[key].name === model.name && model.stats.type === 'Hero') {
                     heroFound++;
                 }
             }
+
             // Grular Marauder exception
             const heroLimit: number = ((model.name === 'Marauder' || model.name === 'Impaler') && this.limit > 250) ? 3 : 2;
             if (heroFound > heroLimit) {
@@ -162,8 +172,18 @@ export class BuilderComponent {
             this.addErrorMessage('Zetakor can only be in a freeband lead by a male.')
         }
 
-        if (casterCount > 1) {
-            this.addErrorMessage('You can only have one caster.');
+        if (irvlorCount > 1) {
+            this.addErrorMessage('There is only one Irvlor.')
+        }
+
+        if (keldanCount > 1) {
+            this.addErrorMessage('There is only one Keldan.')
+        }
+
+        // Exception for Koronnan Moonsworn
+        const casterLimit: number = (this.faction === 'Koronnan Moonsworn') ? 2 : 1;
+        if (casterCount > casterLimit) {
+            this.addErrorMessage('You have too many casters.');
         }
 
         this.breakValue = Math.ceil(this.totalLifePoints / 2);
@@ -223,6 +243,10 @@ export class BuilderComponent {
         return ((new Set(checkForDups)).size !== checkForDups.length) ? 'Bandits may not have duplicate heroes except for the Highwayman.' : undefined;
     }
 
+    private darkgroveRules(model: Model): string | undefined {
+        return undefined;
+    }
+
     private demonsRules(model: Model): string | undefined {
         let heroCount: number = 0;
         let skrotCount: number = 0;
@@ -235,7 +259,7 @@ export class BuilderComponent {
             }
         }
         if (skrotCount > (heroCount*2)) {
-            return 'You may not have more than twice as many skrots as heroes.';
+            return 'Demons may not have more than twice as many skrots as heroes.';
         }
 
         return undefined;
@@ -248,7 +272,7 @@ export class BuilderComponent {
     private falkaaranRules(model: Model): string | undefined {
         let levyCount = 0;
         for (let key in this.models) {
-            if (this.models[key]['name'] === "Sheriff's Levy") {
+            if (this.models[key].name === "Sheriff's Levy") {
                 levyCount++;
             }
         }
@@ -259,9 +283,9 @@ export class BuilderComponent {
         if (model.name.indexOf('Jhenkar') > -1) {
             let shadowFound: boolean = false;
             for (let key in this.models) {
-                if (this.models[key]['name'] === 'Shadow Hunter') {
+                if (this.models[key].name === 'Shadow Hunter') {
                     shadowFound = true;
-                    if (model.name.indexOf(this.models[key]['type']) < 0) {
+                    if (model.name.indexOf(this.models[key].type) < 0) {
                         return 'The Jhenkar selection must match the selected Shadow Hunter.';
                     }
                 }
@@ -330,9 +354,48 @@ export class BuilderComponent {
             }
         }
         if (shamblerCount > (heroCount*2)) {
-            return 'You may not have more than twice as many shamblers as heroes.';
+            return 'Kandoran may not have more than twice as many shamblers as heroes.';
         }
 
+        return undefined;
+    }
+
+    private koronnanRules(model: Model): string | undefined {
+        let mizrakaiCount: number = 0;
+        let priestCount: number = 0;
+        let priestessCount: number = 0;
+        for (let key in this.models) {
+            if (this.models[key].name === 'Mizrakai') {
+                mizrakaiCount++;
+            }
+            if (this.models[key].name === 'Moons Priest') {
+                priestCount++;
+            }
+            if (this.models[key].name === 'Moons Priestess') {
+                priestessCount++;
+            }
+        }
+        if (mizrakaiCount > 1) {
+            return 'Koronnan can only have one Mizrakai.'
+        }
+        if (priestCount > 1) {
+            return 'Koronnan can only have one Moons Priest.'
+        }
+        if (priestessCount > 1) {
+            return 'Koronnan can only have one Moons Priestess.'
+        }
+
+        if (this.limit >= 200) {
+            let priestCount: number = 0;
+            for (let key in this.models) {
+                if (this.models[key].name.indexOf("Moons Priest") > -1) {
+                    priestCount++;
+                }
+            }
+            if (priestCount != 2) {
+                return "Koronnan must have both Moons Priest and Moons Priestess when the freeband's base value is 200+."
+            }
+        }
         return undefined;
     }
 

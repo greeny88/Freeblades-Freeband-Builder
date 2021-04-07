@@ -7,7 +7,7 @@
     <mat-form-field style="width:100%">
         <input matInput type="number" min="1" max="10000" placeholder="Freeband Limit*" [(ngModel)]="freebandLimit" >
     </mat-form-field>
-    <mat-checkbox [(ngModel)]="altLeader">Enable Alternate Leader Rule</mat-checkbox>
+    <mat-checkbox [(ngModel)]="altLeader" [disabled]="this.disallowedAltLeadersFactions.indexOf(this.selectedFaction) > -1">Enable Alternate Leader Rule</mat-checkbox>
     <div>
         <button mat-raised-button class="mat-accent" (click)="optionsSet()" [disabled]="updateDisabled()">Update Settings</button>
     </div>

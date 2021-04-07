@@ -13,18 +13,27 @@ export class FreebandSetupComponent {
     freebandLimit : number;
     selectedFaction : string;
     private options : {freebandLimit: number, faction: string, altLeader: boolean};
+    private disallowedAltLeadersFactions: String[] = [
+        'Darkgrove Demons',
+        'Demons of Karelon',
+        'Haradelan Questers',
+        'Koronnan Moonsworn',
+        'Ravenblade Mercenaries'
+    ];
 
     constructor() {
         // TODO: change to list based on available factions in model file
         this.factions = [
             'Black Rose Bandits', 
             'Black Thorn Bandits',
+            'Darkgrove Demons',
             'Demons of Karelon',
             'Eclipse Sisterhood',
             'Falkaaran Adventurers',
             'Grular Invaders',
             'Haradelan Questers',
             'Kandoran Deathmasters',
+            'Koronnan Moonsworn',
             'Kuzaarik Forgers',
             'Mershael Corsairs',
             'Ravenblade Mercenaries',
@@ -45,7 +54,7 @@ export class FreebandSetupComponent {
         this.options = {
             freebandLimit: this.freebandLimit,
             faction: this.selectedFaction,
-            altLeader: this.altLeader
+            altLeader: this.altLeader && this.disallowedAltLeadersFactions.indexOf(this.selectedFaction) < 0
         };
         this.onOptionsSet.emit(this.options);
     }
