@@ -474,6 +474,8 @@ export class BuilderComponent {
     private reset() {
         this.extraModels = [];
         this.extraModels.push(this.uuidv4());
+        this.extraModels.push(this.uuidv4());
+        this.extraModels.push(this.uuidv4());
         this.casterId = this.uuidv4();
         this.leaderId = this.uuidv4();
         this.freebandBaseValue = 0;

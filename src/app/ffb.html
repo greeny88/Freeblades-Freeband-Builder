@@ -1,1 +1,21 @@
-<builder></builder>
+<div id="mainDisplay">
+    <mat-toolbar class="top-bar mat-primary">
+        <mat-toolbar-row class="noPrint">
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <h1>Freeblades Freeband Builder</h1>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-sidenav-container id="mainContainer">
+        <mat-sidenav #sidenav mode="side">
+            <p><a href="/">Builder</a></p>
+            <p>Browse Prebuilt Freebands *Coming Soon*</p>
+            <p>Name Generator *Coming Soon*</p>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <builder></builder>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+    <footer>This is a fan created tool based on the rules and models from Freeblades Fantasy Skirmish Game which is owned and created by DGS Games LLC (<a href="https://www.dgsgames.com/" target="_blank">https://www.dgsgames.com/</a>).</footer>
+</div>

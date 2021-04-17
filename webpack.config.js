@@ -20,7 +20,8 @@ const paths = {
 };
 
 const extractSassPlugin = new MiniCssExtractPlugin({
-	filename: paths.output.css
+	filename: paths.output.css,
+	//chunkFilename: paths.output.css
 });
 const htmlPlugin = new HtmlWebpackPlugin({
 	template: paths.index

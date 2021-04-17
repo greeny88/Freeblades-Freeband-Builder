@@ -1,169 +1,46 @@
-<div id="mainDisplay">
-    <mat-toolbar class="top-bar mat-primary">
-        <mat-toolbar-row>
-            <button mat-icon-button (click)="sidenav.toggle()">
-                <mat-icon>menu</mat-icon>
-            </button>
-            <h1>Freeblades Freeband Builder</h1>
-        </mat-toolbar-row>
-        <mat-toolbar-row *ngIf="faction && limit" class="noSetHeight">
-            <div style="display:flex;flex-wrap:wrap;width:100%;">
-                <span style="flex: 1 1 200px;padding-right:10px;">Freeband Base Value: {{freebandBaseValue}}</span>
-                <span style="flex: 1 1 200px;padding-right:10px;">Freeband Total Value: {{freebandTotalValue}}</span>
-                <span style="flex: 1 1 150px;padding-right:10px;">Break Value: {{breakValue}}</span>
-                <span style="flex: 1 1 80px;padding-right:10px;">Hero Total: {{completeHeroCount}}</span>
-                <span style="flex: 1 1 80px;padding-right:10px;">Follower Total: {{completeFollowerCount}}</span>
-                <span style="flex: 1 1 80px;padding-right:10px;">Scouting Points: {{scoutingPoints}}</span>
-            </div>
-        </mat-toolbar-row>
-        <mat-toolbar-row *ngFor="let msg of errorMessages" class="noSetHeight errorMessage">
-            <span>{{msg}}</span>
-        </mat-toolbar-row>
-    </mat-toolbar>
-    <mat-sidenav-container id="mainContainer">
-        <mat-sidenav #sidenav mode="side">
-            <p>Builder link</p>
-            <p>Name Generator link</p>
-            <p>Browse Prebuilt Freebands link</p>
-        </mat-sidenav>
-        <mat-sidenav-content>
-            <freeband-setup (onOptionsSet)="optionsSet($event)"></freeband-setup>
-            <ng-container *ngIf="faction && limit; else setup">
-                <model-selector [faction]="faction" type="Leader" [altLeader]="altLeader" (onModelSelected)="modelSelected($event)" [componentId]="leaderId"></model-selector>
-                <model-selector [faction]="faction" type="Caster" (onModelSelected)="modelSelected($event)" [componentId]="casterId"></model-selector>
-                <ng-container *ngFor="let id of extraModels">
-                    <model-selector [faction]="faction" type="Standard" [altLeader]="altLeader" (onModelSelected)="modelSelected($event)" [componentId]="id"
-                        (onModelRemoved)="removeModel($event)"></model-selector>
-                </ng-container>
-                <button mat-raised-button  class="mat-accent" style="margin-left:16px;margin-bottom:16px;" (click)="addModel()">Add Model</button>
-            </ng-container>
-            <ng-template #setup>
-                <p>Start by selecting the values above so that you can begin building your freeband.</p>
-                <mat-list>
-                    <mat-list-item>
-                        <h1 matLine>Faction - required</h1>
-                        <p matLine>Choose from any of the currently available factions</p>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <h1 matLine>Limit - required</h1>
-                        <p matLine>The maximum size of the freeband based on the total value of the models picked.</p>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <h1 matLine>Alternate Leader</h1>
-                        <p matLine>Enables the alternate leader rule by which additional models can be promoted to leader and leader models can be demoted to regular models.</p>
-                    </mat-list-item>
-                </mat-list>
-                <p>A full description on Freeband construction rules can be found in the Living Rulebook (v21-1) starting on page
-                    96.</p>
-            </ng-template>
-        </mat-sidenav-content>
-    </mat-sidenav-container>
-    <footer>This is a fan created tool based on the rules and models from Freeblades Fantasy Skirmish Game which is owned and created by DGS Games LLC (<a href="https://www.dgsgames.com/" target="_blank">https://www.dgsgames.com/</a>).</footer>
-</div>
-<div id="printModelList">
-    <table>
-        <tr>
-            <th colspan="2">Freeband Name</th>
-            <td colspan="2">&nbsp;</td>
-            <th colspan="2">Freeband Base Value</th>
-            <td>{{freebandBaseValue}}</td>
-            <th colspan="2">Freeband Total Value</th>
-            <td>&nbsp;</td>
-            <!-- <td colspan="2">&nbsp;</td> -->
-        </tr>
-        <tr>
-            <th colspan="2">Break Value</th>
-            <td>{{breakValue}}</td>
-            <th colspan="2">Gold</th>
-            <td>&nbsp;</td>
-            <th colspan="2">Scouting Points</th>
-            <td>{{scoutingPoints}}</td>
-            <!-- <td colspan="3">&nbsp;</td> -->
-        </tr>
-        <tr>
-            <td colspan="12" class="no-border">&nbsp;</td>
-        </tr>
-    </table>
-    <table *ngFor="let model of modelList">
-        <tr>
-            <th>Type</th>
-            <td colspan="3">{{model.displayName}}</td>
-            <th>Name</th>
-            <td colspan="3">{{model.characterName}}</td>
-            <th>AP</th>
-            <td colspan="2">&nbsp;</td>
-            <td class="no-border">&nbsp;</td>
-        </tr>
-        <tr>
-            <th>Spd</th>
-            <td>{{model.stats.speed}}</td>
-            <th>DISC</th>
-            <td>{{model.stats.discipline}}</td>
-            <th>Def</th>
-            <td>{{model.stats.defense}}</td>
-            <th>AV</th>
-            <td>{{model.stats.armor}}</td>
-            <th>LP</th>
-            <td>{{model.stats.lifePoints}}</td>
-            <td colspan="2" class="no-border">&nbsp;</td>
-        </tr>
-        <tr *ngFor="let weapon of model.stats.melee">
-            <th>MAR</th>
-            <td>d{{weapon.rating}}<span *ngIf="weapon.ratingBonus > 0">&nbsp;+{{weapon.ratingBonus}}</span></td>
-            <th>Weapon</th>
-            <td colspan="4">{{weapon.name}} {{weapon.abilityList}}</td>
-            <th>MW</th>
-            <td colspan="2">d{{weapon.damage}}<span *ngIf="weapon.damageBonus > 0">&nbsp;+{{weapon.damageBonus}}</span></td>
-            <td colspan="2" class="no-border">&nbsp;</td>
-        </tr>
-        <tr *ngFor="let weapon of model.stats.range">
-            <th>RAR</th>
-            <td>d{{weapon.rating}}<span *ngIf="weapon.ratingBonus > 0">&nbsp;+{{weapon.ratingBonus}}</span></td>
-            <th>Weapon</th>
-            <td colspan="4">{{weapon.name}} {{weapon.abilityList}} {{weapon.distance}}in-{{weapon.distance*2}}in-{{weapon.distance*3}}in</td>
-            <th>MW</th>
-            <td colspan="2">d{{weapon.damage}}<span *ngIf="weapon.damageBonus > 0">&nbsp;+{{weapon.damageBonus}}</span></td>
-            <td colspan="2" class="no-border">&nbsp;</td>
-        </tr>
-        <tr>
-            <th>AGL</th>
-            <td>d{{model.stats.abilities.agility}}</td>
-            <th>DEX</th>
-            <td>d{{model.stats.abilities.dexterity}}</td>
-            <th>END</th>
-            <td>d{{model.stats.abilities.endurance}}</td>
-            <th>KNW</th>
-            <td>d{{model.stats.abilities.knowledge}}</td>
-            <th>SPR</th>
-            <td>d{{model.stats.abilities.spirit}}</td>
-            <th>STR</th>
-            <td>d{{model.stats.abilities.strength}}</td>
-        </tr>
-        <tr>
-            <th colspan="5">Talents</th>
-            <th colspan="5">Skills</th>
-            <ng-container *ngIf="model.stats.casting; else noCAR">
-                <th>CAR</th>
-                <td>d{{model.stats.casting.rating}}<span *ngIf="model.stats.casting.ratingBonus > 0">&nbsp;+{{model.stats.casting.ratingBonus}}</span></td>
-            </ng-container>
-        </tr>
-        <tr>
-            <td colspan="5">{{model.stats.talentList}}</td>
-            <td colspan="5">{{model.stats.skillList}}</td>
-            <ng-container *ngIf="model.stats.casting; else noCAR">
-                <th>Power</th>
-                <td>{{model.stats.casting.power}}</td>
-            </ng-container>
-        </tr>
-        <tr *ngIf="model.stats.itemList">
-            <th colspan="2">Items</th>
-            <td colspan="10">{{model.stats.itemList}}</td>
-        </tr>
-        <tr>
-            <td colspan="12" class="no-border">&nbsp;</td>
-        </tr>
-    </table>
-    <ng-template #noCAR>
-        <td colspan="2" class="no-border">&nbsp;</td>
-    </ng-template>
-</div>
+<freeband-setup (onOptionsSet)="optionsSet($event)"></freeband-setup>
+<ng-container *ngIf="faction && limit; else setup">
+    <div class="freebandStats noSetHeight">
+        <div>
+            <span class="printOnly bold-text">Freeband Name:</span>
+            <span><span class="bold-text">Freeband Base Value: </span>{{freebandBaseValue}}</span>
+            <span><span class="bold-text">Freeband Total Value: </span>{{freebandTotalValue}}</span>
+            <span><span class="bold-text">Break Value: </span>{{breakValue}}</span>
+            <span class="noPrint"><span class="bold-text">Hero Total: </span>{{completeHeroCount}}</span>
+            <span class="noPrint"><span class="bold-text">Follower Total: </span>{{completeFollowerCount}}</span>
+            <span><span class="bold-text">Scouting Points: </span>{{scoutingPoints}}</span>
+            <span class="printOnly bold-text">Gold:</span>
+        </div>
+    </div>
+    <div *ngFor="let msg of errorMessages" class="noSetHeight errorMessage noPrint">
+        <span>{{msg}}</span>
+    </div>
+    <model-selector [faction]="faction" type="Leader" [altLeader]="altLeader" (onModelSelected)="modelSelected($event)" [componentId]="leaderId"></model-selector>
+    <model-selector [faction]="faction" type="Caster" (onModelSelected)="modelSelected($event)" [componentId]="casterId"></model-selector>
+    <ng-container *ngFor="let id of extraModels">
+        <model-selector [faction]="faction" type="Standard" [altLeader]="altLeader" (onModelSelected)="modelSelected($event)" [componentId]="id"
+            (onModelRemoved)="removeModel($event)"></model-selector>
+    </ng-container>
+    <button mat-raised-button  class="mat-accent noPrint" style="margin-left:16px;margin-bottom:16px;" (click)="addModel()">Add Model</button>
+</ng-container>
+<ng-template #setup>
+    <div class="noPrint">
+        <p>Start by selecting the values above so that you can begin building your freeband.</p>
+        <mat-list>
+            <mat-list-item>
+                <h1 matLine>Faction - required</h1>
+                <p matLine>Choose from any of the currently available factions</p>
+            </mat-list-item>
+            <mat-list-item>
+                <h1 matLine>Limit - required</h1>
+                <p matLine>The maximum size of the freeband based on the total value of the models picked.</p>
+            </mat-list-item>
+            <mat-list-item>
+                <h1 matLine>Alternate Leader</h1>
+                <p matLine>Enables the alternate leader rule by which additional models can be promoted to leader and leader models can be demoted to regular models.</p>
+            </mat-list-item>
+        </mat-list>
+        <p>A full description on Freeband construction rules can be found in the Living Rulebook (v21-1) starting on page
+            96.</p>
+    </div>
+</ng-template>
