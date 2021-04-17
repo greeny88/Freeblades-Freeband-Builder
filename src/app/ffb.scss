@@ -36,15 +36,14 @@ $ffb-app-theme: mat-dark-theme($ffb-app-primary, $ffb-app-accent, $ffb-app-warn)
     right: 0;
 }
 
-mat-toolbar-row {
-    &.noSetHeight {
-        height: initial;
-    }
+.noSetHeight {
+    height: initial;
+}
 
-    &.errorMessage {
-        white-space: normal;
-        background-color: red;
-    }
+.errorMessage {
+    white-space: normal;
+    background-color: red;
+    padding: 0.5rem 0;
 }
 
 mat-sidenav-container {
