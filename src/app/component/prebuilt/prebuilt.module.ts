@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { PrebuiltComponent } from './prebuilt.component';
-import './prebuilt.scss';
+import { PrebuiltRoutingModule } from './prebuilt-routing.module';
+// import './prebuilt.scss';
 
 @NgModule({
     imports: [
-        CommonModule
+        CommonModule,
+        PrebuiltRoutingModule
     ],
     declarations: [
         PrebuiltComponent

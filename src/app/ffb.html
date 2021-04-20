@@ -9,12 +9,12 @@
     </mat-toolbar>
     <mat-sidenav-container id="mainContainer">
         <mat-sidenav #sidenav mode="side">
-            <p><a href="/">Builder</a></p>
-            <p>Browse Prebuilt Freebands *Coming Soon*</p>
+            <p><a routerLink="/builder">Builder</a></p>
+            <p><a routerLink="/prebuilt">Browse Prebuilt Freebands</a></p>
             <p>Name Generator *Coming Soon*</p>
         </mat-sidenav>
         <mat-sidenav-content>
-            <builder></builder>
+            <router-outlet></router-outlet>
         </mat-sidenav-content>
     </mat-sidenav-container>
     <footer>This is a fan created tool based on the rules and models from Freeblades Fantasy Skirmish Game which is owned and created by DGS Games LLC (<a href="https://www.dgsgames.com/" target="_blank">https://www.dgsgames.com/</a>).</footer>

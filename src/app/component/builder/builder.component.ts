@@ -1,5 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
 
 import { Model } from '../model';
 import template from './builder.html';
@@ -9,6 +11,7 @@ import template from './builder.html';
     template
 })
 export class BuilderComponent {
+    // TODO: update builder to look for freeband data to be passed to it by way of the router
     @ViewChild('sidenav', {'static':false}) sidenav: MatSidenav;
     altLeader: boolean;
     breakValue: number;
@@ -28,7 +31,7 @@ export class BuilderComponent {
     scoutingPoints: number;
     totalLifePoints: number;
 
-    constructor() {
+    constructor(private route: ActivatedRoute) {
         this.factionRules = {
             'Black Rose Bandits': this.blackRoseBanditsRule,
             'Black Thorn Bandits': this.blackThornBanditsRule,
@@ -49,6 +52,14 @@ export class BuilderComponent {
             'Urdaggar Tribes of Valor': this.urdaggarRules
         };
         this.reset()
+    }
+
+    ngOnInit() {
+        if (this.route.snapshot.paramMap.get('freeband')) {
+            const passedInFreeband = JSON.parse(window.atob(this.route.snapshot.paramMap.get('freeband')));
+            console.log('passedInFreeband');
+            console.log(passedInFreeband);
+        }
     }
 
     addModel() {
