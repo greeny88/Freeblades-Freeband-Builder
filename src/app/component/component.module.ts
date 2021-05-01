@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 
 // import { BuilderModule } from './builder/builder.module';
+import { CommunicatorService } from './communicator.service';
 import { ComponentRoutingModule } from './component-routing.module'
 
 // TODO: define routing for each component
@@ -13,6 +14,9 @@ import { ComponentRoutingModule } from './component-routing.module'
     exports: [
         // BuilderModule,
         ComponentRoutingModule
+    ],
+    providers: [
+        CommunicatorService
     ]
 })
 export class ComponentModule {}

@@ -16,6 +16,7 @@ export class ModelSelectorComponent {
     @Input() componentId : string;
     @Input() faction : string;
     @Input() type : string;
+    @Input() selectedModel : Object;
     @Output() onModelRemoved = new EventEmitter<any>();
     @Output() onModelSelected = new EventEmitter<any>();
     factionModels : Model[] = factionModels;
@@ -111,7 +112,12 @@ export class ModelSelectorComponent {
             }
             return 0;
         });
-        this.selected = undefined;
+        if (this.selectedModel) {
+            this.selected = this.models.filter(model => model.name == this.selectedModel['name'])[0];
+            this.modelSelected();
+        } else {
+            this.selected = undefined;
+        }
     }
     
     modelRemoved() {

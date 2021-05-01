@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
-// import { Model } from '../model';
+import { CommunicatorService } from '../communicator.service';
 import template from './prebuilt.html';
 
 @Component({
@@ -10,14 +10,17 @@ import template from './prebuilt.html';
 })
 export class PrebuiltComponent {
     // TODO: When freeband is selected, route to builder page and pass along the freeband as a variable
-    exampleFreeband: {type: String, models: Object[]};
+    exampleFreeband: {faction: String, freebandLimit: number, altLeader: boolean, models: Object[]};
+    commSubscription: any;
 
-    constructor(private router: Router) {
+    constructor(private router: Router, private commService: CommunicatorService) {
         this.exampleFreeband = {
-            'type': 'Kuzaarik Forgers',
+            'faction': 'Kuzaarik Forgers',
+            'freebandLimit': 150,
+            'altLeader': false,
             'models': [
-                {'name': 'Forge Warden'},
-                {'name': 'Kyromancer'},
+                {'name': 'Forge Warden', 'type': 'Leader'},
+                {'name': 'Kryomancer', 'type': 'Caster'},
                 {'name': 'Hinterguard'},
                 {'name': 'Field Agent'},
                 {'name': 'Quarreler'},
@@ -27,6 +30,9 @@ export class PrebuiltComponent {
     }
 
     freebandSelected() {
-        this.router.navigate(['/builder', { freeband: window.btoa(JSON.stringify(this.exampleFreeband)) }]);
+        this.commService.prebuiltFreeband = this.exampleFreeband;
+        // this.commService.sendMessage('builder', this.exampleFreeband);
+        // this.commService.messageEvent.next({'to': 'builder', 'content': this.exampleFreeband});
+        this.router.navigate(['/builder']);
     }
 }

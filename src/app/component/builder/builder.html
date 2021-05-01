@@ -1,4 +1,4 @@
-<freeband-setup (onOptionsSet)="optionsSet($event)"></freeband-setup>
+<freeband-setup [selectedOptions]="selectedFreeband" (onOptionsSet)="optionsSet($event)"></freeband-setup>
 <ng-container *ngIf="faction && limit; else setup">
     <div class="freebandStats noSetHeight">
         <div>
@@ -15,13 +15,13 @@
     <div *ngFor="let msg of errorMessages" class="noSetHeight errorMessage noPrint">
         <span>{{msg}}</span>
     </div>
-    <model-selector [faction]="faction" type="Leader" [altLeader]="altLeader" (onModelSelected)="modelSelected($event)" [componentId]="leaderId"></model-selector>
-    <model-selector [faction]="faction" type="Caster" (onModelSelected)="modelSelected($event)" [componentId]="casterId"></model-selector>
+    <model-selector [faction]="faction" type="Leader" [altLeader]="altLeader" [selectedModel]="models[leaderId]" (onModelSelected)="modelSelected($event)" [componentId]="leaderId"></model-selector>
+    <model-selector [faction]="faction" type="Caster" [selectedModel]="models[casterId]" (onModelSelected)="modelSelected($event)" [componentId]="casterId"></model-selector>
     <ng-container *ngFor="let id of extraModels">
-        <model-selector [faction]="faction" type="Standard" [altLeader]="altLeader" (onModelSelected)="modelSelected($event)" [componentId]="id"
+        <model-selector [faction]="faction" type="Standard" [altLeader]="altLeader" [selectedModel]="models[id]" (onModelSelected)="modelSelected($event)" [componentId]="id"
             (onModelRemoved)="removeModel($event)"></model-selector>
     </ng-container>
-    <button mat-raised-button  class="mat-accent noPrint" style="margin-left:16px;margin-bottom:16px;" (click)="addModel()">Add Model</button>
+    <button mat-raised-button  class="mat-accent noPrint" style="margin-left:1rem;margin-bottom:1rem;" (click)="addModel()">Add Model</button>
 </ng-container>
 <ng-template #setup>
     <div class="noPrint">
