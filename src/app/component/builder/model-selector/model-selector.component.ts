@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialog } from '@angular/material';
 
 import { EditModelComponent } from './edit-model.component';
 import { ModelSelectorService } from './model-selector.service';
@@ -113,8 +113,19 @@ export class ModelSelectorComponent {
             return 0;
         });
         if (this.selectedModel) {
-            this.selected = this.models.filter(model => model.name == this.selectedModel['name'])[0];
-            this.modelSelected();
+            console.log(this.selectedModel);
+            if ('component_id' in this.selectedModel) {
+                return;
+            }
+            try {
+                this.selected = this.models.filter(model => model.displayName === this.selectedModel['name'])[0];
+                if (!this.selected) {
+                    throw '';
+                }
+                this.modelSelected();
+            } catch {
+                console.error(`Issue finding selected model ${this.selectedModel['name']}`);
+            }
         } else {
             this.selected = undefined;
         }
@@ -125,13 +136,19 @@ export class ModelSelectorComponent {
     }
 
     modelSelected() {
-        this.model = {};
-        if (this.selected) {
-            this.originalModel = JSON.parse(JSON.stringify(this.selected));
-            this.model = JSON.parse(JSON.stringify(this.selected));
-            this.model.stats = (<any>Object).assign(this.model.stats, this.modelSelectorService.calculateStats(this.selected.stats));
+        if (!this.selected) {
+            console.error('No model selected.');
+            return;
         }
+        this.model = {};
+        this.originalModel = JSON.parse(JSON.stringify(this.selected));
+        this.model = JSON.parse(JSON.stringify(this.selected));
+        this.model.stats = (<any>Object).assign(this.model.stats, this.modelSelectorService.calculateStats(this.selected.stats));
         this.model.component_id = this.componentId;
+        if (!('stats' in this.model)) {
+            console.error(`Error getting stats of ${this.model.displayName}`);
+            return;
+        }
         this.onModelSelected.emit(this.model);
     }
 

@@ -1,3 +1,14 @@
-<div>
-    <button (click)="freebandSelected()">Kuzaarik Starter Set</button>
+<div style="display: flex;flex-wrap: wrap;">
+    <div *ngFor="let freeband of prebuiltFreebands" style="padding: 1rem;background-color: #4caf50;border-radius: 1rem;margin: 1rem;">
+        <h2>{{ freeband.name }}</h2>
+        <h3>Value: {{ freeband.freebandLimit }}</h3>
+        <table class="prebuilt" style="width:100%;margin-bottom:1rem;">
+            <tbody>
+                <tr *ngFor="let model of freeband.models">
+                    <td>{{ model.name }}<span *ngIf="model.type"> - {{ model.type }}</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <button mat-raised-button class="mat-accent" (click)="freebandSelected(freeband)">{{ freeband.name }}</button>
+    </div>
 </div>

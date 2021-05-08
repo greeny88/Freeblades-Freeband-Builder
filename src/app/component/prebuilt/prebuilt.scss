@@ -1,0 +1,15 @@
+.prebuilt {
+    border-collapse: collapse;
+    border: 1px solid black;
+
+    tbody tr {
+        color: black;
+
+        &:nth-child(odd) {
+            background-color: #EEE;
+        }
+        &:nth-child(even) {
+            background-color: #AAA;
+        }
+    }
+}

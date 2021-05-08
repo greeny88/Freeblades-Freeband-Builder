@@ -3651,8 +3651,8 @@
     },
     {
         "factions": ["Urdaggar Tribes of Valor"],
-        "name": "Beserker",
-        "displayName": "Beserker",
+        "name": "Berserker",
+        "displayName": "Berserker",
         "type": "Standard",
         "stats": {
             "type": "Hero",
@@ -3757,7 +3757,7 @@
             "range":[{
                 "rating":6,
                 "damage":8,
-                "range":6,
+                "distance":6,
                 "name":"Sling"
             }],
             "armor": 2,
