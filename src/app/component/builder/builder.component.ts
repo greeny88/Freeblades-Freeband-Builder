@@ -3,6 +3,7 @@ import { Component, ViewChild } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
 import { CommunicatorService } from '../communicator.service';
+import { LRBService } from '../lrb.service';
 import { Model } from '../model';
 import template from './builder.html';
 
@@ -11,8 +12,6 @@ import template from './builder.html';
     template
 })
 export class BuilderComponent {
-    // TODO: update builder to look for freeband data to be passed to it by way of the router
-    // @ViewChild('sidenav', {'static':false}) sidenav: MatSidenav;
     altLeader: boolean;
     breakValue: number;
     casterId: string;
@@ -26,14 +25,15 @@ export class BuilderComponent {
     freebandTotalValue: number;
     leaderId: string;
     limit: number;
-    // modelList: Model[];
     models: {[key: string]: Model};
     scoutingPoints: number;
     selectedFreeband: Object;
     totalLifePoints: number;
     commSubscription: any;
+    lrbVersion: string;
+    builderPage: string;
 
-    constructor(private route: ActivatedRoute, private commService: CommunicatorService) {
+    constructor(private route: ActivatedRoute, private commService: CommunicatorService, private lrbService: LRBService) {
         this.errorMessages = [];
         this.factionRules = {
             'Black Rose Bandits': this.blackRoseBanditsRule,
@@ -54,6 +54,8 @@ export class BuilderComponent {
             'Trilian Seekers': this.trilianRules,
             'Urdaggar Tribes of Valor': this.urdaggarRules
         };
+        this.lrbVersion = this.lrbService.version;
+        this.builderPage = this.lrbService.buildingRules;
         this.reset()
     }
 
