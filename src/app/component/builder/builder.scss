@@ -1,3 +1,17 @@
+.noSetHeight {
+    height: initial;
+}
+
+.printOnly {
+    display: none !important;
+}
+
+.errorMessage {
+    white-space: normal;
+    background-color: red;
+    padding: 0.5rem 0;
+}
+
 .freebandStats {
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -44,6 +58,21 @@
 }
 
 @media print {
+    // Reset all colors
+    * {
+        color: initial !important;
+        background-color: initial !important;
+    }
+    
+    // Hide elements not part of the freeband roster
+    footer, freeband-setup, mat-sidenav, mat-toolbar, .noPrint {
+        display: none !important;
+    }
+
+    mat-toolbar-row.mat-toolbar-row {
+        padding: 0 0.5rem;
+    }
+
     .freebandStats {
         & > div > span {
             // flex: 1 1;
@@ -64,5 +93,9 @@
             flex: 1 100%;
             border: 1px solid black;
         }
+    }
+
+    .printOnly {
+        display: initial !important;
     }
 }

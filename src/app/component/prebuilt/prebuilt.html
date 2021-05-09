@@ -1,8 +1,8 @@
-<div style="display: flex;flex-wrap: wrap;">
-    <div *ngFor="let freeband of prebuiltFreebands" style="padding: 1rem;background-color: #4caf50;border-radius: 1rem;margin: 1rem;">
+<div id="prebuilt">
+    <div *ngFor="let freeband of prebuiltFreebands" class="freebandBox">
         <h2>{{ freeband.name }}</h2>
         <h3>Value: {{ freeband.freebandLimit }}</h3>
-        <table class="prebuilt" style="width:100%;margin-bottom:1rem;">
+        <table>
             <tbody>
                 <tr *ngFor="let model of freeband.models">
                     <td>{{ model.name }}<span *ngIf="model.type"> - {{ model.type }}</span></td>
