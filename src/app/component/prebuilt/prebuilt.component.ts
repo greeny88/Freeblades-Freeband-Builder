@@ -23,12 +23,12 @@ export class PrebuiltComponent {
             'freebandLimit': 150,
             'altLeader': false,
             'models': [
-                {'name': 'Forge Warden', 'type': 'Leader'},
-                {'name': 'Kryomancer', 'type': 'Caster'},
-                {'name': 'Hinterguard'},
-                {'name': 'Field Agent'},
-                {'name': 'Quarreler'},
-                {'name': 'Explorer'}
+                {'displayName': 'Forge Warden', 'type': 'Leader'},
+                {'displayName': 'Kryomancer', 'type': 'Caster'},
+                {'displayName': 'Hinterguard'},
+                {'displayName': 'Field Agent'},
+                {'displayName': 'Quarreler'},
+                {'displayName': 'Explorer'}
             ]
         }, {
             'name': 'Black Rose Starter Set',
@@ -36,12 +36,12 @@ export class PrebuiltComponent {
             'freebandLimit': 150,
             'altLeader': false,
             'models': [
-                {'name': 'Black Rose', 'type': 'Leader'},
-                {'name': 'Enchantress', 'type': 'Caster'},
-                {'name': 'Duelist'},
-                {'name': 'Head Hunter'},
-                {'name': 'Rustler'},
-                {'name': 'Outlaw'}
+                {'displayName': 'Black Rose', 'type': 'Leader'},
+                {'displayName': 'Enchantress', 'type': 'Caster'},
+                {'displayName': 'Duelist'},
+                {'displayName': 'Head Hunter'},
+                {'displayName': 'Rustler'},
+                {'displayName': 'Outlaw'}
             ]
         }, {
             'name': 'Black Thorn Starter Set',
@@ -49,12 +49,12 @@ export class PrebuiltComponent {
             'freebandLimit': 150,
             'altLeader': false,
             'models': [
-                {'name': 'Black Thorn', 'type': 'Leader'},
-                {'name': 'Illusionist', 'type': 'Caster'},
-                {'name': 'Huskarl'},
-                {'name': 'Bodyguard'},
-                {'name': 'Thief'},
-                {'name': 'Outlaw'}
+                {'displayName': 'Black Thorn', 'type': 'Leader'},
+                {'displayName': 'Illusionist', 'type': 'Caster'},
+                {'displayName': 'Huskarl'},
+                {'displayName': 'Bodyguard'},
+                {'displayName': 'Thief'},
+                {'displayName': 'Outlaw'}
             ]
         }, {
             'name': 'Haradelan Starter Set',
@@ -62,13 +62,13 @@ export class PrebuiltComponent {
             'freebandLimit': 150,
             'altLeader': false,
             'models': [
-                {'name': 'High Questor of Tahnar', 'type': 'Leader'},
-                {'name': 'Fist of Vidunar', 'type': 'Caster'},
-                {'name': 'Apprentice Knight of Barek'},
-                {'name': 'Apprentice Knight of Tahnar'},
-                {'name': 'Militia Spearman'},
-                {'name': 'Muster Thresher'},
-                {'name': 'Muster Archer'}
+                {'displayName': 'High Questor of Tahnar', 'type': 'Leader'},
+                {'displayName': 'Fist of Vidunar', 'type': 'Caster'},
+                {'displayName': 'Apprentice Knight of Barek'},
+                {'displayName': 'Apprentice Knight of Tahnar'},
+                {'displayName': 'Militia Spearman'},
+                {'displayName': 'Muster Thresher'},
+                {'displayName': 'Muster Archer'}
             ]
         }, {
             'name': 'Demons Starter Set',
@@ -76,12 +76,12 @@ export class PrebuiltComponent {
             'freebandLimit': 150,
             'altLeader': false,
             'models': [
-                {'name': 'Azalakar', 'type': 'Leader'},
-                {'name': 'Mokruhl', 'type': 'Caster'},
-                {'name': 'Saryad'},
-                {'name': 'Borgat'},
-                {'name': 'Skrot'},
-                {'name': 'Skrot'}
+                {'displayName': 'Azalakar', 'type': 'Leader'},
+                {'displayName': 'Mokruhl', 'type': 'Caster'},
+                {'displayName': 'Saryad'},
+                {'displayName': 'Borgat'},
+                {'displayName': 'Skrot'},
+                {'displayName': 'Skrot'}
             ]
         }, {
             'name': 'Grular Starter Set',
@@ -89,12 +89,12 @@ export class PrebuiltComponent {
             'freebandLimit': 150,
             'altLeader': false,
             'models': [
-                {'name': 'Kor-Khan (Dismounted)', 'type': 'Leader'},
-                {'name': 'Warlock (Dismounted)', 'type': 'Caster'},
-                {'name': 'Marauder (Mounted)'},
-                {'name': 'Gadarl'},
-                {'name': 'Krang'},
-                {'name': 'Bludgeoneer'}
+                {'displayName': 'Kor-Khan (Dismounted)', 'type': 'Leader'},
+                {'displayName': 'Warlock (Dismounted)', 'type': 'Caster'},
+                {'displayName': 'Marauder (Mounted)'},
+                {'displayName': 'Gadarl'},
+                {'displayName': 'Krang'},
+                {'displayName': 'Bludgeoneer'}
             ]
         }, {
             'name': 'Eclipse Starter Set',
@@ -102,12 +102,12 @@ export class PrebuiltComponent {
             'freebandLimit': 150,
             'altLeader': false,
             'models': [
-                {'name': 'Nemesis', 'type': 'Leader'},
-                {'name': 'Suneater', 'type': 'Caster'},
-                {'name': 'Shadow Dancer'},
-                {'name': 'Secret Sister'},
-                {'name': 'Rebel Maiden'},
-                {'name': 'Throatseeker'}
+                {'displayName': 'Nemesis', 'type': 'Leader'},
+                {'displayName': 'Suneater', 'type': 'Caster'},
+                {'displayName': 'Shadow Dancer'},
+                {'displayName': 'Secret Sister'},
+                {'displayName': 'Rebel Maiden'},
+                {'displayName': 'Throatseeker'}
             ]
         }, {
             'name': 'Falkaaran Starter Set',
@@ -115,12 +115,12 @@ export class PrebuiltComponent {
             'freebandLimit': 150,
             'altLeader': false,
             'models': [
-                {'name': 'Jendal Bladeseeker', 'type': 'Leader'},
-                {'name': 'Fire Wizard', 'type': 'Caster'},
-                {'name': 'Karadal Bladesister'},
-                {'name': 'Knight Defender'},
-                {'name': 'Pikeman'},
-                {'name': 'Sailor'}
+                {'displayName': 'Jendal Bladeseeker', 'type': 'Leader'},
+                {'displayName': 'Fire Wizard', 'type': 'Caster'},
+                {'displayName': 'Karadal Bladesister'},
+                {'displayName': 'Knight Defender'},
+                {'displayName': 'Pikeman'},
+                {'displayName': 'Sailor'}
             ]
         }, {
             'name': 'Kandoran Starter Set',
@@ -128,12 +128,12 @@ export class PrebuiltComponent {
             'freebandLimit': 150,
             'altLeader': false,
             'models': [
-                {'name': 'Oppressor', 'type': 'Leader'},
-                {'name': 'Jackal-Priest', 'type': 'Caster'},
-                {'name': 'Krayech\'s Reaper'},
-                {'name': 'Awakened'},
-                {'name': 'Levy Spearman'},
-                {'name': 'Wretch'}
+                {'displayName': 'Oppressor', 'type': 'Leader'},
+                {'displayName': 'Jackal-Priest', 'type': 'Caster'},
+                {'displayName': 'Krayech\'s Reaper'},
+                {'displayName': 'Awakened'},
+                {'displayName': 'Levy Spearman'},
+                {'displayName': 'Wretch'}
             ]
         }, {
             'name': 'Mershael Starter Set',
@@ -141,12 +141,12 @@ export class PrebuiltComponent {
             'freebandLimit': 150,
             'altLeader': false,
             'models': [
-                {'name': 'Shaikan', 'type': 'Leader'},
-                {'name': 'Mender', 'type': 'Caster'},
-                {'name': 'Reaver\'s Kindred'},
-                {'name': 'Kayhar'},
-                {'name': 'Sentinel'},
-                {'name': 'Seafarer'}
+                {'displayName': 'Shaikan', 'type': 'Leader'},
+                {'displayName': 'Mender', 'type': 'Caster'},
+                {'displayName': 'Reaver\'s Kindred'},
+                {'displayName': 'Kayhar'},
+                {'displayName': 'Sentinel'},
+                {'displayName': 'Seafarer'}
             ]
         }, {
             'name': 'Shakrim Starter Set',
@@ -154,12 +154,12 @@ export class PrebuiltComponent {
             'freebandLimit': 150,
             'altLeader': false,
             'models': [
-                {'name': 'Steel Fang', 'type': 'Leader'},
-                {'name': 'Nerodix', 'type': 'Caster'},
-                {'name': 'Shellback'},
-                {'name': 'Viperon'},
-                {'name': 'Spitter'},
-                {'name': 'Tilik'}
+                {'displayName': 'Steel Fang', 'type': 'Leader'},
+                {'displayName': 'Nerodix', 'type': 'Caster'},
+                {'displayName': 'Shellback'},
+                {'displayName': 'Viperon'},
+                {'displayName': 'Spitter'},
+                {'displayName': 'Tilik'}
             ]
         }, {
             'name': 'Trilian Starter Set',
@@ -167,12 +167,12 @@ export class PrebuiltComponent {
             'freebandLimit': 150,
             'altLeader': false,
             'models': [
-                {'name': 'Starseeker', 'type': 'Leader'},
-                {'name': 'Treespeaker', 'type': 'Caster'},
-                {'name': 'Enforcer'},
-                {'name': 'Tree Runner'},
-                {'name': 'Wanderer'},
-                {'name': 'Wanderer'}
+                {'displayName': 'Starseeker', 'type': 'Leader'},
+                {'displayName': 'Treespeaker', 'type': 'Caster'},
+                {'displayName': 'Enforcer'},
+                {'displayName': 'Tree Runner'},
+                {'displayName': 'Wanderer'},
+                {'displayName': 'Wanderer'}
             ]
         }, {
             'name': 'Urdaggar Starter Set',
@@ -180,12 +180,12 @@ export class PrebuiltComponent {
             'freebandLimit': 150,
             'altLeader': false,
             'models': [
-                {'name': 'Wolfkarl', 'type': 'Leader'},
-                {'name': 'Bear Mystic', 'type': 'Caster'},
-                {'name': 'Boar Warrior'},
-                {'name': 'Berserker'},
-                {'name': 'Slinger'},
-                {'name': 'Unproven'}
+                {'displayName': 'Wolfkarl', 'type': 'Leader'},
+                {'displayName': 'Bear Mystic', 'type': 'Caster'},
+                {'displayName': 'Boar Warrior'},
+                {'displayName': 'Berserker'},
+                {'displayName': 'Slinger'},
+                {'displayName': 'Unproven'}
             ]
         }, {
             'name': 'Traazorite Starter Set',
@@ -193,12 +193,12 @@ export class PrebuiltComponent {
             'freebandLimit': 150,
             'altLeader': false,
             'models': [
-                {'name': 'Keshark (Mounted)', 'type': 'Leader'},
-                {'name': 'Sunbringer', 'type': 'Caster'},
-                {'name': 'Packmaster'},
-                {'name': 'Legionnaire'},
-                {'name': 'Vezarin'},
-                {'name': 'Vezarin'}
+                {'displayName': 'Keshark (Mounted)', 'type': 'Leader'},
+                {'displayName': 'Sunbringer', 'type': 'Caster'},
+                {'displayName': 'Packmaster'},
+                {'displayName': 'Legionnaire'},
+                {'displayName': 'Vezarin'},
+                {'displayName': 'Vezarin'}
             ]
         }];
         this.prebuiltFreebands.sort((a,b) => {

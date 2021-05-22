@@ -1,11 +1,13 @@
-import { Component, ViewChild } from '@angular/core';
-// import { MatSidenav } from '@angular/material/sidenav';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Component } from '@angular/core';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 import { CommunicatorService } from '../communicator.service';
+import { DbService } from './../db.service';
 import { LRBService } from '../lrb.service';
 import { Model } from '../model';
+
 import template from './builder.html';
+import loadPrevious from './load-previous.html';
 
 @Component({
     selector: 'builder',
@@ -14,6 +16,7 @@ import template from './builder.html';
 export class BuilderComponent {
     altLeader: boolean;
     breakValue: number;
+    builderPage: string;
     casterId: string;
     completeFollowerCount: number;
     completeHeroCount: number;
@@ -25,15 +28,13 @@ export class BuilderComponent {
     freebandTotalValue: number;
     leaderId: string;
     limit: number;
+    lrbVersion: string;
     models: {[key: string]: Model};
     scoutingPoints: number;
     selectedFreeband: Object;
     totalLifePoints: number;
-    commSubscription: any;
-    lrbVersion: string;
-    builderPage: string;
 
-    constructor(private route: ActivatedRoute, private commService: CommunicatorService, private lrbService: LRBService) {
+    constructor(private commService: CommunicatorService, private dbService: DbService, private lrbService: LRBService, private dialog: MatDialog) {
         this.errorMessages = [];
         this.factionRules = {
             'Black Rose Bandits': this.blackRoseBanditsRule,
@@ -63,6 +64,25 @@ export class BuilderComponent {
         if (this.commService.prebuiltFreeband) {
             this.selectedFreeband = JSON.parse(JSON.stringify(this.commService.prebuiltFreeband));
             this.commService.prebuiltFreeband = undefined;
+        } else {
+            console.log('checking for previous');
+            const sub = this.dbService.getPreviousFreeband().subscribe(previousFreeband => {
+                console.log('previousFreeband');
+                // console.log(previousFreeband);
+                if (previousFreeband !== undefined) {
+                    const dialogRef = this.dialog.open(LoadPreviousDialog);
+                    dialogRef.afterClosed().subscribe(result => {
+                        console.log('closed');
+                        console.log(result);
+                        if (result) {
+                            this.selectedFreeband = previousFreeband;
+                        } else {
+                            this.dbService.deleteOldFreeband();
+                        }
+                    });
+                }
+                sub.unsubscribe();
+            });
         }
     }
 
@@ -203,6 +223,20 @@ export class BuilderComponent {
         }
 
         this.breakValue = Math.ceil(this.totalLifePoints / 2);
+
+        const currentFreeband = {
+            faction: this.faction,
+            freebandLimit: this.limit,
+            altLeader: this.altLeader,
+            models: Object.values(this.models).map(model => {
+                const m = {
+                    displayName: model['displayName'], 
+                    type: model['type']
+                };
+                return m;
+            })
+        };
+        this.dbService.saveCurrentFreeband(currentFreeband);
     }
 
     modelSelected(model: Model | {component_id: string}) {
@@ -233,7 +267,6 @@ export class BuilderComponent {
                 }
             }
             setTimeout(() => this.selectedFreeband = undefined, 1);
-            // this.selectedFreeband = undefined;
         } else {
             this.calculateFreeband();
         }
@@ -519,5 +552,19 @@ export class BuilderComponent {
             let r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
             return v.toString(16);
         });
+    }
+}
+
+
+@Component({
+    selector: 'load-previous',
+    template: loadPrevious,
+})
+export class LoadPreviousDialog {
+
+    constructor(public dialogRef: MatDialogRef<LoadPreviousDialog>) { }
+
+    onNoClick(): void {
+        this.dialogRef.close();
     }
 }

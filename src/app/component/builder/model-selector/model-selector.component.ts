@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 
 import { EditModelComponent } from './edit-model.component';
 import { ModelSelectorService } from './model-selector.service';
@@ -118,13 +118,13 @@ export class ModelSelectorComponent {
                 return;
             }
             try {
-                this.selected = this.models.filter(model => model.displayName === this.selectedModel['name'])[0];
+                this.selected = this.models.filter(model => model.displayName === this.selectedModel['displayName'])[0];
                 if (!this.selected) {
                     throw '';
                 }
                 this.modelSelected();
             } catch {
-                console.error(`Issue finding selected model ${this.selectedModel['name']}`);
+                console.error(`Issue finding selected model ${this.selectedModel['displayName']}`);
             }
         } else {
             this.selected = undefined;

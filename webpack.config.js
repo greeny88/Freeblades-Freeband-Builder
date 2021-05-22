@@ -4,6 +4,7 @@ const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 const packageInfo = require('./package.json');
 
@@ -27,10 +28,12 @@ const htmlPlugin = new HtmlWebpackPlugin({
 	template: paths.index
 });
 const cleanDistPlugin = new CleanWebpackPlugin({
-    cleanOnceBeforeBuildPatterns: ['!.git']
+    cleanOnceBeforeBuildPatterns: ['**/*', '!.git', '!.git/**/*']
 });
-const definePlugin = new webpack.DefinePlugin({
-	VERSION: JSON.stringify(packageInfo.version)
+const workboxPlugin = new WorkboxPlugin.GenerateSW({
+	clientsClaim: true,
+	maximumFileSizeToCacheInBytes: 6 * 1024 * 1024, // 6MB
+	skipWaiting: true
 });
 
 const scripts = {
@@ -44,11 +47,11 @@ const scripts = {
 const htmlLoader = {
 	loader: 'html-loader',
 	options: {
-		collapseWhitespace: true,
-		removeComments: true,
-		attrs: [
-			'img:src'
-		]
+		minimize: {
+			caseSensitive: true,
+			collapseWhitespace: true,
+			removeComments: true
+		}
 	}
 };
 const markup = {
@@ -65,7 +68,15 @@ const cssLoader = {
 	}
 };
 const postcssLoader = {
-	loader: 'postcss-loader'
+	loader: 'postcss-loader',
+	options: {
+		postcssOptions: {
+			plugins: [
+				"postcss-import",
+				"postcss-cssnext"
+			]
+		}
+	}
 };
 const sassLoader = {
 	loader: 'sass-loader',
@@ -84,32 +95,6 @@ const styles = {
 		sassLoader
 	]
 };
-const imageFileLoader = {
-	loader: 'file-loader',
-	options: {
-		name: '[name].[ext]',
-		outputPath: 'assets/images/'
-	}
-};
-const images = {
-	test: /\.(png|svg|jpg|gif)$/,
-	use: [
-		imageFileLoader
-	]
-};
-const fontFileLoader = {
-	loader: 'file-loader',
-	options: {
-		name: '[name].[ext]',
-		outputPath: 'assets/font/'
-	}
-};
-const fonts = {
-	test: /\.(woff2?|eot|ttf|otf|svg)$/,
-	use: [
-		fontFileLoader
-	]
-};
 
 let config = {
 	entry: {
@@ -119,13 +104,11 @@ let config = {
 		rules: [
 			scripts,
 			markup,
-			styles,
-			images,
-			fonts
+			styles
 		]
 	},
 	optimization: {
-		moduleIds: 'hashed',
+		moduleIds: 'deterministic',
 		runtimeChunk: 'single',
 		splitChunks: {
 			chunks: 'all',
@@ -146,7 +129,7 @@ let config = {
 		cleanDistPlugin,
 		htmlPlugin,
 		extractSassPlugin,
-		definePlugin
+		workboxPlugin
 	],
 	resolve: {
 		extensions: ['.ts', '.js', '*']

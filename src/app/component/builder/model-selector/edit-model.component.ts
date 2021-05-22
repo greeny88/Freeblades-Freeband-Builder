@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { Abilities, Equipment, MagicItems, Skills, Talents } from './advancements';
 import { Advancement, Model, ModelStats } from '../../model';

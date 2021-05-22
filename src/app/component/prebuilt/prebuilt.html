@@ -5,7 +5,7 @@
         <table>
             <tbody>
                 <tr *ngFor="let model of freeband.models">
-                    <td>{{ model.name }}<span *ngIf="model.type"> - {{ model.type }}</span></td>
+                    <td>{{ model.displayName }}<span *ngIf="model.type"> - {{ model.type }}</span></td>
                 </tr>
             </tbody>
         </table>

@@ -9,8 +9,8 @@
     </mat-toolbar>
     <mat-sidenav-container id="mainContainer">
         <mat-sidenav #sidenav mode="side">
-            <p><a routerLink="/builder">Builder</a></p>
-            <p><a routerLink="/prebuilt">Browse Prebuilt Freebands</a></p>
+            <p><a routerLink="/builder" (click)="sidenav.close()">Builder</a></p>
+            <p><a routerLink="/prebuilt" (click)="sidenav.close()">Browse Prebuilt Freebands</a></p>
             <!-- <p>Name Generator *Coming Soon*</p> -->
         </mat-sidenav>
         <mat-sidenav-content>
