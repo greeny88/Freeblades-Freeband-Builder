@@ -396,12 +396,12 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
-        "name": "Head Hunter",
-        "displayName": "Head Hunter",
+        "factions": ["Black Rose Bandits", "Black Thorn Bandits", "Shakrim Wavestalkers"],
+        "name": "Headhunter",
+        "displayName": "Headhunter",
         "stats": {
             "abilities": {
-                "dexterity": 10,
+                "endurance": 10,
                 "strength": 10
             },
             "discipline": 10,
