@@ -396,12 +396,12 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
-        "name": "Head Hunter",
-        "displayName": "Head Hunter",
+        "factions": ["Black Rose Bandits", "Black Thorn Bandits", "Shakrim Wavestalkers"],
+        "name": "Headhunter",
+        "displayName": "Headhunter",
         "stats": {
             "abilities": {
-                "dexterity": 10,
+                "endurance": 10,
                 "strength": 10
             },
             "discipline": 10,
@@ -3651,8 +3651,8 @@
     },
     {
         "factions": ["Urdaggar Tribes of Valor"],
-        "name": "Beserker",
-        "displayName": "Beserker",
+        "name": "Berserker",
+        "displayName": "Berserker",
         "type": "Standard",
         "stats": {
             "type": "Hero",
@@ -3757,7 +3757,7 @@
             "range":[{
                 "rating":6,
                 "damage":8,
-                "range":6,
+                "distance":6,
                 "name":"Sling"
             }],
             "armor": 2,
