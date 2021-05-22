@@ -39,7 +39,7 @@ export class PrebuiltComponent {
                 {'displayName': 'Black Rose', 'type': 'Leader'},
                 {'displayName': 'Enchantress', 'type': 'Caster'},
                 {'displayName': 'Duelist'},
-                {'displayName': 'Head Hunter'},
+                {'displayName': 'Headhunter'},
                 {'displayName': 'Rustler'},
                 {'displayName': 'Outlaw'}
             ]
