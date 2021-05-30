@@ -5,6 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const packageInfo = require('./package.json');
 
@@ -32,8 +33,12 @@ const cleanDistPlugin = new CleanWebpackPlugin({
 });
 const workboxPlugin = new WorkboxPlugin.GenerateSW({
 	clientsClaim: true,
-	maximumFileSizeToCacheInBytes: 6 * 1024 * 1024, // 6MB
+	maximumFileSizeToCacheInBytes: 3 * 1024 * 1024, // 3MB
 	skipWaiting: true
+});
+
+const terserPlugin = new TerserPlugin({ 
+	extractComments: false 
 });
 
 const scripts = {
@@ -73,7 +78,7 @@ const postcssLoader = {
 		postcssOptions: {
 			plugins: [
 				"postcss-import",
-				"postcss-cssnext"
+				"postcss-preset-env"
 			]
 		}
 	}
@@ -82,7 +87,8 @@ const sassLoader = {
 	loader: 'sass-loader',
 	options: {
 		sassOptions: {
-			includePaths: ['./node_modules']
+			includePaths: ['./node_modules'],
+			outputStyle: 'compressed'
 		}
 	}
 };
@@ -123,7 +129,10 @@ let config = {
 					}
 				}
 			}
-		}
+		},
+		minimizer: [
+			terserPlugin
+		]
 	},
 	plugins: [
 		cleanDistPlugin,

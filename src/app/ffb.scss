@@ -74,3 +74,11 @@ mat-sidenav-container {
         border-bottom: 1px solid rgba(0, 0, 0, .42);
     }
 }
+
+@media only screen and (max-width : 415px) {
+    mat-sidenav-container {
+        mat-sidenav {
+            width: 100%;
+        }
+    }
+}

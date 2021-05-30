@@ -1,28 +1,30 @@
 import { Injectable } from "@angular/core";
-import { Subject } from "rxjs";
+import { Observable } from "rxjs";
 
 
 @Injectable()
 export class CommunicatorService {
-    public messageEvent: Subject<any> = new Subject();
-    private componentMessages: {[name: string]: Subject<any>} = {};
-    prebuiltFreeband: Object;
+    private prebuiltFreeband: Object;
 
     constructor() {
         // console.log('CommunicatorService');
     }
 
-    sendMessage(to: string, message: any) {
-        if (!(to in this.componentMessages)) {
-            this.componentMessages[to] = new Subject();
-        }
-        this.componentMessages[to].next(message);
+    sendMessage(freeband: Object) {
+        this.prebuiltFreeband = freeband;
     }
 
-    getMessage(name: string) {
-        if (!(name in this.componentMessages)) {
-            this.componentMessages[name] = new Subject();
-        }
-        return this.componentMessages[name];
+    getMessage() {
+        return new Observable(observer => {
+            observer.next(this.prebuiltFreeband);
+            // this.prebuiltFreeband = undefined;
+            observer.complete();
+
+            return {
+                unsubscribe() {
+                    this.prebuiltFreeband = undefined;
+                }
+            };
+        });
     }
 }

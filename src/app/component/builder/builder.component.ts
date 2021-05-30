@@ -61,29 +61,25 @@ export class BuilderComponent {
     }
 
     ngOnInit() {
-        if (this.commService.prebuiltFreeband) {
-            this.selectedFreeband = JSON.parse(JSON.stringify(this.commService.prebuiltFreeband));
-            this.commService.prebuiltFreeband = undefined;
-        } else {
-            console.log('checking for previous');
-            const sub = this.dbService.getPreviousFreeband().subscribe(previousFreeband => {
-                console.log('previousFreeband');
-                // console.log(previousFreeband);
-                if (previousFreeband !== undefined) {
-                    const dialogRef = this.dialog.open(LoadPreviousDialog);
-                    dialogRef.afterClosed().subscribe(result => {
-                        console.log('closed');
-                        console.log(result);
-                        if (result) {
-                            this.selectedFreeband = previousFreeband;
-                        } else {
-                            this.dbService.deleteOldFreeband();
-                        }
-                    });
-                }
-                sub.unsubscribe();
-            });
-        }
+        this.commService.getMessage().subscribe(prebuiltFreeband => {
+            if (prebuiltFreeband) {
+                this.selectedFreeband = JSON.parse(JSON.stringify(prebuiltFreeband));
+            } else {
+                const sub = this.dbService.getPreviousFreeband().subscribe(previousFreeband => {
+                    if (previousFreeband !== undefined) {
+                        const dialogRef = this.dialog.open(LoadPreviousDialog);
+                        dialogRef.afterClosed().subscribe(result => {
+                            if (result) {
+                                this.selectedFreeband = previousFreeband;
+                            } else {
+                                this.dbService.deleteOldFreeband();
+                            }
+                        });
+                    }
+                    sub.unsubscribe();
+                });
+            }
+        })
     }
 
     addModel() {
@@ -270,6 +266,10 @@ export class BuilderComponent {
         } else {
             this.calculateFreeband();
         }
+    }
+
+    print() {
+        window.print();
     }
 
     removeModel(id: string) {

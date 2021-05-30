@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { CommunicatorService } from '../communicator.service';
@@ -11,6 +11,7 @@ interface Freeband {name: String, faction: String, freebandLimit: number, altLea
     template
 })
 export class PrebuiltComponent {
+    // @ViewChild('sidenav') sidenav;
     // TODO: build ability to sort/filter list of freebands
     prebuiltFreebands: Freeband[];
 
@@ -213,7 +214,9 @@ export class PrebuiltComponent {
     }
 
     freebandSelected(freeband: Freeband) {
-        this.commService.prebuiltFreeband = freeband;
+        // this.commService.prebuiltFreeband = freeband;
+        this.commService.sendMessage(freeband);
+        // this.sidenav.close();
         this.router.navigate(['/builder']);
     }
 }

@@ -12,16 +12,23 @@
             <span class="printOnly bold-text">Gold:</span>
         </div>
     </div>
+    <div>
+        <button mat-raised-button class="mat-accent noPrint" (click)="print()">Print</button>
+    </div>
     <div *ngFor="let msg of errorMessages" class="noSetHeight errorMessage noPrint">
         <span>{{msg}}</span>
     </div>
-    <model-selector [faction]="faction" type="Leader" [altLeader]="altLeader" [selectedModel]="models[leaderId]" (onModelSelected)="modelSelected($event)" [componentId]="leaderId"></model-selector>
-    <model-selector [faction]="faction" type="Caster" [selectedModel]="models[casterId]" (onModelSelected)="modelSelected($event)" [componentId]="casterId"></model-selector>
+    <model-selector [faction]="faction" type="Leader" [altLeader]="altLeader" [selectedModel]="models[leaderId]"
+        (onModelSelected)="modelSelected($event)" [componentId]="leaderId"></model-selector>
+    <model-selector [faction]="faction" type="Caster" [selectedModel]="models[casterId]"
+        (onModelSelected)="modelSelected($event)" [componentId]="casterId"></model-selector>
     <ng-container *ngFor="let id of extraModels">
-        <model-selector [faction]="faction" type="Standard" [altLeader]="altLeader" [selectedModel]="models[id]" (onModelSelected)="modelSelected($event)" [componentId]="id"
-            (onModelRemoved)="removeModel($event)"></model-selector>
+        <model-selector [faction]="faction" type="Standard" [altLeader]="altLeader" [selectedModel]="models[id]"
+            (onModelSelected)="modelSelected($event)" [componentId]="id" (onModelRemoved)="removeModel($event)">
+        </model-selector>
     </ng-container>
-    <button mat-raised-button class="mat-accent noPrint" style="margin-left:1rem;margin-bottom:1rem;" (click)="addModel()">Add Model</button>
+    <button mat-raised-button class="mat-accent noPrint" style="margin-left:1rem;margin-bottom:1rem;"
+        (click)="addModel()">Add Model</button>
 </ng-container>
 <ng-template #setup>
     <div class="noPrint">
@@ -36,11 +43,16 @@
                 <p matLine>The maximum size of the freeband based on the total value of the models picked.</p>
             </mat-list-item>
             <mat-list-item>
-                <h1 matLine>Alternate Leader</h1>
-                <p matLine>Enables the alternate leader rule by which additional models can be promoted to leader and leader models can be demoted to regular models.</p>
+                <h1 matLine>Alternate Leader*</h1>
+                <p matLine>Enables the alternate leader rule by which additional models can be promoted to leader and
+                    leader models can be demoted to regular models.</p>
             </mat-list-item>
         </mat-list>
-        <p>A full description on Freeband construction rules can be found in the Living Rulebook (v{{ lrbVersion }}) starting on page
-            {{ builderPage }}.</p>
+        <p>A full description on Freeband construction rules can be found in the Living Rulebook (v{{ lrbVersion }})
+            starting on page {{ builderPage }}. Printing this page using your browser's print option will
+            give you a formatted display of your selected models.</p>
+        <p>* There are a few bugs to work out with alternate leader rules like being able to increase/decrease specific
+            MAR/RAR/CAR. An attempt is made to adjust the stat line correctly but for now you may need to use the 'Edit'
+            option on a model to get it's stat line the way it should be set.</p>
     </div>
 </ng-template>
