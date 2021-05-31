@@ -33,7 +33,25 @@ const cleanDistPlugin = new CleanWebpackPlugin({
 });
 const workboxPlugin = new WorkboxPlugin.GenerateSW({
 	clientsClaim: true,
-	maximumFileSizeToCacheInBytes: 3 * 1024 * 1024, // 3MB
+	maximumFileSizeToCacheInBytes: 6 * 1024 * 1024, // 6MB TODO: change to larger for dev and smaller for prod
+	navigateFallback: 'index.html',
+	offlineGoogleAnalytics: true,
+	runtimeCaching: [
+		{
+			urlPattern: /^https:\/\/fonts\.gstatic\.com/,
+			handler: 'StaleWhileRevalidate',
+			options: {
+				cacheName: 'google-fonts-webfonts'
+			}
+		},
+		{
+			urlPattern: /^https:\/\/fonts\.googleapis\.com\/icon/,
+			handler: 'StaleWhileRevalidate',
+			options: {
+				cacheName: 'google-fonts-icons'
+			}
+		}
+	],
 	skipWaiting: true
 });
 
@@ -118,14 +136,14 @@ let config = {
 		runtimeChunk: 'single',
 		splitChunks: {
 			chunks: 'all',
-			maxInitialRequests: Infinity,
-			minSize: 0,
+			// maxInitialRequests: Infinity,
+			// minSize: 0,
 			cacheGroups: {
 				vendor: {
 					test: /[\\/]node_modules[\\/]/,
 					name(module) {
 						const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
-						return `npm.${packageName.replace('@', '')}`;
+						return `vendor.${packageName.replace('@', '')}`;
 					}
 				}
 			}
