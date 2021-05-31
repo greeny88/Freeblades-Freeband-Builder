@@ -7,8 +7,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
-// import { ServiceWorkerModule } from "@angular/service-worker";
 
+import { CommunicatorService } from './communicator.service';
 import { ComponentModule } from './component/component.module';
 import { FFBComponent } from './ffb.component';
 import './ffb.scss';
@@ -23,14 +23,16 @@ import './ffb.scss';
         MatButtonModule,
         MatIconModule,
         MatSidenavModule,
-        MatToolbarModule,
-        // ServiceWorkerModule
+        MatToolbarModule
     ],
     declarations: [
         FFBComponent
     ],
     bootstrap: [
         FFBComponent
+    ],
+    providers: [
+        CommunicatorService
     ]
 })
 export class AppModule {}

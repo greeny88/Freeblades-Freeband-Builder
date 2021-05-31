@@ -1,20 +1,21 @@
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { Observable, Subject } from "rxjs";
 
 
 @Injectable()
 export class CommunicatorService {
     private prebuiltFreeband: Object;
+    private navSub: Subject<undefined>;
 
     constructor() {
-        // console.log('CommunicatorService');
+        this.navSub = new Subject();
     }
 
-    sendMessage(freeband: Object) {
+    setFreeband(freeband: Object) {
         this.prebuiltFreeband = freeband;
     }
 
-    getMessage() {
+    getFreeband() {
         return new Observable(observer => {
             observer.next(this.prebuiltFreeband);
             // this.prebuiltFreeband = undefined;
@@ -26,5 +27,13 @@ export class CommunicatorService {
                 }
             };
         });
+    }
+
+    closeNav() {
+        this.navSub.next(undefined);
+    }
+
+    closeNavTrigger() {
+        return this.navSub;
     }
 }

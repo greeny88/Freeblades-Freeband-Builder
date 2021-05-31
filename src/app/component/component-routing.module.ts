@@ -6,11 +6,11 @@ import { PageNotFoundComponent } from './page-not-found.component';
 const routes: Routes = [
     {
         path: 'builder',
-        loadChildren: () => import('./builder/builder.module').then(m => m.BuilderModule)
+        loadChildren: () => import(/* webpackPrefetch: true *//* webpackChunkName: "builder" */'./builder/builder.module').then(m => m.BuilderModule)
     },
     {
         path: 'prebuilt',
-        loadChildren: () => import('./prebuilt/prebuilt.module').then(m => m.PrebuiltModule)
+        loadChildren: () => import(/* webpackPrefetch: true *//* webpackChunkName: "prebuilt" */'./prebuilt/prebuilt.module').then(m => m.PrebuiltModule)
     },
     {
         path: '',

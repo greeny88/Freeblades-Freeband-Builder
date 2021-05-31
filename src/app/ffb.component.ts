@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
+
+import { CommunicatorService } from './communicator.service';
 
 import template from './ffb.html';
 
@@ -7,17 +10,11 @@ import template from './ffb.html';
     template
 })
 export class FFBComponent {
+    @ViewChild('sidenav') sidenav: MatSidenav;
 
-    constructor() {
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('service-worker.js').then(registration => {
-                    console.log('SW registered: ', registration);
-                    // TODO: display message to refresh
-                }).catch(registrationError => {
-                    console.log('SW registration failed: ', registrationError);
-                });
-            });
-        }
+    constructor(private commService: CommunicatorService) {}
+
+    ngOnInit() {
+        this.commService.closeNavTrigger().subscribe(() => this.sidenav.close());
     }
 }

@@ -1,17 +1,22 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { CommunicatorService } from '../communicator.service';
+import { CommunicatorService } from '../../communicator.service';
 import template from './prebuilt.html';
 
-interface Freeband {name: String, faction: String, freebandLimit: number, altLeader: boolean, models: Object[]};
+interface Freeband {
+    name: String, 
+    faction: String, 
+    freebandLimit: number, 
+    altLeader: boolean, 
+    models: Object[]
+};
 
 @Component({
     selector: 'prebuilt',
     template
 })
 export class PrebuiltComponent {
-    // @ViewChild('sidenav') sidenav;
     // TODO: build ability to sort/filter list of freebands
     prebuiltFreebands: Freeband[];
 
@@ -214,9 +219,8 @@ export class PrebuiltComponent {
     }
 
     freebandSelected(freeband: Freeband) {
-        // this.commService.prebuiltFreeband = freeband;
-        this.commService.sendMessage(freeband);
-        // this.sidenav.close();
+        this.commService.setFreeband(freeband);
+        this.commService.closeNav();
         this.router.navigate(['/builder']);
     }
 }

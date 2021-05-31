@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
-import { CommunicatorService } from '../communicator.service';
+import { CommunicatorService } from '../../communicator.service';
 import { DbService } from './../db.service';
 import { LRBService } from '../lrb.service';
 import { Model } from '../model';
@@ -61,7 +61,7 @@ export class BuilderComponent {
     }
 
     ngOnInit() {
-        this.commService.getMessage().subscribe(prebuiltFreeband => {
+        this.commService.getFreeband().subscribe(prebuiltFreeband => {
             if (prebuiltFreeband) {
                 this.selectedFreeband = JSON.parse(JSON.stringify(prebuiltFreeband));
             } else {

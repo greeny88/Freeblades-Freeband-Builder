@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-import { CommunicatorService } from '../../communicator.service';
+import { CommunicatorService } from '../../../communicator.service';
 import template from './freeband-setup.html';
 
 @Component({
