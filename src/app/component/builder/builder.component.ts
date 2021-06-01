@@ -197,7 +197,7 @@ export class BuilderComponent {
         }
 
         if (nightwhisperFound && leader.gender !== 'F') {
-            this.addErrorMessage('Nightwhisper can only be in a freeband lead by a female leader.')
+            this.addErrorMessage('Nightwhisper can only be in a freeband lead by a female.')
         }
 
         if (zetakorFound && leader.gender !== 'M') {

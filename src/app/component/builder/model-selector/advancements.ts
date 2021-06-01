@@ -39,6 +39,7 @@ const Equipment: {name:string, cost:number}[] = [{
     'name': 'War Markings',
     'cost': 2
 }];
+// TODO: add artifacts to list, check for new items
 const MagicItems: {name: string, advancement: string, cost: number}[] = [{
     'name':'Nimblesocks',
     'advancement':'AGL',

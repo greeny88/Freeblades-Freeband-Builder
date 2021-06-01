@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 import { EditModelComponent } from './edit-model.component';
@@ -43,80 +43,80 @@ export class ModelSelectorComponent {
         this.models = [];
     }
 
-    ngOnChanges() {
-        this.models = [];
-        if (this.altLeader && this.disallowedAltLeadersFactions.indexOf(this.faction)) {
-            const factionModels = JSON.parse(JSON.stringify(this.factionModels));
-            // LRB 21-1 pg 99
-            for (let currentmodel of factionModels) {
-                let model: Model = Object.assign({}, currentmodel);
-                if (model.factions.indexOf(this.faction) > -1) {
-                    if (this.type === 'Leader' && model.type === 'Standard' 
-                            && model.stats.type === 'Hero' 
-                            && ['Animal','Demon','Feral','Warbeast','Undead'].every(v=> model.stats.talents.indexOf(v) < 0)
-                            && model.stats.talents.every(t => t.indexOf('Ally') < 0) 
-                            && this.disallowedAltLeaders.indexOf(model.name) < 0) {
-                        model.stats.talents.push('Leader');
-                        //TODO: attempt to determine which value is better to increase: melee or range
-                        //TODO: even better, find way of allowing user to pick per model
-                        //TODO: only increase melee for non-calvary attack
-                        // model.stats.melee = model.stats.melee.map((mAtk) => {
-                        //     mAtk.rating += 2;
-                        //     return mAtk;
-                        // });
-                        model.stats.melee[0].rating += 2;
-                        if (model.stats.discipline === 8) {
-                            model.stats.discipline += 4;
-                            model.value += 8;
-                        } else {
-                            model.stats.discipline += 2;
-                            model.value += 7;
-                        }
-                        for (let talent of model.stats.talents) {
-                            // Only add +1 for Shield Bash if MAR increase
-                            if (['Die Hard', 'Dodge', 'Wraith', 'Shield Bash'].indexOf(talent) > -1) {
-                                model.value += 1;
+    ngOnChanges(changes: SimpleChanges) {
+        if ('altLeader' in changes || 'faction' in changes) {
+            this.model = undefined;
+            this.models = [];
+            if (this.altLeader && this.disallowedAltLeadersFactions.indexOf(this.faction)) {
+                const factionModels = JSON.parse(JSON.stringify(this.factionModels));
+                for (let currentmodel of factionModels) {
+                    let model: Model = Object.assign({}, currentmodel);
+                    if (model.factions.indexOf(this.faction) > -1) {
+                        if (this.type === 'Leader' && model.type === 'Standard' 
+                                && model.stats.type === 'Hero' 
+                                && ['Animal','Demon','Feral','Warbeast','Undead'].every(v=> model.stats.talents.indexOf(v) < 0)
+                                && model.stats.talents.every(t => t.indexOf('Ally') < 0) 
+                                && this.disallowedAltLeaders.indexOf(model.name) < 0) {
+                            model.stats.talents.push('Leader');
+                            //TODO: attempt to determine which value is better to increase: melee or range
+                            //TODO: even better, find way of allowing user to pick per model
+                            //TODO: only increase melee for non-calvary attack
+                            // model.stats.melee = model.stats.melee.map((mAtk) => {
+                            //     mAtk.rating += 2;
+                            //     return mAtk;
+                            // });
+                            model.stats.melee[0].rating += 2;
+                            if (model.stats.discipline === 8) {
+                                model.stats.discipline += 4;
+                                model.value += 8;
+                            } else {
+                                model.stats.discipline += 2;
+                                model.value += 7;
                             }
-                        }
-                        // Only add +1 for two-ended if MAR increase
-                        for (let melee of model.stats.melee) {
-                            if ('abilities' in melee && melee.abilities.indexOf('te') < -1) {
-                                model.value += 1;
+                            for (let talent of model.stats.talents) {
+                                // Only add +1 for Shield Bash if MAR increase
+                                if (['Die Hard', 'Dodge', 'Wraith', 'Shield Bash'].indexOf(talent) > -1) {
+                                    model.value += 1;
+                                }
                             }
+                            // Only add +1 for two-ended if MAR increase
+                            for (let melee of model.stats.melee) {
+                                if ('abilities' in melee && melee.abilities.indexOf('te') < -1) {
+                                    model.value += 1;
+                                }
+                            }
+                            model.type = 'Leader';
+                            this.models.push(model);
+                        } else if (this.type === 'Standard' && model.type === 'Leader' && this.disallowedAltLeaders.indexOf(model.name) < 0) {
+                            model.stats.talents = model.stats.talents.filter((tal) => tal !== 'Leader');
+                            //TODO: determine which value is higher before decreasing: melee or range
+                            model.stats.melee = model.stats.melee.map((mAtk) => {
+                                mAtk.rating -= 2;
+                                return mAtk;
+                            });
+                            model.stats.discipline -= 2;
+                            model.value -= 7;
+                            model.type = 'Standard';
+                            this.models.push(model);
+                        } else if (model.type === this.type) {
+                            this.models.push(model);
                         }
-                        this.models.push(model);
-                    } else if (this.type === 'Standard' && model.type === 'Leader' && this.disallowedAltLeaders.indexOf(model.name) < 0) {
-                        model.stats.talents = model.stats.talents.filter((tal) => tal !== 'Leader');
-                        //TODO: determine which value is higher before decreasing: melee or range
-                        model.stats.melee = model.stats.melee.map((mAtk) => {
-                            mAtk.rating -= 2;
-                            return mAtk;
-                        });
-                        model.stats.discipline -= 2;
-                        model.value -= 7;
-                        this.models.push(model);
-                    } else if (model.type === this.type) {
-                        this.models.push(model);
                     }
                 }
+            } else {
+                this.models = this.factionModels.filter(model => model.type === this.type && model.factions.indexOf(this.faction) > -1);
             }
-        } else {
-            this.models = this.factionModels.filter(model => model.type === this.type && model.factions.indexOf(this.faction) > -1);
+            this.models.sort((a,b) => {
+                if (a.name < b.name) {
+                    return -1;
+                }
+                if (a.name > b.name) {
+                    return 1;
+                }
+                return 0;
+            });
         }
-        this.models.sort((a,b) => {
-            if (a.name < b.name) {
-                return -1;
-            }
-            if (a.name > b.name) {
-                return 1;
-            }
-            return 0;
-        });
-        if (this.selectedModel) {
-            console.log(this.selectedModel);
-            if ('component_id' in this.selectedModel) {
-                return;
-            }
+        if ('selectedModel' in changes && this.selectedModel && !('component_id' in this.selectedModel)) {
             try {
                 this.selected = this.models.filter(model => model.displayName === this.selectedModel['displayName'])[0];
                 if (!this.selected) {
@@ -126,8 +126,6 @@ export class ModelSelectorComponent {
             } catch {
                 console.error(`Issue finding selected model ${this.selectedModel['displayName']}`);
             }
-        } else {
-            this.selected = undefined;
         }
     }
     
@@ -136,11 +134,11 @@ export class ModelSelectorComponent {
     }
 
     modelSelected() {
+        this.model = undefined;
         if (!this.selected) {
-            console.error('No model selected.');
+            this.onModelSelected.emit({ component_id: this.componentId });
             return;
         }
-        this.model = {};
         this.originalModel = JSON.parse(JSON.stringify(this.selected));
         this.model = JSON.parse(JSON.stringify(this.selected));
         this.model.stats = (<any>Object).assign(this.model.stats, this.modelSelectorService.calculateStats(this.selected.stats));

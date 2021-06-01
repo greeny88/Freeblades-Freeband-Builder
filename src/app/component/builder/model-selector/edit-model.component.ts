@@ -38,7 +38,7 @@ export class EditModelComponent {
             this.modelAdvancements = this.model.stats.advancements;
         }
         if ('injuries' in this.model.stats) {
-            this.updateItemCount();
+            this.updateInjuryCount();
             this.modelInjuries = this.model.stats.injuries;
         }
         if ('items' in this.model.stats) {
@@ -83,7 +83,7 @@ export class EditModelComponent {
     }
 
     addVeteranTalent() {
-        this.model.stats = JSON.parse(JSON.stringify(this.originalModelStats));
+        // this.model.stats = JSON.parse(JSON.stringify(this.originalModelStats));
         this.model.stats.veteranAdvancements = this.modelVeteranAdvancements;
     }
 

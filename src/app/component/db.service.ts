@@ -15,12 +15,12 @@ export class DbService {
             throw e;
         }
         request.onsuccess = () => {
-            console.log('success');
+            // console.log('success');
             this.db = request.result;
             this.dbConnection.next(this.db);
         };
         request.onupgradeneeded = (e: IDBVersionChangeEvent) => {
-            console.log('upgrade');
+            // console.log('upgrade');
             const objectStore: IDBObjectStore = (<any>e.target).result.createObjectStore('previous', { keyPath: 'faction' });
         };
     }
@@ -74,9 +74,9 @@ export class DbService {
 
             const request: IDBRequest<IDBValidKey> = objectStore.put(freeband);
 
-            request.onsuccess = () => console.log('Add request was successful.');
-            transaction.oncomplete = () => console.log('Transaction was successful.');
-            // transaction.onerror = (e) => console.error(e);
+            // request.onsuccess = () => console.log('Add request was successful.');
+            // transaction.oncomplete = () => console.log('Transaction was successful.');
+            transaction.onerror = (e) => console.error(e);
         });
         if (this.db) {
             this.dbConnection.next(this.db);
