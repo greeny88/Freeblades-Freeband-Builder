@@ -122,9 +122,25 @@ export class ModelSelectorComponent {
                 if (!this.selected) {
                     throw '';
                 }
+                this.selected.gender = this.selectedModel['gender']
+                if ('characterName' in this.selectedModel && this.selectedModel['characterName']) {
+                    this.selected.characterName = this.selectedModel['characterName'];
+                }
+                if ('advancements' in this.selectedModel && this.selectedModel['advancements']) {
+                    this.selected.stats.advancements = this.selectedModel['advancements'];
+                }
+                if ('injuries' in this.selectedModel && this.selectedModel['injuries']) {
+                    this.selected.stats.injuries = this.selectedModel['injuries'];
+                }
+                if ('items' in this.selectedModel && this.selectedModel['items']) {
+                    this.selected.stats.items = this.selectedModel['items'];
+                }
+                if ('veteranAdvancements' in this.selectedModel && this.selectedModel['veteranAdvancements']) {
+                    this.selected.stats.veteranAdvancements = this.selectedModel['veteranAdvancements'];
+                }
                 this.modelSelected();
-            } catch {
-                console.error(`Issue finding selected model ${this.selectedModel['displayName']}`);
+            } catch (error) {
+                console.error(`Issue finding selected model ${this.selectedModel['displayName']}`, error);
             }
         }
     }
@@ -140,14 +156,7 @@ export class ModelSelectorComponent {
             return;
         }
         this.originalModel = JSON.parse(JSON.stringify(this.selected));
-        this.model = JSON.parse(JSON.stringify(this.selected));
-        this.model.stats = (<any>Object).assign(this.model.stats, this.modelSelectorService.calculateStats(this.selected.stats));
-        this.model.component_id = this.componentId;
-        if (!('stats' in this.model)) {
-            console.error(`Error getting stats of ${this.model.displayName}`);
-            return;
-        }
-        this.onModelSelected.emit(this.model);
+        this.updateModelStats(this.originalModel);
     }
 
     openEditWindow() {
@@ -157,11 +166,19 @@ export class ModelSelectorComponent {
 
         dialogRef.afterClosed().subscribe((result: Model) => {
             if (result) {
-                this.model = JSON.parse(JSON.stringify(result));
-                this.model.stats = (<any>Object).assign(this.model.stats, this.modelSelectorService.calculateStats(result.stats));
-                this.model.component_id = this.componentId;
-                this.onModelSelected.emit(this.model);
+                this.updateModelStats(result);
             }
         });
+    }
+
+    private updateModelStats(model) {
+        this.model = JSON.parse(JSON.stringify(model));
+        this.model.stats = (<any>Object).assign(this.model.stats, this.modelSelectorService.calculateStats(model.stats));
+        this.model.component_id = this.componentId;
+        if (!('stats' in this.model)) {
+            console.error(`Error getting stats of ${this.model.displayName}`);
+            return;
+        }
+        this.onModelSelected.emit(this.model);
     }
 }

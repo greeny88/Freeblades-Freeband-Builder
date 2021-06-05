@@ -226,8 +226,14 @@ export class BuilderComponent {
             altLeader: this.altLeader,
             models: Object.values(this.models).map(model => {
                 const m = {
-                    displayName: model['displayName'], 
-                    type: model['type']
+                    displayName: model.displayName, 
+                    type: model.type,
+                    advancements: ('stats' in model && 'advancements' in model.stats) ? model.stats.advancements : null,
+                    items: ('stats' in model && 'items' in model.stats) ? model.stats.items : null,
+                    injuries: ('stats' in model && 'injuries' in model.stats) ? model.stats.injuries : null,
+                    veteranAdvancements: ('stats' in model && 'veteranAdvancements' in model.stats) ? model.stats.veteranAdvancements : null,
+                    characterName: ('characterName' in model) ? model.characterName : null,
+                    gender: ('gender' in model) ? model.gender : null
                 };
                 return m;
             })
