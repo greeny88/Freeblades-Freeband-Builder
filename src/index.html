@@ -1,22 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133684056-1"></script>
         <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('service-worker.js').then(registration => {
+                        console.log('SW registered: ', registration);
+                    }).catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+                });
+            }
+        </script>
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || [])
+                    .push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+                a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script',
+                'https://www.google-analytics.com/analytics.js', 'ga');
 
-        gtag('config', 'UA-133684056-1');
+            ga('create', 'UA-133684056-1', 'auto');
+            ga('send', 'pageview');
         </script>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- <base href="/" /> -->
+        <base href="./" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <title>Freeblades Freeband Builder</title>
     </head>
-    <body class="mdc-typography">
+    <body class="mdc-typography mat-app-background">
         <freeband-builder></freeband-builder>
     </body>
 </html>

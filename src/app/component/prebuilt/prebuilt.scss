@@ -1,0 +1,35 @@
+.freebandBox {
+    background-color: #4caf50;
+    border-radius: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+
+    table {
+        border: 1px solid black;
+        border-collapse: collapse;
+        margin-bottom:1rem;
+        width:100%;
+    
+        tbody tr {
+            color: black;
+    
+            &:nth-child(odd) {
+                background-color: #EEE;
+            }
+            &:nth-child(even) {
+                background-color: #AAA;
+            }
+        }
+    }
+}
+
+#prebuilt {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width : 415px) {
+    .freebandBox {
+        width: 100%;
+    }
+}

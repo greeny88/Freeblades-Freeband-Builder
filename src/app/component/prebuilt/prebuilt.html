@@ -1,0 +1,14 @@
+<div id="prebuilt">
+    <div *ngFor="let freeband of prebuiltFreebands" class="freebandBox">
+        <h2>{{ freeband.name }}</h2>
+        <h3>Value: {{ freeband.freebandLimit }}</h3>
+        <table>
+            <tbody>
+                <tr *ngFor="let model of freeband.models">
+                    <td>{{ model.displayName }}<span *ngIf="model.type"> - {{ model.type }}</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <button mat-raised-button class="mat-accent" (click)="freebandSelected(freeband)">{{ freeband.name }}</button>
+    </div>
+</div>

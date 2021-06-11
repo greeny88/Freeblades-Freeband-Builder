@@ -4,6 +4,8 @@ const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const packageInfo = require('./package.json');
 
@@ -20,20 +22,45 @@ const paths = {
 };
 
 const extractSassPlugin = new MiniCssExtractPlugin({
-	filename: paths.output.css
+	filename: paths.output.css,
+	//chunkFilename: paths.output.css
 });
 const htmlPlugin = new HtmlWebpackPlugin({
 	template: paths.index
 });
 const cleanDistPlugin = new CleanWebpackPlugin({
-    cleanOnceBeforeBuildPatterns: ['!.git']
+    cleanOnceBeforeBuildPatterns: ['**/*', '!.git', '!.git/**/*']
 });
-const definePlugin = new webpack.DefinePlugin({
-	VERSION: JSON.stringify(packageInfo.version)
+const workboxPlugin = new WorkboxPlugin.GenerateSW({
+	clientsClaim: true,
+	maximumFileSizeToCacheInBytes: 6 * 1024 * 1024, // 6MB TODO: change to larger for dev and smaller for prod
+	navigateFallback: 'index.html',
+	offlineGoogleAnalytics: true,
+	runtimeCaching: [
+		{
+			urlPattern: /^https:\/\/fonts\.gstatic\.com/,
+			handler: 'StaleWhileRevalidate',
+			options: {
+				cacheName: 'google-fonts-webfonts'
+			}
+		},
+		{
+			urlPattern: /^https:\/\/fonts\.googleapis\.com\/icon/,
+			handler: 'StaleWhileRevalidate',
+			options: {
+				cacheName: 'google-fonts-icons'
+			}
+		}
+	],
+	skipWaiting: true
+});
+
+const terserPlugin = new TerserPlugin({ 
+	extractComments: false 
 });
 
 const scripts = {
-	test: /\.ts$/,
+	test: /(?<!\.spec)\.ts$/,
 	exclude: /node_modules/,
 	use: [
 		'babel-loader',
@@ -43,11 +70,11 @@ const scripts = {
 const htmlLoader = {
 	loader: 'html-loader',
 	options: {
-		collapseWhitespace: true,
-		removeComments: true,
-		attrs: [
-			'img:src'
-		]
+		minimize: {
+			caseSensitive: true,
+			collapseWhitespace: true,
+			removeComments: true
+		}
 	}
 };
 const markup = {
@@ -60,18 +87,26 @@ const markup = {
 const cssLoader = {
 	loader: 'css-loader',
 	options: {
-		//minimize: true,
 		importLoaders: 1
 	}
 };
 const postcssLoader = {
-	loader: 'postcss-loader'
+	loader: 'postcss-loader',
+	options: {
+		postcssOptions: {
+			plugins: [
+				"postcss-import",
+				"postcss-preset-env"
+			]
+		}
+	}
 };
 const sassLoader = {
 	loader: 'sass-loader',
 	options: {
 		sassOptions: {
-			includePaths: ['./node_modules']
+			includePaths: ['./node_modules'],
+			outputStyle: 'compressed'
 		}
 	}
 };
@@ -84,32 +119,6 @@ const styles = {
 		sassLoader
 	]
 };
-const imageFileLoader = {
-	loader: 'file-loader',
-	options: {
-		name: '[name].[ext]',
-		outputPath: 'assets/images/'
-	}
-};
-const images = {
-	test: /\.(png|svg|jpg|gif)$/,
-	use: [
-		imageFileLoader
-	]
-};
-const fontFileLoader = {
-	loader: 'file-loader',
-	options: {
-		name: '[name].[ext]',
-		outputPath: 'assets/font/'
-	}
-};
-const fonts = {
-	test: /\.(woff2?|eot|ttf|otf|svg)$/,
-	use: [
-		fontFileLoader
-	]
-};
 
 let config = {
 	entry: {
@@ -119,26 +128,41 @@ let config = {
 		rules: [
 			scripts,
 			markup,
-			styles,
-			images,
-			fonts
+			styles
 		]
 	},
 	optimization: {
+		moduleIds: 'deterministic',
+		runtimeChunk: 'single',
 		splitChunks: {
-			chunks: 'all'
-		}
+			chunks: 'all',
+			// maxInitialRequests: Infinity,
+			// minSize: 0,
+			cacheGroups: {
+				vendor: {
+					test: /[\\/]node_modules[\\/]/,
+					name(module) {
+						const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+						return `vendor.${packageName.replace('@', '')}`;
+					}
+				}
+			}
+		},
+		minimizer: [
+			terserPlugin
+		]
 	},
 	plugins: [
 		cleanDistPlugin,
 		htmlPlugin,
 		extractSassPlugin,
-		definePlugin
+		workboxPlugin
 	],
 	resolve: {
 		extensions: ['.ts', '.js', '*']
 	},
 	output: {
+		chunkFilename: paths.output.js,
 		filename: paths.output.js,
 		path: dist,
 		publicPath: ''

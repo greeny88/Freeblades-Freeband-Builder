@@ -1,13 +1,19 @@
 import { NgModule } from '@angular/core';
 
-import { BuilderModule } from './builder/builder.module';
+import { ComponentRoutingModule } from './component-routing.module'
+import { DbService } from './db.service';
+import { LRBService } from './lrb.service';
 
 @NgModule({
     imports: [
-        BuilderModule
+        ComponentRoutingModule
     ],
     exports: [
-        BuilderModule
+        ComponentRoutingModule
+    ],
+    providers: [
+        DbService,
+        LRBService
     ]
 })
 export class ComponentModule {}

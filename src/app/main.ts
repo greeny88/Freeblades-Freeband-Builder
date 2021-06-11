@@ -6,7 +6,7 @@ import { AppModule } from './ffb.module';
 
 // if (PRODUCTION) {
 //     //enable prod mode
-//     import 'reflect-metadata'
+//     require('reflect-metadata');
 // }
 
 platformBrowserDynamic().bootstrapModule(AppModule);

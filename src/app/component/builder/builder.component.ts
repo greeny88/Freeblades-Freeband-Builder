@@ -1,17 +1,22 @@
-import { Component, ViewChild } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
+import { Component } from '@angular/core';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
+import { CommunicatorService } from '../../communicator.service';
+import { DbService } from './../db.service';
+import { LRBService } from '../lrb.service';
 import { Model } from '../model';
+
 import template from './builder.html';
+import loadPrevious from './load-previous.html';
 
 @Component({
     selector: 'builder',
     template
 })
 export class BuilderComponent {
-    @ViewChild('sidenav', {'static':false}) sidenav: MatSidenav;
     altLeader: boolean;
     breakValue: number;
+    builderPage: string;
     casterId: string;
     completeFollowerCount: number;
     completeHeroCount: number;
@@ -23,12 +28,14 @@ export class BuilderComponent {
     freebandTotalValue: number;
     leaderId: string;
     limit: number;
-    modelList: Model[];
+    lrbVersion: string;
     models: {[key: string]: Model};
     scoutingPoints: number;
+    selectedFreeband: Object;
     totalLifePoints: number;
 
-    constructor() {
+    constructor(private commService: CommunicatorService, private dbService: DbService, private lrbService: LRBService, private dialog: MatDialog) {
+        this.errorMessages = [];
         this.factionRules = {
             'Black Rose Bandits': this.blackRoseBanditsRule,
             'Black Thorn Bandits': this.blackThornBanditsRule,
@@ -48,7 +55,31 @@ export class BuilderComponent {
             'Trilian Seekers': this.trilianRules,
             'Urdaggar Tribes of Valor': this.urdaggarRules
         };
+        this.lrbVersion = this.lrbService.version;
+        this.builderPage = this.lrbService.buildingRules;
         this.reset()
+    }
+
+    ngOnInit() {
+        this.commService.getFreeband().subscribe(prebuiltFreeband => {
+            if (prebuiltFreeband) {
+                this.selectedFreeband = JSON.parse(JSON.stringify(prebuiltFreeband));
+            } else {
+                const sub = this.dbService.getPreviousFreeband().subscribe(previousFreeband => {
+                    if (previousFreeband !== undefined) {
+                        const dialogRef = this.dialog.open(LoadPreviousDialog);
+                        dialogRef.afterClosed().subscribe(result => {
+                            if (result) {
+                                this.selectedFreeband = previousFreeband;
+                            } else {
+                                this.dbService.deleteOldFreeband();
+                            }
+                        });
+                    }
+                    sub.unsubscribe();
+                });
+            }
+        })
     }
 
     addModel() {
@@ -68,16 +99,17 @@ export class BuilderComponent {
         let irvlorCount: number = 0;
         let keldanCount: number = 0;
         let leader: Model;
-        this.modelList = [];
         let nightwhisperFound: boolean = false;
         this.totalLifePoints = 0;
         this.scoutingPoints = 0;
         let zetakorFound: boolean = false;
 
-        for (let modelId in this.models) {
+        for (let modelId of Object.keys(this.models)) {
             let model: Model = this.models[modelId];
 
-            this.modelList.push(model);
+            if (!('stats' in model)) {
+                continue;
+            }
 
             this.freebandBaseValue += model.value;
             let extraValue = ('advancements' in model.stats) ? model.stats.advancements.reduce( ((sum,adv) => sum += adv.cost), 0) : 0;
@@ -165,7 +197,7 @@ export class BuilderComponent {
         }
 
         if (nightwhisperFound && leader.gender !== 'F') {
-            this.addErrorMessage('Nightwhisper can only be in a freeband lead by a female leader.')
+            this.addErrorMessage('Nightwhisper can only be in a freeband lead by a female.')
         }
 
         if (zetakorFound && leader.gender !== 'M') {
@@ -188,7 +220,25 @@ export class BuilderComponent {
 
         this.breakValue = Math.ceil(this.totalLifePoints / 2);
 
-        //TODO: sort this.modelList for the print list
+        const currentFreeband = {
+            faction: this.faction,
+            freebandLimit: this.limit,
+            altLeader: this.altLeader,
+            models: Object.values(this.models).map(model => {
+                const m = {
+                    displayName: model.displayName, 
+                    type: model.type,
+                    advancements: ('stats' in model && 'advancements' in model.stats) ? model.stats.advancements : null,
+                    items: ('stats' in model && 'items' in model.stats) ? model.stats.items : null,
+                    injuries: ('stats' in model && 'injuries' in model.stats) ? model.stats.injuries : null,
+                    veteranAdvancements: ('stats' in model && 'veteranAdvancements' in model.stats) ? model.stats.veteranAdvancements : null,
+                    characterName: ('characterName' in model) ? model.characterName : null,
+                    gender: ('gender' in model) ? model.gender : null
+                };
+                return m;
+            })
+        };
+        this.dbService.saveCurrentFreeband(currentFreeband);
     }
 
     modelSelected(model: Model | {component_id: string}) {
@@ -205,8 +255,27 @@ export class BuilderComponent {
         this.faction = options.faction;
         this.altLeader = options.altLeader;
         this.reset();
-        this.calculateFreeband();
-        this.sidenav.close();
+        if (this.selectedFreeband) {
+            this.extraModels = [];
+            for (let model of this.selectedFreeband['models']) {
+                if (model.type === 'Leader') {
+                    this.models[this.leaderId] = model;
+                } else if (model.type === 'Caster') {
+                    this.models[this.casterId] = model;
+                } else {
+                    const currentId = this.uuidv4();
+                    this.extraModels.push(currentId);
+                    this.models[currentId] = model;
+                }
+            }
+            setTimeout(() => this.selectedFreeband = undefined, 1);
+        } else {
+            this.calculateFreeband();
+        }
+    }
+
+    print() {
+        window.print();
     }
 
     removeModel(id: string) {
@@ -474,6 +543,8 @@ export class BuilderComponent {
     private reset() {
         this.extraModels = [];
         this.extraModels.push(this.uuidv4());
+        this.extraModels.push(this.uuidv4());
+        this.extraModels.push(this.uuidv4());
         this.casterId = this.uuidv4();
         this.leaderId = this.uuidv4();
         this.freebandBaseValue = 0;
@@ -487,5 +558,19 @@ export class BuilderComponent {
             let r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
             return v.toString(16);
         });
+    }
+}
+
+
+@Component({
+    selector: 'load-previous',
+    template: loadPrevious,
+})
+export class LoadPreviousDialog {
+
+    constructor(public dialogRef: MatDialogRef<LoadPreviousDialog>) { }
+
+    onNoClick(): void {
+        this.dialogRef.close();
     }
 }

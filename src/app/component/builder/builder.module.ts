@@ -2,32 +2,36 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatListModule } from '@angular/material/list';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
 
-import { BuilderComponent } from './builder.component';
+import { BuilderComponent, LoadPreviousDialog } from './builder.component';
+import { BuilderRoutingModule } from './builder-routing.module';
 import { FreebandSetupModule } from './freeband-setup/freeband-setup.module';
 import { ModelSelectorModule } from './model-selector/model-selector.module';
+import './builder.scss';
 
 @NgModule({
     imports: [
         CommonModule,
         MatButtonModule,
         MatCheckboxModule,
-        MatIconModule,
+        MatDialogModule,
         MatListModule,
-        MatSidenavModule,
-        MatToolbarModule,
+        BuilderRoutingModule,
         FreebandSetupModule,
         ModelSelectorModule
     ],
     declarations: [
-        BuilderComponent
+        BuilderComponent,
+        LoadPreviousDialog
+    ],
+    entryComponents: [
+        LoadPreviousDialog
     ],
     exports: [
-        BuilderComponent
+        BuilderComponent,
+        LoadPreviousDialog
     ]
 })
 export class BuilderModule {}

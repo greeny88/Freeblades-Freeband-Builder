@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
+import { CommunicatorService } from '../../../communicator.service';
 import template from './freeband-setup.html';
 
 @Component({
@@ -7,6 +8,7 @@ import template from './freeband-setup.html';
     template
 })
 export class FreebandSetupComponent {
+    @Input() selectedOptions : Object;
     @Output() onOptionsSet = new EventEmitter<any>();
     altLeader : boolean;
     factions : string[];
@@ -20,8 +22,9 @@ export class FreebandSetupComponent {
         'Koronnan Moonsworn',
         'Ravenblade Mercenaries'
     ];
+    commSubscription: any;
 
-    constructor() {
+    constructor(private commService: CommunicatorService) {
         // TODO: change to list based on available factions in model file
         this.factions = [
             'Black Rose Bandits', 
@@ -50,12 +53,25 @@ export class FreebandSetupComponent {
         };
     }
 
+    ngOnChanges() {
+        // console.log('setup-ngOnChanges');
+        if (this.selectedOptions) {
+            this.freebandLimit = this.selectedOptions['freebandLimit'];
+            this.selectedFaction = this.selectedOptions['faction'];
+            this.altLeader = this.selectedOptions['altLeader'];
+            this.optionsSet();
+        }
+    }
+
     optionsSet() {
+        // console.log('setup-optionsSet');
         this.options = {
             freebandLimit: this.freebandLimit,
             faction: this.selectedFaction,
             altLeader: this.altLeader && this.disallowedAltLeadersFactions.indexOf(this.selectedFaction) < 0
         };
+        // console.log(this.options);
+        // console.log(this.onOptionsSet);
         this.onOptionsSet.emit(this.options);
     }
 

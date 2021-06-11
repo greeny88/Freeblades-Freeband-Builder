@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Load Previous?</h1>
+<div mat-dialog-content>
+    <p>A previous freeband was found. Do you want to load it?</p>
+</div>
+<div mat-dialog-actions>
+    <button mat-flat-button color="accent" (click)="onNoClick()" cdkFocusInitial>No</button>
+    <button mat-flat-button color="primary" [mat-dialog-close]="true">Yes</button>
+</div>
