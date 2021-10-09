@@ -6115,5 +6115,34 @@
         "gender": "M",
         "value": 26,
         "race": "Faeler"
+    },
+    {
+        "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
+        "name": "Sea Blade",
+        "displayName": "Sea Blade",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 6,
+                "damageBonus": 1,
+                "name": "Cutlass"
+            }],
+            "armor": 3,
+            "discipline": 10,
+            "talents": ["Parry", "Dodge", "Fient", "Elusive", "Accurate Strike", "Leaper", "Amphibious"],
+            "skills": [{
+                "name": "Thievery",
+                "rating": 8
+            }],
+            "abilities": {
+                "agility": 12
+            }
+        },
+        "gender": "F",
+        "value": 32,
+        "race": "Faeler"
     }
 ]
