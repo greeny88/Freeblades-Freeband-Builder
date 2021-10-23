@@ -7,6 +7,7 @@ import { LRBService } from '../lrb.service';
 import { Model } from '../model';
 
 import template from './builder.html';
+import loadJsonFile from './load-json-file.html';
 import loadPrevious from './load-previous.html';
 
 @Component({
@@ -112,13 +113,16 @@ export class BuilderComponent {
             }
 
             this.freebandBaseValue += model.value;
-            let extraValue = ('advancements' in model.stats) ? model.stats.advancements.reduce( ((sum,adv) => sum += adv.cost), 0) : 0;
-            extraValue += ('items' in model.stats) ? model.stats.items.reduce( ((sum,itm) => sum += itm.cost), 0) : 0;
-            this.freebandTotalValue += model.value + extraValue;
+            // let extraValue = ('advancements' in model.stats) ? model.stats.advancements.reduce( ((sum,adv) => sum += adv.cost), 0) : 0;
+            // extraValue += ('items' in model.stats) ? model.stats.items.reduce( ((sum,itm) => sum += itm.cost), 0) : 0;
+            this.freebandTotalValue += model.stats.modelValue;
             this.totalLifePoints += ('talentList' in model.stats && model.stats.talentList.indexOf('Expendable') > -1) ? (model.stats.lifePoints / 2) : model.stats.lifePoints;
 
             if (model.stats.type === 'Hero') {
                 this.completeHeroCount++;
+                if (model.name === 'Kurgozar') {
+                    this.completeHeroCount++;
+                }
                 if ('talentList' in model.stats && model.stats.talentList.indexOf('Ally') > -1) {
                     allyHeroCount++;
                     if (model.name === 'Nightwhisper') {
@@ -145,6 +149,9 @@ export class BuilderComponent {
 
             if ('talentList' in model.stats && model.stats.talentList.indexOf('Leader') < 0 && model.type !== 'Caster' && model.stats.type === 'Hero') {
                 heroCount++;
+                if (model.name === 'Kurgozar') {
+                    heroCount++;
+                }
             }
 
             if ('talentList' in model.stats && model.stats.talentList.indexOf('Leader') > -1) {
@@ -179,7 +186,7 @@ export class BuilderComponent {
             }
         }
     
-        if (this.freebandBaseValue > this.limit) {
+        if (this.freebandTotalValue > this.limit) {
             this.addErrorMessage('Total model value is too high. Remove models until value comes under the limit.');
         }
     
@@ -220,25 +227,41 @@ export class BuilderComponent {
 
         this.breakValue = Math.ceil(this.totalLifePoints / 2);
 
-        const currentFreeband = {
-            faction: this.faction,
-            freebandLimit: this.limit,
-            altLeader: this.altLeader,
-            models: Object.values(this.models).map(model => {
-                const m = {
-                    displayName: model.displayName, 
-                    type: model.type,
-                    advancements: ('stats' in model && 'advancements' in model.stats) ? model.stats.advancements : null,
-                    items: ('stats' in model && 'items' in model.stats) ? model.stats.items : null,
-                    injuries: ('stats' in model && 'injuries' in model.stats) ? model.stats.injuries : null,
-                    veteranAdvancements: ('stats' in model && 'veteranAdvancements' in model.stats) ? model.stats.veteranAdvancements : null,
-                    characterName: ('characterName' in model) ? model.characterName : null,
-                    gender: ('gender' in model) ? model.gender : null
-                };
-                return m;
-            })
-        };
+        const currentFreeband = this.getCurrentFreeband();
         this.dbService.saveCurrentFreeband(currentFreeband);
+    }
+
+    downloadFreeband() {
+        const currentFreeband = this.getCurrentFreeband();
+        const element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=uft-8,' + encodeURIComponent(JSON.stringify(currentFreeband)));
+        element.setAttribute('download', 'freeband.json');
+        element.style.display = 'None';
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+    }
+
+    loadFreeband() {
+        const dialogRef = this.dialog.open(LoadJsonFileDialog);
+        dialogRef.afterClosed().subscribe((file: File) => {
+            if (file) {
+                if (!file.type || file.type !== 'application/json') {
+                    console.log('Report error');
+                    return;
+                }
+                const reader = new FileReader();
+                reader.addEventListener('load', (event) => {
+                    const previousFreeband = JSON.parse(event.target.result as string);
+                    this.selectedFreeband = previousFreeband;
+                });
+                try {
+                    reader.readAsText(file);
+                } catch {
+                    console.log('Report error');
+                }
+            }
+        });
     }
 
     modelSelected(model: Model | {component_id: string}) {
@@ -252,9 +275,11 @@ export class BuilderComponent {
 
     optionsSet(options: {freebandLimit: number, faction: string, altLeader: boolean}) {
         this.limit = options.freebandLimit;
+        if (this.faction !== options.faction) {
+            this.reset();
+        }
         this.faction = options.faction;
         this.altLeader = options.altLeader;
-        this.reset();
         if (this.selectedFreeband) {
             this.extraModels = [];
             for (let model of this.selectedFreeband['models']) {
@@ -365,6 +390,27 @@ export class BuilderComponent {
         }
 
         return undefined;
+    }
+
+    private getCurrentFreeband(): Object {
+        return {
+            faction: this.faction,
+            freebandLimit: this.limit,
+            altLeader: this.altLeader,
+            models: Object.values(this.models).map(model => {
+                const m = {
+                    displayName: model.displayName, 
+                    type: model.type,
+                    advancements: ('stats' in model && 'advancements' in model.stats) ? model.stats.advancements : null,
+                    items: ('stats' in model && 'items' in model.stats) ? model.stats.items : null,
+                    injuries: ('stats' in model && 'injuries' in model.stats) ? model.stats.injuries : null,
+                    veteranAdvancements: ('stats' in model && 'veteranAdvancements' in model.stats) ? model.stats.veteranAdvancements : null,
+                    characterName: ('characterName' in model) ? model.characterName : null,
+                    gender: ('gender' in model) ? model.gender : null
+                };
+                return m;
+            })
+        };
     }
 
     private grularRules(model: Model): string | undefined {
@@ -504,6 +550,15 @@ export class BuilderComponent {
         if (model.gender === 'F') {
             return 'Traazorites cannot have female models in their freeband.';
         }
+        let heroCount: number = 0;
+        for (let key in this.models) {
+            if (this.models[key].stats.type === 'Hero') {
+                heroCount++;
+            }
+            if (this.models[key].name === 'Kurgozar') {
+
+            }
+        }
         return undefined;
     }
 
@@ -572,5 +627,23 @@ export class LoadPreviousDialog {
 
     onNoClick(): void {
         this.dialogRef.close();
+    }
+}
+
+@Component({
+    selector: 'load-json-file',
+    template: loadJsonFile,
+})
+export class LoadJsonFileDialog {
+
+    constructor(public dialogRef: MatDialogRef<LoadJsonFileDialog>) { }
+
+    onCancel(): void {
+        this.dialogRef.close();
+    }
+
+    onLoad(): void {
+        const file = (<HTMLInputElement>document.querySelector('input[type=file]')).files[0];
+        this.dialogRef.close(file);
     }
 }

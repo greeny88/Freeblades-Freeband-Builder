@@ -12,8 +12,10 @@
             <span class="printOnly bold-text">Gold:</span>
         </div>
     </div>
-    <div>
+    <div id="optionButtons">
         <button mat-raised-button class="mat-accent noPrint" (click)="print()">Print</button>
+        <button mat-raised-button class="mat-accent noPrint" (click)="downloadFreeband()">Download</button>
+        <button mat-raised-button class="mat-accent noPrint" (click)="loadFreeband()">Load</button>
     </div>
     <div *ngFor="let msg of errorMessages" class="noSetHeight errorMessage noPrint">
         <span>{{msg}}</span>
@@ -31,6 +33,9 @@
         (click)="addModel()">Add Model</button>
 </ng-container>
 <ng-template #setup>
+    <div>
+        <button mat-raised-button class="mat-accent noPrint" (click)="loadFreeband()">Load</button>
+    </div>
     <div class="noPrint">
         <p>Start by selecting the values above so that you can begin building your freeband.</p>
         <mat-list>
