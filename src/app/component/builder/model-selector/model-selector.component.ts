@@ -171,9 +171,9 @@ export class ModelSelectorComponent {
         });
     }
 
-    private updateModelStats(model) {
+    private updateModelStats(model: Model) {
         this.model = JSON.parse(JSON.stringify(model));
-        this.model.stats = (<any>Object).assign(this.model.stats, this.modelSelectorService.calculateStats(model.stats));
+        this.model.stats = (<any>Object).assign(this.model.stats, this.modelSelectorService.calculateStats(model.stats, model.value));
         this.model.component_id = this.componentId;
         if (!('stats' in this.model)) {
             console.error(`Error getting stats of ${this.model.displayName}`);

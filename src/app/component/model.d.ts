@@ -58,6 +58,7 @@ export interface ModelStats {
     itemList: string,
     lifePoints: number,
     melee?: MeleeWeapon[],
+    modelValue?: number,
     moraleBonus?: number,
     range?: RangeWeapon[],
     shield?: "AN" | "AS" | "B" | "L" | "P" | "S",

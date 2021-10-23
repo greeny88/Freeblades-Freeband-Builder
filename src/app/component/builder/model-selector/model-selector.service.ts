@@ -11,6 +11,7 @@ interface stats {
     itemList: string,
     lifePoints: number,
     melee?: Object,
+    modelValue: number,
     moraleBonus: number,
     range?: Object,
     skillBonus: number,
@@ -26,7 +27,7 @@ export class ModelSelectorService {
 
     constructor() {}
 
-    private addAdvancement(stats: ModelStats, abilities, advancementName: string) {
+    private addAdvancement(stats: ModelStats, abilities: Object, advancementName: string) {
         if (Skills.includes(advancementName)) {
             if ('skills' in stats) {
                 let skillFound: boolean = false;
@@ -53,28 +54,35 @@ export class ModelSelectorService {
                     melee.rating += 2;
                     return melee;
                 });
+                return;
             }
             if (advancementName === 'RAR') {
                 stats.range.map(range => {
                     range.rating += 2;
                     return range;
                 });
+                return;
             }
             if (advancementName === 'CAR') {
                 stats.casting.rating += 2;
+                return;
             }
             if (advancementName === 'DISC') {
                 stats.discipline += 2;
+                return;
             }
             if (advancementName === 'SPD') {
                 stats.speed += 1;
+                return;
             }
+            stats.talents.push(advancementName);
         }
     }
 
-    calculateStats(originalStats: ModelStats) {
+    calculateStats(originalStats: ModelStats, originalValue: number) {
         let stats: ModelStats = JSON.parse(JSON.stringify(originalStats));
         let ability: number = (stats.type === 'Hero') ? 8 : 6;
+        let modelValue: number = originalValue;
         let abilities: {agility?: number, dexterity?: number, endurance?: number, knowledge?: number, spirit?: number, strength?: number} = {};
         for (let abilityName of this.abilityList) {
             abilities[abilityName] = ability;
@@ -87,6 +95,7 @@ export class ModelSelectorService {
         // console.log(stats.advancements);
         for (let adv of stats.advancements) {
             this.addAdvancement(stats, abilities, adv.name);
+            modelValue += adv.cost;
         }
         
         if (!('items' in stats)) {
@@ -98,6 +107,7 @@ export class ModelSelectorService {
                 break;
             }
             this.addAdvancement(stats, abilities, item.advancement);
+            modelValue += item.cost;
         }
 
         if (!('injuries' in stats)) {
@@ -218,6 +228,7 @@ export class ModelSelectorService {
             'discipline': stats.discipline,
             itemList,
             lifePoints,
+            modelValue,
             moraleBonus,
             skillBonus,
             skillList,

@@ -16,7 +16,7 @@
             <div><span class="bold-text">Model: </span>{{model.displayName}}<span *ngIf="model.characterName" class="noPrint">&nbsp;:({{model.characterName}})</span></div>
             <div class="printOnly"><span class="bold-text">Name: </span><span *ngIf="model.characterName">({{model.characterName}})</span></div>
             <div class="noPrint"><span class="bold-text">Type: </span>{{model.stats.type}}</div>
-            <div class="noPrint"><span class="bold-text">Value: </span>{{model.value}}</div>
+            <div class="noPrint"><span class="bold-text">Value: </span>{{model.stats.modelValue}}</div>
             <div class="printOnly"><span class="bold-text">AP: </span></div>
         </div>
         <div fxLayout="row" fxLayoutAlign="space-between stretch">
