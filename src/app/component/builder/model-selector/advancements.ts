@@ -280,6 +280,22 @@ const MagicItems: {name: string, advancement: string, cost: number}[] = [{
     'name':'Mirror Gem',
     'advancement':'Spell Riposte',
     'cost':3
+},{
+    'name':'Avalanche',
+    'advancement':'Artifact [Warhammer d11]',
+    'cost':9
+},{
+    'name':'Crescent Moon',
+    'advancement':'Artifact [Saber d9]',
+    'cost':7
+},{
+    'name':'Durzakul',
+    'advancement':'Artifact [Spikedrakh d9]',
+    'cost':9
+},{
+    'name':'Liana\'s Bow',
+    'advancement':'Artifact [Longbow d9]',
+    'cost':6
 }];
 const Skills: string[] = [
     'Camouflage',
