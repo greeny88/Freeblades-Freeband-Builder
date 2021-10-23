@@ -6144,5 +6144,39 @@
         "gender": "F",
         "value": 32,
         "race": "Faeler"
+    },
+    {
+        "factions": ["Traazorite Crusaders"],
+        "name": "Kurgozar",
+        "displayName": "Kurgozar",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Bite"
+            },{
+                "rating": 8,
+                "damage": 8,
+                "name": "2x Claws"
+            },{
+                "rating": 8,
+                "damage": 8,
+                "name": "Tail",
+                "abilities": ["ra","swp"]
+            }],
+            "armor": 4,
+            "discipline": 8,
+            "talents": ["Die Hard","Die Hard","Fearsome","Large Target","Tenacious","Conquer","Impetuous","Scent of Prey","Tough","Tough","Warbeast"],
+            "abilities": {
+                "endurance":12,
+                "strength":12
+            }
+        },
+        "gender": "M",
+        "value": 62,
+        "race": "Beast"
     }
 ]
