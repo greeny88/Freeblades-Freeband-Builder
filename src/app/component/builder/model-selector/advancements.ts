@@ -298,6 +298,7 @@ const MagicItems: {name: string, advancement: string, cost: number}[] = [{
     'cost':6
 }];
 const Skills: string[] = [
+    'Alchemy',
     'Camouflage',
     'Climb',
     'Devices',
@@ -333,6 +334,7 @@ const Talents: string[] = [
     'Deceptive Strike',
     'Deflect',
     'Deft',
+    'Demonlore',
     'Die Hard',
     'Disguise',
     'Dodge',
@@ -357,12 +359,14 @@ const Talents: string[] = [
     'March',
     'Marksman',
     'Medicine',
+    'Meditation',
     'Merchant',
     'Missle Parry',
     'Mountaineer',
     'Nimble',
     'Opportune Strike',
     'Parry',
+    'Plunging Fire',
     'Pouncer',
     'Power Attack',
     'Precise Shot',

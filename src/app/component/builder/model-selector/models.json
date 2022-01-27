@@ -823,7 +823,7 @@
         "stats": {
             "discipline": 10,
             "type": "Hero",
-            "talents": ["Die Hard","Infiltrate","Steadfast","Steadfast","Alpha[Vezarin]"],
+            "talents": ["Die Hard","Infiltrate","Steadfast","Steadfast","Alpha[Warbeast]"],
             "abilities": {
                 "endurance": 12,
                 "strength": 10
@@ -1593,7 +1593,7 @@
                 "agility": 12,
                 "spirit": 12
             },
-            "talents": ["Dodge","Dodge","Beguile[d12]","Disguise","Sergeant[Dryad]","Arboreal","Demon"],
+            "talents": ["Dodge","Dodge","Voice on the Wind","Wild Magic[d12,Beguile]","Disguise","Sergeant[Dryad]","Arboreal","Demon"],
             "speed": 7,
             "melee": [{
                 "rating": 10,
@@ -1607,7 +1607,11 @@
                 "abilities": ["ent","thr"],
                 "distance": 3
             }],
-            "armor": 3
+            "armor": 3,
+            "skills": [{
+                "name": "Beguile",
+                "rating": 12
+            }]
         },
         "type": "Standard",
         "value": 41,
@@ -1709,7 +1713,7 @@
         "stats": {
             "discipline": 6,
             "type": "Follower",
-            "talents": ["Dodge","Beguile[d10]","Disguise","Arboreal","Demon"],
+            "talents": ["Dodge","Voice on the Wind","Wild Magic[d10,Beguile]","Disguise","Arboreal","Demon"],
             "abilities": {
                 "agility": 10,
                 "spirit": 10
@@ -1727,7 +1731,11 @@
                 "distance": 3,
                 "abilities": ["ent","thr"]
             }],
-            "armor": 3
+            "armor": 3,
+            "skills": [{
+                "name": "Beguile",
+                "rating": 10
+            }]
         },
         "type": "Standard",
         "value": 28,
@@ -2260,7 +2268,7 @@
         "stats": {
             "discipline": 10,
             "type": "Hero",
-            "talents": ["Parry","Hardened","Fortress","Mountaineer"],
+            "talents": ["Parry","Hardened","Fortress","Mountaineer","Veteran[Tough,2]"],
             "speed": 5,
             "melee": [{
                 "rating": 10,
@@ -4902,7 +4910,11 @@
             "talents": ["Dodge","Cunning","Outperform","Protected","Perform[Wing Dances,5]","Ally[Trusted]"],
             "abilities":{
                 "agility":12
-            }
+            },
+            "skills": [{
+                "name":"Perform",
+                "rating":10
+            }]
         },
         "gender": "F",
         "value": 31,
@@ -4926,7 +4938,11 @@
             "talents": ["Dodge","Cunning","Outperform","Protected","Perform[Wing Dances,5]","Ally[Trusted]"],
             "abilities":{
                 "agility":12
-            }
+            },
+            "skills": [{
+                "name":"Perform",
+                "rating":10
+            }]
         },
         "gender": "F",
         "value": 31,
@@ -5949,7 +5965,7 @@
         "race": "Kuzaarik"
     },
     {
-        "factions": ["Haradelan Questers"],
+        "factions": ["Falkaaran Adventurers","Haradelan Questers"],
         "name": "Lightbringer",
         "displayName": "Lightbringer",
         "type": "Standard",
@@ -5965,6 +5981,32 @@
             "armor": 5,
             "discipline": 10,
             "talents": ["Parry","Die Hard","Alpine","Demonlore","Warden","Ally[Independent]"],
+            "abilities":{
+                "agility":10,
+                "endurance":10
+            }
+        },
+        "gender": "M",
+        "value": 33,
+        "race": "Kuzaarik"
+    },
+    {
+        "factions": ["Falkaaran Adventurers"],
+        "name": "Lightbringer",
+        "displayName": "Lightbringer (Shadow Hunter ally)",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 5,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Zeradrakh",
+                "abilities":["te"]
+            }],
+            "armor": 5,
+            "discipline": 10,
+            "talents": ["Parry","Die Hard","Alpine","Demonlore","Warden","Ally[Trusted]"],
             "abilities":{
                 "agility":10,
                 "endurance":10
@@ -6178,5 +6220,237 @@
         "gender": "M",
         "value": 62,
         "race": "Beast"
+    },
+    {
+        "factions": ["Demons of Karelon"],
+        "name": "Elivai",
+        "displayName": "Elivai",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 8,
+                "damage": 8,
+                "name": "Claw"
+            }],
+            "armor": 3,
+            "discipline": 8,
+            "talents": ["Perform[Siren Song,4]","Enhanced Disguise","Cunning","Dodge","Outperform","Voice on the Wind","Demon"],
+            "abilities": {
+                "agility":10,
+                "spirit":10
+            },
+            "skills": [{
+                "name": "Perform",
+                "rating": 10
+            }]
+        },
+        "gender": "F",
+        "value": 37,
+        "race": "Demon"
+    },
+    {
+        "factions": ["Kandoran Deathmasters"],
+        "name": "Bonethrall Impaler",
+        "displayName": "Bonethrall Impaler (Mounted)",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 8,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "damageBonus":1,
+                "name": "Impaler",
+                "abilities":["imp"]
+            }],
+            "shield":"S",
+            "armor": 2,
+            "discipline": 8,
+            "talents": ["Cavalry","Undead","Assault","Die Hard","Die Hard"],
+            "abilities": {
+                "endurance":12
+            }
+        },
+        "gender": "M",
+        "value": 37,
+        "race": "Kandoran"
+    },
+    {
+        "factions": ["Koronnan Moonsworn"],
+        "name": "Grey Veil",
+        "displayName": "Grey Veil",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 10,
+            "melee": [{
+                "rating": 8,
+                "damage": 8,
+                "name": "Saber"
+            }],
+            "range": [{
+                "rating":10,
+                "damage":6,
+                "distance":8,
+                "name":"Recurve Short Bow"
+            }],
+            "armor": 3,
+            "discipline": 8,
+            "talents": ["Cavalry","Light Cavalry","Dodge","Scout","Harasser","Plnging Fire","Fast"],
+            "abilities": {
+                "agility":10,
+                "dexterity":10
+            }
+        },
+        "gender": "M",
+        "value": 33,
+        "race": "Koronnan"
+    },
+    {
+        "factions": ["Ravenblade Mercenaries"],
+        "name": "Sho'pel",
+        "displayName": "Sho'pel",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Cleaver"
+            }],
+            "armor": 2,
+            "discipline": 8,
+            "talents": ["Perform[Ravensong,5]","Protected","Dodge","Cunning","Bonded[Ravenblade Lt.]","Outperform"],
+            "abilities": {
+                "agility":12
+            },
+            "skills": [{
+                "name":"Perform",
+                "rating":12
+            }]
+        },
+        "gender": "M",
+        "value": 36,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Ravenblade Mercenaries"],
+        "name": "Sho'pel",
+        "displayName": "Sho'pel",
+        "type": "Caster",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Cleaver"
+            }],
+            "armor": 2,
+            "discipline": 8,
+            "talents": ["Perform[Ravensong,5]","Protected","Dodge","Cunning","Bonded[Ravenblade Lt.]","Outperform"],
+            "abilities": {
+                "agility":12
+            },
+            "skills": [{
+                "name":"Perform",
+                "rating":12
+            }]
+        },
+        "gender": "M",
+        "value": 36,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Falkaaran Adventurers","Haradelan Questers"],
+        "name": "Sho'pel",
+        "displayName": "Sho'pel",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Cleaver"
+            }],
+            "armor": 2,
+            "discipline": 8,
+            "talents": ["Perform[Ravensong,5]","Protected","Dodge","Cunning","Bonded[Ravenblade Lt.]","Outperform","Ally[Trusted]"],
+            "abilities": {
+                "agility":12
+            },
+            "skills": [{
+                "name":"Perform",
+                "rating":12
+            }]
+        },
+        "gender": "M",
+        "value": 36,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Falkaaran Adventurers","Haradelan Questers"],
+        "name": "Sho'pel",
+        "displayName": "Sho'pel",
+        "type": "Caster",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Cleaver"
+            }],
+            "armor": 2,
+            "discipline": 8,
+            "talents": ["Perform[Ravensong,5]","Protected","Dodge","Cunning","Bonded[Ravenblade Lt.]","Outperform","Ally[Trusted]"],
+            "abilities": {
+                "agility":12
+            },
+            "skills": [{
+                "name":"Perform",
+                "rating":12
+            }]
+        },
+        "gender": "M",
+        "value": 36,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Shakrim Wavestalkers"],
+        "name": "Trasilisk",
+        "displayName": "Trasilisk",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 10,
+                "damage": 6,
+                "damageBonus":1,
+                "name": "Cutlass"
+            },{
+                "rating":8,
+                "damage":8,
+                "name":"2x Claws"
+            }],
+            "range": [{
+                "rating":10,
+                "damage":6,
+                "distance":6,
+                "name":"Atlatl",
+                "abilities":["thr"]
+            }],
+            "armor": 4,
+            "discipline": 8,
+            "talents": ["Scout","Pathfinder","Accurate Shot","Block"]
+        },
+        "gender": "M",
+        "value": 33,
+        "race": "Shakrim"
     }
 ]
