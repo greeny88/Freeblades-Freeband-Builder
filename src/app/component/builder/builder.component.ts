@@ -100,6 +100,7 @@ export class BuilderComponent {
         let irvlorCount: number = 0;
         let keldanCount: number = 0;
         let leader: Model;
+        let performerCount: number = 0;
         let nightwhisperFound: boolean = false;
         this.totalLifePoints = 0;
         this.scoutingPoints = 0;
@@ -166,6 +167,10 @@ export class BuilderComponent {
                 casterCount++;
             }
 
+            if ('skillList' in model.stats && model.stats.skillList.indexOf('Perform') > -1) {
+                performerCount++;
+            }
+
             let heroFound = 0;
             for (let key in this.models) {
                 if(this.models[key].name === model.name && model.stats.type === 'Hero') {
@@ -212,17 +217,21 @@ export class BuilderComponent {
         }
 
         if (irvlorCount > 1) {
-            this.addErrorMessage('There is only one Irvlor.')
+            this.addErrorMessage('There can be only one Irvlor.')
         }
 
         if (keldanCount > 1) {
-            this.addErrorMessage('There is only one Keldan.')
+            this.addErrorMessage('There can be only one Keldan.')
         }
 
         // Exception for Koronnan Moonsworn
         const casterLimit: number = (this.faction === 'Koronnan Moonsworn') ? 2 : 1;
         if (casterCount > casterLimit) {
             this.addErrorMessage('You have too many casters.');
+        }
+
+        if (performerCount > 1) {
+            this.addErrorMessage('You have too many performers.');
         }
 
         this.breakValue = Math.ceil(this.totalLifePoints / 2);
@@ -388,6 +397,30 @@ export class BuilderComponent {
                 return 'Jhenkar can only be used along side a Shadow Hunter.';
             }
         }
+        
+        if (model.displayName.indexOf('Lightbringer (Shadow Hunter ally)') > -1) {
+            let shadowFound: boolean = false;
+            for (let key in this.models) {
+                if (this.models[key].name === 'Shadow Hunter' && this.models[key].type === 'Leader') {
+                    shadowFound = true;
+                }
+            }
+            if (!shadowFound) {
+                return 'Lightbringer (trusted ally) can only be added when led by a Shadow Hunter.';
+            }
+        }
+        
+        if (model.name.indexOf("Sho'pel") > -1) {
+            let ravenFound: boolean = false;
+            for (let key in this.models) {
+                if (this.models[key].name === 'Ravenblade Lieutenant' && this.models[key].type === 'Leader') {
+                    ravenFound = true;
+                }
+            }
+            if (!ravenFound) {
+                return "Sho'pel can only be added when led by a Ravenblade Lieutenant.";
+            }
+        }
 
         return undefined;
     }
@@ -453,6 +486,18 @@ export class BuilderComponent {
         }
         if (questorCount > 0 && questorCount > (apprenticeCount+1)) {
             return 'Haradelan many only have one more Questing knight than Apprentice knight.';
+        }
+        
+        if (model.name.indexOf("Sho'pel") > -1) {
+            let ravenFound: boolean = false;
+            for (let key in this.models) {
+                if (this.models[key].name === 'Ravenblade Lieutenant' && this.models[key].type === 'Leader') {
+                    ravenFound = true;
+                }
+            }
+            if (!ravenFound) {
+                return "Sho'pel can only be added when led by a Ravenblade Lieutenant.";
+            }
         }
         return undefined;
     }
@@ -532,6 +577,18 @@ export class BuilderComponent {
     }
 
     private ravenbladeRules(model: Model): string | undefined {
+        if (model.name.indexOf("Sho'pel") > -1) {
+            let ravenFound: boolean = false;
+            for (let key in this.models) {
+                if (this.models[key].name === 'Ravenblade Lieutenant' && this.models[key].type === 'Leader') {
+                    ravenFound = true;
+                }
+            }
+            if (!ravenFound) {
+                return "Sho'pel can only be added when led by a Ravenblade Lieutenant.";
+            }
+        }
+
         const models: string[] = [];
         for (let key in this.models) {
             if (this.models[key].stats.type === 'Hero') {

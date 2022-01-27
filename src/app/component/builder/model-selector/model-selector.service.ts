@@ -203,7 +203,7 @@ export class ModelSelectorService {
             }
         }
 
-        let skillList: string;
+        let skillList: string = '';
         if (stats.skills) {
             skillList = stats.skills.map(skill => `${skill.name} - d${skill.rating}`).join(', ');
         }
