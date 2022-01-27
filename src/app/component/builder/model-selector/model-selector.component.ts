@@ -69,6 +69,9 @@ export class ModelSelectorComponent {
                             if (model.stats.discipline === 8) {
                                 model.stats.discipline += 4;
                                 model.value += 8;
+                            } else if (model.stats.discipline === 6) {
+                                model.stats.discipline += 3;
+                                model.value += 9;
                             } else {
                                 model.stats.discipline += 2;
                                 model.value += 7;
