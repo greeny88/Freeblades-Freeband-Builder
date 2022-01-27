@@ -6251,6 +6251,35 @@
         "race": "Demon"
     },
     {
+        "factions": ["Demons of Karelon"],
+        "name": "Elivai",
+        "displayName": "Elivai",
+        "type": "Caster",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 8,
+                "damage": 8,
+                "name": "Claw"
+            }],
+            "armor": 3,
+            "discipline": 8,
+            "talents": ["Perform[Siren Song,4]","Enhanced Disguise","Cunning","Dodge","Outperform","Voice on the Wind","Demon"],
+            "abilities": {
+                "agility":10,
+                "spirit":10
+            },
+            "skills": [{
+                "name": "Perform",
+                "rating": 10
+            }]
+        },
+        "gender": "F",
+        "value": 37,
+        "race": "Demon"
+    },
+    {
         "factions": ["Kandoran Deathmasters"],
         "name": "Bonethrall Impaler",
         "displayName": "Bonethrall Impaler (Mounted)",
