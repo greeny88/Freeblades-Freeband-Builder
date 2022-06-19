@@ -4,7 +4,7 @@
             <button mat-icon-button (click)="sidenav.toggle()">
                 <mat-icon>menu</mat-icon>
             </button>
-            <h1>Freeblades Freeband Builder</h1>
+            <h1><a routerLink="" style="text-decoration-line:none;color:inherit;">Freeblades Freeband Builder</a></h1>
         </mat-toolbar-row>
     </mat-toolbar>
     <mat-sidenav-container id="mainContainer">
@@ -12,10 +12,8 @@
             <mat-nav-list>
                 <a mat-list-item routerLink="/builder" (click)="sidenav.close()">Builder</a>
                 <a mat-list-item routerLink="/prebuilt" (click)="sidenav.close()">Browse Prebuilt Freebands</a>
+                <!-- <a mat-list-item routerLink="/name-generator" (click)="sidenav.close()">Name Generator</a> -->
             </mat-nav-list>
-            <!-- <p><a routerLink="/builder" (click)="sidenav.close()">Builder</a></p>
-            <p><a routerLink="/prebuilt" (click)="sidenav.close()">Browse Prebuilt Freebands</a></p> -->
-            <!-- <p>Name Generator *Coming Soon*</p> -->
         </mat-sidenav>
         <mat-sidenav-content>
             <router-outlet></router-outlet>

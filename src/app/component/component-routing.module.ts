@@ -14,8 +14,7 @@ const routes: Routes = [
     },
     {
         path: '',
-        redirectTo: 'builder',
-        pathMatch: 'full'
+        loadChildren: () => import(/* webpackPrefetch: true *//* webpackChunkName: "builder" */'./builder/builder.module').then(m => m.BuilderModule)
     },
     {
         path: '**',
