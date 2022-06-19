@@ -23,7 +23,7 @@ export class FFBComponent {
                 navigator.serviceWorker.getRegistration('service-worker.js').then(registration => {
                     registration.onupdatefound = (event) => {
                         this.zone.run(() => {
-                            const snackRef = this.snackBar.open('New version of app available', 'Refresh');
+                            const snackRef = this.snackBar.open('New version of app available', 'Refresh', {panelClass:'refresh-page'});
                             snackRef.onAction().subscribe(() => location.reload());
                         });
                     }
