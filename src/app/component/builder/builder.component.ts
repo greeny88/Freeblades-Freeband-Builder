@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar, MatSnackBarRef } from '@angular/material/snack-bar';
 
 import { CommunicatorService } from '../../communicator.service';
 import { DbService } from './../db.service';
@@ -18,6 +19,7 @@ export class BuilderComponent {
     altLeader: boolean;
     breakValue: number;
     builderPage: string;
+    private buildSnackRef: MatSnackBarRef<any>;
     casterId: string;
     completeFollowerCount: number;
     completeHeroCount: number;
@@ -35,7 +37,7 @@ export class BuilderComponent {
     selectedFreeband: Object;
     totalLifePoints: number;
 
-    constructor(private commService: CommunicatorService, private dbService: DbService, private lrbService: LRBService, private dialog: MatDialog) {
+    constructor(private commService: CommunicatorService, private dbService: DbService, private lrbService: LRBService, private dialog: MatDialog, private snackBar: MatSnackBar) {
         this.errorMessages = [];
         this.factionRules = {
             'Black Rose Bandits': this.blackRoseBanditsRule,
@@ -88,6 +90,7 @@ export class BuilderComponent {
     }
 
     calculateFreeband() {
+        let allyFaction: string;
         let allyFollowerCount: number = 0;
         let allyHeroCount: number = 0;
         let casterCount: number = 0;
@@ -126,6 +129,12 @@ export class BuilderComponent {
                 }
                 if ('talentList' in model.stats && model.stats.talentList.indexOf('Ally') > -1) {
                     allyHeroCount++;
+                    if (allyFaction === undefined) {
+                        allyFaction = model.primaryFaction;
+                    }
+                    if (allyFaction !== model.primaryFaction) {
+                        this.addErrorMessage(`You can only recruit allies from the same faction.`);
+                    }
                     if (model.name === 'Nightwhisper') {
                         nightwhisperFound = true;
                     }
@@ -145,6 +154,12 @@ export class BuilderComponent {
                 this.completeFollowerCount++;
                 if ('talentList' in model.stats && model.stats.talentList.indexOf('Ally') > -1) {
                     allyFollowerCount++;
+                    if (allyFaction === undefined) {
+                        allyFaction = model.primaryFaction;
+                    }
+                    if (allyFaction !== model.primaryFaction) {
+                        this.addErrorMessage(`You can only recruit allies from the same faction.`);
+                    }
                 }
             }
 
@@ -232,6 +247,15 @@ export class BuilderComponent {
 
         if (performerCount > 1) {
             this.addErrorMessage('You have too many performers.');
+        }
+
+        if (this.errorMessages.length > 0) {
+            this.buildSnackRef = this.snackBar.open('Invalid build', 'View', {panelClass:'invalid-build'});
+            this.buildSnackRef.onAction().subscribe(() => {
+                document.getElementById("errorMessage").scrollIntoView();
+            });
+        } else {
+            this.buildSnackRef.dismiss();
         }
 
         this.breakValue = Math.ceil(this.totalLifePoints / 2);
