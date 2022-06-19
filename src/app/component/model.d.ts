@@ -79,6 +79,7 @@ export interface Model {
     factions: string[],
     gender: "M" | "F",
     name: string,
+    primaryFaction?: string,
     race: "Beast" | "Chaler" | "Demon" | "Faeler" | "Kandoran" | "Koronnan" | "Kuzaarik" | "Shakrim" | "Symker" | "Trillian"
     stats: ModelStats,
     type: "Caster" | "Leader" | "Standard",

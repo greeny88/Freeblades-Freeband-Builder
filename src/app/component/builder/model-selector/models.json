@@ -1296,6 +1296,7 @@
     },
     {
         "factions": ["Black Rose Bandits","Black Thorn Bandits","Shakrim Wavestalkers","Urdaggar Tribes of Valor"],
+        "primaryFaction":"Wandering Allies",
         "name": "Snake Mystic",
         "displayName": "Snake Mystic",
         "stats": {
@@ -1321,7 +1322,8 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "primaryFaction":"Wandering Allies",
         "name": "Wandering Wizard",
         "displayName": "Wandering Wizard",
         "stats": {
@@ -1347,7 +1349,8 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Koronnan Moonsworn","Kuzaarik Forgers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers"],
+        "primaryFaction":"Wandering Allies",
         "name": "Takar Hunter",
         "displayName": "Takar Hunter",
         "stats": {
@@ -1383,7 +1386,7 @@
         "race": "Chaler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Ravenblade Mercenaries","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Eclipse Sisterhood"],
         "name": "Takar Lookout",
         "displayName": "Takar Lookout",
         "stats": {
@@ -1414,7 +1417,8 @@
         "race": "Chaler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "primaryFaction":"Wandering Allies",
         "name": "Merchant",
         "displayName": "Merchant",
         "stats": {
@@ -3833,7 +3837,8 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Kuzaarik Forgers","Mershael Corsairs","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "primaryFaction":"Wandering Allies",
         "name": "Mizrakai",
         "displayName": "Mizrakai",
         "type": "Standard",
@@ -3885,7 +3890,8 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Urdaggar Tribes of Valor"],
+        "factions": ["Urdaggar Tribes of Valor"],
+        "primaryFaction":"Wandering Allies",
         "name": "Stag Warrior",
         "displayName": "Stag Warrior",
         "type": "Standard",
@@ -3901,6 +3907,37 @@
             "armor": 3,
             "discipline": 10,
             "talents": ["Parry","Assault","Restore","Heroic Attack","Ally[Trusted]"],
+            "abilities": {
+                "endurance": 10,
+                "spirit": 10
+            },
+            "skills": [{
+                "name": "Hunt",
+                "rating": 8
+            }]
+        },
+        "gender": "F",
+        "value": 31,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Black Rose Bandits","Black Thorn Bandits"],
+        "primaryFaction":"Wandering Allies",
+        "name": "Stag Warrior",
+        "displayName": "Stag Warrior",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "Hartblade",
+                "abilities": ["let"]
+            }],
+            "armor": 3,
+            "discipline": 10,
+            "talents": ["Parry","Assault","Restore","Heroic Attack","Ally[Independent]"],
             "abilities": {
                 "endurance": 10,
                 "spirit": 10
@@ -3975,6 +4012,7 @@
     },
     {
         "factions": ["Kuzaarik Forgers"],
+        "primaryFaction":"Wandering Allies",
         "name": "Truthseeker",
         "displayName": "Truthseeker",
         "type": "Standard",
@@ -4003,7 +4041,8 @@
         "race": "Symker"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Mershael Corsairs","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Mershael Corsairs","Shakrim Wavestalkers","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "primaryFaction":"Wandering Allies",
         "name": "Truthseeker",
         "displayName": "Truthseeker",
         "type": "Standard",
@@ -4032,7 +4071,8 @@
         "race": "Symker"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "primaryFaction":"Wandering Allies",
         "name": "Wandering Bard",
         "displayName": "Wandering Bard",
         "type": "Standard",
@@ -4060,7 +4100,8 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kuzaarik Forgers","Mershael Corsairs","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "primaryFaction":"Wandering Allies",
         "name": "Wandering Bard",
         "displayName": "Wandering Bard",
         "type": "Caster",
@@ -4088,7 +4129,8 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Shakrim Wavestalkers","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "primaryFaction":"Wandering Allies",
         "name": "Nightwhisper",
         "displayName": "Nightwhisper",
         "stats": {
@@ -4120,7 +4162,8 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "primaryFaction":"Wandering Allies",
         "name": "Zetakor",
         "displayName": "Zetakor",
         "type": "Standard",
@@ -4526,6 +4569,39 @@
         "race": "Kandoran"
     },
     {
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Grular Invaders","Shakrim Wavestalkers"],
+        "primaryFaction": "Kandoran Deathmasters",
+        "name": "Oppressor",
+        "displayName": "Oppressor",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 5,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Spikedrakh",
+                "abilities": ["de"]
+            }],
+            "range": [{
+                "rating":8,
+                "damage":0,
+                "name":"Lasso",
+                "distance":4,
+                "abilities": ["thr","ent","pul"]
+            }],
+            "armor": 6,
+            "discipline": 10,
+            "talents": ["Strong-arm","Die Hard","Tough","Steadfast","Ally[Independent]"],
+            "abilities":{
+                "endurance": 10
+            }
+        },
+        "gender": "M",
+        "value": 32,
+        "race": "Kandoran"
+    },
+    {
         "factions": ["Kandoran Deathmasters"],
         "name": "Jackal-Priest",
         "displayName": "Jackal-Priest",
@@ -4639,6 +4715,28 @@
             "armor": 2,
             "discipline": 6,
             "talents": ["Infiltrate","Scavenger"]
+        },
+        "gender": "M",
+        "value": 8,
+        "race": "Kandoran"
+    },
+    {
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Grular Invaders","Shakrim Wavestalkers"],
+        "primaryFaction":"Kandoran Deathmasters",
+        "name": "Wretch",
+        "displayName": "Wretch",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Claw"
+            }],
+            "armor": 2,
+            "discipline": 6,
+            "talents": ["Infiltrate","Scavenger","Ally[Independent]"]
         },
         "gender": "M",
         "value": 8,
@@ -4893,7 +4991,7 @@
         "race": "Chaler"
     },
     {
-        "factions": ["Falkaaran Adventurers","Haradelan Questers","Urdaggar Tribes of Valor"],
+        "factions": ["Falkaaran Adventurers","Haradelan Questers","Urdaggar Tribes of Valor","Wandering Allies"],
         "name": "Wildwing",
         "displayName": "Wildwing",
         "type": "Standard",
@@ -4921,7 +5019,7 @@
         "race": "Faeler"
     },
     {
-        "factions": ["Falkaaran Adventurers","Haradelan Questers","Urdaggar Tribes of Valor"],
+        "factions": ["Falkaaran Adventurers","Haradelan Questers","Urdaggar Tribes of Valor","Wandering Allies"],
         "name": "Wildwing",
         "displayName": "Wildwing",
         "type": "Caster",
@@ -5039,6 +5137,33 @@
         "race": "Kandoran"
     },
     {
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Grular Invaders","Shakrim Wavestalkers"],
+        "primaryFaction":"Kandoran Deathmasters",
+        "name": "Varazyr",
+        "displayName": "Varazyr",
+        "type": "Caster",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Skull Staff",
+                "abilities":["te","mgc"]
+            }],
+            "armor": 2,
+            "discipline": 6,
+            "talents": ["Necromancy","Skull Staff","Ally[Independent]"],
+            "casting": {
+                "power": 15,
+                "rating": 10
+            }
+        },
+        "gender": "M",
+        "value": 31,
+        "race": "Kandoran"
+    },
+    {
         "factions": ["Ravenblade Mercenaries"],
         "name": "Stalker",
         "displayName": "Stalker",
@@ -5070,6 +5195,7 @@
     },
     {
         "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "primaryFaction":"Wandering Allies",
         "name": "Stalker",
         "displayName": "Stalker",
         "type": "Standard",
@@ -5100,6 +5226,7 @@
     },
     {
         "factions": ["Haradelan Questers"],
+        "primaryFaction":"Wandering Allies",
         "name": "Stalker",
         "displayName": "Stalker",
         "type": "Standard",
@@ -5145,6 +5272,29 @@
             "armor": 4,
             "discipline": 6,
             "talents": ["Amphibious"]
+        },
+        "gender": "M",
+        "value": 10,
+        "race": "Shakrim"
+    },
+    {
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Kandoran Deathmasters","Traazorite Crusaders"],
+        "primaryFaction":"Shakrim Wavestalkers",
+        "name": "Ghora",
+        "displayName": "Ghora",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 6,
+            "melee": [{
+                "rating": 8,
+                "damage": 6,
+                "damageBonus": 1,
+                "name": "Cutlass"
+            }],
+            "armor": 4,
+            "discipline": 6,
+            "talents": ["Amphibious","Ally[Independent]"]
         },
         "gender": "M",
         "value": 10,
@@ -6110,6 +6260,7 @@
     },
     {
         "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "primaryFaction":"Wandering Allies",
         "name": "Irvlor",
         "displayName": "Irvlor",
         "type": "Standard",
@@ -6135,6 +6286,7 @@
     },
     {
         "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "primaryFaction":"Wandering Allies",
         "name": "Keldan",
         "displayName": "Keldan",
         "type": "Standard",
@@ -6481,5 +6633,81 @@
         "gender": "M",
         "value": 33,
         "race": "Shakrim"
+    },
+    {
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Kandoran Deathmasters","Traazorite Crusaders"],
+        "primaryFaction":"Shakrim Wavestalkers",
+        "name": "Trasilisk",
+        "displayName": "Trasilisk",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 10,
+                "damage": 6,
+                "damageBonus":1,
+                "name": "Cutlass"
+            },{
+                "rating":8,
+                "damage":8,
+                "name":"2x Claws"
+            }],
+            "range": [{
+                "rating":10,
+                "damage":6,
+                "distance":6,
+                "name":"Atlatl",
+                "abilities":["thr"]
+            }],
+            "armor": 4,
+            "discipline": 8,
+            "talents": ["Scout","Pathfinder","Accurate Shot","Block","Ally[Independent]"]
+        },
+        "gender": "M",
+        "value": 33,
+        "race": "Shakrim"
+    },
+    {
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "primaryFaction":"Wandering Allies",
+        "name": "Tyrsan",
+        "displayName": "Tyrsan",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "damageBonus":1,
+                "name": "Sakhazet",
+                "abilities": ["let"]
+            }],
+            "range": [{
+                "rating":10,
+                "damage":6,
+                "distance":2,
+                "name":"Hatchet",
+                "abilities":["thr"]
+            }],
+            "armor": 3,
+            "discipline": 8,
+            "skills": [{
+                "name": "Thievery",
+                "rating":8
+            },{
+                "name": "Stealth",
+                "rating":8
+            }],
+            "talents": ["Champion[Irvlor, Keldan]","Freerunner","Raven Stance","Dodge","Dodge"],
+            "abilities": {
+                "agility": 12,
+                "dexterity": 10
+            }
+        },
+        "gender": "M",
+        "value": 35,
+        "race": "Chaler"
     }
 ]
