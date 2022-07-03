@@ -255,7 +255,9 @@ export class BuilderComponent {
                 document.getElementById("errorMessage").scrollIntoView();
             });
         } else {
-            this.buildSnackRef.dismiss();
+            if (this.buildSnackRef) {
+                this.buildSnackRef.dismiss();
+            }
         }
 
         this.breakValue = Math.ceil(this.totalLifePoints / 2);
