@@ -1,5 +1,11 @@
 const Abilities: string[] = ['AGL','DEX','END','KNW','SPR','STR'];
 const Equipment: {name:string, cost:number}[] = [{
+    'name': 'Alchemical Arrow',
+    'cost': 1
+},{
+    'name': 'Blue Fire',
+    'cost': 4
+},{
     'name': 'Book of Lore',
     'cost': 1
 },{
@@ -18,14 +24,23 @@ const Equipment: {name:string, cost:number}[] = [{
     'name': 'Lantern',
     'cost': 1
 },{
+    'name': 'Liquid Ice',
+    'cost': 2
+},{
     'name': 'Lockpick Kit',
     'cost': 3
 },{
     'name': 'Rope',
     'cost': 1
 },{
+    'name': 'Smoke Stick',
+    'cost': 3
+},{
     'name': 'Snowshoes',
     'cost': 1
+},{
+    'name': 'Stun Bomb',
+    'cost': 4
 },{
     'name': 'Starsilk',
     'cost': 1
@@ -39,7 +54,6 @@ const Equipment: {name:string, cost:number}[] = [{
     'name': 'War Markings',
     'cost': 2
 }];
-// TODO: add artifacts to list, check for new items
 const MagicItems: {name: string, advancement: string, cost: number}[] = [{
     'name':'Nimblesocks',
     'advancement':'AGL',
