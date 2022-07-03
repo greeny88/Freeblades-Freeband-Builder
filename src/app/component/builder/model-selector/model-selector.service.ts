@@ -103,10 +103,12 @@ export class ModelSelectorService {
         }
         // console.log(stats.items);
         for (let item of stats.items) {
-            if (!item || !('advancement' in item)) {
+            if (!item) {
                 break;
             }
-            this.addAdvancement(stats, abilities, item.advancement);
+            if (!('advancement' in item)) {
+                this.addAdvancement(stats, abilities, item.advancement);
+            }
             modelValue += item.cost;
         }
 
