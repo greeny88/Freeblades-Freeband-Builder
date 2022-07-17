@@ -2198,7 +2198,7 @@
         "stats": {
             "discipline": 4,
             "type": "Hero",
-            "talents": ["Fearsome","Bonecrusher","Tireless","Fearless","Mountaineer","Demon"],
+            "talents": ["Fearsome","Bonecrusher","Tireless","Fearless","Mountaineer","Demon","Tough"],
             "speed": 5,
             "melee": [{
                 "rating": 10,
@@ -9809,7 +9809,7 @@
                 "name": "Stealth",
                 "rating":8
             }],
-            "talents": ["Champion[Irvlor, Keldan]","Freerunner","Raven Stance","Dodge","Dodge"],
+            "talents": ["Champion[Irvlor, Keldan]","Freerunner","Raven Stance","Dodge","Dodge","Ally[Independent]"],
             "abilities": {
                 "agility": 12,
                 "dexterity": 10
