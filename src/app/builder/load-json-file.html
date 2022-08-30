@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Load JSON File</h1>
+<div mat-dialog-content>
+    <p>Select a previously downloaded .json file</p>
+    <input type="file" accept=".json" [(ngModel)]="file">
+    <!-- <mat-form-field>
+        <mat-label>File</mat-label>
+        <input type="file" accept=".json" [(ngModel)]="data.file">
+    </mat-form-field> -->
+</div>
+<div mat-dialog-actions>
+    <button mat-flat-button color="accent" (click)="onCancel()" cdkFocusInitial>Cancel</button>
+    <button mat-flat-button color="primary" (click)="onLoad(file)">Load</button>
+</div>

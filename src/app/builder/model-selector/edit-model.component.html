@@ -1,0 +1,60 @@
+<h1 mat-dialog-title>Edit Model: {{model.displayName}}</h1>
+<div mat-dialog-content>
+    <mat-form-field style="width:100%">
+        <input matInput type="text" placeholder="Character Name" [(ngModel)]="model.characterName">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-select placeholder="Gender" [(value)]="model.gender">
+            <mat-option *ngFor="let gender of ['M','F']" [value]="gender">{{gender}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <!-- <h1 *ngIf="veteranAdvancements.length > 0">Veteran Upgrades</h1>
+    <ng-container *ngFor="let vet of veteranAdvancements; let i = index">
+        <mat-checkbox [(ngModel)]="modelVeteranAdvancements[i]">{{vet.name}} Cost:{{vet.cost}}</mat-checkbox>
+    </ng-container> -->
+    <br/>
+    <br/>
+    <button mat-button class="mat-raised-button" (click)="updateAdvancementCount()">Add advancements</button>
+    <ng-container *ngFor="let ma of modelAdvancements">
+        <br/>
+        <mat-form-field>
+            <mat-select (selectionChange)="addAdvancement()" [(value)]="ma.name">
+                <mat-option *ngFor="let adv of advancements" [value]="adv">{{adv}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="number" placeholder="Cost" [(ngModel)]="ma.cost">
+        </mat-form-field>
+        <button mat-button class="mat-raised-button" (click)="removeAdvancement(ma)">Remove</button>
+    </ng-container>
+    <br/>
+    <br/>
+    <button mat-button class="mat-raised-button" (click)="updateInjuryCount()">Add injury</button>
+    <ng-container *ngFor="let minj of modelInjuries; index as i">
+        <br/>
+        <mat-form-field>
+            <mat-select (selectionChange)="addInjury(minj, i)" [value]="minj">
+                <mat-option *ngFor="let inj of injuries" [value]="inj">{{inj}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-button class="mat-raised-button" (click)="removeInjuries(minj)">Remove</button>
+    </ng-container>
+    <br/>
+    <br/>
+    <button mat-button class="mat-raised-button" (click)="updateItemCount()">Add item</button>
+    <ng-container *ngFor="let mi of modelItems; index as i">
+        <br/>
+        <mat-form-field>
+            <mat-select (selectionChange)="addItem(mi, i)" [value]="mi">
+                <mat-option *ngFor="let itm of items" [value]="itm">{{itm.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-button class="mat-raised-button" (click)="removeItem(mi)">Remove</button>
+    </ng-container>
+    <br/>
+    <br/>
+</div>
+<div mat-dialog-actions>
+    <button mat-button class="mat-raised-button" [mat-dialog-close]="model">Update</button>
+    <button mat-button class="mat-raised-button" (click)="cancel()">Cancel</button>
+</div>

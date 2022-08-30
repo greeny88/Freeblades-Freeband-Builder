@@ -1,0 +1,63 @@
+<freeband-setup [selectedOptions]="selectedFreeband" (onOptionsSet)="optionsSet($event)"></freeband-setup>
+<ng-container *ngIf="faction && limit; else setup">
+    <div class="freebandStats noSetHeight">
+        <div>
+            <span class="printOnly bold-text">Freeband Name:</span>
+            <span><span class="bold-text">Freeband Base Value: </span>{{freebandBaseValue}}</span>
+            <span><span class="bold-text">Freeband Total Value: </span>{{freebandTotalValue}}</span>
+            <span><span class="bold-text">Break Value: </span>{{breakValue}}</span>
+            <span class="noPrint"><span class="bold-text">Hero Total: </span>{{completeHeroCount}}</span>
+            <span class="noPrint"><span class="bold-text">Follower Total: </span>{{completeFollowerCount}}</span>
+            <span><span class="bold-text">Scouting Points: </span>{{scoutingPoints}}</span>
+            <span class="printOnly bold-text">Gold:</span>
+        </div>
+    </div>
+    <div id="optionButtons">
+        <button mat-raised-button class="mat-accent noPrint" (click)="print()">Print</button>
+        <button mat-raised-button class="mat-accent noPrint" (click)="downloadFreeband()">Download</button>
+        <button mat-raised-button class="mat-accent noPrint" (click)="loadFreeband()">Load</button>
+    </div>
+    <div *ngFor="let msg of errorMessages" class="noSetHeight noPrint" id="errorMessage">
+        <span>{{msg}}</span>
+    </div>
+    <model-selector [faction]="faction" type="Leader" [altLeader]="altLeader" [selectedModel]="models[leaderId]"
+        (onModelSelected)="modelSelected($event)" [componentId]="leaderId"></model-selector>
+    <model-selector [faction]="faction" type="Caster" [selectedModel]="models[casterId]"
+        (onModelSelected)="modelSelected($event)" [componentId]="casterId"></model-selector>
+    <ng-container *ngFor="let id of extraModels">
+        <model-selector [faction]="faction" type="Standard" [altLeader]="altLeader" [selectedModel]="models[id]"
+            (onModelSelected)="modelSelected($event)" [componentId]="id" (onModelRemoved)="removeModel($event)">
+        </model-selector>
+    </ng-container>
+    <button mat-raised-button class="mat-accent noPrint" style="margin-left:1rem;margin-bottom:1rem;"
+        (click)="addModel()">Add Model</button>
+</ng-container>
+<ng-template #setup>
+    <div>
+        <button mat-raised-button class="mat-accent noPrint" (click)="loadFreeband()">Load</button>
+    </div>
+    <div class="noPrint">
+        <p>Start by selecting the values above so that you can begin building your freeband.</p>
+        <mat-list>
+            <mat-list-item>
+                <h1 matLine>Faction - required</h1>
+                <p matLine>Choose from any of the currently available factions</p>
+            </mat-list-item>
+            <mat-list-item>
+                <h1 matLine>Limit - required</h1>
+                <p matLine>The maximum size of the freeband based on the total value of the models picked.</p>
+            </mat-list-item>
+            <mat-list-item>
+                <h1 matLine>Alternate Leader<sup>1</sup></h1>
+                <p matLine>Enables the alternate leader rule by which additional models can be promoted to leader and
+                    leader models can be demoted to regular models.</p>
+            </mat-list-item>
+        </mat-list>
+        <p>A full description on Freeband construction rules can be found in the Living Rulebook (v{{ lrbVersion }})
+            starting on page {{ builderPage }}. Printing this page using your browser's print option will
+            give you a formatted display of your selected models.</p>
+        <p><sup>1</sup> There are a few bugs to work out with alternate leader rules like being able to increase/decrease specific
+            MAR/RAR/CAR. An attempt is made to adjust the stat line as would be typical but for now you may need to use
+            the 'Edit' option on a model to get it's stat line the way you want it to be set.</p>
+    </div>
+</ng-template>

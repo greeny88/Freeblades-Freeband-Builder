@@ -1,6 +1,8 @@
 {
-  "name": "ng-test-app",
-  "version": "0.0.0",
+  "name": "freeblades-freeband-builder",
+  "version": "3.0.0",
+  "description": "Tool to construct a Freeblades freeband",
+  "main": "index.html",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,16 +10,22 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
+  "author": "mgreen",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "@angular/animations": "~13.3.0",
+    "@angular/cdk": "^13.3.9",
     "@angular/common": "~13.3.0",
     "@angular/compiler": "~13.3.0",
     "@angular/core": "~13.3.0",
     "@angular/forms": "~13.3.0",
+    "@angular/material": "^13.3.9",
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
+    "@angular/service-worker": "^13.3.10",
+    "material-components-web": "^14.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -28,12 +36,15 @@
     "@angular/compiler-cli": "~13.3.0",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
+    "autoprefixer": "^10.4.7",
     "jasmine-core": "~4.0.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.1.0",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.0.24",
     "typescript": "~4.6.2"
   }
 }
