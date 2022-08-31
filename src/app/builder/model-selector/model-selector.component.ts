@@ -10,7 +10,8 @@ import { Models } from './models';
 
 @Component({
     selector: 'model-selector',
-    templateUrl: './model-selector.component.html'
+    templateUrl: './model-selector.component.html',
+    styleUrls: ['./model-selector.component.scss']
 })
 export class ModelSelectorComponent {
     @Input() altLeader : boolean = false;
