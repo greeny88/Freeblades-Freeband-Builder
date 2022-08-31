@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-test-app": {
+    "freeblades-freeband-builder": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ng-test-app",
+            "outputPath": "dist/freeblades-freeband-builder",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,6 +28,9 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
+              "src/apple-touch-icon.png",
+              "src/favicon-16x16.png",
+              "src/favicon-32x32.png",
               "src/assets",
               "src/manifest.webmanifest"
             ],
@@ -45,7 +48,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -76,10 +79,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ng-test-app:build:production"
+              "browserTarget": "freeblades-freeband-builder:build:production"
             },
             "development": {
-              "browserTarget": "ng-test-app:build:development"
+              "browserTarget": "freeblades-freeband-builder:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -87,7 +90,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-test-app:build"
+            "browserTarget": "freeblades-freeband-builder:build"
           }
         },
         "test": {
@@ -113,5 +116,5 @@
       }
     }
   },
-  "defaultProject": "ng-test-app"
+  "defaultProject": "freeblades-freeband-builder"
 }
