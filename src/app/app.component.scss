@@ -23,21 +23,6 @@ mat-sidenav-container {
     }
 }
 
-snack-bar-container {
-    // background-color: #ffc107 !important;
-    &.invalid-build {
-        background-color: red;
-        color: #FFF;
-    }
-    &.refresh-page {
-        background-color: #ffc107
-    }
-}
-
-.bold-text {
-    font-weight: bold;
-}
-
 #mainContainer {
     min-height: 50%;
 }

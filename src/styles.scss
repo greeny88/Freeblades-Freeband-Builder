@@ -67,3 +67,19 @@ $ffb-app-theme: mat-dark-theme($ffb-app-primary, $ffb-app-accent, $ffb-app-warn)
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+snack-bar-container {
+  // background-color: #ffc107 !important;
+  &.invalid-build {
+      background-color: red;
+      color: #FFF;
+  }
+  &.refresh-page {
+      background-color: #ffc107
+  }
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
