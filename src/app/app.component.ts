@@ -13,7 +13,7 @@ export class AppComponent {
     @ViewChild('sidenav') sidenav: MatSidenav | undefined = undefined;
 
     constructor(private commService: CommunicatorService, private snackBar: MatSnackBar, private updates: SwUpdate) {
-        updates.versionUpdates.subscribe(evt => {
+        this.updates.versionUpdates.subscribe(evt => {
             if (evt.type === 'VERSION_READY') {
                 const snackRef = this.snackBar.open('New version of app available', 'Refresh', { panelClass: 'refresh-page' });
                 snackRef.onAction().subscribe(() => location.reload());
