@@ -84,6 +84,12 @@ export class BuilderComponent implements OnInit {
         })
     }
 
+    ngOnDestroy() {
+        if (this.buildSnackRef) {
+            this.buildSnackRef.dismiss();
+        }
+    }
+
     addModel() {
         this.extraModels.push(this.uuidv4());
     }
