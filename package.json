@@ -9,7 +9,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "start-sw": "ng build && http-server dist/freeblades-freeband-builder"
+    "start-sw": "ng build && http-server dist/freeblades-freeband-builder",
+    "ghpages": "ng build && copy dist\\freeblades-freeband-builder\\index.html dist\\freeblades-freeband-builder\\404.html"
   },
   "author": "mgreen",
   "license": "MIT",
