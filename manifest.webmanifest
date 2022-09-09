@@ -1,0 +1,21 @@
+{
+  "name": "Freeblades Freeband Builder",
+  "short_name": "FFB",
+  "theme_color": "#73c169",
+  "background_color": "#303030",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "./",
+  "icons": [
+    {
+      "src":"assets/icons/android-chrome-192x192.png",
+      "sizes":"192x192",
+      "type":"image/png"
+    },
+    {
+      "src":"assets/icons/android-chrome-512x512.png",
+      "sizes":"512x512",
+      "type":"image/png"
+    }
+  ]
+}
