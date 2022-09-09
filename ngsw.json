@@ -1,7 +1,7 @@
 {
   "configVersion": 1,
-  "timestamp": 1662000728877,
-  "index": "/index.html",
+  "timestamp": 1662751439113,
+  "index": "/Freeblades-Freeband-Builder/index.html",
   "assetGroups": [
     {
       "name": "app",
@@ -11,19 +11,19 @@
         "ignoreVary": true
       },
       "urls": [
-        "/564.23d44b26b4aa32c0.js",
-        "/apple-touch-icon.png",
-        "/builder.9c6f60b1bc7406da.js",
-        "/favicon-16x16.png",
-        "/favicon-32x32.png",
-        "/favicon.ico",
-        "/index.html",
-        "/main.68aba4fe89a4fe08.js",
-        "/manifest.webmanifest",
-        "/polyfills.1521bc5d64aa9a19.js",
-        "/prebuilt.c16e09d5a8fd0ab5.js",
-        "/runtime.4b6962c274eabe9f.js",
-        "/styles.8c60ce0ab9076cbc.css"
+        "/Freeblades-Freeband-Builder/564.23d44b26b4aa32c0.js",
+        "/Freeblades-Freeband-Builder/apple-touch-icon.png",
+        "/Freeblades-Freeband-Builder/builder.9c6f60b1bc7406da.js",
+        "/Freeblades-Freeband-Builder/favicon-16x16.png",
+        "/Freeblades-Freeband-Builder/favicon-32x32.png",
+        "/Freeblades-Freeband-Builder/favicon.ico",
+        "/Freeblades-Freeband-Builder/index.html",
+        "/Freeblades-Freeband-Builder/main.68aba4fe89a4fe08.js",
+        "/Freeblades-Freeband-Builder/manifest.webmanifest",
+        "/Freeblades-Freeband-Builder/polyfills.1521bc5d64aa9a19.js",
+        "/Freeblades-Freeband-Builder/prebuilt.c16e09d5a8fd0ab5.js",
+        "/Freeblades-Freeband-Builder/runtime.4b6962c274eabe9f.js",
+        "/Freeblades-Freeband-Builder/styles.8c60ce0ab9076cbc.css"
       ],
       "patterns": []
     },
@@ -35,29 +35,29 @@
         "ignoreVary": true
       },
       "urls": [
-        "/assets/icons/android-chrome-192x192.png",
-        "/assets/icons/android-chrome-512x512.png"
+        "/Freeblades-Freeband-Builder/assets/icons/android-chrome-192x192.png",
+        "/Freeblades-Freeband-Builder/assets/icons/android-chrome-512x512.png"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
-    "/564.23d44b26b4aa32c0.js": "145bb13a3786eec0ad9e653b62006d27e26c751a",
-    "/apple-touch-icon.png": "82f25d6057f006c4a1b938b7ec0164fbb12bdfad",
-    "/assets/icons/android-chrome-192x192.png": "bf65119de5de4bc9095df5d6f95a6554b5148b86",
-    "/assets/icons/android-chrome-512x512.png": "1487102e6ca7bf1c1b2f6611a5e9f584a089f889",
-    "/builder.9c6f60b1bc7406da.js": "94b314e6bd6510c8a381d55b6fe95d2cd311f3ff",
-    "/favicon-16x16.png": "c219d470662d1de2e955c2f0248345978c252de9",
-    "/favicon-32x32.png": "f3ae008b2f664177ee68a84041d808006c293dc0",
-    "/favicon.ico": "d32cd422303c1985f7a6823dd325c01d75bf193b",
-    "/index.html": "ff7d5a0f66ffee9a711772775c07f56f2330373f",
-    "/main.68aba4fe89a4fe08.js": "3a7a39245d87caa9efe73f7ca9af675b0fd03480",
-    "/manifest.webmanifest": "d53067dbfd1f36cb664f4c61786f19946b4374c5",
-    "/polyfills.1521bc5d64aa9a19.js": "e8d9c78426f2a3cfcef78f8f0207020f92756b70",
-    "/prebuilt.c16e09d5a8fd0ab5.js": "2d40d2c543f71a0ffd5c2140678a513a847d2b28",
-    "/runtime.4b6962c274eabe9f.js": "c23e5b796ade3979778d1ffb89bc725ae0643e10",
-    "/styles.8c60ce0ab9076cbc.css": "7ae50c08455a14522ab619ee8612d8780363e29e"
+    "/Freeblades-Freeband-Builder/564.23d44b26b4aa32c0.js": "145bb13a3786eec0ad9e653b62006d27e26c751a",
+    "/Freeblades-Freeband-Builder/apple-touch-icon.png": "82f25d6057f006c4a1b938b7ec0164fbb12bdfad",
+    "/Freeblades-Freeband-Builder/assets/icons/android-chrome-192x192.png": "bf65119de5de4bc9095df5d6f95a6554b5148b86",
+    "/Freeblades-Freeband-Builder/assets/icons/android-chrome-512x512.png": "1487102e6ca7bf1c1b2f6611a5e9f584a089f889",
+    "/Freeblades-Freeband-Builder/builder.9c6f60b1bc7406da.js": "94b314e6bd6510c8a381d55b6fe95d2cd311f3ff",
+    "/Freeblades-Freeband-Builder/favicon-16x16.png": "c219d470662d1de2e955c2f0248345978c252de9",
+    "/Freeblades-Freeband-Builder/favicon-32x32.png": "f3ae008b2f664177ee68a84041d808006c293dc0",
+    "/Freeblades-Freeband-Builder/favicon.ico": "d32cd422303c1985f7a6823dd325c01d75bf193b",
+    "/Freeblades-Freeband-Builder/index.html": "317dcae61c0b50ab47ea9f1715e600919c5a71cf",
+    "/Freeblades-Freeband-Builder/main.68aba4fe89a4fe08.js": "3a7a39245d87caa9efe73f7ca9af675b0fd03480",
+    "/Freeblades-Freeband-Builder/manifest.webmanifest": "d53067dbfd1f36cb664f4c61786f19946b4374c5",
+    "/Freeblades-Freeband-Builder/polyfills.1521bc5d64aa9a19.js": "e8d9c78426f2a3cfcef78f8f0207020f92756b70",
+    "/Freeblades-Freeband-Builder/prebuilt.c16e09d5a8fd0ab5.js": "2d40d2c543f71a0ffd5c2140678a513a847d2b28",
+    "/Freeblades-Freeband-Builder/runtime.4b6962c274eabe9f.js": "c23e5b796ade3979778d1ffb89bc725ae0643e10",
+    "/Freeblades-Freeband-Builder/styles.8c60ce0ab9076cbc.css": "7ae50c08455a14522ab619ee8612d8780363e29e"
   },
   "navigationUrls": [
     {
