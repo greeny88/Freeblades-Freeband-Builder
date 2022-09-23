@@ -21,8 +21,10 @@ export class FFBComponent {
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.getRegistration('service-worker.js').then(registration => {
-                    registration.onupdatefound = (event) => {
-                        this.showRefresh();
+                    if (registration) {
+                        registration.onupdatefound = (event) => {
+                            this.showRefresh();
+                        }
                     }
                 });
                 navigator.serviceWorker.getRegistrations().then(registrations => {
