@@ -9859,7 +9859,7 @@
             }],
             "armor": 3,
             "discipline": 8,
-            "talents": ["Die Hard","Fearsome","Hardended","Warbeast","Bear Hug","Bonded[Daughter of the Bear]","Protective[Daughter of the Bear]"],
+            "talents": ["Die Hard","Fearsome","Hardended","Warbeast","Bear Hug","Bonded[Daughter of the Bear]","Protective[Daughter of the Bear]","Ally[Independent]"],
             "abilities": {
                 "endurance": 10
             }
@@ -9922,7 +9922,7 @@
             }],
             "armor": 3,
             "discipline": 10,
-            "talents": ["Fearsome","Fearless","Fast","Furious","Parry","Tough","Tough","Cavalry"],
+            "talents": ["Fearsome","Fearless","Fast","Furious","Parry","Tough","Tough","Cavalry","Ally[Independent]"],
             "skills":[{
                 "name":"Hunt",
                 "rating":8
@@ -10035,7 +10035,7 @@
             }],
             "armor": 3,
             "discipline": 10,
-            "talents": ["Parry","Dodge","Tachan","Backstep","Leaper","Amphibious","Quick"],
+            "talents": ["Parry","Dodge","Tachan","Backstep","Leaper","Amphibious","Quick","Ally[Independent]"],
             "abilities":{
                 "agility":12
             }
@@ -10084,7 +10084,7 @@
             }],
             "armor": 3,
             "discipline": 10,
-            "talents": ["Die Hard","Die Hard","Hardened","Shield Hook"],
+            "talents": ["Die Hard","Die Hard","Hardened","Shield Hook","Ally[Independent]"],
             "abilities":{
                 "endurance":10
             }
