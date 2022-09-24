@@ -938,7 +938,7 @@
                 "name": "Whip",
                 "rating": 8,
                 "damage": 4,
-                "abilites": ["ent", "qs"]
+                "abilities": ["ent", "qs"]
             },{
                 "name": "Broadsword",
                 "rating": 8,
@@ -994,9 +994,9 @@
             }],
             "armor": 4,
             "talents": ["Die Hard"],
-            "abilities": [{
+            "abilities": {
                 "endurance": 8
-            }]
+            }
         },
         "type": "Standard",
         "value": 12,
@@ -1023,9 +1023,9 @@
             }],
             "armor": 3,
             "talents": ["Leader", "Parry", "Bladedancer", "Sidestep", "Swordsman[Parry Dagger]"],
-            "abilities": [{
+            "abilities": {
                 "agility": 10
-            }]
+            }
         },
         "type": "Leader",
         "value": 39,
@@ -2198,7 +2198,7 @@
         "stats": {
             "discipline": 4,
             "type": "Hero",
-            "talents": ["Fearsome","Bonecrusher","Tireless","Fearless","Mountaineer","Demon"],
+            "talents": ["Fearsome","Bonecrusher","Tireless","Fearless","Mountaineer","Demon","Tough"],
             "speed": 5,
             "melee": [{
                 "rating": 10,
@@ -5966,7 +5966,7 @@
             "range":[{
                 "rating":8,
                 "damage":6,
-                "range":8,
+                "distance":8,
                 "name":"Bow"
             }],
             "armor": 2,
@@ -5998,7 +5998,7 @@
             "range":[{
                 "rating":8,
                 "damage":6,
-                "range":8,
+                "distance":8,
                 "name":"Bow"
             }],
             "armor": 2,
@@ -6953,7 +6953,7 @@
                 "damage": 4,
                 "name": "Blogun",
                 "abilities": ["ven"],
-                "range": 6
+                "distance": 6
             }],
             "shield": "L",
             "armor": 5,
@@ -6985,7 +6985,7 @@
                 "damage": 4,
                 "name": "Blogun",
                 "abilities": ["ven"],
-                "range": 6
+                "distance": 6
             }],
             "shield": "L",
             "armor": 5,
@@ -7415,7 +7415,7 @@
             "discipline": 10,
             "talents": ["Dodge","Slither","Hit and Run","Fast","Animal"],
             "abilities":{
-                "abilities":12
+                "agility":12
             }
         },
         "gender": "M",
@@ -9809,7 +9809,7 @@
                 "name": "Stealth",
                 "rating":8
             }],
-            "talents": ["Champion[Irvlor, Keldan]","Freerunner","Raven Stance","Dodge","Dodge"],
+            "talents": ["Champion[Irvlor, Keldan]","Freerunner","Raven Stance","Dodge","Dodge","Ally[Independent]"],
             "abilities": {
                 "agility": 12,
                 "dexterity": 10
@@ -9818,5 +9818,279 @@
         "gender": "M",
         "value": 35,
         "race": "Chaler"
+    },
+    {
+        "factions": ["Urdaggar Tribes of Valor"],
+        "name": "Baeorl",
+        "displayName": "Baeorl",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "2x Claws"
+            }],
+            "armor": 3,
+            "discipline": 8,
+            "talents": ["Die Hard","Fearsome","Hardended","Warbeast","Bear Hug","Bonded[Daughter of the Bear]","Protective[Daughter of the Bear]"],
+            "abilities": {
+                "endurance": 10
+            }
+        },
+        "gender": "M",
+        "value": 33,
+        "race": "Beast"
+    },
+    {
+        "factions": ["Kuzaarik Forgers"],
+        "primaryFaction": "Urdaggar Tribes of Valor",
+        "name": "Baeorl",
+        "displayName": "Baeorl",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "2x Claws"
+            }],
+            "armor": 3,
+            "discipline": 8,
+            "talents": ["Die Hard","Fearsome","Hardended","Warbeast","Bear Hug","Bonded[Daughter of the Bear]","Protective[Daughter of the Bear]","Ally[Independent]"],
+            "abilities": {
+                "endurance": 10
+            }
+        },
+        "gender": "M",
+        "value": 33,
+        "race": "Beast"
+    },
+    {
+        "factions": ["Urdaggar Tribes of Valor"],
+        "name": "Dire Rider",
+        "displayName": "Dire Rider",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 8,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "Wolfsword",
+                "abilities":["mi"]
+            },{
+                "rating": 8,
+                "damage": 8,
+                "name": "Bite"
+            }],
+            "armor": 3,
+            "discipline": 10,
+            "talents": ["Fearsome","Fearless","Fast","Furious","Parry","Tough","Tough","Cavalry"],
+            "skills":[{
+                "name":"Hunt",
+                "rating":8
+            }],
+            "abilities": {
+                "strength": 10
+            }
+        },
+        "gender": "M",
+        "value": 43,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Kuzaarik Forgers"],
+        "primaryFaction": "Urdaggar Tribes of Valor",
+        "name": "Dire Rider",
+        "displayName": "Dire Rider",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 8,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "Wolfsword",
+                "abilities":["mi"]
+            },{
+                "rating": 8,
+                "damage": 8,
+                "name": "Bite"
+            }],
+            "armor": 3,
+            "discipline": 10,
+            "talents": ["Fearsome","Fearless","Fast","Furious","Parry","Tough","Tough","Cavalry","Ally[Independent]"],
+            "skills":[{
+                "name":"Hunt",
+                "rating":8
+            }],
+            "abilities": {
+                "strength": 10
+            }
+        },
+        "gender": "M",
+        "value": 43,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Kandoran Deathmasters"],
+        "name": "Eviscerator",
+        "displayName": "Eviscerator",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Spikedrah",
+                "abilities":["de"]
+            }],
+            "armor": 4,
+            "discipline": 10,
+            "talents": ["Dodge","Dodge","Killing Strike","Killing Strike"],
+            "abilities": {
+                "agility": 12,
+                "dexterity": 10
+            }
+        },
+        "gender": "M",
+        "value": 29,
+        "race": "Kandoran"
+    },
+    {
+        "factions": ["Shakrim Wavestalkers"],
+        "name": "Kobrin",
+        "displayName": "Kobrin",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Bite",
+                "abilities":["ven"]
+            },{
+                "rating": 6,
+                "damage": 4,
+                "name": "Dagger"
+            }],
+            "range": [{
+                "rating":6,
+                "damage":6,
+                "name":"Atlatl",
+                "distance":6
+            }],
+            "armor": 4,
+            "discipline": 6,
+            "talents": ["Slither","Scout","Limited"]
+        },
+        "gender": "F",
+        "value": 17,
+        "race": "Shakrim"
+    },
+    {
+        "factions": ["Mershael Corsairs"],
+        "name": "Sea Ronin",
+        "displayName": "Sea Ronin",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "Taumari",
+                "abilities":["qs"]
+            }],
+            "armor": 3,
+            "discipline": 10,
+            "talents": ["Parry","Dodge","Tachan","Backstep","Leaper","Amphibious","Quick"],
+            "abilities":{
+                "agility":12
+            }
+        },
+        "gender": "F",
+        "value": 32,
+        "race": "Chaler"
+    },
+    {
+        "factions": ["Eclipse Sisterhood"],
+        "primaryFaction": "Mershael Corsairs",
+        "name": "Sea Ronin",
+        "displayName": "Sea Ronin",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "Taumari",
+                "abilities":["qs"]
+            }],
+            "armor": 3,
+            "discipline": 10,
+            "talents": ["Parry","Dodge","Tachan","Backstep","Leaper","Amphibious","Quick","Ally[Independent]"],
+            "abilities":{
+                "agility":12
+            }
+        },
+        "gender": "F",
+        "value": 32,
+        "race": "Chaler"
+    },
+    {
+        "factions": ["Urdaggar Tribes of Valor"],
+        "name": "Daughter of the Bear",
+        "displayName": "Daughter of the Bear",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "2x War Axe"
+            }],
+            "armor": 3,
+            "discipline": 10,
+            "talents": ["Die Hard","Die Hard","Hardened","Shield Hook"],
+            "abilities":{
+                "endurance":10
+            }
+        },
+        "gender": "F",
+        "value": 33,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Kuzaarik Forgers"],
+        "primaryFaction": "Urdaggar Tribes of Valor",
+        "name": "Daughter of the Bear",
+        "displayName": "Daughter of the Bear",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "2x War Axe"
+            }],
+            "armor": 3,
+            "discipline": 10,
+            "talents": ["Die Hard","Die Hard","Hardened","Shield Hook","Ally[Independent]"],
+            "abilities":{
+                "endurance":10
+            }
+        },
+        "gender": "F",
+        "value": 33,
+        "race": "Faeler"
     }
 ]

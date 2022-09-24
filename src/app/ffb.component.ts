@@ -21,14 +21,32 @@ export class FFBComponent {
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.getRegistration('service-worker.js').then(registration => {
-                    registration.onupdatefound = (event) => {
-                        this.zone.run(() => {
-                            const snackRef = this.snackBar.open('New version of app available', 'Refresh', {panelClass:'refresh-page'});
-                            snackRef.onAction().subscribe(() => location.reload());
-                        });
+                    if (registration) {
+                        registration.onupdatefound = (event) => {
+                            this.showRefresh();
+                        }
                     }
-                })
+                });
+                navigator.serviceWorker.getRegistrations().then(registrations => {
+                    for (let registration of registrations) {
+                        if (!registration || !registration.active) {
+                            return;
+                        }
+                        if (!registration.active.scriptURL.includes('service-worker.js')) {
+                            console.log('Found other service worker.');
+                            registration.unregister();
+                            this.showRefresh();
+                        }
+                    }
+                });
             });
         }
+    }
+
+    private showRefresh() {
+        this.zone.run(() => {
+            const snackRef = this.snackBar.open('New version of app available', 'Refresh', {panelClass:'refresh-page'});
+            snackRef.onAction().subscribe(() => location.reload());
+        });
     }
 }
