@@ -357,8 +357,8 @@ export class BuilderComponent {
                 models.push(this.models[key].name);
             }
         }
-        const checkForDups = models.filter(modelName => modelName !== 'Highwayman');
-        return ((new Set(checkForDups)).size !== checkForDups.length) ? 'Bandits may not have duplicate heroes except for the Highwayman.' : undefined;
+        const checkForDups = models.filter(modelName => modelName !== 'Highwayman' && modelName != 'Roughrider');
+        return ((new Set(checkForDups)).size !== checkForDups.length) ? 'Bandits may not have duplicate heroes except for the Highwayman and Roughrider.' : undefined;
     }
 
     private blackThornBanditsRule(model: Model): string | undefined {
@@ -368,8 +368,8 @@ export class BuilderComponent {
                 models.push(this.models[key].name);
             }
         }
-        const checkForDups = models.filter(modelName => modelName !== 'Highwayman');
-        return ((new Set(checkForDups)).size !== checkForDups.length) ? 'Bandits may not have duplicate heroes except for the Highwayman.' : undefined;
+        const checkForDups = models.filter(modelName => modelName !== 'Highwayman' && modelName != 'Roughrider');
+        return ((new Set(checkForDups)).size !== checkForDups.length) ? 'Bandits may not have duplicate heroes except for the Highwayman and Roughrider.' : undefined;
     }
 
     private darkgroveRules(model: Model): string | undefined {
