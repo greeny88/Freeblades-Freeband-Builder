@@ -37,7 +37,13 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              {
+                "input": "node_modules/@angular/service-worker/safety-worker.js",
+                "inject": false,
+                "bundleName": "service-worker"
+              }
+            ],
             "serviceWorker": true,
             "ngswConfigPath": "ngsw-config.json"
           },
