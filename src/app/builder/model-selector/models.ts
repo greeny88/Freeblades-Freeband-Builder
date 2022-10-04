@@ -9846,6 +9846,31 @@ const Models: Model[] = [
         "race": "Beast"
     },
     {
+        "factions": ["Kuzaarik Forgers"],
+        "primaryFaction": "Urdaggar Tribes of Valor",
+        "name": "Baeorl",
+        "displayName": "Baeorl",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "2x Claws"
+            }],
+            "armor": 3,
+            "discipline": 8,
+            "talents": ["Die Hard","Fearsome","Hardended","Warbeast","Bear Hug","Bonded[Daughter of the Bear]","Protective[Daughter of the Bear]","Ally[Independent]"],
+            "abilities": {
+                "endurance": 10
+            }
+        },
+        "gender": "M",
+        "value": 33,
+        "race": "Beast"
+    },
+    {
         "factions": ["Urdaggar Tribes of Valor"],
         "name": "Dire Rider",
         "displayName": "Dire Rider",
@@ -9866,6 +9891,40 @@ const Models: Model[] = [
             "armor": 3,
             "discipline": 10,
             "talents": ["Fearsome","Fearless","Fast","Furious","Parry","Tough","Tough","Cavalry"],
+            "skills":[{
+                "name":"Hunt",
+                "rating":8
+            }],
+            "abilities": {
+                "strength": 10
+            }
+        },
+        "gender": "M",
+        "value": 43,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Kuzaarik Forgers"],
+        "primaryFaction": "Urdaggar Tribes of Valor",
+        "name": "Dire Rider",
+        "displayName": "Dire Rider",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 8,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "Wolfsword",
+                "abilities":["mi"]
+            },{
+                "rating": 8,
+                "damage": 8,
+                "name": "Bite"
+            }],
+            "armor": 3,
+            "discipline": 10,
+            "talents": ["Fearsome","Fearless","Fast","Furious","Parry","Tough","Tough","Cavalry","Ally[Independent]"],
             "skills":[{
                 "name":"Hunt",
                 "rating":8
@@ -9962,6 +10021,32 @@ const Models: Model[] = [
         "race": "Chaler"
     },
     {
+        "factions": ["Eclipse Sisterhood"],
+        "primaryFaction": "Mershael Corsairs",
+        "name": "Sea Ronin",
+        "displayName": "Sea Ronin",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "Taumari",
+                "abilities":["qs"]
+            }],
+            "armor": 3,
+            "discipline": 10,
+            "talents": ["Parry","Dodge","Tachan","Backstep","Leaper","Amphibious","Quick","Ally[Independent]"],
+            "abilities":{
+                "agility":12
+            }
+        },
+        "gender": "F",
+        "value": 32,
+        "race": "Chaler"
+    },
+    {
         "factions": ["Urdaggar Tribes of Valor"],
         "name": "Daughter of the Bear",
         "displayName": "Daughter of the Bear",
@@ -9977,6 +10062,31 @@ const Models: Model[] = [
             "armor": 3,
             "discipline": 10,
             "talents": ["Die Hard","Die Hard","Hardened","Shield Hook"],
+            "abilities":{
+                "endurance":10
+            }
+        },
+        "gender": "F",
+        "value": 33,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Kuzaarik Forgers"],
+        "primaryFaction": "Urdaggar Tribes of Valor",
+        "name": "Daughter of the Bear",
+        "displayName": "Daughter of the Bear",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "2x War Axe"
+            }],
+            "armor": 3,
+            "discipline": 10,
+            "talents": ["Die Hard","Die Hard","Hardened","Shield Hook","Ally[Independent]"],
             "abilities":{
                 "endurance":10
             }
