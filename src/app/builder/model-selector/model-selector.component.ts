@@ -6,8 +6,6 @@ import { ModelSelectorService } from './model-selector.service';
 import { Model } from '../../model';
 import { Models } from './models';
 
-// import factionModels from './models.json';
-
 @Component({
     selector: 'model-selector',
     templateUrl: './model-selector.component.html',
@@ -71,7 +69,7 @@ export class ModelSelectorComponent {
                                 model.stats.melee[0].rating += 2;
                                 // Only add +1 for two-ended if MAR increase
                                 for (let melee of model.stats.melee) {
-                                    if (melee.abilities && melee.abilities.indexOf('te') < -1) {
+                                    if (melee.abilities && melee.abilities.indexOf('te') > -1) {
                                         model.value += 1;
                                     }
                                 }
