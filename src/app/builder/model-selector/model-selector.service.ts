@@ -147,9 +147,9 @@ export class ModelSelectorService {
         if (abilities.agility === 4) {
             defense = -1;
         } else {
-            for (let i=0; this.abilityTiers.length > i; i++) {
-                if (abilities.agility >= this.abilityTiers[i]) {
-                    defense = defense + i + 1;
+            for (let abilityTier of this.abilityTiers) {
+                if (abilities.agility >= abilityTier) {
+                    defense++;
                 }
             }
         }
@@ -158,9 +158,9 @@ export class ModelSelectorService {
         if (abilities.dexterity === 4) {
             ratingBonus = -1;
         } else {
-            for (let i=0; this.abilityTiers.length > i; i++) {
-                if (abilities.dexterity >= this.abilityTiers[i]) {
-                    ratingBonus = ratingBonus + i + 1;
+            for (let abilityTier of this.abilityTiers) {
+                if (abilities.dexterity >= abilityTier) {
+                    ratingBonus++;
                 }
             }
         }
@@ -176,9 +176,9 @@ export class ModelSelectorService {
         if (abilities.endurance === 4) {
             lifePoints--;
         } else {
-            for (let i=0; this.abilityTiers.length > i; i++) {
-                if (abilities.endurance >= this.abilityTiers[i]) {
-                    lifePoints = lifePoints + i + 1;
+            for (let abilityTier of this.abilityTiers) {
+                if (abilities.endurance >= abilityTier) {
+                    lifePoints++;
                 }
             }
         }
@@ -187,9 +187,9 @@ export class ModelSelectorService {
         if (abilities.knowledge === 4) {
             skillBonus = -1;
         } else {
-            for (let i=0; this.abilityTiers.length > i; i++) {
-                if (abilities.knowledge >= this.abilityTiers[i]) {
-                    skillBonus = skillBonus + i + 1;
+            for (let abilityTier of this.abilityTiers) {
+                if (abilities.knowledge >= abilityTier) {
+                    skillBonus++;
                 }
             }
         }
@@ -198,9 +198,9 @@ export class ModelSelectorService {
         if (abilities.spirit === 4) {
             moraleBonus = -1;
         } else {
-            for (let i=0; this.abilityTiers.length > i; i++) {
-                if (abilities.spirit >= this.abilityTiers[i]) {
-                    moraleBonus = moraleBonus + i + 1;
+            for (let abilityTier of this.abilityTiers) {
+                if (abilities.spirit >= abilityTier) {
+                    moraleBonus++;
                 }
             }
         }
@@ -209,9 +209,9 @@ export class ModelSelectorService {
         if (abilities.strength === 4) {
             damageBonus = -1;
         } else {
-            for (let i=0; this.abilityTiers.length > i; i++) {
-                if (abilities.strength >= this.abilityTiers[i]) {
-                    damageBonus = damageBonus + i + 1;
+            for (let abilityTier of this.abilityTiers) {
+                if (abilities.strength >= abilityTier) {
+                    damageBonus++;
                 }
             }
         }
