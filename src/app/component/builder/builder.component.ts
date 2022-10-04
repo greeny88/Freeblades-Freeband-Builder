@@ -626,6 +626,15 @@ export class BuilderComponent {
     }
 
     private shakrimRules(model: Model): string | undefined {
+        let kobrinCount = 0;
+        for (let key in this.models) {
+            if (this.models[key]['name'] === 'Kobrin') {
+                kobrinCount++;
+            }
+        }
+        if (kobrinCount > 0 && (this.limit / kobrinCount) < 75) {
+            return "Shakrim can only have one Kobrin for each 75 points in the freeband's base value.";
+        }
         return undefined;
     }
 
