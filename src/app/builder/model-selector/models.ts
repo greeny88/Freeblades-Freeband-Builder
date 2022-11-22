@@ -1890,7 +1890,7 @@ const Models: Model[] = [
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
         "primaryFaction":"Wandering Allies",
         "name": "Takar Hunter",
         "displayName": "Takar Hunter",
@@ -3866,7 +3866,7 @@ const Models: Model[] = [
             "discipline": 8,
             "type": "Hero",
             "speed": 10,
-            "talents": ["Cavalry","Light Cavalry","Scout","Harasser","Fast"],
+            "talents": ["Cavalry","Light Cavalry","Scout","Harasser","Fast","Veteran[Deft Rider,1]"],
             "melee": [{
                 "rating": 8,
                 "damage": 8,
@@ -5351,7 +5351,7 @@ const Models: Model[] = [
             }],
             "armor": 4,
             "discipline": 6,
-            "talents": ["Arboreal"]
+            "talents": ["Arboreal","Veteran[1dl RAR,1]","Veteran[Scrounge,1]"]
         },
         "value":16,
         "gender": "M",
@@ -5380,7 +5380,7 @@ const Models: Model[] = [
             }],
             "armor": 4,
             "discipline": 6,
-            "talents": ["Arboreal","Ally[Independent]"]
+            "talents": ["Arboreal","Veteran[1dl RAR,1]","Veteran[Scrounge,1]","Ally[Independent]"]
         },
         "value":16,
         "gender": "M",
@@ -5437,7 +5437,7 @@ const Models: Model[] = [
             }],
             "armor": 3,
             "discipline": 6,
-            "talents": ["Arboreal","Scout"]
+            "talents": ["Arboreal","Scout","Veteran[1dl RAR,1]","Veteran[Scrounge,1]"]
         },
         "value":17,
         "gender": "M",
@@ -5672,7 +5672,7 @@ const Models: Model[] = [
             }],
             "armor": 3,
             "discipline": 10,
-            "talents": ["Fearsome","Frenzy","Tough"],
+            "talents": ["Fearsome","Frenzy","Tough","Veteran[Flurry,1]","Veteran[Steadfast,2]"],
             "abilities": {
                 "strength": 10
             }
@@ -5697,7 +5697,7 @@ const Models: Model[] = [
             }],
             "armor": 3,
             "discipline": 10,
-            "talents": ["Fearsome","Frenzy","Tough","Ally[Independent]"],
+            "talents": ["Fearsome","Frenzy","Tough","Veteran[Flurry,1]","Veteran[Steadfast,2]","Ally[Independent]"],
             "abilities": {
                 "strength": 10
             }
@@ -6522,7 +6522,7 @@ const Models: Model[] = [
             }],
             "armor": 4,
             "discipline": 6,
-            "talents": ["Guardian Shot"]
+            "talents": ["Guardian Shot","Limited"]
         },
         "gender": "M",
         "value": 13,
@@ -9964,6 +9964,33 @@ const Models: Model[] = [
         "race": "Kandoran"
     },
     {
+        "factions": ["Black Rose Bandits", "Black Thron Bandits","Grular Marauders","Shakrim Wavestalkers"],
+        "primaryFaction": "Kandoran Deathmasters",
+        "name": "Eviscerator",
+        "displayName": "Eviscerator",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Spikedrah",
+                "abilities":["de"]
+            }],
+            "armor": 4,
+            "discipline": 10,
+            "talents": ["Dodge","Dodge","Killing Strike","Killing Strike"],
+            "abilities": {
+                "agility": 12,
+                "dexterity": 10
+            }
+        },
+        "gender": "M",
+        "value": 29,
+        "race": "Kandoran"
+    },
+    {
         "factions": ["Shakrim Wavestalkers"],
         "name": "Kobrin",
         "displayName": "Kobrin",
@@ -10021,7 +10048,7 @@ const Models: Model[] = [
         "race": "Chaler"
     },
     {
-        "factions": ["Eclipse Sisterhood"],
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Koronnan Moonsworn"],
         "primaryFaction": "Mershael Corsairs",
         "name": "Sea Ronin",
         "displayName": "Sea Ronin",
@@ -10094,6 +10121,192 @@ const Models: Model[] = [
         "gender": "F",
         "value": 33,
         "race": "Faeler"
+    },
+    {
+        "factions": ["Mershael Corsairs"],
+        "name": "Deck Gunner",
+        "displayName": "Deck Gunner",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Long Knife"
+            }],
+            "range": [{
+                "rating":6,
+                "damage":6,
+                "damageBonus":1,
+                "distance":8,
+                "name":"Bolter",
+                "abilities": ["imp","slr"]
+            }],
+            "armor": 2,
+            "discipline": 6,
+            "talents": ["Quick","Limited"]
+        },
+        "gender": "M",
+        "value": 12,
+        "race": "Chaler"
+    },
+    {
+        "factions": ["Traazorite Crusaders"],
+        "name": "Viper Vanguard",
+        "displayName": "Viper Vanguard",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 6,
+                "damageBonus":1,
+                "name": "Barbed Javelin",
+                "abilities":["ven"]
+            }],
+            "armor": 3,
+            "discipline": 10,
+            "talents": ["Dodge","Dodge","Ambush","Leap Attack","Winged Serpent","Pouncer","Feint","Arboreal"],
+            "skills":[{
+                "name":"Stealth",
+                "rating":8
+            }],
+            "abilities":{
+                "agility":10
+            }
+        },
+        "gender": "M",
+        "value": 32,
+        "race": "Chaler"
+    },
+    {
+        "factions": ["Shakrim Wavestalkers"],
+        "primaryFaction":"Traazorite Crusaders",
+        "name": "Viper Vanguard",
+        "displayName": "Viper Vanguard",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 6,
+                "damageBonus":1,
+                "name": "Barbed Javelin",
+                "abilities":["ven"]
+            }],
+            "armor": 3,
+            "discipline": 10,
+            "talents": ["Dodge","Dodge","Ambush","Leap Attack","Winged Serpent","Pouncer","Feint","Arboreal","Ally[Independent]"],
+            "skills":[{
+                "name":"Stealth",
+                "rating":8
+            }],
+            "abilities":{
+                "agility":10
+            }
+        },
+        "gender": "M",
+        "value": 32,
+        "race": "Chaler"
+    },
+    {
+        "factions": ["Traazorite Crusaders"],
+        "name": "Viper Scout",
+        "displayName": "Viper Scout",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "damageBonus":1,
+                "name": "Barbed Javelin",
+                "abilities":["ven"]
+            }],
+            "armor": 3,
+            "discipline": 6,
+            "talents": ["Scout","Nimble","Harassing","Companion","Arboreal","Limited"]
+        },
+        "gender": "M",
+        "value": 14,
+        "race": "Chaler"
+    },
+    {
+        "factions": ["Shakrim Wavestalkers"],
+        "primaryFaction":"Traazorite Crusaders",
+        "name": "Viper Scout",
+        "displayName": "Viper Scout",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "damageBonus":1,
+                "name": "Barbed Javelin",
+                "abilities":["ven"]
+            }],
+            "armor": 3,
+            "discipline": 6,
+            "talents": ["Scout","Nimble","Harassing","Companion","Arboreal","Limited","Ally[Independent]"]
+        },
+        "gender": "M",
+        "value": 14,
+        "race": "Chaler"
+    },
+    {
+        "factions": ["Urdaggar Tribes of Valor"],
+        "name": "Battle Maiden",
+        "displayName": "Battle Maiden",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Short Sword"
+            }],
+            "shield":"S",
+            "armor": 2,
+            "discipline": 8,
+            "talents": ["Frenzy"]
+        },
+        "gender": "F",
+        "value": 11,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Black Rose Bandits", "Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+        "primaryFaction": "Wandering Allies",
+        "name": "Tarch",
+        "displayName": "Tarch",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "damageBonus":1,
+                "name": "Petadrakh",
+                "abilities":["qs","ven"]
+            }],
+            "armor": 2,
+            "discipline": 10,
+            "talents": ["Wild Magic[d6 Cloak, Illusionary Blades, Mask]","Dodge","Dodge","Rash Magic","Tarch's Fate","Ally[Independent]"],
+            "abilities": {
+                "agility": 14
+            }
+        },
+        "gender": "M",
+        "value": 32,
+        "race": "Chaler"
     }
 ];
 
