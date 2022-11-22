@@ -89,6 +89,9 @@ export class ModelSelectorComponent {
                                 if (['Die Hard', 'Dodge', 'Wraith', 'Shield Bash'].indexOf(talent) > -1) {
                                     model.value += 1;
                                 }
+                                if (talent === 'Sergeant') {
+                                    model.value -= 2;
+                                }
                             }
                             model.type = 'Leader';
                             this.models.push(model);
