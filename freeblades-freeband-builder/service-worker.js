@@ -1,0 +1,1 @@
+self.addEventListener("install",e=>{self.skipWaiting()}),self.addEventListener("activate",e=>{e.waitUntil(self.clients.claim()),e.waitUntil(self.registration.unregister().then(()=>{console.log("NGSW Safety Worker - unregistered old service worker")})),e.waitUntil(caches.keys().then(s=>{const i=s.filter(t=>/^ngsw:/.test(t));return Promise.all(i.map(t=>caches.delete(t)))}))});
