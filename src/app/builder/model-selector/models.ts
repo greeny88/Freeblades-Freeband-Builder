@@ -1610,7 +1610,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 10,
                 "damage": 8,
-                "name": "Kasarl",
+                "name": "Kasari",
                 "abilities": ["hin","qs"]
             }],
             "armor": 3
@@ -1636,7 +1636,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 10,
                 "damage": 8,
-                "name": "Kasarl",
+                "name": "Kasari",
                 "abilities": ["hin","qs"]
             }],
             "armor": 3
@@ -2099,7 +2099,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 10,
                 "damage": 8,
-                "name": "2x Claws"
+                "name": "Claw 2x"
             }],
             "armor": 3
         },
@@ -2124,7 +2124,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 10,
                 "damage": 8,
-                "name": "2x Claws"
+                "name": "Claw 2x"
             }],
             "armor": 3
         },
@@ -2932,7 +2932,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 6,
                 "damage": 6,
-                "name": "2x Long Knife"
+                "name": "Long Knife 2x"
             }],
             "armor": 2
         },
@@ -2961,7 +2961,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 6,
                 "damage": 6,
-                "name": "2x Long Knife"
+                "name": "Long Knife 2x"
             }],
             "armor": 2
         },
@@ -3434,7 +3434,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 8,
                 "damage": 8,
-                "name": "2x Claws"
+                "name": "Claw 2x"
             }],
             "abilities": {
                 "agility": 10
@@ -3459,7 +3459,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 8,
                 "damage": 8,
-                "name": "2x Claws"
+                "name": "Claw 2x"
             }],
             "abilities": {
                 "agility": 10
@@ -4202,7 +4202,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 12,
                 "damage": 8,
-                "name": "2x War Axe"
+                "name": "War Axe 2x"
             }],
             "armor": 6,
             "discipline": 12,
@@ -4227,7 +4227,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 10,
                 "damage": 8,
-                "name": "2x War Axe"
+                "name": "War Axe 2x"
             }],
             "armor": 6,
             "discipline": 10,
@@ -4523,7 +4523,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 10,
                 "damage": 10,
-                "name": "2x War Axe"
+                "name": "War Axe 2x"
             }],
             "armor": 6,
             "discipline": 10,
@@ -4548,7 +4548,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 10,
                 "damage": 10,
-                "name": "2x War Axe"
+                "name": "War Axe 2x"
             }],
             "armor": 6,
             "discipline": 10,
@@ -5238,7 +5238,7 @@ const Models: Model[] = [
                 "rating": 8,
                 "damage": 6,
                 "damageBonus": 1,
-                "name": "Herenkai"
+                "name": "Herenkal"
             }],
             "range": [{
                 "rating": 12,
@@ -5276,14 +5276,14 @@ const Models: Model[] = [
                 "rating": 10,
                 "damage": 6,
                 "damageBonus": 1,
-                "name": "2x Herenkai"
+                "name": "Herenkal 2x"
             }],
             "range": [{
                 "rating": 8,
                 "damage": 6,
                 "damageBonus": 1,
                 "distance": 2,
-                "name": "Herenkai",
+                "name": "Herenkal",
                 "abilities": ["thr"]
             }],
             "armor": 2,
@@ -5309,7 +5309,7 @@ const Models: Model[] = [
                 "rating": 10,
                 "damage": 6,
                 "damageBonus": 1,
-                "name": "Herenkai"
+                "name": "Herenkal"
             }],
             "range": [{
                 "rating": 10,
@@ -5398,7 +5398,7 @@ const Models: Model[] = [
                 "rating": 6,
                 "damage": 6,
                 "damageBonus": 1,
-                "name": "Herenkai"
+                "name": "Herenkal"
             }],
             "range": [{
                 "rating": 8,
@@ -5427,7 +5427,7 @@ const Models: Model[] = [
                 "rating": 6,
                 "damage": 6,
                 "damageBonus": 1,
-                "name": "Herenkai"
+                "name": "Herenkal"
             }],
             "range": [{
                 "rating": 6,
@@ -5568,7 +5568,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 6,
                 "damage": 4,
-                "name": "2x Handclaws"
+                "name": "Handclaws 2x"
             }],
             "armor": 2,
             "discipline": 8,
@@ -5594,7 +5594,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 6,
                 "damage": 4,
-                "name": "2x Handclaws"
+                "name": "Handclaws 2x"
             }],
             "armor": 2,
             "discipline": 8,
@@ -5668,7 +5668,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 10,
                 "damage": 6,
-                "name": "2x Dire Claws"
+                "name": "Dire Claws 2x"
             }],
             "armor": 3,
             "discipline": 10,
@@ -5693,7 +5693,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 10,
                 "damage": 6,
-                "name": "2x Dire Claws"
+                "name": "Dire Claws 2x"
             }],
             "armor": 3,
             "discipline": 10,
@@ -5717,7 +5717,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 8,
                 "damage": 6,
-                "name": "Short sword"
+                "name": "Short Sword"
             }],
             "range":[{
                 "rating":12,
@@ -5755,7 +5755,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 8,
                 "damage": 6,
-                "name": "Short sword"
+                "name": "Short Sword"
             }],
             "range":[{
                 "rating":12,
@@ -5963,7 +5963,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 6,
                 "damage": 6,
-                "name": "Shortsword"
+                "name": "Short Sword"
             }],
             "range":[{
                 "rating":8,
@@ -5995,7 +5995,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 6,
                 "damage": 6,
-                "name": "Shortsword"
+                "name": "Short Sword"
             }],
             "range":[{
                 "rating":8,
@@ -6198,7 +6198,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 10,
                 "damage": 6,
-                "name": "2x Sanghara"
+                "name": "Sanghara 2x"
             }],
             "armor": 2,
             "discipline": 10,
@@ -6228,7 +6228,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 10,
                 "damage": 6,
-                "name": "2x Sanghara"
+                "name": "Sanghara 2x"
             }],
             "armor": 2,
             "discipline": 10,
@@ -6258,7 +6258,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 10,
                 "damage": 6,
-                "name": "2x Sanghara"
+                "name": "Sanghara 2x"
             }],
             "armor": 2,
             "discipline": 10,
@@ -7009,7 +7009,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 10,
                 "damage": 8,
-                "name": "2x Claws"
+                "name": "Claw 2x"
             }],
             "armor": 5,
             "discipline": 10,
@@ -7034,7 +7034,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 10,
                 "damage": 8,
-                "name": "2x Claws"
+                "name": "Claw 2x"
             }],
             "armor": 5,
             "discipline": 10,
@@ -7171,7 +7171,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 8,
                 "damage": 8,
-                "name": "2x Claws",
+                "name": "Claw 2x",
                 "abilities": ["dec"]
             }],
             "armor": 5,
@@ -7193,7 +7193,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 6,
                 "damage": 8,
-                "name": "Spear",
+                "name": "Longspear",
                 "abilities": ["so"]
             }],
             "range":[{
@@ -8135,7 +8135,7 @@ const Models: Model[] = [
         "race": "Trillian"
     },
     {
-        "factions": ["Urdaggar Tribes of Valor"],
+        "factions": ["Urdaggar Tribes of Ruin", "Urdaggar Tribes of Valor"],
         "name": "Kaorl",
         "displayName": "Kaorl",
         "type": "Standard",
@@ -9343,7 +9343,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 8,
                 "damage": 4,
-                "name": "2x Fists"
+                "name": "Fist 2x"
             }],
             "armor": 4,
             "discipline": 8,
@@ -9431,7 +9431,7 @@ const Models: Model[] = [
             },{
                 "rating": 8,
                 "damage": 8,
-                "name": "2x Claws"
+                "name": "Claw 2x"
             },{
                 "rating": 8,
                 "damage": 8,
@@ -9728,7 +9728,7 @@ const Models: Model[] = [
             },{
                 "rating":8,
                 "damage":8,
-                "name":"2x Claws"
+                "name":"Claw 2x"
             }],
             "range": [{
                 "rating":10,
@@ -9762,7 +9762,7 @@ const Models: Model[] = [
             },{
                 "rating":8,
                 "damage":8,
-                "name":"2x Claws"
+                "name":"Claw 2x"
             }],
             "range": [{
                 "rating":10,
@@ -9832,7 +9832,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 10,
                 "damage": 8,
-                "name": "2x Claws"
+                "name": "Claw 2x"
             }],
             "armor": 3,
             "discipline": 8,
@@ -9857,7 +9857,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 10,
                 "damage": 8,
-                "name": "2x Claws"
+                "name": "Claw 2x"
             }],
             "armor": 3,
             "discipline": 8,
@@ -9948,7 +9948,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 10,
                 "damage": 8,
-                "name": "Spikedrah",
+                "name": "Spikedrakh",
                 "abilities":["de"]
             }],
             "armor": 4,
@@ -9975,7 +9975,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 10,
                 "damage": 8,
-                "name": "Spikedrah",
+                "name": "Spikedrakh",
                 "abilities":["de"]
             }],
             "armor": 4,
@@ -10084,7 +10084,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 10,
                 "damage": 8,
-                "name": "2x War Axe"
+                "name": "War Axe 2x"
             }],
             "armor": 3,
             "discipline": 10,
@@ -10109,7 +10109,7 @@ const Models: Model[] = [
             "melee": [{
                 "rating": 10,
                 "damage": 8,
-                "name": "2x War Axe"
+                "name": "War Axe 2x"
             }],
             "armor": 3,
             "discipline": 10,
@@ -10260,7 +10260,7 @@ const Models: Model[] = [
         "race": "Chaler"
     },
     {
-        "factions": ["Urdaggar Tribes of Valor"],
+        "factions": ["Urdaggar Tribes of Ruin", "Urdaggar Tribes of Valor"],
         "name": "Battle Maiden",
         "displayName": "Battle Maiden",
         "type": "Standard",
@@ -10307,6 +10307,189 @@ const Models: Model[] = [
         "gender": "M",
         "value": 32,
         "race": "Chaler"
+    },
+    {
+        "factions": ["Urdaggar Tribes of Ruin"],
+        "name": "Dark Herald",
+        "displayName": "Dark Herald",
+        "type": "Leader",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 8,
+                "damage": 6,
+                "name": "Staff",
+                "abilities":["te"]
+            }],
+            "casting": {
+                "power": 15,
+                "rating": 10
+            },
+            "armor": 2,
+            "discipline": 12,
+            "talents": ["Leader","Shoot Them!","Carrion Harvest","Dodge"]
+        },
+        "gender": "F",
+        "value": 39,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Urdaggar Tribes of Ruin"],
+        "name": "Vanquisher",
+        "displayName": "Vanquisher",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "War Mattock"
+            }],
+            "armor": 4,
+            "discipline": 10,
+            "talents": ["Adamant","Bold","Bull Rush","Die Hard","Die Hard"],
+            "abilities": {
+                "endurance": 10,
+                "strength": 10
+            }
+        },
+        "gender": "M",
+        "value": 30,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Urdaggar Tribes of Ruin"],
+        "name": "Destroyer",
+        "displayName": "Destroyer",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 12,
+                "damage": 10,
+                "name": "War Mattock"
+            }],
+            "armor": 4,
+            "discipline": 10,
+            "talents": ["Adamant","Adamant","Fearless","Bull Rush","Die Hard","Die Hard"],
+            "abilities": {
+                "endurance": 10,
+                "strength": 10
+            }
+        },
+        "gender": "M",
+        "value": 37,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Urdaggar Tribes of Ruin"],
+        "name": "Predator",
+        "displayName": "Predator",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "War Axe"
+            }],
+            "range": [{
+                "rating": 8,
+                "damage": 8,
+                "distance": 2,
+                "name": "War Axe",
+                "abilities": ["thr"]
+            }],
+            "shield": "S",
+            "armor": 3,
+            "discipline": 10,
+            "talents": ["Dodge","Dodge","Infiltrate","Scavenger","Alpha[War Jackal]","Pack Attack"],
+            "abilities": {
+                "agility": 12
+            }
+        },
+        "gender": "M",
+        "value": 32,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Urdaggar Tribes of Ruin"],
+        "name": "Tangler",
+        "displayName": "Tangler",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 8,
+                "damage": 8,
+                "name": "Ripper",
+                "abilities": ["let"]
+            }],
+            "range": [{
+                "rating": 10,
+                "damage": 4,
+                "distance": 3,
+                "name": "Spider Net",
+                "abilities": ["thr","ent","stky"]
+            }],
+            "armor": 4,
+            "discipline": 8,
+            "talents": ["Elusive","Harasser","Parry","Precise Throw"],
+            "abilities": {
+                "dexterity": 10
+            }
+        },
+        "gender": "F",
+        "value": 27,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Urdaggar Tribes of Ruin"],
+        "name": "Thralls",
+        "displayName": "Thralls",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 5,
+            "melee": [{
+                "rating": 4,
+                "damage": 6,
+                "name": "Short Spear"
+            }],
+            "shield": "S",
+            "armor": 2,
+            "discipline": 4,
+            "talents": ["Fodder","Thralled","Unskilled"]
+        },
+        "gender": "F",
+        "value": 5,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Urdaggar Tribes of Ruin"],
+        "name": "War Jackal",
+        "displayName": "War Jackal",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 8,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Bite"
+            }],
+            "armor": 2,
+            "discipline": 6,
+            "talents": ["Infiltrate","Pack Attack","Scavenger","Warbeast","Feral"]
+        },
+        "gender": "M",
+        "value": 10,
+        "race": "Faeler"
     }
 ];
 

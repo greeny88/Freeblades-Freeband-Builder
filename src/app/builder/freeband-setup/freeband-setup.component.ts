@@ -42,6 +42,7 @@ export class FreebandSetupComponent implements OnInit {
             'Shakrim Wavestalkers',
             'Traazorite Crusaders',
             'Trilian Seekers',
+            'Urdaggar Tribes of Ruin',
             'Urdaggar Tribes of Valor'
         ];
         this.altLeader = false;

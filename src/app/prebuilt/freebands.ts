@@ -156,7 +156,7 @@ const PreBuiltFreebands: {name:string, faction:string, freebandLimit:number, alt
         {'displayName': 'Wanderer'}
     ]
 }, {
-    'name': 'Urdaggar Starter Set',
+    'name': 'Urdaggar(Valor) Starter Set',
     'faction': 'Urdaggar Tribes of Valor',
     'freebandLimit': 150,
     'altLeader': false,
@@ -167,6 +167,19 @@ const PreBuiltFreebands: {name:string, faction:string, freebandLimit:number, alt
         {'displayName': 'Berserker'},
         {'displayName': 'Slinger'},
         {'displayName': 'Unproven'}
+    ]
+}, {
+    'name': 'Urdaggar(Ruin) Starter Set',
+    'faction': 'Urdaggar Tribes of Ruin',
+    'freebandLimit': 150,
+    'altLeader': false,
+    'models': [
+        {'displayName': 'Dark Herald', 'type': 'Leader'},
+        {'displayName': 'Destroyer'},
+        {'displayName': 'Predator'},
+        {'displayName': 'Tangler'},
+        {'displayName': 'War Jackal'},
+        {'displayName': 'Thralls'}
     ]
 }, {
     'name': 'Traazorite Starter Set',

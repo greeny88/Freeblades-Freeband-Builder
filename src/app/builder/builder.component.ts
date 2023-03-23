@@ -53,7 +53,8 @@ export class BuilderComponent implements OnInit {
             'Shakrim Wavestalkers': this.shakrimRules,
             'Traazorite Crusaders': this.traazoriteRules,
             'Trilian Seekers': this.trilianRules,
-            'Urdaggar Tribes of Valor': this.urdaggarRules
+            'Urdaggar Tribes of Ruin': this.urdaggarRuinRules,
+            'Urdaggar Tribes of Valor': this.urdaggarValorRules
         };
         this.lrbVersion = this.lrbService.version;
         this.builderPage = this.lrbService.buildingRules;
@@ -695,7 +696,11 @@ export class BuilderComponent implements OnInit {
         return undefined;
     }
 
-    private urdaggarRules(model: Model): string | undefined {
+    private urdaggarRuinRules(model: Model): string | undefined {
+        return undefined;
+    }
+
+    private urdaggarValorRules(model: Model): string | undefined {
         let hunterCount = 0;
         for (let key in this.models) {
             if (this.models[key]['name'] === 'Hunter') {
@@ -703,7 +708,7 @@ export class BuilderComponent implements OnInit {
             }
         }
         if (hunterCount > 0 && (this.limit / hunterCount) < 75) {
-            return "Urdaggar can only have one Hunter for each 75 points in the freeband's base value.";
+            return "Urdaggar(Valor) can only have one Hunter for each 75 points in the freeband's base value.";
         }
         return undefined;
     }
