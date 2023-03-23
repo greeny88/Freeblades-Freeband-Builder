@@ -14,7 +14,7 @@ export interface MeleeWeapon {
     abilityList?: string,
     damage: number,
     damageBonus?: number,
-    name: string,
+    name: "Banehammer" | "Barbed Javelin" | "Barbed Whip" | "Battleaxe" | "Bite" | "Boarding Pike" | "Broadsword" | "Claw" | "Claw 2x" | "Cleaver" | "Club" | "Cutlass" | "Dagger" | "Dire Claws" | "Dire Claws 2x" | "Falchion" | "Fist" | "Fist 2x" | "Flail" | "Gadget" | "Great Club" | "Greatsword" | "Handclaws" | "Handclaws 2x" | "Hartblade" | "Heavy Falchion" | "Herenkal" | "Herenkal 2x" | "Ice Axe" | "Impaler" | "Javelin" | "Kasari" | "Knife" | "Kolekar" | "Kranara" | "Lance" | "Long Knife" | "Long Knife 2x" | "Longspear" | "Longsword" | "Mace" | "Moonsglave" | "Moonsickle" | "Morning Star" | "Morph" | "Najana" | "Net" | "Parry Dagger" | "Petadrakh" | "Pike" | "Pit Glave" | "Razorfang" | "Ripper" | "Rusty Blade" | "Saber" | "Sakhazet" | "Sanghara" | "Sanghara 2x" | "Scythe" | "Shadowspear" | "Short Spear" | "Short Sword" | "Skull Staff" | "Spikedrakh" | "Staff" | "Tail" | "Taumari" | "Thorn" | "Thresher" | "Toloron" | "Trident" | "War Axe" | "War Axe 2x" | "War Mattock" | "Warhammer" | "Warhorse" | "Whip" | "Wolfsword" | "Zeradrakh",
     rating: number,
     ratingBonus?: number
 }
