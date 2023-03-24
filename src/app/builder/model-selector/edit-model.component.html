@@ -33,8 +33,8 @@
     <ng-container *ngFor="let minj of modelInjuries; index as i">
         <br/>
         <mat-form-field>
-            <mat-select (selectionChange)="addInjury(minj, i)" [value]="minj">
-                <mat-option *ngFor="let inj of injuries" [value]="inj">{{inj}}</mat-option>
+            <mat-select [value]="minj">
+                <mat-option *ngFor="let inj of injuries" [value]="inj" (onSelectionChange)="addInjury(inj, i)">{{inj}}</mat-option>
             </mat-select>
         </mat-form-field>
         <button mat-button class="mat-raised-button" (click)="removeInjuries(minj)">Remove</button>
@@ -45,8 +45,8 @@
     <ng-container *ngFor="let mi of modelItems; index as i">
         <br/>
         <mat-form-field>
-            <mat-select (selectionChange)="addItem(mi, i)" [value]="mi">
-                <mat-option *ngFor="let itm of items" [value]="itm">{{itm.name}}</mat-option>
+            <mat-select [value]="mi">
+                <mat-option *ngFor="let itm of items" [value]="itm" (onSelectionChange)="addItem(itm, i)">{{itm.name}}</mat-option>
             </mat-select>
         </mat-form-field>
         <button mat-button class="mat-raised-button" (click)="removeItem(mi)">Remove</button>

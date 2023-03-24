@@ -6,7 +6,7 @@ export interface Advancement {
 export interface Items {
     advancement?: string,
     cost: number,
-    name: string | undefined
+    name: string
 }
 
 export interface MeleeWeapon {

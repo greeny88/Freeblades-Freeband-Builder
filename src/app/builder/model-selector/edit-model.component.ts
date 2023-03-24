@@ -2,7 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { Abilities, Equipment, MagicItems, Skills, Talents } from './advancements';
-import { Advancement, Items, Model, ModelStats } from '../../model';
+import { Advancement, Items, Model, ModelStats } from 'src/app/model';
 
 @Component({
     selector: 'edit-model',
@@ -33,15 +33,12 @@ export class EditModelComponent {
         this.modelItems = [];
         this.originalModelStats = JSON.parse(JSON.stringify(this.model.stats));
         if ('advancements' in this.model.stats) {
-            this.updateAdvancementCount();
             this.modelAdvancements = this.model.stats.advancements;
         }
         if ('injuries' in this.model.stats) {
-            this.updateInjuryCount();
             this.modelInjuries = this.model.stats.injuries;
         }
         if ('items' in this.model.stats) {
-            this.updateItemCount();
             this.modelItems = this.model.stats.items;
         }
         if (this.model.stats.talents) {
@@ -59,6 +56,18 @@ export class EditModelComponent {
     }
 
     ngOnInit() { }
+
+    ngOnDestroy() {
+        if ('advancements' in this.model.stats) {
+            this.model.stats.advancements = this.model.stats.advancements?.filter( adv => adv);
+        }
+        if ('injuries' in this.model.stats) {
+            this.model.stats.injuries = this.model.stats.injuries?.filter( inj => inj);
+        }
+        if ('items' in this.model.stats) {
+            this.model.stats.items = this.model.stats.items?.filter( itm => itm);
+        }
+    }
 
     addAdvancement() {
         this.model.stats.advancements = this.modelAdvancements;
