@@ -4064,7 +4064,7 @@ const Models: Model[] = [
             "shield": "S",
             "armor": 6,
             "discipline": 12,
-            "talents": ["Leader","Steadfast","Parry","Parry","Shield Bash"],
+            "talents": ["Leader","Steadfast","Parry","Parry","Shield Bash","Veteran[AV7, 2]"],
             "abilities":{
                 "dexterity":10
             }
@@ -4090,7 +4090,7 @@ const Models: Model[] = [
             "shield": "S",
             "armor": 6,
             "discipline": 10,
-            "talents": ["Steadfast","Parry","Parry","Shield Bash","Ally[Independent]"],
+            "talents": ["Steadfast","Parry","Parry","Shield Bash","Veteran[AV7, 2]","Ally[Independent]"],
             "abilities":{
                 "dexterity":10
             }
@@ -4161,12 +4161,15 @@ const Models: Model[] = [
                 "damage": 10,
                 "name": "Battleaxe"
             }],
-            "armor": 7,
+            "armor": 6,
             "discipline": 12,
-            "talents": ["Leader","Steadfast","Die Hard","Die Hard","Wild Charge","Bull Rush","Impact","Impetuous"]
+            "talents": ["Leader","Steadfast","Die Hard","Die Hard","Wild Charge","Bull Rush","Impact","Impetuous"],
+            "abilities": {
+                "endurance": 10
+            }
         },
         "type": "Leader",
-        "value": 39,
+        "value": 41,
         "gender": "M",
         "race": "Faeler"
     },
@@ -4183,12 +4186,15 @@ const Models: Model[] = [
                 "damage": 10,
                 "name": "Battleaxe"
             }],
-            "armor": 7,
+            "armor": 6,
             "discipline": 10,
-            "talents": ["Steadfast","Die Hard","Die Hard","Wild Charge","Bull Rush","Impact","Impetuous","Ally[Independent]"]
+            "talents": ["Steadfast","Die Hard","Die Hard","Wild Charge","Bull Rush","Impact","Impetuous","Ally[Independent]"],
+            "abilities": {
+                "endurance": 10
+            }
         },
         "type": "Standard",
-        "value": 32,
+        "value": 34,
         "gender": "M",
         "race": "Faeler"
     },
@@ -4204,7 +4210,7 @@ const Models: Model[] = [
                 "damage": 8,
                 "name": "War Axe 2x"
             }],
-            "armor": 6,
+            "armor": 7,
             "discipline": 12,
             "talents": ["Leader","Steadfast","Block","Protector"],
             "abilities": {
@@ -4212,7 +4218,7 @@ const Models: Model[] = [
             }
         },
         "type": "Leader",
-        "value": 39,
+        "value": 41,
         "gender": "M",
         "race": "Faeler"
     },
@@ -4229,7 +4235,7 @@ const Models: Model[] = [
                 "damage": 8,
                 "name": "War Axe 2x"
             }],
-            "armor": 6,
+            "armor": 7,
             "discipline": 10,
             "talents": ["Steadfast","Block","Protector","Ally[Independent]"],
             "abilities": {
@@ -4237,7 +4243,7 @@ const Models: Model[] = [
             }
         },
         "type": "Standard",
-        "value": 32,
+        "value": 34,
         "gender": "M",
         "race": "Faeler"
     },
@@ -4263,7 +4269,7 @@ const Models: Model[] = [
                 "name": "Warhorse"
             }],
             "shield": "S",
-            "armor": 6,
+            "armor": 7,
             "discipline": 12,
             "talents": ["Leader","Steadfast","Parry","Bladeflash","Cavalry","Warhorse","Fast"],
             "abilities": {
@@ -4272,7 +4278,7 @@ const Models: Model[] = [
             }
         },
         "type": "Leader",
-        "value": 50,
+        "value": 52,
         "gender": "F",
         "race": "Faeler"
     },
@@ -4299,7 +4305,7 @@ const Models: Model[] = [
                 "name": "Warhorse"
             }],
             "shield": "S",
-            "armor": 6,
+            "armor": 7,
             "discipline": 10,
             "talents": ["Steadfast","Parry","Bladeflash","Cavalry","Warhorse","Fast","Ally[Independent]"],
             "abilities": {
@@ -4307,8 +4313,8 @@ const Models: Model[] = [
                 "spirit": 10
             }
         },
-        "type": "Leader",
-        "value": 43,
+        "type": "Standard",
+        "value": 45,
         "gender": "F",
         "race": "Faeler"
     },
@@ -4383,14 +4389,14 @@ const Models: Model[] = [
                 "name": "Longsword"
             }],
             "shield": "S",
-            "armor": 6,
+            "armor": 7,
             "discipline": 10,
             "talents": ["Parry","Parry","Shield Bash"],
             "abilities": {
                 "dexterity": 10
             }
         },
-        "value": 30,
+        "value": 32,
         "gender": "M",
         "race": "Faeler"
     },
@@ -4409,14 +4415,14 @@ const Models: Model[] = [
                 "name": "Longsword"
             }],
             "shield": "S",
-            "armor": 6,
+            "armor": 7,
             "discipline": 10,
             "talents": ["Parry","Parry","Shield Bash","Ally[Independent]"],
             "abilities": {
                 "dexterity": 10
             }
         },
-        "value": 30,
+        "value": 32,
         "gender": "M",
         "race": "Faeler"
     },
@@ -4482,11 +4488,14 @@ const Models: Model[] = [
                 "damage": 10,
                 "name": "Battleaxe"
             }],
-            "armor": 7,
+            "armor": 6,
             "discipline": 10,
-            "talents": ["Die Hard","Die Hard","Wild Charge","Bull Rush","Impact","Impetuous"]
+            "talents": ["Die Hard","Die Hard","Wild Charge","Bull Rush","Impact","Impetuous"],
+            "abilities": {
+                "endurance": 10
+            }
         },
-        "value": 30,
+        "value": 32,
         "gender": "M",
         "race": "Faeler"
     },
@@ -4506,9 +4515,12 @@ const Models: Model[] = [
             }],
             "armor": 7,
             "discipline": 10,
-            "talents": ["Die Hard","Die Hard","Wild Charge","Bull Rush","Impact","Impetuous","Ally[Independent]"]
+            "talents": ["Die Hard","Die Hard","Wild Charge","Bull Rush","Impact","Impetuous","Ally[Independent]"],
+            "abilities": {
+                "endurance": 10
+            }
         },
-        "value": 30,
+        "value": 32,
         "gender": "M",
         "race": "Faeler"
     },
@@ -4525,14 +4537,14 @@ const Models: Model[] = [
                 "damage": 10,
                 "name": "War Axe 2x"
             }],
-            "armor": 6,
+            "armor": 7,
             "discipline": 10,
             "talents": ["Block","Protector"],
             "abilities": {
                 "endurance": 10
             }
         },
-        "value": 30,
+        "value": 32,
         "gender": "M",
         "race": "Faeler"
     },
@@ -4550,14 +4562,14 @@ const Models: Model[] = [
                 "damage": 10,
                 "name": "War Axe 2x"
             }],
-            "armor": 6,
+            "armor": 7,
             "discipline": 10,
             "talents": ["Block","Protector"],
             "abilities": {
                 "endurance": 10
             }
         },
-        "value": 30,
+        "value": 32,
         "gender": "M",
         "race": "Faeler"
     },
@@ -4643,14 +4655,14 @@ const Models: Model[] = [
                 "name": "Warhorse"
             }],
             "shield": "S",
-            "armor": 6,
+            "armor": 7,
             "discipline": 10,
             "talents": ["Steadfast","Parry","Bladeflash","Cavalry","Warhorse","Fast"],
             "abilities": {
                 "dexterity": 10
             }
         },
-        "value": 41,
+        "value": 43,
         "gender": "F",
         "race": "Faeler"
     },
@@ -4678,14 +4690,14 @@ const Models: Model[] = [
                 "name": "Warhorse"
             }],
             "shield": "S",
-            "armor": 6,
+            "armor": 7,
             "discipline": 10,
             "talents": ["Steadfast","Parry","Bladeflash","Cavalry","Warhorse","Fast","Ally[Independent]"],
             "abilities": {
                 "dexterity": 10
             }
         },
-        "value": 41,
+        "value": 43,
         "gender": "F",
         "race": "Faeler"
     },
@@ -9964,7 +9976,7 @@ const Models: Model[] = [
         "race": "Kandoran"
     },
     {
-        "factions": ["Black Rose Bandits", "Black Thron Bandits","Grular Marauders","Shakrim Wavestalkers"],
+        "factions": ["Black Rose Bandits", "Black Thorn Bandits","Grular Invaders","Shakrim Wavestalkers"],
         "primaryFaction": "Kandoran Deathmasters",
         "name": "Eviscerator",
         "displayName": "Eviscerator",
@@ -10489,6 +10501,258 @@ const Models: Model[] = [
         },
         "gender": "M",
         "value": 10,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
+        "name": "Forsworn",
+        "displayName": "Forsworn",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 9,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Longsword"
+            }],
+            "shield": "S",
+            "armor": 5,
+            "discipline": 10,
+            "talents": ["Calvary","Parry","Parry","Shield Bash"],
+            "skills": [{
+                "name": "Thievery",
+                "rating": 8
+            }],
+            "abilities": {
+                "dexterity": 10,
+                "strength": 10
+            }
+        },
+        "gender": "M",
+        "value": 36,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Haradelan Questers"],
+        "name": "High Questor of Valia",
+        "displayName": "High Questor of Valia",
+        "type": "Leader",
+        "stats": {
+            "type": "Hero",
+            "speed": 5,
+            "melee": [{
+                "rating": 12,
+                "damage": 8,
+                "name": "Longsword"
+            }],
+            "shield": "S",
+            "armor": 6,
+            "discipline": 12,
+            "talents": ["Leader","Parry","Parry","Heroic Attack"],
+            "abilities": {
+                "strength": 10,
+                "spirit": 10
+            }
+        },
+        "gender": "F",
+        "value": 39,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Haradelan Questers"],
+        "name": "Sword of Valia",
+        "displayName": "Sword of Valia",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 5,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Longsword"
+            }],
+            "shield": "S",
+            "armor": 6,
+            "discipline": 10,
+            "talents": ["Parry","Parry","Heroic Attack"],
+            "abilities": {
+                "strength": 10,
+                "spirit": 10
+            }
+        },
+        "gender": "F",
+        "value": 32,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Kandoran Deathmasters"],
+        "name": "Abductor",
+        "displayName": "Abductor",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 10,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Spikedrakh",
+                "abilities": ["de"]
+            }],
+            "range": [{
+                "rating": 10,
+                "damage": 0,
+                "distance": 4,
+                "name": "Lasso",
+                "abilities": ["thr","pin","pul"]
+            }],
+            "armor": 4,
+            "discipline": 8,
+            "talents": ["Calvary","Light Calvary","Harasser","Deft Rider","Subdue","Scout","Fast"],
+            "skills": [{
+                "name": "Hunt",
+                "rating": 8
+            }]
+        },
+        "gender": "M",
+        "value": 33,
+        "race": "Kandoran"
+    },
+    {
+        "factions": ["Kandoran Deathmasters"],
+        "name": "Scrounger",
+        "displayName": "Scrounger",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Long Knife"
+            }],
+            "armor": 4,
+            "discipline": 6,
+            "talents": ["Infiltrate","Scrounge"],
+            "skills": [{
+                "name": "Find",
+                "rating": 8
+            }]
+        },
+        "gender": "M",
+        "value": 10,
+        "race": "Kandoran"
+    },
+    {
+        "factions": ["Koronnan Moonsworn"],
+        "name": "Skirmisher",
+        "displayName": "Skirmisher",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 8,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Javelin"
+            }],
+            "range": [{
+                "rating": 6,
+                "damage": 6,
+                "distance": 4,
+                "name": "Javelin",
+                "abilities": ["thr"]
+            }],
+            "armor": 4,
+            "discipline": 6
+        },
+        "gender": "M",
+        "value": 10,
+        "race": "Kandoran"
+    },
+    {
+        "factions": ["Kuzaarik Forgers"],
+        "name": "Field Warden",
+        "displayName": "Field Warden",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 5,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Hunting Spear",
+                "abilities": ["pin"]
+            }],
+            "range": [{
+                "rating": 10,
+                "damage": 8,
+                "distance": 10,
+                "name": "Composite Bow"
+            }],
+            "armor": 3,
+            "discipline": 8,
+            "talents": ["Die Hard","Scout","Confine","Contain","Wayfinder"],
+            "abilities": {
+                "endurance": 10
+            }
+        },
+        "gender": "M",
+        "value": 31,
+        "race": "Kuzaarik"
+    },
+    {
+        "factions": ["Kuzaarik Forgers"],
+        "name": "Trapper",
+        "displayName": "Trapper",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 5,
+            "melee": [{
+                "rating": 6,
+                "damage": 8,
+                "name": "Hunting Spear",
+                "abilities": ["pin"]
+            }],
+            "armor": 3,
+            "discipline": 6,
+            "talents": ["Die Hard","Alpine","Limited"],
+            "skills": [{
+                "name": "Snares",
+                "rating": 8
+            }],
+            "abilities": {
+                "endurance": 8
+            }
+        },
+        "gender": "M",
+        "value": 14,
+        "race": "Kuzaarik"
+    },
+    {
+        "factions": ["Ravenblade Mercenaries"],
+        "name": "Executioner",
+        "displayName": "Executioner",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 5,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "Tavsetar",
+                "abilities": ["lb"]
+            }],
+            "armor": 4,
+            "discipline": 10,
+            "talents": ["Hardened","Parry","Parry"],
+            "abilities": {
+                "strength": 10
+            }
+        },
+        "gender": "M",
+        "value": 30,
         "race": "Faeler"
     }
 ];
