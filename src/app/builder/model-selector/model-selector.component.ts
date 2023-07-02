@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { EditModelComponent } from './edit-model.component';
 import { ModelSelectorService } from './model-selector.service';
-import { Model } from '../../model';
+import { Factions, Model } from 'src/app/model.d';
 import { Models } from './models';
 
 @Component({
@@ -14,7 +14,7 @@ import { Models } from './models';
 export class ModelSelectorComponent {
     @Input() altLeader : boolean = false;
     @Input() componentId : string | undefined = undefined;
-    @Input() faction : string = '';
+    @Input() faction : typeof Factions[number] | undefined;
     @Input() type : string = '';
     @Input() selectedModel : Model | undefined = undefined;
     @Output() onModelRemoved = new EventEmitter<any>();
@@ -44,7 +44,7 @@ export class ModelSelectorComponent {
     }
 
     ngOnChanges(changes: SimpleChanges) {
-        if ('altLeader' in changes || 'faction' in changes) {
+        if (('altLeader' in changes || 'faction' in changes) && this.faction) {
             this.model = undefined;
             this.models = [];
             if (this.altLeader && this.disallowedAltLeadersFactions.indexOf(this.faction)) {
@@ -112,7 +112,7 @@ export class ModelSelectorComponent {
                     }
                 }
             } else {
-                this.models = this.factionModels.filter(model => model.type === this.type && model.factions.indexOf(this.faction) > -1);
+                this.models = this.factionModels.filter(model => this.faction && model.type === this.type && model.factions.indexOf(this.faction) > -1);
             }
             this.models.sort((a,b) => {
                 if (a.name < b.name) {
@@ -130,25 +130,30 @@ export class ModelSelectorComponent {
                 if (!this.selected) {
                     throw '';
                 }
-                this.selected.gender = this.selectedModel['gender']
-                if ('characterName' in this.selectedModel && this.selectedModel['characterName']) {
-                    this.selected.characterName = this.selectedModel['characterName'];
+                this.selected.gender = this.selectedModel.gender
+                if ('characterName' in this.selectedModel && this.selectedModel.characterName) {
+                    this.selected.characterName = this.selectedModel.characterName;
                 }
-                if ('advancements' in this.selectedModel && this.selectedModel['advancements']) {
-                    this.selected.stats.advancements = this.selectedModel['advancements'];
-                }
-                if ('injuries' in this.selectedModel && this.selectedModel['injuries']) {
-                    this.selected.stats.injuries = this.selectedModel['injuries'];
-                }
-                if ('items' in this.selectedModel && this.selectedModel['items']) {
-                    this.selected.stats.items = this.selectedModel['items'];
-                }
-                if ('veteranAdvancements' in this.selectedModel && this.selectedModel['veteranAdvancements']) {
-                    this.selected.stats.veteranAdvancements = this.selectedModel['veteranAdvancements'];
+                if (this.selectedModel.stats) {
+                    if (this.selectedModel.stats?.advancements) {
+                        this.selected.stats.advancements = this.selectedModel.stats.advancements;
+                    }
+                    if (this.selectedModel.stats?.injuries) {
+                        this.selected.stats.injuries = this.selectedModel.stats.injuries;
+                    }
+                    if (this.selectedModel.stats?.items) {
+                        this.selected.stats.items = this.selectedModel.stats.items;
+                    }
+                    if (this.selectedModel.stats?.options) {
+                        this.selected.stats.options = this.selectedModel.stats.options;
+                    }
+                    if (this.selectedModel.stats?.veteranAdvancements) {
+                        this.selected.stats.veteranAdvancements = this.selectedModel.stats.veteranAdvancements;
+                    }
                 }
                 this.modelSelected();
             } catch (error) {
-                console.error(`Issue finding selected model ${this.selectedModel['displayName']}`, error);
+                console.error(`Issue finding selected model ${this.selectedModel.displayName}`, error);
             }
         }
     }
