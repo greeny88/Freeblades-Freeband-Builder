@@ -12,10 +12,6 @@ const Models: Model[] = [
             "discipline": 12,
             "type": "Hero",
             "talents": ["Leader","Fortress", "Die Hard", "Tough", "March", "Alpine"],
-            "skills": [{
-                "name": "Devices",
-                "rating": 8
-            }],
             "speed": 5,
             "melee": [{
                 "rating": 12,
@@ -23,7 +19,16 @@ const Models: Model[] = [
                 "name": "Warhammer"
             }],
             "shield": "S",
-            "armor": 6
+            "armor": 6,
+            "options": [{
+                "name": "Devices",
+                "rating": 8,
+                "selected": true,
+                "type": "skill"
+            },{
+                "name": "Maul[1,Warhammer]",
+                "type": "talent"
+            }]
         },
         "type": "Leader",
         "value": 39,
@@ -8555,7 +8560,10 @@ const Models: Model[] = [
             }],
             "armor": 5,
             "discipline": 10,
-            "talents": ["Parry","Parry","Champion[Kantor]","Active Defense","Confine","Contain","Protector"]
+            "talents": ["Parry","Parry","Champion[Kantor]","Active Defense","Confine","Contain","Protector"],
+            "abilities": {
+                "dexterity": 10
+            }
         },
         "gender": "F",
         "value": 33,
@@ -8578,7 +8586,10 @@ const Models: Model[] = [
             }],
             "armor": 5,
             "discipline": 10,
-            "talents": ["Parry","Parry","Champion[Kantor]","Active Defense","Confine","Contain","Protector","Ally[Independent]"]
+            "talents": ["Parry","Parry","Champion[Kantor]","Active Defense","Confine","Contain","Protector","Ally[Independent]"],
+            "abilities": {
+                "dexterity": 10
+            }
         },
         "gender": "F",
         "value": 33,
