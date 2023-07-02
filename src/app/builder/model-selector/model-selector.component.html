@@ -55,14 +55,14 @@
             <div><span class="bold-text">SPR: </span>d{{model.stats.abilities.spirit}}</div>
             <div><span class="bold-text">STR: </span>d{{model.stats.abilities.strength}}</div>
         </div>
-        <div class="modelDisplayRow" *ngIf="model.stats.skills?.length > 0">
+        <div class="modelDisplayRow" *ngIf="model.stats.skillList">
             <div><span class="bold-text">Skills:</span> {{model.stats.skillList}}</div>
             <div><span class="bold-text">Skill Bonus:</span> {{model.stats.skillBonus}}</div>
         </div>
-        <div class="modelDisplayRow" *ngIf="model.stats.talents?.length > 0">
+        <div class="modelDisplayRow" *ngIf="model.stats.talentList">
             <div><span class="bold-text">Talents:</span> {{model.stats.talentList}}</div>
         </div>
-        <div class="modelDisplayRow" *ngIf="model.stats.items?.length > 0">
+        <div class="modelDisplayRow" *ngIf="model.stats.itemList">
             <div><span class="bold-text">Items:</span> {{model.stats.itemList}}</div>
         </div>
     </ng-container>
