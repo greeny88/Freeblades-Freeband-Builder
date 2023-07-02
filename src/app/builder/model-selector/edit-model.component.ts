@@ -41,18 +41,18 @@ export class EditModelComponent {
         if ('items' in this.model.stats) {
             this.modelItems = this.model.stats.items;
         }
-        if (this.model.stats.talents) {
-            const veteranTalents = this.model.stats.talents.filter(talent => talent.indexOf('Veteran') > -1);
-            this.veteranAdvancements = veteranTalents.map(adv => {
-                let advStats = adv.slice(8,-1).split(',', 2);
-                // console.log(`advStats: ${advStats}`);
-                let name: string = advStats[0];
-                let cost: number = parseInt(advStats[1]);
-                return {name, cost};
-            });
-            // console.log(`this.veteranAdvancements: ${this.veteranAdvancements}`);
-            this.modelVeteranAdvancements = Array(this.veteranAdvancements.length).fill({'name':undefined,'cost':0});
-        }
+        // if (this.model.stats.talents) {
+        //     const veteranTalents = this.model.stats.talents.filter(talent => talent.indexOf('Veteran') > -1);
+        //     this.veteranAdvancements = veteranTalents.map(adv => {
+        //         let advStats = adv.slice(8,-1).split(',', 2);
+        //         // console.log(`advStats: ${advStats}`);
+        //         let name: string = advStats[0];
+        //         let cost: number = parseInt(advStats[1]);
+        //         return {name, cost};
+        //     });
+        //     // console.log(`this.veteranAdvancements: ${this.veteranAdvancements}`);
+        //     this.modelVeteranAdvancements = Array(this.veteranAdvancements.length).fill({'name':undefined,'cost':0});
+        // }
     }
 
     ngOnInit() { }
