@@ -24,14 +24,16 @@ interface stats {
 export class ModelSelectorService {
     private abilityList: string[] = ['agility', 'dexterity', 'endurance', 'knowledge', 'spirit', 'strength'];
     private abilityTiers: number[] = [10, 14, 20, 30];
+    private primarySkills: string[] = ['Climb','Find','Jump','Swim'];
 
     constructor() {}
 
-    private addAdvancement(stats: ModelStats, abilities: string[], advancementName: string | undefined) {
+    private addAdvancement(stats: ModelStats, abilities: string[], advancementName: string | undefined, details?: any) {
         if (!advancementName) {
             return;
         }
         if (Skills.includes(advancementName)) {
+            const base_rating = (details && details.rating) ? details.rating : (stats.type === 'Hero' && this.primarySkills.includes(advancementName)) ? 8 : 6;
             if (stats.skills) {
                 let skillFound: boolean = false;
                 for (let skill of stats.skills) {
@@ -41,10 +43,10 @@ export class ModelSelectorService {
                     }
                 }
                 if (!skillFound) {
-                    stats.skills.push({'name':advancementName, 'rating':6});
+                    stats.skills.push({'name':advancementName, 'rating': base_rating});
                 }
             } else {
-                stats.skills = [{'name':advancementName,'rating':6}];
+                stats.skills = [{'name':advancementName,'rating': base_rating}];
             }
         } else if (Abilities.includes(advancementName)) {
             const abilityReference : any = {'AGL':'agility','DEX':'dexterity','END':'endurance','KNW':'knowledge','SPR':'spirit','STR':'strength'};
@@ -94,10 +96,17 @@ export class ModelSelectorService {
         }
         abilities = (<any>Object).assign(abilities, stats.abilities);
 
+        if (stats.options) {
+            for (let opt of stats.options) {
+                if (opt.selected) {
+                    this.addAdvancement(stats, abilities, opt.name, opt);
+                }
+            }
+        }
+
         if (!('advancements' in stats)) {
             stats.advancements = [];
         }
-        // console.log(stats.advancements);
         if (stats.advancements) {
             for (let adv of stats.advancements) {
                 this.addAdvancement(stats, abilities, adv.name);
@@ -108,7 +117,6 @@ export class ModelSelectorService {
         if (!('items' in stats)) {
             stats.items = [];
         }
-        // console.log(stats.items);
         if (stats.items) {
             for (let item of stats.items) {
                 if (!item) {
@@ -124,7 +132,6 @@ export class ModelSelectorService {
         if (!('injuries' in stats)) {
             stats.injuries = [];
         }
-        // console.log(stats.injuries);
         if (stats.injuries) {
             for (let inj of stats.injuries) {
                 if (Abilities.includes(inj)) {
