@@ -51,7 +51,6 @@ export interface ModelStats {
         rating: number,
         ratingBonus?: number
     },
-    defense?: number,
     discipline: number,
     injuries?: string[],
     items?: Items[],
@@ -60,6 +59,12 @@ export interface ModelStats {
     melee?: MeleeWeapon[],
     modelValue?: number,
     moraleBonus?: number,
+    options?: {
+        name: string,
+        rating?: number,
+        selected?: boolean,
+        type: string,
+    }[],
     range?: RangeWeapon[],
     shield?: "AN" | "AS" | "B" | "L" | "P" | "S",
     skillBonus?: number,
@@ -69,14 +74,22 @@ export interface ModelStats {
     talents?: string[],
     talentList?: string,
     type: "Follower" | "Hero",
+    veteran?: {
+        cost: number,
+        name: string,
+        rating?: number,
+        type: string,
+    }[],
     veteranAdvancements?: Advancement[]
 }
+
+export const Factions: ["Black Rose Bandits", "Black Thorn Bandits", "Darkgrove Demons", "Demons of Karelon", "Eclipse Sisterhood", "Falkaaran Adventurers", "Grular Invaders", "Haradelan Questers", "Kandoran Deathmasters", "Koronnan Moonsworn", "Kuzaarik Forgers", "Mershael Corsairs", "Ravenblade Mercenaries", "Shakrim Wavestalkers", "Traazorite Crusaders", "Trilian Seekers", "Urdaggar Tribes of Ruin", "Urdaggar Tribes of Valor"];
 
 export interface Model {
     characterName?: string,
     component_id?: string,
     displayName: string,
-    factions: ("Black Rose Bandits" | "Black Thorn Bandits" | "Darkgrove Demons" | "Demons of Karelon" | "Eclipse Sisterhood" | "Falkaaran Adventurers" | "Grular Invaders" | "Haradelan Questers" | "Kandoran Deathmasters" | "Koronnan Moonsworn" | "Kuzaarik Forgers" | "Mershael Corsairs" | "Ravenblade Mercenaries" | "Shakrim Wavestalkers" | "Traazorite Crusaders" | "Trilian Seekers" | "Urdaggar Tribes of Ruin" | "Urdaggar Tribes of Valor")[],
+    factions: (typeof Factions[number])[],
     gender: "M" | "F",
     name: string,
     primaryFaction?: string,
