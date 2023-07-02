@@ -2,10 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar, MatSnackBarRef } from '@angular/material/snack-bar';
 
-import { CommunicatorService } from '../communicator.service';
-import { DbService } from '../db.service';
-import { LRBService } from '../lrb.service';
-import { Model } from '../model';
+import { CommunicatorService } from 'src/app/communicator.service';
+import { DbService } from 'src/app/db.service';
+import { LRBService } from 'src/app/lrb.service';
+import { Factions, Model } from 'src/app/model.d';
+
+type FactionList = typeof Factions[number];
 
 @Component({
     selector: 'app-builder',
@@ -22,8 +24,8 @@ export class BuilderComponent implements OnInit {
     completeHeroCount: number = 0;
     errorMessages: string[];
     extraModels: string[] = [];
-    faction: string = '';
-    private factionRules: {[key: string]: Function};
+    faction: FactionList | '' = '';
+    private factionRules: {[key in FactionList]: (model: Model) => string | undefined};
     freebandBaseValue: number = 0;
     freebandTotalValue: number = 0;
     leaderId: string;
@@ -96,6 +98,9 @@ export class BuilderComponent implements OnInit {
     }
 
     calculateFreeband() {
+        if (!this.faction) {
+            return;
+        }
         let allyFaction: string | undefined = undefined;
         let allyFollowerCount: number = 0;
         let allyHeroCount: number = 0;
@@ -329,7 +334,7 @@ export class BuilderComponent implements OnInit {
         this.calculateFreeband();
     }
 
-    optionsSet(options: {freebandLimit: number, faction: string, altLeader: boolean}) {
+    optionsSet(options: {freebandLimit: number, faction: FactionList, altLeader: boolean}) {
         this.limit = options.freebandLimit;
         if (this.faction !== options.faction) {
             this.reset();
@@ -365,7 +370,7 @@ export class BuilderComponent implements OnInit {
         this.calculateFreeband();
     }
 
-    private addErrorMessage(msg: string) {
+    private addErrorMessage(msg: string | undefined) {
         if (msg && this.errorMessages.indexOf(msg) < 0) {
             this.errorMessages.push(msg);
         }
@@ -481,12 +486,15 @@ export class BuilderComponent implements OnInit {
                 const m = {
                     displayName: model.displayName, 
                     type: model.type,
-                    advancements: ('stats' in model && 'advancements' in model.stats) ? model.stats.advancements : null,
-                    items: ('stats' in model && 'items' in model.stats) ? model.stats.items : null,
-                    injuries: ('stats' in model && 'injuries' in model.stats) ? model.stats.injuries : null,
-                    veteranAdvancements: ('stats' in model && 'veteranAdvancements' in model.stats) ? model.stats.veteranAdvancements : null,
-                    characterName: ('characterName' in model) ? model.characterName : null,
-                    gender: ('gender' in model) ? model.gender : null
+                    stats: {
+                        advancements: (model.stats?.advancements) ? model.stats.advancements : null,
+                        items: (model.stats?.items) ? model.stats.items : null,
+                        injuries: (model.stats?.injuries) ? model.stats.injuries : null,
+                        options: (model.stats?.options) ? model.stats.options : null,
+                        veteranAdvancements: (model.stats?.veteranAdvancements) ? model.stats.veteranAdvancements : null,
+                    },
+                    characterName: (model.characterName) ? model.characterName : null,
+                    gender: (model.gender) ? model.gender : null
                 };
                 return m;
             })
@@ -522,20 +530,6 @@ export class BuilderComponent implements OnInit {
     }
 
     private haradelanRules(model: Model): string | undefined {
-        let questorCount = 0;
-        let apprenticeCount = 0;
-        for (let key in this.models) {
-            if (this.models[key].name.indexOf('Questing') > -1) {
-                questorCount++;
-            }
-            if (this.models[key].name.indexOf('Apprentice') > -1) {
-                apprenticeCount++;
-            }
-        }
-        if (questorCount > 0 && questorCount > (apprenticeCount+1)) {
-            return 'Haradelan many only have one more Questing knight than Apprentice knight.';
-        }
-        
         if (model.name.indexOf("Sho'pel") > -1) {
             let ravenFound: boolean = false;
             for (let key in this.models) {
