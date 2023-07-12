@@ -50,8 +50,14 @@ export class ModelSelectorService {
             }
         } else if (Abilities.includes(advancementName)) {
             const abilityReference : any = {'AGL':'agility','DEX':'dexterity','END':'endurance','KNW':'knowledge','SPR':'spirit','STR':'strength'};
+            if (details && details.rating) {
+                abilities[abilityReference[advancementName]] = details.rating;
+            }
             abilities[abilityReference[advancementName]] += 2;
         } else if (Talents.includes(advancementName)) {
+            if (!('talents' in stats)) {
+                stats.talents = [];
+            }
             stats.talents?.push(advancementName);
         } else {
             if (advancementName === 'MAR') {
@@ -82,6 +88,9 @@ export class ModelSelectorService {
                 stats.speed += 1;
                 return;
             }
+            if (!('talents' in stats)) {
+                stats.talents = [];
+            }
             stats.talents?.push(advancementName);
         }
     }
@@ -100,6 +109,15 @@ export class ModelSelectorService {
             for (let opt of stats.options) {
                 if (opt.selected) {
                     this.addAdvancement(stats, abilities, opt.name, opt);
+                }
+            }
+        }
+
+        if (stats.veteran) {
+            for (let vet of stats.veteran) {
+                if (vet.selected) {
+                    this.addAdvancement(stats, abilities, vet.name, vet);
+                    // modelValue += vet.cost;
                 }
             }
         }

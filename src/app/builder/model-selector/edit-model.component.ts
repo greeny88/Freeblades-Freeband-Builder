@@ -3,6 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { Abilities, Equipment, MagicItems, Skills, Talents } from './advancements';
 import { Advancement, Items, Model, ModelStats } from 'src/app/model';
+import { MatRadioChange } from '@angular/material/radio';
 
 @Component({
     selector: 'edit-model',
@@ -23,9 +24,7 @@ export class EditModelComponent {
     modelAdvancements: Advancement[] | undefined;
     modelInjuries: (string|undefined)[] | undefined;
     modelItems: any[] | undefined;
-    modelVeteranAdvancements: Advancement[] | undefined;
     originalModelStats: ModelStats;
-    veteranAdvancements: Advancement[] | undefined;
 
     constructor(private dialogRef: MatDialogRef<any>, @Inject(MAT_DIALOG_DATA) public model: Model) {
         this.modelAdvancements = [];
@@ -41,18 +40,6 @@ export class EditModelComponent {
         if ('items' in this.model.stats) {
             this.modelItems = this.model.stats.items;
         }
-        // if (this.model.stats.talents) {
-        //     const veteranTalents = this.model.stats.talents.filter(talent => talent.indexOf('Veteran') > -1);
-        //     this.veteranAdvancements = veteranTalents.map(adv => {
-        //         let advStats = adv.slice(8,-1).split(',', 2);
-        //         // console.log(`advStats: ${advStats}`);
-        //         let name: string = advStats[0];
-        //         let cost: number = parseInt(advStats[1]);
-        //         return {name, cost};
-        //     });
-        //     // console.log(`this.veteranAdvancements: ${this.veteranAdvancements}`);
-        //     this.modelVeteranAdvancements = Array(this.veteranAdvancements.length).fill({'name':undefined,'cost':0});
-        // }
     }
 
     ngOnInit() { }
@@ -91,13 +78,13 @@ export class EditModelComponent {
         }
     }
 
-    addVeteranTalent() {
-        this.model.stats.veteranAdvancements = this.modelVeteranAdvancements;
-    }
-
     cancel(): void {
         this.model.stats = JSON.parse(JSON.stringify(this.originalModelStats));
         this.dialogRef.close();
+    }
+
+    changeOption(event: MatRadioChange) {
+        this.model.stats.options?.map(opt => opt.selected = event.value.name === opt.name ? true : false);
     }
 
     removeAdvancement(adv: Advancement) {

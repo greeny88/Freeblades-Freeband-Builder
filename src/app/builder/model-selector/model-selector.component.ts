@@ -147,8 +147,8 @@ export class ModelSelectorComponent {
                     if (this.selectedModel.stats?.options) {
                         this.selected.stats.options = this.selectedModel.stats.options;
                     }
-                    if (this.selectedModel.stats?.veteranAdvancements) {
-                        this.selected.stats.veteranAdvancements = this.selectedModel.stats.veteranAdvancements;
+                    if (this.selectedModel.stats?.veteran) {
+                        this.selected.stats.veteran = this.selectedModel.stats.veteran;
                     }
                 }
                 this.modelSelected();
@@ -189,7 +189,10 @@ export class ModelSelectorComponent {
             return;
         }
         this.model = JSON.parse(JSON.stringify(model));
-        this.model.stats = (<any>Object).assign(this.model.stats, this.modelSelectorService.calculateStats(model.stats, model.value));
+        if (this.model.stats?.veteran) {
+            this.model.value = this.model.stats.veteran.reduce((sum: number, current:any) => current.selected ? sum + current.cost : sum, model.value)
+        }
+        this.model.stats = (<any>Object).assign(this.model.stats, this.modelSelectorService.calculateStats(model.stats, this.model.value));
         this.model.component_id = this.componentId;
         if (!('stats' in this.model)) {
             console.error(`Error getting stats of ${this.model.displayName}`);

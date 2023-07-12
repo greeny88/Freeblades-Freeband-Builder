@@ -491,7 +491,7 @@ export class BuilderComponent implements OnInit {
                         items: (model.stats?.items) ? model.stats.items : null,
                         injuries: (model.stats?.injuries) ? model.stats.injuries : null,
                         options: (model.stats?.options) ? model.stats.options : null,
-                        veteranAdvancements: (model.stats?.veteranAdvancements) ? model.stats.veteranAdvancements : null,
+                        veteran: (model.stats?.veteran) ? model.stats.veteran : null,
                     },
                     characterName: (model.characterName) ? model.characterName : null,
                     gender: (model.gender) ? model.gender : null
