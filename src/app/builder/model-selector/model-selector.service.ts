@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 
 import { Abilities, Skills, Talents } from './advancements';
-import { ModelStats } from '../../model';
+import { ModelStats, RangeWeapon } from '../../model';
 
 interface stats {
     abilities: Object,
+    armor: number,
     casting?: Object,
     defense: number,
     discipline: number,
@@ -60,6 +61,27 @@ export class ModelSelectorService {
             }
             stats.talents?.push(advancementName);
         } else {
+            // TODO: handle adding new weapon
+            if (advancementName.startsWith('RW')) {
+                const [ rating, name, damage, distance, weaponAbilities ] = advancementName.split(':')[1].split('|');
+                const weapon: RangeWeapon = {
+                    name,
+                    rating: parseInt(rating),
+                    distance: parseInt(distance),
+                    damage: parseInt(damage)
+                };
+                if (weaponAbilities) {
+                    weapon.abilities = weaponAbilities.split(',');
+                }
+
+                if (stats.range) {
+                    stats.range.push(weapon);
+                } else {
+                    stats.range = [weapon];
+                }
+                console.log(stats.range);
+                return;
+            }
             if (advancementName === 'MAR') {
                 stats.melee?.map(melee => {
                     melee.rating += 2;
@@ -86,6 +108,10 @@ export class ModelSelectorService {
             }
             if (advancementName === 'SPD') {
                 stats.speed += 1;
+                return;
+            }
+            if (advancementName.startsWith('AV')) {
+                stats.armor = parseInt(advancementName.charAt(2));
                 return;
             }
             if (!('talents' in stats)) {
@@ -117,7 +143,6 @@ export class ModelSelectorService {
             for (let vet of stats.veteran) {
                 if (vet.selected) {
                     this.addAdvancement(stats, abilities, vet.name, vet);
-                    // modelValue += vet.cost;
                 }
             }
         }
@@ -262,6 +287,7 @@ export class ModelSelectorService {
         
         let updatedStats: stats = {
             abilities,
+            'armor': stats.armor,
             defense,
             'discipline': stats.discipline,
             itemList,
@@ -277,6 +303,7 @@ export class ModelSelectorService {
         if (stats.melee) {
             let melee = stats.melee;
             for (let weapon of melee) {
+                // TODO: merge in base weapon stats
                 weapon.ratingBonus = ratingBonus;
                 weapon.damageBonus = (weapon.damageBonus) ? damageBonus + weapon.damageBonus : damageBonus;
                 if (weapon.abilities) {
@@ -289,6 +316,7 @@ export class ModelSelectorService {
         if (stats.range) {
             let range = stats.range;
             for (let weapon of range) {
+                // TODO: merge in base weapon stats
                 weapon.ratingBonus = ratingBonus;
                 weapon.damageBonus = (weapon.damageBonus) ? damageBonus + weapon.damageBonus : damageBonus;
                 if (weapon.abilities) {
