@@ -62,8 +62,7 @@ export interface ModelStats {
     options?: {
         name: string,
         rating?: number,
-        selected?: boolean,
-        type: string
+        selected?: boolean
     }[],
     range?: RangeWeapon[],
     shield?: "AN" | "AS" | "B" | "L" | "P" | "S",
@@ -78,8 +77,7 @@ export interface ModelStats {
         cost: number,
         name: string,
         rating?: number,
-        selected?: boolean,
-        type: string
+        selected?: boolean
     }[],
     veteranAdvancements?: Advancement[]
 }

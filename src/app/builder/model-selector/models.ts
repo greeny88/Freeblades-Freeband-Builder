@@ -23,11 +23,9 @@ const Models: Model[] = [
             "options": [{
                 "name": "Devices",
                 "rating": 8,
-                "selected": true,
-                "type": "skill"
+                "selected": true
             },{
-                "name": "Maul[1,Warhammer]",
-                "type": "talent"
+                "name": "Maul[1,Warhammer]"
             }]
         },
         "type": "Leader",
@@ -58,7 +56,14 @@ const Models: Model[] = [
                 "name": "Warhammer"
             }],
             "shield": "S",
-            "armor": 6
+            "armor": 6,
+            "options": [{
+                "name": "Devices",
+                "rating": 8,
+                "selected": true
+            },{
+                "name": "Maul[1,Warhammer]"
+            }]
         },
         "type": "Standard",
         "value": 32,
@@ -878,9 +883,15 @@ const Models: Model[] = [
                 "rating": 6,
                 "damage": 8
             }],
-            "talents": ["Veteran[DISC,1]", "Veteran[Squire,1]"],
             "armor": 3,
-            "shield": "S"
+            "shield": "S",
+            "veteran": [{
+                "name": "DISC",
+                "cost": 1
+            },{
+                "name": "Squire",
+                "cost": 1
+            }]
         },
         "type": "Standard",
         "value": 11,
@@ -901,9 +912,16 @@ const Models: Model[] = [
                 "rating": 6,
                 "damage": 8
             }],
-            "talents": ["Veteran[DISC,1]", "Veteran[Squire,1]","Ally[Independent]"],
+            "talents": ["Ally[Independent]"],
             "armor": 3,
-            "shield": "S"
+            "shield": "S",
+            "veteran": [{
+                "name": "DISC",
+                "cost": 1
+            },{
+                "name": "Squire",
+                "cost": 1
+            }]
         },
         "type": "Standard",
         "value": 11,
@@ -924,9 +942,16 @@ const Models: Model[] = [
                 "rating": 6,
                 "damage": 8
             }],
-            "talents": ["Veteran[DISC,1]", "Veteran[Squire,1]","Ally[Independent]"],
+            "talents": ["Ally[Independent]"],
             "armor": 3,
-            "shield": "S"
+            "shield": "S",
+            "veteran": [{
+                "name": "DISC",
+                "cost": 1
+            },{
+                "name": "Squire",
+                "cost": 1
+            }]
         },
         "type": "Standard",
         "value": 11,
@@ -1099,7 +1124,7 @@ const Models: Model[] = [
         "stats": {
             "discipline": 12,
             "type": "Hero",
-            "talents": ["Leader","Parry","Leap Attack","Cavalry","Fast"],
+            "talents": ["Leader","Parry","Leap Attack","Cavalry","Fast","Bladeflash"],
             "speed": 9,
             "melee": [{
                 "rating": 12,
@@ -1116,7 +1141,7 @@ const Models: Model[] = [
             "armor": 5
         },
         "type": "Leader",
-        "value": 39,
+        "value": 41,
         "gender": "M",
         "race": "Chaler"
     },
@@ -1127,7 +1152,7 @@ const Models: Model[] = [
         "stats": {
             "discipline": 12,
             "type": "Hero",
-            "talents": ["Leader","Parry","Parry"],
+            "talents": ["Leader","Parry","Parry","Bladeflash"],
             "speed": 6,
             "melee": [{
                 "rating": 12,
@@ -1140,7 +1165,7 @@ const Models: Model[] = [
             "armor": 5
         },
         "type": "Leader",
-        "value": 33,
+        "value": 35,
         "gender": "M",
         "race": "Chaler"
     },
@@ -1177,7 +1202,7 @@ const Models: Model[] = [
         "stats": {
             "discipline": 10,
             "type": "Hero",
-            "talents": ["Parry","Bladeflash","Veteran[Conquer,1]", "Veteran[Taunt,1]"],
+            "talents": ["Parry","Bladeflash"],
             "speed": 6,
             "melee": [{
                 "rating": 12,
@@ -1187,7 +1212,14 @@ const Models: Model[] = [
                 "damageBonus": 1
             }],
             "shield": "L",
-            "armor": 5
+            "armor": 5,
+            "veteran": [{
+                "name": "Conquer",
+                "cost": 1
+            },{
+                "name": "Taunt",
+                "cost": 1
+            }]
         },
         "type": "Standard",
         "value": 28,
@@ -1273,7 +1305,7 @@ const Models: Model[] = [
             "shield": "S"
         },
         "type": "Standard",
-        "value": 27,
+        "value": 26,
         "gender": "M",
         "race": "Chaler"
     },
@@ -1492,7 +1524,7 @@ const Models: Model[] = [
             "armor": 4
         },
         "type": "Standard",
-        "value": 13,
+        "value": 12,
         "gender": "M",
         "race": "Beast"
     },
@@ -1610,7 +1642,7 @@ const Models: Model[] = [
             },
             "discipline": 10,
             "type": "Hero",
-            "talents": ["Dodge","Quick","Confine","Amphibious","Veteran[Sergeant[Seafarer,DeckGunner],2]"],
+            "talents": ["Dodge","Quick","Confine","Amphibious"],
             "speed": 7,
             "melee": [{
                 "rating": 10,
@@ -1618,7 +1650,11 @@ const Models: Model[] = [
                 "name": "Kasari",
                 "abilities": ["hin","qs"]
             }],
-            "armor": 3
+            "armor": 3,
+            "veteran": [{
+                "name": "Sergeant[Seafarer,DeckGunner]",
+                "cost": 2
+            }]
         },
         "type": "Standard",
         "value": 28,
@@ -1636,7 +1672,7 @@ const Models: Model[] = [
             },
             "discipline": 10,
             "type": "Hero",
-            "talents": ["Dodge","Quick","Confine","Amphibious","Veteran[Sergeant[Seafarer,DeckGunner],2]","Ally[Independent]"],
+            "talents": ["Dodge","Quick","Confine","Amphibious","Ally[Independent]"],
             "speed": 7,
             "melee": [{
                 "rating": 10,
@@ -1644,7 +1680,11 @@ const Models: Model[] = [
                 "name": "Kasari",
                 "abilities": ["hin","qs"]
             }],
-            "armor": 3
+            "armor": 3,
+            "veteran": [{
+                "name": "Sergeant[Seafarer,DeckGunner]",
+                "cost": 2
+            }]
         },
         "type": "Standard",
         "value": 28,
@@ -3312,7 +3352,7 @@ const Models: Model[] = [
         "stats": {
             "discipline": 10,
             "type": "Hero",
-            "talents": ["Parry","Hardened","Fortress","Mountaineer","Veteran[Tough,2]"],
+            "talents": ["Parry","Hardened","Fortress","Mountaineer"],
             "speed": 5,
             "melee": [{
                 "rating": 10,
@@ -3323,7 +3363,11 @@ const Models: Model[] = [
                 "strength": 10
             },
             "armor": 6,
-            "shield": "S"
+            "shield": "S",
+            "veteran": [{
+                "name": "Tough",
+                "cost": 2
+            }]
         },
         "type": "Standard",
         "value": 29,
@@ -3338,7 +3382,7 @@ const Models: Model[] = [
         "stats": {
             "discipline": 10,
             "type": "Hero",
-            "talents": ["Parry","Hardened","Fortress","Mountaineer","Veteran[Tough,2]","Ally[Independent]"],
+            "talents": ["Parry","Hardened","Fortress","Mountaineer","Ally[Independent]"],
             "speed": 5,
             "melee": [{
                 "rating": 10,
@@ -3349,7 +3393,11 @@ const Models: Model[] = [
                 "strength": 10
             },
             "armor": 6,
-            "shield": "S"
+            "shield": "S",
+            "veteran": [{
+                "name": "Tough",
+                "cost": 2
+            }]
         },
         "type": "Standard",
         "value": 29,
@@ -3871,7 +3919,7 @@ const Models: Model[] = [
             "discipline": 8,
             "type": "Hero",
             "speed": 10,
-            "talents": ["Cavalry","Light Cavalry","Scout","Harasser","Fast","Veteran[Deft Rider,1]"],
+            "talents": ["Cavalry","Light Cavalry","Scout","Harasser","Fast"],
             "melee": [{
                 "rating": 8,
                 "damage": 8,
@@ -3884,7 +3932,11 @@ const Models: Model[] = [
                 "distance": 10,
                 "name": "Composite Bow"
             }],
-            "armor": 4
+            "armor": 4,
+            "veteran": [{
+                "name": "Deft Rider",
+                "cost": 1
+            }]
         },
         "type": "Standard",
         "value": 29,
@@ -4069,10 +4121,14 @@ const Models: Model[] = [
             "shield": "S",
             "armor": 6,
             "discipline": 12,
-            "talents": ["Leader","Steadfast","Parry","Parry","Shield Bash","Veteran[AV7, 2]"],
+            "talents": ["Leader","Steadfast","Parry","Parry","Shield Bash"],
             "abilities":{
                 "dexterity":10
-            }
+            },
+            "veteran": [{
+                "name": "AV7",
+                "cost": 2
+            }]
         },
         "type": "Leader",
         "value": 39,
@@ -4095,10 +4151,14 @@ const Models: Model[] = [
             "shield": "S",
             "armor": 6,
             "discipline": 10,
-            "talents": ["Steadfast","Parry","Parry","Shield Bash","Veteran[AV7, 2]","Ally[Independent]"],
+            "talents": ["Steadfast","Parry","Parry","Shield Bash","Ally[Independent]"],
             "abilities":{
                 "dexterity":10
-            }
+            },
+            "veteran": [{
+                "name": "AV7",
+                "cost": 2
+            }]
         },
         "type": "Standard",
         "value": 32,
@@ -4722,7 +4782,14 @@ const Models: Model[] = [
             "shield": "S",
             "armor": 6,
             "discipline": 8,
-            "talents": ["Parry","Sergeant[Muster]","Shield Bash"]
+            "talents": ["Parry","Shield Bash"],
+            "options": [{
+                "name": "Sergeant[Muster]",
+                "selected": true
+            },{
+                "name": "DEX",
+                "rating": 10
+            }]
         },
         "value": 26,
         "gender": "F",
@@ -4745,7 +4812,14 @@ const Models: Model[] = [
             "shield": "S",
             "armor": 6,
             "discipline": 8,
-            "talents": ["Parry","Sergeant[Muster]","Shield Bash","Ally[Independent]"]
+            "talents": ["Parry","Shield Bash","Ally[Independent]"],
+            "options": [{
+                "name": "Sergeant[Muster]",
+                "selected": true
+            },{
+                "name": "DEX",
+                "rating": 10
+            }]
         },
         "value": 26,
         "gender": "F",
@@ -4766,10 +4840,16 @@ const Models: Model[] = [
             }],
             "armor": 6,
             "discipline": 8,
-            "talents": ["Parry","Sergeant[Muster]"],
+            "talents": ["Parry"],
             "abilities": {
                 "strength": 10
-            }
+            },
+            "options": [{
+                "name": "Sergeant[Muster]",
+                "selected": true
+            },{
+                "name": "Steadfast"
+            }]
         },
         "value": 26,
         "gender": "M",
@@ -4791,10 +4871,16 @@ const Models: Model[] = [
             }],
             "armor": 6,
             "discipline": 8,
-            "talents": ["Parry","Sergeant[Muster]","Ally[Independent]"],
+            "talents": ["Parry","Ally[Independent]"],
             "abilities": {
                 "strength": 10
-            }
+            },
+            "options": [{
+                "name": "Sergeant[Muster]",
+                "selected": true
+            },{
+                "name": "Steadfast"
+            }]
         },
         "value": 26,
         "gender": "M",
@@ -4815,7 +4901,13 @@ const Models: Model[] = [
             }],
             "armor": 6,
             "discipline": 8,
-            "talents": ["Die Hard","Sergeant[Muster]","Bull Rush","Impact","Impetuous"]
+            "talents": ["Die Hard","Bull Rush","Impact","Impetuous"],
+            "options": [{
+                "name": "Sergeant[Muster]",
+                "selected": true
+            },{
+                "name": "Die Hard"
+            }]
         },
         "value": 26,
         "gender": "M",
@@ -4837,7 +4929,13 @@ const Models: Model[] = [
             }],
             "armor": 6,
             "discipline": 8,
-            "talents": ["Die Hard","Sergeant[Muster]","Bull Rush","Impact","Impetuous","Ally[Independent]"]
+            "talents": ["Die Hard","Bull Rush","Impact","Impetuous","Ally[Independent]"],
+            "options": [{
+                "name": "Sergeant[Muster]",
+                "selected": true
+            },{
+                "name": "Die Hard"
+            }]
         },
         "value": 26,
         "gender": "M",
@@ -5204,9 +5302,12 @@ const Models: Model[] = [
             "abilities": {
                 "agility": 10
             },
-            "skills": [{
+            "options": [{
                 "name": "Hunt",
+                "selected": true,
                 "rating": 8
+            },{
+                "name": "Ambush"
             }]
         },
         "value": 30,
@@ -5368,9 +5469,16 @@ const Models: Model[] = [
             }],
             "armor": 4,
             "discipline": 6,
-            "talents": ["Arboreal","Veteran[1dl RAR,1]","Veteran[Scrounge,1]"]
+            "talents": ["Arboreal"],
+            "veteran": [{
+                "name": "MAR",
+                "cost": 1
+            },{
+                "name": "Scrounge",
+                "cost": 1
+            }]
         },
-        "value":16,
+        "value":15,
         "gender": "M",
         "race": "Trillian"
     },
@@ -5397,9 +5505,16 @@ const Models: Model[] = [
             }],
             "armor": 4,
             "discipline": 6,
-            "talents": ["Arboreal","Veteran[1dl RAR,1]","Veteran[Scrounge,1]","Ally[Independent]"]
+            "talents": ["Arboreal","Ally[Independent]"],
+            "veteran": [{
+                "name": "MAR",
+                "cost": 1
+            },{
+                "name": "Scrounge",
+                "cost": 1
+            }]
         },
-        "value":16,
+        "value":15,
         "gender": "M",
         "race": "Trillian"
     },
@@ -5454,7 +5569,14 @@ const Models: Model[] = [
             }],
             "armor": 3,
             "discipline": 6,
-            "talents": ["Arboreal","Scout","Veteran[1dl RAR,1]","Veteran[Scrounge,1]"]
+            "talents": ["Arboreal","Scout"],
+            "veteran": [{
+                "name": "RAR",
+                "cost": 1
+            },{
+                "name": "Scrounge",
+                "cost": 1
+            }]
         },
         "value":17,
         "gender": "M",
@@ -5689,10 +5811,17 @@ const Models: Model[] = [
             }],
             "armor": 3,
             "discipline": 10,
-            "talents": ["Fearsome","Frenzy","Tough","Veteran[Flurry,1]","Veteran[Steadfast,2]"],
+            "talents": ["Fearsome","Frenzy","Tough"],
             "abilities": {
                 "strength": 10
-            }
+            },
+            "veteran": [{
+                "name": "Flurry",
+                "cost": 1
+            },{
+                "name": "Steadfast",
+                "cost": 2
+            }]
         },
         "value":32,
         "gender": "M",
@@ -5714,10 +5843,17 @@ const Models: Model[] = [
             }],
             "armor": 3,
             "discipline": 10,
-            "talents": ["Fearsome","Frenzy","Tough","Veteran[Flurry,1]","Veteran[Steadfast,2]","Ally[Independent]"],
+            "talents": ["Fearsome","Frenzy","Tough","Ally[Independent]"],
             "abilities": {
                 "strength": 10
-            }
+            },
+            "veteran": [{
+                "name": "Flurry",
+                "cost": 1
+            },{
+                "name": "Steadfast",
+                "cost": 2
+            }]
         },
         "value":32,
         "gender": "M",
@@ -7285,7 +7421,11 @@ const Models: Model[] = [
             }],
             "armor": 2,
             "discipline": 4,
-            "talents": ["Undead","Slow","Mindless","Expendable","Pack Attack","Feral"]
+            "talents": ["Undead","Slow","Mindless","Expendable","Pack Attack","Feral"],
+            "veteran": [{
+                "name": "Claw gains dec",
+                "cost": 1
+            }]
         },
         "gender": "M",
         "value": 6,
@@ -7509,10 +7649,17 @@ const Models: Model[] = [
             "shield":"L",
             "armor": 5,
             "discipline": 10,
-            "talents": ["Parry","Veteran[Fortress,1]","Veteran[Raven Stance,1]"],
+            "talents": ["Parry"],
             "abilities":{
                 "strength":10
-            }
+            },
+            "veteran": [{
+                "name": "Fortress",
+                "cost": 1
+            },{
+                "name": "Raven Stance",
+                "cost": 1
+            }]
         },
         "gender": "F",
         "value": 28,
@@ -7941,7 +8088,7 @@ const Models: Model[] = [
             }],
             "armor": 3,
             "discipline": 10,
-            "talents": ["Dodge","Scout","Harasser","Fly[Low,SPD 10]","Light Cavalry"],
+            "talents": ["Dodge","Scout","Harasser","Fly[Low,SPD 10]","Light Cavalry","Calvary"],
             "abilities": {
                 "agility": 10,
                 "dexterity": 10
@@ -7975,7 +8122,7 @@ const Models: Model[] = [
             }],
             "armor": 3,
             "discipline": 10,
-            "talents": ["Dodge","Scout","Harasser","Fly[Low,SPD 10]","Light Cavalry"],
+            "talents": ["Dodge","Scout","Harasser","Fly[Low,SPD 10]","Light Cavalry","Calvary"],
             "abilities": {
                 "agility": 10,
                 "dexterity": 10
@@ -7987,8 +8134,8 @@ const Models: Model[] = [
     },
     {
         "factions": ["Falkaaran Adventurers"],
-        "name": "Perakkir",
-        "displayName": "Perakkir (Dismounted)",
+        "name": "Perakkir Scout",
+        "displayName": "Perakkir Scout",
         "type": "Standard",
         "stats": {
             "type": "Hero",
@@ -8020,8 +8167,8 @@ const Models: Model[] = [
     {
         "factions": ["Haradelan Questers","Ravenblade Mercenaries"],
         "primaryFaction":"Falkaaran Adventurers",
-        "name": "Perakkir",
-        "displayName": "Perakkir (Dismounted)",
+        "name": "Perakkir Scout",
+        "displayName": "Perakkir Scout",
         "type": "Standard",
         "stats": {
             "type": "Hero",
@@ -8066,7 +8213,11 @@ const Models: Model[] = [
             "shield": "S",
             "armor": 5,
             "discipline": 12,
-            "talents": ["Parry","Parry","Deflect","Shield Bash","Veteran[Sergeant[Faeler Swordsman],2]"]
+            "talents": ["Parry","Parry","Deflect","Shield Bash"],
+            "veteran": [{
+                "name": "Sergeant[Faeler Swordsman]",
+                "cost": 2
+            }]
         },
         "gender": "M",
         "value": 28,
@@ -8089,7 +8240,11 @@ const Models: Model[] = [
             "shield": "S",
             "armor": 5,
             "discipline": 12,
-            "talents": ["Parry","Parry","Deflect","Shield Bash","Veteran[Sergeant[Faeler Swordsman],2]","Ally[Trusted]"]
+            "talents": ["Parry","Parry","Deflect","Shield Bash","Ally[Trusted]"],
+            "veteran": [{
+                "name": "Sergeant[Faeler Swordsman]",
+                "cost": 2
+            }]
         },
         "gender": "M",
         "value": 28,
@@ -8167,7 +8322,11 @@ const Models: Model[] = [
             "shield": "S",
             "armor": 2,
             "discipline": 6,
-            "talents": ["Kinship","Veteran[RAR d6 War Axe d8 thr 2in,3]"]
+            "talents": ["Kinship"],
+            "veteran": [{
+                "name": "RW:6|War Axe|8|2|thr",
+                "cost": 3
+            }]
         },
         "gender": "M",
         "value": 9,
@@ -8190,7 +8349,11 @@ const Models: Model[] = [
             "shield": "S",
             "armor": 2,
             "discipline": 6,
-            "talents": ["Kinship","Veteran[RAR d6 War Axe d8 thr 2in,3]","Ally[Independent]"]
+            "talents": ["Kinship","Ally[Independent]"],
+            "veteran": [{
+                "name": "RW:6|War Axe|8|2|thr",
+                "cost": 3
+            }]
         },
         "gender": "M",
         "value": 9,
@@ -8981,7 +9144,14 @@ const Models: Model[] = [
             "shield":"AS",
             "armor": 4,
             "discipline": 6,
-            "talents": ["Veteran[Teammate[Red Spear],1]","Veteran[Shieldmate,1]","Hate[Traazorites]"]
+            "talents": ["Hate[Traazorites]"],
+            "veteran": [{
+                "name": "Teammate[Red Spear]",
+                "cost": 1
+            },{
+                "name": "Shieldmate",
+                "cost": 1
+            }]
         },
         "gender": "M",
         "value": 12,
@@ -9010,7 +9180,14 @@ const Models: Model[] = [
             "shield":"AS",
             "armor": 4,
             "discipline": 6,
-            "talents": ["Veteran[Teammate[Red Spear],1]","Veteran[Shieldmate,1]","Hate[Traazorites]","Ally[Independent]"]
+            "talents": ["Hate[Traazorites]","Ally[Independent]"],
+            "veteran": [{
+                "name": "Teammate[Red Spear]",
+                "cost": 1
+            },{
+                "name": "Shieldmate",
+                "cost": 1
+            }]
         },
         "gender": "M",
         "value": 12,
@@ -9033,7 +9210,13 @@ const Models: Model[] = [
             "shield":"S",
             "armor": 4,
             "discipline": 6,
-            "talents": ["Veteran[MAR +1dl,1]","Veteran[Shieldmate,1]"]
+            "veteran": [{
+                "name": "MAR",
+                "cost": 1
+            },{
+                "name": "Shieldmate",
+                "cost": 1
+            }]
         },
         "gender": "M",
         "value": 12,
@@ -9057,7 +9240,14 @@ const Models: Model[] = [
             "shield":"S",
             "armor": 4,
             "discipline": 6,
-            "talents": ["Veteran[MAR +1dl,1]","Veteran[Shieldmate,1]","Ally[Independent]"]
+            "talents": ["Ally[Independent]"],
+            "veteran": [{
+                "name": "MAR",
+                "cost": 1
+            },{
+                "name": "Shieldmate",
+                "cost": 1
+            }]
         },
         "gender": "M",
         "value": 12,
@@ -9579,7 +9769,7 @@ const Models: Model[] = [
             }],
             "armor": 3,
             "discipline": 8,
-            "talents": ["Cavalry","Light Cavalry","Dodge","Scout","Harasser","Plnging Fire","Fast"],
+            "talents": ["Cavalry","Light Cavalry","Dodge","Scout","Harasser","Plnging Fire","Fast","Hate[Traazorites]"],
             "abilities": {
                 "agility":10,
                 "dexterity":10
@@ -9611,7 +9801,7 @@ const Models: Model[] = [
             }],
             "armor": 3,
             "discipline": 8,
-            "talents": ["Cavalry","Light Cavalry","Dodge","Scout","Harasser","Plnging Fire","Fast","Ally[Independent]"],
+            "talents": ["Cavalry","Light Cavalry","Dodge","Scout","Harasser","Plnging Fire","Fast","Hate[Traazorites]","Ally[Independent]"],
             "abilities": {
                 "agility":10,
                 "dexterity":10
