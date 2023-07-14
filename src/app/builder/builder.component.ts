@@ -41,6 +41,7 @@ export class BuilderComponent implements OnInit {
         this.factionRules = {
             'Black Rose Bandits': this.blackRoseBanditsRule,
             'Black Thorn Bandits': this.blackThornBanditsRule,
+            'The Collective': this.collectiveRules,
             'Darkgrove Demons': this.darkgroveRules,
             'Demons of Karelon': this.demonsRules,
             'Eclipse Sisterhood': this.eclipseRules,
@@ -396,6 +397,40 @@ export class BuilderComponent implements OnInit {
         }
         const checkForDups = models.filter(modelName => modelName !== 'Highwayman' && modelName != 'Roughrider');
         return ((new Set(checkForDups)).size !== checkForDups.length) ? 'Bandits may not have duplicate heroes except for the Highwayman and Roughrider.' : undefined;
+    }
+
+    private collectiveRules(model: Model): string | undefined {
+        let irvlorCount: number = 0;
+        let keldanCount: number = 0;
+        let tyrsanCount: number = 0;
+        let merchantCount: number = 0;
+        for (let key in this.models) {
+            if (this.models[key].name === 'Irvlor') {
+                irvlorCount++;
+            }
+            if (this.models[key].name === 'Keldan') {
+                keldanCount++;
+            }
+            if (this.models[key].name === 'Tyrsan') {
+                tyrsanCount++;
+            }
+            if (this.models[key].name === 'Merchant') {
+                merchantCount++;
+            }
+        }
+        if (irvlorCount > 1) {
+            return 'The Collective can only have one Irvlor.'
+        }
+        if (keldanCount > 1) {
+            return 'The Collective can only have one Keldan.'
+        }
+        if (tyrsanCount > 1) {
+            return 'The Collective can only have one Tyrsan.'
+        }
+        if (merchantCount > 1) {
+            return 'The Collective can only have one Merchant.'
+        }
+        return undefined;
     }
 
     private darkgroveRules(model: Model): string | undefined {

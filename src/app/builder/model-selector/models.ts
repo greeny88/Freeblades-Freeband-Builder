@@ -779,7 +779,7 @@ const Models: Model[] = [
         "race": "Symker"
     },
     {
-        "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
+        "factions": ["Black Rose Bandits", "Black Thorn Bandits", "The Collective"],
         "name": "Mercenary Crossbowman",
         "displayName": "Mercenary Crossbowman",
         "stats": {
@@ -844,7 +844,7 @@ const Models: Model[] = [
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits", "Black Thorn Bandits", "Ravenblade Mercenaries"],
+        "factions": ["Black Rose Bandits", "Black Thorn Bandits", "The Collective", "Ravenblade Mercenaries"],
         "name": "Outlaw",
         "displayName": "Outlaw",
         "stats": {
@@ -871,7 +871,7 @@ const Models: Model[] = [
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits", "Black Thorn Bandits", "Falkaaran Adventurers", "Haradelan Questers", "Ravenblade Mercenaries"],
+        "factions": ["Black Rose Bandits", "Black Thorn Bandits", "The Collective", "Falkaaran Adventurers", "Haradelan Questers", "Ravenblade Mercenaries"],
         "name": "Faeler Swordsman",
         "displayName": "Faeler Swordsman",
         "stats": {
@@ -1908,6 +1908,32 @@ const Models: Model[] = [
         "race": "Faeler"
     },
     {
+        "factions": ["The Collective"],
+        "name": "Wandering Wizard",
+        "displayName": "Wandering Wizard",
+        "stats": {
+            "discipline": 8,
+            "type": "Hero",
+            "talents": ["Earth Magic","Fireworks"],
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Staff",
+                "abilities": ["te"]
+            }],
+            "casting": {
+                "power": 15,
+                "rating": 10
+            },
+            "armor": 2
+        },
+        "type": "Caster",
+        "value": 31,
+        "gender": "M",
+        "race": "Faeler"
+    },
+    {
         "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
         "primaryFaction":"Wandering Allies",
         "name": "Wandering Wizard",
@@ -2007,6 +2033,35 @@ const Models: Model[] = [
         "value": 36,
         "gender": "M",
         "race": "Chaler"
+    },
+    {
+        "factions": ["The Collective"],
+        "name": "Merchant",
+        "displayName": "Merchant",
+        "stats": {
+            "discipline": 6,
+            "type": "Follower",
+            "skills": [{
+                "name": "Find",
+                "rating": 8
+            }],
+            "abilities": {
+                "agility": 8,
+                "knowledge": 8
+            },
+            "talents": ["Merchant","Merchant","Dodge","Elusive","Scrounge","Bribery"],
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 4,
+                "name": "Dagger"
+            }],
+            "armor": 2
+        },
+        "type": "Standard",
+        "value": 15,
+        "gender": "M",
+        "race": "Symker"
     },
     {
         "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
@@ -4942,7 +4997,7 @@ const Models: Model[] = [
         "race": "Faeler"
     },
     {
-        "factions": ["Haradelan Questers","Ravenblade Mercenaries"],
+        "factions": ["The Collective","Haradelan Questers","Ravenblade Mercenaries"],
         "name": "Militia Spearman",
         "displayName": "Militia Spearman",
         "type": "Standard",
@@ -6428,6 +6483,62 @@ const Models: Model[] = [
         "gender": "F",
         "value": 35,
         "race": "Symker"
+    },
+    {
+        "factions": ["The Collective"],
+        "name": "Wandering Bard",
+        "displayName": "Wandering Bard",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 4,
+                "name": "Dagger"
+            }],
+            "armor": 2,
+            "discipline": 8,
+            "talents": ["Perform[Bardsong,3]","Dodge","Elusive","Outperform","Protected"],
+            "abilities": {
+                "agility": 10
+            },
+            "skills": [{
+                "name": "Perform",
+                "rating": 10
+            }]
+        },
+        "gender": "F",
+        "value": 25,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["The Collective"],
+        "name": "Wandering Bard",
+        "displayName": "Wandering Bard",
+        "type": "Caster",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 4,
+                "name": "Dagger"
+            }],
+            "armor": 2,
+            "discipline": 8,
+            "talents": ["Perform[Bardsong,3]","Dodge","Elusive","Outperform","Protected"],
+            "abilities": {
+                "agility": 10
+            },
+            "skills": [{
+                "name": "Perform",
+                "rating": 10
+            }]
+        },
+        "gender": "F",
+        "value": 25,
+        "race": "Faeler"
     },
     {
         "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
@@ -8198,7 +8309,7 @@ const Models: Model[] = [
         "race": "Faeler"
     },
     {
-        "factions": ["Ravenblade Mercenaries"],
+        "factions": ["The Collective","Ravenblade Mercenaries"],
         "name": "Ravenblade Soldier",
         "displayName": "Ravenblade Soldier",
         "type": "Standard",
@@ -8360,7 +8471,7 @@ const Models: Model[] = [
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
+        "factions": ["Black Rose Bandits", "Black Thorn Bandits", "The Collective"],
         "name": "Freebooter",
         "displayName": "Freebooter",
         "type": "Standard",
@@ -8413,7 +8524,7 @@ const Models: Model[] = [
         "race": "Faeler"
     },
     {
-        "factions": ["Black Rose Bandits", "Black Thorn Bandits"],
+        "factions": ["Black Rose Bandits", "Black Thorn Bandits", "The Collective"],
         "name": "Roughrider",
         "displayName": "Roughrider",
         "type": "Standard",
@@ -9519,6 +9630,56 @@ const Models: Model[] = [
         "race": "Chaler"
     },
     {
+        "factions": ["The Collective"],
+        "name": "Irvlor",
+        "displayName": "Irvlor",
+        "type": "Leader",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 12,
+                "damage": 6,
+                "name": "Club"
+            }],
+            "armor": 4,
+            "discipline": 12,
+            "talents": ["Leader","Bribery","Die Hard","Merchant","Merchant","Peddler"],
+            "abilities":{
+                "endurance":12,
+                "strength":10
+            }
+        },
+        "gender": "M",
+        "value": 36,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["The Collective"],
+        "name": "Irvlor",
+        "displayName": "Irvlor",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 10,
+                "damage": 6,
+                "name": "Club"
+            }],
+            "armor": 4,
+            "discipline": 8,
+            "talents": ["Bribery","Die Hard","Merchant","Peddler"],
+            "abilities":{
+                "endurance":12,
+                "strength":10
+            }
+        },
+        "gender": "M",
+        "value": 26,
+        "race": "Faeler"
+    },
+    {
         "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
         "primaryFaction":"Wandering Allies",
         "name": "Irvlor",
@@ -9535,6 +9696,56 @@ const Models: Model[] = [
             "armor": 4,
             "discipline": 8,
             "talents": ["Bribery","Die Hard","Merchant","Peddler","Ally[Independent]"],
+            "abilities":{
+                "endurance":12,
+                "strength":10
+            }
+        },
+        "gender": "M",
+        "value": 26,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["The Collective"],
+        "name": "Keldan",
+        "displayName": "Keldan",
+        "type": "Leader",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 10,
+                "damage": 4,
+                "name": "Fist 2x"
+            }],
+            "armor": 4,
+            "discipline": 12,
+            "talents": ["Leader","Bribery","Die Hard","Merchant","Merchant","Recruiter"],
+            "abilities":{
+                "endurance":12,
+                "strength":10
+            }
+        },
+        "gender": "M",
+        "value": 36,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["The Collective"],
+        "name": "Keldan",
+        "displayName": "Keldan",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 6,
+            "melee": [{
+                "rating": 8,
+                "damage": 4,
+                "name": "Fist 2x"
+            }],
+            "armor": 4,
+            "discipline": 8,
+            "talents": ["Bribery","Die Hard","Merchant","Recruiter"],
             "abilities":{
                 "endurance":12,
                 "strength":10
@@ -9991,6 +10202,47 @@ const Models: Model[] = [
         "gender": "M",
         "value": 33,
         "race": "Shakrim"
+    },
+    {
+        "factions": ["The Collective"],
+        "name": "Tyrsan",
+        "displayName": "Tyrsan",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "damageBonus":1,
+                "name": "Sakhazet",
+                "abilities": ["let"]
+            }],
+            "range": [{
+                "rating":10,
+                "damage":6,
+                "distance":2,
+                "name":"Hatchet",
+                "abilities":["thr"]
+            }],
+            "armor": 3,
+            "discipline": 8,
+            "skills": [{
+                "name": "Thievery",
+                "rating":8
+            },{
+                "name": "Stealth",
+                "rating":8
+            }],
+            "talents": ["Champion[Irvlor, Keldan]","Freerunner","Raven Stance","Dodge","Dodge"],
+            "abilities": {
+                "agility": 12,
+                "dexterity": 10
+            }
+        },
+        "gender": "M",
+        "value": 35,
+        "race": "Chaler"
     },
     {
         "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
