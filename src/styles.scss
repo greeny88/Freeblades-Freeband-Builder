@@ -40,6 +40,10 @@ snack-bar-container {
   }
 }
 
+mat-radio-group mat-radio-button, mat-checkbox {
+    padding-right: 1em;
+}
+
 .bold-text {
     font-weight: bold;
 }
