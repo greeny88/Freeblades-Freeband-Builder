@@ -63,7 +63,8 @@ export class ModelSelectorService {
         } else {
             // TODO: handle adding new weapon
             if (advancementName.startsWith('RW')) {
-                const [ rating, name, damage, distance, weaponAbilities ] = advancementName.split(':')[1].split('|');
+                const [ rating, tempname, damage, distance, weaponAbilities ] = advancementName.split(':')[1].split('|');
+                const name: any = tempname;
                 const weapon: RangeWeapon = {
                     name,
                     rating: parseInt(rating),

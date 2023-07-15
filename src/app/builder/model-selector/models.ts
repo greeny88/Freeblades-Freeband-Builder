@@ -2498,32 +2498,6 @@ const Models: Model[] = [
         "race": "Chaler"
     },
     {
-        "factions": ["Koronnan Moonsworn"],
-        "primaryFaction":"Eclipse Sisterhood",
-        "name": "Suneater",
-        "displayName": "Suneater",
-        "stats": {
-            "discipline": 8,
-            "type": "Hero",
-            "talents": ["Void Magic","Spellblocker","Elusive","Ally[Independent]"],
-            "speed": 7,
-            "melee": [{
-                "rating": 6,
-                "damage": 6,
-                "name": "Long Knife"
-            }],
-            "casting": {
-                "power": 15,
-                "rating": 10
-            },
-            "armor": 2
-        },
-        "type": "Caster",
-        "value": 31,
-        "gender": "F",
-        "race": "Chaler"
-    },
-    {
         "factions": ["Eclipse Sisterhood"],
         "name": "Shadow Dancer",
         "displayName": "Shadow Dancer",
@@ -4684,7 +4658,7 @@ const Models: Model[] = [
             }],
             "armor": 7,
             "discipline": 10,
-            "talents": ["Block","Protector"],
+            "talents": ["Block","Protector","Ally[Independent]"],
             "abilities": {
                 "endurance": 10
             }
@@ -7217,7 +7191,7 @@ const Models: Model[] = [
             "range": [{
                 "rating": 8,
                 "damage": 4,
-                "name": "Blogun",
+                "name": "Blowgun",
                 "abilities": ["ven"],
                 "distance": 6
             }],
@@ -7249,7 +7223,7 @@ const Models: Model[] = [
             "range": [{
                 "rating": 8,
                 "damage": 4,
-                "name": "Blogun",
+                "name": "Blowgun",
                 "abilities": ["ven"],
                 "distance": 6
             }],
@@ -8233,7 +8207,7 @@ const Models: Model[] = [
             }],
             "armor": 3,
             "discipline": 10,
-            "talents": ["Dodge","Scout","Harasser","Fly[Low,SPD 10]","Light Cavalry","Calvary"],
+            "talents": ["Dodge","Scout","Harasser","Fly[Low,SPD 10]","Light Cavalry","Calvary","Ally[Independent]"],
             "abilities": {
                 "agility": 10,
                 "dexterity": 10
@@ -8299,7 +8273,7 @@ const Models: Model[] = [
             }],
             "armor": 4,
             "discipline": 10,
-            "talents": ["Parry","Elusive","Scout","Harasser","Wayfinder"],
+            "talents": ["Parry","Elusive","Scout","Harasser","Wayfinder","Ally[Independent]"],
             "abilities": {
                 "dexterity": 10
             }
@@ -9976,7 +9950,7 @@ const Models: Model[] = [
                 "rating":10,
                 "damage":6,
                 "distance":8,
-                "name":"Recurve Short Bow"
+                "name":"Recurved Short Bow"
             }],
             "armor": 3,
             "discipline": 8,
@@ -10008,7 +9982,7 @@ const Models: Model[] = [
                 "rating":10,
                 "damage":6,
                 "distance":8,
-                "name":"Recurve Short Bow"
+                "name":"Recurved Short Bow"
             }],
             "armor": 3,
             "discipline": 8,
@@ -10445,7 +10419,7 @@ const Models: Model[] = [
             }],
             "armor": 4,
             "discipline": 10,
-            "talents": ["Dodge","Dodge","Killing Strike","Killing Strike"],
+            "talents": ["Dodge","Dodge","Killing Strike","Killing Strike","Ally[Independent]"],
             "abilities": {
                 "agility": 12,
                 "dexterity": 10
@@ -11072,6 +11046,66 @@ const Models: Model[] = [
         "race": "Kandoran"
     },
     {
+        "factions": ["Black Rose Bandits", "Black Thorn Bandits", "Grular Invaders","Shakrim Wavestalkers"],
+        "primaryFaction": "Kandoran Deathmasters",
+        "name": "Abductor",
+        "displayName": "Abductor",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 10,
+            "melee": [{
+                "rating": 10,
+                "damage": 8,
+                "name": "Spikedrakh",
+                "abilities": ["de"]
+            }],
+            "range": [{
+                "rating": 10,
+                "damage": 0,
+                "distance": 4,
+                "name": "Lasso",
+                "abilities": ["thr","pin","pul"]
+            }],
+            "armor": 4,
+            "discipline": 8,
+            "talents": ["Calvary","Light Calvary","Harasser","Deft Rider","Subdue","Scout","Fast","Ally[Independent]"],
+            "skills": [{
+                "name": "Hunt",
+                "rating": 8
+            }]
+        },
+        "gender": "M",
+        "value": 33,
+        "race": "Kandoran"
+    },
+    {
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","Grular Invaders","Shakrim Wavestalkers"],
+        "primaryFaction": "Kandoran Deathmasters",
+        "name": "Scrounger",
+        "displayName": "Scrounger",
+        "type": "Standard",
+        "stats": {
+            "type": "Follower",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Long Knife"
+            }],
+            "armor": 4,
+            "discipline": 6,
+            "talents": ["Infiltrate","Scrounge","Ally[Independent]"],
+            "skills": [{
+                "name": "Find",
+                "rating": 8
+            }]
+        },
+        "gender": "M",
+        "value": 10,
+        "race": "Kandoran"
+    },
+    {
         "factions": ["Kandoran Deathmasters"],
         "name": "Scrounger",
         "displayName": "Scrounger",
@@ -11206,6 +11240,58 @@ const Models: Model[] = [
         },
         "gender": "M",
         "value": 30,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Falkaaran Adventurers","Haradelan Questers"],
+        "primaryFaction": "Ravenblade Mercenaries",
+        "name": "Executioner",
+        "displayName": "Executioner",
+        "type": "Standard",
+        "stats": {
+            "type": "Hero",
+            "speed": 5,
+            "melee": [{
+                "rating": 10,
+                "damage": 10,
+                "name": "Tavsetar",
+                "abilities": ["lb"]
+            }],
+            "armor": 4,
+            "discipline": 10,
+            "talents": ["Hardened","Parry","Parry","Ally[Independent]"],
+            "abilities": {
+                "strength": 10
+            }
+        },
+        "gender": "M",
+        "value": 30,
+        "race": "Faeler"
+    },
+    {
+        "factions": ["Black Rose Bandits","Black Thorn Bandits","The Collective","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+        "primaryFaction": "Wandering Allies",
+        "name": "Enshrouder",
+        "displayName": "Enshrouder",
+        "type": "Caster",
+        "stats": {
+            "type": "Hero",
+            "speed": 7,
+            "melee": [{
+                "rating": 6,
+                "damage": 6,
+                "name": "Long Knife"
+            }],
+            "casting": {
+                "power": 15,
+                "rating": 10
+            },
+            "armor": 2,
+            "discipline": 8,
+            "talents": ["Void Magic: Enshrouder","Cunning","Spellstrecher","Ally[Independent]"]
+        },
+        "gender": "M",
+        "value": 31,
         "race": "Faeler"
     }
 ];
