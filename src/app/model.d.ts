@@ -13,14 +13,16 @@ export const MeleeWeaponNames: "Banehammer" | "Barbed Javelin" | "Barbed Whip" |
 
 export const RangeWeaponNames: "Atlatl" | "Barbed Javelin" | "Blowgun" | "Bolas" | "Bolter" | "Bow" | "Composite Bow" | "Crossbow" | "Double Crossbow" | "Gadoru" | "Grappler" | "Hatchet" | "Herenkal" | "Javelin" | "Lasso" | "Longbow" | "Morph" | "Poison Pellet" | "Poison Spit" | "Recurved Short Bow" | "Roondar" | "Sling" | "Spider Net" | "Talon" | "Tennko" | "Thorny Vines" | "Vranshar" | "War Axe" | "Water Blast"
 
-interface Weapon {
+export interface Weapon {
+    altSelected?: boolean,
     name: typeof MeleeWeaponNames | typeof RangeWeaponNames,
-    rating: number,
+    rating: number
 }
 
 interface BasicWeapon {
     abilities?: ('acd' | 'an' | 'chg' | 'de' | 'dec' | 'dis' | 'dsh' | 'ent' | 'flm' | 'gre' | 'hv' | 'hqu' | 'hin' | 'ice' | 'imp' | 'idf' | 'lb' | 'let' | 'mag' | 'mi' | 'ovr' | 'pin' | 'pul' | 'qs' | 'qu' | 'ra' | 're' | 'scl' | 'sb' | 'shk' | 'slr' | 'so' | 'so2' | 'su' | 'stky' | 'srg' | 'swp' | 'sw' | 'thr' | 'te' | 'unw' | 'ven' | 'aoe 2in')[],
     abilityList?: string,
+    altSelected?: boolean,
     damage: number,
     damageBonus?: number,
     name: string,
@@ -54,6 +56,7 @@ export interface ModelStats {
     advancements?: Advancement[],
     armor: number,
     casting?: {
+        altSelected?: boolean,
         power: number,
         rating: number,
         ratingBonus?: number
@@ -62,6 +65,10 @@ export interface ModelStats {
     injuries?: string[],
     items?: Items[],
     itemList?: string,
+    leaderOptions?: {
+        name: string,
+        selected?: boolean
+    }[],
     lifePoints?: number,
     melee?: (Weapon | MeleeWeapon)[],
     modelValue?: number,

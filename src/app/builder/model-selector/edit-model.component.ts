@@ -83,6 +83,21 @@ export class EditModelComponent {
         this.dialogRef.close();
     }
 
+    changeLeaderOption(event: MatRadioChange, type: string) {
+        console.log(event);
+        if (this.model.stats.melee) {
+            // TODO: need to look for other id than name ie double weapon issue
+            this.model.stats.melee.map(opt => opt.altSelected = (type === 'melee' && event.value.name === opt.name) ? true : false);
+        }
+        if (this.model.stats.range) {
+            // TODO: need to look for other id than name ie double weapon issue
+            this.model.stats.range.map(opt => opt.altSelected = (type === 'range' && event.value.name === opt.name) ? true : false);
+        }
+        if (this.model.stats.casting) {
+            this.model.stats.casting.altSelected = (type === 'casting') ? true : false;
+        }
+    }
+
     changeOption(event: MatRadioChange) {
         this.model.stats.options?.map(opt => opt.selected = event.value.name === opt.name ? true : false);
     }

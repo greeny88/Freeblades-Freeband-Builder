@@ -8,6 +8,20 @@
             <mat-option *ngFor="let gender of ['M','F']" [value]="gender">{{gender}}</mat-option>
         </mat-select>
     </mat-form-field>
+    <ng-container *ngIf="model.stats?.melee">
+        <h1>Alt Leader Options</h1>
+        <mat-radio-group>
+            <mat-radio-button *ngFor="let opt of model.stats.melee" [checked]="opt.altSelected" [value]="opt" (change)="changeLeaderOption($event, 'melee')">
+                {{ opt.name }} - d{{ opt.rating }}
+            </mat-radio-button>
+            <mat-radio-button *ngFor="let opt of model.stats.range" [checked]="opt.altSelected" [value]="opt" (change)="changeLeaderOption($event, 'range')">
+                {{ opt.name }} - d{{ opt.rating }}
+            </mat-radio-button>
+            <mat-radio-button *ngIf="model.stats.casting" (change)="changeLeaderOption($event, 'casting')">
+                Magic - d{{ model.stats.casting.rating }}
+            </mat-radio-button>
+        </mat-radio-group>
+    </ng-container>
     <ng-container *ngIf="model.stats?.options">
         <h1>Options</h1>
         <mat-radio-group>

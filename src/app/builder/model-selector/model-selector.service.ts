@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Abilities, MeleeWeapons, RangeWeapons, Skills, Talents } from './advancements';
-import { ModelStats, RangeWeapon } from 'src/app/model';
+import { ModelStats, Weapon } from 'src/app/model';
 
 interface stats {
     abilities: Object,
@@ -63,24 +63,19 @@ export class ModelSelectorService {
         } else {
             // TODO: handle adding new weapon
             if (advancementName.startsWith('RW')) {
-                const [ rating, tempname, damage, distance, weaponAbilities ] = advancementName.split(':')[1].split('|');
+                const [ rating, tempname ] = advancementName.split(':')[1].split('|');
                 const name: any = tempname;
-                const weapon: RangeWeapon = {
+                let weapon: Weapon = {
                     name,
-                    rating: parseInt(rating),
-                    distance: parseInt(distance),
-                    damage: parseInt(damage)
+                    rating: parseInt(rating)
                 };
-                if (weaponAbilities) {
-                    weapon.abilities = (<any>weaponAbilities).split(',');
-                }
+                weapon = Object.assign(weapon, RangeWeapons.find(r => r.name === name));
 
                 if (stats.range) {
                     stats.range.push(weapon);
                 } else {
                     stats.range = [weapon];
-                }
-                console.log(stats.range);
+                } 
                 return;
             }
             if (advancementName === 'MAR') {
@@ -320,6 +315,9 @@ export class ModelSelectorService {
                 if (!('damage' in weapon)) {
                     return;
                 }
+                if (weapon.altSelected) {
+                    weapon.rating += 2;
+                }
                 weapon.ratingBonus = ratingBonus;
                 weapon.damageBonus = (weapon.damageBonus) ? damageBonus + weapon.damageBonus : damageBonus;
                 if (weapon.abilities) {
@@ -335,6 +333,9 @@ export class ModelSelectorService {
                 if (!('damage' in weapon)) {
                     return;
                 }
+                if (weapon.altSelected) {
+                    weapon.rating += 2;
+                }
                 weapon.ratingBonus = ratingBonus;
                 weapon.damageBonus = (weapon.damageBonus) ? damageBonus + weapon.damageBonus : damageBonus;
                 if (weapon.abilities) {
@@ -346,6 +347,9 @@ export class ModelSelectorService {
 
         if (stats.casting) {
             let casting = stats.casting;
+            if (casting.altSelected) {
+                casting.rating += 2;
+            }
             casting.ratingBonus = skillBonus;
             updatedStats.casting = casting;
         }

@@ -58,15 +58,10 @@ export class ModelSelectorComponent {
                                 && model.stats.talents?.every(t => t.indexOf('Ally') < 0) 
                                 && this.disallowedAltLeaders.indexOf(model.name) < 0) {
                             model.stats.talents.push('Leader');
-                            //TODO: add as model.stats.option a MAR or RAR increase, default to highest?
-                            //TODO: only increase melee for non-calvary attack
-                            // model.stats.melee = model.stats.melee.map((mAtk) => {
-                            //     mAtk.rating += 2;
-                            //     return mAtk;
-                            // });
                             if (model.stats.melee) {
-                                model.stats.melee[0].rating += 2;
-                                // Only add +1 for two-ended if MAR increase
+                                // model.stats.melee[0].rating += 2;
+                                model.stats.melee[0].altSelected = true;
+                                // TODO: Only add +1 for two-ended if MAR increase
                                 for (let melee of model.stats.melee) {
                                     if ('abilities' in melee && melee.abilities && melee.abilities.indexOf('te') > -1) {
                                         model.value += 1;
@@ -84,7 +79,7 @@ export class ModelSelectorComponent {
                                 model.value += 7;
                             }
                             for (let talent of model.stats.talents) {
-                                // Only add +1 for Shield Bash if MAR increase
+                                // TODO: Only add +1 for Shield Bash if MAR increase
                                 if (['Die Hard', 'Dodge', 'Wraith', 'Shield Bash'].indexOf(talent) > -1) {
                                     model.value += 1;
                                 }
