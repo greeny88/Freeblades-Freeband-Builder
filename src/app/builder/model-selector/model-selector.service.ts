@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { Abilities, Skills, Talents } from './advancements';
-import { ModelStats, RangeWeapon } from '../../model';
+import { Abilities, MeleeWeapons, RangeWeapons, Skills, Talents } from './advancements';
+import { ModelStats, RangeWeapon } from 'src/app/model';
 
 interface stats {
     abilities: Object,
@@ -72,7 +72,7 @@ export class ModelSelectorService {
                     damage: parseInt(damage)
                 };
                 if (weaponAbilities) {
-                    weapon.abilities = weaponAbilities.split(',');
+                    weapon.abilities = (<any>weaponAbilities).split(',');
                 }
 
                 if (stats.range) {
@@ -126,11 +126,24 @@ export class ModelSelectorService {
         let stats: ModelStats = JSON.parse(JSON.stringify(originalStats));
         let ability: number = (stats.type === 'Hero') ? 8 : 6;
         let modelValue: number = originalValue;
+
         let abilities: {agility: number, dexterity: number, endurance: number, knowledge: number, spirit: number, strength: number} | any = {};
         for (let abilityName of this.abilityList) {
             abilities[abilityName] = ability;
         }
         abilities = (<any>Object).assign(abilities, stats.abilities);
+
+        if (stats.melee) {
+            for (let melee of stats.melee) {
+                melee = Object.assign(melee, MeleeWeapons.find(m => m.name === melee.name));
+            }
+        }
+
+        if (stats.range) {
+            for (let range of stats.range) {
+                range = Object.assign(range, RangeWeapons.find(r => r.name === range.name));
+            }
+        }
 
         if (stats.options) {
             for (let opt of stats.options) {
@@ -304,7 +317,9 @@ export class ModelSelectorService {
         if (stats.melee) {
             let melee = stats.melee;
             for (let weapon of melee) {
-                // TODO: merge in base weapon stats
+                if (!('damage' in weapon)) {
+                    return;
+                }
                 weapon.ratingBonus = ratingBonus;
                 weapon.damageBonus = (weapon.damageBonus) ? damageBonus + weapon.damageBonus : damageBonus;
                 if (weapon.abilities) {
@@ -316,8 +331,10 @@ export class ModelSelectorService {
 
         if (stats.range) {
             let range = stats.range;
-            for (let weapon of range) {
-                // TODO: merge in base weapon stats
+            for (let weapon  of range) {
+                if (!('damage' in weapon)) {
+                    return;
+                }
                 weapon.ratingBonus = ratingBonus;
                 weapon.damageBonus = (weapon.damageBonus) ? damageBonus + weapon.damageBonus : damageBonus;
                 if (weapon.abilities) {

@@ -58,8 +58,7 @@ export class ModelSelectorComponent {
                                 && model.stats.talents?.every(t => t.indexOf('Ally') < 0) 
                                 && this.disallowedAltLeaders.indexOf(model.name) < 0) {
                             model.stats.talents.push('Leader');
-                            //TODO: attempt to determine which value is better to increase: melee or range
-                            //TODO: even better, find way of allowing user to pick per model
+                            //TODO: add as model.stats.option a MAR or RAR increase, default to highest?
                             //TODO: only increase melee for non-calvary attack
                             // model.stats.melee = model.stats.melee.map((mAtk) => {
                             //     mAtk.rating += 2;
@@ -69,7 +68,7 @@ export class ModelSelectorComponent {
                                 model.stats.melee[0].rating += 2;
                                 // Only add +1 for two-ended if MAR increase
                                 for (let melee of model.stats.melee) {
-                                    if (melee.abilities && melee.abilities.indexOf('te') > -1) {
+                                    if ('abilities' in melee && melee.abilities && melee.abilities.indexOf('te') > -1) {
                                         model.value += 1;
                                     }
                                 }

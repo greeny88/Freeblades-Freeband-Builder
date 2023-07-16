@@ -15,7 +15,6 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 12,
-                "damage": 8,
                 "name": "Warhammer"
             }],
             "shield": "S",
@@ -52,7 +51,6 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
                 "name": "Warhammer"
             }],
             "shield": "S",
@@ -81,8 +79,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "name": "Ice Axe",
-                "rating": 6,
-                "damage": 6
+                "rating": 6
             }],
             "casting": {
                 "rating": 10,
@@ -107,8 +104,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "name": "Ice Axe",
-                "rating": 6,
-                "damage": 6
+                "rating": 6
             }],
             "casting": {
                 "rating": 10,
@@ -139,15 +135,11 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "name": "Mace",
-                "rating": 10,
-                "damage": 8
+                "rating": 10
             }],
             "range": [{
                 "name": "Vranshar",
-                "rating": 10,
-                "damage": 8,
-                "distance": 8,
-                "abilities": ["idf", "aoe 2in"]
+                "rating": 10
             }],
             "armor": 5
         },
@@ -170,8 +162,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "name": "War Mattock",
-                "rating": 10,
-                "damage": 10
+                "rating": 10
             }],
             "armor": 6
         },
@@ -195,8 +186,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "name": "War Mattock",
-                "rating": 10,
-                "damage": 10
+                "rating": 10
             }],
             "armor": 6
         },
@@ -215,8 +205,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "name": "Ice Axe",
-                "rating": 6,
-                "damage": 6
+                "rating": 6
             }],
             "skills": [{
                 "name": "Find",
@@ -241,8 +230,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "name": "Ice Axe",
-                "rating": 6,
-                "damage": 6
+                "rating": 6
             }],
             "skills": [{
                 "name": "Find",
@@ -266,15 +254,11 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "name": "Dagger",
-                "rating": 4,
-                "damage": 4
+                "rating": 4
             }],
             "range": [{
                 "name": "Double Crossbow",
-                "rating": 6,
-                "damage": 6,
-                "abilities": ["dsh", "re"],
-                "distance": 8
+                "rating": 6
             }],
             "armor": 5,
             "type": "Follower"
@@ -295,15 +279,11 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "name": "Dagger",
-                "rating": 4,
-                "damage": 4
+                "rating": 4
             }],
             "range": [{
                 "name": "Double Crossbow",
-                "rating": 6,
-                "damage": 6,
-                "abilities": ["dsh", "re"],
-                "distance": 8
+                "rating": 6
             }],
             "armor": 5,
             "type": "Follower"
@@ -323,8 +303,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "name": "Warhammer",
-                "rating": 8,
-                "damage": 8
+                "rating": 8
             }],
             "armor": 4,
             "shield": "S",
@@ -346,8 +325,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "name": "Warhammer",
-                "rating": 8,
-                "damage": 8
+                "rating": 8
             }],
             "armor": 4,
             "shield": "S",
@@ -369,9 +347,7 @@ const Models: Model[] = [
             "talents": ["Die Hard","Hardened","March","Alpine"],
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Banehammer",
-                "abilities": ["swp"]
+                "name": "Banehammer"
             }],
             "armor": 6,
             "discipline": 10,
@@ -395,9 +371,7 @@ const Models: Model[] = [
             "talents": ["Die Hard","Hardened","March","Alpine","Ally[Independent]"],
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Banehammer",
-                "abilities": ["swp"]
+                "name": "Banehammer"
             }],
             "armor": 6,
             "discipline": 10,
@@ -422,8 +396,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "name": "Ice Axe",
-                "rating": 10,
-                "damage": 6
+                "rating": 10
             }],
             "armor": 3,
             "discipline": 10,
@@ -448,8 +421,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "name": "Ice Axe",
-                "rating": 10,
-                "damage": 6
+                "rating": 10
             }],
             "armor": 3,
             "discipline": 10,
@@ -478,10 +450,8 @@ const Models: Model[] = [
             }],
             "speed": 6,
             "melee": [{
-                "name": "Longsword",
-                "rating": 12,
-                "damage": 8,
-                "damageBonus": 1
+                "name": "Longsword (2h)",
+                "rating": 12
             }],
             "armor": 4
         },
@@ -504,8 +474,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "name": "Dagger",
-                "rating": 6,
-                "damage": 4
+                "rating": 6
             }],
             "casting": {
                 "power": 15,
@@ -531,14 +500,11 @@ const Models: Model[] = [
             "talents": ["Parry", "Swordsman[Parry Dagger]", "Bladedancer", "Sidestep"],
             "speed": 7,
             "melee": [{
-                "name": "Longsword",
-                "rating": 10,
-                "damage": 8
+                "name": "Longsword (1h)",
+                "rating": 10
             },{
                 "name": "Parry Dagger",
-                "rating": 10,
-                "damage": 4,
-                "abilities": ["sw"]
+                "rating": 10
             }],
             "armor": 3
         },
@@ -566,10 +532,7 @@ const Models: Model[] = [
             }],
             "melee": [{
                 "name": "Staff",
-                "rating": 10,
-                "damage": 6,
-                "damageBonus": 1,
-                "abilities": ["te"]
+                "rating": 10
             }],
             "armor": 4
         },
@@ -602,14 +565,11 @@ const Models: Model[] = [
             }],
             "melee": [{
                 "name": "Short Sword",
-                "rating": 8,
-                "damage": 6
+                "rating": 8
             }],
             "range": [{
                 "name": "Longbow",
-                "rating": 10,
-                "damage": 8,
-                "distance": 12
+                "rating": 10
             }],
             "armor": 3
         },
@@ -633,9 +593,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "name": "Falchion",
-                "rating": 10,
-                "damage": 8,
-                "damageBonus": 1
+                "rating": 10
             }],
             "armor": 4
         },
@@ -660,9 +618,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "name": "Falchion",
-                "rating": 10,
-                "damage": 8,
-                "damageBonus": 1
+                "rating": 10
             }],
             "armor": 4
         },
@@ -687,9 +643,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "name": "Falchion",
-                "rating": 10,
-                "damage": 8,
-                "damageBonus": 1
+                "rating": 10
             }],
             "armor": 4
         },
@@ -712,8 +666,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "name": "Greatsword",
-                "rating": 10,
-                "damage": 10
+                "rating": 10
             }],
             "armor": 3
         },
@@ -736,8 +689,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "name": "War Mattock",
-                "rating": 10,
-                "damage": 10
+                "rating": 10
             }],
             "armor": 6
         },
@@ -767,9 +719,7 @@ const Models: Model[] = [
             }],
             "melee": [{
                 "name": "Spikedrakh",
-                "rating": 10,
-                "damage": 8,
-                "abilities": ["de"]
+                "rating": 10
             }],
             "armor": 3
         },
@@ -793,15 +743,11 @@ const Models: Model[] = [
             }],
             "melee": [{
                 "name": "Broadsword",
-                "rating": 10,
-                "damage": 8
+                "rating": 10
             }],
             "range": [{
                 "name": "Crossbow",
-                "rating": 12,
-                "damage": 8,
-                "distance": 10,
-                "abilities": ["re"]
+                "rating": 12
             }],
             "armor": 3
         },
@@ -826,15 +772,11 @@ const Models: Model[] = [
             }],
             "melee": [{
                 "name": "Broadsword",
-                "rating": 10,
-                "damage": 8
+                "rating": 10
             }],
             "range": [{
                 "name": "Crossbow",
-                "rating": 12,
-                "damage": 8,
-                "distance": 10,
-                "abilities": ["re"]
+                "rating": 12
             }],
             "armor": 3
         },
@@ -853,15 +795,11 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "name": "Short Sword",
-                "rating": 6,
-                "damage": 6
+                "rating": 6
             }],
             "range": [{
                 "name": "Crossbow",
-                "rating": 6,
-                "damage": 8,
-                "distance": 10,
-                "abilities": ["re"]
+                "rating": 6
             }],
             "armor": 3
         },
@@ -879,9 +817,8 @@ const Models: Model[] = [
             "type": "Follower",
             "speed": 7,
             "melee": [{
-                "name": "Longsword",
-                "rating": 6,
-                "damage": 8
+                "name": "Longsword (1h)",
+                "rating": 6
             }],
             "armor": 3,
             "shield": "S",
@@ -908,9 +845,8 @@ const Models: Model[] = [
             "type": "Follower",
             "speed": 7,
             "melee": [{
-                "name": "Longsword",
-                "rating": 6,
-                "damage": 8
+                "name": "Longsword (1h)",
+                "rating": 6
             }],
             "talents": ["Ally[Independent]"],
             "armor": 3,
@@ -938,9 +874,8 @@ const Models: Model[] = [
             "type": "Follower",
             "speed": 7,
             "melee": [{
-                "name": "Longsword",
-                "rating": 6,
-                "damage": 8
+                "name": "Longsword (1h)",
+                "rating": 6
             }],
             "talents": ["Ally[Independent]"],
             "armor": 3,
@@ -968,13 +903,10 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "name": "Whip",
-                "rating": 8,
-                "damage": 4,
-                "abilities": ["ent", "qs"]
+                "rating": 8
             },{
                 "name": "Broadsword",
-                "rating": 8,
-                "damage": 8
+                "rating": 8
             }],
             "armor": 3
         },
@@ -993,8 +925,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "name": "Long Knife",
-                "rating": 6,
-                "damage": 6
+                "rating": 6
             }],
             "armor": 2,
             "talents": ["Elusive", "Infiltrate"],
@@ -1021,8 +952,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "name": "Great Club",
-                "rating": 6,
-                "damage": 10
+                "rating": 6
             }],
             "armor": 4,
             "talents": ["Die Hard"],
@@ -1044,14 +974,11 @@ const Models: Model[] = [
             "type": "Hero",
             "speed": 7,
             "melee": [{
-                "name": "Longsword",
-                "rating": 12,
-                "damage": 8
+                "name": "Longsword (1h)",
+                "rating": 12
             },{
                 "name": "Parry Dagger",
-                "rating": 10,
-                "damage": 4,
-                "abilities": ["sw"]
+                "rating": 10
             }],
             "armor": 3,
             "talents": ["Leader", "Parry", "Bladedancer", "Sidestep", "Swordsman[Parry Dagger]"],
@@ -1074,9 +1001,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "name": "Staff",
-                "rating": 6,
-                "damage": 6,
-                "abilities": ["te"]
+                "rating": 6
             }],
             "armor": 2,
             "talents": ["Intensify Spell", "Quick", "Illusion Magic"],
@@ -1101,9 +1026,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "name": "Staff",
-                "rating": 6,
-                "damage": 6,
-                "abilities": ["te"]
+                "rating": 6
             }],
             "armor": 2,
             "talents": ["Intensify Spell", "Quick", "Illusion Magic","Ally[Independent]"],
@@ -1128,10 +1051,7 @@ const Models: Model[] = [
             "speed": 9,
             "melee": [{
                 "rating": 12,
-                "damage": 8,
-                "name": "Sakhazet",
-                "abilities": ["let"],
-                "damageBonus": 1
+                "name": "Sakhazet"
             },{
                 "rating": 8,
                 "damage": 6,
@@ -1156,10 +1076,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 12,
-                "damage": 8,
-                "name": "Sakhazet",
-                "abilities": ["let"],
-                "damageBonus": 1
+                "name": "Sakhazet"
             }],
             "shield": "S",
             "armor": 5
@@ -1180,9 +1097,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
-                "name": "Staff",
-                "abilities": ["te"]
+                "name": "Staff"
             }],
             "casting": {
                 "rating": 10,
@@ -1206,10 +1121,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 12,
-                "damage": 8,
-                "name": "Sakhazet",
-                "abilities": ["let"],
-                "damageBonus": 1
+                "name": "Sakhazet"
             }],
             "shield": "L",
             "armor": 5,
@@ -1241,9 +1153,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Trident",
-                "damageBonus": 1
+                "name": "Trident"
             }],
             "armor": 3
         },
@@ -1263,15 +1173,10 @@ const Models: Model[] = [
             "speed": 9,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Lance",
-                "abilities": ["shk"]
+                "name": "Lance"
             },{
                 "rating": 10,
-                "damage": 8,
-                "name": "Sakhazet",
-                "abilities": ["let"],
-                "damageBonus": 1
+                "name": "Sakhazet"
             },{
                 "rating": 8,
                 "damage": 6,
@@ -1296,10 +1201,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Sakhazet",
-                "abilities": ["let"],
-                "damageBonus": 1
+                "name": "Sakhazet"
             }],
             "armor": 5,
             "shield": "S"
@@ -1327,15 +1229,11 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 6,
                 "name": "Javelin"
             }],
             "range": [{
                 "rating": 10,
-                "damage": 6,
-                "name": "Javelin",
-                "abilities": ["thr"],
-                "distance": 4
+                "name": "Javelin"
             }],
             "armor": 5,
             "shield": "S"
@@ -1364,15 +1262,11 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 6,
                 "name": "Javelin"
             }],
             "range": [{
                 "rating": 10,
-                "damage": 6,
-                "name": "Javelin",
-                "abilities": ["thr"],
-                "distance": 4
+                "name": "Javelin"
             }],
             "armor": 5,
             "shield": "S"
@@ -1400,14 +1294,10 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 6,
-                "name": "Barbed Javelin",
-                "damageBonus": 1
+                "name": "Barbed Javelin"
             },{
                 "rating": 10,
-                "damage": 0,
                 "name": "Net",
-                "abilities": ["pin","qs"]
             }],
             "armor": 3
         },
@@ -1434,14 +1324,10 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 6,
-                "name": "Barbed Javelin",
-                "damageBonus": 1
+                "name": "Barbed Javelin"
             },{
                 "rating": 10,
-                "damage": 0,
-                "name": "Net",
-                "abilities": ["pin","qs"]
+                "name": "Net"
             }],
             "armor": 3
         },
@@ -1460,18 +1346,11 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 8,
-                "damage": 8,
-                "name": "Sakhazet",
-                "abilities": ["let"],
-                "damageBonus": 1
+                "name": "Sakhazet"
             }],
             "range": [{
                 "rating": 8,
-                "damage": 6,
-                "name": "Gadoru",
-                "abilities": ["dis","sb","thr"],
-                "distance": 3,
-                "damageBonus": 1
+                "name": "Gadoru"
             }],
             "armor": 5,
             "shield": "L"
@@ -1491,14 +1370,11 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 4,
-                "damage": 4,
                 "name": "Dagger"
             }],
             "range": [{
                 "rating": 6,
-                "damage": 6,
-                "name": "Bow",
-                "distance": 8
+                "name": "Bow"
             }],
             "armor": 4
         },
@@ -1542,9 +1418,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 12,
-                "damage": 10,
-                "name": "Taumari",
-                "abilities": ["qs"]
+                "name": "Taumari"
             }],
             "armor": 5
         },
@@ -1568,9 +1442,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Taumari",
-                "abilities": ["qs"]
+                "name": "Taumari"
             }],
             "armor": 5
         },
@@ -1590,9 +1462,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
-                "name": "Staff",
-                "abilities": ["te"]
+                "name": "Staff"
             }],
             "casting": {
                 "power": 15,
@@ -1617,9 +1487,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
-                "name": "Staff",
-                "abilities": ["te"]
+                "name": "Staff"
             }],
             "casting": {
                 "power": 15,
@@ -1646,9 +1514,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Kasari",
-                "abilities": ["hin","qs"]
+                "name": "Kasari"
             }],
             "armor": 3,
             "veteran": [{
@@ -1676,9 +1542,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Kasari",
-                "abilities": ["hin","qs"]
+                "name": "Kasari"
             }],
             "armor": 3,
             "veteran": [{
@@ -1709,9 +1573,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Taumari",
-                "abilities": ["qs"]
+                "name": "Taumari"
             }],
             "range": [{
                 "rating": 6,
@@ -1738,7 +1600,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 8,
-                "damage": 6,
                 "name": "Long Knife"
             }],
             "armor": 2
@@ -1760,7 +1621,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 8,
-                "damage": 6,
                 "name": "Long Knife"
             }],
             "armor": 2
@@ -1781,10 +1641,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
-                "damageBonus": 1,
-                "name": "Najana",
-                "abilities": ["so","let"]
+                "name": "Najana"
             }],
             "armor": 3
         },
@@ -1805,10 +1662,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
-                "damageBonus": 1,
-                "name": "Najana",
-                "abilities": ["so","let"]
+                "name": "Najana"
             }],
             "armor": 3
         },
@@ -1832,7 +1686,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
                 "name": "Long Knife"
             }],
             "range": [{
@@ -1864,7 +1717,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
                 "name": "Long Knife"
             }],
             "range": [{
@@ -1892,8 +1744,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
-                "damageBonus": 1,
                 "name": "Barbed Javelin"
             }],
             "casting": {
@@ -1918,9 +1768,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
-                "name": "Staff",
-                "abilities": ["te"]
+                "name": "Staff"
             }],
             "casting": {
                 "power": 15,
@@ -1945,9 +1793,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
-                "name": "Staff",
-                "abilities": ["te"]
+                "name": "Staff"
             }],
             "casting": {
                 "power": 15,
@@ -1979,9 +1825,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Taumari",
-                "abilities": ["qs"]
+                "name": "Taumari"
             }],
             "range": [{
                 "rating": 6,
@@ -2016,9 +1860,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Taumari",
-                "abilities": ["qs"]
+                "name": "Taumari"
             }],
             "range": [{
                 "rating": 6,
@@ -2053,7 +1895,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 4,
                 "name": "Dagger"
             }],
             "armor": 2
@@ -2083,7 +1924,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 4,
                 "name": "Dagger"
             }],
             "armor": 2
@@ -2108,9 +1948,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 12,
-                "damage": 10,
-                "name": "Kranara",
-                "abilities": ["hv","mi","swp"]
+                "name": "Kranara"
             }],
             "armor": 4
         },
@@ -2432,10 +2270,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 12,
-                "damage": 8,
-                "damageBonus": 1,
-                "name": "Sakhazet",
-                "abilities": ["let"]
+                "name": "Sakhazet"
             }],
             "armor": 3
         },
@@ -2460,10 +2295,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "damageBonus": 1,
-                "name": "Sakhazet",
-                "abilities": ["let"]
+                "name": "Sakhazet"
             }],
             "armor": 3
         },
@@ -2483,7 +2315,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
                 "name": "Long Knife"
             }],
             "casting": {
@@ -2511,10 +2342,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "damageBonus": 1,
-                "name": "Sakhazet",
-                "abilities": ["let"]
+                "name": "Sakhazet"
             }],
             "armor": 3
         },
@@ -2538,10 +2366,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "damageBonus": 1,
-                "name": "Sakhazet",
-                "abilities": ["let"]
+                "name": "Sakhazet"
             }],
             "armor": 3
         },
@@ -2564,10 +2389,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "damageBonus": 1,
-                "name": "Sakhazet",
-                "abilities": ["let"]
+                "name": "Sakhazet"
             }],
             "armor": 3
         },
@@ -2591,10 +2413,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "damageBonus": 1,
-                "name": "Sakhazet",
-                "abilities": ["let"]
+                "name": "Sakhazet"
             }],
             "armor": 3
         },
@@ -2617,16 +2436,11 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
                 "name": "Long Knife"
             }],
             "range": [{
                 "rating": 10,
-                "damage": 6,
-                "damageBonus": 1,
-                "name": "Roondar",
-                "abilities": ["sb"],
-                "distance": 8
+                "name": "Roondar"
             }],
             "armor": 3
         },
@@ -2650,16 +2464,11 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
                 "name": "Long Knife"
             }],
             "range": [{
                 "rating": 10,
-                "damage": 6,
-                "damageBonus": 1,
-                "name": "Roondar",
-                "abilities": ["sb"],
-                "distance": 8
+                "name": "Roondar"
             }],
             "armor": 3
         },
@@ -2686,17 +2495,11 @@ const Models: Model[] = [
             "speed": 9,
             "melee": [{
                 "rating": 10,
-                "damage": 6,
-                "damageBonus": 1,
                 "name": "Barbed Javelin"
             }],
             "range": [{
                 "rating": 10,
-                "damage": 6,
-                "damageBonus": 1,
-                "name": "Barbed Javelin",
-                "abilities": ["thr"],
-                "distance": 4
+                "name": "Barbed Javelin"
             }],
             "armor": 3
         },
@@ -2724,17 +2527,11 @@ const Models: Model[] = [
             "speed": 9,
             "melee": [{
                 "rating": 10,
-                "damage": 6,
-                "damageBonus": 1,
                 "name": "Barbed Javelin"
             }],
             "range": [{
                 "rating": 10,
-                "damage": 6,
-                "damageBonus": 1,
-                "name": "Barbed Javelin",
-                "abilities": ["thr"],
-                "distance": 4
+                "name": "Barbed Javelin"
             }],
             "armor": 3
         },
@@ -2769,11 +2566,7 @@ const Models: Model[] = [
             }],
             "range": [{
                 "rating": 10,
-                "damage": 6,
-                "damageBonus": 1,
-                "name": "Roondar",
-                "abilities": ["sb"],
-                "distance": 8
+                "name": "Roondar"
             }],
             "armor": 2
         },
@@ -2804,16 +2597,11 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
                 "name": "Long Knife"
             }],
             "range": [{
                 "rating": 10,
-                "damage": 6,
-                "damageBonus": 1,
-                "name": "Roondar",
-                "abilities": ["sb"],
-                "distance": 8
+                "name": "Roondar"
             }],
             "armor": 2
         },
@@ -2833,13 +2621,10 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
                 "name": "Long Knife"
             },{
                 "rating": 6,
-                "damage": 4,
-                "name": "Whip",
-                "abilities": ["ent","qs"]
+                "name": "Whip"
             }],
             "armor": 2
         },
@@ -2860,13 +2645,10 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
                 "name": "Long Knife"
             },{
                 "rating": 6,
-                "damage": 4,
-                "name": "Whip",
-                "abilities": ["ent","qs"]
+                "name": "Whip"
             }],
             "armor": 2
         },
@@ -2886,7 +2668,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 8,
-                "damage": 6,
                 "name": "Long Knife"
             }],
             "armor": 2
@@ -2908,7 +2689,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 8,
-                "damage": 6,
                 "name": "Long Knife"
             }],
             "armor": 2
@@ -2936,14 +2716,11 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 4,
-                "damage": 6,
                 "name": "Long Knife"
             }],
             "range": [{
                 "rating": 6,
-                "damage": 6,
-                "name": "Bow",
-                "distance": 8
+                "name": "Bow"
             }],
             "armor": 2
         },
@@ -2971,14 +2748,11 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 4,
-                "damage": 6,
                 "name": "Long Knife"
             }],
             "range": [{
                 "rating": 6,
-                "damage": 6,
-                "name": "Bow",
-                "distance": 8
+                "name": "Bow"
             }],
             "armor": 2
         },
@@ -3005,7 +2779,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
                 "name": "Long Knife 2x"
             }],
             "armor": 2
@@ -3034,7 +2807,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
                 "name": "Long Knife 2x"
             }],
             "armor": 2
@@ -3058,7 +2830,6 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 12,
-                "damage": 10,
                 "name": "Kolekar"
             }],
             "armor": 5
@@ -3083,7 +2854,6 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
                 "name": "Kolekar"
             }],
             "armor": 5
@@ -3104,9 +2874,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
-                "name": "Staff",
-                "abilities": ["te"]
+                "name": "Staff"
             }],
             "casting": {
                 "rating": 10,
@@ -3131,9 +2899,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
-                "name": "Staff",
-                "abilities": ["te"]
+                "name": "Staff"
             }],
             "casting": {
                 "rating": 10,
@@ -3157,9 +2923,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 8,
-                "damage": 8,
-                "damageBonus": 1,
-                "name": "Longsword"
+                "name": "Longsword (2h)"
             }],
             "casting": {
                 "rating": 10,
@@ -3184,9 +2948,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 6,
-                "damage": 8,
-                "damageBonus": 1,
-                "name": "Longsword"
+                "name": "Longsword (2h)"
             }],
             "casting": {
                 "rating": 10,
@@ -3210,8 +2972,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 6,
-                "damage": 8,
-                "name": "Longsword"
+                "name": "Longsword (1h)"
             }],
             "casting": {
                 "rating": 10,
@@ -3236,8 +2997,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 6,
-                "damage": 8,
-                "name": "Longsword"
+                "name": "Longsword (1h)"
             }],
             "casting": {
                 "rating": 10,
@@ -3334,9 +3094,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "damageBonus": 1,
-                "name": "Longsword"
+                "name": "Longsword (2h)"
             }],
             "abilities": {
                 "agility": 10
@@ -3360,9 +3118,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "damageBonus": 1,
-                "name": "Longsword"
+                "name": "Longsword (2h)"
             }],
             "abilities": {
                 "agility": 10
@@ -3385,7 +3141,6 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
                 "name": "Warhammer"
             }],
             "abilities": {
@@ -3415,7 +3170,6 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
                 "name": "Warhammer"
             }],
             "abilities": {
@@ -3444,14 +3198,11 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Longsword"
+                "name": "Longsword (1h)"
             }],
             "range": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Longbow",
-                "distance": 12
+                "name": "Longbow"
             }],
             "abilities": {
                 "agility": 10,
@@ -3480,14 +3231,11 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Longsword"
+                "name": "Longsword (1h)"
             }],
             "range": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Longbow",
-                "distance": 12
+                "name": "Longbow"
             }],
             "abilities": {
                 "agility": 10,
@@ -3564,8 +3312,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 6,
-                "damageBonus": 1,
                 "name": "Cutlass"
             }],
             "abilities": {
@@ -3590,8 +3336,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 6,
-                "damageBonus": 1,
                 "name": "Cutlass"
             }],
             "abilities": {
@@ -3614,9 +3358,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 6,
-                "damage": 8,
-                "name": "Pike",
-                "abilities": ["imp","so2","unw"]
+                "name": "Pike"
             }],
             "armor": 5,
             "shield": "S"
@@ -3637,9 +3379,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 6,
-                "damage": 8,
-                "name": "Pike",
-                "abilities": ["imp","so2","unw"]
+                "name": "Pike"
             }],
             "armor": 5,
             "shield": "S",
@@ -3661,16 +3401,11 @@ const Models: Model[] = [
             "talents": ["Amphibious"],
             "melee": [{
                 "rating": 6,
-                "damage": 6,
-                "damageBonus": 1,
                 "name": "Cutlass"
             }],
             "range": [{
                 "rating": 6,
-                "damage": 6,
-                "name": "Grappler",
-                "abilities": ["pul","scl","thr"],
-                "distance": 2
+                "name": "Grappler"
             }],
             "armor": 2
         },
@@ -3691,16 +3426,11 @@ const Models: Model[] = [
             "talents": ["Amphibious","Ally[Independent]"],
             "melee": [{
                 "rating": 6,
-                "damage": 6,
-                "damageBonus": 1,
                 "name": "Cutlass"
             }],
             "range": [{
                 "rating": 6,
-                "damage": 6,
-                "name": "Grappler",
-                "abilities": ["pul","scl","thr"],
-                "distance": 2
+                "name": "Grappler"
             }],
             "armor": 2
         },
@@ -3720,14 +3450,11 @@ const Models: Model[] = [
             "talents": ["Scout"],
             "melee": [{
                 "rating": 6,
-                "damage": 6,
                 "name": "Short Sword"
             }],
             "range": [{
                 "rating": 8,
-                "damage": 8,
-                "name": "Longbow",
-                "distance": 12
+                "name": "Longbow"
             }],
             "armor": 3
         },
@@ -3748,14 +3475,11 @@ const Models: Model[] = [
             "talents": ["Scout","Ally[Independent]"],
             "melee": [{
                 "rating": 6,
-                "damage": 6,
                 "name": "Short Sword"
             }],
             "range": [{
                 "rating": 8,
-                "damage": 8,
-                "name": "Longbow",
-                "distance": 12
+                "name": "Longbow"
             }],
             "armor": 3
         },
@@ -3775,14 +3499,10 @@ const Models: Model[] = [
             "talents": ["Leader","Parry","Taunt"],
             "melee": [{
                 "rating": 12,
-                "damage": 8,
-                "name": "Spikedrakh",
-                "abilities": ["de"]
+                "name": "Spikedrakh"
             },{
                 "rating": 12,
-                "damage": 8,
-                "name": "Morning Star",
-                "abilities": ["sb"]
+                "name": "Morning Star"
             }],
             "armor": 5
         },
@@ -3802,14 +3522,10 @@ const Models: Model[] = [
             "talents": ["Leader","Parry","Taunt","Cavalry","Fast"],
             "melee": [{
                 "rating": 12,
-                "damage": 8,
-                "name": "Spikedrakh",
-                "abilities": ["de"]
+                "name": "Spikedrakh"
             },{
                 "rating": 12,
-                "damage": 8,
-                "name": "Morning Star",
-                "abilities": ["sb"]
+                "name": "Morning Star"
             }],
             "armor": 5
         },
@@ -3829,10 +3545,7 @@ const Models: Model[] = [
             "talents": ["Shadow Magic","Fear Craver"],
             "melee": [{
                 "rating": 6,
-                "damage": 8,
-                "damageBonus": 1,
-                "name": "Shadowspear",
-                "abilities": ["su"]
+                "name": "Shadowspear"
             }],
             "armor": 2,
             "abilities": {
@@ -3859,10 +3572,7 @@ const Models: Model[] = [
             "talents": ["Shadow Magic","Fear Craver","Cavalry","Fast"],
             "melee": [{
                 "rating": 6,
-                "damage": 8,
-                "damageBonus": 1,
-                "name": "Shadowspear",
-                "abilities": ["su"]
+                "name": "Shadowspear"
             }],
             "armor": 2,
             "abilities": {
@@ -3890,10 +3600,7 @@ const Models: Model[] = [
             "talents": ["Shadow Magic","Fear Craver","Ally[Independent]"],
             "melee": [{
                 "rating": 6,
-                "damage": 8,
-                "damageBonus": 1,
-                "name": "Shadowspear",
-                "abilities": ["su"]
+                "name": "Shadowspear"
             }],
             "armor": 2,
             "abilities": {
@@ -3921,10 +3628,7 @@ const Models: Model[] = [
             "talents": ["Shadow Magic","Fear Craver","Cavalry","Fast","Ally[Independent]"],
             "melee": [{
                 "rating": 6,
-                "damage": 8,
-                "damageBonus": 1,
-                "name": "Shadowspear",
-                "abilities": ["su"]
+                "name": "Shadowspear"
             }],
             "armor": 2,
             "abilities": {
@@ -3951,14 +3655,10 @@ const Models: Model[] = [
             "talents": ["Cavalry","Light Cavalry","Scout","Harasser","Fast"],
             "melee": [{
                 "rating": 8,
-                "damage": 8,
-                "name": "Morning Star",
-                "abilities": ["sb"]
+                "name": "Morning Star"
             }],
             "range": [{
                 "rating": 10,
-                "damage": 8,
-                "distance": 10,
                 "name": "Composite Bow"
             }],
             "armor": 4,
@@ -3986,14 +3686,10 @@ const Models: Model[] = [
             },
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Morning Star",
-                "abilities": ["sb"]
+                "name": "Morning Star"
             }],
             "range": [{
                 "rating": 10,
-                "damage": 8,
-                "distance": 10,
                 "name": "Composite Bow"
             }],
             "armor": 4
@@ -4015,14 +3711,10 @@ const Models: Model[] = [
             "talents": ["Cavalry","Light Cavalry","Scout","Harasser","Fast","Ally[Independent]"],
             "melee": [{
                 "rating": 8,
-                "damage": 8,
-                "name": "Morning Star",
-                "abilities": ["sb"]
+                "name": "Morning Star"
             }],
             "range": [{
                 "rating": 10,
-                "damage": 8,
-                "distance": 10,
                 "name": "Composite Bow"
             }],
             "armor": 4
@@ -4047,14 +3739,10 @@ const Models: Model[] = [
             },
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Morning Star",
-                "abilities": ["sb"]
+                "name": "Morning Star"
             }],
             "range": [{
                 "rating": 10,
-                "damage": 8,
-                "distance": 10,
                 "name": "Composite Bow"
             }],
             "armor": 4
@@ -4074,9 +3762,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 8,
-                "damage": 10,
-                "name": "Flail",
-                "abilities": ["sb"]
+                "name": "Flail"
             }],
             "armor": 3
         },
@@ -4095,9 +3781,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 8,
-                "name": "Spikedrakh",
-                "abilities": ["de"]
+                "name": "Spikedrakh"
             }],
             "armor": 3,
             "shield": "AN",
@@ -4119,13 +3803,10 @@ const Models: Model[] = [
             "talents": ["Ambush"],
             "melee": [{
                 "rating": 6,
-                "damage": 4,
                 "name": "Dagger"
             }],
             "range": [{
                 "rating": 6,
-                "damage": 6,
-                "distance": 8,
                 "name": "Bow"
             }],
             "armor": 3
@@ -4144,8 +3825,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 12,
-                "damage": 8,
-                "name": "Longsword"
+                "name": "Longsword (1h)"
             }],
             "shield": "S",
             "armor": 6,
@@ -4174,8 +3854,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Longsword"
+                "name": "Longsword (1h)"
             }],
             "shield": "S",
             "armor": 6,
@@ -4203,7 +3882,6 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 12,
-                "damage": 10,
                 "name": "Greatsword"
             }],
             "armor": 7,
@@ -4228,7 +3906,6 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
                 "name": "Greatsword"
             }],
             "armor": 7,
@@ -4252,7 +3929,6 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 12,
-                "damage": 10,
                 "name": "Battleaxe"
             }],
             "armor": 6,
@@ -4277,7 +3953,6 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
                 "name": "Battleaxe"
             }],
             "armor": 6,
@@ -4301,7 +3976,6 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 12,
-                "damage": 8,
                 "name": "War Axe 2x"
             }],
             "armor": 7,
@@ -4326,7 +4000,6 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
                 "name": "War Axe 2x"
             }],
             "armor": 7,
@@ -4350,13 +4023,10 @@ const Models: Model[] = [
             "speed": 9,
             "melee": [{
                 "rating": 12,
-                "damage": 10,
-                "name": "Lance",
-                "abilities": ["shk"]
+                "name": "Lance"
             },{
                 "rating": 12,
-                "damage": 8,
-                "name": "Longsword"
+                "name": "Longsword (1h)"
             },{
                 "rating": 6,
                 "damage": 6,
@@ -4386,13 +4056,10 @@ const Models: Model[] = [
             "speed": 9,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Lance",
-                "abilities": ["shk"]
+                "name": "Lance"
             },{
                 "rating": 10,
-                "damage": 8,
-                "name": "Longsword"
+                "name": "Longsword (1h)"
             },{
                 "rating": 6,
                 "damage": 6,
@@ -4422,7 +4089,6 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 8,
-                "damage": 10,
                 "name": "War Mattock"
             }],
             "armor": 6,
@@ -4451,7 +4117,6 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 8,
-                "damage": 10,
                 "name": "War Mattock"
             }],
             "armor": 6,
@@ -4479,8 +4144,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Longsword"
+                "name": "Longsword (1h)"
             }],
             "shield": "S",
             "armor": 7,
@@ -4505,8 +4169,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Longsword"
+                "name": "Longsword (1h)"
             }],
             "shield": "S",
             "armor": 7,
@@ -4530,7 +4193,6 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
                 "name": "Greatsword"
             }],
             "armor": 7,
@@ -4555,7 +4217,6 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
                 "name": "Greatsword"
             }],
             "armor": 7,
@@ -4579,7 +4240,6 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
                 "name": "Battleaxe"
             }],
             "armor": 6,
@@ -4604,7 +4264,6 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
                 "name": "Battleaxe"
             }],
             "armor": 7,
@@ -4628,7 +4287,6 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
                 "name": "War Axe 2x"
             }],
             "armor": 7,
@@ -4653,7 +4311,6 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
                 "name": "War Axe 2x"
             }],
             "armor": 7,
@@ -4677,8 +4334,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Longsword"
+                "name": "Longsword (1h)"
             }],
             "shield": "S",
             "armor": 5,
@@ -4707,8 +4363,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Longsword"
+                "name": "Longsword (1h)"
             }],
             "shield": "S",
             "armor": 5,
@@ -4736,13 +4391,10 @@ const Models: Model[] = [
             "speed": 9,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Lance",
-                "abilities": ["shk"]
+                "name": "Lance"
             },{
                 "rating": 10,
-                "damage": 8,
-                "name": "Longsword"
+                "name": "Longsword (1h)"
             },{
                 "rating": 6,
                 "damage": 6,
@@ -4771,13 +4423,10 @@ const Models: Model[] = [
             "speed": 9,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Lance",
-                "abilities": ["shk"]
+                "name": "Lance"
             },{
                 "rating": 10,
-                "damage": 8,
-                "name": "Longsword"
+                "name": "Longsword (1h)"
             },{
                 "rating": 6,
                 "damage": 6,
@@ -4805,8 +4454,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Longsword"
+                "name": "Longsword (1h)"
             }],
             "shield": "S",
             "armor": 6,
@@ -4835,8 +4483,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Longsword"
+                "name": "Longsword (1h)"
             }],
             "shield": "S",
             "armor": 6,
@@ -4864,7 +4511,6 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
                 "name": "Greatsword"
             }],
             "armor": 6,
@@ -4895,7 +4541,6 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
                 "name": "Greatsword"
             }],
             "armor": 6,
@@ -4925,7 +4570,6 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
                 "name": "Battleaxe"
             }],
             "armor": 6,
@@ -4953,7 +4597,6 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
                 "name": "Battleaxe"
             }],
             "armor": 6,
@@ -4980,9 +4623,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 6,
-                "damage": 8,
-                "name": "Longspear",
-                "abilities": ["so"]
+                "name": "Longspear"
             }],
             "shield": "S",
             "armor": 4,
@@ -5003,9 +4644,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 6,
-                "damage": 8,
-                "name": "Longspear",
-                "abilities": ["so"]
+                "name": "Longspear"
             }],
             "shield": "S",
             "armor": 4,
@@ -5026,13 +4665,10 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 4,
-                "damage": 4,
                 "name": "Dagger"
             }],
             "range": [{
                 "rating": 6,
-                "damage": 6,
-                "distance": 8,
                 "name": "Bow"
             }],
             "armor": 2,
@@ -5053,13 +4689,10 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 4,
-                "damage": 4,
                 "name": "Dagger"
             }],
             "range": [{
                 "rating": 6,
-                "damage": 6,
-                "distance": 8,
                 "name": "Bow"
             }],
             "armor": 2,
@@ -5080,10 +4713,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 8,
-                "damage": 6,
-                "damageBonus": 1,
-                "name": "Thresher",
-                "abilities": ["sb"]
+                "name": "Thresher"
             }],
             "armor": 2,
             "discipline": 4
@@ -5103,10 +4733,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 8,
-                "damage": 6,
-                "damageBonus": 1,
-                "name": "Thresher",
-                "abilities": ["sb"]
+                "name": "Thresher"
             }],
             "armor": 2,
             "discipline": 4,
@@ -5126,9 +4753,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 12,
-                "damage": 10,
-                "name": "Toloron",
-                "abilities": ["sw"]
+                "name": "Toloron"
             }],
             "armor": 5,
             "discipline": 12,
@@ -5151,14 +4776,10 @@ const Models: Model[] = [
             "speed": 10,
             "melee": [{
                 "rating": 12,
-                "damage": 10,
-                "name": "Toloron",
-                "abilities": ["sw"]
+                "name": "Toloron"
             }],
             "range": [{
                 "rating": 10,
-                "damage": 8,
-                "distance": 12,
                 "name": "Longbow"
             }],
             "armor": 4,
@@ -5179,14 +4800,10 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 12,
-                "damage": 10,
-                "name": "Toloron",
-                "abilities": ["sw"]
+                "name": "Toloron"
             }],
             "range": [{
                 "rating": 10,
-                "damage": 8,
-                "distance": 12,
                 "name": "Longbow"
             }],
             "armor": 4,
@@ -5210,9 +4827,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
-                "name": "Staff",
-                "abilities": ["te"]
+                "name": "Staff"
             }],
             "armor": 2,
             "discipline": 8,
@@ -5236,9 +4851,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
-                "name": "Staff",
-                "abilities": ["te"]
+                "name": "Staff"
             }],
             "armor": 4,
             "discipline": 8,
@@ -5262,14 +4875,10 @@ const Models: Model[] = [
             "speed": 10,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Toloron",
-                "abilities": ["sw"]
+                "name": "Toloron"
             }],
             "range": [{
                 "rating": 10,
-                "damage": 8,
-                "distance": 12,
                 "name": "Longbow"
             }],
             "armor": 4,
@@ -5290,14 +4899,10 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Toloron",
-                "abilities": ["sw"]
+                "name": "Toloron"
             }],
             "range": [{
                 "rating": 10,
-                "damage": 8,
-                "distance": 12,
                 "name": "Longbow"
             }],
             "armor": 4,
@@ -5321,9 +4926,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Toloron",
-                "abilities": ["sw"]
+                "name": "Toloron"
             }],
             "armor": 4,
             "discipline": 10,
@@ -5354,9 +4957,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Toloron",
-                "abilities": ["sw"]
+                "name": "Toloron"
             }],
             "armor": 4,
             "discipline": 10,
@@ -5383,14 +4984,10 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 8,
-                "damage": 6,
-                "damageBonus": 1,
                 "name": "Herenkal"
             }],
             "range": [{
                 "rating": 12,
-                "damage": 8,
-                "distance": 12,
                 "name": "Longbow"
             }],
             "armor": 4,
@@ -5421,17 +5018,11 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 6,
-                "damageBonus": 1,
                 "name": "Herenkal 2x"
             }],
             "range": [{
                 "rating": 8,
-                "damage": 6,
-                "damageBonus": 1,
-                "distance": 2,
-                "name": "Herenkal",
-                "abilities": ["thr"]
+                "name": "Herenkal"
             }],
             "armor": 2,
             "discipline": 10,
@@ -5454,16 +5045,11 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 6,
-                "damageBonus": 1,
                 "name": "Herenkal"
             }],
             "range": [{
                 "rating": 10,
-                "damage": 6,
-                "distance": 4,
-                "name": "Javelin",
-                "abilities": ["thr"]
+                "name": "Javelin"
             }],
             "armor": 3,
             "discipline": 10,
@@ -5486,14 +5072,10 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 6,
-                "damage": 8,
-                "name": "Longspear",
-                "abilities": ["so"]
+                "name": "Longspear"
             }],
             "range": [{
                 "rating": 6,
-                "damage": 8,
-                "distance": 12,
                 "name": "Longbow"
             }],
             "armor": 4,
@@ -5522,14 +5104,10 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 6,
-                "damage": 8,
-                "name": "Longspear",
-                "abilities": ["so"]
+                "name": "Longspear"
             }],
             "range": [{
                 "rating": 6,
-                "damage": 8,
-                "distance": 12,
                 "name": "Longbow"
             }],
             "armor": 4,
@@ -5557,16 +5135,11 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
-                "damageBonus": 1,
                 "name": "Herenkal"
             }],
             "range": [{
                 "rating": 8,
-                "damage": 6,
-                "distance": 4,
-                "name": "Javelin",
-                "abilities": ["thr"]
+                "name": "Javelin"
             }],
             "armor": 3,
             "discipline": 6,
@@ -5586,14 +5159,10 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
-                "damageBonus": 1,
                 "name": "Herenkal"
             }],
             "range": [{
                 "rating": 6,
-                "damage": 8,
-                "distance": 12,
                 "name": "Longbow"
             }],
             "armor": 3,
@@ -5621,9 +5190,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 12,
-                "damage": 10,
-                "name": "Wolfsword",
-                "abilities": ["ml"]
+                "name": "Wolfsword"
             }],
             "armor": 5,
             "discipline": 12,
@@ -5651,9 +5218,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Wolfsword",
-                "abilities": ["ml"]
+                "name": "Wolfsword"
             }],
             "armor": 5,
             "discipline": 10,
@@ -5680,9 +5245,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 12,
-                "damage": 8,
-                "name": "Longspear",
-                "abilities": ["so"]
+                "name": "Longspear"
             }],
             "shield":"S",
             "armor": 3,
@@ -5708,9 +5271,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Longspear",
-                "abilities": ["so"]
+                "name": "Longspear"
             }],
             "shield":"S",
             "armor": 3,
@@ -5735,7 +5296,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 4,
                 "name": "Handclaws 2x"
             }],
             "armor": 2,
@@ -5761,7 +5321,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 4,
                 "name": "Handclaws 2x"
             }],
             "armor": 2,
@@ -5786,7 +5345,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
                 "name": "Battleaxe"
             }],
             "armor": 2,
@@ -5811,7 +5369,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
                 "name": "Battleaxe"
             }],
             "armor": 2,
@@ -5835,7 +5392,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 6,
                 "name": "Dire Claws 2x"
             }],
             "armor": 3,
@@ -5867,7 +5423,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 6,
                 "name": "Dire Claws 2x"
             }],
             "armor": 3,
@@ -5898,13 +5453,10 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 8,
-                "damage": 6,
                 "name": "Short Sword"
             }],
             "range":[{
                 "rating":12,
-                "damage":6,
-                "distance":8,
                 "name": "Bow"
             }],
             "armor": 2,
@@ -5936,13 +5488,10 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 8,
-                "damage": 6,
                 "name": "Short Sword"
             }],
             "range":[{
                 "rating":12,
-                "damage":6,
-                "distance":8,
                 "name": "Bow"
             }],
             "armor": 2,
@@ -5973,7 +5522,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
                 "name": "Greatsword"
             }],
             "armor": 3,
@@ -6005,7 +5553,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
                 "name": "Greatsword"
             }],
             "armor": 3,
@@ -6036,13 +5583,10 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 4,
-                "damage": 4,
                 "name": "Knife"
             }],
             "range":[{
                 "rating":6,
-                "damage":8,
-                "distance":6,
                 "name":"Sling"
             }],
             "armor": 2,
@@ -6067,13 +5611,10 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 4,
-                "damage": 4,
                 "name": "Knife"
             }],
             "range":[{
                 "rating":6,
-                "damage":8,
-                "distance":6,
                 "name":"Sling"
             }],
             "armor": 2,
@@ -6098,9 +5639,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 8,
-                "name": "Longspear",
-                "abilities":["so"]
+                "name": "Longspear"
             }],
             "shield": "S",
             "armor": 3,
@@ -6121,9 +5660,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 8,
-                "name": "Longspear",
-                "abilities":["so"]
+                "name": "Longspear"
             }],
             "shield": "S",
             "armor": 3,
@@ -6144,13 +5681,10 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
                 "name": "Short Sword"
             }],
             "range":[{
                 "rating":8,
-                "damage":6,
-                "distance":8,
                 "name":"Bow"
             }],
             "armor": 2,
@@ -6176,13 +5710,10 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
                 "name": "Short Sword"
             }],
             "range":[{
                 "rating":8,
-                "damage":6,
-                "distance":8,
                 "name":"Bow"
             }],
             "armor": 2,
@@ -6208,9 +5739,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Longspear",
-                "abilities": ["so"]
+                "name": "Longspear"
             }],
             "shield": "S",
             "armor": 5,
@@ -6235,9 +5764,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Longspear",
-                "abilities": ["so"]
+                "name": "Longspear"
             }],
             "shield": "S",
             "armor": 5,
@@ -6261,9 +5788,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Longspear",
-                "abilities": ["so"]
+                "name": "Longspear"
             }],
             "shield": "S",
             "armor": 5,
@@ -6288,9 +5813,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Hartblade",
-                "abilities": ["let"]
+                "name": "Hartblade"
             }],
             "armor": 3,
             "discipline": 10,
@@ -6319,9 +5842,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Hartblade",
-                "abilities": ["let"]
+                "name": "Hartblade"
             }],
             "armor": 3,
             "discipline": 10,
@@ -6349,9 +5870,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Hartblade",
-                "abilities": ["let"]
+                "name": "Hartblade"
             }],
             "armor": 3,
             "discipline": 10,
@@ -6379,7 +5898,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 6,
                 "name": "Sanghara 2x"
             }],
             "armor": 2,
@@ -6409,7 +5927,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 6,
                 "name": "Sanghara 2x"
             }],
             "armor": 2,
@@ -6439,7 +5956,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 6,
                 "name": "Sanghara 2x"
             }],
             "armor": 2,
@@ -6468,7 +5984,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 4,
                 "name": "Dagger"
             }],
             "armor": 2,
@@ -6496,7 +6011,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 4,
                 "name": "Dagger"
             }],
             "armor": 2,
@@ -6525,7 +6039,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 4,
                 "name": "Dagger"
             }],
             "armor": 2,
@@ -6554,7 +6067,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 4,
                 "name": "Dagger"
             }],
             "armor": 2,
@@ -6587,16 +6099,11 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
                 "name": "Long Knife"
             }],
             "range": [{
                 "rating": 10,
-                "damage": 6,
-                "damageBonus": 1,
-                "name": "Roondar",
-                "abilities": ["sb"],
-                "distance": 8
+                "name": "Roondar"
             }],
             "armor": 3
         },
@@ -6616,10 +6123,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "damageBonus": 1,
-                "name": "Sakhazet",
-                "abilities": ["let"]
+                "name": "Sakhazet"
             }],
             "shield": "L",
             "armor": 5,
@@ -6640,7 +6144,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 4,
                 "name": "Dagger"
             }],
             "armor": 2,
@@ -6674,10 +6177,7 @@ const Models: Model[] = [
             }],
             "range": [{
                 "rating": 8,
-                "damage": 6,
-                "name": "Grappler",
-                "abilities": ["pul","scl","thr"],
-                "distance": 2
+                "name": "Grappler"
             }],
             "armor": 4,
             "discipline": 10,
@@ -6715,10 +6215,7 @@ const Models: Model[] = [
             }],
             "range": [{
                 "rating": 8,
-                "damage": 6,
-                "name": "Grappler",
-                "abilities": ["pul","scl","thr"],
-                "distance": 2
+                "name": "Grappler"
             }],
             "armor": 4,
             "discipline": 10,
@@ -6749,14 +6246,11 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 4,
-                "damage": 4,
                 "name": "Knife"
             }],
             "range": [{
                 "rating": 8,
-                "damage": 8,
-                "name": "Longbow",
-                "distance": 12
+                "name": "Longbow"
             }],
             "armor": 4,
             "discipline": 6,
@@ -6776,10 +6270,7 @@ const Models: Model[] = [
             "speed": 10,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "damageBonus": 1,
-                "name": "Impaler",
-                "abilities": ["imp"]
+                "name": "Impaler"
             }],
             "shield": "S",
             "armor": 4,
@@ -6804,10 +6295,7 @@ const Models: Model[] = [
             "speed": 10,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "damageBonus": 1,
-                "name": "Impaler",
-                "abilities": ["imp"]
+                "name": "Impaler"
             }],
             "shield": "S",
             "armor": 4,
@@ -6831,10 +6319,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "damageBonus": 1,
-                "name": "Impaler",
-                "abilities": ["imp"]
+                "name": "Impaler"
             }],
             "shield": "S",
             "armor": 4,
@@ -6859,10 +6344,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "damageBonus": 1,
-                "name": "Impaler",
-                "abilities": ["imp"]
+                "name": "Impaler"
             }],
             "shield": "S",
             "armor": 4,
@@ -6886,15 +6368,11 @@ const Models: Model[] = [
             "speed": 10,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
                 "name": "Javelin"
             }],
             "range": [{
                 "rating": 6,
-                "damage": 6,
-                "name": "Javelin",
-                "abilities": ["thr"],
-                "distance": 4
+                "name": "Javelin"
             }],
             "shield": "S",
             "armor": 3,
@@ -6916,15 +6394,11 @@ const Models: Model[] = [
             "speed": 10,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
                 "name": "Javelin"
             }],
             "range": [{
                 "rating": 6,
-                "damage": 6,
-                "name": "Javelin",
-                "abilities": ["thr"],
-                "distance": 4
+                "name": "Javelin"
             }],
             "shield": "S",
             "armor": 3,
@@ -6945,15 +6419,11 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
                 "name": "Javelin"
             }],
             "range": [{
                 "rating": 6,
-                "damage": 6,
-                "name": "Javelin",
-                "abilities": ["thr"],
-                "distance": 4
+                "name": "Javelin"
             }],
             "shield": "S",
             "armor": 3,
@@ -6975,15 +6445,11 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
                 "name": "Javelin"
             }],
             "range": [{
                 "rating": 6,
-                "damage": 6,
-                "name": "Javelin",
-                "abilities": ["thr"],
-                "distance": 4
+                "name": "Javelin"
             }],
             "shield": "S",
             "armor": 3,
@@ -7004,16 +6470,11 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Taumari",
-                "abilities": ["qs"]
+                "name": "Taumari"
             }],
             "range": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Tennko",
-                "abilities": ["de"],
-                "distance": 10
+                "name": "Tennko"
             }],
             "armor": 5,
             "discipline": 10,
@@ -7037,16 +6498,11 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Taumari",
-                "abilities": ["qs"]
+                "name": "Taumari"
             }],
             "range": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Tennko",
-                "abilities": ["de"],
-                "distance": 10
+                "name": "Tennko"
             }],
             "armor": 5,
             "discipline": 10,
@@ -7069,9 +6525,7 @@ const Models: Model[] = [
             "speed": 8,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Zeradrakh",
-                "abilities": ["te"]
+                "name": "Zeradrakh"
             },{
                 "rating": 8,
                 "damage": 6,
@@ -7100,9 +6554,7 @@ const Models: Model[] = [
             "speed": 8,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Zeradrakh",
-                "abilities": ["te"]
+                "name": "Zeradrakh"
             },{
                 "rating": 8,
                 "damage": 6,
@@ -7130,9 +6582,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Zeradrakh",
-                "abilities": ["te"]
+                "name": "Zeradrakh"
             }],
             "armor": 5,
             "discipline": 10,
@@ -7157,9 +6607,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Zeradrakh",
-                "abilities": ["te"]
+                "name": "Zeradrakh"
             }],
             "armor": 5,
             "discipline": 10,
@@ -7183,17 +6631,11 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "damageBonus": 1,
-                "name": "Sakhazet",
-                "abilities": ["let"]
+                "name": "Sakhazet"
             }],
             "range": [{
                 "rating": 8,
-                "damage": 4,
-                "name": "Blowgun",
-                "abilities": ["ven"],
-                "distance": 6
+                "name": "Blowgun"
             }],
             "shield": "L",
             "armor": 5,
@@ -7215,17 +6657,11 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "damageBonus": 1,
-                "name": "Sakhazet",
-                "abilities": ["let"]
+                "name": "Sakhazet"
             }],
             "range": [{
                 "rating": 8,
-                "damage": 4,
-                "name": "Blowgun",
-                "abilities": ["ven"],
-                "distance": 6
+                "name": "Blowgun"
             }],
             "shield": "L",
             "armor": 5,
@@ -7295,16 +6731,11 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 12,
-                "damage": 8,
-                "name": "Spikedrakh",
-                "abilities": ["de"]
+                "name": "Spikedrakh"
             }],
             "range": [{
                 "rating":8,
-                "damage":0,
-                "name":"Lasso",
-                "distance":4,
-                "abilities": ["thr","ent","pul"]
+                "name":"Lasso"
             }],
             "armor": 6,
             "discipline": 12,
@@ -7328,16 +6759,11 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Spikedrakh",
-                "abilities": ["de"]
+                "name": "Spikedrakh"
             }],
             "range": [{
                 "rating":8,
-                "damage":0,
-                "name":"Lasso",
-                "distance":4,
-                "abilities": ["thr","ent","pul"]
+                "name":"Lasso"
             }],
             "armor": 6,
             "discipline": 10,
@@ -7360,9 +6786,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
-                "name": "Staff",
-                "abilities": ["te"]
+                "name": "Staff"
             }],
             "armor": 2,
             "discipline": 6,
@@ -7386,9 +6810,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Scythe",
-                "abilities": ["swp"]
+                "name": "Scythe"
             }],
             "armor": 6,
             "discipline": 10,
@@ -7430,15 +6852,11 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 6,
-                "damage": 8,
-                "name": "Longspear",
-                "abilities": ["so"]
+                "name": "Longspear"
             }],
             "range":[{
                 "rating":6,
-                "damage":6,
-                "name":"Bow",
-                "distance":8
+                "name":"Bow"
             }],
             "shield": "P",
             "armor": 4,
@@ -7575,9 +6993,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 12,
-                "damage": 10,
-                "name": "Razorfang",
-                "abilities":["swp"]
+                "name": "Razorfang"
             }],
             "armor": 5,
             "discipline": 12,
@@ -7600,9 +7016,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
-                "name": "Staff",
-                "abilities":["te"]
+                "name": "Staff"
             }],
             "armor": 2,
             "discipline": 8,
@@ -7726,10 +7140,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Sakhazet",
-                "damageBonus": 1,
-                "abilities":["let"]
+                "name": "Sakhazet"
             }],
             "shield":"L",
             "armor": 5,
@@ -7761,7 +7172,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 4,
                 "name": "Dagger"
             }],
             "armor": 2,
@@ -7790,7 +7200,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 4,
                 "name": "Dagger"
             }],
             "armor": 2,
@@ -7885,7 +7294,7 @@ const Models: Model[] = [
                 "rating": 6,
                 "damage": 6,
                 "name": "Skull Staff",
-                "abilities":["te","mgc"]
+                "abilities":["te","mag"]
             }],
             "armor": 2,
             "discipline": 6,
@@ -7912,7 +7321,7 @@ const Models: Model[] = [
                 "rating": 6,
                 "damage": 6,
                 "name": "Skull Staff",
-                "abilities":["te","mgc"]
+                "abilities":["te","mag"]
             }],
             "armor": 2,
             "discipline": 6,
@@ -7936,14 +7345,11 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Longsword"
+                "name": "Longsword (1h)"
             }],
             "range":[{
                 "rating":12,
-                "damage":8,
-                "name":"Longbow",
-                "distance":12
+                "name":"Longbow"
             }],
             "armor": 3,
             "discipline": 8,
@@ -7967,14 +7373,11 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Longsword"
+                "name": "Longsword (1h)"
             }],
             "range":[{
                 "rating":12,
-                "damage":8,
-                "name":"Longbow",
-                "distance":12
+                "name":"Longbow"
             }],
             "armor": 3,
             "discipline": 8,
@@ -7998,14 +7401,11 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Longsword"
+                "name": "Longsword (1h)"
             }],
             "range":[{
                 "rating":12,
-                "damage":8,
-                "name":"Longbow",
-                "distance":12
+                "name":"Longbow"
             }],
             "armor": 3,
             "discipline": 8,
@@ -8029,14 +7429,11 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Longsword"
+                "name": "Longsword (1h)"
             }],
             "range":[{
                 "rating":12,
-                "damage":8,
-                "name":"Longbow",
-                "distance":12
+                "name":"Longbow"
             }],
             "armor": 3,
             "discipline": 8,
@@ -8060,14 +7457,11 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Longsword"
+                "name": "Longsword (1h)"
             }],
             "range":[{
                 "rating":12,
-                "damage":8,
-                "name":"Longbow",
-                "distance":12
+                "name":"Longbow"
             }],
             "armor": 3,
             "discipline": 8,
@@ -8090,8 +7484,6 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 8,
-                "damage": 6,
-                "damageBonus": 1,
                 "name": "Cutlass"
             }],
             "armor": 4,
@@ -8113,8 +7505,6 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 8,
-                "damage": 6,
-                "damageBonus": 1,
                 "name": "Cutlass"
             }],
             "armor": 4,
@@ -8135,8 +7525,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 12,
-                "damage": 8,
-                "name": "Longsword"
+                "name": "Longsword (1h)"
             }],
             "shield": "S",
             "armor": 5,
@@ -8160,16 +7549,11 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "damageBonus": 1,
-                "abilities": ["let"],
                 "name": "Sakhazet"
             }],
             "range": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Composite Bow",
-                "distance": 10
+                "name": "Composite Bow"
             }],
             "armor": 3,
             "discipline": 10,
@@ -8194,16 +7578,11 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "damageBonus": 1,
-                "abilities": ["let"],
                 "name": "Sakhazet"
             }],
             "range": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Composite Bow",
-                "distance": 10
+                "name": "Composite Bow"
             }],
             "armor": 3,
             "discipline": 10,
@@ -8227,16 +7606,11 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "damageBonus": 1,
-                "abilities": ["let"],
                 "name": "Sakhazet"
             }],
             "range": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Composite Bow",
-                "distance": 10
+                "name": "Composite Bow"
             }],
             "armor": 4,
             "discipline": 10,
@@ -8260,16 +7634,11 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "damageBonus": 1,
-                "abilities": ["let"],
                 "name": "Sakhazet"
             }],
             "range": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Composite Bow",
-                "distance": 10
+                "name": "Composite Bow"
             }],
             "armor": 4,
             "discipline": 10,
@@ -8292,8 +7661,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Longsword"
+                "name": "Longsword (1h)"
             }],
             "shield": "S",
             "armor": 5,
@@ -8319,8 +7687,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Longsword"
+                "name": "Longsword (1h)"
             }],
             "shield": "S",
             "armor": 5,
@@ -8345,9 +7712,7 @@ const Models: Model[] = [
             "speed": 10,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Toloron",
-                "abilities": ["sw"]
+                "name": "Toloron"
             },{
                 "rating":8,
                 "damage":6,
@@ -8375,9 +7740,7 @@ const Models: Model[] = [
             "speed": 10,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Toloron",
-                "abilities": ["sw"]
+                "name": "Toloron"
             }],
             "armor": 4,
             "discipline": 10,
@@ -8401,7 +7764,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 8,
                 "name": "War Axe"
             }],
             "shield": "S",
@@ -8428,7 +7790,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 8,
                 "name": "War Axe"
             }],
             "shield": "S",
@@ -8454,9 +7815,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Boarding Pike",
-                "abilities": ["pin"]
+                "name": "Boarding Pike"
             }],
             "armor": 2,
             "discipline": 10,
@@ -8481,9 +7840,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Boarding Pike",
-                "abilities": ["pin"]
+                "name": "Boarding Pike"
             }],
             "armor": 2,
             "discipline": 10,
@@ -8507,15 +7864,11 @@ const Models: Model[] = [
             "speed": 10,
             "melee": [{
                 "rating": 8,
-                "damage": 8,
                 "name": "Saber"
             }],
             "range": [{
                 "rating":12,
-                "damage":4,
-                "distance":6,
-                "name":"Bolas",
-                "abilities":["thr","ent"]
+                "name":"Bolas"
             }],
             "armor": 3,
             "discipline": 8,
@@ -8602,9 +7955,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 4,
-                "name": "Barbed Whip",
-                "abilities": ["ent","qs"]
+                "name": "Barbed Whip"
             }],
             "range": [{
                 "rating":10,
@@ -8728,9 +8079,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 4,
-                "name": "Barbed Whip",
-                "abilities": ["ent","qs"]
+                "name": "Barbed Whip"
             }],
             "shield":"AN",
             "armor": 4,
@@ -8751,7 +8100,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 8,
                 "name": "Mace"
             }],
             "armor": 2,
@@ -8777,7 +8125,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 8,
                 "name": "Mace"
             }],
             "armor": 2,
@@ -8802,9 +8149,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Greatsword",
-                "ratingBonus":1
+                "name": "Greatsword"
             }],
             "armor": 5,
             "discipline": 10,
@@ -8828,9 +8173,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Greatsword",
-                "ratingBonus":1
+                "name": "Greatsword"
             }],
             "armor": 5,
             "discipline": 10,
@@ -8853,9 +8196,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 8,
-                "damage": 8,
-                "name": "Moonsglave",
-                "abilities": ["te"]
+                "name": "Moonsglave"
             }],
             "armor": 2,
             "discipline": 12,
@@ -8882,9 +8223,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 8,
-                "damage": 8,
-                "name": "Moonsglave",
-                "abilities": ["te"]
+                "name": "Moonsglave"
             }],
             "armor": 2,
             "discipline": 8,
@@ -8912,9 +8251,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 8,
-                "damage": 8,
-                "name": "Moonsglave",
-                "abilities": ["te"]
+                "name": "Moonsglave"
             }],
             "armor": 2,
             "discipline": 8,
@@ -8941,9 +8278,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 8,
-                "damage": 8,
-                "name": "Moonsglave",
-                "abilities": ["te"]
+                "name": "Moonsglave"
             }],
             "armor": 2,
             "discipline": 12,
@@ -8970,9 +8305,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 8,
-                "damage": 8,
-                "name": "Moonsglave",
-                "abilities": ["te"]
+                "name": "Moonsglave"
             }],
             "armor": 2,
             "discipline": 8,
@@ -9000,9 +8333,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 8,
-                "damage": 8,
-                "name": "Moonsglave",
-                "abilities": ["te"]
+                "name": "Moonsglave"
             }],
             "armor": 2,
             "discipline": 8,
@@ -9029,7 +8360,6 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
                 "name": "Saber"
             }],
             "shield":"S",
@@ -9052,7 +8382,6 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
                 "name": "Saber"
             }],
             "shield":"S",
@@ -9074,7 +8403,6 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
                 "name": "Saber"
             }],
             "shield":"S",
@@ -9097,7 +8425,6 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
                 "name": "Saber"
             }],
             "shield":"S",
@@ -9119,9 +8446,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 6,
-                "name": "Moonsickle",
-                "damageBonus":1
+                "name": "Moonsickle"
             }],
             "armor": 3,
             "discipline": 10,
@@ -9145,9 +8470,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 6,
-                "name": "Moonsickle",
-                "damageBonus":1
+                "name": "Moonsickle"
             }],
             "armor": 3,
             "discipline": 10,
@@ -9170,9 +8493,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 12,
-                "damage": 8,
-                "name": "Longspear",
-                "abilities":["so"]
+                "name": "Longspear"
             }],
             "shield":"L",
             "armor": 6,
@@ -9194,9 +8515,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 12,
-                "damage": 8,
-                "name": "Longspear",
-                "abilities":["so"]
+                "name": "Longspear"
             }],
             "shield":"L",
             "armor": 6,
@@ -9217,14 +8536,11 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 6,
-                "damage": 8,
                 "name": "Saber"
             }],
             "range":[{
                 "rating":6,
-                "damage":6,
-                "name":"Bow",
-                "distance":8
+                "name":"Bow"
             }],
             "shield":"AS",
             "armor": 4,
@@ -9253,14 +8569,11 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 6,
-                "damage": 8,
                 "name": "Saber"
             }],
             "range":[{
                 "rating":6,
-                "damage":6,
-                "name":"Bow",
-                "distance":8
+                "name":"Bow"
             }],
             "shield":"AS",
             "armor": 4,
@@ -9288,9 +8601,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 6,
-                "damage": 8,
-                "name": "Longspear",
-                "abilities":["so"]
+                "name": "Longspear"
             }],
             "shield":"S",
             "armor": 4,
@@ -9318,9 +8629,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 6,
-                "damage": 8,
-                "name": "Longspear",
-                "abilities":["so"]
+                "name": "Longspear"
             }],
             "shield":"S",
             "armor": 4,
@@ -9348,9 +8657,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Zeradrakh",
-                "abilities":["te"]
+                "name": "Zeradrakh"
             }],
             "armor": 5,
             "discipline": 10,
@@ -9375,9 +8682,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Zeradrakh",
-                "abilities":["te"]
+                "name": "Zeradrakh"
             }],
             "armor": 5,
             "discipline": 10,
@@ -9402,9 +8707,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Zeradrakh",
-                "abilities":["te"]
+                "name": "Zeradrakh"
             }],
             "armor": 5,
             "discipline": 10,
@@ -9429,9 +8732,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Zeradrakh",
-                "abilities":["te"]
+                "name": "Zeradrakh"
             }],
             "armor": 5,
             "discipline": 10,
@@ -9455,16 +8756,11 @@ const Models: Model[] = [
             "speed": 9,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Taumari",
-                "abilities":["qs"]
+                "name": "Taumari"
             }],
             "range":[{
                 "rating":10,
-                "damage":8,
-                "name":"Tennko",
-                "distance":10,
-                "abilities":["de"]
+                "name":"Tennko"
             }],
             "armor": 4,
             "discipline": 10,
@@ -9488,16 +8784,11 @@ const Models: Model[] = [
             "speed": 9,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Taumari",
-                "abilities":["qs"]
+                "name": "Taumari"
             }],
             "range":[{
                 "rating":10,
-                "damage":8,
-                "name":"Tennko",
-                "distance":10,
-                "abilities":["de"]
+                "name":"Tennko"
             }],
             "armor": 4,
             "discipline": 10,
@@ -9520,16 +8811,11 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Taumari",
-                "abilities":["qs"]
+                "name": "Taumari"
             }],
             "range":[{
                 "rating":10,
-                "damage":8,
-                "name":"Tennko",
-                "distance":10,
-                "abilities":["de"]
+                "name":"Tennko"
             }],
             "armor": 5,
             "discipline": 10,
@@ -9553,16 +8839,11 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Taumari",
-                "abilities":["qs"]
+                "name": "Taumari"
             }],
             "range":[{
                 "rating":10,
-                "damage":8,
-                "name":"Tennko",
-                "distance":10,
-                "abilities":["de"]
+                "name":"Tennko"
             }],
             "armor": 5,
             "discipline": 10,
@@ -9585,10 +8866,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Pit Glave",
-                "damageBonus":1,
-                "abilities":["hin"]
+                "name": "Pit Glave"
             }],
             "shield":"B",
             "armor": 2,
@@ -9613,7 +8891,6 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 12,
-                "damage": 6,
                 "name": "Club"
             }],
             "armor": 4,
@@ -9638,7 +8915,6 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 6,
                 "name": "Club"
             }],
             "armor": 4,
@@ -9664,7 +8940,6 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 6,
                 "name": "Club"
             }],
             "armor": 4,
@@ -9765,8 +9040,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 6,
-                "damageBonus": 1,
                 "name": "Cutlass"
             }],
             "armor": 3,
@@ -9795,8 +9068,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 6,
-                "damageBonus": 1,
                 "name": "Cutlass"
             }],
             "armor": 3,
@@ -9916,10 +9187,7 @@ const Models: Model[] = [
             "speed": 8,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "damageBonus":1,
-                "name": "Impaler",
-                "abilities":["imp"]
+                "name": "Impaler"
             }],
             "shield":"S",
             "armor": 2,
@@ -9943,13 +9211,10 @@ const Models: Model[] = [
             "speed": 10,
             "melee": [{
                 "rating": 8,
-                "damage": 8,
                 "name": "Saber"
             }],
             "range": [{
                 "rating":10,
-                "damage":6,
-                "distance":8,
                 "name":"Recurved Short Bow"
             }],
             "armor": 3,
@@ -9975,13 +9240,10 @@ const Models: Model[] = [
             "speed": 10,
             "melee": [{
                 "rating": 8,
-                "damage": 8,
                 "name": "Saber"
             }],
             "range": [{
                 "rating":10,
-                "damage":6,
-                "distance":8,
                 "name":"Recurved Short Bow"
             }],
             "armor": 3,
@@ -10006,7 +9268,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
                 "name": "Cleaver"
             }],
             "armor": 2,
@@ -10034,7 +9295,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
                 "name": "Cleaver"
             }],
             "armor": 2,
@@ -10063,7 +9323,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
                 "name": "Cleaver"
             }],
             "armor": 2,
@@ -10092,7 +9351,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
                 "name": "Cleaver"
             }],
             "armor": 2,
@@ -10120,20 +9378,15 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 6,
-                "damageBonus":1,
                 "name": "Cutlass"
             },{
-                "rating":8,
-                "damage":8,
-                "name":"Claw 2x"
+                "rating": 8,
+                "damage": 6,
+                "name": "Claw 2x"
             }],
             "range": [{
-                "rating":10,
-                "damage":6,
-                "distance":6,
-                "name":"Atlatl",
-                "abilities":["thr"]
+                "rating": 10,
+                "name": "Atlatl"
             }],
             "armor": 4,
             "discipline": 8,
@@ -10154,20 +9407,15 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 6,
-                "damageBonus":1,
                 "name": "Cutlass"
             },{
-                "rating":8,
-                "damage":8,
-                "name":"Claw 2x"
+                "rating": 8,
+                "damage": 6,
+                "name": "Claw 2x"
             }],
             "range": [{
-                "rating":10,
-                "damage":6,
-                "distance":6,
-                "name":"Atlatl",
-                "abilities":["thr"]
+                "rating": 10,
+                "name": "Atlatl"
             }],
             "armor": 4,
             "discipline": 8,
@@ -10187,17 +9435,11 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "damageBonus":1,
-                "name": "Sakhazet",
-                "abilities": ["let"]
+                "name": "Sakhazet"
             }],
             "range": [{
                 "rating":10,
-                "damage":6,
-                "distance":2,
-                "name":"Hatchet",
-                "abilities":["thr"]
+                "name":"Hatchet"
             }],
             "armor": 3,
             "discipline": 8,
@@ -10229,17 +9471,11 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "damageBonus":1,
-                "name": "Sakhazet",
-                "abilities": ["let"]
+                "name": "Sakhazet"
             }],
             "range": [{
                 "rating":10,
-                "damage":6,
-                "distance":2,
-                "name":"Hatchet",
-                "abilities":["thr"]
+                "name":"Hatchet"
             }],
             "armor": 3,
             "discipline": 8,
@@ -10319,9 +9555,7 @@ const Models: Model[] = [
             "speed": 8,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Wolfsword",
-                "abilities":["mi"]
+                "name": "Wolfsword"
             },{
                 "rating": 8,
                 "damage": 8,
@@ -10353,9 +9587,7 @@ const Models: Model[] = [
             "speed": 8,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Wolfsword",
-                "abilities":["mi"]
+                "name": "Wolfsword"
             },{
                 "rating": 8,
                 "damage": 8,
@@ -10386,9 +9618,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Spikedrakh",
-                "abilities":["de"]
+                "name": "Spikedrakh"
             }],
             "armor": 4,
             "discipline": 10,
@@ -10413,9 +9643,7 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Spikedrakh",
-                "abilities":["de"]
+                "name": "Spikedrakh"
             }],
             "armor": 4,
             "discipline": 10,
@@ -10444,14 +9672,11 @@ const Models: Model[] = [
                 "abilities":["ven"]
             },{
                 "rating": 6,
-                "damage": 4,
                 "name": "Dagger"
             }],
             "range": [{
                 "rating":6,
-                "damage":6,
-                "name":"Atlatl",
-                "distance":6
+                "name":"Atlatl"
             }],
             "armor": 4,
             "discipline": 6,
@@ -10471,9 +9696,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Taumari",
-                "abilities":["qs"]
+                "name": "Taumari"
             }],
             "armor": 3,
             "discipline": 10,
@@ -10497,9 +9720,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Taumari",
-                "abilities":["qs"]
+                "name": "Taumari"
             }],
             "armor": 3,
             "discipline": 10,
@@ -10522,7 +9743,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
                 "name": "War Axe 2x"
             }],
             "armor": 3,
@@ -10547,7 +9767,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
                 "name": "War Axe 2x"
             }],
             "armor": 3,
@@ -10571,16 +9790,11 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
                 "name": "Long Knife"
             }],
             "range": [{
                 "rating":6,
-                "damage":6,
-                "damageBonus":1,
-                "distance":8,
-                "name":"Bolter",
-                "abilities": ["imp","slr"]
+                "name":"Bolter"
             }],
             "armor": 2,
             "discipline": 6,
@@ -10600,10 +9814,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 6,
-                "damageBonus":1,
-                "name": "Barbed Javelin",
-                "abilities":["ven"]
+                "name": "Barbed Javelin"
             }],
             "armor": 3,
             "discipline": 10,
@@ -10631,10 +9842,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 6,
-                "damageBonus":1,
-                "name": "Barbed Javelin",
-                "abilities":["ven"]
+                "name": "Barbed Javelin"
             }],
             "armor": 3,
             "discipline": 10,
@@ -10661,10 +9869,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
-                "damageBonus":1,
-                "name": "Barbed Javelin",
-                "abilities":["ven"]
+                "name": "Barbed Javelin"
             }],
             "armor": 3,
             "discipline": 6,
@@ -10685,10 +9890,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
-                "damageBonus":1,
-                "name": "Barbed Javelin",
-                "abilities":["ven"]
+                "name": "Barbed Javelin"
             }],
             "armor": 3,
             "discipline": 6,
@@ -10708,7 +9910,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
                 "name": "Short Sword"
             }],
             "shield":"S",
@@ -10731,10 +9932,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "damageBonus":1,
-                "name": "Petadrakh",
-                "abilities":["qs","ven"]
+                "name": "Petadrakh"
             }],
             "armor": 2,
             "discipline": 10,
@@ -10757,9 +9955,7 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 8,
-                "damage": 6,
-                "name": "Staff",
-                "abilities":["te"]
+                "name": "Staff"
             }],
             "casting": {
                 "power": 15,
@@ -10783,7 +9979,6 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
                 "name": "War Mattock"
             }],
             "armor": 4,
@@ -10808,7 +10003,6 @@ const Models: Model[] = [
             "speed": 6,
             "melee": [{
                 "rating": 12,
-                "damage": 10,
                 "name": "War Mattock"
             }],
             "armor": 4,
@@ -10833,15 +10027,11 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
                 "name": "War Axe"
             }],
             "range": [{
                 "rating": 8,
-                "damage": 8,
-                "distance": 2,
-                "name": "War Axe",
-                "abilities": ["thr"]
+                "name": "War Axe"
             }],
             "shield": "S",
             "armor": 3,
@@ -10871,10 +10061,7 @@ const Models: Model[] = [
             }],
             "range": [{
                 "rating": 10,
-                "damage": 4,
-                "distance": 3,
-                "name": "Spider Net",
-                "abilities": ["thr","ent","stky"]
+                "name": "Spider Net"
             }],
             "armor": 4,
             "discipline": 8,
@@ -10897,7 +10084,6 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 4,
-                "damage": 6,
                 "name": "Short Spear"
             }],
             "shield": "S",
@@ -10940,8 +10126,7 @@ const Models: Model[] = [
             "speed": 9,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Longsword"
+                "name": "Longsword (1h)"
             }],
             "shield": "S",
             "armor": 5,
@@ -10970,8 +10155,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 12,
-                "damage": 8,
-                "name": "Longsword"
+                "name": "Longsword (1h)"
             }],
             "shield": "S",
             "armor": 6,
@@ -10996,8 +10180,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Longsword"
+                "name": "Longsword (1h)"
             }],
             "shield": "S",
             "armor": 6,
@@ -11022,16 +10205,11 @@ const Models: Model[] = [
             "speed": 10,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Spikedrakh",
-                "abilities": ["de"]
+                "name": "Spikedrakh"
             }],
             "range": [{
                 "rating": 10,
-                "damage": 0,
-                "distance": 4,
-                "name": "Lasso",
-                "abilities": ["thr","pin","pul"]
+                "name": "Lasso"
             }],
             "armor": 4,
             "discipline": 8,
@@ -11056,16 +10234,11 @@ const Models: Model[] = [
             "speed": 10,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Spikedrakh",
-                "abilities": ["de"]
+                "name": "Spikedrakh"
             }],
             "range": [{
                 "rating": 10,
-                "damage": 0,
-                "distance": 4,
-                "name": "Lasso",
-                "abilities": ["thr","pin","pul"]
+                "name": "Lasso"
             }],
             "armor": 4,
             "discipline": 8,
@@ -11090,7 +10263,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
                 "name": "Long Knife"
             }],
             "armor": 4,
@@ -11115,7 +10287,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
                 "name": "Long Knife"
             }],
             "armor": 4,
@@ -11140,15 +10311,11 @@ const Models: Model[] = [
             "speed": 8,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
                 "name": "Javelin"
             }],
             "range": [{
                 "rating": 6,
-                "damage": 6,
-                "distance": 4,
-                "name": "Javelin",
-                "abilities": ["thr"]
+                "name": "Javelin"
             }],
             "armor": 4,
             "discipline": 6
@@ -11167,14 +10334,10 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 8,
-                "name": "Hunting Spear",
-                "abilities": ["pin"]
+                "name": "Hunting Spear"
             }],
             "range": [{
                 "rating": 10,
-                "damage": 8,
-                "distance": 10,
                 "name": "Composite Bow"
             }],
             "armor": 3,
@@ -11198,9 +10361,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 6,
-                "damage": 8,
-                "name": "Hunting Spear",
-                "abilities": ["pin"]
+                "name": "Hunting Spear"
             }],
             "armor": 3,
             "discipline": 6,
@@ -11227,9 +10388,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Tavsetar",
-                "abilities": ["lb"]
+                "name": "Tavsetar"
             }],
             "armor": 4,
             "discipline": 10,
@@ -11253,9 +10412,7 @@ const Models: Model[] = [
             "speed": 5,
             "melee": [{
                 "rating": 10,
-                "damage": 10,
-                "name": "Tavsetar",
-                "abilities": ["lb"]
+                "name": "Tavsetar"
             }],
             "armor": 4,
             "discipline": 10,
@@ -11279,7 +10436,6 @@ const Models: Model[] = [
             "speed": 7,
             "melee": [{
                 "rating": 6,
-                "damage": 6,
                 "name": "Long Knife"
             }],
             "casting": {

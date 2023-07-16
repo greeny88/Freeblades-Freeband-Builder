@@ -1,4 +1,4 @@
-import { Items, MeleeWeapon } from "src/app/model";
+import { Items, MeleeWeapon, RangeWeapon } from "src/app/model";
 
 const Abilities: string[] = ['AGL','DEX','END','KNW','SPR','STR'];
 const Equipment: Items[] = [{
@@ -479,9 +479,301 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
     damage: 6,
     damageBonus: 1
 },{
+    name: 'Herenkal 2x',
+    damage: 6,
+    damageBonus: 1
+},{
     name: 'Hartblade',
     damage: 10,
     abilities: ['let']
+},{
+    name: 'Hunting Spear',
+    damage: 8,
+    abilities: ['pin']
+},{
+    name: 'Ice Axe',
+    damage: 6
+},{
+    name: 'Impaler',
+    damage: 8,
+    damageBonus: 1
+},{
+    name: 'Javelin',
+    damage: 6
+},{
+    name: 'Kasari',
+    damage: 8,
+    abilities: ['hin','qs']
+},{
+    name: 'Knife',
+    damage: 4
+},{
+    name: 'Kolekar',
+    damage: 10
+},{
+    name: 'Kranara',
+    damage: 10,
+    abilities: ['hv','mi','swp']
+},{
+    name: 'Lance',
+    damage: 10,
+    abilities: ['shk']
+},{
+    name: 'Long Knife',
+    damage: 6
+},{
+    name: 'Long Knife 2x',
+    damage: 6
+},{
+    name: 'Longspear',
+    damage: 8,
+    abilities: ['so']
+},{
+    name: 'Longsword (1h)',
+    damage: 8
+},{
+    name: 'Longsword (2h)',
+    damage: 8,
+    damageBonus: 1
+},{
+    name: 'Mace',
+    damage: 8
+},{
+    name: 'Morning Star',
+    damage: 8,
+    abilities: ['sb']
+},{
+    name: 'Najana',
+    damage: 6,
+    damageBonus: 1,
+    abilities: ['let','so']
+},{
+    name: 'Moonsglave',
+    damage: 8,
+    abilities: ['te']
+},{
+    name: 'Moonsickle',
+    damage: 6,
+    damageBonus: 1
+},{
+    name: 'Net',
+    damage: 0,
+    abilities: ['pin','qs']
+},{
+    name: 'Parry Dagger',
+    damage: 4,
+    abilities: ['sw']
+},{
+    name: 'Petadrakh',
+    damage: 8,
+    damageBonus: 1,
+    abilities: ['qs']
+},{
+    name: 'Pike',
+    damage: 8,
+    abilities: ['so2','imp','unw']
+},{
+    name: 'Pit Glave',
+    damage: 8,
+    damageBonus: 1,
+    abilities: ['hin']
+},{
+    name: 'Razorfang',
+    damage: 10,
+    abilities: ['swp']
+},{
+    name: 'Saber',
+    damage: 8
+},{
+    name: 'Sakhazet',
+    damage: 8,
+    damageBonus: 1,
+    abilities: ['let']
+},{
+    name: 'Sanghara',
+    damage: 6
+},{
+    name: 'Sanghara 2x',
+    damage: 6
+},{
+    name: 'Scythe',
+    damage: 10,
+    abilities: ['swp']
+},{
+    name: 'Shadowspear',
+    damage: 8,
+    damageBonus: 1,
+    abilities: ['su']
+},{
+    name: 'Short Spear',
+    damage: 6
+},{
+    name: 'Spikedrakh',
+    damage: 8,
+    abilities: ['de']
+},{
+    name: 'Staff',
+    damage: 6,
+    abilities: ['te']
+},{
+    name: 'Taumari',
+    damage: 10,
+    abilities: ['qs']
+},{
+    name: 'Tavsetar',
+    damage: 10,
+    abilities: ['lb']
+},{
+    name: 'Thresher',
+    damage: 6,
+    damageBonus: 1,
+    abilities: ['sb']
+}, {
+    name: 'Toloron',
+    damage: 10,
+    abilities: ['sw']
+},{
+    name: 'Trident',
+    damage: 8,
+    damageBonus: 1
+},{
+    name: 'War Axe',
+    damage: 8
+},{
+    name: 'War Axe 2x',
+    damage: 8
+},{
+    name: 'War Mattock',
+    damage: 10
+},{
+    name: 'Warhammer',
+    damage: 8
+},{
+    name: 'Whip',
+    damage: 4,
+    abilities: ['ent','qs']
+},{
+    name: 'Wolfsword',
+    damage: 10,
+    abilities: ['mi']
+},{
+    name: 'Zeradrakh',
+    damage: 8,
+    abilities: ['te']
 }];
 
-export  {Abilities, Equipment, MagicItems, MeleeWeapons, Skills, Talents};
+const RangeWeapons: Omit<RangeWeapon, 'rating'>[] = [{
+    name: 'Atlatl',
+    damage: 6,
+    distance: 6,
+    abilities: ['thr']
+},{
+    name: 'Barbed Javelin',
+    damage: 6,
+    damageBonus: 1,
+    distance: 4,
+    abilities: ['thr']
+},{
+    name: 'Blowgun',
+    damage: 4,
+    distance: 6,
+    abilities: ['ven']
+},{
+    name: 'Bolas',
+    damage: 4,
+    distance: 6,
+    abilities: ['thr','ent']
+},{
+    name: 'Bow',
+    damage: 6,
+    distance: 8,
+},{
+    name: 'Composite Bow',
+    damage: 8,
+    distance: 10
+},{
+    name: 'Crossbow',
+    damage: 8,
+    distance: 10,
+    abilities: ['re']
+},{
+    name: 'Double Crossbow',
+    damage: 6,
+    damageBonus: 1,
+    distance: 8,
+    abilities: ['dsh','re']
+},{
+    name: 'Gadoru',
+    damage: 6,
+    damageBonus: 1,
+    distance: 3,
+    abilities: ['dis','thr','sb']
+},{
+    name: 'Grappler',
+    damage: 6,
+    distance: 2,
+    abilities: ['pul','scl','thr']
+},{
+    name: 'Hatchet',
+    damage: 6,
+    damageBonus: 1,
+    distance: 2,
+    abilities: ['thr']
+},{
+    name: 'Herenkal',
+    damage: 6,
+    damageBonus: 1,
+    distance: 2,
+    abilities: ['thr']
+},{
+    name: 'Javelin',
+    damage: 6,
+    distance: 4,
+    abilities: ['thr']
+},{
+    name: 'Lasso',
+    damage: 0,
+    distance: 4,
+    abilities: ['thr','pin','pul']
+},{
+    name: 'Longbow',
+    damage: 8,
+    distance: 12
+},{
+    name: 'Poison Pellet',
+    damage: 0,
+    distance: 2,
+    abilities: ['thr','ven']
+},{
+    name: 'Recurved Short Bow',
+    damage: 6,
+    damageBonus: 1,
+    distance: 8
+},{
+    name: 'Roondar',
+    damage: 6,
+    damageBonus: 1,
+    distance: 8,
+    abilities: ['sb']
+},{
+    name: 'Sling',
+    damage: 8,
+    distance: 6
+},{
+    name: 'Spider Net',
+    damage: 4,
+    distance: 4,
+    abilities: ['thr','ent','stky']
+},{
+    name: 'Tennko',
+    damage: 8,
+    distance: 10,
+    abilities: ['de']
+},{
+    name: 'Vranshar',
+    damage: 8,
+    distance: 8,
+    abilities: ['aoe 2in', 'idf']
+}];
+
+export  {Abilities, Equipment, MagicItems, MeleeWeapons, RangeWeapons, Skills, Talents};
