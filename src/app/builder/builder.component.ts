@@ -523,9 +523,12 @@ export class BuilderComponent implements OnInit {
                     type: model.type,
                     stats: {
                         advancements: (model.stats?.advancements) ? model.stats.advancements : null,
+                        casting: (model.stats?.casting) ? model.stats.casting : null,
                         items: (model.stats?.items) ? model.stats.items : null,
                         injuries: (model.stats?.injuries) ? model.stats.injuries : null,
+                        melee: (model.stats?.melee) ? model.stats.melee : null,
                         options: (model.stats?.options) ? model.stats.options : null,
+                        range: (model.stats?.range) ? model.stats.range : null,
                         veteran: (model.stats?.veteran) ? model.stats.veteran : null,
                     },
                     characterName: (model.characterName) ? model.characterName : null,
