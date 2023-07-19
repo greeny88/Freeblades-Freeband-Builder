@@ -21,15 +21,17 @@ export class EditModelComponent {
         }
         return 0;
     });
+    model: Model;
     modelAdvancements: Advancement[] | undefined;
     modelInjuries: (string|undefined)[] | undefined;
     modelItems: any[] | undefined;
     originalModelStats: ModelStats;
 
-    constructor(private dialogRef: MatDialogRef<any>, @Inject(MAT_DIALOG_DATA) public model: Model) {
+    constructor(private dialogRef: MatDialogRef<any>, @Inject(MAT_DIALOG_DATA) public data: {model: Model, altLeader: boolean}) {
         this.modelAdvancements = [];
         this.modelInjuries = [];
         this.modelItems = [];
+        this.model = this.data.model;
         this.originalModelStats = JSON.parse(JSON.stringify(this.model.stats));
         if ('advancements' in this.model.stats) {
             this.modelAdvancements = this.model.stats.advancements;
@@ -83,15 +85,12 @@ export class EditModelComponent {
         this.dialogRef.close();
     }
 
-    changeLeaderOption(event: MatRadioChange, type: string) {
-        console.log(event);
+    changeLeaderOption(event: MatRadioChange, type: string, index?: number) {
         if (this.model.stats.melee) {
-            // TODO: need to look for other id than name ie double weapon issue
-            this.model.stats.melee.map(opt => opt.altSelected = (type === 'melee' && event.value.name === opt.name) ? true : false);
+            this.model.stats.melee.map((opt, currentIndex) => opt.altSelected = (type === 'melee' && index === currentIndex) ? true : false);
         }
         if (this.model.stats.range) {
-            // TODO: need to look for other id than name ie double weapon issue
-            this.model.stats.range.map(opt => opt.altSelected = (type === 'range' && event.value.name === opt.name) ? true : false);
+            this.model.stats.range.map((opt, currentIndex) => opt.altSelected = (type === 'range' && index === currentIndex) ? true : false);
         }
         if (this.model.stats.casting) {
             this.model.stats.casting.altSelected = (type === 'casting') ? true : false;
