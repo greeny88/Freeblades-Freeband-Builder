@@ -61,6 +61,7 @@ export interface ModelStats {
         rating: number,
         ratingBonus?: number
     },
+    defense?: number,
     discipline: number,
     injuries?: string[],
     items?: Items[],
