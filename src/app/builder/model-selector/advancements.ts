@@ -452,7 +452,7 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
     name: 'Dagger',
     damage: 4
 },{
-    name: 'Dire Claws 2x',
+    name: 'Dire Claw',
     damage: 6
 },{
     name: 'Falchion',
@@ -472,14 +472,10 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
     name: 'Greatsword',
     damage: 10
 },{
-    name: 'Handclaws 2x',
+    name: 'Handclaws',
     damage: 4
 },{
     name: 'Herenkal',
-    damage: 6,
-    damageBonus: 1
-},{
-    name: 'Herenkal 2x',
     damage: 6,
     damageBonus: 1
 },{
@@ -520,9 +516,6 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
     abilities: ['shk']
 },{
     name: 'Long Knife',
-    damage: 6
-},{
-    name: 'Long Knife 2x',
     damage: 6
 },{
     name: 'Longspear',
@@ -593,9 +586,6 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
     name: 'Sanghara',
     damage: 6
 },{
-    name: 'Sanghara 2x',
-    damage: 6
-},{
     name: 'Scythe',
     damage: 10,
     abilities: ['swp']
@@ -638,9 +628,6 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
     damageBonus: 1
 },{
     name: 'War Axe',
-    damage: 8
-},{
-    name: 'War Axe 2x',
     damage: 8
 },{
     name: 'War Mattock',

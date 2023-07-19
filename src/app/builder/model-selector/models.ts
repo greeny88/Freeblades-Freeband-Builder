@@ -2674,7 +2674,10 @@ const Models: Model[] = [{
         "speed": 7,
         "melee": [{
             "rating": 6,
-            "name": "Long Knife 2x"
+            "name": "Long Knife"
+        },{
+            "rating": 6,
+            "name": "Long Knife"
         }],
         "armor": 2
     },
@@ -2701,7 +2704,10 @@ const Models: Model[] = [{
         "speed": 7,
         "melee": [{
             "rating": 6,
-            "name": "Long Knife 2x"
+            "name": "Long Knife"
+        },{
+            "rating": 6,
+            "name": "Long Knife"
         }],
         "armor": 2
     },
@@ -3823,7 +3829,10 @@ const Models: Model[] = [{
         "speed": 5,
         "melee": [{
             "rating": 12,
-            "name": "War Axe 2x"
+            "name": "War Axe"
+        },{
+            "rating": 12,
+            "name": "War Axe"
         }],
         "armor": 7,
         "discipline": 12,
@@ -3846,7 +3855,10 @@ const Models: Model[] = [{
         "speed": 5,
         "melee": [{
             "rating": 10,
-            "name": "War Axe 2x"
+            "name": "War Axe"
+        },{
+            "rating": 10,
+            "name": "War Axe"
         }],
         "armor": 7,
         "discipline": 10,
@@ -4122,7 +4134,10 @@ const Models: Model[] = [{
         "speed": 5,
         "melee": [{
             "rating": 10,
-            "name": "War Axe 2x"
+            "name": "War Axe"
+        },{
+            "rating": 10,
+            "name": "War Axe"
         }],
         "armor": 7,
         "discipline": 10,
@@ -4145,7 +4160,10 @@ const Models: Model[] = [{
         "speed": 5,
         "melee": [{
             "rating": 10,
-            "name": "War Axe 2x"
+            "name": "War Axe"
+        },{
+            "rating": 10,
+            "name": "War Axe"
         }],
         "armor": 7,
         "discipline": 10,
@@ -4825,7 +4843,10 @@ const Models: Model[] = [{
         "speed": 7,
         "melee": [{
             "rating": 10,
-            "name": "Herenkal 2x"
+            "name": "Herenkal"
+        },{
+            "rating": 10,
+            "name": "Herenkal"
         }],
         "range": [{
             "rating": 8,
@@ -5093,7 +5114,10 @@ const Models: Model[] = [{
         "speed": 7,
         "melee": [{
             "rating": 6,
-            "name": "Handclaws 2x"
+            "name": "Handclaws"
+        },{
+            "rating": 6,
+            "name": "Handclaws"
         }],
         "armor": 2,
         "discipline": 8,
@@ -5117,7 +5141,10 @@ const Models: Model[] = [{
         "speed": 7,
         "melee": [{
             "rating": 6,
-            "name": "Handclaws 2x"
+            "name": "Handclaws"
+        },{
+            "rating": 6,
+            "name": "Handclaws"
         }],
         "armor": 2,
         "discipline": 8,
@@ -5185,7 +5212,10 @@ const Models: Model[] = [{
         "speed": 7,
         "melee": [{
             "rating": 10,
-            "name": "Dire Claws 2x"
+            "name": "Dire Claw"
+        },{
+            "rating": 10,
+            "name": "Dire Claw"
         }],
         "armor": 3,
         "discipline": 10,
@@ -5215,7 +5245,10 @@ const Models: Model[] = [{
         "speed": 7,
         "melee": [{
             "rating": 10,
-            "name": "Dire Claws 2x"
+            "name": "Dire Claw"
+        },{
+            "rating": 10,
+            "name": "Dire Claw"
         }],
         "armor": 3,
         "discipline": 10,
@@ -5673,7 +5706,10 @@ const Models: Model[] = [{
         "speed": 7,
         "melee": [{
             "rating": 10,
-            "name": "Sanghara 2x"
+            "name": "Sanghara"
+        },{
+            "rating": 10,
+            "name": "Sanghara"
         }],
         "armor": 2,
         "discipline": 10,
@@ -5701,7 +5737,10 @@ const Models: Model[] = [{
         "speed": 7,
         "melee": [{
             "rating": 10,
-            "name": "Sanghara 2x"
+            "name": "Sanghara"
+        },{
+            "rating": 10,
+            "name": "Sanghara"
         }],
         "armor": 2,
         "discipline": 10,
@@ -5729,7 +5768,10 @@ const Models: Model[] = [{
         "speed": 7,
         "melee": [{
             "rating": 10,
-            "name": "Sanghara 2x"
+            "name": "Sanghara"
+        },{
+            "rating": 10,
+            "name": "Sanghara"
         }],
         "armor": 2,
         "discipline": 10,
@@ -9373,7 +9415,10 @@ const Models: Model[] = [{
         "speed": 7,
         "melee": [{
             "rating": 10,
-            "name": "War Axe 2x"
+            "name": "War Axe"
+        },{
+            "rating": 10,
+            "name": "War Axe"
         }],
         "armor": 3,
         "discipline": 10,
@@ -9396,7 +9441,10 @@ const Models: Model[] = [{
         "speed": 7,
         "melee": [{
             "rating": 10,
-            "name": "War Axe 2x"
+            "name": "War Axe"
+        },{
+            "rating": 10,
+            "name": "War Axe"
         }],
         "armor": 3,
         "discipline": 10,
