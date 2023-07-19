@@ -3,8 +3,9 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { EditModelComponent } from './edit-model.component';
 import { ModelSelectorService } from './model-selector.service';
-import { Factions, Model } from 'src/app/model.d';
+import { Factions, MeleeWeapon, Model } from 'src/app/model.d';
 import { Models } from './models';
+import { MeleeWeapons } from './advancements';
 
 @Component({
     selector: 'model-selector',
@@ -59,14 +60,7 @@ export class ModelSelectorComponent {
                                 && this.disallowedAltLeaders.indexOf(model.name) < 0) {
                             model.stats.talents.push('Leader');
                             if (model.stats.melee) {
-                                // model.stats.melee[0].rating += 2;
                                 model.stats.melee[0].altSelected = true;
-                                // TODO: Only add +1 for two-ended if MAR increase
-                                for (let melee of model.stats.melee) {
-                                    if ('abilities' in melee && melee.abilities && melee.abilities.indexOf('te') > -1) {
-                                        model.value += 1;
-                                    }
-                                }
                             }
                             if (model.stats.discipline === 8) {
                                 model.stats.discipline += 4;
@@ -79,8 +73,7 @@ export class ModelSelectorComponent {
                                 model.value += 7;
                             }
                             for (let talent of model.stats.talents) {
-                                // TODO: Only add +1 for Shield Bash if MAR increase
-                                if (['Die Hard', 'Dodge', 'Wraith', 'Shield Bash'].indexOf(talent) > -1) {
+                                if (['Die Hard', 'Dodge', 'Wraith'].includes(talent)) {
                                     model.value += 1;
                                 }
                                 if (talent === 'Sergeant') {
@@ -132,14 +125,23 @@ export class ModelSelectorComponent {
                     if (this.selectedModel.stats?.advancements) {
                         this.selected.stats.advancements = this.selectedModel.stats.advancements;
                     }
+                    if (this.selected.stats.casting && this.selectedModel.stats?.casting) {
+                        this.selected.stats.casting.altSelected = this.selectedModel.stats.casting.altSelected;
+                    }
                     if (this.selectedModel.stats?.injuries) {
                         this.selected.stats.injuries = this.selectedModel.stats.injuries;
                     }
                     if (this.selectedModel.stats?.items) {
                         this.selected.stats.items = this.selectedModel.stats.items;
                     }
+                    if (this.selected.stats.melee && this.selectedModel.stats?.melee) {
+                        this.selected.stats.melee.forEach((melee, index) => melee.altSelected = (this.selectedModel?.stats.melee && this.selectedModel.stats.melee[index]) ? this.selectedModel.stats.melee[index].altSelected : false);
+                    }
                     if (this.selectedModel.stats?.options) {
                         this.selected.stats.options = this.selectedModel.stats.options;
+                    }
+                    if (this.selected.stats.range && this.selectedModel.stats?.range) {
+                        this.selected.stats.range.forEach((range, index) => range.altSelected = (this.selectedModel?.stats.range && this.selectedModel.stats.range[index]) ? this.selectedModel.stats.range[index].altSelected : false);
                     }
                     if (this.selectedModel.stats?.veteran) {
                         this.selected.stats.veteran = this.selectedModel.stats.veteran;
@@ -168,7 +170,10 @@ export class ModelSelectorComponent {
 
     openEditWindow() {
         const dialogRef = this.dialog.open(EditModelComponent, {
-            data: this.originalModel
+            data: {
+                model: this.originalModel,
+                altLeader: this.altLeader
+            }
         });
 
         dialogRef.afterClosed().subscribe((result: Model) => {
@@ -183,15 +188,28 @@ export class ModelSelectorComponent {
             return;
         }
         this.model = JSON.parse(JSON.stringify(model));
+        if (!this.model) {
+            return;
+        }
         if (this.model.stats?.veteran) {
             this.model.value = this.model.stats.veteran.reduce((sum: number, current:any) => current.selected ? sum + current.cost : sum, model.value)
         }
+        // TODO: adjust value for this.model.stats.melee[X].altSelected when 'te' or 'shield bash'
+        // this.model.value = this.model.stats.melee.reduce((sum: number, current: any) => (current.altSelected && this.model.stats.talents.indexOf('Shield Bash')))
+        if (this.model.stats.melee?.some((melee: MeleeWeapon) => melee.altSelected)) {
+            if (this.model.stats.talents?.includes('Shield Bash')) {
+                this.model.value += 1;
+            }
+            if (this.model.stats.melee?.some((melee: MeleeWeapon) => melee.altSelected && MeleeWeapons.find(w => w.name === melee.name)?.abilities?.includes('te'))) {
+                this.model.value += 1;
+            }
+        }
         this.model.stats = (<any>Object).assign(this.model.stats, this.modelSelectorService.calculateStats(model.stats, this.model.value));
         this.model.component_id = this.componentId;
-        if (!('stats' in this.model)) {
-            console.error(`Error getting stats of ${this.model.displayName}`);
-            return;
-        }
+        // if (!('stats' in this.model)) {
+        //     console.error(`Error getting stats of ${this.model.displayName}`);
+        //     return;
+        // }
         this.onModelSelected.emit(this.model);
     }
 }
