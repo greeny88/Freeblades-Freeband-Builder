@@ -2,10 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar, MatSnackBarRef } from '@angular/material/snack-bar';
 
-import { CommunicatorService } from '../communicator.service';
-import { DbService } from '../db.service';
-import { LRBService } from '../lrb.service';
-import { Model } from '../model';
+import { CommunicatorService } from 'src/app/communicator.service';
+import { DbService } from 'src/app/db.service';
+import { LRBService } from 'src/app/lrb.service';
+import { Factions, Model } from 'src/app/model.d';
+import { Models } from './model-selector/models';
+
+type FactionList = typeof Factions[number];
 
 @Component({
     selector: 'app-builder',
@@ -22,8 +25,8 @@ export class BuilderComponent implements OnInit {
     completeHeroCount: number = 0;
     errorMessages: string[];
     extraModels: string[] = [];
-    faction: string = '';
-    private factionRules: {[key: string]: Function};
+    faction: FactionList | '' = '';
+    private factionRules: {[key in FactionList]: (model: Model) => string | undefined};
     freebandBaseValue: number = 0;
     freebandTotalValue: number = 0;
     leaderId: string;
@@ -39,6 +42,7 @@ export class BuilderComponent implements OnInit {
         this.factionRules = {
             'Black Rose Bandits': this.blackRoseBanditsRule,
             'Black Thorn Bandits': this.blackThornBanditsRule,
+            'The Collective': this.collectiveRules,
             'Darkgrove Demons': this.darkgroveRules,
             'Demons of Karelon': this.demonsRules,
             'Eclipse Sisterhood': this.eclipseRules,
@@ -96,6 +100,9 @@ export class BuilderComponent implements OnInit {
     }
 
     calculateFreeband() {
+        if (!this.faction) {
+            return;
+        }
         let allyFaction: string | undefined = undefined;
         let allyFollowerCount: number = 0;
         let allyHeroCount: number = 0;
@@ -329,7 +336,7 @@ export class BuilderComponent implements OnInit {
         this.calculateFreeband();
     }
 
-    optionsSet(options: {freebandLimit: number, faction: string, altLeader: boolean}) {
+    optionsSet(options: {freebandLimit: number, faction: FactionList, altLeader: boolean}) {
         this.limit = options.freebandLimit;
         if (this.faction !== options.faction) {
             this.reset();
@@ -339,14 +346,18 @@ export class BuilderComponent implements OnInit {
         if (this.selectedFreeband) {
             this.extraModels = [];
             for (let model of this.selectedFreeband['models']) {
+                const m =  Models.find(m => m.displayName === model.displayName && (m.type === (model.type || 'Standard')))
+                if (!m) {
+                    return;
+                }
                 if (model.type === 'Leader') {
-                    this.models[this.leaderId] = model;
+                    this.models[this.leaderId] = m;
                 } else if (model.type === 'Caster') {
-                    this.models[this.casterId] = model;
+                    this.models[this.casterId] = m;
                 } else {
                     const currentId = this.uuidv4();
                     this.extraModels.push(currentId);
-                    this.models[currentId] = model;
+                    this.models[currentId] = m;
                 }
             }
             setTimeout(() => this.selectedFreeband = undefined, 1);
@@ -365,7 +376,7 @@ export class BuilderComponent implements OnInit {
         this.calculateFreeband();
     }
 
-    private addErrorMessage(msg: string) {
+    private addErrorMessage(msg: string | undefined) {
         if (msg && this.errorMessages.indexOf(msg) < 0) {
             this.errorMessages.push(msg);
         }
@@ -391,6 +402,40 @@ export class BuilderComponent implements OnInit {
         }
         const checkForDups = models.filter(modelName => modelName !== 'Highwayman' && modelName != 'Roughrider');
         return ((new Set(checkForDups)).size !== checkForDups.length) ? 'Bandits may not have duplicate heroes except for the Highwayman and Roughrider.' : undefined;
+    }
+
+    private collectiveRules(model: Model): string | undefined {
+        let irvlorCount: number = 0;
+        let keldanCount: number = 0;
+        let tyrsanCount: number = 0;
+        let merchantCount: number = 0;
+        for (let key in this.models) {
+            if (this.models[key].name === 'Irvlor') {
+                irvlorCount++;
+            }
+            if (this.models[key].name === 'Keldan') {
+                keldanCount++;
+            }
+            if (this.models[key].name === 'Tyrsan') {
+                tyrsanCount++;
+            }
+            if (this.models[key].name === 'Merchant') {
+                merchantCount++;
+            }
+        }
+        if (irvlorCount > 1) {
+            return 'The Collective can only have one Irvlor.'
+        }
+        if (keldanCount > 1) {
+            return 'The Collective can only have one Keldan.'
+        }
+        if (tyrsanCount > 1) {
+            return 'The Collective can only have one Tyrsan.'
+        }
+        if (merchantCount > 1) {
+            return 'The Collective can only have one Merchant.'
+        }
+        return undefined;
     }
 
     private darkgroveRules(model: Model): string | undefined {
@@ -481,12 +526,18 @@ export class BuilderComponent implements OnInit {
                 const m = {
                     displayName: model.displayName, 
                     type: model.type,
-                    advancements: ('stats' in model && 'advancements' in model.stats) ? model.stats.advancements : null,
-                    items: ('stats' in model && 'items' in model.stats) ? model.stats.items : null,
-                    injuries: ('stats' in model && 'injuries' in model.stats) ? model.stats.injuries : null,
-                    veteranAdvancements: ('stats' in model && 'veteranAdvancements' in model.stats) ? model.stats.veteranAdvancements : null,
-                    characterName: ('characterName' in model) ? model.characterName : null,
-                    gender: ('gender' in model) ? model.gender : null
+                    stats: {
+                        advancements: (model.stats?.advancements) ? model.stats.advancements : null,
+                        casting: (model.stats?.casting) ? model.stats.casting : null,
+                        items: (model.stats?.items) ? model.stats.items : null,
+                        injuries: (model.stats?.injuries) ? model.stats.injuries : null,
+                        melee: (model.stats?.melee) ? model.stats.melee : null,
+                        options: (model.stats?.options) ? model.stats.options : null,
+                        range: (model.stats?.range) ? model.stats.range : null,
+                        veteran: (model.stats?.veteran) ? model.stats.veteran : null,
+                    },
+                    characterName: (model.characterName) ? model.characterName : null,
+                    gender: (model.gender) ? model.gender : null
                 };
                 return m;
             })
@@ -522,20 +573,6 @@ export class BuilderComponent implements OnInit {
     }
 
     private haradelanRules(model: Model): string | undefined {
-        let questorCount = 0;
-        let apprenticeCount = 0;
-        for (let key in this.models) {
-            if (this.models[key].name.indexOf('Questing') > -1) {
-                questorCount++;
-            }
-            if (this.models[key].name.indexOf('Apprentice') > -1) {
-                apprenticeCount++;
-            }
-        }
-        if (questorCount > 0 && questorCount > (apprenticeCount+1)) {
-            return 'Haradelan many only have one more Questing knight than Apprentice knight.';
-        }
-        
         if (model.name.indexOf("Sho'pel") > -1) {
             let ravenFound: boolean = false;
             for (let key in this.models) {

@@ -8,10 +8,32 @@
             <mat-option *ngFor="let gender of ['M','F']" [value]="gender">{{gender}}</mat-option>
         </mat-select>
     </mat-form-field>
-    <!-- <h1 *ngIf="veteranAdvancements.length > 0">Veteran Upgrades</h1>
-    <ng-container *ngFor="let vet of veteranAdvancements; let i = index">
-        <mat-checkbox [(ngModel)]="modelVeteranAdvancements[i]">{{vet.name}} Cost:{{vet.cost}}</mat-checkbox>
-    </ng-container> -->
+    <ng-container *ngIf="data.altLeader">
+        <h1>Alt Leader Options</h1>
+        <mat-radio-group>
+            <mat-radio-button *ngFor="let opt of model.stats.melee; let i = index" [checked]="opt.altSelected" [value]="opt" (change)="changeLeaderOption($event, 'melee', i)">
+                {{ opt.name }} - d{{ opt.rating }}
+            </mat-radio-button>
+            <mat-radio-button *ngFor="let opt of model.stats.range; let i = index" [checked]="opt.altSelected" [value]="opt" (change)="changeLeaderOption($event, 'range', i)">
+                {{ opt.name }} - d{{ opt.rating }}
+            </mat-radio-button>
+            <mat-radio-button *ngIf="model.stats.casting" (change)="changeLeaderOption($event, 'casting')">
+                Magic - d{{ model.stats.casting.rating }}
+            </mat-radio-button>
+        </mat-radio-group>
+    </ng-container>
+    <ng-container *ngIf="model.stats?.options">
+        <h1>Options</h1>
+        <mat-radio-group>
+            <mat-radio-button *ngFor="let opt of model.stats.options" [checked]="opt.selected" [value]="opt" (change)="changeOption($event)">
+                {{ opt.name }}
+            </mat-radio-button>
+        </mat-radio-group>
+    </ng-container>
+    <ng-container *ngIf="model.stats?.veteran">
+        <h1>Veteran</h1>
+        <mat-checkbox *ngFor="let vet of model.stats.veteran" [checked]="vet.selected" (change)="vet.selected = $event.checked">{{vet.name}}, Cost: {{vet.cost}}</mat-checkbox>
+    </ng-container>
     <br/>
     <br/>
     <button mat-button class="mat-raised-button" (click)="updateAdvancementCount()">Add advancements</button>

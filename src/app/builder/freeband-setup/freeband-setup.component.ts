@@ -28,6 +28,7 @@ export class FreebandSetupComponent implements OnInit {
         this.factions = [
             'Black Rose Bandits', 
             'Black Thorn Bandits',
+            'The Collective',
             'Darkgrove Demons',
             'Demons of Karelon',
             'Eclipse Sisterhood',
