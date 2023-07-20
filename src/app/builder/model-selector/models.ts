@@ -4999,7 +4999,7 @@ const Models: Model[] = [{
             "cost": 1
         }]
     },
-    "value":17,
+    "value":16,
     "gender": "M",
     "race": "Trillian"
 },{
