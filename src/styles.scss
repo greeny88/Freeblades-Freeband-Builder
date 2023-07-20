@@ -48,3 +48,39 @@ mat-radio-group mat-radio-button, mat-checkbox {
     font-weight: bold;
 }
 
+.printOnly {
+    display: none !important;
+}
+
+@media print {
+    // Reset all colors
+    * {
+        color: initial !important;
+        background-color: initial !important;
+    }
+    
+    // Hide elements not part of the freeband roster
+    footer, freeband-setup, mat-sidenav, mat-toolbar, .noPrint {
+        display: none !important;
+    }
+
+    mat-toolbar-row.mat-toolbar-row {
+        padding: 0 0.5rem;
+    }
+
+    .freebandStats {
+        & > div > span {
+            // flex: 1 1;
+            border: 1px solid black;
+            font-size: 1rem;
+
+            &:nth-child(1) {
+                flex: 3 1 33%;
+            }
+        }
+    }
+
+    .printOnly {
+        display: initial !important;
+    }
+}
