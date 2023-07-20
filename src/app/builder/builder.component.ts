@@ -6,6 +6,7 @@ import { CommunicatorService } from 'src/app/communicator.service';
 import { DbService } from 'src/app/db.service';
 import { LRBService } from 'src/app/lrb.service';
 import { Factions, Model } from 'src/app/model.d';
+import { Models } from './model-selector/models';
 
 type FactionList = typeof Factions[number];
 
@@ -345,14 +346,18 @@ export class BuilderComponent implements OnInit {
         if (this.selectedFreeband) {
             this.extraModels = [];
             for (let model of this.selectedFreeband['models']) {
+                const m =  Models.find(m => m.displayName === model.displayName && (m.type === (model.type || 'Standard')))
+                if (!m) {
+                    return;
+                }
                 if (model.type === 'Leader') {
-                    this.models[this.leaderId] = model;
+                    this.models[this.leaderId] = m;
                 } else if (model.type === 'Caster') {
-                    this.models[this.casterId] = model;
+                    this.models[this.casterId] = m;
                 } else {
                     const currentId = this.uuidv4();
                     this.extraModels.push(currentId);
-                    this.models[currentId] = model;
+                    this.models[currentId] = m;
                 }
             }
             setTimeout(() => this.selectedFreeband = undefined, 1);
