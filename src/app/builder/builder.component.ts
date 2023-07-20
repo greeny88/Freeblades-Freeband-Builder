@@ -18,7 +18,6 @@ type FactionList = typeof Factions[number];
 export class BuilderComponent implements OnInit {
     altLeader: boolean = false;
     breakValue: number = 0;
-    builderPage: string;
     private buildSnackRef: MatSnackBarRef<any> | undefined = undefined;
     casterId: string;
     completeFollowerCount: number = 0;
@@ -31,13 +30,12 @@ export class BuilderComponent implements OnInit {
     freebandTotalValue: number = 0;
     leaderId: string;
     limit: number = 0;
-    lrbVersion: string;
     models: {[key: string]: Model} = {};
     scoutingPoints: number = 0;
     selectedFreeband: any;
     totalLifePoints: number = 0;
 
-    constructor(private commService: CommunicatorService, private dbService: DbService, private lrbService: LRBService, private dialog: MatDialog, private snackBar: MatSnackBar) {
+    constructor(private commService: CommunicatorService, private dbService: DbService, public lrbService: LRBService, private dialog: MatDialog, private snackBar: MatSnackBar) {
         this.errorMessages = [];
         this.factionRules = {
             'Black Rose Bandits': this.blackRoseBanditsRule,
@@ -60,8 +58,6 @@ export class BuilderComponent implements OnInit {
             'Urdaggar Tribes of Ruin': this.urdaggarRuinRules,
             'Urdaggar Tribes of Valor': this.urdaggarValorRules
         };
-        this.lrbVersion = this.lrbService.version;
-        this.builderPage = this.lrbService.buildingRules;
         this.leaderId = this.uuidv4();
         this.casterId = this.uuidv4();
         this.reset()

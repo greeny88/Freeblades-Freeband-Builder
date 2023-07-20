@@ -53,11 +53,11 @@
                     leader models can be demoted to regular models.</p>
             </mat-list-item>
         </mat-list>
-        <p>A full description on Freeband construction rules can be found in the Living Rulebook (v{{ lrbVersion }})
-            starting on page {{ builderPage }}. Printing this page using your browser's print option will
+        <p>A full description on Freeband construction rules can be found in the Living Rulebook (v{{ lrbService.version }})
+            starting on page {{ lrbService.buildingRules }}. Printing this page using your browser's print option will
             give you a formatted display of your selected models.</p>
-        <p><sup>1</sup> There are a few bugs to work out with alternate leader rules like being able to increase/decrease specific
-            MAR/RAR/CAR. An attempt is made to adjust the stat line as would be typical but for now you may need to use
-            the 'Edit' option on a model to get it's stat line the way you want it to be set.</p>
+        <p><sup>1</sup> By default the Alt Leader is given the MAR increase but you can use the 'Edit' button to 
+            switch the increase to any weapon or CAR. You might also notice a value change in the baseline value 
+            dependent on the rules around a MAR increase. Full rules are on page {{ lrbService.altLeaderRules }}.</p>
     </div>
 </ng-template>
