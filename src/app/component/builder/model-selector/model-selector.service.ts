@@ -127,29 +127,29 @@ export class ModelSelectorService {
                     stats.discipline -= 2;
                 }
                 if (inj === 'SPD') {
-                    stats.speed -= 1;
+                    stats.speed--;
                 }
             }
         }
 
         let defense: number = (stats.shield === 'S' || stats.shield === 'AN' || stats.shield === 'B' || stats.shield === 'AS') ? 5 : (stats.shield === 'L') ? 6 : 4;
         if (abilities.agility === 4) {
-            defense = -1;
+            defense--;
         } else {
-            for (let i=0; this.abilityTiers.length > i; i++) {
-                if (abilities.agility >= this.abilityTiers[i]) {
-                    defense = defense + i + 1;
+            for (let abilityTier of this.abilityTiers) {
+                if (abilities.agility >= abilityTier) {
+                    defense++;
                 }
             }
         }
 
         let ratingBonus: number = 0;
         if (abilities.dexterity === 4) {
-            ratingBonus = -1;
+            ratingBonus--;
         } else {
-            for (let i=0; this.abilityTiers.length > i; i++) {
-                if (abilities.dexterity >= this.abilityTiers[i]) {
-                    ratingBonus = ratingBonus + i + 1;
+            for (let abilityTier of this.abilityTiers) {
+                if (abilities.dexterity >= abilityTier) {
+                    ratingBonus++;
                 }
             }
         }
@@ -165,42 +165,42 @@ export class ModelSelectorService {
         if (abilities.endurance === 4) {
             lifePoints--;
         } else {
-            for (let i=0; this.abilityTiers.length > i; i++) {
-                if (abilities.endurance >= this.abilityTiers[i]) {
-                    lifePoints = lifePoints + i + 1;
+            for (let abilityTier of this.abilityTiers) {
+                if (abilities.endurance >= abilityTier) {
+                    lifePoints++;
                 }
             }
         }
 
         let skillBonus: number = 0;
         if (abilities.knowledge === 4) {
-            skillBonus = -1;
+            skillBonus--;
         } else {
-            for (let i=0; this.abilityTiers.length > i; i++) {
-                if (abilities.knowledge >= this.abilityTiers[i]) {
-                    skillBonus = skillBonus + i + 1;
+            for (let abilityTier of this.abilityTiers) {
+                if (abilities.knowledge >= abilityTier) {
+                    skillBonus++;
                 }
             }
         }
 
         let moraleBonus: number = 0;
         if (abilities.spirit === 4) {
-            moraleBonus = -1;
+            moraleBonus--;
         } else {
-            for (let i=0; this.abilityTiers.length > i; i++) {
-                if (abilities.spirit >= this.abilityTiers[i]) {
-                    moraleBonus = moraleBonus + i + 1;
+            for (let abilityTier of this.abilityTiers) {
+                if (abilities.spirit >= abilityTier) {
+                    moraleBonus++;
                 }
             }
         }
 
         let damageBonus: number = 0;
         if (abilities.strength === 4) {
-            damageBonus = -1;
+            damageBonus--;
         } else {
-            for (let i=0; this.abilityTiers.length > i; i++) {
-                if (abilities.strength >= this.abilityTiers[i]) {
-                    damageBonus = damageBonus + i + 1;
+            for (let abilityTier of this.abilityTiers) {
+                if (abilities.strength >= abilityTier) {
+                    damageBonus++;
                 }
             }
         }

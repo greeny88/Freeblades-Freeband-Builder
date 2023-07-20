@@ -84,7 +84,7 @@ export class ModelSelectorComponent {
                             }
                             // Only add +1 for two-ended if MAR increase
                             for (let melee of model.stats.melee) {
-                                if ('abilities' in melee && melee.abilities.indexOf('te') < -1) {
+                                if ('abilities' in melee && melee.abilities.indexOf('te') > -1) {
                                     model.value += 1;
                                 }
                             }
