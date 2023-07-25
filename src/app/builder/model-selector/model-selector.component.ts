@@ -22,6 +22,7 @@ export class ModelSelectorComponent {
     @Output() onModelSelected = new EventEmitter<any>();
     factionModels : Model[] = Models;
     model: Model | any;
+    model_grouping: { [key: string]: Model[] };
     models : Model[];
     originalModel: Model | undefined = undefined;
     selected : Model | undefined = undefined;
@@ -42,22 +43,24 @@ export class ModelSelectorComponent {
 
     constructor(private dialog: MatDialog, private modelSelectorService: ModelSelectorService) {
         this.models = [];
+        this.model_grouping = {};
     }
 
     ngOnChanges(changes: SimpleChanges) {
         if (('altLeader' in changes || 'faction' in changes) && this.faction) {
             this.model = undefined;
             this.models = [];
-            if (this.altLeader && this.disallowedAltLeadersFactions.indexOf(this.faction)) {
+            this.model_grouping = {};
+            if (this.altLeader && !this.disallowedAltLeadersFactions.includes(this.faction)) {
                 const factionModels = JSON.parse(JSON.stringify(this.factionModels));
                 for (let currentmodel of factionModels) {
                     let model: Model = Object.assign({}, currentmodel);
-                    if (model.factions.indexOf(this.faction) > -1) {
+                    if (model.factions.includes(this.faction)) {
                         if (this.type === 'Leader' && model.type === 'Standard' 
                                 && model.stats.type === 'Hero' 
-                                && model.stats.talents?.every(v=> ['Animal','Demon','Feral','Warbeast','Undead'].indexOf(v) < 0)
-                                && model.stats.talents?.every(t => t.indexOf('Ally') < 0) 
-                                && this.disallowedAltLeaders.indexOf(model.name) < 0) {
+                                && model.stats.talents?.every(v=> !['Animal','Demon','Feral','Warbeast','Undead'].includes(v))
+                                && model.stats.talents?.every(t => !t.includes('Ally')) 
+                                && !this.disallowedAltLeaders.includes(model.name)) {
                             model.stats.talents.push('Leader');
                             if (model.stats.melee) {
                                 model.stats.melee[0].altSelected = true;
@@ -99,17 +102,22 @@ export class ModelSelectorComponent {
                     }
                 }
             } else {
-                this.models = this.factionModels.filter(model => this.faction && model.type === this.type && model.factions.indexOf(this.faction) > -1);
+                this.models = this.factionModels.filter(model => this.faction && model.type === this.type && model.factions.includes(this.faction));
             }
-            this.models.sort((a,b) => {
-                if (a.name < b.name) {
-                    return -1;
+            this.models.forEach(m => {
+                const faction = m.primaryFaction ? m.primaryFaction : this.faction;
+                if (!faction) {
+                    return;
                 }
-                if (a.name > b.name) {
-                    return 1;
+                if (!(faction in this.model_grouping)) {
+                    this.model_grouping[faction] = [];
                 }
-                return 0;
+                this.model_grouping[faction].push(m);
             });
+
+            for (let faction in this.model_grouping) {
+                this.model_grouping[faction].sort((a,b) => (a.name < b.name) ? -1 : (a.name > b.name) ? 1 : 0)
+            }
         }
         if ('selectedModel' in changes && this.selectedModel && !('component_id' in this.selectedModel)) {
             try {

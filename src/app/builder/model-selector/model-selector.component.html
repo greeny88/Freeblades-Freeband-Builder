@@ -3,7 +3,9 @@
         <mat-form-field>
             <mat-select [placeholder]="type !== 'Standard' ? type : 'Model'" (selectionChange)="modelSelected($event)" [(value)]="selected" title="{{selected?.displayName}} - {{selected?.stats?.type}} - {{selected?.value}}">
                 <mat-option value="">None</mat-option>
-                <mat-option *ngFor="let m of models" [value]="m" title="{{m.displayName}} - {{m.stats.type}} - {{m.value}}">{{m.displayName}} - {{m.stats.type}} - {{m.value}}</mat-option>
+                <mat-optgroup *ngFor="let faction of model_grouping | keyvalue " [label]="faction.key">
+                    <mat-option *ngFor="let m of faction.value" [value]="m" title="{{m.displayName}} - {{m.stats.type}} - {{m.value}}">{{m.displayName}} - {{m.stats.type}} - {{m.value}}</mat-option>
+                </mat-optgroup>
             </mat-select>
         </mat-form-field>
         <div>
