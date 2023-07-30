@@ -116,7 +116,12 @@ export class ModelSelectorComponent {
             });
 
             for (let faction in this.model_grouping) {
-                this.model_grouping[faction].sort((a,b) => (a.name < b.name) ? -1 : (a.name > b.name) ? 1 : 0)
+                this.model_grouping[faction].sort((a,b) => {
+                    if (a.stats.type === b.stats.type) {
+                        return (a.name < b.name) ? -1 : (a.name > b.name) ? 1 : 0;
+                    }
+                    return (a.stats.type === 'Hero') ? -1 : 1;
+                });
             }
         }
         if ('selectedModel' in changes && this.selectedModel && !('component_id' in this.selectedModel)) {
