@@ -3,8 +3,8 @@
         <mat-form-field>
             <mat-select [placeholder]="type !== 'Standard' ? type : 'Model'" (selectionChange)="modelSelected($event)" [(value)]="selected" title="{{selected?.displayName}} - {{selected?.stats?.type}} - {{selected?.value}}">
                 <mat-option value="">None</mat-option>
-                <mat-optgroup *ngFor="let faction of model_grouping | keyvalue " [label]="faction.key">
-                    <mat-option *ngFor="let m of faction.value" [value]="m" title="{{m.displayName}} - {{m.stats.type}} - {{m.value}}">{{m.displayName}} - {{m.stats.type}} - {{m.value}}</mat-option>
+                <mat-optgroup *ngFor="let faction of model_factions" [label]="faction">
+                    <mat-option *ngFor="let m of model_grouping[faction]" [value]="m" title="{{m.displayName}} - {{m.stats.type}} - {{m.value}}">{{m.displayName}} - {{m.stats.type}} - {{m.value}}</mat-option>
                 </mat-optgroup>
             </mat-select>
         </mat-form-field>
@@ -23,25 +23,25 @@
         </div>
         <div class="modelDisplayRow">
             <div><span class="bold-text">SPD: </span>{{model.stats.speed}}</div>
+            <div><span class="bold-text">DEF: </span>{{model.stats.defense}}<span *ngIf="model.stats.shield">{{model.stats.shield}}</span></div>
+            <div><span class="bold-text">AV: </span>{{model.stats.armor}}</div>
+            <div><span class="bold-text">LP: </span>{{model.stats.lifePoints}}</div>
             <div><span class="bold-text">DISC: </span>d{{model.stats.discipline}}</div>
             <ng-container *ngIf="model.stats.moraleBonus && model.stats.moraleBonus > 0">
                 <div><span class="bold-text">Morale/Fear Bonus</span>{{model.stats.moraleBonus}}</div>
             </ng-container>
-            <div><span class="bold-text">DEF: </span>{{model.stats.defense}}<span *ngIf="model.stats.shield">{{model.stats.shield}}</span></div>
-            <div><span class="bold-text">AV: </span>{{model.stats.armor}}</div>
-            <div><span class="bold-text">LP: </span>{{model.stats.lifePoints}}</div>
             <ng-container *ngIf="model.stats.moraleBonus == 0">
                 <div class="printOnly">&nbsp;</div>
             </ng-container>
         </div>
         <div class="modelDisplayRow" *ngFor="let weapon of model.stats.melee">
             <div><span class="bold-text">MAR: </span>d{{weapon.rating}}<span *ngIf="weapon.ratingBonus && weapon.ratingBonus > 0">&nbsp;+{{weapon.ratingBonus}}</span></div>
-            <div><span class="bold-text">Weapon: </span>{{weapon.name}} {{weapon.abilityList}}</div>
+            <div class="larger"><span class="bold-text">Weapon: </span>{{weapon.name}} {{weapon.abilityList}}</div>
             <div><span class="bold-text">Dmg: </span>d{{weapon.damage}}<span *ngIf="weapon.damageBonus && weapon.damageBonus > 0">&nbsp;+{{weapon.damageBonus}}</span></div>
         </div>
         <div class="modelDisplayRow" *ngFor="let weapon of model.stats.range">
             <div><span class="bold-text">RAR: </span>d{{weapon.rating}}<span *ngIf="weapon.ratingBonus && weapon.ratingBonus > 0">&nbsp;+{{weapon.ratingBonus}}</span></div>
-            <div><span class="bold-text">Weapon: </span>{{weapon.name}} {{weapon.abilityList}} {{weapon.distance}}in-{{weapon.distance*2}}in-{{weapon.distance*3}}in</div>
+            <div class="larger"><span class="bold-text">Weapon: </span>{{weapon.name}} {{weapon.abilityList}} {{weapon.distance}}"-{{weapon.distance*2}}"-{{weapon.distance*3}}"</div>
             <div><span class="bold-text">Dmg: </span>d{{weapon.damage}}<span *ngIf="weapon.damageBonus && weapon.damageBonus > 0">&nbsp;+{{weapon.damageBonus}}</span></div>
         </div>
         <div class="modelDisplayRow" *ngIf="model.stats.casting">
