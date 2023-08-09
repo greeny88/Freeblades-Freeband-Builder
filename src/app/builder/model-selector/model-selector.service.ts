@@ -319,7 +319,9 @@ export class ModelSelectorService {
                     weapon.rating += 2;
                 }
                 weapon.ratingBonus = ratingBonus;
-                weapon.damageBonus = (weapon.damageBonus) ? damageBonus + weapon.damageBonus : damageBonus;
+                if ( !(['Bite','Warhorse'].includes(weapon.name) && talentList.includes('Cavalry')) ) {
+                    weapon.damageBonus = (weapon.damageBonus) ? damageBonus + weapon.damageBonus : damageBonus;
+                }
                 if (weapon.abilities) {
                     weapon.abilityList = weapon.abilities.join(', ');
                 }
