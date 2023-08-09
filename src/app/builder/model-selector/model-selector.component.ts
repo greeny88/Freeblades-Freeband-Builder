@@ -22,6 +22,7 @@ export class ModelSelectorComponent {
     @Output() onModelSelected = new EventEmitter<any>();
     factionModels : Model[] = Models;
     model: Model | any;
+    model_factions: string[] = [];
     model_grouping: { [key: string]: Model[] };
     models : Model[];
     originalModel: Model | undefined = undefined;
@@ -44,6 +45,7 @@ export class ModelSelectorComponent {
     constructor(private dialog: MatDialog, private modelSelectorService: ModelSelectorService) {
         this.models = [];
         this.model_grouping = {};
+        this.model_factions = [];
     }
 
     ngOnChanges(changes: SimpleChanges) {
@@ -51,12 +53,13 @@ export class ModelSelectorComponent {
             this.model = undefined;
             this.models = [];
             this.model_grouping = {};
+            this.model_factions = [];
             if (this.altLeader && !this.disallowedAltLeadersFactions.includes(this.faction)) {
                 const factionModels = JSON.parse(JSON.stringify(this.factionModels));
                 for (let currentmodel of factionModels) {
                     let model: Model = Object.assign({}, currentmodel);
                     if (model.factions.includes(this.faction)) {
-                        if (this.type === 'Leader' && model.type === 'Standard' 
+                        if (this.type === 'Leader' && (model.type === 'Standard' || model.type === 'Caster') 
                                 && model.stats.type === 'Hero' 
                                 && model.stats.talents?.every(v=> !['Animal','Demon','Feral','Warbeast','Undead'].includes(v))
                                 && model.stats.talents?.every(t => !t.includes('Ally')) 
@@ -116,6 +119,7 @@ export class ModelSelectorComponent {
             });
 
             for (let faction in this.model_grouping) {
+                this.model_factions.push(faction);
                 this.model_grouping[faction].sort((a,b) => {
                     if (a.stats.type === b.stats.type) {
                         return (a.name < b.name) ? -1 : (a.name > b.name) ? 1 : 0;
@@ -123,6 +127,15 @@ export class ModelSelectorComponent {
                     return (a.stats.type === 'Hero') ? -1 : 1;
                 });
             }
+            this.model_factions.sort((a,b) => {
+                if (a === this.faction) {
+                    return -1;
+                }
+                if (b === this.faction) {
+                    return 1;
+                }
+                return (a > b) ? 1 : -1;
+            });
         }
         if ('selectedModel' in changes && this.selectedModel && !('component_id' in this.selectedModel)) {
             try {
