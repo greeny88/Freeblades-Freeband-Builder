@@ -7098,7 +7098,7 @@ const Models: Model[] = [{
     "value": 31,
     "race": "Kandoran"
 },{
-    "factions": ["Ravenblade Mercenaries"],
+    "factions": ["Haradelan Questers", "Ravenblade Mercenaries"],
     "name": "Stalker",
     "displayName": "Stalker",
     "type": "Standard",
@@ -7118,7 +7118,11 @@ const Models: Model[] = [{
         "talents": ["Dodge","Scout","Sharpshooter","Shoot Them!","Subdue","Quarry","Arboreal"],
         "abilities":{
             "agility":10
-        }
+        },
+        "skills": [{
+            "name": "Hunt",
+            "rating": 8
+        }]
     },
     "gender": "M",
     "value": 34,
@@ -7145,61 +7149,11 @@ const Models: Model[] = [{
         "talents": ["Dodge","Scout","Sharpshooter","Shoot Them!","Subdue","Quarry","Arboreal","Ally[Independent]"],
         "abilities":{
             "agility":10
-        }
-    },
-    "gender": "M",
-    "value": 34,
-    "race": "Faeler"
-},{
-    "factions": ["Haradelan Questers"],
-    "primaryFaction":"Wandering Allies",
-    "name": "Stalker",
-    "displayName": "Stalker",
-    "type": "Standard",
-    "stats": {
-        "type": "Hero",
-        "speed": 7,
-        "melee": [{
-            "rating": 10,
-            "name": "Longsword (1h)"
-        }],
-        "range":[{
-            "rating":12,
-            "name":"Longbow"
-        }],
-        "armor": 3,
-        "discipline": 8,
-        "talents": ["Dodge","Scout","Sharpshooter","Shoot Them!","Subdue","Quarry","Arboreal","Ally[Trusted]"],
-        "abilities":{
-            "agility":10
-        }
-    },
-    "gender": "M",
-    "value": 34,
-    "race": "Faeler"
-},{
-    "factions": ["Haradelan Questers"],
-    "primaryFaction":"Ravenblade Mercenaries",
-    "name": "Stalker",
-    "displayName": "Stalker",
-    "type": "Standard",
-    "stats": {
-        "type": "Hero",
-        "speed": 7,
-        "melee": [{
-            "rating": 10,
-            "name": "Longsword (1h)"
-        }],
-        "range":[{
-            "rating":12,
-            "name":"Longbow"
-        }],
-        "armor": 3,
-        "discipline": 8,
-        "talents": ["Dodge","Scout","Sharpshooter","Shoot Them!","Subdue","Quarry","Arboreal","Ally[Trusted]"],
-        "abilities":{
-            "agility":10
-        }
+        },
+        "skills": [{
+            "name": "Hunt",
+            "rating": 8
+        }]
     },
     "gender": "M",
     "value": 34,
@@ -7226,7 +7180,42 @@ const Models: Model[] = [{
         "talents": ["Dodge","Scout","Sharpshooter","Shoot Them!","Subdue","Quarry","Arboreal","Ally[Independent]"],
         "abilities":{
             "agility":10
-        }
+        },
+        "skills": [{
+            "name": "Hunt",
+            "rating": 8
+        }]
+    },
+    "gender": "M",
+    "value": 34,
+    "race": "Faeler"
+},{
+    "factions": ["Falkaaran Adventurers"],
+    "primaryFaction":"Haradelan Questers",
+    "name": "Stalker",
+    "displayName": "Stalker",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee": [{
+            "rating": 10,
+            "name": "Longsword (1h)"
+        }],
+        "range":[{
+            "rating":12,
+            "name":"Longbow"
+        }],
+        "armor": 3,
+        "discipline": 8,
+        "talents": ["Dodge","Scout","Sharpshooter","Shoot Them!","Subdue","Quarry","Arboreal","Ally[Independent]"],
+        "abilities":{
+            "agility":10
+        },
+        "skills": [{
+            "name": "Hunt",
+            "rating": 8
+        }]
     },
     "gender": "M",
     "value": 34,
