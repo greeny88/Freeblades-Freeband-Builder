@@ -4,7 +4,7 @@ import { Abilities, MeleeWeapons, RangeWeapons, Skills, Talents } from './advanc
 import { ModelStats, Weapon } from 'src/app/model';
 
 interface stats {
-    abilities: Object,
+    abilities: {agility: number, dexterity: number, endurance: number, knowledge: number, spirit: number, strength: number},
     armor: number,
     casting?: Object,
     defense: number,
