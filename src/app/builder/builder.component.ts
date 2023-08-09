@@ -342,8 +342,10 @@ export class BuilderComponent implements OnInit {
         if (this.selectedFreeband) {
             this.extraModels = [];
             for (let model of this.selectedFreeband['models']) {
-                const m =  Models.find(m => m.displayName === model.displayName && (m.type === (model.type || 'Standard')))
+                const m =  Models.find(m => m.displayName === model.displayName && m.factions.includes(options.faction))
                 if (!m) {
+                    console.error(`Could not find model: ${model.displayName}`);
+                    console.error(model);
                     return;
                 }
                 if (model.type === 'Leader') {
