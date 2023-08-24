@@ -10088,6 +10088,28 @@ const Models: Model[] = [{
     "gender": "M",
     "value": 31,
     "race": "Faeler"
+},{
+    "factions": ["Eclipse Sisterhood"],
+    "name": "Void Agent",
+    "displayName": "Void Agent",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee": [{
+            "rating": 10,
+            "name": "Long Knife"
+        }],
+        "armor": 3,
+        "discipline": 10,
+        "talents": ["Dodge","Dodge","Backstep","Prowl","Accurate Strike","Accurate Strike","Accurate Strike","Wild Magic[d6, Nullify Armor, Missed Opportunity, Void Blade]"],
+        "abilities": {
+            "agility": 12
+        }
+    },
+    "gender": "F",
+    "value": 35,
+    "race": "Chaler"
 }];
 
 export  {Models};
