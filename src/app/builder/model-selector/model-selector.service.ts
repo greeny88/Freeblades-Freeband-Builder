@@ -11,10 +11,10 @@ interface stats {
     discipline: number,
     itemList: string,
     lifePoints: number,
-    melee?: Object,
+    melee?: Weapon[],
     modelValue: number,
     moraleBonus: number,
-    range?: Object,
+    range?: Weapon[],
     skillBonus: number,
     skillList: string,
     speed: number,
@@ -53,8 +53,9 @@ export class ModelSelectorService {
             const abilityReference : any = {'AGL':'agility','DEX':'dexterity','END':'endurance','KNW':'knowledge','SPR':'spirit','STR':'strength'};
             if (details && details.rating) {
                 abilities[abilityReference[advancementName]] = details.rating;
+            } else {
+                abilities[abilityReference[advancementName]] += 2;
             }
-            abilities[abilityReference[advancementName]] += 2;
         } else if (Talents.includes(advancementName)) {
             if (!('talents' in stats)) {
                 stats.talents = [];
