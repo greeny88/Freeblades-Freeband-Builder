@@ -767,6 +767,11 @@ const RangeWeapons: Omit<RangeWeapon, 'rating'>[] = [{
     damage: 8,
     distance: 8,
     abilities: ['aoe 2in', 'idf']
+},{
+    name: 'War Axe',
+    damage: 8,
+    distance: 2,
+    abilities: ['thr']
 }];
 
 export  {Abilities, Equipment, MagicItems, MeleeWeapons, RangeWeapons, Skills, Talents};
