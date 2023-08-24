@@ -9,6 +9,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "test-coverage": "ng test --code-coverage",
     "start-sw": "ng build && http-server dist",
     "ghpages": "ng build --base-href /Freeblades-Freeband-Builder/ && copy dist\\index.html dist\\404.html"
   },
