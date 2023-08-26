@@ -11,7 +11,8 @@
     "test": "ng test",
     "test-coverage": "ng test --code-coverage",
     "start-sw": "ng build && http-server dist",
-    "ghpages": "ng build --base-href /Freeblades-Freeband-Builder/ && copy dist\\index.html dist\\404.html"
+    "ghpages": "ng build --base-href /Freeblades-Freeband-Builder/ && copy dist\\index.html dist\\404.html",
+    "gcp": "ng build --base-href /freeblades-freeband-builder/ "
   },
   "author": "mgreen",
   "license": "MIT",
