@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 
-import { CommunicatorService } from '../../communicator.service';
+import { Factions } from 'src/app/model.d';
 
 @Component({
     selector: 'freeband-setup',
@@ -9,21 +9,19 @@ import { CommunicatorService } from '../../communicator.service';
 export class FreebandSetupComponent implements OnInit {
     @Input() selectedOptions : {freebandLimit: number, faction: string, altLeader: boolean} | undefined = undefined;
     @Output() onOptionsSet = new EventEmitter<any>();
-    altLeader : boolean;
-    factions : string[];
+    altLeader : boolean = false;
+    factions : typeof Factions;
     freebandLimit : number = 0;
     selectedFaction : string = '';
     private options : {freebandLimit: number | undefined, faction: string | undefined, altLeader: boolean};
     disallowedAltLeadersFactions: String[] = [
         'Darkgrove Demons',
         'Demons of Karelon',
-        'Haradelan Questers',
         'Koronnan Moonsworn',
         'Ravenblade Mercenaries'
     ];
-    commSubscription: any;
 
-    constructor(private commService: CommunicatorService) {
+    constructor() {
         // TODO: change to list based on available factions in model file
         this.factions = [
             'Black Rose Bandits', 
@@ -46,16 +44,14 @@ export class FreebandSetupComponent implements OnInit {
             'Urdaggar Tribes of Ruin',
             'Urdaggar Tribes of Valor'
         ];
-        this.altLeader = false;
         this.options = {
             freebandLimit: undefined,
             faction: undefined,
             altLeader: false
         };
     }
-    ngOnInit(): void {
-        
-    }
+
+    ngOnInit() { }
 
     ngOnChanges() {
         if (this.selectedOptions) {
