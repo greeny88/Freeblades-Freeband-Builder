@@ -32,12 +32,26 @@ export class ModelSelectorComponent {
         'Black Thorn',
         'Bladerider First',
         'Bladerider',
-        'Shadow Hunter'
+        'Shadow Hunter',
+        'High Questor of Tahnar',
+        'High Questor of Vidunar',
+        'High Questor of Barek',
+        'High Questor of Glareyn',
+        'High Questor of Vasilar',
+        'High Questor of Valia',
+        'Questing Knight of Tahnar',
+        'Questing Knight of Vidunar',
+        'Questing Knight of Barek',
+        'Questing Knight of Glareyn',
+        'Questing Knight of Sylvia',
+        'Questing Knight of Vasilar',
+        'Apprentice Knight of Tahnar',
+        'Apprentice Knight of Vidunar',
+        'Apprentice Knight of Barek'
     ];
     private disallowedAltLeadersFactions: String[] = [
         'Darkgrove Demons',
         'Demons of Karelon',
-        'Haradelan Questers',
         'Koronnan Moonsworn',
         'Ravenblade Mercenaries'
     ];
