@@ -532,6 +532,10 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
     damage: 8,
     damageBonus: 1
 },{
+    name: 'Longsword (magic)',
+    damage: 10,
+    abilities: ['mag','flm']
+},{
     name: 'Mace',
     damage: 8
 },{
