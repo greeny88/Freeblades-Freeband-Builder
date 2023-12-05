@@ -27,7 +27,7 @@ export class ModelSelectorComponent {
     models : Model[];
     originalModel: Model | undefined = undefined;
     selected : Model | undefined = undefined;
-    private disallowedAltLeaders: String[] = [
+    private disallowedAltLeaders: string[] = [
         'Duelist',
         'Black Thorn',
         'Bladerider First',
@@ -49,7 +49,7 @@ export class ModelSelectorComponent {
         'Apprentice Knight of Vidunar',
         'Apprentice Knight of Barek'
     ];
-    private disallowedAltLeadersFactions: String[] = [
+    private disallowedAltLeadersFactions: string[] = [
         'Darkgrove Demons',
         'Demons of Karelon',
         'Koronnan Moonsworn',
@@ -63,6 +63,7 @@ export class ModelSelectorComponent {
     }
 
     ngOnChanges(changes: SimpleChanges) {
+        // TODO: add 'Ally[Independent]' when this.faction != model.primaryFaction and 'Ally[Trusted]' not in model.stats.talents
         if (('altLeader' in changes || 'faction' in changes) && this.faction) {
             this.model = undefined;
             this.models = [];
@@ -72,6 +73,13 @@ export class ModelSelectorComponent {
                 const factionModels = JSON.parse(JSON.stringify(this.factionModels));
                 for (let currentmodel of factionModels) {
                     let model: Model = Object.assign({}, currentmodel);
+                    // if (this.faction != model.primaryFaction) {
+                    //     if (model.stats.talents && model.stats.talents.every(t => !t.includes('Ally'))) {
+                    //         model.stats.talents?.push('Ally[Independent]');
+                    //     } else {
+                    //         model.stats.talents = ['Ally[Independent]'];
+                    //     }
+                    // }
                     if (model.factions.includes(this.faction)) {
                         if (this.type === 'Leader' && (model.type === 'Standard' || model.type === 'Caster') 
                                 && model.stats.type === 'Hero' 
@@ -119,7 +127,16 @@ export class ModelSelectorComponent {
                     }
                 }
             } else {
-                this.models = this.factionModels.filter(model => this.faction && model.type === this.type && model.factions.includes(this.faction));
+                this.models = this.factionModels.filter(model => this.faction && model.type === this.type && model.factions.includes(this.faction)).map((model) => {
+                    // if (this.faction != model.primaryFaction) {
+                    //     if (model.stats.talents && model.stats.talents.every(t => !t.includes('Ally'))) {
+                    //         model.stats.talents?.push('Ally[Independent]');
+                    //     } else {
+                    //         model.stats.talents = ['Ally[Independent]'];
+                    //     }
+                    // }
+                    return model;
+                });
             }
             this.models.forEach(m => {
                 const faction = m.primaryFaction ? m.primaryFaction : this.faction;
