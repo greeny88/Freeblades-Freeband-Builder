@@ -247,7 +247,7 @@ const Models: Model[] = [{
     "displayName": "Quarreler",
     "stats": {
         "discipline": 6,
-        "talents": ["Die Hard", "March", "Alpine"],
+        "talents": ["Die Hard", "March", "Alpine","Limited"],
         "speed": 5,
         "melee": [{
             "name": "Dagger",
@@ -271,7 +271,7 @@ const Models: Model[] = [{
     "displayName": "Quarreler",
     "stats": {
         "discipline": 6,
-        "talents": ["Die Hard", "March", "Alpine","Ally[Independent]"],
+        "talents": ["Die Hard", "March", "Alpine","Limited","Ally[Independent]"],
         "speed": 5,
         "melee": [{
             "name": "Dagger",
