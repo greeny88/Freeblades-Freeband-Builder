@@ -3,6 +3,7 @@ import { Model } from "src/app/model";
 // TODO: need to split out 2x attacks for alt leader update.
 const Models: Model[] = [{
     "factions": ["Kuzaarik Forgers"],
+    "primaryFaction": "Kuzaarik Forgers",
     "name": "Forge Warden",
     "displayName": "Forge Warden",
     "stats": {
@@ -68,6 +69,7 @@ const Models: Model[] = [{
     "race": "Kuzaarik"
 },{
     "factions": ["Kuzaarik Forgers"],
+    "primaryFaction":"Kuzaarik Forgers",
     "name": "Kryomancer",
     "displayName": "Kryomancer",
     "stats": {
@@ -115,6 +117,7 @@ const Models: Model[] = [{
     "race": "Kuzaarik"
 },{
     "factions": ["Kuzaarik Forgers"],
+    "primaryFaction":"Kuzaarik Forgers",
     "name": "Grenadier",
     "displayName": "Grenadier",
     "stats": {
@@ -145,6 +148,7 @@ const Models: Model[] = [{
     "race": "Kuzaarik"
 },{
     "factions": ["Kuzaarik Forgers"],
+    "primaryFaction":"Kuzaarik Forgers",
     "name": "Huskarl",
     "displayName": "Huskarl",
     "stats": {
@@ -190,6 +194,7 @@ const Models: Model[] = [{
     "race": "Kuzaarik"
 },{
     "factions": ["Kuzaarik Forgers"],
+    "primaryFaction":"Kuzaarik Forgers",
     "name": "Explorer",
     "displayName": "Explorer",
     "stats": {
@@ -237,6 +242,7 @@ const Models: Model[] = [{
     "race": "Kuzaarik"
 },{
     "factions": ["Kuzaarik Forgers"],
+    "primaryFaction":"Kuzaarik Forgers",
     "name": "Quarreler",
     "displayName": "Quarreler",
     "stats": {
@@ -284,6 +290,7 @@ const Models: Model[] = [{
     "race": "Kuzaarik"
 },{
     "factions": ["Kuzaarik Forgers"],
+    "primaryFaction":"Kuzaarik Forgers",
     "name": "Wayblocker",
     "displayName": "Wayblocker",
     "stats": {
@@ -2295,6 +2302,10 @@ const Models: Model[] = [{
         "abilities": {
             "agility": 12
         },
+        "veteran": [{
+            "cost": 1,
+            "name": "Bladedancer"
+        }],
         "speed": 7,
         "melee": [{
             "rating": 10,
@@ -2318,6 +2329,10 @@ const Models: Model[] = [{
         "abilities": {
             "agility": 12
         },
+        "veteran": [{
+            "cost": 1,
+            "name": "Bladedancer"
+        }],
         "speed": 7,
         "melee": [{
             "rating": 10,
@@ -2446,7 +2461,7 @@ const Models: Model[] = [{
 },{
     "factions": ["Eclipse Sisterhood"],
     "name": "Manslayer",
-    "displayName": "Manslayer",
+    "displayName": "Manslayer Sniper",
     "stats": {
         "discipline": 8,
         "type": "Hero",
@@ -2464,7 +2479,6 @@ const Models: Model[] = [{
         "speed": 7,
         "melee": [{
             "rating": 6,
-            "damage": 6,
             "name": "Long Knife"
         }],
         "range": [{
@@ -2478,10 +2492,36 @@ const Models: Model[] = [{
     "gender": "F",
     "race": "Chaler"
 },{
+    "factions": ["Eclipse Sisterhood"],
+    "name": "Manslayer",
+    "displayName": "Manslayer Assassin",
+    "stats": {
+        "discipline": 10,
+        "type": "Hero",
+        "talents": ["Accurate Strike","Dodge","Dodge","Rapid Reload","Scout"],
+        "abilities": {
+            "agility": 12
+        },
+        "speed": 7,
+        "melee": [{
+            "rating": 10,
+            "name": "Long Knife"
+        }],
+        "range": [{
+            "rating": 10,
+            "name": "Roondar"
+        }],
+        "armor": 2
+    },
+    "type": "Standard",
+    "value": 34,
+    "gender": "F",
+    "race": "Chaler"
+},{
     "factions": ["Koronnan Moonsworn"],
     "primaryFaction":"Eclipse Sisterhood",
     "name": "Manslayer",
-    "displayName": "Manslayer",
+    "displayName": "Manslayer Sniper",
     "stats": {
         "discipline": 8,
         "type": "Hero",
@@ -2509,6 +2549,33 @@ const Models: Model[] = [{
     },
     "type": "Standard",
     "value": 30,
+    "gender": "F",
+    "race": "Chaler"
+},{
+    "factions": ["Koronnan Moonsworn"],
+    "primaryFaction":"Eclipse Sisterhood",
+    "name": "Manslayer",
+    "displayName": "Manslayer Assassin",
+    "stats": {
+        "discipline": 10,
+        "type": "Hero",
+        "talents": ["Accurate Strike","Dodge","Dodge","Rapid Reload","Scout"],
+        "abilities": {
+            "agility": 12
+        },
+        "speed": 7,
+        "melee": [{
+            "rating": 10,
+            "name": "Long Knife"
+        }],
+        "range": [{
+            "rating": 10,
+            "name": "Roondar"
+        }],
+        "armor": 2
+    },
+    "type": "Standard",
+    "value": 34,
     "gender": "F",
     "race": "Chaler"
 },{
@@ -4599,7 +4666,7 @@ const Models: Model[] = [{
     },
     "value": 39,
     "gender": "M",
-    "race": "Trillian"
+    "race": "Trilian"
 },{
     "factions": ["Trilian Seekers"],
     "name": "Bladerider First",
@@ -4622,7 +4689,7 @@ const Models: Model[] = [{
     },
     "value": 44,
     "gender": "F",
-    "race": "Trillian"
+    "race": "Trilian"
 },{
     "factions": ["Trilian Seekers"],
     "name": "Bladerider First",
@@ -4648,7 +4715,7 @@ const Models: Model[] = [{
     },
     "value": 41,
     "gender": "F",
-    "race": "Trillian"
+    "race": "Trilian"
 },{
     "factions": ["Trilian Seekers"],
     "name": "Treespeaker",
@@ -4671,7 +4738,7 @@ const Models: Model[] = [{
     },
     "value": 32,
     "gender": "F",
-    "race": "Trillian"
+    "race": "Trilian"
 },{
     "factions": ["Trilian Seekers"],
     "name": "Stargazer",
@@ -4694,7 +4761,7 @@ const Models: Model[] = [{
     },
     "value": 32,
     "gender": "M",
-    "race": "Trillian"
+    "race": "Trilian"
 },{
     "factions": ["Trilian Seekers"],
     "name": "Bladerider",
@@ -4717,7 +4784,7 @@ const Models: Model[] = [{
     },
     "value": 37,
     "gender": "F",
-    "race": "Trillian"
+    "race": "Trilian"
 },{
     "factions": ["Trilian Seekers"],
     "name": "Bladerider",
@@ -4743,7 +4810,7 @@ const Models: Model[] = [{
     },
     "value": 34,
     "gender": "F",
-    "race": "Trillian"
+    "race": "Trilian"
 },{
     "factions": ["Trilian Seekers"],
     "name": "Enforcer",
@@ -4772,7 +4839,7 @@ const Models: Model[] = [{
     },
     "value": 30,
     "gender": "M",
-    "race": "Trillian"
+    "race": "Trilian"
 },{
     "factions": ["Kuzaarik Forgers"],
     "primaryFaction":"Trilian Seekers",
@@ -4799,7 +4866,7 @@ const Models: Model[] = [{
     },
     "value": 30,
     "gender": "M",
-    "race": "Trillian"
+    "race": "Trilian"
 },{
     "factions": ["Trilian Seekers"],
     "name": "Searcher",
@@ -4832,7 +4899,7 @@ const Models: Model[] = [{
     },
     "value": 34,
     "gender": "F",
-    "race": "Trillian"
+    "race": "Trilian"
 },{
     "factions": ["Trilian Seekers"],
     "name": "Mist Dancer",
@@ -4861,7 +4928,7 @@ const Models: Model[] = [{
     },
     "value": 37,
     "gender": "M",
-    "race": "Trillian"
+    "race": "Trilian"
 },{
     "factions": ["Trilian Seekers"],
     "name": "Veteran Defender",
@@ -4887,7 +4954,7 @@ const Models: Model[] = [{
     },
     "value": 30,
     "gender": "M",
-    "race": "Trillian"
+    "race": "Trilian"
 },{
     "factions": ["Trilian Seekers","Ravenblade Mercenaries"],
     "name": "Wanderer",
@@ -4917,7 +4984,7 @@ const Models: Model[] = [{
     },
     "value":15,
     "gender": "M",
-    "race": "Trillian"
+    "race": "Trilian"
 },{
     "factions": ["Kuzaarik Forgers"],
     "primaryFaction":"Trilian Seekers",
@@ -4948,7 +5015,7 @@ const Models: Model[] = [{
     },
     "value":15,
     "gender": "M",
-    "race": "Trillian"
+    "race": "Trilian"
 },{
     "factions": ["Trilian Seekers"],
     "name": "Defender",
@@ -4971,7 +5038,7 @@ const Models: Model[] = [{
     },
     "value":13,
     "gender": "F",
-    "race": "Trillian"
+    "race": "Trilian"
 },{
     "factions": ["Trilian Seekers"],
     "name": "Tree Runner",
@@ -5001,7 +5068,7 @@ const Models: Model[] = [{
     },
     "value":16,
     "gender": "M",
-    "race": "Trillian"
+    "race": "Trilian"
 },{
     "factions": ["Urdaggar Tribes of Valor"],
     "name": "Wolfkarl",
@@ -5395,6 +5462,7 @@ const Models: Model[] = [{
     "race": "Faeler"
 },{
     "factions": ["Urdaggar Tribes of Valor"],
+    "primaryFaction":"Urdaggar Tribes of Valor",
     "name": "Slinger",
     "displayName": "Slinger",
     "type": "Standard",
@@ -5449,6 +5517,7 @@ const Models: Model[] = [{
     "race": "Faeler"
 },{
     "factions": ["Urdaggar Tribes of Valor"],
+    "primaryFaction":"Urdaggar Tribes of Valor",
     "name": "Unproven",
     "displayName": "Unproven",
     "type": "Standard",
@@ -5489,6 +5558,7 @@ const Models: Model[] = [{
     "race": "Faeler"
 },{
     "factions": ["Urdaggar Tribes of Valor"],
+    "primaryFaction":"Urdaggar Tribes of Valor",
     "name": "Hunter",
     "displayName": "Hunter",
     "type": "Standard",
@@ -6063,7 +6133,7 @@ const Models: Model[] = [{
     },
     "gender": "M",
     "value": 13,
-    "race": "Trillian"
+    "race": "Trilian"
 },{
     "factions": ["Grular Invaders"],
     "name": "Impaler",
@@ -6894,7 +6964,7 @@ const Models: Model[] = [{
         }],
         "armor": 3,
         "discipline": 6,
-        "talents": ["Amphibious"]
+        "talents": ["Amphibious","Limited"]
     },
     "gender": "M",
     "value": 13,
@@ -7465,7 +7535,7 @@ const Models: Model[] = [{
     },
     "gender": "M",
     "value": 46,
-    "race": "Trillian"
+    "race": "Trilian"
 },{
     "factions": ["Trilian Seekers"],
     "name": "Talsytar",
@@ -7488,7 +7558,7 @@ const Models: Model[] = [{
     },
     "gender": "M",
     "value": 32,
-    "race": "Trillian"
+    "race": "Trilian"
 },{
     "factions": ["Urdaggar Tribes of Ruin", "Urdaggar Tribes of Valor"],
     "name": "Kaorl",
@@ -9962,11 +10032,12 @@ const Models: Model[] = [{
             "name": "Javelin"
         }],
         "armor": 4,
-        "discipline": 6
+        "discipline": 6,
+        "talents": ["Fast"]
     },
     "gender": "M",
     "value": 10,
-    "race": "Kandoran"
+    "race": "Koronnan"
 },{
     "factions": ["Kuzaarik Forgers"],
     "name": "Field Warden",
@@ -10110,6 +10181,197 @@ const Models: Model[] = [{
     "gender": "F",
     "value": 35,
     "race": "Chaler"
+},{
+    "factions": ["Eclipse Sisterhood"],
+    "name": "Sky Sister",
+    "displayName": "Sky Sister",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 5,
+        "melee": [{
+            "rating": 10,
+            "name": "Sakhazet"
+        }],
+        "range": [{
+            "rating": 10,
+            "name": "Roondar"
+        }],
+        "armor": 3,
+        "discipline": 10,
+        "talents": ["Cavalry","Light Cavalry","Dodge","Scout","Harasser","Marksman","Fly[Low,SPD10]","Stable Shot[d10]"],
+        "abilities": {
+            "agility": 12
+        }
+    },
+    "gender": "F",
+    "value": 45,
+    "race": "Chaler"
+},{
+    "factions": ["Falkaaran Adventurers"],
+    "name": "Knight Immolator",
+    "displayName": "Knight Immolator",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 9,
+        "melee": [{
+            "rating": 10,
+            "name": "Longsword (magic)"
+        },{
+            "rating": 6,
+            "name": "Warhorse",
+            "damage": 6
+        }],
+        "shield": "S",
+        "armor": 6,
+        "discipline": 10,
+        "talents": ["Cavalry","Parry","Parry","Bladeflash","Glacis","Warhorse","Immune[Flame]","Fast"],
+        "abilities": {
+            "dexterity": 10,
+            "spirit": 10
+        }
+    },
+    "gender": "F",
+    "value": 45,
+    "race": "Chaler"
+},{
+    "factions": ["Falkaaran Adventurers"],
+    "name": "Red Lancer",
+    "displayName": "Red Lancer",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 9,
+        "melee": [{
+            "rating": 10,
+            "name": "Lance"
+        },{
+            "rating": 10,
+            "name": "Saber"
+        }],
+        "range": [{
+            "rating": 10,
+            "name": "Recurved Short Bow"
+        }],
+        "shield": "S",
+        "armor": 5,
+        "discipline": 10,
+        "talents": ["Cavalry","Fast","Armored Deflection","Armored Deflection","Recover","Follow Through"],
+        "abilities": {
+            "agility": 10,
+            "strength": 10
+        }
+    },
+    "gender": "M",
+    "value": 42,
+    "race": "Koronnan"
+},{
+    "factions": ["Mershael Corsairs"],
+    "name": "Kyutokar",
+    "displayName": "Kyutokar",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 6,
+        "melee": [{
+            "rating": 10,
+            "name": "Taumari"
+        }],
+        "armor": 3,
+        "discipline": 10,
+        "talents": ["Cavalry","Dodge","Dodge","Vay","Hit and Run","Fly[Low SPD 10]"],
+        "abilities": {
+            "agility": 12
+        }
+    },
+    "gender": "M",
+    "value": 36,
+    "race": "Chaler"
+},{
+    "factions": ["Shakrim Wavestalkers"],
+    "name": "Ssarashal",
+    "displayName": "Ssarashal",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee": [{
+            "rating": 10,
+            "name": "Fang Blade"
+        },{
+            "rating": 10,
+            "name": "Fang Blade"
+        }],
+        "range": [{
+            "rating": 8,
+            "name": "Poison Pellet"
+        }],
+        "armor": 2,
+        "discipline": 10,
+        "talents": ["Arboreal","Chameleon","Dodge","Dodge","Enhanced Ambush","Arsenal Poison[Poison Pellet]"],
+        "abilities": {
+            "agility": 12
+        }
+    },
+    "gender": "M",
+    "value": 37,
+    "race": "Shakrim"
+},{
+    "factions": ["Trilian Seekers"],
+    "name": "Drakohal",
+    "displayName": "Drakohal",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 6,
+        "melee": [{
+            "rating": 10,
+            "name": "Toloron"
+        }],
+        "armor": 4,
+        "discipline": 10,
+        "talents": ["Parry","Parry","Sure Strikes","Protector","Confine","Warden","Arboreal"],
+        "abilities": {
+            "agility": 10
+        }
+    },
+    "gender": "M",
+    "value": 31,
+    "race": "Trilian"
+},{
+    "factions": ["Black Rose Bandits","Black Thorn Bandits","The Collective","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "primaryFaction": "Wandering Allies",
+    "name": "Moon Talon",
+    "displayName": "Moon Talon",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 9,
+        "melee": [{
+            "rating": 10,
+            "name": "Lance"
+        },{
+            "rating": 10,
+            "name": "Saber"
+        },{
+            "rating": 8,
+            "name": "Talon",
+            "damage": 6,
+            "abilities": ["pin"]
+        },{
+            "rating": 8,
+            "name": "Bite",
+            "damage": 6
+        }],
+        "shield": "S",
+        "armor": 4,
+        "discipline": 10,
+        "talents": ["Cavalry","Parry","Fearsome","Tough","Backstep","Swoop[Talon]","Fly[Low SPD 8]","Darkvision","Ally[Independent]"]
+    },
+    "gender": "M",
+    "value": 50,
+    "race": "Koronnan"
 }];
 
 export  {Models};
