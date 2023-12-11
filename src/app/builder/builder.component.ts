@@ -539,11 +539,13 @@ export class BuilderComponent implements OnInit {
         let totalCount = 0;
         let nonMarauderMountedFound = false;
         let gadarlFound = false;
+        let gadarlCount = 0;
         for (let key in this.models) {
             if (this.models[key].stats.talentList?.includes('Demon')) {
                 demonCount++;
                 if (this.models[key].name === 'Gadarl') {
                     gadarlFound = true;
+                    gadarlCount++;
                 }
             }
             if (this.models[key].displayName.includes('Mounted') && this.models[key].name !== 'Marauder') {
@@ -554,9 +556,9 @@ export class BuilderComponent implements OnInit {
         if (demonCount > totalCount) {
             return 'Grular may not have more demon models than non-demon models.';
         }
-        const demonCountMinusGadarl = (gadarlFound) ? demonCount - 1 : demonCount;
+        const demonCountMinusGadarl = (gadarlFound) ? demonCount - gadarlCount : demonCount;
         if (nonMarauderMountedFound && demonCountMinusGadarl > 0) {
-            return 'Grular may not have demon models with non-Marauder mounted models.';
+            return 'Grular may not have demon models other than Gadarl with non-Marauder mounted models.';
         }
         return undefined;
     }
