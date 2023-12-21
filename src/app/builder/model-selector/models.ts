@@ -8154,7 +8154,7 @@ const Models: Model[] = [{
     "value": 28,
     "race": "Koronnan"
 },{
-    "factions": ["Eclipse Sisterhood","Koronnan Moonsworn"],
+    "factions": ["Eclipse Sisterhood"],
     "primaryFaction":"Koronnan Moonsworn",
     "name": "Koronnan Bladebrother",
     "displayName": "Koronnan Bladebrother",
@@ -10236,7 +10236,7 @@ const Models: Model[] = [{
     "value": 45,
     "race": "Chaler"
 },{
-    "factions": ["Falkaaran Adventurers"],
+    "factions": ["Koronnan Moonsworn"],
     "name": "Red Lancer",
     "displayName": "Red Lancer",
     "type": "Standard",
