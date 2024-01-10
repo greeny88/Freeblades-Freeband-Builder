@@ -205,7 +205,7 @@ export class ModelSelectorService {
 
         let defense: number = (stats.shield === 'S' || stats.shield === 'AN' || stats.shield === 'B' || stats.shield === 'AS') ? 5 : (stats.shield === 'L') ? 6 : 4;
         if (abilities.agility === 4) {
-            defense = -1;
+            defense--;
         } else {
             for (let abilityTier of this.abilityTiers) {
                 if (abilities.agility >= abilityTier) {
@@ -216,7 +216,7 @@ export class ModelSelectorService {
 
         let ratingBonus: number = 0;
         if (abilities.dexterity === 4) {
-            ratingBonus = -1;
+            ratingBonus--;
         } else {
             for (let abilityTier of this.abilityTiers) {
                 if (abilities.dexterity >= abilityTier) {
@@ -245,7 +245,7 @@ export class ModelSelectorService {
 
         let skillBonus: number = 0;
         if (abilities.knowledge === 4) {
-            skillBonus = -1;
+            skillBonus--;
         } else {
             for (let abilityTier of this.abilityTiers) {
                 if (abilities.knowledge >= abilityTier) {
@@ -256,7 +256,7 @@ export class ModelSelectorService {
 
         let moraleBonus: number = 0;
         if (abilities.spirit === 4) {
-            moraleBonus = -1;
+            moraleBonus--;
         } else {
             for (let abilityTier of this.abilityTiers) {
                 if (abilities.spirit >= abilityTier) {
@@ -267,7 +267,7 @@ export class ModelSelectorService {
 
         let damageBonus: number = 0;
         if (abilities.strength === 4) {
-            damageBonus = -1;
+            damageBonus--;
         } else {
             for (let abilityTier of this.abilityTiers) {
                 if (abilities.strength >= abilityTier) {
