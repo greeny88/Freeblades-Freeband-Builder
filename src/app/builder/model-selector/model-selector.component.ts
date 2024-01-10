@@ -139,14 +139,16 @@ export class ModelSelectorComponent {
                 });
             }
             this.models.forEach(m => {
-                const faction = m.primaryFaction ? m.primaryFaction : this.faction;
-                if (!faction) {
-                    return;
+                // const faction = m.primaryFaction ? m.primaryFaction : this.faction;
+                // if (!faction) {
+                //     return;
+                // }
+                for(let faction of m.primaryFaction) {
+                    if (!(faction in this.model_grouping)) {
+                        this.model_grouping[faction] = [];
+                    }
+                    this.model_grouping[faction].push(m);
                 }
-                if (!(faction in this.model_grouping)) {
-                    this.model_grouping[faction] = [];
-                }
-                this.model_grouping[faction].push(m);
             });
 
             for (let faction in this.model_grouping) {

@@ -99,7 +99,7 @@ export class BuilderComponent implements OnInit {
         if (!this.faction) {
             return;
         }
-        let allyFaction: string | undefined = undefined;
+        let allyFaction: (FactionList | "Wandering Allies")[] | undefined = undefined;
         let allyFollowerCount: number = 0;
         let allyHeroCount: number = 0;
         let casterCount: number = 0;
@@ -143,7 +143,7 @@ export class BuilderComponent implements OnInit {
                     if (allyFaction === undefined) {
                         allyFaction = model.primaryFaction;
                     }
-                    if (allyFaction !== model.primaryFaction) {
+                    if (!allyFaction.some(r=> model.primaryFaction.includes(r))) {
                         this.addErrorMessage(`You can only recruit allies from the same faction.`);
                     }
                     if (model.name === 'Nightwhisper') {
