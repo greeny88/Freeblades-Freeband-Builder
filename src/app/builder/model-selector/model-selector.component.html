@@ -67,5 +67,8 @@
         <div class="modelDisplayRow" *ngIf="model.stats.itemList">
             <div><span class="bold-text">Items:</span> {{model.stats.itemList}}</div>
         </div>
+        <div class="modelDisplayRow" *ngIf="model.stats.injuries">
+            <div><span class="bold-text">Injuries:</span> {{model.stats.injuries | list}}</div>
+        </div>
     </ng-container>
 </div>
