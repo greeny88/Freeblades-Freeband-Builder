@@ -2230,7 +2230,7 @@ const Models: Model[] = [{
     "stats": {
         "discipline": 8,
         "type": "Hero",
-        "talents": ["Void Magic","Spellblocker","Elusive"],
+        "talents": ["Void Magic","Spellblocker","Cunning"],
         "speed": 7,
         "melee": [{
             "rating": 6,
@@ -3015,7 +3015,7 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Demon"
 },{
-    "factions": ["Haradelan Questers","Kuzaarik Forgers","Ravenblade Mercenaries"],
+    "factions": ["Kuzaarik Forgers"],
     "primaryFaction":"Falkaaran Adventurers",
     "name": "Jhenkar (Caster Companion)",
     "displayName": "Jhenkar (Caster Companion)",
@@ -3913,32 +3913,6 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Faeler"
 },{
-    "factions": ["Falkaaran Adventurers","Ravenblade Mercenaries"],
-    "primaryFaction":"Haradelan Questers",
-    "name": "High Questor of Glareyn",
-    "displayName": "High Questor of Glareyn",
-    "stats": {
-        "type": "Hero",
-        "speed": 5,
-        "melee": [{
-            "rating": 10,
-            "name": "War Axe"
-        },{
-            "rating": 10,
-            "name": "War Axe"
-        }],
-        "armor": 7,
-        "discipline": 10,
-        "talents": ["Steadfast","Block","Protector","Ally[Independent]"],
-        "abilities": {
-            "endurance": 10
-        }
-    },
-    "type": "Standard",
-    "value": 34,
-    "gender": "M",
-    "race": "Faeler"
-},{
     "factions": ["Haradelan Questers"],
     "name": "High Questor of Vasilar",
     "displayName": "High Questor of Vasilar (Mounted)",
@@ -4217,7 +4191,7 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Faeler"
 },{
-    "factions": ["Falkaaran Adventurers","Koronnan Moonsworn","Ravenblade Mercenaries","Trilian Seekers","Urdaggar Tribes of Valor"],
+    "factions": ["Koronnan Moonsworn","Trilian Seekers","Urdaggar Tribes of Valor"],
     "primaryFaction":"Haradelan Questers",
     "name": "Questing Knight of Glareyn",
     "displayName": "Questing Knight of Glareyn",
@@ -5613,7 +5587,7 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Faeler"
 },{
-    "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+    "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Shakrim Wavestalkers","Trilian Seekers","Urdaggar Tribes of Valor"],
     "primaryFaction":"Wandering Allies",
     "name": "Mizrakai",
     "displayName": "Mizrakai",
@@ -7953,29 +7927,6 @@ const Models: Model[] = [{
     "value": 33,
     "race": "Faeler"
 },{
-    "factions": ["Falkaaran Adventurers","Ravenblade Mercenaries"],
-    "primaryFaction":"Haradelan Questers",
-    "name": "Sword of Vidunar",
-    "displayName": "Sword of Vidunar",
-    "type": "Standard",
-    "stats": {
-        "type": "Hero",
-        "speed": 6,
-        "melee": [{
-            "rating": 10,
-            "name": "Greatsword"
-        }],
-        "armor": 5,
-        "discipline": 10,
-        "talents": ["Parry","Parry","Champion[Kantor]","Active Defense","Confine","Contain","Protector","Ally[Independent]"],
-        "abilities": {
-            "dexterity": 10
-        }
-    },
-    "gender": "F",
-    "value": 33,
-    "race": "Faeler"
-},{
     "factions": ["Koronnan Moonsworn"],
     "name": "Moons Priestess",
     "displayName": "Moons Priestess",
@@ -8276,27 +8227,6 @@ const Models: Model[] = [{
         "armor": 6,
         "discipline": 10,
         "talents": ["Shield Bash","Shield Parry","Protector"]
-    },
-    "gender": "M",
-    "value": 28,
-    "race": "Koronnan"
-},{
-    "factions": ["Eclipse Sisterhood"],
-    "primaryFaction":"Koronnan Moonsworn",
-    "name": "Black Spear",
-    "displayName": "Black Spear",
-    "type": "Standard",
-    "stats": {
-        "type": "Hero",
-        "speed": 5,
-        "melee": [{
-            "rating": 12,
-            "name": "Longspear"
-        }],
-        "shield":"L",
-        "armor": 6,
-        "discipline": 10,
-        "talents": ["Shield Bash","Shield Parry","Protector","Ally[Independent]"]
     },
     "gender": "M",
     "value": 28,
