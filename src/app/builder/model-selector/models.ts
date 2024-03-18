@@ -1668,7 +1668,7 @@ const Models: Model[] = [{
     "stats": {
         "discipline": 8,
         "type": "Hero",
-        "talents": ["Void Magic","Spellblocker","Elusive"],
+        "talents": ["Void Magic","Spellblocker","Cunning"],
         "speed": 7,
         "melee": [{
             "rating": 6,
@@ -3862,7 +3862,7 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Faeler"
 },{
-    "factions": ["Koronnan Moonsworn","Ravenblade Mercenaries","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+    "factions": ["Koronnan Moonsworn","Ravenblade Mercenaries","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Shakrim Wavestalkers","Trilian Seekers","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Koronnan Moonsworn","Ravenblade Mercenaries"],
     "name": "Mizrakai",
     "displayName": "Mizrakai",

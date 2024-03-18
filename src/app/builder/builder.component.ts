@@ -126,24 +126,22 @@ export class BuilderComponent implements OnInit {
             }
 
             this.freebandBaseValue += model.value;
-            // let extraValue = ('advancements' in model.stats) ? model.stats.advancements.reduce( ((sum,adv) => sum += adv.cost), 0) : 0;
-            // extraValue += ('items' in model.stats) ? model.stats.items.reduce( ((sum,itm) => sum += itm.cost), 0) : 0;
             this.freebandTotalValue += model.stats.modelValue ?? model.value;
-            // @ts-ignore
-            this.totalLifePoints += ('talentList' in model.stats && model.stats.talentList.indexOf('Expendable') > -1) ? (model.stats.lifePoints / 2) : model.stats.lifePoints;
+            if (model.stats.lifePoints) {
+                this.totalLifePoints += (model.stats.talentList && model.stats.talentList.indexOf('Expendable') > -1) ? (model.stats.lifePoints / 2) : model.stats.lifePoints;
+            }            
 
             if (model.stats.type === 'Hero') {
                 this.completeHeroCount++;
                 if (model.name === 'Kurgozar') {
                     this.completeHeroCount++;
                 }
-                // @ts-ignore
-                if ('talentList' in model.stats && model.stats.talentList.indexOf('Ally') > -1) {
+                if (model.stats.talentList && model.stats.talentList.indexOf('Ally') > -1) {
                     allyHeroCount++;
                     if (allyFaction === undefined) {
                         allyFaction = model.primaryFaction;
                     }
-                    if (!allyFaction.some(r=> model.primaryFaction.includes(r))) {
+                    if (!allyFaction.some(f => model.primaryFaction.includes(f))) {
                         this.addErrorMessage(`You can only recruit allies from the same faction.`);
                     }
                     if (model.name === 'Nightwhisper') {
@@ -163,28 +161,25 @@ export class BuilderComponent implements OnInit {
 
             if (model.stats.type === 'Follower') {
                 this.completeFollowerCount++;
-                // @ts-ignore
-                if ('talentList' in model.stats && model.stats.talentList.indexOf('Ally') > -1) {
+                if (model.stats.talentList && model.stats.talentList.indexOf('Ally') > -1) {
                     allyFollowerCount++;
                     if (allyFaction === undefined) {
                         allyFaction = model.primaryFaction;
                     }
-                    if (allyFaction !== model.primaryFaction) {
+                    if (!allyFaction.some(f => model.primaryFaction.includes(f))) {
                         this.addErrorMessage(`You can only recruit allies from the same faction.`);
                     }
                 }
             }
 
-            // @ts-ignore
-            if ('talentList' in model.stats && model.stats.talentList.indexOf('Leader') < 0 && model.type !== 'Caster' && model.stats.type === 'Hero') {
+            if (model.stats.talentList && model.stats.talentList.indexOf('Leader') < 0 && model.type !== 'Caster' && model.stats.type === 'Hero') {
                 heroCount++;
                 if (model.name === 'Kurgozar') {
                     heroCount++;
                 }
             }
 
-            // @ts-ignore
-            if ('talentList' in model.stats && model.stats.talentList.indexOf('Leader') > -1) {
+            if (model.stats.talentList && model.stats.talentList.indexOf('Leader') > -1) {
                 leader = model;
             }
 
@@ -213,7 +208,6 @@ export class BuilderComponent implements OnInit {
                 this.addErrorMessage(`You can only have ${heroLimit} of a hero model (${model.name}).`);
             }
 
-            // TODO: check if model is limited
             if (model.stats.talentList?.includes('Limited')) {
                 this.addErrorMessage(this.checkLimitedModel(model.displayName));
             }
