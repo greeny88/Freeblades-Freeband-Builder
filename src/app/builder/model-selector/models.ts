@@ -2124,8 +2124,8 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Demon"
 },{
-    "factions": ["Falkaaran Adventurers","Haradelan Questers","Kuzaarik Forgers","Ravenblade Mercenaries"],
-    "primaryFaction": ["Falkaaran Adventurers"],
+    "factions": ["Falkaaran Adventurers","Kuzaarik Forgers"],
+    "primaryFaction":["Falkaaran Adventurers"],
     "name": "Jhenkar (Caster Companion)",
     "displayName": "Jhenkar (Caster Companion)",
     "stats": {
@@ -2148,8 +2148,8 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Demon"
 },{
-    "factions": ["Falkaaran Adventurers","Haradelan Questers","Ravenblade Mercenaries","Urdaggar Tribes of Valor"],
-    "primaryFaction": ["Falkaaran Adventurers"],
+    "factions": ["Falkaaran Adventurers"],
+    "primaryFaction":["Falkaaran Adventurers"],
     "name": "Karadal Bladesister",
     "displayName": "Karadal Bladesister",
     "stats": {
@@ -2926,7 +2926,7 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Faeler"
 },{
-    "factions": ["Haradelan Questers","Falkaaran Adventurers","Koronnan Moonsworn","Ravenblade Mercenaries","Trilian Seekers","Urdaggar Tribes of Valor"],
+    "factions": ["Haradelan Questers","Koronnan Moonsworn","Trilian Seekers","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Haradelan Questers"],
     "name": "Questing Knight of Glareyn",
     "displayName": "Questing Knight of Glareyn",
