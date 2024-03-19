@@ -38,6 +38,7 @@ export class BuilderComponent implements OnInit {
     constructor(private commService: CommunicatorService, private dbService: DbService, public lrbService: LRBService, private dialog: MatDialog, private snackBar: MatSnackBar) {
         this.errorMessages = [];
         this.factionRules = {
+            'Azura Windborne': this.azuraRules,
             'Black Rose Bandits': this.blackRoseBanditsRule,
             'Black Thorn Bandits': this.blackThornBanditsRule,
             'The Collective': this.collectiveRules,
@@ -391,6 +392,10 @@ export class BuilderComponent implements OnInit {
         if (msg && this.errorMessages.indexOf(msg) < 0) {
             this.errorMessages.push(msg);
         }
+    }
+
+    private azuraRules(model: Model): string | undefined {
+        return undefined;
     }
 
     private blackRoseBanditsRule(model: Model): string | undefined {

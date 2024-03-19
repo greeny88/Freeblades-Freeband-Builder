@@ -7278,6 +7278,150 @@ const Models: Model[] = [{
     "gender": "M",
     "value": 50,
     "race": "Koronnan"
+},{
+    "factions": ["Azura Windborne"],
+    "primaryFaction": ["Azura Windborne"],
+    "name": "Skyrider",
+    "displayName": "Skyrider",
+    "type": "Leader",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee": [{
+            "rating": 12,
+            "name": "Halaztaf"
+        }],
+        "armor": 3,
+        "discipline": 12,
+        "talents": ["Leader","Shoot Them!","Dodge","Dodge","Feint","Tripping Strike","Hit and Run","Fly[Low, SPD 8]"],
+        "abilities": {
+            "agility": 12
+        }
+    },
+    "gender": "M",
+    "value": 39,
+    "race": "Azura"
+},{
+    "factions": ["Azura Windborne"],
+    "primaryFaction": ["Azura Windborne"],
+    "name": "Squall",
+    "displayName": "Squall",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee": [{
+            "rating": 10,
+            "name": "Halaztaf"
+        }],
+        "range": [{
+            "rating": 8,
+            "name": "Iron Pinion"
+        }],
+        "armor": 3,
+        "discipline": 10,
+        "talents": ["Dodge","Dodge","Feint","Swoop[Iron Pinion]","Fly[Low, SPD 5]"],
+        "abilities": {
+            "agility": 12
+        }
+    },
+    "gender": "M",
+    "value": 30,
+    "race": "Azura"
+},{
+    "factions": ["Azura Windborne"],
+    "primaryFaction": ["Azura Windborne"],
+    "name": "Whirlwind",
+    "displayName": "Whirlwind",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee": [{
+            "rating": 10,
+            "name": "Kaiba"
+        }],
+        "armor": 3,
+        "discipline": 10,
+        "talents": ["Dodge","Dodge","Raven Stance","Raven Stance","Sidestep","Fly[Low, SPD 5]"],
+        "abilities": {
+            "agility": 10
+        }
+    },
+    "gender": "M",
+    "value": 28,
+    "race": "Azura"
+},{
+    "factions": ["Azura Windborne"],
+    "primaryFaction": ["Azura Windborne"],
+    "name": "Stormspeaker",
+    "displayName": "Stormspeaker",
+    "type": "Caster",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee": [{
+            "rating": 6,
+            "name": "Dagger"
+        }],
+        "casting": {
+            "rating": 10,
+            "power": 15
+        },
+        "armor": 2,
+        "discipline": 8,
+        "talents": ["Air Magic","Updraft","Fly[Low, SPD 5]"],
+        "abilities": {
+            "strength": 6
+        }
+    },
+    "gender": "M",
+    "value": 31,
+    "race": "Azura"
+},{
+    "factions": ["Azura Windborne"],
+    "primaryFaction": ["Azura Windborne"],
+    "name": "Cloudchaser",
+    "displayName": "Cloudchaser",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 7,
+        "melee": [{
+            "rating": 6,
+            "name": "Long Knife"
+        }],
+        "armor": 2,
+        "discipline": 6,
+        "talents": ["Cunning","Fly[Low, SPD 5]"]
+    },
+    "gender": "M",
+    "value": 10,
+    "race": "Azura"
+},{
+    "factions": ["Azura Windborne"],
+    "primaryFaction": ["Azura Windborne"],
+    "name": "Mistral",
+    "displayName": "Mistral",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 7,
+        "melee": [{
+            "rating": 4,
+            "name": "Dagger"
+        }],
+        "range": [{
+            "rating": 8,
+            "name": "Zishoti"
+        }],
+        "armor": 2,
+        "discipline": 6,
+        "talents": ["Limited","Fly[Low, SPD 5]"]
+    },
+    "gender": "M",
+    "value": 12,
+    "race": "Azura"
 }];
 
 export  {Models};

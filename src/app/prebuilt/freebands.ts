@@ -12,6 +12,19 @@ const PreBuiltFreebands: {name:string, faction:string, freebandLimit:number, alt
         {'displayName': 'Explorer'}
     ]
 }, {
+    'name': 'Azura Starter Set',
+    'faction': 'Azura Windborne',
+    'freebandLimit': 150,
+    'altLeader': false,
+    'models': [
+        {'displayName': 'Skyrider', 'type': 'Leader'},
+        {'displayName': 'Stormspeaker', 'type': 'Caster'},
+        {'displayName': 'Squall'},
+        {'displayName': 'Whirlwind'},
+        {'displayName': 'Cloudchaser'},
+        {'displayName': 'Mistral'}
+    ]
+}, {
     'name': 'Black Rose Starter Set',
     'faction': 'Black Rose Bandits',
     'freebandLimit': 150,
