@@ -501,6 +501,10 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
     name: 'Greatsword',
     damage: 10
 },{
+    name: 'Halaztaf',
+    damage: 6,
+    damageBonus: 1
+},{
     name: 'Handclaws',
     damage: 4
 },{
@@ -525,6 +529,10 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
 },{
     name: 'Javelin',
     damage: 6
+},{
+    name: 'Kaiba',
+    damage: 8,
+    abilities: ['wrl']
 },{
     name: 'Kasari',
     damage: 8,
@@ -749,6 +757,12 @@ const RangeWeapons: Omit<RangeWeapon, 'rating'>[] = [{
     distance: 2,
     abilities: ['thr']
 },{
+    name: 'Iron Pinion',
+    damage: 4,
+    damageBonus: 1,
+    distance: 2,
+    abilities: ['hin','thr']
+},{
     name: 'Javelin',
     damage: 6,
     distance: 4,
@@ -802,6 +816,11 @@ const RangeWeapons: Omit<RangeWeapon, 'rating'>[] = [{
     damage: 8,
     distance: 2,
     abilities: ['thr']
+},{
+    name: 'Zishoti',
+    damage: 6,
+    distance: 6,
+    abilities: ['clo']
 }];
 
 export  {Abilities, Equipment, MagicItems, MeleeWeapons, RangeWeapons, Skills, Talents};

@@ -70,13 +70,8 @@ mat-radio-group mat-radio-button, mat-checkbox {
 
     .freebandStats {
         & > div > span {
-            // flex: 1 1;
             border: 1px solid black;
             font-size: 1rem;
-
-            &:nth-child(1) {
-                flex: 3 1 33%;
-            }
         }
     }
 

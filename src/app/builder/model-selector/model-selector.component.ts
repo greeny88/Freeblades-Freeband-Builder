@@ -63,7 +63,6 @@ export class ModelSelectorComponent {
     }
 
     ngOnChanges(changes: SimpleChanges) {
-        // TODO: add 'Ally[Independent]' when this.faction != model.primaryFaction and 'Ally[Trusted]' not in model.stats.talents
         if (('altLeader' in changes || 'faction' in changes) && this.faction) {
             this.model = undefined;
             this.models = [];
@@ -73,13 +72,15 @@ export class ModelSelectorComponent {
                 const factionModels = JSON.parse(JSON.stringify(this.factionModels));
                 for (let currentmodel of factionModels) {
                     let model: Model = Object.assign({}, currentmodel);
-                    // if (this.faction != model.primaryFaction) {
-                    //     if (model.stats.talents && model.stats.talents.every(t => !t.includes('Ally'))) {
-                    //         model.stats.talents?.push('Ally[Independent]');
-                    //     } else {
-                    //         model.stats.talents = ['Ally[Independent]'];
-                    //     }
-                    // }
+                    if (!model.primaryFaction.includes(this.faction)) {
+                        if (model.stats.talents) {
+                            if (model.stats.talents.every(t => !t.includes('Ally'))) {
+                                model.stats.talents.push('Ally[Independent]');
+                            }
+                        } else {
+                            model.stats.talents = ['Ally[Independent]'];
+                        }
+                    }
                     if (model.factions.includes(this.faction)) {
                         if (this.type === 'Leader' && (model.type === 'Standard' || model.type === 'Caster') 
                                 && model.stats.type === 'Hero' 
@@ -128,25 +129,28 @@ export class ModelSelectorComponent {
                 }
             } else {
                 this.models = this.factionModels.filter(model => this.faction && model.type === this.type && model.factions.includes(this.faction)).map((model) => {
-                    // if (this.faction != model.primaryFaction) {
-                    //     if (model.stats.talents && model.stats.talents.every(t => !t.includes('Ally'))) {
-                    //         model.stats.talents?.push('Ally[Independent]');
-                    //     } else {
-                    //         model.stats.talents = ['Ally[Independent]'];
-                    //     }
-                    // }
+                    if (this.faction === undefined) {
+                        return model;
+                    }
+                    if (!model.primaryFaction.includes(this.faction)) {
+                        if (model.stats.talents) {
+                            if (model.stats.talents.every(t => !t.includes('Ally'))) {
+                                model.stats.talents.push('Ally[Independent]');
+                            }
+                        } else {
+                            model.stats.talents = ['Ally[Independent]'];
+                        }
+                    }
                     return model;
                 });
             }
             this.models.forEach(m => {
-                const faction = m.primaryFaction ? m.primaryFaction : this.faction;
-                if (!faction) {
-                    return;
+                for(let faction of m.primaryFaction) {
+                    if (!(faction in this.model_grouping)) {
+                        this.model_grouping[faction] = [];
+                    }
+                    this.model_grouping[faction].push(m);
                 }
-                if (!(faction in this.model_grouping)) {
-                    this.model_grouping[faction] = [];
-                }
-                this.model_grouping[faction].push(m);
             });
 
             for (let faction in this.model_grouping) {
@@ -251,8 +255,6 @@ export class ModelSelectorComponent {
         if (this.model.stats?.veteran) {
             this.model.value = this.model.stats.veteran.reduce((sum: number, current:any) => current.selected ? sum + current.cost : sum, model.value)
         }
-        // TODO: adjust value for this.model.stats.melee[X].altSelected when 'te' or 'shield bash'
-        // this.model.value = this.model.stats.melee.reduce((sum: number, current: any) => (current.altSelected && this.model.stats.talents.indexOf('Shield Bash')))
         if (this.model.stats.melee?.some((melee: MeleeWeapon) => melee.altSelected)) {
             if (this.model.stats.talents?.includes('Shield Bash')) {
                 this.model.value += 1;
@@ -263,10 +265,6 @@ export class ModelSelectorComponent {
         }
         this.model.stats = (<any>Object).assign(this.model.stats, this.modelSelectorService.calculateStats(model.stats, this.model.value));
         this.model.component_id = this.componentId;
-        // if (!('stats' in this.model)) {
-        //     console.error(`Error getting stats of ${this.model.displayName}`);
-        //     return;
-        // }
         this.onModelSelected.emit(this.model);
     }
 }

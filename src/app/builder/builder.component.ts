@@ -38,6 +38,7 @@ export class BuilderComponent implements OnInit {
     constructor(private commService: CommunicatorService, private dbService: DbService, public lrbService: LRBService, private dialog: MatDialog, private snackBar: MatSnackBar) {
         this.errorMessages = [];
         this.factionRules = {
+            'Azura Windborne': this.azuraRules,
             'Black Rose Bandits': this.blackRoseBanditsRule,
             'Black Thorn Bandits': this.blackThornBanditsRule,
             'The Collective': this.collectiveRules,
@@ -99,7 +100,7 @@ export class BuilderComponent implements OnInit {
         if (!this.faction) {
             return;
         }
-        let allyFaction: string | undefined = undefined;
+        let allyFaction: (FactionList | "Wandering Allies")[] | undefined = undefined;
         let allyFollowerCount: number = 0;
         let allyHeroCount: number = 0;
         let casterCount: number = 0;
@@ -126,24 +127,22 @@ export class BuilderComponent implements OnInit {
             }
 
             this.freebandBaseValue += model.value;
-            // let extraValue = ('advancements' in model.stats) ? model.stats.advancements.reduce( ((sum,adv) => sum += adv.cost), 0) : 0;
-            // extraValue += ('items' in model.stats) ? model.stats.items.reduce( ((sum,itm) => sum += itm.cost), 0) : 0;
             this.freebandTotalValue += model.stats.modelValue ?? model.value;
-            // @ts-ignore
-            this.totalLifePoints += ('talentList' in model.stats && model.stats.talentList.indexOf('Expendable') > -1) ? (model.stats.lifePoints / 2) : model.stats.lifePoints;
+            if (model.stats.lifePoints) {
+                this.totalLifePoints += (model.stats.talentList && model.stats.talentList.indexOf('Expendable') > -1) ? (model.stats.lifePoints / 2) : model.stats.lifePoints;
+            }            
 
             if (model.stats.type === 'Hero') {
                 this.completeHeroCount++;
                 if (model.name === 'Kurgozar') {
                     this.completeHeroCount++;
                 }
-                // @ts-ignore
-                if ('talentList' in model.stats && model.stats.talentList.indexOf('Ally') > -1) {
+                if (model.stats.talentList && model.stats.talentList.indexOf('Ally') > -1) {
                     allyHeroCount++;
                     if (allyFaction === undefined) {
                         allyFaction = model.primaryFaction;
                     }
-                    if (allyFaction !== model.primaryFaction) {
+                    if (!allyFaction.some(f => model.primaryFaction.includes(f))) {
                         this.addErrorMessage(`You can only recruit allies from the same faction.`);
                     }
                     if (model.name === 'Nightwhisper') {
@@ -163,28 +162,25 @@ export class BuilderComponent implements OnInit {
 
             if (model.stats.type === 'Follower') {
                 this.completeFollowerCount++;
-                // @ts-ignore
-                if ('talentList' in model.stats && model.stats.talentList.indexOf('Ally') > -1) {
+                if (model.stats.talentList && model.stats.talentList.indexOf('Ally') > -1) {
                     allyFollowerCount++;
                     if (allyFaction === undefined) {
                         allyFaction = model.primaryFaction;
                     }
-                    if (allyFaction !== model.primaryFaction) {
+                    if (!allyFaction.some(f => model.primaryFaction.includes(f))) {
                         this.addErrorMessage(`You can only recruit allies from the same faction.`);
                     }
                 }
             }
 
-            // @ts-ignore
-            if ('talentList' in model.stats && model.stats.talentList.indexOf('Leader') < 0 && model.type !== 'Caster' && model.stats.type === 'Hero') {
+            if (model.stats.talentList && model.stats.talentList.indexOf('Leader') < 0 && model.type !== 'Caster' && model.stats.type === 'Hero') {
                 heroCount++;
                 if (model.name === 'Kurgozar') {
                     heroCount++;
                 }
             }
 
-            // @ts-ignore
-            if ('talentList' in model.stats && model.stats.talentList.indexOf('Leader') > -1) {
+            if (model.stats.talentList && model.stats.talentList.indexOf('Leader') > -1) {
                 leader = model;
             }
 
@@ -213,7 +209,6 @@ export class BuilderComponent implements OnInit {
                 this.addErrorMessage(`You can only have ${heroLimit} of a hero model (${model.name}).`);
             }
 
-            // TODO: check if model is limited
             if (model.stats.talentList?.includes('Limited')) {
                 this.addErrorMessage(this.checkLimitedModel(model.displayName));
             }
@@ -237,7 +232,7 @@ export class BuilderComponent implements OnInit {
         if (allowedHeroCount < heroCount) {
             this.addErrorMessage('Too many hero units added. You can only have four plus one for each 50 points over 251.');
         }
-
+        // TODO: ally rules change with Irvlor and Keldan
         if ( (( (this.completeHeroCount - allyHeroCount) / 2) < allyHeroCount) || (( (this.completeFollowerCount - allyFollowerCount) / 2) < allyFollowerCount) ) {
             this.addErrorMessage('Too many ally models selected. There must be a 2:1 ratio of ally to non-ally models for a given type.');
         }
@@ -397,6 +392,10 @@ export class BuilderComponent implements OnInit {
         if (msg && this.errorMessages.indexOf(msg) < 0) {
             this.errorMessages.push(msg);
         }
+    }
+
+    private azuraRules(model: Model): string | undefined {
+        return undefined;
     }
 
     private blackRoseBanditsRule(model: Model): string | undefined {
