@@ -4333,7 +4333,7 @@ const Models: Model[] = [{
         }],
         "armor": 6,
         "discipline": 12,
-        "talents": ["Leader","Strong-arm","Die Hard","Tough","Steadfast"],
+        "talents": ["Leader","Strong-arm","Die Hard","Steadfast"],
         "abilities":{
             "endurance": 10
         }
@@ -4360,7 +4360,7 @@ const Models: Model[] = [{
         }],
         "armor": 6,
         "discipline": 10,
-        "talents": ["Strong-arm","Die Hard","Tough","Steadfast"],
+        "talents": ["Strong-arm","Die Hard","Steadfast"],
         "abilities":{
             "endurance": 10
         }
