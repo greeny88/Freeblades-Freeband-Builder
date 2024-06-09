@@ -95,7 +95,7 @@ export class ModelSelectorComponent {
                                 model.stats.discipline += 4;
                                 model.value += 8;
                             } else if (model.stats.discipline === 6) {
-                                model.stats.discipline += 3;
+                                model.stats.discipline += 6;
                                 model.value += 9;
                             } else {
                                 model.stats.discipline += 2;
@@ -259,7 +259,7 @@ export class ModelSelectorComponent {
             if (this.model.stats.talents?.includes('Shield Bash')) {
                 this.model.value += 1;
             }
-            if (this.model.stats.melee?.some((melee: MeleeWeapon) => melee.altSelected && MeleeWeapons.find(w => w.name === melee.name)?.abilities?.includes('te'))) {
+            if (this.model.stats.melee?.some((melee: MeleeWeapon) => melee.altSelected && (MeleeWeapons.find(w => w.name === melee.name)?.abilities?.includes('te') || melee.abilities?.includes('te')))) {
                 this.model.value += 1;
             }
         }
