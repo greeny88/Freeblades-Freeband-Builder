@@ -226,11 +226,11 @@ export class BuilderComponent implements OnInit {
     
         let allowedHeroCount = Math.floor((this.limit - 1) / 50);
         allowedHeroCount = (allowedHeroCount < 4) ? 4 : allowedHeroCount;
-        if (leader && 'stats' in leader && 'casting' in leader.stats) {
+        if (leader?.stats.casting && casterCount === 1) {
             allowedHeroCount++;
         }
         if (allowedHeroCount < heroCount) {
-            this.addErrorMessage('Too many hero units added. You can only have four plus one for each 50 points over 251.');
+            this.addErrorMessage(`Too many hero units added. You can only have ${allowedHeroCount} plus one for each 50 points over 251.`);
         }
         // TODO: ally rules change with Irvlor and Keldan
         if ( (( (this.completeHeroCount - allyHeroCount) / 2) < allyHeroCount) || (( (this.completeFollowerCount - allyFollowerCount) / 2) < allyFollowerCount) ) {
