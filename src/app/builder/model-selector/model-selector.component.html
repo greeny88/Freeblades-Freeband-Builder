@@ -28,7 +28,7 @@
             <div><span class="bold-text">LP: </span>{{model.stats.lifePoints}}</div>
             <div><span class="bold-text">DISC: </span>d{{model.stats.discipline}}</div>
             <ng-container *ngIf="model.stats.moraleBonus && model.stats.moraleBonus > 0">
-                <div><span class="bold-text">Morale/Fear Bonus</span>{{model.stats.moraleBonus}}</div>
+                <div><span class="bold-text">Morale/Fear Bonus: </span>{{model.stats.moraleBonus}}</div>
             </ng-container>
             <ng-container *ngIf="model.stats.moraleBonus == 0">
                 <div class="printOnly">&nbsp;</div>
@@ -62,7 +62,7 @@
             <div><span class="bold-text">Skill Bonus:</span> {{model.stats.skillBonus}}</div>
         </div>
         <div class="modelDisplayRow" *ngIf="model.stats.talentList">
-            <div><span class="bold-text">Talents:</span> {{model.stats.talentList}}</div>
+            <div><span class="bold-text">Talents:</span> {{model.stats.talents | list}}</div>
         </div>
         <div class="modelDisplayRow" *ngIf="model.stats.itemList">
             <div><span class="bold-text">Items:</span> {{model.stats.itemList}}</div>
