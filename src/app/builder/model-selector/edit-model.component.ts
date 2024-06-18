@@ -62,16 +62,16 @@ export class EditModelComponent {
         this.model.stats.advancements = this.modelAdvancements;
     }
 
-    addItem(item: Items, index: number) {
-        console.log(item);
+    addItem(index: number) {
+        if (!this.modelItems) {
+            return;
+        }
+        const item = this.modelItems[index];
         if (!('items' in this.model.stats)) {
-        this.model.stats.items = [];
+            this.model.stats.items = [];
         }
         if (this.model.stats.items && item) {
             this.model.stats.items[index] = item;
-        }
-        if (this.modelItems) {
-            this.modelItems[index] = item;
         }
     }
 

@@ -66,9 +66,9 @@
     <button mat-button class="mat-raised-button" (click)="updateItemCount()">Add item</button>
     <ng-container *ngFor="let mi of modelItems; index as i">
         <br/>
-        <mat-form-field>
-            <mat-select [value]="mi"> <!--  (selectionChange)="addItem(mi, i)"-->
-                <mat-option *ngFor="let itm of items" [value]="itm" (onSelectionChange)="addItem(itm, i)">{{itm.name}}</mat-option> <!-- -->
+        <mat-form-field *ngIf="modelItems">
+            <mat-select [(value)]="modelItems[i]" (selectionChange)="addItem(i)">
+                <mat-option *ngFor="let itm of items" [value]="itm">{{itm.name}}</mat-option>
             </mat-select>
         </mat-form-field>
         <mat-form-field *ngIf="modelItems">
