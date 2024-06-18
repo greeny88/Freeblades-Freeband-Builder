@@ -62,7 +62,11 @@ export class EditModelComponent {
         this.model.stats.advancements = this.modelAdvancements;
     }
 
-    addItem(item: Items, index: number) {
+    addItem(index: number) {
+        if (!this.modelItems) {
+            return;
+        }
+        const item = this.modelItems[index];
         if (!('items' in this.model.stats)) {
             this.model.stats.items = [];
         }
@@ -133,7 +137,7 @@ export class EditModelComponent {
 
     updateItemCount(): void {
         if (this.modelItems) {
-            this.modelItems.push(undefined);
+            this.modelItems.push({'name':undefined,'cost':undefined});
         }
     }
 }
