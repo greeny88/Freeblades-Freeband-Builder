@@ -312,6 +312,34 @@ const MagicItems: Items[] = [{
     name:'Liana\'s Bow',
     advancement:'Artifact [Longbow d9]',
     cost:6
+},{
+    name:'Mystic Map',
+    advancement:'Artifact',
+    cost:6
+},{
+    name:'Aelen\'s Ring',
+    advancement:'Artifact',
+    cost:8
+},{
+    name:'Zaidan\'s Banner',
+    advancement:'Artifact',
+    cost:9
+},{
+    name:'Variax Crystal',
+    advancement:'Artifact',
+    cost:9
+},{
+    name:'Shield of Ailea',
+    advancement:'Artifact',
+    cost:7
+},{
+    name:'Dark Shroud',
+    advancement:'Artifact',
+    cost:25
+},{
+    name:'Night\'s Edge',
+    advancement:'Artifact',
+    cost:30
 }];
 const Skills: string[] = [
     'Alchemy',
