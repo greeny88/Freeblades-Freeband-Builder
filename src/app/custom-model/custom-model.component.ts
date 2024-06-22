@@ -44,6 +44,25 @@ export class CustomModelComponent {
         return {xs: details, ys: model.value};
     }
 
+    createModel() {
+        const model = tf.sequential();
+        model.add(tf.layers.dense({units: 1, inputShape: [17]}));
+        // model.add(tf.layers.dense({units: 250, activation: 'relu', inputShape: [8]}));
+        // model.add(tf.layers.dense({units: 175, activation: 'relu'}));
+        // model.add(tf.layers.dense({units: 150, activation: 'relu'}));
+        // model.add(tf.layers.dense({units: NUM_PITCH_CLASSES, activation: 'softmax'}));
+        model.compile({
+            optimizer: tf.train.adam(),
+            loss: 'sparseCategoricalCrossentropy',
+            metrics: ['accuracy']
+        });
+        const dataset = tf.data.array(Models.map(this.transformData));
+        model.fitDataset(dataset, {epochs: 5}).then(info => {
+            console.log('Accuracy', info);
+            // model.predict(tf.tensor([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])).data().then(cost => displayCost(cost));
+        });
+    }
+
     run() {
         // Define a model for linear regression.
         const model = tf.sequential();
