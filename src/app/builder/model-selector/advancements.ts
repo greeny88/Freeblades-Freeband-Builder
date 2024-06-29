@@ -55,6 +55,57 @@ const Equipment: Items[] = [{
 },{
     name: 'War Markings',
     cost: 2
+},{
+    name: 'Brutal Weapon',
+    cost: 2
+},{
+    name: 'Burnished Armor',
+    cost: 3
+},{
+    name: 'Caltrops',
+    cost: 2
+},{
+    name: 'Disguise Kit',
+    cost: 3
+},{
+    name: 'Heavy Plating',
+    cost: 4
+},{
+    name: 'Heavy Weapon',
+    cost: 3
+},{
+    name: 'Lodestone',
+    cost: 1
+},{
+    name: 'Necromantic Locus',
+    cost: 2
+},{
+    name: 'Perfect Balance',
+    cost: 2
+},{
+    name: 'Spiked Armor',
+    cost: 2
+},{
+    name: 'Vital Plating',
+    cost: 2
+},{
+    name: 'Glowleaf',
+    cost: 2
+},{
+    name: 'Hawkweed',
+    cost: 1
+},{
+    name: 'Ironweed',
+    cost: 3
+},{
+    name: 'Purpleberry',
+    cost: 2
+},{
+    name: 'Riverroot',
+    cost: 1
+},{
+    name: 'Wizard\'s Beard',
+    cost: 1
 }];
 const MagicItems: Items[] = [{
     name:'Nimblesocks',
