@@ -6385,7 +6385,7 @@ const Models: Model[] = [{
     "value": 33,
     "race": "Faeler"
 },{
-    "factions": ["Mershael Corsairs"],
+    "factions": ["Azura Windborne", "Mershael Corsairs"],
     "primaryFaction": ["Mershael Corsairs"],
     "name": "Deck Gunner",
     "displayName": "Deck Gunner",
