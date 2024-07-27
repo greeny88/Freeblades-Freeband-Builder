@@ -1,4 +1,6 @@
-const PreBuiltFreebands: {name:string, faction:string, freebandLimit:number, altLeader:boolean, models:{displayName: string, type?: string}[]}[] = [{
+import {Factions} from 'src/app/model';
+
+const PreBuiltFreebands: {name:string, faction:typeof Factions[number], freebandLimit:number, altLeader:boolean, models:{displayName: string, type?: string}[]}[] = [{
     'name': 'Kuzaarik Starter Set',
     'faction': 'Kuzaarik Forgers',
     'freebandLimit': 150,
@@ -128,6 +130,19 @@ const PreBuiltFreebands: {name:string, faction:string, freebandLimit:number, alt
         {'displayName': 'Awakened'},
         {'displayName': 'Levy Spearman'},
         {'displayName': 'Wretch'}
+    ]
+}, {
+    'name': 'Koronnan Starter Set',
+    'faction': 'Koronnan Moonsworn',
+    'freebandLimit': 150,
+    'altLeader': false,
+    'models': [
+        {'displayName': 'Moons Priest', 'type': 'Leader'},
+        {'displayName': 'Black Spear'},
+        {'displayName': 'Koromen\'s Shadow'},
+        {'displayName': 'Koronnan Bladesister'},
+        {'displayName': 'Red Spear'},
+        {'displayName': 'Red Archer'}
     ]
 }, {
     'name': 'Mershael Starter Set',
