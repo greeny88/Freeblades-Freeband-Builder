@@ -4759,7 +4759,7 @@ const Models: Model[] = [{
     "value": 31,
     "race": "Faeler"
 },{
-    "factions": ["Falkaaran Adventurers","Haradelan Questers","Urdaggar Tribes of Valor"],
+    "factions": ["Falkaaran Adventurers","Haradelan Questers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Wandering Allies"],
     "name": "Wildwing",
     "displayName": "Wildwing",
