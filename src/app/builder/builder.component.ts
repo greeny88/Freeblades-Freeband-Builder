@@ -203,8 +203,8 @@ export class BuilderComponent implements OnInit {
                 }
             }
 
-            // Grular Marauder exception
-            const heroLimit: number = ((model.name === 'Marauder' || model.name === 'Impaler') && this.limit > 250) ? 3 : 2;
+            // Grular Marauder exception and Jhenkar
+            const heroLimit: number = ((model.name === 'Marauder' || model.name === 'Impaler') && this.limit > 250) ? 3 : (model.name === 'Jhenkar') ? 1 : 2;
             if (heroFound > heroLimit) {
                 this.addErrorMessage(`You can only have ${heroLimit} of a hero model (${model.name}).`);
             }
@@ -485,7 +485,7 @@ export class BuilderComponent implements OnInit {
             for (let key in this.models) {
                 if (this.models[key].name === 'Shadow Hunter') {
                     shadowFound = true;
-                    if (model.name.indexOf(this.models[key].type) < 0) {
+                    if (model.displayName.indexOf(this.models[key].type) < 0) {
                         return 'The Jhenkar selection must match the selected Shadow Hunter.';
                     }
                 }
@@ -651,6 +651,21 @@ export class BuilderComponent implements OnInit {
     }
 
     private kuzaarikRules(model: Model): string | undefined {
+        if (model.name.indexOf('Jhenkar') > -1) {
+            let shadowFound: boolean = false;
+            for (let key in this.models) {
+                if (this.models[key].name === 'Shadow Hunter') {
+                    shadowFound = true;
+                    if (model.displayName.indexOf(this.models[key].type) < 0) {
+                        return 'The Jhenkar selection must match the selected Shadow Hunter.';
+                    }
+                }
+            }
+            if (!shadowFound) {
+                return 'Jhenkar can only be used along side a Shadow Hunter.';
+            }
+        }
+        
         return undefined;
     }
 
