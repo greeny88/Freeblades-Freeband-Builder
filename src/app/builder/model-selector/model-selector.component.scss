@@ -53,6 +53,7 @@
     .modelDisplay {
         margin-bottom: 1.5rem;
         page-break-inside: avoid;
+        break-inside: avoid;
 
         div.modelDisplayRow div {
             flex: 1;
