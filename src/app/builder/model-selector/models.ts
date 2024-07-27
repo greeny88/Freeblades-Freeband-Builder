@@ -1239,7 +1239,7 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Chaler"
 },{
-    "factions": ["Black Rose Bandits","Black Thorn Bandits","Shakrim Wavestalkers","Urdaggar Tribes of Valor"],
+    "factions": ["Black Rose Bandits","Black Thorn Bandits","Shakrim Wavestalkers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Wandering Allies"],
     "name": "Snake Mystic",
     "displayName": "Snake Mystic",
@@ -1287,7 +1287,7 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Faeler"
 },{
-    "factions": ["Azura Windborne","The Collective","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+    "factions": ["Azura Windborne","The Collective","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
     "primaryFaction": ["The Collective","Wandering Allies"],
     "name": "Merchant",
     "displayName": "Merchant",
@@ -2102,7 +2102,7 @@ const Models: Model[] = [{
 },{
     "factions": ["Falkaaran Adventurers"],
     "primaryFaction": ["Falkaaran Adventurers"],
-    "name": "Jhenkar (Leader Companion)",
+    "name": "Jhenkar",
     "displayName": "Jhenkar (Leader Companion)",
     "stats": {
         "discipline": 10,
@@ -2126,7 +2126,7 @@ const Models: Model[] = [{
 },{
     "factions": ["Falkaaran Adventurers","Kuzaarik Forgers"],
     "primaryFaction":["Falkaaran Adventurers"],
-    "name": "Jhenkar (Caster Companion)",
+    "name": "Jhenkar",
     "displayName": "Jhenkar (Caster Companion)",
     "stats": {
         "discipline": 8,
@@ -3926,7 +3926,7 @@ const Models: Model[] = [{
     "value": 25,
     "race": "Faeler"
 },{
-    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Wandering Allies"],
     "name": "Wandering Bard",
     "displayName": "Wandering Bard",
@@ -4732,7 +4732,7 @@ const Models: Model[] = [{
     "value": 28,
     "race": "Chaler"
 },{
-    "factions": ["Falkaaran Adventurers","Haradelan Questers","Urdaggar Tribes of Valor"],
+    "factions": ["Falkaaran Adventurers","Haradelan Questers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Wandering Allies"],
     "name": "Wildwing",
     "displayName": "Wildwing",
@@ -5661,7 +5661,7 @@ const Models: Model[] = [{
     "value": 12,
     "race": "Koronnan"
 },{
-    "factions": ["Haradelan Questers","Kuzaarik Forgers","Urdaggar Tribes of Valor"],
+    "factions": ["Falkaaran Adventurers","Haradelan Questers","Kuzaarik Forgers","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Kuzaarik Forgers"],
     "name": "Lightbringer",
     "displayName": "Lightbringer",
@@ -6518,10 +6518,34 @@ const Models: Model[] = [{
         },
         "armor": 2,
         "discipline": 12,
-        "talents": ["Leader","Shoot Them!","Carrion Harvest","Dodge"]
+        "talents": ["Leader","Carrion Harvest","Dodge","Vulture Magic"]
     },
     "gender": "F",
     "value": 39,
+    "race": "Faeler"
+},{
+    "factions": ["Urdaggar Tribes of Ruin"],
+    "primaryFaction": ["Urdaggar Tribes of Ruin"],
+    "name": "Dark Herald",
+    "displayName": "Dark Herald",
+    "type": "Caster",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee": [{
+            "rating": 6,
+            "name": "Staff"
+        }],
+        "casting": {
+            "power": 15,
+            "rating": 10
+        },
+        "armor": 2,
+        "discipline": 10,
+        "talents": ["Carrion Harvest","Dodge","Vulture Magic"]
+    },
+    "gender": "F",
+    "value": 32,
     "race": "Faeler"
 },{
     "factions": ["Urdaggar Tribes of Ruin"],
