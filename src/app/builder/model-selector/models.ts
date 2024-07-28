@@ -6574,7 +6574,7 @@ const Models: Model[] = [{
 },{
     "factions": ["Urdaggar Tribes of Ruin"],
     "primaryFaction": ["Urdaggar Tribes of Ruin"],
-    "name": "Destroyer",
+    "name": "Vanquisher",
     "displayName": "Destroyer",
     "type": "Standard",
     "stats": {

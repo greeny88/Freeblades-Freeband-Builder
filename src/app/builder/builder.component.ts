@@ -712,6 +712,24 @@ export class BuilderComponent implements OnInit {
     }
 
     private urdaggarRuinRules(model: Model): string | undefined {
+        if (model.displayName === 'Destroyer') {
+            let heraldFound: boolean = false;
+            let destroyerCount: number = 0;
+            for (let key in this.models) {
+                if (this.models[key].name === 'Dark Herald' && this.models[key].type === 'Leader') {
+                    heraldFound = true;
+                }
+                if (this.models[key].displayName === 'Destroyer') {
+                    destroyerCount++;
+                }
+            }
+            if (!heraldFound) {
+                return 'Destroyer can only be added when led by a Dark Herald.';
+            }
+            if (destroyerCount > 1) {
+                return 'Only one Destroyer can be recruiter.'
+            }
+        }
         return undefined;
     }
 
