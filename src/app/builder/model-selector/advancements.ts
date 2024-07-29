@@ -604,7 +604,8 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
 },{
     name: 'Impaler',
     damage: 8,
-    damageBonus: 1
+    damageBonus: 1,
+    abilities: ['imp']
 },{
     name: 'Javelin',
     damage: 6
