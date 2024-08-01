@@ -7138,7 +7138,7 @@ const Models: Model[] = [{
     "value": 31,
     "race": "Trilian"
 },{
-    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","The Collective","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "factions": ["Black Rose Bandits","Black Thorn Bandits","The Collective","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Wandering Allies"],
     "name": "Moon Talon",
     "displayName": "Moon Talon",
@@ -7337,6 +7337,225 @@ const Models: Model[] = [{
     "gender": "M",
     "value": 12,
     "race": "Azura"
+},{
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Mershael Corsairs"],
+    "primaryFaction": ["Azura Windborne"],
+    "name": "Hailstorm",
+    "displayName": "Hailstorm",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "range": [{
+            "rating": 8,
+            "name": "Zishoti"
+        },{
+            "rating": 8,
+            "name": "Zishoti"
+        }],
+        "armor": 3,
+        "discipline": 8,
+        "talents": ["Dodge","Elusive","Harasser","Fly[Low, SPD 5]"],
+        "abilities": {
+            "agility":12
+        },
+        "skills": [{
+            "name":"Hunt",
+            "rating":8
+        }]
+    },
+    "gender": "M",
+    "value": 35,
+    "race": "Azura"
+},{
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Mershael Corsairs"],
+    "primaryFaction": ["Azura Windborne"],
+    "name": "Thunderbolt",
+    "displayName": "Thunderbolt",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 10,
+        "melee":[{
+            "name": "Arantish",
+            "rating": 10
+        },{
+            "name":"Beak",
+            "rating":6,
+            "damage":6
+        }],
+        "armor": 5,
+        "discipline": 10,
+        "talents": ["Assult","Bounding Charge","Cavalry","Enhanced Leaper","Enhanced Leaper","Hit and Run","Fouling Strike","Fast","Light Construction"],
+        "abilities": {
+            "agility":12
+        }
+    },
+    "gender": "M",
+    "value": 43,
+    "race": "Azura"
+},{
+    "factions": ["Darkgrove Demons","Demons of Karelon"],
+    "primaryFaction": ["Darkgrove Demons"],
+    "name": "Thornripper",
+    "displayName": "Thornripper",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee":[{
+            "name": "Claw",
+            "rating": 10,
+            "damage": 8
+        }],
+        "armor": 5,
+        "discipline": 8,
+        "talents": ["Die Hard","Thorny Body","Arboreal","Demon"],
+        "veteran": [{
+            "name": "SPR",
+            "cost": 2
+        }],
+        "abilities": {
+            "endurance":10
+        }
+    },
+    "gender": "M",
+    "value": 23,
+    "race": "Demon"
+},{
+    "factions": ["Darkgrove Demons","Demons of Karelon"],
+    "primaryFaction": ["Darkgrove Demons"],
+    "name": "Hanging Lasher",
+    "displayName": "Hanging Lasher",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee":[{
+            "name": "Barbed Whip",
+            "rating": 6
+        }],
+        "armor": 2,
+        "discipline": 6,
+        "talents": ["Ambush","Entangler","Entangler","Arboreal","Demon"]
+    },
+    "gender": "M",
+    "value": 12,
+    "race": "Demon"
+},{
+    "factions": ["Ravenblade Mercenaries"],
+    "primaryFaction": ["Ravenblade Mercenaries"],
+    "name": "Deadeye",
+    "displayName": "Deadeye",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 6,
+        "melee":[{
+            "name": "Short Sword",
+            "rating": 10
+        }],
+        "range": [{
+            "name":"Crossbow",
+            "rating":10
+        }],
+        "armor": 4,
+        "discipline": 8,
+        "talents": ["Glacis","Guardian Shot","Dodge","Sharpshooter","Combat Reflexes"],
+        "abilities": {
+            "agility": 10
+        }
+    },
+    "gender": "M",
+    "value": 28,
+    "race": "Faeler"
+},{
+    "factions": ["Urdaggar Tribes of Ruin"],
+    "primaryFaction": ["Urdaggar Tribes of Ruin"],
+    "name": "Night Lurker",
+    "displayName": "Night Lurker",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 5,
+        "melee":[{
+            "name": "Ripper",
+            "rating": 10
+        }],
+        "armor": 3,
+        "discipline": 10,
+        "talents": ["Darkvision","Dodge","Dodge","Cavalry","Light Cavalry","Fly[Low, SPD 10]","Hit and Run","Piercing Screech","Scout"],
+        "abilities": {
+            "agility": 10
+        }
+    },
+    "gender": "M",
+    "value": 34,
+    "race": "Faeler"
+},{
+    "factions": ["Urdaggar Tribes of Ruin"],
+    "primaryFaction": ["Urdaggar Tribes of Ruin"],
+    "name": "Spider Rider",
+    "displayName": "Spider Rider",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee":[{
+            "name": "Bite",
+            "rating": 10,
+            "damage":8,
+            "abilities":["ven"]
+        },{
+            "name": "Web",
+            "rating": 10
+        },{
+            "name": "Short Spear",
+            "rating": 8
+        }],
+        "armor": 3,
+        "discipline": 10,
+        "talents": ["Cavalry","Die Hard","Battler","Dodge","Fearsome","Infiltrate","Spiderclimb","Tough"],
+        "abilities": {
+            "agility": 10,
+            "endurance":10
+        }
+    },
+    "gender": "M",
+    "value": 44,
+    "race": "Faeler"
+},{
+    "factions": ["Kandoran Deathmasters","Black Rose Bandits","Black Thorn Bandits"],
+    "primaryFaction": ["Kandoran Deathmasters"],
+    "name": "The Faceless",
+    "displayName": "The Faceless",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee":[{
+            "name": "Agukrich",
+            "rating": 8
+        }],
+        "range": [{
+            "name": "Agukrich",
+            "rating": 10
+        }],
+        "armor": 2,
+        "discipline": 10,
+        "talents": ["Accurate Shot","Bladedancer","Deft Hands","Dodge","Disguise","Fast Disguise"],
+        "abilities": {
+            "agility": 12,
+            "dexterity":10
+        },
+        "skills": [{
+            "name":"Thievery",
+            "rating":10
+        }]
+    },
+    "gender": "M",
+    "value": 44,
+    "race": "Faeler"
 }];
 
 export  {Models};
