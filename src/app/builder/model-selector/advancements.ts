@@ -169,7 +169,7 @@ const MagicItems: Items[] = [{
     cost:3
 },{
     name:'Ring of Protection',
-    advancement:'AV',
+    advancement:'AV1',
     cost:3
 },{
     name:'Bracers of Korg',
@@ -205,7 +205,7 @@ const MagicItems: Items[] = [{
     cost:3
 },{
     name:'Jaws of Karul',
-    advancement:'Extra attack', // additional melee weapon
+    advancement:'MAR d6 | Damage d6',
     cost:3
 },{
     name:'Arimol\'s Cloak',
@@ -213,7 +213,7 @@ const MagicItems: Items[] = [{
     cost:3
 },{
     name:'Mystic\'s Ring',
-    advancement:'Power,2', // +2 power
+    advancement:'CP2', // +2 power
     cost:3
 },{
     name:'Coin of Nespetos',
@@ -524,6 +524,14 @@ const Talents: string[] = [
 ];
 
 const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
+    name: 'Agukrich',
+    damage: 6,
+    abilities: ['de']
+},{
+    name: 'Arantish',
+    damage: 8,
+    abilities: ['imp','pin']
+},{
     name: 'Banehammer',
     damage: 10,
     abilities: ['swp']
@@ -760,6 +768,10 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
     name: 'Warhammer',
     damage: 8
 },{
+    name: 'Web',
+    damage: 0,
+    abilities: ['qs','pin','ovr']
+},{
     name: 'Whip',
     damage: 4,
     abilities: ['ent','qs']
@@ -774,6 +786,11 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
 }];
 
 const RangeWeapons: Omit<RangeWeapon, 'rating'>[] = [{
+    name: 'Agukrich',
+    damage: 6,
+    distance: 2,
+    abilities: ['thr','de']
+},{
     name: 'Atlatl',
     damage: 6,
     distance: 6,

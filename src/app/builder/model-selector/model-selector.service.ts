@@ -86,6 +86,15 @@ export class ModelSelectorService {
                 });
                 return;
             }
+            if (advancementName === 'MD') {
+                stats.melee?.map(melee => {
+                    if ('damage' in  melee) {
+                        melee.damageBonus = 1 + (melee.damageBonus ?? 0);
+                    }
+                    return melee;
+                });
+                return;
+            }
             if (advancementName === 'RAR') {
                 stats.range?.map(range => {
                     range.rating += 2;
@@ -107,8 +116,18 @@ export class ModelSelectorService {
                 stats.speed += 1;
                 return;
             }
+            if (advancementName === 'DEF') {
+                stats.defense = (stats.defense) ? stats.defense + 1 : 1;
+                return;
+            }
             if (advancementName.startsWith('AV')) {
-                stats.armor = parseInt(advancementName.charAt(2));
+                stats.armor += parseInt(advancementName.charAt(2));
+                return;
+            }
+            if (advancementName.startsWith('CP')) {
+                if (stats.casting) {
+                    stats.casting.power += parseInt(advancementName.charAt(2));
+                }
                 return;
             }
             if (!('talents' in stats)) {
@@ -204,6 +223,7 @@ export class ModelSelectorService {
         }
 
         let defense: number = (stats.shield === 'S' || stats.shield === 'AN' || stats.shield === 'B' || stats.shield === 'AS') ? 5 : (stats.shield === 'L') ? 6 : 4;
+        defense = stats.defense ? stats.defense + defense : defense; 
         if (abilities.agility === 4) {
             defense--;
         } else {
