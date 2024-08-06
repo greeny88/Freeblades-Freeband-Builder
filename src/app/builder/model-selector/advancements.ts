@@ -169,7 +169,7 @@ const MagicItems: Items[] = [{
     cost:3
 },{
     name:'Ring of Protection',
-    advancement:'AV',
+    advancement:'AV1',
     cost:3
 },{
     name:'Bracers of Korg',
@@ -205,7 +205,7 @@ const MagicItems: Items[] = [{
     cost:3
 },{
     name:'Jaws of Karul',
-    advancement:'Extra attack', // additional melee weapon
+    advancement:'MAR d6 | Damage d6',
     cost:3
 },{
     name:'Arimol\'s Cloak',
@@ -213,7 +213,7 @@ const MagicItems: Items[] = [{
     cost:3
 },{
     name:'Mystic\'s Ring',
-    advancement:'Power,2', // +2 power
+    advancement:'CP2', // +2 power
     cost:3
 },{
     name:'Coin of Nespetos',
