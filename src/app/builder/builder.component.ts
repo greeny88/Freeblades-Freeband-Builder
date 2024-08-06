@@ -101,12 +101,14 @@ export class BuilderComponent implements OnInit {
             return;
         }
         let allyFaction: (FactionList | "Wandering Allies")[] | undefined = undefined;
+        let allyFlyFound: boolean = false;
         let allyFollowerCount: number = 0;
         let allyHeroCount: number = 0;
         let casterCount: number = 0;
         this.completeFollowerCount = 0;
         this.completeHeroCount = 0;
         this.errorMessages = [];
+        let factionFlyFound: boolean = false;
         this.freebandBaseValue = 0;
         this.freebandTotalValue = 0
         let heroCount: number = 0;
@@ -137,7 +139,7 @@ export class BuilderComponent implements OnInit {
                 if (model.name === 'Kurgozar') {
                     this.completeHeroCount++;
                 }
-                if (model.stats.talentList && model.stats.talentList.indexOf('Ally') > -1) {
+                if (model.stats.talentList?.includes('Ally')) {
                     allyHeroCount++;
                     if (allyFaction === undefined) {
                         allyFaction = model.primaryFaction;
@@ -156,6 +158,9 @@ export class BuilderComponent implements OnInit {
                     }
                     if (model.name === 'Keldan') {
                         keldanCount++;
+                    }
+                    if (model.stats.talentList?.includes('Fly')) {
+                        allyFlyFound = true;
                     }
                 }
             }
@@ -196,6 +201,10 @@ export class BuilderComponent implements OnInit {
                 performerCount++;
             }
 
+            if (model.stats.talentList?.includes('Fly') && !model.stats.talentList.includes('Ally')) {
+                factionFlyFound = true;
+            }
+
             let heroFound = 0;
             for (let key in this.models) {
                 if(this.models[key].name === model.name && model.stats.type === 'Hero') {
@@ -232,7 +241,11 @@ export class BuilderComponent implements OnInit {
         if (allowedHeroCount < heroCount) {
             this.addErrorMessage(`Too many hero units added. You can only have ${allowedHeroCount} plus one for each 50 points over 251.`);
         }
-        // TODO: ally check for Fly on faction models
+        
+        if (factionFlyFound && allyFlyFound) {
+            this.addErrorMessage('You may not recruit both an ally model and faction model with fly.');
+        }
+
         // TODO: ally rules change with Irvlor and Keldan
         if ( (( (this.completeHeroCount - allyHeroCount) / 2) < allyHeroCount) || (( (this.completeFollowerCount - allyFollowerCount) / 2) < allyFollowerCount) ) {
             this.addErrorMessage('Too many ally models selected. There must be a 2:1 ratio of ally to non-ally models for a given type.');
