@@ -55,6 +55,57 @@ const Equipment: Items[] = [{
 },{
     name: 'War Markings',
     cost: 2
+},{
+    name: 'Brutal Weapon',
+    cost: 2
+},{
+    name: 'Burnished Armor',
+    cost: 3
+},{
+    name: 'Caltrops',
+    cost: 2
+},{
+    name: 'Disguise Kit',
+    cost: 3
+},{
+    name: 'Heavy Plating',
+    cost: 4
+},{
+    name: 'Heavy Weapon',
+    cost: 3
+},{
+    name: 'Lodestone',
+    cost: 1
+},{
+    name: 'Necromantic Locus',
+    cost: 2
+},{
+    name: 'Perfect Balance',
+    cost: 2
+},{
+    name: 'Spiked Armor',
+    cost: 2
+},{
+    name: 'Vital Plating',
+    cost: 2
+},{
+    name: 'Glowleaf',
+    cost: 2
+},{
+    name: 'Hawkweed',
+    cost: 1
+},{
+    name: 'Ironweed',
+    cost: 3
+},{
+    name: 'Purpleberry',
+    cost: 2
+},{
+    name: 'Riverroot',
+    cost: 1
+},{
+    name: 'Wizard\'s Beard',
+    cost: 1
 }];
 const MagicItems: Items[] = [{
     name:'Nimblesocks',
@@ -118,7 +169,7 @@ const MagicItems: Items[] = [{
     cost:3
 },{
     name:'Ring of Protection',
-    advancement:'AV',
+    advancement:'AV1',
     cost:3
 },{
     name:'Bracers of Korg',
@@ -154,7 +205,7 @@ const MagicItems: Items[] = [{
     cost:3
 },{
     name:'Jaws of Karul',
-    advancement:'Extra attack', // additional melee weapon
+    advancement:'MAR d6 | Damage d6',
     cost:3
 },{
     name:'Arimol\'s Cloak',
@@ -162,7 +213,7 @@ const MagicItems: Items[] = [{
     cost:3
 },{
     name:'Mystic\'s Ring',
-    advancement:'Power,2', // +2 power
+    advancement:'CP2', // +2 power
     cost:3
 },{
     name:'Coin of Nespetos',
@@ -312,6 +363,34 @@ const MagicItems: Items[] = [{
     name:'Liana\'s Bow',
     advancement:'Artifact [Longbow d9]',
     cost:6
+},{
+    name:'Mystic Map',
+    advancement:'Artifact',
+    cost:6
+},{
+    name:'Aelen\'s Ring',
+    advancement:'Artifact',
+    cost:8
+},{
+    name:'Zaidan\'s Banner',
+    advancement:'Artifact',
+    cost:9
+},{
+    name:'Variax Crystal',
+    advancement:'Artifact',
+    cost:9
+},{
+    name:'Shield of Ailea',
+    advancement:'Artifact',
+    cost:7
+},{
+    name:'Dark Shroud',
+    advancement:'Artifact',
+    cost:25
+},{
+    name:'Night\'s Edge',
+    advancement:'Artifact',
+    cost:30
 }];
 const Skills: string[] = [
     'Alchemy',
@@ -319,7 +398,10 @@ const Skills: string[] = [
     'Climb',
     'Devices',
     'Find',
+    'Gambling',
+    'Hone',
     'Hunt',
+    'Intimidate',
     'Jump',
     'Stealth',
     'Swim',
@@ -334,6 +416,7 @@ const Talents: string[] = [
     'Ambush',
     'Amphiibious',
     'Arboreal',
+    'Armored Deflection',
     'Assult',
     'Awareness',
     'Backstep',
@@ -345,16 +428,23 @@ const Talents: string[] = [
     'Bold',
     'Bribery',
     'Bull Rush',
+    'Champion[Friend]',
     'Confine',
+    'Conquer',
+    'Contain',
     'Counterattack',
+    'Crafty Dodge',
+    'Cunning',
     'Deceptive Strike',
     'Deflect',
     'Deft',
+    'Deft Rider',
     'Demonlore',
     'Die Hard',
     'Disguise',
     'Dodge',
     'Elusive',
+    'Enhanced Ambush',
     'Enhanced Disguise',
     'Far Shot',
     'Feint',
@@ -363,6 +453,7 @@ const Talents: string[] = [
     'Freerunner',
     'Frostfoot',
     'Furious',
+    'Glacis',
     'Harasser',
     'Hardened',
     'Heroic Attack',
@@ -371,6 +462,7 @@ const Talents: string[] = [
     'Impetuous',
     'Infiltrate',
     'Intensify Spell',
+    'Killing Strike',
     'Leaper',
     'March',
     'Marksman',
@@ -382,24 +474,32 @@ const Talents: string[] = [
     'Nimble',
     'Opportune Strike',
     'Parry',
+    'Peddler',
     'Plunging Fire',
     'Pouncer',
     'Power Attack',
     'Precise Shot',
+    'Precise Throw',
     'Protector',
+    'Prowl',
     'Punish',
+    'Quarry',
     'Rapid Fire',
     'Rapid Reload',
     'Raven Stance',
     'Recover',
+    'Recruiter',
     'Reluctant',
     'Retrograde',
     'Re-engage',
     'Running Shot',
     'Scout',
     'Scrounge',
+    'Shadow',
     'Sharpshooter',
     'Shield Bash',
+    'Shield Hook',
+    'Shieldmate',
     'Sergeant[Follower type]',
     'Sidestep',
     'Sniper',
@@ -411,14 +511,27 @@ const Talents: string[] = [
     'Spellhammer',
     'Spell Riposte',
     'Spotter',
+    'Stable Shot[d8]',
     'Steadfast',
+    'Strong-arm',
+    'Sure Strike',
     'Subdue',
+    'Tachan',
     'Taunt',
     'Teammate[Type]',
-    'Tough'
+    'Tough',
+    'Warden'
 ];
 
 const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
+    name: 'Agukrich',
+    damage: 6,
+    abilities: ['de']
+},{
+    name: 'Arantish',
+    damage: 8,
+    abilities: ['imp','pin']
+},{
     name: 'Banehammer',
     damage: 10,
     abilities: ['swp']
@@ -475,6 +588,10 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
     name: 'Greatsword',
     damage: 10
 },{
+    name: 'Halaztaf',
+    damage: 6,
+    damageBonus: 1
+},{
     name: 'Handclaws',
     damage: 4
 },{
@@ -495,10 +612,15 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
 },{
     name: 'Impaler',
     damage: 8,
-    damageBonus: 1
+    damageBonus: 1,
+    abilities: ['imp']
 },{
     name: 'Javelin',
     damage: 6
+},{
+    name: 'Kaiba',
+    damage: 8,
+    abilities: ['wrl']
 },{
     name: 'Kasari',
     damage: 8,
@@ -531,6 +653,10 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
     name: 'Longsword (2h)',
     damage: 8,
     damageBonus: 1
+},{
+    name: 'Longsword (magic)',
+    damage: 10,
+    abilities: ['mag','flm']
 },{
     name: 'Mace',
     damage: 8
@@ -642,6 +768,10 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
     name: 'Warhammer',
     damage: 8
 },{
+    name: 'Web',
+    damage: 0,
+    abilities: ['qs','pin','ovr']
+},{
     name: 'Whip',
     damage: 4,
     abilities: ['ent','qs']
@@ -656,6 +786,11 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
 }];
 
 const RangeWeapons: Omit<RangeWeapon, 'rating'>[] = [{
+    name: 'Agukrich',
+    damage: 6,
+    distance: 2,
+    abilities: ['thr','de']
+},{
     name: 'Atlatl',
     damage: 6,
     distance: 6,
@@ -719,6 +854,12 @@ const RangeWeapons: Omit<RangeWeapon, 'rating'>[] = [{
     distance: 2,
     abilities: ['thr']
 },{
+    name: 'Iron Pinion',
+    damage: 4,
+    damageBonus: 1,
+    distance: 2,
+    abilities: ['hin','thr']
+},{
     name: 'Javelin',
     damage: 6,
     distance: 4,
@@ -772,6 +913,11 @@ const RangeWeapons: Omit<RangeWeapon, 'rating'>[] = [{
     damage: 8,
     distance: 2,
     abilities: ['thr']
+},{
+    name: 'Zishoti',
+    damage: 6,
+    distance: 6,
+    abilities: ['clo']
 }];
 
 export  {Abilities, Equipment, MagicItems, MeleeWeapons, RangeWeapons, Skills, Talents};

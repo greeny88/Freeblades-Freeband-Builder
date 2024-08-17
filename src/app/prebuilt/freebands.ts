@@ -1,4 +1,6 @@
-const PreBuiltFreebands: {name:string, faction:string, freebandLimit:number, altLeader:boolean, models:{displayName: string, type?: string}[]}[] = [{
+import {Factions} from 'src/app/model';
+
+const PreBuiltFreebands: {name:string, faction:typeof Factions[number], freebandLimit:number, altLeader:boolean, models:{displayName: string, type?: string}[]}[] = [{
     'name': 'Kuzaarik Starter Set',
     'faction': 'Kuzaarik Forgers',
     'freebandLimit': 150,
@@ -10,6 +12,19 @@ const PreBuiltFreebands: {name:string, faction:string, freebandLimit:number, alt
         {'displayName': 'Field Agent'},
         {'displayName': 'Quarreler'},
         {'displayName': 'Explorer'}
+    ]
+}, {
+    'name': 'Azura Starter Set',
+    'faction': 'Azura Windborne',
+    'freebandLimit': 150,
+    'altLeader': false,
+    'models': [
+        {'displayName': 'Skyrider', 'type': 'Leader'},
+        {'displayName': 'Stormspeaker', 'type': 'Caster'},
+        {'displayName': 'Squall'},
+        {'displayName': 'Whirlwind'},
+        {'displayName': 'Cloudchaser'},
+        {'displayName': 'Mistral'}
     ]
 }, {
     'name': 'Black Rose Starter Set',
@@ -115,6 +130,19 @@ const PreBuiltFreebands: {name:string, faction:string, freebandLimit:number, alt
         {'displayName': 'Awakened'},
         {'displayName': 'Levy Spearman'},
         {'displayName': 'Wretch'}
+    ]
+}, {
+    'name': 'Koronnan Starter Set',
+    'faction': 'Koronnan Moonsworn',
+    'freebandLimit': 150,
+    'altLeader': false,
+    'models': [
+        {'displayName': 'Moons Priest', 'type': 'Leader'},
+        {'displayName': 'Black Spear'},
+        {'displayName': 'Koromen\'s Shadow'},
+        {'displayName': 'Koronnan Bladesister'},
+        {'displayName': 'Red Spear'},
+        {'displayName': 'Red Archer'}
     ]
 }, {
     'name': 'Mershael Starter Set',

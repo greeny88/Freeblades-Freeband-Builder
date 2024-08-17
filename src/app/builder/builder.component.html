@@ -2,14 +2,15 @@
 <ng-container *ngIf="faction && limit; else setup">
     <div class="freebandStats noSetHeight">
         <div>
-            <span class="printOnly bold-text">Freeband Name:</span>
-            <span><span class="bold-text">Freeband Base Value: </span>{{freebandBaseValue}}</span>
-            <span><span class="bold-text">Freeband Total Value: </span>{{freebandTotalValue}}</span>
+            <span class="printOnly bold-text flextra">Freeband Name:</span>
+            <span><span class="bold-text">Base Value: </span>{{freebandBaseValue}}</span>
+            <span><span class="bold-text">Total Value: </span>{{freebandTotalValue}}</span>
             <span><span class="bold-text">Break Value: </span>{{breakValue}}</span>
             <span class="noPrint"><span class="bold-text">Hero Total: </span>{{completeHeroCount}}</span>
             <span class="noPrint"><span class="bold-text">Follower Total: </span>{{completeFollowerCount}}</span>
             <span><span class="bold-text">Scouting Points: </span>{{scoutingPoints}}</span>
             <span class="printOnly bold-text">Gold:</span>
+            <span id="notesSection" class="printOnly bold-text">Notes:</span>
         </div>
     </div>
     <div id="optionButtons">

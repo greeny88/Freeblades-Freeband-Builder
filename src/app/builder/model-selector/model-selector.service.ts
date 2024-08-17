@@ -86,6 +86,15 @@ export class ModelSelectorService {
                 });
                 return;
             }
+            if (advancementName === 'MD') {
+                stats.melee?.map(melee => {
+                    if ('damage' in  melee) {
+                        melee.damageBonus = 1 + (melee.damageBonus ?? 0);
+                    }
+                    return melee;
+                });
+                return;
+            }
             if (advancementName === 'RAR') {
                 stats.range?.map(range => {
                     range.rating += 2;
@@ -107,8 +116,18 @@ export class ModelSelectorService {
                 stats.speed += 1;
                 return;
             }
+            if (advancementName === 'DEF') {
+                stats.defense = (stats.defense) ? stats.defense + 1 : 1;
+                return;
+            }
             if (advancementName.startsWith('AV')) {
-                stats.armor = parseInt(advancementName.charAt(2));
+                stats.armor += parseInt(advancementName.charAt(2));
+                return;
+            }
+            if (advancementName.startsWith('CP')) {
+                if (stats.casting) {
+                    stats.casting.power += parseInt(advancementName.charAt(2));
+                }
                 return;
             }
             if (!('talents' in stats)) {
@@ -175,7 +194,7 @@ export class ModelSelectorService {
                 if (!item) {
                     break;
                 }
-                if (!('advancement' in item)) {
+                if ('advancement' in item) {
                     this.addAdvancement(stats, abilities, item.advancement);
                 }
                 modelValue += item.cost;
@@ -204,8 +223,9 @@ export class ModelSelectorService {
         }
 
         let defense: number = (stats.shield === 'S' || stats.shield === 'AN' || stats.shield === 'B' || stats.shield === 'AS') ? 5 : (stats.shield === 'L') ? 6 : 4;
+        defense = stats.defense ? stats.defense + defense : defense; 
         if (abilities.agility === 4) {
-            defense = -1;
+            defense--;
         } else {
             for (let abilityTier of this.abilityTiers) {
                 if (abilities.agility >= abilityTier) {
@@ -216,7 +236,7 @@ export class ModelSelectorService {
 
         let ratingBonus: number = 0;
         if (abilities.dexterity === 4) {
-            ratingBonus = -1;
+            ratingBonus--;
         } else {
             for (let abilityTier of this.abilityTiers) {
                 if (abilities.dexterity >= abilityTier) {
@@ -245,7 +265,7 @@ export class ModelSelectorService {
 
         let skillBonus: number = 0;
         if (abilities.knowledge === 4) {
-            skillBonus = -1;
+            skillBonus--;
         } else {
             for (let abilityTier of this.abilityTiers) {
                 if (abilities.knowledge >= abilityTier) {
@@ -256,7 +276,7 @@ export class ModelSelectorService {
 
         let moraleBonus: number = 0;
         if (abilities.spirit === 4) {
-            moraleBonus = -1;
+            moraleBonus--;
         } else {
             for (let abilityTier of this.abilityTiers) {
                 if (abilities.spirit >= abilityTier) {
@@ -267,7 +287,7 @@ export class ModelSelectorService {
 
         let damageBonus: number = 0;
         if (abilities.strength === 4) {
-            damageBonus = -1;
+            damageBonus--;
         } else {
             for (let abilityTier of this.abilityTiers) {
                 if (abilities.strength >= abilityTier) {

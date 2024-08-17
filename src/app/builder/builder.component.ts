@@ -38,6 +38,7 @@ export class BuilderComponent implements OnInit {
     constructor(private commService: CommunicatorService, private dbService: DbService, public lrbService: LRBService, private dialog: MatDialog, private snackBar: MatSnackBar) {
         this.errorMessages = [];
         this.factionRules = {
+            'Azura Windborne': this.azuraRules,
             'Black Rose Bandits': this.blackRoseBanditsRule,
             'Black Thorn Bandits': this.blackThornBanditsRule,
             'The Collective': this.collectiveRules,
@@ -99,13 +100,15 @@ export class BuilderComponent implements OnInit {
         if (!this.faction) {
             return;
         }
-        let allyFaction: string | undefined = undefined;
+        let allyFaction: (FactionList | "Wandering Allies")[] | undefined = undefined;
+        let allyFlyFound: boolean = false;
         let allyFollowerCount: number = 0;
         let allyHeroCount: number = 0;
         let casterCount: number = 0;
         this.completeFollowerCount = 0;
         this.completeHeroCount = 0;
         this.errorMessages = [];
+        let factionFlyFound: boolean = false;
         this.freebandBaseValue = 0;
         this.freebandTotalValue = 0
         let heroCount: number = 0;
@@ -126,24 +129,22 @@ export class BuilderComponent implements OnInit {
             }
 
             this.freebandBaseValue += model.value;
-            // let extraValue = ('advancements' in model.stats) ? model.stats.advancements.reduce( ((sum,adv) => sum += adv.cost), 0) : 0;
-            // extraValue += ('items' in model.stats) ? model.stats.items.reduce( ((sum,itm) => sum += itm.cost), 0) : 0;
             this.freebandTotalValue += model.stats.modelValue ?? model.value;
-            // @ts-ignore
-            this.totalLifePoints += ('talentList' in model.stats && model.stats.talentList.indexOf('Expendable') > -1) ? (model.stats.lifePoints / 2) : model.stats.lifePoints;
+            if (model.stats.lifePoints) {
+                this.totalLifePoints += (model.stats.talentList && model.stats.talentList.indexOf('Expendable') > -1) ? (model.stats.lifePoints / 2) : model.stats.lifePoints;
+            }            
 
             if (model.stats.type === 'Hero') {
                 this.completeHeroCount++;
                 if (model.name === 'Kurgozar') {
                     this.completeHeroCount++;
                 }
-                // @ts-ignore
-                if ('talentList' in model.stats && model.stats.talentList.indexOf('Ally') > -1) {
+                if (model.stats.talentList?.includes('Ally')) {
                     allyHeroCount++;
                     if (allyFaction === undefined) {
                         allyFaction = model.primaryFaction;
                     }
-                    if (allyFaction !== model.primaryFaction) {
+                    if (!allyFaction.some(f => model.primaryFaction.includes(f))) {
                         this.addErrorMessage(`You can only recruit allies from the same faction.`);
                     }
                     if (model.name === 'Nightwhisper') {
@@ -158,38 +159,37 @@ export class BuilderComponent implements OnInit {
                     if (model.name === 'Keldan') {
                         keldanCount++;
                     }
+                    if (model.stats.talentList?.includes('Fly')) {
+                        allyFlyFound = true;
+                    }
                 }
             }
 
             if (model.stats.type === 'Follower') {
                 this.completeFollowerCount++;
-                // @ts-ignore
-                if ('talentList' in model.stats && model.stats.talentList.indexOf('Ally') > -1) {
+                if (model.stats.talentList && model.stats.talentList.indexOf('Ally') > -1) {
                     allyFollowerCount++;
                     if (allyFaction === undefined) {
                         allyFaction = model.primaryFaction;
                     }
-                    if (allyFaction !== model.primaryFaction) {
+                    if (!allyFaction.some(f => model.primaryFaction.includes(f))) {
                         this.addErrorMessage(`You can only recruit allies from the same faction.`);
                     }
                 }
             }
 
-            // @ts-ignore
-            if ('talentList' in model.stats && model.stats.talentList.indexOf('Leader') < 0 && model.type !== 'Caster' && model.stats.type === 'Hero') {
+            if (model.stats.talentList && model.stats.talentList.indexOf('Leader') < 0 && model.type !== 'Caster' && model.stats.type === 'Hero') {
                 heroCount++;
                 if (model.name === 'Kurgozar') {
                     heroCount++;
                 }
             }
 
-            // @ts-ignore
-            if ('talentList' in model.stats && model.stats.talentList.indexOf('Leader') > -1) {
+            if (model.stats.talentList && model.stats.talentList.indexOf('Leader') > -1) {
                 leader = model;
             }
 
-            // @ts-ignore
-            if ('talentList' in model.stats && model.stats.talentList.indexOf('Scout') > -1) {
+            if (model.stats.talentList?.includes('Scout')) {
                 this.scoutingPoints += 2;
             }
 
@@ -197,9 +197,12 @@ export class BuilderComponent implements OnInit {
                 casterCount++;
             }
 
-            // @ts-ignore
-            if ('skillList' in model.stats && model.stats.skillList.indexOf('Perform') > -1) {
+            if (model.stats.skillList?.includes('Perform')) {
                 performerCount++;
+            }
+
+            if (model.stats.talentList?.includes('Fly') && !model.stats.talentList.includes('Ally')) {
+                factionFlyFound = true;
             }
 
             let heroFound = 0;
@@ -209,10 +212,14 @@ export class BuilderComponent implements OnInit {
                 }
             }
 
-            // Grular Marauder exception
-            const heroLimit: number = ((model.name === 'Marauder' || model.name === 'Impaler') && this.limit > 250) ? 3 : 2;
+            // Grular Marauder exception and Jhenkar
+            const heroLimit: number = ((model.name === 'Marauder' || model.name === 'Impaler') && this.limit > 250) ? 3 : (model.name === 'Jhenkar') ? 1 : 2;
             if (heroFound > heroLimit) {
                 this.addErrorMessage(`You can only have ${heroLimit} of a hero model (${model.name}).`);
+            }
+
+            if (model.stats.talentList?.includes('Limited')) {
+                this.addErrorMessage(this.checkLimitedModel(model.displayName));
             }
 
             try {
@@ -228,13 +235,18 @@ export class BuilderComponent implements OnInit {
     
         let allowedHeroCount = Math.floor((this.limit - 1) / 50);
         allowedHeroCount = (allowedHeroCount < 4) ? 4 : allowedHeroCount;
-        if (leader && 'stats' in leader && 'casting' in leader.stats) {
+        if (leader?.stats.casting && casterCount === 1) {
             allowedHeroCount++;
         }
         if (allowedHeroCount < heroCount) {
-            this.addErrorMessage('Too many hero units added. You can only have four plus one for each 50 points over 251.');
+            this.addErrorMessage(`Too many hero units added. You can only have ${allowedHeroCount} plus one for each 50 points over 251.`);
+        }
+        
+        if (factionFlyFound && allyFlyFound) {
+            this.addErrorMessage('You may not recruit both an ally model and faction model with fly.');
         }
 
+        // TODO: ally rules change with Irvlor and Keldan
         if ( (( (this.completeHeroCount - allyHeroCount) / 2) < allyHeroCount) || (( (this.completeFollowerCount - allyFollowerCount) / 2) < allyFollowerCount) ) {
             this.addErrorMessage('Too many ally models selected. There must be a 2:1 ratio of ally to non-ally models for a given type.');
         }
@@ -342,11 +354,27 @@ export class BuilderComponent implements OnInit {
         if (this.selectedFreeband) {
             this.extraModels = [];
             for (let model of this.selectedFreeband['models']) {
-                const m =  Models.find(m => m.displayName === model.displayName && m.factions.includes(options.faction))
+                let m =  Models.find(m => m.displayName === model.displayName && m.factions.includes(options.faction));
+                m = JSON.parse(JSON.stringify(m));
                 if (!m) {
                     console.error(`Could not find model: ${model.displayName}`);
                     console.error(model);
                     return;
+                }
+                if (model.stats?.advancements) {
+                    m.stats.advancements = model.stats.advancements;
+                }
+                if (model.stats?.injuries) {
+                    m.stats.injuries = model.stats.injuries;
+                }
+                if (model.stats?.items) {
+                    m.stats.items = model.stats.items;
+                }
+                if (model.stats?.options) {
+                    m.stats.options = model.stats.options;
+                }
+                if (model.stats?.veteran) {
+                    m.stats.veteran = model.stats.veteran;
                 }
                 if (model.type === 'Leader') {
                     this.models[this.leaderId] = m;
@@ -380,26 +408,29 @@ export class BuilderComponent implements OnInit {
         }
     }
 
+    private azuraRules(model: Model): string | undefined {
+        return undefined;
+    }
+
     private blackRoseBanditsRule(model: Model): string | undefined {
-        const models: string[] = [];
-        for (let key in this.models) {
-            if (this.models[key].stats.type === 'Hero') {
-                models.push(this.models[key].name);
-            }
-        }
-        const checkForDups = models.filter(modelName => modelName !== 'Highwayman' && modelName != 'Roughrider');
-        return ((new Set(checkForDups)).size !== checkForDups.length) ? 'Bandits may not have duplicate heroes except for the Highwayman and Roughrider.' : undefined;
+        return undefined;
     }
 
     private blackThornBanditsRule(model: Model): string | undefined {
-        const models: string[] = [];
+        return undefined;
+    }
+
+    private checkLimitedModel(name: string) {
+        let limitedCount = 0;
         for (let key in this.models) {
-            if (this.models[key].stats.type === 'Hero') {
-                models.push(this.models[key].name);
+            if (this.models[key]['name'] === name) {
+                limitedCount++;
             }
         }
-        const checkForDups = models.filter(modelName => modelName !== 'Highwayman' && modelName != 'Roughrider');
-        return ((new Set(checkForDups)).size !== checkForDups.length) ? 'Bandits may not have duplicate heroes except for the Highwayman and Roughrider.' : undefined;
+        if (limitedCount > 0 && (this.limit / limitedCount) < 75) {
+            return `Can only have one ${name} for each 75 points in the freeband's base value.`;
+        }
+        return undefined;
     }
 
     private collectiveRules(model: Model): string | undefined {
@@ -463,22 +494,12 @@ export class BuilderComponent implements OnInit {
     }
 
     private falkaaranRules(model: Model): string | undefined {
-        let levyCount = 0;
-        for (let key in this.models) {
-            if (this.models[key].name === "Sheriff's Levy") {
-                levyCount++;
-            }
-        }
-        if (levyCount > 0 && (this.limit / levyCount) < 75) {
-            return "Falkaaran can only have one Sheriff's Levy for each 75 points in the freeband's base value.";
-        }
-
         if (model.name.indexOf('Jhenkar') > -1) {
             let shadowFound: boolean = false;
             for (let key in this.models) {
                 if (this.models[key].name === 'Shadow Hunter') {
                     shadowFound = true;
-                    if (model.name.indexOf(this.models[key].type) < 0) {
+                    if (model.displayName.indexOf(this.models[key].type) < 0) {
                         return 'The Jhenkar selection must match the selected Shadow Hunter.';
                     }
                 }
@@ -547,15 +568,16 @@ export class BuilderComponent implements OnInit {
         let totalCount = 0;
         let nonMarauderMountedFound = false;
         let gadarlFound = false;
+        let gadarlCount = 0;
         for (let key in this.models) {
-            // @ts-ignore
-            if ('talentList' in this.models[key].stats && this.models[key].stats.talentList.indexOf('Demon') > -1) {
+            if (this.models[key].stats.talentList?.includes('Demon')) {
                 demonCount++;
                 if (this.models[key].name === 'Gadarl') {
                     gadarlFound = true;
+                    gadarlCount++;
                 }
             }
-            if (this.models[key].displayName.indexOf('Mounted') > -1 && this.models[key].name !== 'Marauder') {
+            if (this.models[key].displayName.includes('Mounted') && this.models[key].name !== 'Marauder') {
                 nonMarauderMountedFound = true;
             }
             totalCount++;
@@ -563,9 +585,9 @@ export class BuilderComponent implements OnInit {
         if (demonCount > totalCount) {
             return 'Grular may not have more demon models than non-demon models.';
         }
-        const demonCountMinusGadarl = (gadarlFound) ? demonCount - 1 : demonCount;
+        const demonCountMinusGadarl = (gadarlFound) ? demonCount - gadarlCount : demonCount;
         if (nonMarauderMountedFound && demonCountMinusGadarl > 0) {
-            return 'Grular may not have demon models with non-Marauder mounted models.';
+            return 'Grular may not have demon models other than Gadarl with non-Marauder mounted models.';
         }
         return undefined;
     }
@@ -592,7 +614,7 @@ export class BuilderComponent implements OnInit {
             if (this.models[key].stats.type === 'Hero') {
                 heroCount++;
             }
-            if (this.models[key].name === 'Skrot') {
+            if (this.models[key].name === 'Shambler') {
                 shamblerCount++;
             }
         }
@@ -643,15 +665,21 @@ export class BuilderComponent implements OnInit {
     }
 
     private kuzaarikRules(model: Model): string | undefined {
-        let quarrelerCount = 0;
-        for (let key in this.models) {
-            if (this.models[key]['name'] === 'Quarreler') {
-                quarrelerCount++;
+        if (model.name.indexOf('Jhenkar') > -1) {
+            let shadowFound: boolean = false;
+            for (let key in this.models) {
+                if (this.models[key].name === 'Shadow Hunter') {
+                    shadowFound = true;
+                    if (model.displayName.indexOf(this.models[key].type) < 0) {
+                        return 'The Jhenkar selection must match the selected Shadow Hunter.';
+                    }
+                }
+            }
+            if (!shadowFound) {
+                return 'Jhenkar can only be used along side a Shadow Hunter.';
             }
         }
-        if (quarrelerCount > 0 && (this.limit / quarrelerCount) < 75) {
-            return "Kuzaarik can only have one Quarreller for each 75 points in the freeband's base value.";
-        }
+        
         return undefined;
     }
 
@@ -683,15 +711,6 @@ export class BuilderComponent implements OnInit {
     }
 
     private shakrimRules(model: Model): string | undefined {
-        let kobrinCount = 0;
-        for (let key in this.models) {
-            if (this.models[key]['name'] === 'Kobrin') {
-                kobrinCount++;
-            }
-        }
-        if (kobrinCount > 0 && (this.limit / kobrinCount) < 75) {
-            return "Shakrim can only have one Kobrin for each 75 points in the freeband's base value.";
-        }
         return undefined;
     }
 
@@ -699,52 +718,36 @@ export class BuilderComponent implements OnInit {
         if (model.gender === 'F') {
             return 'Traazorites cannot have female models in their freeband.';
         }
-        let heroCount: number = 0;
-        for (let key in this.models) {
-            if (this.models[key].stats.type === 'Hero') {
-                heroCount++;
-            }
-            if (this.models[key].name === 'Kurgozar') {
-
-            }
-        }
         return undefined;
     }
 
     private trilianRules(model: Model): string | undefined {
-        let runnerCount = 0;
-        let guardianCount = 0;
-        for (let key in this.models) {
-            if (this.models[key]['name'] === 'Tree Runner') {
-                runnerCount++;
-            }
-            if (this.models[key]['name'] === 'Guardian') {
-                guardianCount++;
-            }
-        }
-        if (runnerCount > 0 && (this.limit / runnerCount) < 75) {
-            return "Trilian can only have one Tree Runner for each 75 points in the freeband's base value.";
-        }
-        if (guardianCount > 0 && (this.limit / guardianCount) < 75) {
-            return "Trilian can only have one Guardian for each 75 points in the freeband's base value.";
-        }
         return undefined;
     }
 
     private urdaggarRuinRules(model: Model): string | undefined {
+        if (model.displayName === 'Destroyer') {
+            let heraldFound: boolean = false;
+            let destroyerCount: number = 0;
+            for (let key in this.models) {
+                if (this.models[key].name === 'Dark Herald' && this.models[key].type === 'Leader') {
+                    heraldFound = true;
+                }
+                if (this.models[key].displayName === 'Destroyer') {
+                    destroyerCount++;
+                }
+            }
+            if (!heraldFound) {
+                return 'Destroyer can only be added when led by a Dark Herald.';
+            }
+            if (destroyerCount > 1) {
+                return 'Only one Destroyer can be recruiter.'
+            }
+        }
         return undefined;
     }
 
     private urdaggarValorRules(model: Model): string | undefined {
-        let hunterCount = 0;
-        for (let key in this.models) {
-            if (this.models[key]['name'] === 'Hunter') {
-                hunterCount++;
-            }
-        }
-        if (hunterCount > 0 && (this.limit / hunterCount) < 75) {
-            return "Urdaggar(Valor) can only have one Hunter for each 75 points in the freeband's base value.";
-        }
         return undefined;
     }
 
