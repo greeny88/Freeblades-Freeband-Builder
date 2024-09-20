@@ -210,6 +210,9 @@ export class ModelSelectorService {
                     const abilityReference : any = {'AGL':'agility','DEX':'dexterity','END':'endurance','KNW':'knowledge','SPR':'spirit','STR':'strength'};
                     abilities[abilityReference[inj]] -= 2;
                 } else if (['Hate[faction]','Reluctant'].includes(inj)) {
+                    if (!('talents' in stats)) {
+                        stats.talents = [];
+                    }
                     stats.talents?.push(inj);
                 } else {
                     if (inj === 'DISC') {
