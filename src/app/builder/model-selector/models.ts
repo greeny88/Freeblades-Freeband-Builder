@@ -7429,7 +7429,7 @@ const Models: Model[] = [{
     "displayName": "Hanging Lasher",
     "type": "Standard",
     "stats": {
-        "type": "Hero",
+        "type": "Follower",
         "speed": 7,
         "melee":[{
             "name": "Barbed Whip",
