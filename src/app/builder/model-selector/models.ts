@@ -2305,7 +2305,7 @@ const Models: Model[] = [{
     "stats": {
         "discipline": 6,
         "type": "Follower",
-        "speed": 6,
+        "speed": 7,
         "talents": ["Amphibious"],
         "melee": [{
             "rating": 6,
