@@ -10,7 +10,8 @@ import { Model } from 'src/app/model';
 })
 export class CustomModelComponent {
     ngOnInit() {
-        this.run();
+        // this.run();
+        this.createModel();
     }
 
     // TODO: get models from Models.
@@ -31,9 +32,12 @@ export class CustomModelComponent {
             model.stats.abilities?.knowledge ?? 0,
             model.stats.abilities?.spirit ?? 0,
             model.stats.abilities?.strength ?? 0,
+            // TODO: weigh different talents
             model.stats.talents?.length ?? 0,
+            // TODO: weigh different skills
             model.stats.skills?.length ?? 0,
             model.stats.casting ? 1 : 0,
+            // TODO: is weapon type/damage important to factor?
             model.stats.melee ? model.stats.melee?.reduce((acc, wpn) => {
                 return acc + wpn.rating;
             }, 0) : 0,
@@ -45,8 +49,12 @@ export class CustomModelComponent {
     }
 
     createModel() {
+        console.log('createModel');
+        const dataset = tf.data.array(Models.map(this.transformData)).batch(10);
         const model = tf.sequential();
-        model.add(tf.layers.dense({units: 1, inputShape: [17]}));
+        model.add(tf.layers.dense({inputShape: [17], units: 1, activation: 'relu'}));
+        model.add(tf.layers.dense({units: 100, activation: 'softmax'}));
+        // model.add(tf.layers.dense({units: 1, activation: 'sigmoid'}));
         // model.add(tf.layers.dense({units: 250, activation: 'relu', inputShape: [8]}));
         // model.add(tf.layers.dense({units: 175, activation: 'relu'}));
         // model.add(tf.layers.dense({units: 150, activation: 'relu'}));
@@ -56,10 +64,13 @@ export class CustomModelComponent {
             loss: 'sparseCategoricalCrossentropy',
             metrics: ['accuracy']
         });
-        const dataset = tf.data.array(Models.map(this.transformData));
+        // console.log(Models.map(this.transformData));
         model.fitDataset(dataset, {epochs: 5}).then(info => {
-            console.log('Accuracy', info);
-            // model.predict(tf.tensor([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])).data().then(cost => displayCost(cost));
+            console.log(info);
+            // console.log('Accuracy', info);
+            // (model.predict(tf.tensor([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])) as tf.Tensor).data().then(cost => displayCost(cost));
+
+            (model.predict(tf.tensor([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])) as tf.Tensor).print();
         });
     }
 
@@ -82,7 +93,7 @@ export class CustomModelComponent {
             (model.predict(tf.tensor2d([5], [1, 1])) as tf.Tensor).print();
         });
 
-        console.log(this.transformData(Models[0]));
-        console.log(Models.slice(0,9).map(this.transformData));
+        // console.log(this.transformData(Models[0]));
+        // console.log(Models.slice(0,9).map(this.transformData));
     }
 }
