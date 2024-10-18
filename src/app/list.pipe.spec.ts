@@ -1,8 +1,8 @@
-import { ListPipePipe } from './list.pipe';
+import { ListPipe } from './list.pipe';
 
-describe('ListPipePipe', () => {
-  it('create an instance', () => {
-    const pipe = new ListPipePipe();
-    expect(pipe).toBeTruthy();
-  });
+describe('ListPipe', () => {
+    it('create an instance', () => {
+        const pipe = new ListPipe();
+        expect(pipe).toBeTruthy();
+    });
 });

@@ -2305,7 +2305,7 @@ const Models: Model[] = [{
     "stats": {
         "discipline": 6,
         "type": "Follower",
-        "speed": 6,
+        "speed": 7,
         "talents": ["Amphibious"],
         "melee": [{
             "rating": 6,
@@ -7429,7 +7429,7 @@ const Models: Model[] = [{
     "displayName": "Hanging Lasher",
     "type": "Standard",
     "stats": {
-        "type": "Hero",
+        "type": "Follower",
         "speed": 7,
         "melee":[{
             "name": "Barbed Whip",

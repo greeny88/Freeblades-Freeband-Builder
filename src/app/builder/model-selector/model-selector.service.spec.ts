@@ -19,6 +19,7 @@ describe('ModelSelectedService', () => {
             name: 'Test Hero',
             displayName: 'Test Hero',
             factions: ['Kuzaarik Forgers'],
+            primaryFaction: ['Kuzaarik Forgers'],
             gender: 'M',
             race: 'Faeler',
             value: 30,
@@ -34,6 +35,7 @@ describe('ModelSelectedService', () => {
             name: 'Test Follower',
             displayName: 'Test Follower',
             factions: ['Kuzaarik Forgers'],
+            primaryFaction: ['Kuzaarik Forgers'],
             gender: 'M',
             race: 'Faeler',
             value: 10,
@@ -131,15 +133,106 @@ describe('ModelSelectedService', () => {
         expect(calcdModelStats.skillList).toContain('Jump - d8');
     });
 
-    xit('should calculate adding options.');
+    it('should calculate adding options.', () => {
+        const model: Model = heroModel;
+        model.stats.options = [{
+            name: 'AV1',
+            selected: true
+        },{
+            name: 'foobar',
+            selected: false
+        }];
+        const calcdModelStats = service.calculateStats(model.stats, model.value);
+    
+        if (!calcdModelStats) {
+            fail('stats not defined.');
+            return;
+        }
+        expect(calcdModelStats.armor).toBe(6);
+    });
 
-    xit('should calculate adding veteran options.');
+    it('should calculate adding veteran options.', () => {
+        const model: Model = followerModel;
+        model.stats.veteran = [{
+            cost: 1,
+            name: 'DISC',
+            selected: true
+        },{
+            cost: 20,
+            name: 'foobar',
+            selected: false
+        }];
+        const calcdModelStats = service.calculateStats(model.stats, model.value);
+    
+        if (!calcdModelStats) {
+            fail('stats not defined.');
+            return;
+        }
+        expect(calcdModelStats.discipline).toBe(8);
+        expect(calcdModelStats.modelValue).toBe(10);
+    });
 
-    xit('should calculate adding items.');
+    it('should calculate adding items.', () => {
+        const model: Model = followerModel;
+        model.stats.items = [{
+            cost: 1,
+            name: 'Badge of Testing'
+        },{
+            cost: 2,
+            name: 'Ring of Testing',
+            advancement: 'AGL'
+        }]
+        const calcdModelStats = service.calculateStats(model.stats, model.value);
+    
+        if (!calcdModelStats) {
+            fail('stats not defined.');
+            return;
+        }
+        expect(calcdModelStats.abilities.agility).toBe(8);
+        expect(calcdModelStats.modelValue).toBe(13);
+    });
 
-    xit('should calculate adding injuries.');
+    it('should calculate adding injuries.', () => {
+        const model: Model = heroModel;
+        model.stats.injuries = ['DISC','AGL','SPD','Reluctant'];
+        const calcdModelStats = service.calculateStats(model.stats, model.value);
+    
+        if (!calcdModelStats) {
+            fail('stats not defined.');
+            return;
+        }
+        expect(calcdModelStats.discipline).toBe(6);
+        expect(calcdModelStats.abilities.agility).toBe(6);
+        expect(calcdModelStats.speed).toBe(4);
+        expect(calcdModelStats.talentList).toContain('Reluctant');
+        
+    });
 
-    xit('should add MAR to non-calvary weapons only.');
+    xit('should add MAR to non-calvary weapons only.', () => {
+        const model: Model = heroModel;
+        model.stats.advancements = [{
+            name: 'MAR',
+            cost: 0
+        }];
+        model.stats.melee = [];
+        const calcdModelStats = service.calculateStats(model.stats, model.value);
+    
+        if (!calcdModelStats) {
+            fail('stats not defined.');
+            return;
+        }
 
-    xit('should sum talents together with same name.');
+    });
+
+    it('should sum talents together with same name.', () => {
+        const model: Model = heroModel;
+        model.stats.talents = ['Die Hard', 'Die Hard', 'Not Die Hard'];
+        const calcdModelStats = service.calculateStats(model.stats, model.value);
+    
+        if (!calcdModelStats) {
+            fail('stats not defined.');
+            return;
+        }
+        expect(calcdModelStats.talentList).toContain('Die Hard[2]');
+    });
 });
