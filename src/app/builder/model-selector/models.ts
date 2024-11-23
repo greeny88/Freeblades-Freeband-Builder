@@ -7555,6 +7555,66 @@ const Models: Model[] = [{
     "gender": "M",
     "value": 44,
     "race": "Faeler"
+},{
+    "factions": ["Urdaggar Tribes of Valor"],
+    "primaryFaction": ["Urdaggar Tribes of Valor"],
+    "name": "Sholakir",
+    "displayName": "Sholakir",
+    "type": "Leader",
+    "stats": {
+        "type": "Hero",
+        "speed": 5,
+        "melee":[{
+            "name": "Longspear",
+            "rating": 12
+        },{
+            "name": "Talon",
+            "rating": 8,
+            "damage": 6,
+            "abilities": ["pin"]
+        }],
+        "shield": "S",
+        "armor": 3,
+        "discipline": 12,
+        "talents": ["Leader","Dodge","Dodge","Hit and Run","Assult","Cavalry","Swoop[Talon]","Fly[Low, SPD 10]"],
+        "abilities": {
+            "agility": 10,
+            "spirit": 10
+        }
+    },
+    "gender": "M",
+    "value": 50,
+    "race": "Faeler"
+},{
+    "factions": ["Kuzaarik Forgers"],
+    "primaryFaction": ["Urdaggar Tribes of Valor"],
+    "name": "Sholakir",
+    "displayName": "Sholakir",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 5,
+        "melee":[{
+            "name": "Longspear",
+            "rating": 10
+        },{
+            "name": "Talon",
+            "rating": 8,
+            "damage": 6,
+            "abilities": ["pin"]
+        }],
+        "shield": "S",
+        "armor": 3,
+        "discipline": 10,
+        "talents": ["Dodge","Dodge","Hit and Run","Assult","Cavalry","Swoop[Talon]","Fly[Low, SPD 10]"],
+        "abilities": {
+            "agility": 10,
+            "spirit": 10
+        }
+    },
+    "gender": "M",
+    "value": 43,
+    "race": "Faeler"
 }];
 
 export  {Models};
