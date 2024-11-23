@@ -902,8 +902,7 @@ const Models: Model[] = [{
             "rating": 10,
             "name": "Javelin"
         }],
-        "armor": 5,
-        "shield": "S"
+        "armor": 3
     },
     "type": "Standard",
     "value": 30,
@@ -5947,7 +5946,7 @@ const Models: Model[] = [{
     "value": 62,
     "race": "Beast"
 },{
-    "factions": ["Demons of Karelon"],
+    "factions": ["Demons of Karelon","Darkgrove Demons"],
     "primaryFaction": ["Demons of Karelon"],
     "name": "Elivai",
     "displayName": "Elivai",
@@ -5976,7 +5975,7 @@ const Models: Model[] = [{
     "value": 37,
     "race": "Demon"
 },{
-    "factions": ["Demons of Karelon"],
+    "factions": ["Demons of Karelon","Darkgrove Demons"],
     "primaryFaction": ["Demons of Karelon"],
     "name": "Elivai",
     "displayName": "Elivai",
