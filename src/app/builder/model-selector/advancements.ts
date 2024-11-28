@@ -106,6 +106,15 @@ const Equipment: Items[] = [{
 },{
     name: 'Wizard\'s Beard',
     cost: 1
+},{
+    name: 'Shield Stone',
+    cost: 5
+},{
+    name: 'Barrier Stone',
+    cost: 8
+},{
+    name: 'Meta Stone',
+    cost: 9
 }];
 const MagicItems: Items[] = [{
     name:'Nimblesocks',
@@ -750,10 +759,14 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
     damage: 6,
     damageBonus: 1,
     abilities: ['sb']
-}, {
+},{
     name: 'Toloron',
     damage: 10,
     abilities: ['sw']
+},{
+    name: 'Toothed Sword',
+    damage: 10,
+    abilities: ['let']
 },{
     name: 'Trident',
     damage: 8,
@@ -889,6 +902,11 @@ const RangeWeapons: Omit<RangeWeapon, 'rating'>[] = [{
     damageBonus: 1,
     distance: 8,
     abilities: ['sb']
+},{
+    name: 'Skullbomb',
+    damage: 0,
+    distance: 4,
+    abilities: ['thr','dr','aoe 2in']
 },{
     name: 'Sling',
     damage: 8,

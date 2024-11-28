@@ -48,7 +48,8 @@ export class ModelSelectorComponent {
         'Apprentice Knight of Tahnar',
         'Apprentice Knight of Vidunar',
         'Apprentice Knight of Barek',
-        'Dark Herald'
+        'Dark Herald',
+        'Kor-Khan'
     ];
     private disallowedAltLeadersFactions: string[] = [
         'Darkgrove Demons',
@@ -73,13 +74,21 @@ export class ModelSelectorComponent {
                 const factionModels = JSON.parse(JSON.stringify(this.factionModels));
                 for (let currentmodel of factionModels) {
                     let model: Model = Object.assign({}, currentmodel);
-                    if (!model.primaryFaction.includes(this.faction)) {
+                    let allyText;
+                    // TODO: need to handle for Lightbringer based on leader selected
+                    if (model.trustedFactions && model.trustedFactions.includes(this.faction)) {
+                        allyText = 'Ally[Trusted]';
+                        if (model.name === 'Lightbringer') {
+                            allyText = 'Ally[Trusted/Independent]';
+                        }
+                    } else if (!model.primaryFaction.includes(this.faction)) {
+                        allyText = 'Ally[Independent]';
+                    }
+                    if (allyText) {
                         if (model.stats.talents) {
-                            if (model.stats.talents.every(t => !t.includes('Ally'))) {
-                                model.stats.talents.push('Ally[Independent]');
-                            }
+                            model.stats.talents.push(allyText);
                         } else {
-                            model.stats.talents = ['Ally[Independent]'];
+                            model.stats.talents = [allyText];
                         }
                     }
                     if (model.factions.includes(this.faction)) {
@@ -133,13 +142,20 @@ export class ModelSelectorComponent {
                     if (this.faction === undefined) {
                         return model;
                     }
-                    if (!model.primaryFaction.includes(this.faction)) {
+                    let allyText;
+                    if (model.trustedFactions && model.trustedFactions.includes(this.faction)) {
+                        allyText = 'Ally[Trusted]';
+                        if (model.name === 'Lightbringer') {
+                            allyText = 'Ally[Trusted/Independent]';
+                        }
+                    } else if (!model.primaryFaction.includes(this.faction)) {
+                        allyText = 'Ally[Independent]';
+                    }
+                    if (allyText) {
                         if (model.stats.talents) {
-                            if (model.stats.talents.every(t => !t.includes('Ally'))) {
-                                model.stats.talents.push('Ally[Independent]');
-                            }
+                            model.stats.talents.push(allyText);
                         } else {
-                            model.stats.talents = ['Ally[Independent]'];
+                            model.stats.talents = [allyText];
                         }
                     }
                     return model;
