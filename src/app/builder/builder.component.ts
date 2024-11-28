@@ -626,6 +626,7 @@ export class BuilderComponent implements OnInit {
     }
 
     private koronnanRules(model: Model): string | undefined {
+        // TODO: add familiar check owl/priestess and wolf/priest
         let mizrakaiCount: number = 0;
         let priestCount: number = 0;
         let priestessCount: number = 0;
