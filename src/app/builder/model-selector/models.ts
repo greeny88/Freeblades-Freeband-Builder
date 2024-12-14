@@ -7516,7 +7516,7 @@ const Models: Model[] = [{
         }]
     },
     "gender": "M",
-    "value": 44,
+    "value": 35,
     "race": "Faeler"
 },{
     "factions": ["Urdaggar Tribes of Valor"],
