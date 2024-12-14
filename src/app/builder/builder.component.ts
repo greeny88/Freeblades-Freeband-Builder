@@ -707,8 +707,9 @@ export class BuilderComponent implements OnInit {
                 models.push(this.models[key].name);
             }
         }
-        const checkForDups = models.filter(modelName => modelName !== 'Ravenblade Soldier');
-        return ((new Set(checkForDups)).size !== checkForDups.length) ? 'Mercenaries may not have duplicate heroes except for the Ravenblade Soldier.' : undefined;
+        const noDupModels = ['Mizrakai','Nightwhisper','Stag Warrior','Stalker','Takar Hunter','Truthseeker'];
+        const checkForDups = models.filter(modelName => noDupModels.includes(modelName));
+        return ((new Set(checkForDups)).size !== checkForDups.length) ? `Mercenaries may not have duplicate heroes of ${noDupModels.join(', ')}.` : undefined;
     }
 
     private shakrimRules(model: Model): string | undefined {
