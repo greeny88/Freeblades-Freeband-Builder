@@ -2681,7 +2681,7 @@ const Models: Model[] = [{
             "dexterity":10
         },
         "veteran": [{
-            "name": "AV7",
+            "name": "AV1+",
             "cost": 2
         }]
     },
@@ -5511,7 +5511,7 @@ const Models: Model[] = [{
         }],
         "armor": 2,
         "discipline": 12,
-        "talents": ["Leader","Moons Magic: Priest", "Dodge","Hate[Traazorites]","Spelldancer","Spell Projector[Moons Priestess]"],
+        "talents": ["Leader","Moons Magic: Priest", "Dodge","Spelldancer","Spell Projector[Moons Priestess]"],
         "casting": {
             "power":15,
             "rating":10
@@ -5538,7 +5538,7 @@ const Models: Model[] = [{
         }],
         "armor": 2,
         "discipline": 8,
-        "talents": ["Moons Magic: Priest", "Dodge","Hate[Traazorites]","Spelldancer","Spell Projector[Moons Priestess]"],
+        "talents": ["Moons Magic: Priest", "Dodge","Spelldancer","Spell Projector[Moons Priestess]"],
         "casting": {
             "power":15,
             "rating":10
