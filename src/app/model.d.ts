@@ -59,7 +59,8 @@ export interface ModelStats {
         altSelected?: boolean,
         power: number,
         rating: number,
-        ratingBonus?: number
+        ratingBonus?: number,
+        type: "energy" | "spirit" | "sorcery"
     },
     defense?: number,
     discipline: number,

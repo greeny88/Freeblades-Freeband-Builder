@@ -82,7 +82,8 @@ const Models: Model[] = [{
         }],
         "casting": {
             "rating": 10,
-            "power": 15
+            "power": 15,
+            "type": "energy"
         },
         "armor": 2
     },
@@ -307,7 +308,8 @@ const Models: Model[] = [{
         }],
         "casting": {
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "spirit"
         },
         "armor": 2
     },
@@ -699,7 +701,8 @@ const Models: Model[] = [{
         "talents": ["Intensify Spell", "Quick", "Illusion Magic"],
         "casting": {
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "energy"
         }
     },
     "type": "Caster",
@@ -768,7 +771,8 @@ const Models: Model[] = [{
         }],
         "casting": {
             "rating": 10,
-            "power": 15
+            "power": 15,
+            "type": "spirit"
         },
         "armor": 4
     },
@@ -1122,7 +1126,8 @@ const Models: Model[] = [{
         }],
         "casting": {
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "spirit"
         },
         "armor": 2
     },
@@ -1278,7 +1283,8 @@ const Models: Model[] = [{
         }],
         "casting": {
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "spirit"
         },
         "armor": 2
     },
@@ -1302,7 +1308,8 @@ const Models: Model[] = [{
         }],
         "casting": {
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "energy"
         },
         "armor": 2
     },
@@ -1384,7 +1391,8 @@ const Models: Model[] = [{
         }],
         "casting": {
             "power": 10,
-            "rating": 8
+            "rating": 8,
+            "type": "sorcery"
         },
         "armor": 4
     },
@@ -1711,7 +1719,8 @@ const Models: Model[] = [{
         }],
         "casting": {
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "energy"
         },
         "armor": 2
     },
@@ -2054,7 +2063,8 @@ const Models: Model[] = [{
         }],
         "casting": {
             "rating": 10,
-            "power": 15
+            "power": 15,
+            "type": "energy"
         },
         "armor": 2
     },
@@ -2078,7 +2088,8 @@ const Models: Model[] = [{
         }],
         "casting": {
             "rating": 10,
-            "power": 15
+            "power": 15,
+            "type": "spirit"
         },
         "armor": 4
     },
@@ -2102,7 +2113,8 @@ const Models: Model[] = [{
         }],
         "casting": {
             "rating": 10,
-            "power": 15
+            "power": 15,
+            "type": "spirit"
         },
         "armor": 4
     },
@@ -2126,7 +2138,8 @@ const Models: Model[] = [{
         }],
         "casting": {
             "rating": 10,
-            "power": 15
+            "power": 15,
+            "type": "spirit"
         },
         "armor": 4
     },
@@ -2500,7 +2513,8 @@ const Models: Model[] = [{
         },
         "casting": {
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "spirit"
         }
     },
     "type": "Caster",
@@ -2527,7 +2541,8 @@ const Models: Model[] = [{
         },
         "casting": {
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "spirit"
         }
     },
     "type": "Caster",
@@ -2814,7 +2829,8 @@ const Models: Model[] = [{
         },
         "casting": {
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "spirit"
         }
     },
     "value": 33,
@@ -3212,7 +3228,8 @@ const Models: Model[] = [{
         "talents": ["Treespeaking","Tree Bond","Arboreal"],
         "casting": {
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "spirit"
         }
     },
     "value": 32,
@@ -3236,7 +3253,8 @@ const Models: Model[] = [{
         "talents": ["Celestial Magic","Spellbracer","Arboreal"],
         "casting": {
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "energy"
         }
     },
     "value": 32,
@@ -3625,7 +3643,8 @@ const Models: Model[] = [{
         "talents": ["Bear Magic","Mystic Dance"],
         "casting": {
             "power":15,
-            "rating":10
+            "rating":10,
+            "type": "spirit"
         }
     },
     "value":31,
@@ -4441,7 +4460,8 @@ const Models: Model[] = [{
         "talents": ["Necromancy","Deathshaper","Deathbinder"],
         "casting":{
             "rating":10,
-            "power":15
+            "power":15,
+            "type": "spirit"
         }
     },
     "gender": "M",
@@ -4649,7 +4669,8 @@ const Models: Model[] = [{
         "talents": ["Water Magic","Amphibious","Immune[Poison]","Water Bond"],
         "casting":{
             "power":15,
-            "rating":10
+            "rating":10,
+            "type": "energy"
         }
     },
     "gender": "M",
@@ -4895,7 +4916,8 @@ const Models: Model[] = [{
         "talents": ["Necromancy","Skull Staff"],
         "casting": {
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "spirit"
         }
     },
     "gender": "M",
@@ -5208,7 +5230,8 @@ const Models: Model[] = [{
         "talents": ["Leader", "Vinespawn", "Regenerate", "Dodge", "Arboreal", "Demon", "Darkgrove Sorcery"],
         "casting": {
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "sorcery"
         },
         "abilities": {
             "agility":10
@@ -5413,7 +5436,8 @@ const Models: Model[] = [{
         "talents": ["Varanic Rites: Kantor","Battle Hymn"],
         "casting": {
             "rating": 10,
-            "power": 15
+            "power": 15,
+            "type": "spirit"
         }
     },
     "gender": "M",
@@ -5460,7 +5484,8 @@ const Models: Model[] = [{
         "talents": ["Leader","Moons Magic: Priestess", "Dodge","Hate[Traazorites]","Spelldancer","Spell Projector[Moons Priest]"],
         "casting": {
             "power":15,
-            "rating":10
+            "rating":10,
+            "type": "spirit"
         },
         "abilities":{
             "agility":10
@@ -5487,7 +5512,8 @@ const Models: Model[] = [{
         "talents": ["Moons Magic: Priestess", "Dodge","Hate[Traazorites]","Spelldancer","Spell Projector[Moons Priest]"],
         "casting": {
             "power":15,
-            "rating":10
+            "rating":10,
+            "type": "spirit"
         },
         "abilities":{
             "agility":10
@@ -5514,7 +5540,8 @@ const Models: Model[] = [{
         "talents": ["Leader","Moons Magic: Priest", "Dodge","Spelldancer","Spell Projector[Moons Priestess]"],
         "casting": {
             "power":15,
-            "rating":10
+            "rating":10,
+            "type": "spirit"
         },
         "abilities":{
             "agility":10
@@ -5541,7 +5568,8 @@ const Models: Model[] = [{
         "talents": ["Moons Magic: Priest", "Dodge","Spelldancer","Spell Projector[Moons Priestess]"],
         "casting": {
             "power":15,
-            "rating":10
+            "rating":10,
+            "type": "spirit"
         },
         "abilities":{
             "agility":10
@@ -6476,7 +6504,8 @@ const Models: Model[] = [{
         }],
         "casting": {
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "spirit"
         },
         "armor": 2,
         "discipline": 12,
@@ -6500,7 +6529,8 @@ const Models: Model[] = [{
         }],
         "casting": {
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "spirit"
         },
         "armor": 2,
         "discipline": 10,
@@ -6903,7 +6933,8 @@ const Models: Model[] = [{
         }],
         "casting": {
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "energy"
         },
         "armor": 2,
         "discipline": 8,
@@ -7243,7 +7274,8 @@ const Models: Model[] = [{
         }],
         "casting": {
             "rating": 10,
-            "power": 15
+            "power": 15,
+            "type": "energy"
         },
         "armor": 2,
         "discipline": 8,
