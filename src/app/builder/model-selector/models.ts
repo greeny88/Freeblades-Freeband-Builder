@@ -6936,7 +6936,7 @@ const Models: Model[] = [{
     "value": 35,
     "race": "Chaler"
 },{
-    "factions": ["Azura Windborne","Eclipse Sisterhood"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn"],
     "primaryFaction": ["Eclipse Sisterhood"],
     "name": "Sky Sister",
     "displayName": "Sky Sister",
@@ -6963,7 +6963,7 @@ const Models: Model[] = [{
     "value": 45,
     "race": "Chaler"
 },{
-    "factions": ["Falkaaran Adventurers"],
+    "factions": ["Falkaaran Adventurers","Ravenblade Mercenaries","Haradelan Questers"],
     "primaryFaction": ["Falkaaran Adventurers"],
     "name": "Knight Immolator",
     "displayName": "Knight Immolator",
@@ -6992,7 +6992,7 @@ const Models: Model[] = [{
     "value": 45,
     "race": "Chaler"
 },{
-    "factions": ["Koronnan Moonsworn"],
+    "factions": ["Koronnan Moonsworn","Eclipse Sisterhood"],
     "primaryFaction": ["Koronnan Moonsworn"],
     "name": "Red Lancer",
     "displayName": "Red Lancer",
@@ -7024,7 +7024,7 @@ const Models: Model[] = [{
     "value": 42,
     "race": "Koronnan"
 },{
-    "factions": ["Azura Windborne","Mershael Corsairs"],
+    "factions": ["Azura Windborne","Mershael Corsairs","Eclipse Sisterhood"],
     "primaryFaction": ["Mershael Corsairs"],
     "name": "Kyutokar",
     "displayName": "Kyutokar",
