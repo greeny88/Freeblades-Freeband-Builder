@@ -105,10 +105,12 @@ export class BuilderComponent implements OnInit {
         let allyFollowerCount: number = 0;
         let allyHeroCount: number = 0;
         let casterCount: number = 0;
+        let casterType: string | undefined;
         this.completeFollowerCount = 0;
         this.completeHeroCount = 0;
         this.errorMessages = [];
         let factionFlyFound: boolean = false;
+        let familiarCount: number = 0;
         this.freebandBaseValue = 0;
         this.freebandTotalValue = 0
         let heroCount: number = 0;
@@ -193,8 +195,13 @@ export class BuilderComponent implements OnInit {
                 this.scoutingPoints += 2;
             }
 
-            if ('casting' in model.stats) {
+            if (model.stats.casting) {
                 casterCount++;
+                casterType = model.stats.casting.type;
+            }
+
+            if (model.stats.talentList?.includes('Familiar')) {
+                familiarCount++;
             }
 
             if (model.stats.skillList?.includes('Perform')) {
@@ -271,6 +278,14 @@ export class BuilderComponent implements OnInit {
         const casterLimit: number = (this.faction === 'Koronnan Moonsworn') ? 2 : 1;
         if (casterCount > casterLimit) {
             this.addErrorMessage('You have too many casters.');
+        }
+
+        if (casterType != 'spirit' && familiarCount > 0) {
+            this.addErrorMessage('Only spirit casters can take familiars.');
+        }
+
+        if (familiarCount > casterCount) {
+            this.addErrorMessage('You have too many familiars.');
         }
 
         if (performerCount > 1) {

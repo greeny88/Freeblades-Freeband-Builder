@@ -1475,7 +1475,7 @@ const Models: Model[] = [{
             "agility": 10,
             "spirit": 10
         },
-        "talents": ["Fly[Low, 10]","Hit and Run","Nimble","Nimble","Scout","Demon"],
+        "talents": ["Fly[Low,SPD 10]","Hit and Run","Nimble","Nimble","Scout","Demon"],
         "speed": 5,
         "melee": [{
             "rating": 10,
@@ -6985,7 +6985,7 @@ const Models: Model[] = [{
         }],
         "armor": 3,
         "discipline": 10,
-        "talents": ["Cavalry","Light Cavalry","Dodge","Scout","Harasser","Marksman","Fly[Low,SPD10]","Stable Shot[d10]"],
+        "talents": ["Cavalry","Light Cavalry","Dodge","Scout","Harasser","Marksman","Fly[Low,SPD 10]","Stable Shot[d10]"],
         "abilities": {
             "agility": 12
         }
@@ -7069,7 +7069,7 @@ const Models: Model[] = [{
         }],
         "armor": 3,
         "discipline": 10,
-        "talents": ["Cavalry","Dodge","Dodge","Vay","Hit and Run","Fly[Low SPD 10]"],
+        "talents": ["Cavalry","Dodge","Dodge","Vay","Hit and Run","Fly[Low, SPD 10]"],
         "abilities": {
             "agility": 12
         }
@@ -7158,7 +7158,7 @@ const Models: Model[] = [{
         "shield": "S",
         "armor": 4,
         "discipline": 10,
-        "talents": ["Cavalry","Parry","Fearsome","Tough","Backstep","Swoop[Talon]","Fly[Low SPD 8]","Darkvision"]
+        "talents": ["Cavalry","Parry","Fearsome","Tough","Backstep","Swoop[Talon]","Fly[Low, SPD 8]","Darkvision"]
     },
     "gender": "M",
     "value": 50,
@@ -7747,6 +7747,257 @@ const Models: Model[] = [{
     "gender": "M",
     "value": 52,
     "race": "Chaler"
+},{
+    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "primaryFaction": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "name": "Iztrazal",
+    "displayName": "Iztrazal",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 5,
+        "melee":[{
+            "name": "Bite",
+            "rating": 6,
+            "damage": 4
+        }],
+        "armor": 5,
+        "discipline": 4,
+        "talents": ["Familiar","Animal","Insignificant","Disguise","Armored Deflection","Spellhammer"],
+        "abilities": {
+            "strength": 10
+        }
+    },
+    "gender": "M",
+    "value": 13,
+    "race": "Beast"
+},{
+    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "primaryFaction": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "name": "Owl",
+    "displayName": "Owl",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 1,
+        "melee":[{
+            "name": "Talon",
+            "rating": 6,
+            "damage": 4,
+            "abilities": ["pin"]
+        }],
+        "armor": 2,
+        "discipline": 4,
+        "talents": ["Familiar","Animal","Insignificant","Disguise","Fly[Low, SPD 10]","Starlight Vision","Dodge","Intensify Spell"],
+        "skills": [{
+            "name": "Hunt",
+            "rating": 6
+        }],
+        "abilities": {
+            "agility": 10
+        }
+    },
+    "gender": "M",
+    "value": 14,
+    "race": "Beast"
+},{
+    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "primaryFaction": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "name": "Suralax",
+    "displayName": "Suralax",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 4,
+        "melee":[{
+            "name": "Bite",
+            "rating": 6,
+            "damage": 4,
+            "abilities": ["acd"]
+        }],
+        "range":[{
+            "name": "Acid Spit",
+            "rating": 6,
+            "damage": 0,
+            "distance": 2
+        }],
+        "armor": 2,
+        "discipline": 4,
+        "talents": ["Familiar","Animal","Insignificant","Disguise","Dodge","Fly[Low, SPD 9]","Spellhammer"],
+        "abilities": {
+            "strength": 4
+        }
+    },
+    "gender": "M",
+    "value": 14,
+    "race": "Beast"
+},{
+    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "primaryFaction": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "name": "Voavar",
+    "displayName": "Voavar",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 4,
+        "melee":[{
+            "name": "Sting",
+            "rating": 6,
+            "damage": 4,
+            "abilities": ["ven"]
+        }],
+        "armor": 2,
+        "discipline": 4,
+        "talents": ["Familiar","Animal","Insignificant","Disguise","Dodge","Fly[Low, SPD 8]","Sympathetic Spell"],
+        "abilities": {
+            "strength": 4,
+            "agility": 8
+        }
+    },
+    "gender": "M",
+    "value": 10,
+    "race": "Beast"
+},{
+    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "primaryFaction": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "name": "Wolf",
+    "displayName": "Wolf",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 8,
+        "melee":[{
+            "name": "Bite",
+            "rating": 6,
+            "damage": 8
+        }],
+        "armor": 2,
+        "discipline": 4,
+        "talents": ["Familiar","Animal","Disguise","Arboreal","Fast","Spell Shift"],
+        "skills": [{
+            "name": "Hunt",
+            "rating": 6
+        }]
+    },
+    "gender": "M",
+    "value": 14,
+    "race": "Beast"
+},{
+    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "primaryFaction": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "name": "Fox",
+    "displayName": "Fox",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 8,
+        "melee":[{
+            "name": "Bite",
+            "rating": 6,
+            "damage": 6
+        }],
+        "armor": 2,
+        "discipline": 4,
+        "talents": ["Familiar","Animal","Insignificant","Disguise","Arboreal","Fast","Dodge","Spellbender"],
+        "abilities": {
+            "agility": 8
+        }
+    },
+    "gender": "M",
+    "value": 12,
+    "race": "Beast"
+},{
+    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "primaryFaction": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "name": "Rabbit",
+    "displayName": "Rabbit",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 8,
+        "melee":[{
+            "name": "Bite",
+            "rating": 6,
+            "damage": 4
+        }],
+        "armor": 2,
+        "discipline": 4,
+        "talents": ["Familiar","Animal","Insignificant","Disguise","Arboreal","Fast","Dodge","Selective"],
+        "abilities": {
+            "agility": 10,
+            "strength": 4
+        }
+    },
+    "gender": "M",
+    "value": 11,
+    "race": "Beast"
+},{
+    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "primaryFaction": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "name": "Shunk",
+    "displayName": "Shunk",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 6,
+        "melee":[{
+            "name": "Bite",
+            "rating": 6,
+            "damage": 4
+        }],
+        "armor": 2,
+        "discipline": 4,
+        "talents": ["Familiar","Animal","Insignificant","Disguise","Arboreal","Skunk Attack","Spell Emanation"]
+    },
+    "gender": "M",
+    "value": 9,
+    "race": "Beast"
+},{
+    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "primaryFaction": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "name": "Squirrel",
+    "displayName": "Squirrel",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 6,
+        "melee":[{
+            "name": "Bite",
+            "rating": 6,
+            "damage": 4
+        }],
+        "armor": 2,
+        "discipline": 4,
+        "talents": ["Familiar","Animal","Insignificant","Disguise","Arboreal","Dodge","Elusive","Spellstretcher"],
+        "abilities": {
+            "agility": 10,
+            "strength": 4
+        }
+    },
+    "gender": "M",
+    "value": 9,
+    "race": "Beast"
+},{
+    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "primaryFaction": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "name": "Stag",
+    "displayName": "Stag",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 8,
+        "melee":[{
+            "name": "Antlers",
+            "rating": 6,
+            "damage": 8
+        }],
+        "armor": 2,
+        "discipline": 4,
+        "talents": ["Familiar","Animal","Disguise","Arboreal","Fast","Wild Charge","Spellbracer"]
+    },
+    "gender": "M",
+    "value": 13,
+    "race": "Beast"
 }];
 
 export  {Models};
