@@ -106,7 +106,7 @@ export interface Model {
     factions: (typeof Factions[number])[],
     gender: "M" | "F",
     name: string,
-    primaryFaction: (typeof Factions[number] | "Wandering Allies")[],
+    primaryFaction: (typeof Factions[number] | "Wandering Allies" | "Familiar")[],
     race: "Azura" | "Beast" | "Chaler" | "Demon" | "Faeler" | "Kandoran" | "Koronnan" | "Kuzaarik" | "Shakrim" | "Symker" | "Trilian"
     stats: ModelStats,
     trustedFactions?: (typeof Factions[number])[],

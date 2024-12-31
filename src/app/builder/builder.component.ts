@@ -100,7 +100,7 @@ export class BuilderComponent implements OnInit {
         if (!this.faction) {
             return;
         }
-        let allyFaction: (FactionList | "Wandering Allies")[] | undefined = undefined;
+        let allyFaction: (FactionList | "Wandering Allies" | "Familiar")[] | undefined = undefined;
         let allyFlyFound: boolean = false;
         let allyFollowerCount: number = 0;
         let allyHeroCount: number = 0;

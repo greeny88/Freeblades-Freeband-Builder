@@ -76,19 +76,24 @@ export class ModelSelectorComponent {
                     let model: Model = Object.assign({}, currentmodel);
                     let allyText;
                     // TODO: need to handle for Lightbringer based on leader selected
-                    if (model.trustedFactions && model.trustedFactions.includes(this.faction)) {
-                        allyText = 'Ally[Trusted]';
-                        if (model.name === 'Lightbringer') {
-                            allyText = 'Ally[Trusted/Independent]';
+                    // TODO: need to add ally to familiar only when caster is also an ally.
+                    if (!model.stats.talents?.includes('Familiar')) {
+                        if (model.trustedFactions && model.trustedFactions.includes(this.faction)) {
+                            allyText = 'Ally[Trusted]';
+                            if (model.name === 'Lightbringer') {
+                                allyText = 'Ally[Trusted/Independent]';
+                            }
+                        } else if (!model.primaryFaction.includes(this.faction)) {
+                            allyText = 'Ally[Independent]';
                         }
-                    } else if (!model.primaryFaction.includes(this.faction)) {
-                        allyText = 'Ally[Independent]';
-                    }
-                    if (allyText) {
-                        if (model.stats.talents) {
-                            model.stats.talents.push(allyText);
-                        } else {
-                            model.stats.talents = [allyText];
+                        if (allyText) {
+                            if (model.stats.talents) {
+                                if (!model.stats.talents.includes(allyText)) {
+                                    model.stats.talents.push(allyText);
+                                }
+                            } else {
+                                model.stats.talents = [allyText];
+                            }
                         }
                     }
                     if (model.factions.includes(this.faction)) {
@@ -143,19 +148,25 @@ export class ModelSelectorComponent {
                         return model;
                     }
                     let allyText;
-                    if (model.trustedFactions && model.trustedFactions.includes(this.faction)) {
-                        allyText = 'Ally[Trusted]';
-                        if (model.name === 'Lightbringer') {
-                            allyText = 'Ally[Trusted/Independent]';
+                    // TODO: need to handle for Lightbringer based on leader selected
+                    // TODO: need to add ally to familiar only when caster is also an ally.
+                    if (!model.stats.talents?.includes('Familiar')) {
+                        if (model.trustedFactions && model.trustedFactions.includes(this.faction)) {
+                            allyText = 'Ally[Trusted]';
+                            if (model.name === 'Lightbringer') {
+                                allyText = 'Ally[Trusted/Independent]';
+                            }
+                        } else if (!model.primaryFaction.includes(this.faction)) {
+                            allyText = 'Ally[Independent]';
                         }
-                    } else if (!model.primaryFaction.includes(this.faction)) {
-                        allyText = 'Ally[Independent]';
-                    }
-                    if (allyText) {
-                        if (model.stats.talents) {
-                            model.stats.talents.push(allyText);
-                        } else {
-                            model.stats.talents = [allyText];
+                        if (allyText) {
+                            if (model.stats.talents) {
+                                if (!model.stats.talents.includes(allyText)) {
+                                    model.stats.talents.push(allyText);
+                                }
+                            } else {
+                                model.stats.talents = [allyText];
+                            }
                         }
                     }
                     return model;
