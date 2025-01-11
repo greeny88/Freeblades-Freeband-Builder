@@ -791,7 +791,7 @@ const Models: Model[] = [{
         "talents": ["Parry","Bladeflash"],
         "speed": 6,
         "melee": [{
-            "rating": 12,
+            "rating": 10,
             "name": "Sakhazet"
         }],
         "shield": "L",
