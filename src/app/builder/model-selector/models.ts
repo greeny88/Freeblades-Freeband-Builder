@@ -5413,7 +5413,7 @@ const Models: Model[] = [{
         "shield":"AN",
         "armor": 4,
         "discipline": 10,
-        "talents": ["Sergeant[Bludgeoneers,Krang]", "Accurate Strike", "Tough", "Tough", "Strong-arm","Active Defense","Lash Attack","Menace","Menace"]
+        "talents": ["Accurate Strike", "Tough", "Tough", "Strong-arm","Active Defense","Lash Attack","Menace","Menace"]
     },
     "gender": "M",
     "value": 30,
