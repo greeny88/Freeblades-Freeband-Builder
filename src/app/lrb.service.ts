@@ -7,7 +7,7 @@ export class LRBService {
     altLeaderRules: string;
 
     constructor() {
-        this.version = '24-2';
+        this.version = '24-3';
         this.buildingRules = '104';
         this.altLeaderRules = '107';
     }

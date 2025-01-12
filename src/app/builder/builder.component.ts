@@ -100,15 +100,17 @@ export class BuilderComponent implements OnInit {
         if (!this.faction) {
             return;
         }
-        let allyFaction: (FactionList | "Wandering Allies")[] | undefined = undefined;
+        let allyFaction: (FactionList | "Wandering Allies" | "Familiar")[] | undefined = undefined;
         let allyFlyFound: boolean = false;
         let allyFollowerCount: number = 0;
         let allyHeroCount: number = 0;
         let casterCount: number = 0;
+        let casterType: string | undefined;
         this.completeFollowerCount = 0;
         this.completeHeroCount = 0;
         this.errorMessages = [];
         let factionFlyFound: boolean = false;
+        let familiarCount: number = 0;
         this.freebandBaseValue = 0;
         this.freebandTotalValue = 0
         let heroCount: number = 0;
@@ -193,8 +195,13 @@ export class BuilderComponent implements OnInit {
                 this.scoutingPoints += 2;
             }
 
-            if ('casting' in model.stats) {
+            if (model.stats.casting) {
                 casterCount++;
+                casterType = model.stats.casting.type;
+            }
+
+            if (model.stats.talentList?.includes('Familiar')) {
+                familiarCount++;
             }
 
             if (model.stats.skillList?.includes('Perform')) {
@@ -271,6 +278,14 @@ export class BuilderComponent implements OnInit {
         const casterLimit: number = (this.faction === 'Koronnan Moonsworn') ? 2 : 1;
         if (casterCount > casterLimit) {
             this.addErrorMessage('You have too many casters.');
+        }
+
+        if (casterType != 'spirit' && familiarCount > 0) {
+            this.addErrorMessage('Only spirit casters can take familiars.');
+        }
+
+        if (familiarCount > casterCount) {
+            this.addErrorMessage('You have too many familiars.');
         }
 
         if (performerCount > 1) {
@@ -564,31 +579,6 @@ export class BuilderComponent implements OnInit {
     }
 
     private grularRules(model: Model): string | undefined {
-        let demonCount = 0;
-        let totalCount = 0;
-        let nonMarauderMountedFound = false;
-        let gadarlFound = false;
-        let gadarlCount = 0;
-        for (let key in this.models) {
-            if (this.models[key].stats.talentList?.includes('Demon')) {
-                demonCount++;
-                if (this.models[key].name === 'Gadarl') {
-                    gadarlFound = true;
-                    gadarlCount++;
-                }
-            }
-            if (this.models[key].displayName.includes('Mounted') && this.models[key].name !== 'Marauder') {
-                nonMarauderMountedFound = true;
-            }
-            totalCount++;
-        }
-        if (demonCount > totalCount) {
-            return 'Grular may not have more demon models than non-demon models.';
-        }
-        const demonCountMinusGadarl = (gadarlFound) ? demonCount - gadarlCount : demonCount;
-        if (nonMarauderMountedFound && demonCountMinusGadarl > 0) {
-            return 'Grular may not have demon models other than Gadarl with non-Marauder mounted models.';
-        }
         return undefined;
     }
 
@@ -626,6 +616,7 @@ export class BuilderComponent implements OnInit {
     }
 
     private koronnanRules(model: Model): string | undefined {
+        // TODO: add familiar check owl/priestess and wolf/priest
         let mizrakaiCount: number = 0;
         let priestCount: number = 0;
         let priestessCount: number = 0;
@@ -706,8 +697,9 @@ export class BuilderComponent implements OnInit {
                 models.push(this.models[key].name);
             }
         }
-        const checkForDups = models.filter(modelName => modelName !== 'Ravenblade Soldier');
-        return ((new Set(checkForDups)).size !== checkForDups.length) ? 'Mercenaries may not have duplicate heroes except for the Ravenblade Soldier.' : undefined;
+        const noDupModels = ['Mizrakai','Nightwhisper','Stag Warrior','Stalker','Takar Hunter','Truthseeker'];
+        const checkForDups = models.filter(modelName => noDupModels.includes(modelName));
+        return ((new Set(checkForDups)).size !== checkForDups.length) ? `Mercenaries may not have duplicate heroes of ${noDupModels.join(', ')}.` : undefined;
     }
 
     private shakrimRules(model: Model): string | undefined {
