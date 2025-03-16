@@ -1980,13 +1980,6 @@ const Models: Model[] = [{
         "discipline": 4,
         "type": "Follower",
         "talents": ["Flurry"],
-        "skills": [{
-            "name": "Camouflage",
-            "rating": 6
-        },{
-            "name": "Hunt",
-            "rating": 6
-        }],
         "speed": 7,
         "melee": [{
             "rating": 6,
@@ -5069,7 +5062,7 @@ const Models: Model[] = [{
         }],
         "shield": "S",
         "armor": 5,
-        "discipline": 12,
+        "discipline": 10,
         "talents": ["Parry","Parry","Deflect","Shield Bash"],
         "veteran": [{
             "name": "Sergeant[Faeler Swordsman]",
