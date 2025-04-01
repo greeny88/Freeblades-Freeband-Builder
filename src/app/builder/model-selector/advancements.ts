@@ -141,8 +141,8 @@ const MagicItems: Items[] = [{
     advancement:'KNW',
     cost:3
 },{
-    name:'Divining Rod',
-    advancement:'Find',
+    name:'Adelsa\'s Metronome',
+    advancement:'Reduced Performance penalty',
     cost:3
 },{
     name:'Boots of Leaping',
@@ -277,12 +277,12 @@ const MagicItems: Items[] = [{
     advancement:'Casualty reroll',
     cost:3
 },{
-    name:'Belt of Contempt',
-    advancement:'Hate[MAR]',
+    name:'Mirrored Bracers',
+    advancement:'Bladeflash',
     cost:3
 },{
-    name:'Soldier\'s Boots',
-    advancement:'March',
+    name:'Mallok\'s Gloves',
+    advancement:'Feint',
     cost:3
 },{
     name:'Zakzin\'s Bones',
@@ -293,8 +293,8 @@ const MagicItems: Items[] = [{
     advancement:'Missle Parry',
     cost:3
 },{
-    name:'Goblet of Glory',
-    advancement:'Bloodstruck',
+    name:'Eachinn\s Heml',
+    advancement:'Bonecrusher',
     cost:3
 },{
     name:'Ring of Fire',
@@ -325,8 +325,8 @@ const MagicItems: Items[] = [{
     advancement:'1dl counterspell',
     cost:3
 },{
-    name:'Ghost Veil',
-    advancement:'Spirit',
+    name:'Winged Boots',
+    advancement:'Fly[Low, SPD 5]',
     cost:3
 },{
     name:'Hunter\'s Lasso',
@@ -337,8 +337,8 @@ const MagicItems: Items[] = [{
     advancement:'Lucky',
     cost:3
 },{
-    name:'Scales of Nespetos',
-    advancement:'Cheaper Gear',
+    name:'Shackles of Gror',
+    advancement:'Confine',
     cost:3
 },{
     name:'Eliopor\'s Ring',
