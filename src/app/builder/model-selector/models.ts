@@ -774,7 +774,7 @@ const Models: Model[] = [{
             "power": 15,
             "type": "spirit"
         },
-        "armor": 4
+        "armor": 2
     },
     "type": "Caster",
     "value": 31,
