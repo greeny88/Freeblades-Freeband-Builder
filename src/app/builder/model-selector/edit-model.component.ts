@@ -10,7 +10,7 @@ import { MatRadioChange } from '@angular/material/radio';
     templateUrl: './edit-model.component.html'
 })
 export class EditModelComponent {
-    advancements: string[] = ['MAR','RAR','CAR','DISC','SPD',...Abilities,...Skills,...Talents].sort();
+    advancements: string[] = ['MAR','RAR','CAR','DISC','SPD','Rise of a Hero',...Abilities,...Skills,...Talents].sort();
     injuries: string[] = [...Abilities, 'DISC', 'SPD', 'Reluctant', 'Hate[faction]'].sort();
     items: any = [...Equipment, ...MagicItems].sort((a,b) => {
         if (a.name.toLowerCase() > b.name.toLowerCase()) {

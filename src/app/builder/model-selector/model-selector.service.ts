@@ -130,6 +130,12 @@ export class ModelSelectorService {
                 }
                 return;
             }
+            if (advancementName === 'Rise of a Hero') {
+                for (let abilityName in abilities) {
+                    abilities[abilityName] = abilities[abilityName] + 2;
+                }
+                stats.discipline += 2;
+            }
             if (!('talents' in stats)) {
                 stats.talents = [];
             }
@@ -251,7 +257,7 @@ export class ModelSelectorService {
         let lifePoints: number = (stats.type === 'Hero') ? 2 : 1;
         if (stats.talents) {
             for (let talent of stats.talents) {
-                if (['Leader', 'Tough'].indexOf(talent) > -1) {
+                if (['Leader', 'Tough', 'Rise of a Hero'].indexOf(talent) > -1) {
                     lifePoints++;
                 }
             }
