@@ -6811,7 +6811,7 @@ const Models: Model[] = [{
     "value": 10,
     "race": "Kandoran"
 },{
-    "factions": ["Koronnan Moonsworn"],
+    "factions": ["Koronnan Moonsworn", "Eclipse Sisterhood"],
     "primaryFaction": ["Koronnan Moonsworn"],
     "name": "Skirmisher",
     "displayName": "Skirmisher",
