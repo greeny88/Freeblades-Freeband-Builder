@@ -6799,12 +6799,12 @@ const Models: Model[] = [{
             "rating": 6,
             "name": "Long Knife"
         }],
-        "armor": 4,
+        "armor": 2,
         "discipline": 6,
         "talents": ["Infiltrate","Scrounge"],
         "skills": [{
             "name": "Find",
-            "rating": 8
+            "rating": 10
         }]
     },
     "gender": "M",
