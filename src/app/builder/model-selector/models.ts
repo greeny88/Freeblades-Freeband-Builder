@@ -1136,6 +1136,31 @@ const Models: Model[] = [{
     "gender": "F",
     "race": "Chaler"
 },{
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Mershael Corsairs"],
+    "primaryFaction": ["Mershael Corsairs"],
+    "name": "Skytracer",
+    "displayName": "Skytracer",
+    "stats": {
+        "discipline": 8,
+        "type": "Hero",
+        "talents": ["Celestial Magic: Skytracer","Spell Riposte","Quick"],
+        "speed": 7,
+        "melee": [{
+            "rating": 6,
+            "name": "Staff"
+        }],
+        "casting": {
+            "power": 15,
+            "rating": 10,
+            "type": "spirit"
+        },
+        "armor": 2
+    },
+    "type": "Caster",
+    "value": 31,
+    "gender": "M",
+    "race": "Chaler"
+},{
     "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn","Mershael Corsairs"],
     "primaryFaction": ["Mershael Corsairs"],
     "name": "Kayhar",
@@ -1152,9 +1177,9 @@ const Models: Model[] = [{
             "rating": 10,
             "name": "Kasari"
         }],
-        "armor": 3,
+        "armor": 5,
         "veteran": [{
-            "name": "Sergeant[Seafarer,DeckGunner]",
+            "name": "Sergeant[Seafarer,Deck Gunner]",
             "cost": 2
         }]
     },
@@ -1204,7 +1229,7 @@ const Models: Model[] = [{
     "stats": {
         "discipline": 6,
         "type": "Follower",
-        "talents": ["Amphibious"],
+        "talents": ["Amphibious","Quick"],
         "speed": 7,
         "melee": [{
             "rating": 8,
@@ -1704,7 +1729,7 @@ const Models: Model[] = [{
     "gender": "F",
     "race": "Chaler"
 },{
-    "factions": ["Azura Windborne","Eclipse Sisterhood"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Mershael Corsairs"],
     "primaryFaction": ["Eclipse Sisterhood"],
     "name": "Suneater",
     "displayName": "Suneater",
@@ -1729,7 +1754,7 @@ const Models: Model[] = [{
     "gender": "F",
     "race": "Chaler"
 },{
-    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn","Mershael Corsairs"],
     "primaryFaction": ["Eclipse Sisterhood"],
     "name": "Shadow Dancer",
     "displayName": "Shadow Dancer",
@@ -1752,7 +1777,7 @@ const Models: Model[] = [{
     "gender": "F",
     "race": "Chaler"
 },{
-    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn","Mershael Corsairs"],
     "primaryFaction": ["Eclipse Sisterhood"],
     "name": "Secret Sister",
     "displayName": "Secret Sister",
@@ -1806,7 +1831,7 @@ const Models: Model[] = [{
     "gender": "F",
     "race": "Chaler"
 },{
-    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn","Mershael Corsairs"],
     "primaryFaction": ["Eclipse Sisterhood"],
     "name": "Izchaki Chaser",
     "displayName": "Izchaki Chaser",
@@ -1837,7 +1862,7 @@ const Models: Model[] = [{
     "gender": "F",
     "race": "Chaler"
 },{
-    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn","Mershael Corsairs"],
     "primaryFaction": ["Eclipse Sisterhood"],
     "name": "Manslayer",
     "displayName": "Manslayer Sniper",
@@ -1871,7 +1896,7 @@ const Models: Model[] = [{
     "gender": "F",
     "race": "Chaler"
 },{
-    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn","Mershael Corsairs"],
     "primaryFaction": ["Eclipse Sisterhood"],
     "name": "Manslayer",
     "displayName": "Manslayer Assassin",
@@ -1898,7 +1923,7 @@ const Models: Model[] = [{
     "gender": "F",
     "race": "Chaler"
 },{
-    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn","Mershael Corsairs"],
     "primaryFaction": ["Eclipse Sisterhood"],
     "name": "Rebel Maiden",
     "displayName": "Rebel Maiden",
@@ -1921,7 +1946,7 @@ const Models: Model[] = [{
     "gender": "F",
     "race": "Chaler"
 },{
-    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn","Mershael Corsairs"],
     "primaryFaction": ["Eclipse Sisterhood"],
     "name": "Throatseeker",
     "displayName": "Throatseeker",
@@ -1941,7 +1966,7 @@ const Models: Model[] = [{
     "gender": "F",
     "race": "Chaler"
 },{
-    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn","Mershael Corsairs"],
     "primaryFaction": ["Eclipse Sisterhood"],
     "name": "Manhunter",
     "displayName": "Manhunter",
@@ -1972,7 +1997,7 @@ const Models: Model[] = [{
     "gender": "F",
     "race": "Chaler"
 },{
-    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn","Mershael Corsairs"],
     "primaryFaction": ["Eclipse Sisterhood"],
     "name": "Untamed",
     "displayName": "Untamed",
@@ -4770,7 +4795,7 @@ const Models: Model[] = [{
     "value": 13,
     "race": "Shakrim"
 },{
-    "factions": ["Azura Windborne","Eclipse Sisterhood"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Mershael Corsairs"],
     "primaryFaction": ["Eclipse Sisterhood"],
     "name": "Battle Sister",
     "displayName": "Battle Sister",
@@ -5572,7 +5597,7 @@ const Models: Model[] = [{
     "value": 35,
     "race": "Koronnan"
 },{
-    "factions": ["Eclipse Sisterhood","Koronnan Moonsworn"],
+    "factions": ["Eclipse Sisterhood","Koronnan Moonsworn","Mershael Corsairs"],
     "primaryFaction": ["Koronnan Moonsworn"],
     "name": "Koronnan Bladebrother",
     "displayName": "Koronnan Bladebrother",
@@ -6960,7 +6985,7 @@ const Models: Model[] = [{
     "value": 35,
     "race": "Chaler"
 },{
-    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn","Mershael Corsairs"],
     "primaryFaction": ["Eclipse Sisterhood"],
     "name": "Sky Sister",
     "displayName": "Sky Sister",

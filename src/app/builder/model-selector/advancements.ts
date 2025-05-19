@@ -825,6 +825,12 @@ const RangeWeapons: Omit<RangeWeapon, 'rating'>[] = [{
     distance: 6,
     abilities: ['thr','ent']
 },{
+    name: 'Bolter',
+    damage: 6,
+    damageBonus: 1,
+    distance: 8,
+    abilities: ['imp','slr']
+},{
     name: 'Bow',
     damage: 6,
     distance: 8,
