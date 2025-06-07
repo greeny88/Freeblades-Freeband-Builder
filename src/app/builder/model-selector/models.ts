@@ -1705,7 +1705,7 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Demon"
 },{
-    "factions": ["Eclipse Sisterhood","Koronnan Moonsworn"],
+    "factions": ["Eclipse Sisterhood"],
     "primaryFaction": ["Eclipse Sisterhood"],
     "name": "Nemesis",
     "displayName": "Nemesis",
@@ -4795,7 +4795,7 @@ const Models: Model[] = [{
     "value": 13,
     "race": "Shakrim"
 },{
-    "factions": ["Azura Windborne","Eclipse Sisterhood","Mershael Corsairs"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Mershael Corsairs","Koronnan Moonsworn"],
     "primaryFaction": ["Eclipse Sisterhood"],
     "name": "Battle Sister",
     "displayName": "Battle Sister",
