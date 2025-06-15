@@ -280,7 +280,7 @@ export class BuilderComponent implements OnInit {
             this.addErrorMessage('You have too many casters.');
         }
 
-        if (casterType != 'spirit' && familiarCount > 0) {
+        if (casterType == 'energy' && familiarCount > 0) {
             this.addErrorMessage('Only spirit casters can take familiars.');
         }
 
