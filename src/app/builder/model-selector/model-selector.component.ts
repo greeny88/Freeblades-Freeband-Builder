@@ -291,6 +291,9 @@ export class ModelSelectorComponent {
                 this.model.value += 1;
             }
         }
+        if (this.model.stats?.items) {
+            this.model.value = this.model.stats.items.reduce((sum: number, current:any) => current.cost + sum, model.value);
+        }
         this.model.stats = (<any>Object).assign(this.model.stats, this.modelSelectorService.calculateStats(model.stats, this.model.value));
         this.model.component_id = this.componentId;
         this.onModelSelected.emit(this.model);

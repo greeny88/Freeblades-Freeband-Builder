@@ -203,7 +203,6 @@ export class ModelSelectorService {
                 if ('advancement' in item) {
                     this.addAdvancement(stats, abilities, item.advancement);
                 }
-                modelValue += item.cost;
             }
         }
 
