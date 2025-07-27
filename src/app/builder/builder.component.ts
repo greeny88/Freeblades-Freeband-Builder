@@ -57,7 +57,8 @@ export class BuilderComponent implements OnInit {
             'Traazorite Crusaders': this.traazoriteRules,
             'Trilian Seekers': this.trilianRules,
             'Urdaggar Tribes of Ruin': this.urdaggarRuinRules,
-            'Urdaggar Tribes of Valor': this.urdaggarValorRules
+            'Urdaggar Tribes of Valor': this.urdaggarValorRules,
+            'Varkraalan Unchained': this.varkraalanRules
         };
         this.leaderId = this.uuidv4();
         this.casterId = this.uuidv4();
@@ -583,6 +584,7 @@ export class BuilderComponent implements OnInit {
     }
 
     private haradelanRules(model: Model): string | undefined {
+        // TODO: only one Stalker allowed
         if (model.name.indexOf("Sho'pel") > -1) {
             let ravenFound: boolean = false;
             for (let key in this.models) {
@@ -640,33 +642,20 @@ export class BuilderComponent implements OnInit {
         if (priestessCount > 1) {
             return 'Koronnan can only have one Moons Priestess.'
         }
-
-        if (this.limit >= 200) {
-            let priestCount: number = 0;
-            for (let key in this.models) {
-                if (this.models[key].name.indexOf("Moons Priest") > -1) {
-                    priestCount++;
-                }
-            }
-            if (priestCount != 2) {
-                return "Koronnan must have both Moons Priest and Moons Priestess when the freeband's base value is 200+."
-            }
-        }
         return undefined;
     }
 
     private kuzaarikRules(model: Model): string | undefined {
+        // TODO: add Varkraalan no caster rule
         if (model.name.indexOf('Jhenkar') > -1) {
             let shadowFound: boolean = false;
             for (let key in this.models) {
                 if (this.models[key].name === 'Shadow Hunter') {
                     shadowFound = true;
-                    if (model.displayName.indexOf(this.models[key].type) < 0) {
-                        return 'The Jhenkar selection must match the selected Shadow Hunter.';
-                    }
                 }
             }
             if (!shadowFound) {
+                // TODO: this is rule still in place? Part of Bonded?
                 return 'Jhenkar can only be used along side a Shadow Hunter.';
             }
         }
@@ -740,6 +729,11 @@ export class BuilderComponent implements OnInit {
     }
 
     private urdaggarValorRules(model: Model): string | undefined {
+        return undefined;
+    }
+
+    private varkraalanRules(model: Model): string | undefined {
+        // TODO: add rules for monks and truthseeker
         return undefined;
     }
 

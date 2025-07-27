@@ -9,7 +9,7 @@ export interface Items {
     name: string
 }
 
-export const MeleeWeaponNames: "Agukrich" | "Antlers" | "Arantish" | "Banehammer" | "Barbed Javelin" | "Barbed Whip" | "Battleaxe" | "Beak" | "Bite" | "Boarding Pike" | "Broadsword" | "Claw" | "Claw 2x" | "Cleaver" | "Club" | "Cutlass" | "Dagger" | "Dire Claw" | "Falchion" | "Fang Blade" | "Fist" | "Fist 2x" | "Flail" | "Gadget" | "Great Club" | "Greatsword" | "Halaztaf" | "Handclaws" | "Hartblade" | "Heavy Falchion" | "Herenkal" | "Hunting Spear" | "Ice Axe" | "Impaler" | "Javelin" | "Kaiba" | "Kasari" | "Knife" | "Kolekar" | "Kranara" | "Lance" | "Long Knife" | "Longspear" | "Longsword (1h)" | "Longsword (2h)" | "Longsword (magic)" | "Mace" | "Moonsglave" | "Moonsickle" | "Morning Star" | "Morph" | "Najana" | "Net" | "Parry Dagger" | "Petadrakh" | "Pike" | "Pit Glave" | "Razorfang" | "Ripper" | "Rusty Blade" | "Saber" | "Sakhazet" | "Sanghara" | "Scythe" | "Shadowspear" | "Short Spear" | "Short Sword" | "Skull Staff" | "Spikedrakh" | "Staff" | "Sting" | "Stinger" | "Tail" | "Talon" | "Taumari" | "Tavsetar" | "Thorn" | "Thresher" | "Toloron" | "Toothed Sword" | "Trident" | "War Axe" | "War Mattock" | "Warhammer" | "Warhorse" | "Web" | "Whip" | "Wolfsword" | "Zeradrakh"
+export const MeleeWeaponNames: "Agukrich" | "Antlers" | "Arantish" | "Banehammer" | "Barbed Javelin" | "Barbed Whip" | "Battleaxe" | "Beak" | "Bite" | "Boarding Pike" | "Broadsword" | "Claw" | "Claw 2x" | "Cleaver" | "Club" | "Cudgel" | "Cutlass" | "Dagger" | "Dire Claw" | "Dreadspear" | "Falchion" | "Fang Blade" | "Fist" | "Fist 2x" | "Flail" | "Gadget" | "Great Club" | "Greatsword" | "Halaztaf" | "Handclaws" | "Hartblade" | "Heavy Falchion" | "Herenkal" | "Hunting Spear" | "Ice Axe" | "Impaler" | "Javelin" | "Kaiba" | "Kasari" | "Knife" | "Kolekar" | "Kranara" | "Lance" | "Long Knife" | "Longspear" | "Longsword (1h)" | "Longsword (2h)" | "Longsword (magic)" | "Mace" | "Moonsglave" | "Moonsickle" | "Morning Star" | "Morph" | "Najana" | "Net" | "Parry Dagger" | "Petadrakh" | "Pike" | "Pit Glave" | "Razorfang" | "Ripper" | "Rusty Blade" | "Saber" | "Sakhazet" | "Sanghara" | "Scythe" | "Shadowspear" | "Short Spear" | "Short Sword" | "Skull Staff" | "Spikedrakh" | "Staff" | "Sting" | "Stinger" | "Strike 2x" | "Tail" | "Talon" | "Taumari" | "Tavsetar" | "Thorn" | "Thresher" | "Toloron" | "Toothed Sword" | "Trident" | "War Axe" | "War Mattock" | "Warhammer" | "Warhorse" | "Web" | "Whip" | "Wolfsword" | "Zeradrakh"
 
 export const RangeWeaponNames: "Acid Spit" | "Agukrich" | "Atlatl" | "Barbed Javelin" | "Blowgun" | "Bolas" | "Bolter" | "Bow" | "Composite Bow" | "Crossbow" | "Double Crossbow" | "Gadoru" | "Grappler" | "Hatchet" | "Herenkal" | "Iron Pinion" | "Javelin" | "Lasso" | "Longbow" | "Morph" | "Poison Pellet" | "Poison Spit" | "Recurved Short Bow" | "Roondar" | "Skullbomb" | "Sling" | "Spider Net" | "Talon" | "Tennko" | "Thorny Vines" | "Vranshar" | "War Axe" | "Water Blast" | "Zishoti"
 
@@ -57,6 +57,7 @@ export interface ModelStats {
     armor: number,
     casting?: {
         altSelected?: boolean,
+        name: string,
         power: number,
         rating: number,
         ratingBonus?: number,
@@ -64,6 +65,11 @@ export interface ModelStats {
     },
     defense?: number,
     discipline: number,
+    focus?: {
+        name: string,
+        rating: number,
+        ratingBonus?: number
+    },
     injuries?: string[],
     items?: Items[],
     itemList?: string,
@@ -80,6 +86,11 @@ export interface ModelStats {
         rating?: number,
         selected?: boolean
     }[],
+    performance?: {
+        name: string,
+        rating: number,
+        ratingBonus?: number
+    },
     range?: (Weapon | RangeWeapon)[],
     shield?: "AN" | "AS" | "B" | "L" | "P" | "S",
     skillBonus?: number,
@@ -97,7 +108,7 @@ export interface ModelStats {
     }[]
 }
 
-export const Factions: ["Azura Windborne","Black Rose Bandits", "Black Thorn Bandits", "The Collective", "Darkgrove Demons", "Demons of Karelon", "Eclipse Sisterhood", "Falkaaran Adventurers", "Grular Invaders", "Haradelan Questers", "Kandoran Deathmasters", "Koronnan Moonsworn", "Kuzaarik Forgers", "Mershael Corsairs", "Ravenblade Mercenaries", "Shakrim Wavestalkers", "Traazorite Crusaders", "Trilian Seekers", "Urdaggar Tribes of Ruin", "Urdaggar Tribes of Valor"];
+export const Factions: ["Azura Windborne","Black Rose Bandits", "Black Thorn Bandits", "The Collective", "Darkgrove Demons", "Demons of Karelon", "Eclipse Sisterhood", "Falkaaran Adventurers", "Grular Invaders", "Haradelan Questers", "Kandoran Deathmasters", "Koronnan Moonsworn", "Kuzaarik Forgers", "Mershael Corsairs", "Ravenblade Mercenaries", "Shakrim Wavestalkers", "Traazorite Crusaders", "Trilian Seekers", "Urdaggar Tribes of Ruin", "Urdaggar Tribes of Valor", "Varkraalan Unchained"];
 
 export interface Model {
     characterName?: string,

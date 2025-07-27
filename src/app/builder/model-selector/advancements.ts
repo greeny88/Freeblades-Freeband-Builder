@@ -570,6 +570,10 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
     name: 'Club',
     damage: 6
 },{
+    name: 'Cudgel',
+    damage: 6,
+    damageBonus: 1
+},{
     name: 'Cutlass',
     damage: 6,
     damageBonus: 1
@@ -579,6 +583,11 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
 },{
     name: 'Dire Claw',
     damage: 6
+},{
+    name: 'Dreadspear',
+    damage: 8,
+    damageBonus: 1,
+    abilities: ['pin']
 },{
     name: 'Falchion',
     damage: 8
