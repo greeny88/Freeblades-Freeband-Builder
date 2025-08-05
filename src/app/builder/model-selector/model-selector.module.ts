@@ -12,7 +12,8 @@ import { EditModelComponent } from './edit-model.component';
 import { ModelSelectorComponent } from './model-selector.component';
 import { ModelSelectorService } from './model-selector.service';
 // TODO: move to shared module
-import { ListPipe } from 'src/app/list.pipe';
+import { SimpleListPipe } from 'src/app/simplelist.pipe';
+import { ComplexListPipe } from 'src/app/complexlist.pipe';
 
 @NgModule({
     imports: [
@@ -28,7 +29,8 @@ import { ListPipe } from 'src/app/list.pipe';
     declarations: [
         EditModelComponent,
         ModelSelectorComponent,
-        ListPipe
+        SimpleListPipe,
+        ComplexListPipe
     ],
     providers: [
         ModelSelectorService

@@ -44,7 +44,8 @@ export class FreebandSetupComponent implements OnInit {
             'Traazorite Crusaders',
             'Trilian Seekers',
             'Urdaggar Tribes of Ruin',
-            'Urdaggar Tribes of Valor'
+            'Urdaggar Tribes of Valor',
+            'Varkraalan Unchained'
         ];
         this.options = {
             freebandLimit: undefined,

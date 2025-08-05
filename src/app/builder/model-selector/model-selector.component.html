@@ -27,12 +27,8 @@
             <div><span class="bold-text">AV: </span>{{model.stats.armor}}</div>
             <div><span class="bold-text">LP: </span>{{model.stats.lifePoints}}</div>
             <div><span class="bold-text">DISC: </span>d{{model.stats.discipline}}</div>
-            <ng-container *ngIf="model.stats.moraleBonus && model.stats.moraleBonus > 0">
-                <div><span class="bold-text">Morale/Fear Bonus: </span>{{model.stats.moraleBonus}}</div>
-            </ng-container>
-            <ng-container *ngIf="model.stats.moraleBonus == 0">
-                <div class="printOnly">&nbsp;</div>
-            </ng-container>
+            <div *ngIf="model.stats.moraleBonus && model.stats.moraleBonus > 0"><span class="bold-text">Morale/Fear Bonus: </span>{{model.stats.moraleBonus}}</div>
+            <div class="printOnly" *ngIf="model.stats.moraleBonus == 0">&nbsp;</div>
         </div>
         <div class="modelDisplayRow" *ngFor="let weapon of model.stats.melee">
             <div><span class="bold-text">MAR: </span>d{{weapon.rating}}<span *ngIf="weapon.ratingBonus && weapon.ratingBonus > 0">&nbsp;+{{weapon.ratingBonus}}</span></div>
@@ -45,9 +41,14 @@
             <div><span class="bold-text">Dmg: </span>d{{weapon.damage}}<span *ngIf="weapon.damageBonus && weapon.damageBonus > 0">&nbsp;+{{weapon.damageBonus}}</span></div>
         </div>
         <div class="modelDisplayRow" *ngIf="model.stats.casting">
-            <div><span class="bold-text">CAR: </span>d{{model.stats.casting.rating}}<span *ngIf="model.stats.casting.ratingBonus && model.stats.casting.ratingBonus > 0">&nbsp;+{{model.stats.casting.ratingBonus}}</span></div>
+            <div><span class="bold-text">CAR: </span>{{model.stats.casting.name}} - d{{model.stats.casting.rating}}<span *ngIf="model.stats.casting.ratingBonus && model.stats.casting.ratingBonus > 0">&nbsp;+{{model.stats.casting.ratingBonus}}</span></div>
             <div><span class="bold-text">Power: </span>{{model.stats.casting.power}}</div>
-            <div class="printOnly">&nbsp;</div>
+        </div>
+        <div class="modelDisplayRow" *ngIf="model.stats.performance">
+            <div><span class="bold-text">Performance: </span>{{ model.stats.performance.name }} - d{{ model.stats.performance.rating }}</div>
+        </div>
+        <div class="modelDisplayRow" *ngIf="model.stats.focus">
+            <div><span class="bold-text">Focus: </span>{{ model.stats.focus.name }} - d{{ model.stats.focus.rating }}<span *ngIf="model.stats.moraleBonus && model.stats.moraleBonus > 0">+{{model.stats.moraleBonus}}</span></div>
         </div>
         <div class="modelDisplayRow">
             <div><span class="bold-text">AGL: </span>d{{model.stats.abilities?.agility}}</div>
@@ -64,11 +65,11 @@
         <div class="modelDisplayRow" *ngIf="model.stats.talentList">
             <div><span class="bold-text">Talents:</span> {{model.stats.talentList}}</div>
         </div>
-        <div class="modelDisplayRow" *ngIf="model.stats.itemList">
-            <div><span class="bold-text">Items:</span> {{model.stats.itemList}}</div>
+        <div class="modelDisplayRow" *ngIf="model.stats.items">
+            <div><span class="bold-text">Items:</span> {{model.stats.items | complexlist:'name'}}</div>
         </div>
         <div class="modelDisplayRow" *ngIf="model.stats.injuries">
-            <div><span class="bold-text">Injuries:</span> {{model.stats.injuries | list}}</div>
+            <div><span class="bold-text">Injuries:</span> {{model.stats.injuries | simplelist}}</div>
         </div>
     </ng-container>
 </div>

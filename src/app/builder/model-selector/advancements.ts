@@ -143,31 +143,31 @@ const MagicItems: Items[] = [{
 },{
     name:'Adelsa\'s Metronome',
     advancement:'Reduced Performance penalty',
-    cost:3
+    cost:2
 },{
     name:'Boots of Leaping',
     advancement:'Jump',
-    cost:3
+    cost:1
 },{
     name:'Cloak of Night',
     advancement:'Ambush',
-    cost:3
+    cost:2
 },{
     name:'Vekul Boots',
     advancement:'Mountaineer', // add Frostfoot
-    cost:3
+    cost:1
 },{
     name:'Belt of Mallok',
     advancement:'Battler',
-    cost:3
+    cost:1
 },{
     name:'Mask of the Wolf',
     advancement:'Fearsome',
-    cost:3
+    cost:2
 },{
     name:'Targeteer\'s Monacle',
     advancement:'RAR',
-    cost:3
+    cost:2
 },{
     name:'Cheljaron\'s Gem',
     advancement:'DEF',
@@ -175,7 +175,7 @@ const MagicItems: Items[] = [{
 },{
     name:'Gallan\'s Boots',
     advancement:'Arboreal',
-    cost:3
+    cost:1
 },{
     name:'Ring of Protection',
     advancement:'AV1',
@@ -187,51 +187,51 @@ const MagicItems: Items[] = [{
 },{
     name:'Gauntlets of Rage',
     advancement:'Frenzy',
-    cost:3
+    cost:5
 },{
     name:'Horn of Pelrat',
     advancement:'Taunt',
-    cost:3
+    cost:1
 },{
     name:'Darlika\'s Boots',
     advancement:'Infiltrate',
-    cost:3
+    cost:1
 },{
     name:'Boots of Quickness',
-    advancement:'SPD',
-    cost:3
+    advancement:'SPD', // TODO: +2 SPD
+    cost:2
 },{
     name:'Lion Helm',
     advancement:'Lion\'s Roar',
-    cost:3
+    cost:1
 },{
     name:'Necklace of Courage',
     advancement:'Steadfast',
-    cost:3
+    cost:2
 },{
     name:'Warrior\'s Bracers',
     advancement:'MAR',
-    cost:3
+    cost:2
 },{
     name:'Jaws of Karul',
     advancement:'MAR d6 | Damage d6',
-    cost:3
+    cost:5
 },{
     name:'Arimol\'s Cloak',
     advancement:'Chameleon',
-    cost:3
+    cost:1
 },{
     name:'Mystic\'s Ring',
     advancement:'CP2', // +2 power
-    cost:3
+    cost:2
 },{
     name:'Coin of Nespetos',
     advancement:'Merchant',
-    cost:3
+    cost:1
 },{
     name:'Yurrik\'s Belt',
     advancement:'Die Hard',
-    cost:3
+    cost:2
 },{
     name:'Ring of Evarin',
     advancement:'Counterspell', // d8 counterspell
@@ -239,55 +239,55 @@ const MagicItems: Items[] = [{
 },{
     name:'Gallan\'s Gloves',
     advancement:'Contain',
-    cost:3
+    cost:1
 },{
     name:'Boots of Sabhir',
     advancement:'Amphibious',
-    cost:3
+    cost:1
 },{
     name:'Eyes of Ariemi',
     advancement:'Accurate Shot',
-    cost:3
+    cost:1
 },{
     name:'Loin\'s Mane',
     advancement:'Assault',
-    cost:3
+    cost:2
 },{
     name:'Horn of the Wolflord',
     advancement:'Battlecry',
-    cost:3
+    cost:4
 },{
     name:'Circlet of Fury',
     advancement:'Furious',
-    cost:3
+    cost:1
 },{
     name:'Togon\'s Mirror',
     advancement:'Deflect',
-    cost:3
+    cost:2
 },{
     name:'Mara\'s Mask',
     advancement:'Disuise',
-    cost:3
+    cost:2
 },{
     name:'Belt of Fazik-kel',
     advancement:'Dodge',
-    cost:3
+    cost:1
 },{
     name:'Heartmender',
-    advancement:'Casualty reroll',
-    cost:3
+    advancement:'Medicine',
+    cost:1
 },{
     name:'Mirrored Bracers',
     advancement:'Bladeflash',
-    cost:3
+    cost:2
 },{
     name:'Mallok\'s Gloves',
     advancement:'Feint',
-    cost:3
+    cost:1
 },{
     name:'Zakzin\'s Bones',
     advancement:'Intensify Spell',
-    cost:3
+    cost:1
 },{
     name:'Bracers of Darien',
     advancement:'Missle Parry',
@@ -295,43 +295,43 @@ const MagicItems: Items[] = [{
 },{
     name:'Eachinn\s Heml',
     advancement:'Bonecrusher',
-    cost:3
+    cost:4
 },{
     name:'Ring of Fire',
     advancement:'Flaming Weapon',
-    cost:3
+    cost:5
 },{
     name:'Mirazham\'s Cloak',
     advancement:'Opportune Strike',
-    cost:3
+    cost:1
 },{
     name:'Raven\'s Wings',
     advancement:'Raven Stance',
-    cost:3
+    cost:1
 },{
     name:'Darkwand',
     advancement:'Gloom 6in',
-    cost:3
+    cost:4
 },{
     name:'Amulet of Guard',
     advancement:'Protector',
-    cost:3
+    cost:1
 },{
     name:'Lens of Sep',
     advancement:'Sharpshooter',
-    cost:3
+    cost:1
 },{
     name:'Tinor\'s Torque',
     advancement:'1dl counterspell',
-    cost:3
+    cost:2
 },{
     name:'Winged Boots',
     advancement:'Fly[Low, SPD 5]',
-    cost:3
+    cost:5
 },{
     name:'Hunter\'s Lasso',
     advancement:'Subdue',
-    cost:3
+    cost:1
 },{
     name:'Necklace of Fate',
     advancement:'Lucky',
@@ -339,23 +339,23 @@ const MagicItems: Items[] = [{
 },{
     name:'Shackles of Gror',
     advancement:'Confine',
-    cost:3
+    cost:1
 },{
     name:'Eliopor\'s Ring',
     advancement:'1dl spell damage',
-    cost:3
+    cost:5
 },{
     name:'Bracelet of Ilvayn',
     advancement:'Accurate Strike',
-    cost:3
+    cost:1
 },{
     name:'Goggles of Mer',
     advancement:'Witchsight',
-    cost:3
+    cost:1
 },{
     name:'Mirror Gem',
     advancement:'Spell Riposte',
-    cost:3
+    cost:10000000000
 },{
     name:'Avalanche',
     advancement:'Artifact [Warhammer d11]',
@@ -570,6 +570,10 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
     name: 'Club',
     damage: 6
 },{
+    name: 'Cudgel',
+    damage: 6,
+    damageBonus: 1
+},{
     name: 'Cutlass',
     damage: 6,
     damageBonus: 1
@@ -579,6 +583,11 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
 },{
     name: 'Dire Claw',
     damage: 6
+},{
+    name: 'Dreadspear',
+    damage: 8,
+    damageBonus: 1,
+    abilities: ['pin']
 },{
     name: 'Falchion',
     damage: 8
