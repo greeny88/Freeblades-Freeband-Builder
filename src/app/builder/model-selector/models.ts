@@ -2384,7 +2384,7 @@ const Models: Model[] = [{
         "armor": 5,
         "veteran": [{
             "cost": 2,
-            "name": "Menance[2]"
+            "name": "Menace[2]"
         }]
     },
     "type": "Leader",
@@ -6768,7 +6768,7 @@ const Models: Model[] = [{
             "rating": 6,
             "name": "Javelin"
         }],
-        "armor": 4,
+        "armor": 2,
         "discipline": 6,
         "talents": ["Fast"]
     },
