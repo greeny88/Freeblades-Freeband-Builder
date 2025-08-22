@@ -3482,12 +3482,12 @@ const Models: Model[] = [{
         }],
         "armor": 3,
         "discipline": 6,
-        "talents": ["Arboreal","Scout"],
+        "talents": ["Arboreal","Scout","Limited"],
         "veteran": [{
             "name": "RAR",
             "cost": 1
         },{
-            "name": "Scrounge",
+            "name": "Camouflage",
             "cost": 1
         }]
     },
