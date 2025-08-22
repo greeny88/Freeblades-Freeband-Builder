@@ -722,6 +722,10 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
     damage: 10,
     abilities: ['swp']
 },{
+    name: 'Ripper',
+    damage: 8,
+    abilities: ['let']
+},{
     name: 'Saber',
     damage: 8
 },{
