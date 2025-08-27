@@ -1,7 +1,7 @@
-const { Models } = require('../src/app/builder/model-selector/models');
+import { Models } from '../src/app/builder/model-selector/models';
 
 // Helper to escape single quotes for SQL
-function esc(str) {
+function esc(str: any) {
   return String(str).replace(/'/g, "''");
 }
 
@@ -46,7 +46,7 @@ Models.slice(0, 50).forEach((m, i) => {
 console.log('\n-- Model Stats');
 Models.slice(0, 50).forEach((m, i) => {
   const s = m.stats;
-  console.log(`INSERT INTO model_stats (model_id, armor, discipline, speed, type, shield, agility, dexterity, endurance, knowledge, spirit, strength) VALUES (${i + 1}, ${s.armor}, ${s.discipline}, ${s.speed}, '${esc(s.type)}', '${esc(s.shield || 'NULL')}', '${s.abilities.agility}', '${s.abilities.dexterity}', '${s.abilities.endurance}', '${s.abilities.knowledge}', '${s.abilities.spirit}', '${s.abilities.strength}');`);
+  console.log(`INSERT INTO model_stats (model_id, armor, discipline, speed, type, shield, agility, dexterity, endurance, knowledge, spirit, strength) VALUES (${i + 1}, ${s.armor}, ${s.discipline}, ${s.speed}, '${esc(s.type)}', '${esc(s.shield || 'NULL')}', '${s.abilities?.agility || 'NULL'}', '${s.abilities?.dexterity}', '${s.abilities?.endurance}', '${s.abilities?.knowledge}', '${s.abilities?.spirit}', '${s.abilities?.strength}');`);
 });
 
-// node tools/generate-inserts.js > inserts.sql
+// npx ts-node tools/generate-inserts.js > inserts.sql
