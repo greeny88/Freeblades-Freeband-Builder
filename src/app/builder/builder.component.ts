@@ -119,7 +119,6 @@ export class BuilderComponent implements OnInit {
         let keldanCount: number = 0;
         let leader: Model | undefined = undefined;
         let performerCount: number = 0;
-        let nightwhisperFound: boolean = false;
         this.totalLifePoints = 0;
         this.scoutingPoints = 0;
         let zetakorFound: boolean = false;
@@ -149,9 +148,6 @@ export class BuilderComponent implements OnInit {
                     }
                     if (!allyFaction.some(f => model.primaryFaction.includes(f))) {
                         this.addErrorMessage(`You can only recruit allies from the same faction.`);
-                    }
-                    if (model.name === 'Nightwhisper') {
-                        nightwhisperFound = true;
                     }
                     if (model.name === 'Zetakor') {
                         zetakorFound = true;
@@ -257,10 +253,6 @@ export class BuilderComponent implements OnInit {
         // TODO: ally rules change with Irvlor and Keldan
         if ( (( (this.completeHeroCount - allyHeroCount) / 2) < allyHeroCount) || (( (this.completeFollowerCount - allyFollowerCount) / 2) < allyFollowerCount) ) {
             this.addErrorMessage('Too many ally models selected. There must be a 2:1 ratio of ally to non-ally models for a given type.');
-        }
-
-        if (nightwhisperFound && leader && leader.gender !== 'F') {
-            this.addErrorMessage('Nightwhisper can only be in a freeband lead by a female.')
         }
 
         if (zetakorFound && leader && leader.gender !== 'M') {
