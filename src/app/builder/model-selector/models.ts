@@ -6171,7 +6171,7 @@ const Models: Model[] = [{
         }
     },
     "gender": "M",
-    "value": 33,
+    "value": 32,
     "race": "Beast"
 },{
     "factions": ["Kuzaarik Forgers","Urdaggar Tribes of Valor"],
