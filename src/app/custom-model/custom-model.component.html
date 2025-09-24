@@ -1,3 +1,79 @@
 <div id="custommodel">
-    You are here
+  <form [formGroup]="characterForm">
+    <div class="character-builder">
+      <h2>Character Builder</h2>
+
+      <div class="form-section">
+        <label>Character Type:</label>
+        <select formControlName="type" (change)="onTypeChange($event)">
+          <option value="Standard">Standard</option>
+          <option value="Leader">Leader</option>
+          <option value="Caster">Caster</option>
+        </select>
+      </div>
+
+      <div class="form-section" formGroupName="stats">
+        <label>Model Type:</label>
+        <select formControlName="type" (change)="onModelTypeChange($event)" [disabled]="isModelTypeDisabled()">
+          <option value="Follower">Follower</option>
+          <option value="Hero">Hero</option>
+        </select>
+
+        <div class="abilities" formGroupName="abilities">
+          <h3>Abilities</h3>
+          <div class="ability-inputs">
+            <label>Strength: 
+              <input type="number" 
+                     formControlName="strength" 
+                     min="0" 
+                     step="2">
+            </label>
+            <label>Agility: 
+              <input type="number" 
+                     formControlName="agility" 
+                     min="0" 
+                     step="2">
+            </label>
+            <label>Dexterity: 
+              <input type="number" 
+                     formControlName="dexterity" 
+                     min="0" 
+                     step="2">
+            </label>
+            <label>Endurance: 
+              <input type="number" 
+                     formControlName="endurance" 
+                     min="0" 
+                     step="2">
+            </label>
+            <label>Knowledge: 
+              <input type="number" 
+                     formControlName="knowledge" 
+                     min="0" 
+                     step="2">
+            </label>
+            <label>Spirit: 
+              <input type="number" 
+                     formControlName="spirit" 
+                     min="0" 
+                     step="2">
+            </label>
+          </div>
+        </div>
+
+        <div class="stats">
+          <label>Armor: <input type="number" formControlName="armor" min="0"></label>
+          <label>Discipline: <input type="number" formControlName="discipline" min="0" step="2"></label>
+          <label>Speed: <input type="number" formControlName="speed" min="0"></label>
+          <label>Shield: <input type="checkbox" formControlName="shield"></label>
+        </div>
+      </div>
+
+      <button (click)="predictCost()">Predict Cost</button>
+
+      <div *ngIf="predictedCost !== null" class="prediction">
+        <h3>Predicted Cost: {{ predictedCost }}</h3>
+      </div>
+    </div>
+  </form>
 </div>

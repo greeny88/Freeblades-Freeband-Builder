@@ -118,7 +118,7 @@ export class ModelSelectorService {
         }
     }
 
-    calculateStats(originalStats: ModelStats, originalValue: number) {
+    calculateStats(originalStats: ModelStats, originalValue: number): stats {
         let stats: ModelStats = JSON.parse(JSON.stringify(originalStats));
         let ability: number = (stats.type === 'Hero') ? 8 : 6;
         let modelValue: number = originalValue;
@@ -314,7 +314,7 @@ export class ModelSelectorService {
             let melee = stats.melee;
             for (let weapon of melee) {
                 if (!('damage' in weapon)) {
-                    return;
+                    continue;
                 }
                 if (weapon.altSelected) {
                     weapon.rating += 2;
@@ -334,7 +334,7 @@ export class ModelSelectorService {
             let range = stats.range;
             for (let weapon  of range) {
                 if (!('damage' in weapon)) {
-                    return;
+                    continue;
                 }
                 if (weapon.altSelected) {
                     weapon.rating += 2;
