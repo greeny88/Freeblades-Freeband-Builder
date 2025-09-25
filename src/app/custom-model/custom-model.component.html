@@ -1,5 +1,6 @@
 <div id="custommodel">
-  <form [formGroup]="characterForm">
+  <div *ngIf="!trainingDone">Loading...</div>
+  <form [formGroup]="characterForm" *ngIf="trainingDone">
     <div class="character-builder">
       <h2>Character Builder</h2>
 
@@ -17,6 +18,36 @@
         <select formControlName="type" (change)="onModelTypeChange($event)" [disabled]="isModelTypeDisabled()">
           <option value="Follower">Follower</option>
           <option value="Hero">Hero</option>
+        </select>
+
+        <label>Melee Weapons</label>
+        <div class="weapon-selections">
+          <div formArrayName="melee">
+            <button type="button" (click)="addMeleeWeapon()">Add Weapon</button>
+            <div *ngFor="let weaponControl of melee.controls; let i = index" [formGroupName]="i" class="weapon-rating-pair">
+              <select formControlName="damage">
+                <option value="">Select Weapon</option>
+                <option *ngFor="let weapon of meleeWeapons" [ngValue]="weapon">{{ weapon.name }}</option>
+              </select>
+              <input type="number" formControlName="rating" min="0" step="2">
+              <button type="button" (click)="removeMeleeWeapon(i)">Remove</button>
+            </div>
+          </div>          
+        </div>
+
+        <label>Ranged Weapons</label>
+        <select multiple formControlName="range">
+          <option *ngFor="let weapon of rangeWeapons" [value]="weapon">{{ weapon.name }}</option>
+        </select>
+
+        <label>Talents</label>
+        <select multiple formControlName="talents">
+          <option *ngFor="let talent of talents" [value]="talent">{{ talent }}</option>
+        </select>
+
+        <label>Skills</label>
+        <select multiple formControlName="skills">
+          <option *ngFor="let skill of skills" [value]="skill">{{ skill }}</option>
         </select>
 
         <div class="abilities" formGroupName="abilities">

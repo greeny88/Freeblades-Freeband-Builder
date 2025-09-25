@@ -70,10 +70,10 @@ export class CostPredictorService {
       character.stats?.speed || 0,
       character.stats?.casting? 1 : 0,
       character.stats?.melee ? character.stats.melee?.reduce((acc, wpn) => {
-          return acc + wpn.rating;
+          return acc + wpn.rating; //TODO: include damage in the weighting
       }, 0) : 0,
       character.stats?.range ? character.stats.range?.reduce((acc, wpn) => {
-          return acc + wpn.rating;
+          return acc + wpn.rating; // TODO: include distance in the weighting (wpn.rating * (1 + (wpn.distance / 100)))
       }, 0) : 0
     ];
 
