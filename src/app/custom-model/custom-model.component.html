@@ -27,12 +27,12 @@
             <div *ngFor="let weaponControl of melee.controls; let i = index" [formGroupName]="i" class="weapon-rating-pair">
               <select formControlName="damage">
                 <option value="">Select Weapon</option>
-                <option *ngFor="let weapon of meleeWeapons" [ngValue]="weapon">{{ weapon.name }}</option>
+                <option *ngFor="let weapon of meleeWeapons" [ngValue]="weapon.damage">{{ weapon.name }}</option>
               </select>
               <input type="number" formControlName="rating" min="0" step="2">
               <button type="button" (click)="removeMeleeWeapon(i)">Remove</button>
             </div>
-          </div>          
+          </div>
         </div>
 
         <label>Ranged Weapons</label>
