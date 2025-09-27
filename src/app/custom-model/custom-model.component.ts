@@ -56,7 +56,7 @@ export class CustomModelComponent implements OnInit {
     });
     await this.costPredictor.trainModel(existingCharacters);
     this.trainingDone = true;
-    this.setAbilitiesForModelType('Follower');
+    this.setAbilitiesForModelType('Hero');
   }
 
   onTypeChange(event: Event): void {
