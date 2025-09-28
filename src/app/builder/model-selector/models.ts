@@ -917,7 +917,7 @@ const Models: Model[] = [{
     "stats": {
         "discipline": 10,
         "type": "Hero",
-        "talents": ["Cavalry","Fly[Low,SPD 10]","Dodge","Scout","Bull Rush","Swoop[Net]","Hit and Run","Fast"],
+        "talents": ["Cavalry","Fly[Low, SPD 10]","Dodge","Scout","Bull Rush","Swoop[Net]","Hit and Run","Fast"],
         "abilities": {
             "agility": 12
         },
@@ -1439,7 +1439,7 @@ const Models: Model[] = [{
             "agility": 10,
             "spirit": 10
         },
-        "talents": ["Fly[Low, 10]","Hit and Run","Nimble","Nimble","Scout","Demon"],
+        "talents": ["Fly[Low, SPD 10]","Hit and Run","Nimble","Nimble","Scout","Demon"],
         "speed": 5,
         "melee": [{
             "rating": 10,
@@ -4937,7 +4937,7 @@ const Models: Model[] = [{
         }],
         "armor": 3,
         "discipline": 10,
-        "talents": ["Dodge","Scout","Harasser","Fly[Low,SPD 10]","Light Cavalry","Calvary"],
+        "talents": ["Dodge","Scout","Harasser","Fly[Low, SPD 10]","Light Cavalry","Calvary"],
         "abilities": {
             "agility": 10,
             "dexterity": 10
@@ -5042,7 +5042,7 @@ const Models: Model[] = [{
         }],
         "armor": 4,
         "discipline": 10,
-        "talents": ["Cavalry","Fly[Low,SPD 10]","Parry","Parry","Assault","Missle Parry","Warhorse"],
+        "talents": ["Cavalry","Fly[Low, SPD 10]","Parry","Parry","Assault","Missle Parry","Warhorse"],
         "abilities": {
             "agility":10,
             "dexterity":10
@@ -6968,7 +6968,7 @@ const Models: Model[] = [{
         }],
         "armor": 3,
         "discipline": 10,
-        "talents": ["Cavalry","Light Cavalry","Dodge","Scout","Harasser","Marksman","Fly[Low,SPD10]","Stable Shot[d10]"],
+        "talents": ["Cavalry","Light Cavalry","Dodge","Scout","Harasser","Marksman","Fly[Low, SPD 10]","Stable Shot[d10]"],
         "abilities": {
             "agility": 12
         }
@@ -7052,7 +7052,7 @@ const Models: Model[] = [{
         }],
         "armor": 3,
         "discipline": 10,
-        "talents": ["Cavalry","Dodge","Dodge","Vay","Hit and Run","Fly[Low SPD 10]"],
+        "talents": ["Cavalry","Dodge","Dodge","Vay","Hit and Run","Fly[Low, SPD 10]"],
         "abilities": {
             "agility": 12
         }
@@ -7141,7 +7141,7 @@ const Models: Model[] = [{
         "shield": "S",
         "armor": 4,
         "discipline": 10,
-        "talents": ["Cavalry","Parry","Fearsome","Tough","Backstep","Swoop[Talon]","Fly[Low SPD 8]","Darkvision"]
+        "talents": ["Cavalry","Parry","Fearsome","Tough","Backstep","Swoop[Talon]","Fly[Low, SPD 8]","Darkvision"]
     },
     "gender": "M",
     "value": 50,
