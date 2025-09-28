@@ -11,7 +11,7 @@ export interface Items {
 
 export const MeleeWeaponNames: "Banehammer" | "Barbed Javelin" | "Barbed Whip" | "Battleaxe" | "Bite" | "Boarding Pike" | "Broadsword" | "Claw" | "Claw 2x" | "Cleaver" | "Club" | "Cutlass" | "Dagger" | "Dire Claw" | "Falchion" | "Fang Blade" | "Fist" | "Fist 2x" | "Flail" | "Gadget" | "Great Club" | "Greatsword" | "Halaztaf" | "Handclaws" | "Hartblade" | "Heavy Falchion" | "Herenkal" | "Hunting Spear" | "Ice Axe" | "Impaler" | "Javelin" | "Kaiba" | "Kasari" | "Knife" | "Kolekar" | "Kranara" | "Lance" | "Long Knife" | "Longspear" | "Longsword (1h)" | "Longsword (2h)" | "Longsword (magic)" | "Mace" | "Moonsglave" | "Moonsickle" | "Morning Star" | "Morph" | "Najana" | "Net" | "Parry Dagger" | "Petadrakh" | "Pike" | "Pit Glave" | "Razorfang" | "Ripper" | "Rusty Blade" | "Saber" | "Sakhazet" | "Sanghara" | "Scythe" | "Shadowspear" | "Short Spear" | "Short Sword" | "Skull Staff" | "Spikedrakh" | "Staff" | "Tail" | "Talon" | "Taumari" | "Tavsetar" | "Thorn" | "Thresher" | "Toloron" | "Trident" | "War Axe" | "War Mattock" | "Warhammer" | "Warhorse" | "Whip" | "Wolfsword" | "Zeradrakh"
 
-export const RangeWeaponNames: "Atlatl" | "Barbed Javelin" | "Blowgun" | "Bolas" | "Bolter" | "Bow" | "Composite Bow" | "Crossbow" | "Double Crossbow" | "Gadoru" | "Grappler" | "Hatchet" | "Herenkal" | "Iron Pinion" | "Javelin" | "Lasso" | "Longbow" | "Morph" | "Poison Pellet" | "Poison Spit" | "Recurved Short Bow" | "Roondar" | "Sling" | "Spider Net" | "Talon" | "Tennko" | "Thorny Vines" | "Vranshar" | "War Axe" | "Water Blast" | "Zishoti"
+export const RangeWeaponNames: "Agukrich" | "Atlatl" | "Barbed Javelin" | "Blowgun" | "Bolas" | "Bolter" | "Bow" | "Composite Bow" | "Crossbow" | "Double Crossbow" | "Gadoru" | "Grappler" | "Hatchet" | "Herenkal" | "Iron Pinion" | "Javelin" | "Lasso" | "Longbow" | "Morph" | "Poison Pellet" | "Poison Spit" | "Recurved Short Bow" | "Roondar" | "Skullbomb" | "Sling" | "Spider Net" | "Talon" | "Tennko" | "Thorny Vines" | "Vranshar" | "War Axe" | "Water Blast" | "Zishoti"
 
 export interface Weapon {
     altSelected?: boolean,
@@ -20,7 +20,7 @@ export interface Weapon {
 }
 
 interface BasicWeapon {
-    abilities?: ('acd' | 'an' | 'clo' | 'chg' | 'de' | 'dec' | 'dis' | 'dsh' | 'ent' | 'flm' | 'gre' | 'hv' | 'hqu' | 'hin' | 'ice' | 'imp' | 'idf' | 'lb' | 'let' | 'mag' | 'mi' | 'ovr' | 'pin' | 'pul' | 'qs' | 'qu' | 'ra' | 're' | 'scl' | 'sb' | 'shk' | 'slr' | 'so' | 'so2' | 'su' | 'stky' | 'srg' | 'swp' | 'sw' | 'thr' | 'te' | 'wrl' | 'unw' | 'ven' | 'aoe 2in')[],
+    abilities?: ('acd' | 'an' | 'clo' | 'chg' | 'de' | 'dec' | 'dis' | 'dr' | 'dsh' | 'ent' | 'flm' | 'gre' | 'hv' | 'hqu' | 'hin' | 'ice' | 'imp' | 'idf' | 'lb' | 'let' | 'mag' | 'mi' | 'ovr' | 'pin' | 'pul' | 'qs' | 'qu' | 'ra' | 're' | 'scl' | 'sb' | 'shk' | 'slr' | 'so' | 'so2' | 'su' | 'stky' | 'srg' | 'swp' | 'sw' | 'thr' | 'te' | 'wrl' | 'unw' | 'ven' | 'aoe 2in')[],
     abilityList?: string,
     altSelected?: boolean,
     damage: number,

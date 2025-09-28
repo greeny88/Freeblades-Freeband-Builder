@@ -694,6 +694,11 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
 }];
 
 const RangeWeapons: Omit<RangeWeapon, 'rating'>[] = [{
+    name: 'Agukrich',
+    damage: 6,
+    distance: 2,
+    abilities: ['de','thr']
+},{
     name: 'Atlatl',
     damage: 6,
     distance: 6,
@@ -714,6 +719,12 @@ const RangeWeapons: Omit<RangeWeapon, 'rating'>[] = [{
     damage: 4,
     distance: 6,
     abilities: ['thr','ent']
+},{
+    name: 'Bolter',
+    damage: 6,
+    damageBonus: 1,
+    distance: 8,
+    abilities: ['imp','slr']
 },{
     name: 'Bow',
     damage: 6,
@@ -792,6 +803,11 @@ const RangeWeapons: Omit<RangeWeapon, 'rating'>[] = [{
     damageBonus: 1,
     distance: 8,
     abilities: ['sb']
+},{
+    name: 'Skullbomb',
+    damage: 0,
+    distance: 4,
+    abilities: ['thr','aoe 2in','dr']
 },{
     name: 'Sling',
     damage: 8,
