@@ -1,5 +1,5 @@
 import * as tf from '@tensorflow/tfjs';
-import { Model } from 'src/app/model';
+import { MeleeWeapon, Model, RangeWeapon } from 'src/app/model';
 
 export class CostPredictorService {
   private model: tf.Sequential;
@@ -62,18 +62,25 @@ export class CostPredictorService {
       character.stats?.type === 'Hero' ? 1 : 0,
       character.type === 'Caster' ? 1 : 0,
       character.type === 'Leader' ? 1 : 0,
-      character.stats?.talents?.length || 0, // TODO: Weight certain talents
+      character.stats?.talents ? character.stats.talents.reduce((acc, talent) => {
+        const value = ['Cavalry', 'Fly[Low, SPD 10]', 'Fly[Low, SPD 8]'].includes(talent) ? 2 : 1;
+        return acc + value;
+      }, 0) : 0,
       character.stats?.shield ? 1 : 0, // TODO: consider shield type weighting
       character.stats?.skills?.length || 0, // TODO: Weight based on rating
       character.stats?.armor || 0,
       character.stats?.discipline || 0,
       character.stats?.speed || 0,
-      character.stats?.casting? 1 : 0,
-      character.stats?.melee ? character.stats.melee?.reduce((acc, wpn) => {
-          return acc + wpn.rating; //TODO: include damage in the weighting
+      character.stats?.casting? 1 : 0, // TODO: consider weighing rating and power since Mokrul is different
+      // TODO: performance
+      // TODO: pure monk
+      character.stats?.melee ? character.stats.melee.reduce((acc, wpn) => {
+        // return acc + (wpn.rating * (1 + ((wpn as MeleeWeapon).damage / 100)));
+        return acc + wpn.rating + (wpn as MeleeWeapon).damage;
       }, 0) : 0,
-      character.stats?.range ? character.stats.range?.reduce((acc, wpn) => {
-          return acc + wpn.rating; // TODO: include distance in the weighting (wpn.rating * (1 + (wpn.distance / 100)))
+      character.stats?.range ? character.stats.range.reduce((acc, wpn) => {
+        // return acc + (wpn.rating * (1 + ((wpn as RangeWeapon).damage / 100)) * (1 + ((wpn as RangeWeapon).distance / 100)));
+        return acc + wpn.rating + (wpn as RangeWeapon).damage + (wpn as RangeWeapon).distance;
       }, 0) : 0
     ];
 

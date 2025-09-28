@@ -28,22 +28,22 @@ export class CustomModelComponent implements OnInit {
     this.characterForm = this.fb.group({
       type: ['Standard'],
       stats: this.fb.group({
-        type: ['Follower'],
-        armor: [0],
-        discipline: [0],
+        type: ['Hero'],
+        armor: [2],
+        discipline: [8],
         speed: [0],
         shield: [false],
-        melee: this.fb.array([this.fb.group({ name:'', damage: [0], rating: [6] })]),
-        range: [[]],
+        melee: this.fb.array([this.fb.group({ weapon: '', rating: [8] })]),
+        range: this.fb.array([]),
         talents: [[]],
         skills: [[]],
         abilities: this.fb.group({
-          strength: [6],
-          agility: [6],
-          dexterity: [6],
-          endurance: [6],
-          knowledge: [6],
-          spirit: [6]
+          strength: [8],
+          agility: [8],
+          dexterity: [8],
+          endurance: [8],
+          knowledge: [8],
+          spirit: [8]
         })
       })
     });
@@ -54,9 +54,10 @@ export class CustomModelComponent implements OnInit {
       m.stats = (<any>Object).assign(m.stats, this.modelSelector.calculateStats(m.stats, m.value));
       return m;
     });
+    console.log('Existing characters for training:', existingCharacters[3]);
     await this.costPredictor.trainModel(existingCharacters);
     this.trainingDone = true;
-    this.setAbilitiesForModelType('Hero');
+    // this.setAbilitiesForModelType('Hero');
   }
 
   onTypeChange(event: Event): void {
@@ -93,19 +94,31 @@ export class CustomModelComponent implements OnInit {
 
   predictCost(): void {
     const characterData = this.characterForm.value;
+    characterData.stats.melee = characterData.stats.melee.map((mw: any) => {
+      return { name: mw.weapon.name, damage: mw.weapon.damage, rating: mw.rating };
+    });
+    characterData.stats.range = characterData.stats.range.map((rw: any) => {
+      return { name: rw.weapon.name, damage: rw.weapon.damage, rating: rw.rating, distance: rw.weapon.distance };
+    });
     console.log('Character Data:', characterData);
     this.predictedCost = this.costPredictor.predictCost(characterData);
-  }
-
-  removeMeleeWeapon(index: number): void {
-    this.melee.removeAt(index);
   }
 
   get melee(): FormArray {
     return this.characterForm.get('stats.melee') as FormArray;
   }
 
-  addMeleeWeapon(): void {
-    this.melee.push(this.fb.control({ damage: 0, rating: 6 }));
+  get range(): FormArray {
+    return this.characterForm.get('stats.range') as FormArray;
+  }
+
+  addWeapon(weaponType: 'melee' | 'range'): void {
+    const control = this.characterForm.get(`stats.${weaponType}`) as FormArray;
+    control.push(this.fb.group({ weapon: '', rating: [8] }));
+  }
+
+  removeWeapon(weaponType: 'melee' | 'range', index: number): void {
+    const control = this.characterForm.get(`stats.${weaponType}`) as FormArray;
+    control.removeAt(index);
   }
 }

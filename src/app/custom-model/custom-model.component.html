@@ -23,22 +23,32 @@
         <label>Melee Weapons</label>
         <div class="weapon-selections">
           <div formArrayName="melee">
-            <button type="button" (click)="addMeleeWeapon()">Add Weapon</button>
+            <button type="button" (click)="addWeapon('melee')">Add Weapon</button>
             <div *ngFor="let weaponControl of melee.controls; let i = index" [formGroupName]="i" class="weapon-rating-pair">
-              <select formControlName="damage">
+              <select formControlName="weapon">
                 <option value="">Select Weapon</option>
-                <option *ngFor="let weapon of meleeWeapons" [ngValue]="weapon.damage">{{ weapon.name }}</option>
+                <option *ngFor="let weapon of meleeWeapons" [ngValue]="weapon">{{ weapon.name }}</option>
               </select>
               <input type="number" formControlName="rating" min="0" step="2">
-              <button type="button" (click)="removeMeleeWeapon(i)">Remove</button>
+              <button type="button" (click)="removeWeapon('melee', i)">Remove</button>
             </div>
           </div>
         </div>
 
         <label>Ranged Weapons</label>
-        <select multiple formControlName="range">
-          <option *ngFor="let weapon of rangeWeapons" [value]="weapon">{{ weapon.name }}</option>
-        </select>
+        <div class="weapon-selections">
+          <div formArrayName="range">
+            <button type="button" (click)="addWeapon('range')">Add Weapon</button>
+            <div *ngFor="let weaponControl of range.controls; let i = index" [formGroupName]="i" class="weapon-rating-pair">
+              <select formControlName="weapon">
+                <option value="">Select Weapon</option>
+                <option *ngFor="let weapon of rangeWeapons" [ngValue]="weapon">{{ weapon.name }}</option>
+              </select>
+              <input type="number" formControlName="rating" min="0" step="2">
+              <button type="button" (click)="removeWeapon('range', i)">Remove</button>
+            </div>
+          </div>
+        </div>
 
         <label>Talents</label>
         <select multiple formControlName="talents">
