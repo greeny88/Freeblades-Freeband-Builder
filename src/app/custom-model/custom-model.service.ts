@@ -40,7 +40,7 @@ export class CostPredictorService {
     });
 
     await this.model.fit(xs, ys, {
-      epochs: 100,
+      epochs: 200,
       validationSplit: 0.2,
       callbacks: {
         onEpochEnd: (epoch: any, logs: any) => {
