@@ -4,7 +4,8 @@ import { Factions } from 'src/app/model.d';
 
 @Component({
     selector: 'freeband-setup',
-    templateUrl: './freeband-setup.component.html'
+    templateUrl: './freeband-setup.component.html',
+    styleUrls: ['./freeband-setup.component.scss']
 })
 export class FreebandSetupComponent implements OnInit {
     @Input() selectedOptions : {freebandLimit: number, faction: string, altLeader: boolean} | undefined = undefined;
@@ -43,7 +44,8 @@ export class FreebandSetupComponent implements OnInit {
             'Traazorite Crusaders',
             'Trilian Seekers',
             'Urdaggar Tribes of Ruin',
-            'Urdaggar Tribes of Valor'
+            'Urdaggar Tribes of Valor',
+            'Varkraalan Unchained'
         ];
         this.options = {
             freebandLimit: undefined,

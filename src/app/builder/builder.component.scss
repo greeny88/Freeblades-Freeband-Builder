@@ -13,7 +13,6 @@
 }
 
 .freebandStats {
-    margin-top: 1rem;
     margin-bottom: 1rem;
 
     & > div {
@@ -25,10 +24,15 @@
             padding-right: 1rem;
             flex: 1 1;
             white-space: nowrap;
+            min-width: 25%;
 
             &.flextra {
                 flex: 3 1;
             }
+        }
+
+        #notesSection {
+            width: 100%;
         }
     }
 }

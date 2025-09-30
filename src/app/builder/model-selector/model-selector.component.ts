@@ -47,7 +47,9 @@ export class ModelSelectorComponent {
         'Questing Knight of Vasilar',
         'Apprentice Knight of Tahnar',
         'Apprentice Knight of Vidunar',
-        'Apprentice Knight of Barek'
+        'Apprentice Knight of Barek',
+        'Dark Herald',
+        'Kor-Khan'
     ];
     private disallowedAltLeadersFactions: string[] = [
         'Darkgrove Demons',
@@ -72,13 +74,26 @@ export class ModelSelectorComponent {
                 const factionModels = JSON.parse(JSON.stringify(this.factionModels));
                 for (let currentmodel of factionModels) {
                     let model: Model = Object.assign({}, currentmodel);
-                    if (!model.primaryFaction.includes(this.faction)) {
-                        if (model.stats.talents) {
-                            if (model.stats.talents.every(t => !t.includes('Ally'))) {
-                                model.stats.talents.push('Ally[Independent]');
+                    let allyText;
+                    // TODO: need to handle for Lightbringer based on leader selected
+                    // TODO: need to add ally to familiar only when caster is also an ally.
+                    if (!model.stats.talents?.includes('Familiar')) {
+                        if (model.trustedFactions && model.trustedFactions.includes(this.faction)) {
+                            allyText = 'Ally[Trusted]';
+                            if (model.name === 'Lightbringer') {
+                                allyText = 'Ally[Trusted/Independent]';
                             }
-                        } else {
-                            model.stats.talents = ['Ally[Independent]'];
+                        } else if (!model.primaryFaction.includes(this.faction)) {
+                            allyText = 'Ally[Independent]';
+                        }
+                        if (allyText) {
+                            if (model.stats.talents) {
+                                if (!model.stats.talents.includes(allyText)) {
+                                    model.stats.talents.push(allyText);
+                                }
+                            } else {
+                                model.stats.talents = [allyText];
+                            }
                         }
                     }
                     if (model.factions.includes(this.faction)) {
@@ -95,7 +110,7 @@ export class ModelSelectorComponent {
                                 model.stats.discipline += 4;
                                 model.value += 8;
                             } else if (model.stats.discipline === 6) {
-                                model.stats.discipline += 3;
+                                model.stats.discipline += 6;
                                 model.value += 9;
                             } else {
                                 model.stats.discipline += 2;
@@ -132,13 +147,26 @@ export class ModelSelectorComponent {
                     if (this.faction === undefined) {
                         return model;
                     }
-                    if (!model.primaryFaction.includes(this.faction)) {
-                        if (model.stats.talents) {
-                            if (model.stats.talents.every(t => !t.includes('Ally'))) {
-                                model.stats.talents.push('Ally[Independent]');
+                    let allyText;
+                    // TODO: need to handle for Lightbringer based on leader selected
+                    // TODO: need to add ally to familiar only when caster is also an ally.
+                    if (!model.stats.talents?.includes('Familiar')) {
+                        if (model.trustedFactions && model.trustedFactions.includes(this.faction)) {
+                            allyText = 'Ally[Trusted]';
+                            if (model.name === 'Lightbringer') {
+                                allyText = 'Ally[Trusted/Independent]';
                             }
-                        } else {
-                            model.stats.talents = ['Ally[Independent]'];
+                        } else if (!model.primaryFaction.includes(this.faction)) {
+                            allyText = 'Ally[Independent]';
+                        }
+                        if (allyText) {
+                            if (model.stats.talents) {
+                                if (!model.stats.talents.includes(allyText)) {
+                                    model.stats.talents.push(allyText);
+                                }
+                            } else {
+                                model.stats.talents = [allyText];
+                            }
                         }
                     }
                     return model;
@@ -259,9 +287,12 @@ export class ModelSelectorComponent {
             if (this.model.stats.talents?.includes('Shield Bash')) {
                 this.model.value += 1;
             }
-            if (this.model.stats.melee?.some((melee: MeleeWeapon) => melee.altSelected && MeleeWeapons.find(w => w.name === melee.name)?.abilities?.includes('te'))) {
+            if (this.model.stats.melee?.some((melee: MeleeWeapon) => melee.altSelected && (MeleeWeapons.find(w => w.name === melee.name)?.abilities?.includes('te') || melee.abilities?.includes('te')))) {
                 this.model.value += 1;
             }
+        }
+        if (this.model.stats?.items) {
+            this.model.value = this.model.stats.items.reduce((sum: number, current:any) => current.cost + sum, model.value);
         }
         this.model.stats = (<any>Object).assign(this.model.stats, this.modelSelectorService.calculateStats(model.stats, this.model.value));
         this.model.component_id = this.componentId;

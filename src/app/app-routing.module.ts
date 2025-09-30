@@ -9,6 +9,10 @@ const routes: Routes = [
         loadChildren: () => import(/* webpackPrefetch: true *//* webpackChunkName: "builder" */'./builder/builder.module').then(m => m.BuilderModule)
     },
     {
+        path: 'contact',
+        loadChildren: () => import(/* webpackPrefetch: true *//* webpackChunkName: "contact" */'./contact/contact.module').then(m => m.ContactModule)
+    },
+    {
         path: 'prebuilt',
         loadChildren: () => import(/* webpackPrefetch: true *//* webpackChunkName: "prebuilt" */'./prebuilt/prebuilt.module').then(m => m.PrebuiltModule)
     },

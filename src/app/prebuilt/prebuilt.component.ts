@@ -3,10 +3,11 @@ import { Router } from '@angular/router';
 
 import { CommunicatorService } from '../communicator.service';
 import { PreBuiltFreebands } from './freebands';
+import {Factions} from 'src/app/model';
 
 interface Freeband {
     name: string, 
-    faction: string, 
+    faction: typeof Factions[number], 
     freebandLimit: number, 
     altLeader: boolean, 
     models: {displayName: string, type?: string}[]
@@ -65,8 +66,8 @@ export class PrebuiltComponent {
     ngOnInit() { }
 
     filterSelection(faction: string | undefined, value: any) {
-        console.log(`faction: ${faction}`);
-        console.log(`value: ${value}`);
+        // console.log(`faction: ${faction}`);
+        // console.log(`value: ${value}`);
         this.prebuiltFreebands = this.originalList.filter(freeband => {
             return (freeband.faction === faction || [undefined,null,''].includes(faction)) && (freeband.freebandLimit === value || [undefined,null,''].includes(value));
         });

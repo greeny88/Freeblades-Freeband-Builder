@@ -1,4 +1,6 @@
-const PreBuiltFreebands: {name:string, faction:string, freebandLimit:number, altLeader:boolean, models:{displayName: string, type?: string}[]}[] = [{
+import {Factions} from 'src/app/model';
+
+const PreBuiltFreebands: {name:string, faction:typeof Factions[number], freebandLimit:number, altLeader:boolean, models:{displayName: string, type?: string}[]}[] = [{
     'name': 'Kuzaarik Starter Set',
     'faction': 'Kuzaarik Forgers',
     'freebandLimit': 150,
@@ -78,7 +80,7 @@ const PreBuiltFreebands: {name:string, faction:string, freebandLimit:number, alt
         {'displayName': 'Skrot'}
     ]
 }, {
-    'name': 'Grular Starter Set',
+    'name': 'Grular Starter Set (Old)',
     'faction': 'Grular Invaders',
     'freebandLimit': 150,
     'altLeader': false,
@@ -89,6 +91,18 @@ const PreBuiltFreebands: {name:string, faction:string, freebandLimit:number, alt
         {'displayName': 'Gadarl'},
         {'displayName': 'Krang'},
         {'displayName': 'Bludgeoneer'}
+    ]
+}, {
+    'name': 'Grular Starter Set',
+    'faction': 'Grular Invaders',
+    'freebandLimit': 150,
+    'altLeader': false,
+    'models': [
+        {'displayName': 'Kor-Khan (Mounted)', 'type': 'Leader'},
+        {'displayName': 'Warlock (Mounted)', 'type': 'Caster'},
+        {'displayName': 'Impaler (Mounted)'},
+        {'displayName': 'Raider (Mounted)'},
+        {'displayName': 'Raider (Mounted)'}
     ]
 }, {
     'name': 'Eclipse Starter Set',
@@ -128,6 +142,19 @@ const PreBuiltFreebands: {name:string, faction:string, freebandLimit:number, alt
         {'displayName': 'Awakened'},
         {'displayName': 'Levy Spearman'},
         {'displayName': 'Wretch'}
+    ]
+}, {
+    'name': 'Koronnan Starter Set',
+    'faction': 'Koronnan Moonsworn',
+    'freebandLimit': 150,
+    'altLeader': false,
+    'models': [
+        {'displayName': 'Moons Priest', 'type': 'Leader'},
+        {'displayName': 'Black Spear'},
+        {'displayName': 'Koromen\'s Shadow'},
+        {'displayName': 'Koronnan Bladesister'},
+        {'displayName': 'Red Spear'},
+        {'displayName': 'Red Archer'}
     ]
 }, {
     'name': 'Mershael Starter Set',
@@ -206,6 +233,19 @@ const PreBuiltFreebands: {name:string, faction:string, freebandLimit:number, alt
         {'displayName': 'Legionnaire'},
         {'displayName': 'Vezarin'},
         {'displayName': 'Vezarin'}
+    ]
+}, {
+    'name': 'Varkraalan Starter Set',
+    'faction': 'Varkraalan Unchained',
+    'freebandLimit': 150,
+    'altLeader': false,
+    'models': [
+        {'displayName': 'Dervish', 'type': 'Leader'},
+        {'displayName': 'Vuan Pang Monk', 'type': 'Caster'},
+        {'displayName': 'Jade Changeseeker'},
+        {'displayName': 'Zevriss'},
+        {'displayName': 'State Spearman'},
+        {'displayName': 'State Archer'}
     ]
 }];
 

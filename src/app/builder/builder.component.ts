@@ -57,7 +57,8 @@ export class BuilderComponent implements OnInit {
             'Traazorite Crusaders': this.traazoriteRules,
             'Trilian Seekers': this.trilianRules,
             'Urdaggar Tribes of Ruin': this.urdaggarRuinRules,
-            'Urdaggar Tribes of Valor': this.urdaggarValorRules
+            'Urdaggar Tribes of Valor': this.urdaggarValorRules,
+            'Varkraalan Unchained': this.varkraalanRules
         };
         this.leaderId = this.uuidv4();
         this.casterId = this.uuidv4();
@@ -100,13 +101,17 @@ export class BuilderComponent implements OnInit {
         if (!this.faction) {
             return;
         }
-        let allyFaction: (FactionList | "Wandering Allies")[] | undefined = undefined;
+        let allyFaction: (FactionList | "Wandering Allies" | "Familiar")[] | undefined = undefined;
+        let allyFlyFound: boolean = false;
         let allyFollowerCount: number = 0;
         let allyHeroCount: number = 0;
         let casterCount: number = 0;
+        let casterType: string | undefined;
         this.completeFollowerCount = 0;
         this.completeHeroCount = 0;
         this.errorMessages = [];
+        let factionFlyFound: boolean = false;
+        let familiarCount: number = 0;
         this.freebandBaseValue = 0;
         this.freebandTotalValue = 0
         let heroCount: number = 0;
@@ -114,7 +119,6 @@ export class BuilderComponent implements OnInit {
         let keldanCount: number = 0;
         let leader: Model | undefined = undefined;
         let performerCount: number = 0;
-        let nightwhisperFound: boolean = false;
         this.totalLifePoints = 0;
         this.scoutingPoints = 0;
         let zetakorFound: boolean = false;
@@ -137,16 +141,13 @@ export class BuilderComponent implements OnInit {
                 if (model.name === 'Kurgozar') {
                     this.completeHeroCount++;
                 }
-                if (model.stats.talentList && model.stats.talentList.indexOf('Ally') > -1) {
+                if (model.stats.talentList?.includes('Ally')) {
                     allyHeroCount++;
                     if (allyFaction === undefined) {
                         allyFaction = model.primaryFaction;
                     }
                     if (!allyFaction.some(f => model.primaryFaction.includes(f))) {
                         this.addErrorMessage(`You can only recruit allies from the same faction.`);
-                    }
-                    if (model.name === 'Nightwhisper') {
-                        nightwhisperFound = true;
                     }
                     if (model.name === 'Zetakor') {
                         zetakorFound = true;
@@ -156,6 +157,9 @@ export class BuilderComponent implements OnInit {
                     }
                     if (model.name === 'Keldan') {
                         keldanCount++;
+                    }
+                    if (model.stats.talentList?.includes('Fly')) {
+                        allyFlyFound = true;
                     }
                 }
             }
@@ -188,12 +192,21 @@ export class BuilderComponent implements OnInit {
                 this.scoutingPoints += 2;
             }
 
-            if ('casting' in model.stats) {
+            if (model.stats.casting) {
                 casterCount++;
+                casterType = model.stats.casting.type;
+            }
+
+            if (model.stats.talentList?.includes('Familiar')) {
+                familiarCount++;
             }
 
             if (model.stats.skillList?.includes('Perform')) {
                 performerCount++;
+            }
+
+            if (model.stats.talentList?.includes('Fly') && !model.stats.talentList.includes('Ally')) {
+                factionFlyFound = true;
             }
 
             let heroFound = 0;
@@ -203,8 +216,8 @@ export class BuilderComponent implements OnInit {
                 }
             }
 
-            // Grular Marauder exception
-            const heroLimit: number = ((model.name === 'Marauder' || model.name === 'Impaler') && this.limit > 250) ? 3 : 2;
+            // Grular Marauder exception and Jhenkar
+            const heroLimit: number = ((model.name === 'Marauder' || model.name === 'Impaler') && this.limit > 250) ? 3 : (model.name === 'Jhenkar') ? 1 : 2;
             if (heroFound > heroLimit) {
                 this.addErrorMessage(`You can only have ${heroLimit} of a hero model (${model.name}).`);
             }
@@ -226,19 +239,20 @@ export class BuilderComponent implements OnInit {
     
         let allowedHeroCount = Math.floor((this.limit - 1) / 50);
         allowedHeroCount = (allowedHeroCount < 4) ? 4 : allowedHeroCount;
-        if (leader && 'stats' in leader && 'casting' in leader.stats) {
+        if (leader?.stats.casting && casterCount === 1) {
             allowedHeroCount++;
         }
         if (allowedHeroCount < heroCount) {
-            this.addErrorMessage('Too many hero units added. You can only have four plus one for each 50 points over 251.');
+            this.addErrorMessage(`Too many hero units added. You can only have ${allowedHeroCount} plus one for each 50 points over 251.`);
         }
+        
+        if (factionFlyFound && allyFlyFound) {
+            this.addErrorMessage('You may not recruit both an ally model and faction model with fly.');
+        }
+
         // TODO: ally rules change with Irvlor and Keldan
         if ( (( (this.completeHeroCount - allyHeroCount) / 2) < allyHeroCount) || (( (this.completeFollowerCount - allyFollowerCount) / 2) < allyFollowerCount) ) {
             this.addErrorMessage('Too many ally models selected. There must be a 2:1 ratio of ally to non-ally models for a given type.');
-        }
-
-        if (nightwhisperFound && leader && leader.gender !== 'F') {
-            this.addErrorMessage('Nightwhisper can only be in a freeband lead by a female.')
         }
 
         if (zetakorFound && leader && leader.gender !== 'M') {
@@ -257,6 +271,14 @@ export class BuilderComponent implements OnInit {
         const casterLimit: number = (this.faction === 'Koronnan Moonsworn') ? 2 : 1;
         if (casterCount > casterLimit) {
             this.addErrorMessage('You have too many casters.');
+        }
+
+        if (casterType == 'energy' && familiarCount > 0) {
+            this.addErrorMessage('Only spirit casters can take familiars.');
+        }
+
+        if (familiarCount > casterCount) {
+            this.addErrorMessage('You have too many familiars.');
         }
 
         if (performerCount > 1) {
@@ -485,7 +507,7 @@ export class BuilderComponent implements OnInit {
             for (let key in this.models) {
                 if (this.models[key].name === 'Shadow Hunter') {
                     shadowFound = true;
-                    if (model.name.indexOf(this.models[key].type) < 0) {
+                    if (model.displayName.indexOf(this.models[key].type) < 0) {
                         return 'The Jhenkar selection must match the selected Shadow Hunter.';
                     }
                 }
@@ -550,35 +572,11 @@ export class BuilderComponent implements OnInit {
     }
 
     private grularRules(model: Model): string | undefined {
-        let demonCount = 0;
-        let totalCount = 0;
-        let nonMarauderMountedFound = false;
-        let gadarlFound = false;
-        let gadarlCount = 0;
-        for (let key in this.models) {
-            if (this.models[key].stats.talentList?.includes('Demon')) {
-                demonCount++;
-                if (this.models[key].name === 'Gadarl') {
-                    gadarlFound = true;
-                    gadarlCount++;
-                }
-            }
-            if (this.models[key].displayName.includes('Mounted') && this.models[key].name !== 'Marauder') {
-                nonMarauderMountedFound = true;
-            }
-            totalCount++;
-        }
-        if (demonCount > totalCount) {
-            return 'Grular may not have more demon models than non-demon models.';
-        }
-        const demonCountMinusGadarl = (gadarlFound) ? demonCount - gadarlCount : demonCount;
-        if (nonMarauderMountedFound && demonCountMinusGadarl > 0) {
-            return 'Grular may not have demon models other than Gadarl with non-Marauder mounted models.';
-        }
         return undefined;
     }
 
     private haradelanRules(model: Model): string | undefined {
+        // TODO: only one Stalker allowed
         if (model.name.indexOf("Sho'pel") > -1) {
             let ravenFound: boolean = false;
             for (let key in this.models) {
@@ -612,6 +610,7 @@ export class BuilderComponent implements OnInit {
     }
 
     private koronnanRules(model: Model): string | undefined {
+        // TODO: add familiar check owl/priestess and wolf/priest
         let mizrakaiCount: number = 0;
         let priestCount: number = 0;
         let priestessCount: number = 0;
@@ -635,22 +634,24 @@ export class BuilderComponent implements OnInit {
         if (priestessCount > 1) {
             return 'Koronnan can only have one Moons Priestess.'
         }
-
-        if (this.limit >= 200) {
-            let priestCount: number = 0;
-            for (let key in this.models) {
-                if (this.models[key].name.indexOf("Moons Priest") > -1) {
-                    priestCount++;
-                }
-            }
-            if (priestCount != 2) {
-                return "Koronnan must have both Moons Priest and Moons Priestess when the freeband's base value is 200+."
-            }
-        }
         return undefined;
     }
 
     private kuzaarikRules(model: Model): string | undefined {
+        // TODO: add Varkraalan no caster rule
+        if (model.name.indexOf('Jhenkar') > -1) {
+            let shadowFound: boolean = false;
+            for (let key in this.models) {
+                if (this.models[key].name === 'Shadow Hunter') {
+                    shadowFound = true;
+                }
+            }
+            if (!shadowFound) {
+                // TODO: this is rule still in place? Part of Bonded?
+                return 'Jhenkar can only be used along side a Shadow Hunter.';
+            }
+        }
+        
         return undefined;
     }
 
@@ -677,8 +678,9 @@ export class BuilderComponent implements OnInit {
                 models.push(this.models[key].name);
             }
         }
-        const checkForDups = models.filter(modelName => modelName !== 'Ravenblade Soldier');
-        return ((new Set(checkForDups)).size !== checkForDups.length) ? 'Mercenaries may not have duplicate heroes except for the Ravenblade Soldier.' : undefined;
+        const noDupModels = ['Mizrakai','Nightwhisper','Stag Warrior','Stalker','Takar Hunter','Truthseeker'];
+        const checkForDups = models.filter(modelName => noDupModels.includes(modelName));
+        return ((new Set(checkForDups)).size !== checkForDups.length) ? `Mercenaries may not have duplicate heroes of ${noDupModels.join(', ')}.` : undefined;
     }
 
     private shakrimRules(model: Model): string | undefined {
@@ -697,10 +699,33 @@ export class BuilderComponent implements OnInit {
     }
 
     private urdaggarRuinRules(model: Model): string | undefined {
+        if (model.displayName === 'Destroyer') {
+            let heraldFound: boolean = false;
+            let destroyerCount: number = 0;
+            for (let key in this.models) {
+                if (this.models[key].name === 'Dark Herald' && this.models[key].type === 'Leader') {
+                    heraldFound = true;
+                }
+                if (this.models[key].displayName === 'Destroyer') {
+                    destroyerCount++;
+                }
+            }
+            if (!heraldFound) {
+                return 'Destroyer can only be added when led by a Dark Herald.';
+            }
+            if (destroyerCount > 1) {
+                return 'Only one Destroyer can be recruiter.'
+            }
+        }
         return undefined;
     }
 
     private urdaggarValorRules(model: Model): string | undefined {
+        return undefined;
+    }
+
+    private varkraalanRules(model: Model): string | undefined {
+        // TODO: add rules for monks and truthseeker
         return undefined;
     }
 

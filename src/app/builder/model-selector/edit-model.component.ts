@@ -10,7 +10,7 @@ import { MatRadioChange } from '@angular/material/radio';
     templateUrl: './edit-model.component.html'
 })
 export class EditModelComponent {
-    advancements: string[] = ['MAR','RAR','CAR','DISC','SPD',...Abilities,...Skills,...Talents].sort();
+    advancements: string[] = ['MAR','RAR','CAR','DISC','SPD','Rise of a Hero',...Abilities,...Skills,...Talents].sort();
     injuries: string[] = [...Abilities, 'DISC', 'SPD', 'Reluctant', 'Hate[faction]'].sort();
     items: any = [...Equipment, ...MagicItems].sort((a,b) => {
         if (a.name.toLowerCase() > b.name.toLowerCase()) {
@@ -62,7 +62,11 @@ export class EditModelComponent {
         this.model.stats.advancements = this.modelAdvancements;
     }
 
-    addItem(item: Items, index: number) {
+    addItem(index: number) {
+        if (!this.modelItems) {
+            return;
+        }
+        const item = this.modelItems[index];
         if (!('items' in this.model.stats)) {
             this.model.stats.items = [];
         }
@@ -133,7 +137,7 @@ export class EditModelComponent {
 
     updateItemCount(): void {
         if (this.modelItems) {
-            this.modelItems.push(undefined);
+            this.modelItems.push({'name':undefined,'cost':undefined});
         }
     }
 }

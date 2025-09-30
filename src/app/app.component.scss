@@ -1,11 +1,3 @@
-a, a:visited {
-    color: #FFF;
-}
-
-a:hover {
-    color: #ffc107;
-}
-
 footer {
     text-align: center;
     font-size: 0.75rem;
@@ -19,7 +11,7 @@ mat-sidenav-container {
         padding: 0.5rem;
     }
     mat-sidenav-content {
-        margin: 0.5rem;
+        padding: 1rem;
     }
 }
 

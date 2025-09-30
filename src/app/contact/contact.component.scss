@@ -1,0 +1,9 @@
+#contact {
+    display: flex;
+    flex-wrap: wrap;
+
+    div {
+        min-width: 320px;
+        flex: 1 1;
+    }
+}

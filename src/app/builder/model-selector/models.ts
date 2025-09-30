@@ -32,41 +32,6 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Kuzaarik"
 },{
-    "factions": ["Urdaggar Tribes of Valor"],
-    "primaryFaction": ["Kuzaarik Forgers"],
-    "name": "Forge Warden",
-    "displayName": "Forge Warden",
-    "stats": {
-        "abilities": {
-            "strength": 10
-        },
-        "discipline": 10,
-        "type": "Hero",
-        "talents": ["Fortress", "Die Hard", "Tough", "March", "Alpine"],
-        "skills": [{
-            "name": "Devices",
-            "rating": 8
-        }],
-        "speed": 5,
-        "melee": [{
-            "rating": 10,
-            "name": "Warhammer"
-        }],
-        "shield": "S",
-        "armor": 6,
-        "options": [{
-            "name": "Devices",
-            "rating": 8,
-            "selected": true
-        },{
-            "name": "Maul[1,Warhammer]"
-        }]
-    },
-    "type": "Standard",
-    "value": 32,
-    "gender": "M",
-    "race": "Kuzaarik"
-},{
     "factions": ["Kuzaarik Forgers", "Urdaggar Tribes of Valor"],
     "primaryFaction": ["Kuzaarik Forgers"],
     "name": "Kryomancer",
@@ -81,8 +46,10 @@ const Models: Model[] = [{
             "rating": 6
         }],
         "casting": {
+            "name": "Ice Magic",
             "rating": 10,
-            "power": 15
+            "power": 15,
+            "type": "energy"
         },
         "armor": 2
     },
@@ -91,7 +58,7 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Kuzaarik"
 },{
-    "factions": ["Kuzaarik Forgers"],
+    "factions": ["Kuzaarik Forgers","Varkraalan Unchained"],
     "primaryFaction": ["Kuzaarik Forgers"],
     "name": "Grenadier",
     "displayName": "Grenadier",
@@ -122,7 +89,7 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Kuzaarik"
 },{
-    "factions": ["Kuzaarik Forgers", "Urdaggar Tribes of Valor"],
+    "factions": ["Kuzaarik Forgers", "Urdaggar Tribes of Valor","Varkraalan Unchained"],
     "primaryFaction": ["Kuzaarik Forgers"],
     "name": "Huskarl",
     "displayName": "Huskarl",
@@ -145,7 +112,7 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Kuzaarik"
 },{
-    "factions": ["Kuzaarik Forgers", "Urdaggar Tribes of Valor"],
+    "factions": ["Kuzaarik Forgers", "Urdaggar Tribes of Valor","Varkraalan Unchained"],
     "primaryFaction": ["Kuzaarik Forgers"],
     "name": "Explorer",
     "displayName": "Explorer",
@@ -169,7 +136,7 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Kuzaarik"
 },{
-    "factions": ["Kuzaarik Forgers","Urdaggar Tribes of Valor"],
+    "factions": ["Kuzaarik Forgers"],
     "primaryFaction": ["Kuzaarik Forgers"],
     "name": "Quarreler",
     "displayName": "Quarreler",
@@ -193,7 +160,7 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Kuzaarik"
 },{
-    "factions": ["Kuzaarik Forgers","Urdaggar Tribes of Valor"],
+    "factions": ["Kuzaarik Forgers","Urdaggar Tribes of Valor","Varkraalan Unchained"],
     "primaryFaction": ["Kuzaarik Forgers"],
     "name": "Wayblocker",
     "displayName": "Wayblocker",
@@ -214,7 +181,7 @@ const Models: Model[] = [{
     "gender": "F",
     "race": "Kuzaarik"
 },{
-    "factions": ["Kuzaarik Forgers","Urdaggar Tribes of Valor"],
+    "factions": ["Kuzaarik Forgers","Urdaggar Tribes of Valor","Varkraalan Unchained"],
     "primaryFaction": ["Kuzaarik Forgers"],
     "name": "Hinterguard",
     "displayName": "Hinterguard",
@@ -237,7 +204,7 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Kuzaarik"
 },{
-    "factions": ["Kuzaarik Forgers", "Urdaggar Tribes of Valor"],
+    "factions": ["Kuzaarik Forgers", "Urdaggar Tribes of Valor","Varkraalan Unchained"],
     "primaryFaction": ["Kuzaarik Forgers"],
     "name": "Field Agent",
     "displayName": "Field Agent",
@@ -306,8 +273,10 @@ const Models: Model[] = [{
             "rating": 6
         }],
         "casting": {
+            "name": "Moons Magic",
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "spirit"
         },
         "armor": 2
     },
@@ -491,7 +460,7 @@ const Models: Model[] = [{
         "speed": 7,
         "skills": [{
             "name": "Hunt",
-            "rating": 8
+            "rating": 10
         },{
             "name": "Stealth",
             "rating": 8
@@ -698,8 +667,10 @@ const Models: Model[] = [{
         "armor": 2,
         "talents": ["Intensify Spell", "Quick", "Illusion Magic"],
         "casting": {
+            "name": "Illusion Magic",
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "energy"
         }
     },
     "type": "Caster",
@@ -767,10 +738,12 @@ const Models: Model[] = [{
             "name": "Staff"
         }],
         "casting": {
+            "name": "Sun Magic",
             "rating": 10,
-            "power": 15
+            "power": 15,
+            "type": "spirit"
         },
-        "armor": 4
+        "armor": 2
     },
     "type": "Caster",
     "value": 31,
@@ -787,7 +760,7 @@ const Models: Model[] = [{
         "talents": ["Parry","Bladeflash"],
         "speed": 6,
         "melee": [{
-            "rating": 12,
+            "rating": 10,
             "name": "Sakhazet"
         }],
         "shield": "L",
@@ -902,8 +875,7 @@ const Models: Model[] = [{
             "rating": 10,
             "name": "Javelin"
         }],
-        "armor": 5,
-        "shield": "S"
+        "armor": 3
     },
     "type": "Standard",
     "value": 30,
@@ -991,6 +963,30 @@ const Models: Model[] = [{
     },
     "type": "Standard",
     "value": 21,
+    "gender": "M",
+    "race": "Chaler"
+},{
+    "factions": ["Traazorite Crusaders"],
+    "primaryFaction": ["Traazorite Crusaders"],
+    "name": "Legionnaire Recruit",
+    "displayName": "Legionnaire Recruit",
+    "stats": {
+        "discipline": 6,
+        "type": "Follower",
+        "speed": 6,
+        "melee": [{
+            "rating": 6,
+            "name": "Sakhazet"
+        }],
+        "range": [{
+            "rating": 6,
+            "name": "Gadoru"
+        }],
+        "armor": 4,
+        "shield": "L"
+    },
+    "type": "Standard",
+    "value": 17,
     "gender": "M",
     "race": "Chaler"
 },{
@@ -1098,14 +1094,42 @@ const Models: Model[] = [{
             "name": "Staff"
         }],
         "casting": {
+            "name": "Ancestral Rites",
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "spirit"
         },
         "armor": 2
     },
     "type": "Caster",
     "value": 31,
     "gender": "F",
+    "race": "Chaler"
+},{
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Mershael Corsairs"],
+    "primaryFaction": ["Mershael Corsairs"],
+    "name": "Skytracer",
+    "displayName": "Skytracer",
+    "stats": {
+        "discipline": 8,
+        "type": "Hero",
+        "talents": ["Celestial Magic: Skytracer","Spell Riposte","Quick"],
+        "speed": 7,
+        "melee": [{
+            "rating": 6,
+            "name": "Staff"
+        }],
+        "casting": {
+            "name": "Celestial Magic: Skytracer",
+            "power": 15,
+            "rating": 10,
+            "type": "spirit"
+        },
+        "armor": 2
+    },
+    "type": "Caster",
+    "value": 31,
+    "gender": "M",
     "race": "Chaler"
 },{
     "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn","Mershael Corsairs"],
@@ -1124,9 +1148,9 @@ const Models: Model[] = [{
             "rating": 10,
             "name": "Kasari"
         }],
-        "armor": 3,
+        "armor": 5,
         "veteran": [{
-            "name": "Sergeant[Seafarer,DeckGunner]",
+            "name": "Sergeant[Seafarer,Deck Gunner]",
             "cost": 2
         }]
     },
@@ -1176,7 +1200,7 @@ const Models: Model[] = [{
     "stats": {
         "discipline": 6,
         "type": "Follower",
-        "talents": ["Amphibious"],
+        "talents": ["Amphibious","Quick"],
         "speed": 7,
         "melee": [{
             "rating": 8,
@@ -1239,22 +1263,25 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Chaler"
 },{
-    "factions": ["Black Rose Bandits","Black Thorn Bandits","Shakrim Wavestalkers","Urdaggar Tribes of Valor"],
+    "factions": ["Black Rose Bandits","Black Thorn Bandits","Shakrim Wavestalkers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "trustedFactions": ["Black Rose Bandits","Black Thorn Bandits","Shakrim Wavestalkers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Wandering Allies"],
     "name": "Snake Mystic",
     "displayName": "Snake Mystic",
     "stats": {
         "discipline": 6,
         "type": "Hero",
-        "talents": ["Serpent Magic","Slither","Serpent Dance","Ally[Trusted]"],
+        "talents": ["Serpent Magic","Slither","Serpent Dance"],
         "speed": 7,
         "melee": [{
             "rating": 6,
             "name": "Barbed Javelin"
         }],
         "casting": {
+            "name": "Serpent Magic",
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "spirit"
         },
         "armor": 2
     },
@@ -1277,8 +1304,10 @@ const Models: Model[] = [{
             "name": "Staff"
         }],
         "casting": {
+            "name": "Earth Magic",
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "energy"
         },
         "armor": 2
     },
@@ -1287,7 +1316,7 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Faeler"
 },{
-    "factions": ["Azura Windborne","The Collective","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+    "factions": ["Azura Windborne","The Collective","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
     "primaryFaction": ["The Collective","Wandering Allies"],
     "name": "Merchant",
     "displayName": "Merchant",
@@ -1340,7 +1369,8 @@ const Models: Model[] = [{
     "race": "Demon"
 },{
     "factions": ["Darkgrove Demons","Demons of Karelon","Grular Invaders"],
-    "primaryFaction": ["Demons of Karelon","Grular Invaders"],
+    "trustedFactions": ["Grular Invaders"],
+    "primaryFaction": ["Demons of Karelon"],
     "name": "Mokruhl",
     "displayName": "Mokruhl",
     "stats": {
@@ -1358,8 +1388,10 @@ const Models: Model[] = [{
             "name": "Claw"
         }],
         "casting": {
+            "name": "Sorcery: Illusion/Shadow",
             "power": 10,
-            "rating": 8
+            "rating": 8,
+            "type": "sorcery"
         },
         "armor": 4
     },
@@ -1369,7 +1401,8 @@ const Models: Model[] = [{
     "race": "Demon"
 },{
     "factions": ["Darkgrove Demons","Demons of Karelon","Grular Invaders"],
-    "primaryFaction": ["Demons of Karelon","Grular Invaders"],
+    "trustedFactions": ["Grular Invaders"],
+    "primaryFaction": ["Demons of Karelon"],
     "name": "Gadarl",
     "displayName": "Gadarl",
     "stats": {
@@ -1400,7 +1433,8 @@ const Models: Model[] = [{
     "race": "Demon"
 },{
     "factions": ["Darkgrove Demons","Demons of Karelon","Grular Invaders"],
-    "primaryFaction": ["Demons of Karelon","Grular Invaders"],
+    "trustedFactions": ["Grular Invaders"],
+    "primaryFaction": ["Demons of Karelon"],
     "name": "Skethar",
     "displayName": "Skethar",
     "stats": {
@@ -1429,7 +1463,8 @@ const Models: Model[] = [{
     "race": "Demon"
 },{
     "factions": ["Darkgrove Demons","Demons of Karelon","Grular Invaders"],
-    "primaryFaction": ["Demons of Karelon","Grular Invaders"],
+    "trustedFactions": ["Grular Invaders"],
+    "primaryFaction": ["Demons of Karelon"],
     "name": "Ventarx",
     "displayName": "Ventarx",
     "stats": {
@@ -1454,7 +1489,8 @@ const Models: Model[] = [{
     "race": "Demon"
 },{
     "factions": ["Darkgrove Demons","Demons of Karelon","Grular Invaders"],
-    "primaryFaction": ["Darkgrove Demons","Demons of Karelon","Grular Invaders"],
+    "trustedFactions": ["Grular Invaders"],
+    "primaryFaction": ["Darkgrove Demons","Demons of Karelon"],
     "name": "Saryad",
     "displayName": "Saryad",
     "stats": {
@@ -1489,7 +1525,8 @@ const Models: Model[] = [{
     "gender": "F",
     "race": "Demon"
 },{
-    "factions": ["Darkgrove Demons","Demons of Karelon"],
+    "factions": ["Darkgrove Demons","Demons of Karelon","Grular Invaders"],
+    "trustedFactions": ["Grular Invaders"],
     "primaryFaction": ["Demons of Karelon"],
     "name": "Alpha Plakhra",
     "displayName": "Alpha Plakhra",
@@ -1513,7 +1550,8 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Demon"
 },{
-    "factions": ["Darkgrove Demons","Demons of Karelon"],
+    "factions": ["Darkgrove Demons","Demons of Karelon","Grular Invaders"],
+    "trustedFactions": ["Grular Invaders"],
     "primaryFaction": ["Demons of Karelon"],
     "name": "Zakerlash",
     "displayName": "Zakerlash",
@@ -1534,7 +1572,8 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Demon"
 },{
-    "factions": ["Darkgrove Demons","Demons of Karelon"],
+    "factions": ["Darkgrove Demons","Demons of Karelon","Grular Invaders"],
+    "trustedFactions": ["Grular Invaders"],
     "primaryFaction": ["Demons of Karelon"],
     "name": "Borgat",
     "displayName": "Borgat",
@@ -1556,7 +1595,8 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Demon"
 },{
-    "factions": ["Darkgrove Demons","Demons of Karelon"],
+    "factions": ["Darkgrove Demons","Demons of Karelon","Grular Invaders"],
+    "trustedFactions": ["Grular Invaders"],
     "primaryFaction": ["Demons of Karelon"],
     "name": "Skrot",
     "displayName": "Skrot",
@@ -1578,7 +1618,8 @@ const Models: Model[] = [{
     "race": "Demon"
 },{
     "factions": ["Darkgrove Demons", "Demons of Karelon","Grular Invaders"],
-    "primaryFaction": ["Darkgrove Demons", "Demons of Karelon","Grular Invaders"],
+    "trustedFactions": ["Grular Invaders"],
+    "primaryFaction": ["Darkgrove Demons", "Demons of Karelon"],
     "name": "Dryad",
     "displayName": "Dryad",
     "stats": {
@@ -1613,7 +1654,8 @@ const Models: Model[] = [{
     "gender": "F",
     "race": "Demon"
 },{
-    "factions": ["Darkgrove Demons","Demons of Karelon"],
+    "factions": ["Darkgrove Demons","Demons of Karelon","Grular Invaders"],
+    "trustedFactions": ["Grular Invaders"],
     "primaryFaction": ["Demons of Karelon"],
     "name": "Plakhra",
     "displayName": "Plakhra",
@@ -1637,7 +1679,7 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Demon"
 },{
-    "factions": ["Eclipse Sisterhood","Koronnan Moonsworn"],
+    "factions": ["Eclipse Sisterhood"],
     "primaryFaction": ["Eclipse Sisterhood"],
     "name": "Nemesis",
     "displayName": "Nemesis",
@@ -1661,7 +1703,7 @@ const Models: Model[] = [{
     "gender": "F",
     "race": "Chaler"
 },{
-    "factions": ["Azura Windborne","Eclipse Sisterhood"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Mershael Corsairs"],
     "primaryFaction": ["Eclipse Sisterhood"],
     "name": "Suneater",
     "displayName": "Suneater",
@@ -1675,8 +1717,10 @@ const Models: Model[] = [{
             "name": "Long Knife"
         }],
         "casting": {
+            "name": "Void Magic",
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "energy"
         },
         "armor": 2
     },
@@ -1685,7 +1729,7 @@ const Models: Model[] = [{
     "gender": "F",
     "race": "Chaler"
 },{
-    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn","Mershael Corsairs"],
     "primaryFaction": ["Eclipse Sisterhood"],
     "name": "Shadow Dancer",
     "displayName": "Shadow Dancer",
@@ -1708,7 +1752,7 @@ const Models: Model[] = [{
     "gender": "F",
     "race": "Chaler"
 },{
-    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn","Mershael Corsairs"],
     "primaryFaction": ["Eclipse Sisterhood"],
     "name": "Secret Sister",
     "displayName": "Secret Sister",
@@ -1762,7 +1806,7 @@ const Models: Model[] = [{
     "gender": "F",
     "race": "Chaler"
 },{
-    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn","Mershael Corsairs"],
     "primaryFaction": ["Eclipse Sisterhood"],
     "name": "Izchaki Chaser",
     "displayName": "Izchaki Chaser",
@@ -1793,7 +1837,7 @@ const Models: Model[] = [{
     "gender": "F",
     "race": "Chaler"
 },{
-    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn","Mershael Corsairs"],
     "primaryFaction": ["Eclipse Sisterhood"],
     "name": "Manslayer",
     "displayName": "Manslayer Sniper",
@@ -1827,7 +1871,7 @@ const Models: Model[] = [{
     "gender": "F",
     "race": "Chaler"
 },{
-    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn","Mershael Corsairs"],
     "primaryFaction": ["Eclipse Sisterhood"],
     "name": "Manslayer",
     "displayName": "Manslayer Assassin",
@@ -1854,7 +1898,7 @@ const Models: Model[] = [{
     "gender": "F",
     "race": "Chaler"
 },{
-    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn","Mershael Corsairs"],
     "primaryFaction": ["Eclipse Sisterhood"],
     "name": "Rebel Maiden",
     "displayName": "Rebel Maiden",
@@ -1877,7 +1921,7 @@ const Models: Model[] = [{
     "gender": "F",
     "race": "Chaler"
 },{
-    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn","Mershael Corsairs"],
     "primaryFaction": ["Eclipse Sisterhood"],
     "name": "Throatseeker",
     "displayName": "Throatseeker",
@@ -1897,7 +1941,7 @@ const Models: Model[] = [{
     "gender": "F",
     "race": "Chaler"
 },{
-    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn","Mershael Corsairs"],
     "primaryFaction": ["Eclipse Sisterhood"],
     "name": "Manhunter",
     "displayName": "Manhunter",
@@ -1928,7 +1972,7 @@ const Models: Model[] = [{
     "gender": "F",
     "race": "Chaler"
 },{
-    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn","Mershael Corsairs"],
     "primaryFaction": ["Eclipse Sisterhood"],
     "name": "Untamed",
     "displayName": "Untamed",
@@ -1936,13 +1980,6 @@ const Models: Model[] = [{
         "discipline": 4,
         "type": "Follower",
         "talents": ["Flurry"],
-        "skills": [{
-            "name": "Camouflage",
-            "rating": 6
-        },{
-            "name": "Hunt",
-            "rating": 6
-        }],
         "speed": 7,
         "melee": [{
             "rating": 6,
@@ -2018,8 +2055,10 @@ const Models: Model[] = [{
             "name": "Staff"
         }],
         "casting": {
+            "name": "Fire Magic",
             "rating": 10,
-            "power": 15
+            "power": 15,
+            "type": "energy"
         },
         "armor": 2
     },
@@ -2042,37 +2081,15 @@ const Models: Model[] = [{
             "name": "Longsword (2h)"
         }],
         "casting": {
+            "name": "Varanic Rites: Hunter",
             "rating": 10,
-            "power": 15
+            "power": 15,
+            "type": "spirit"
         },
         "armor": 4
     },
     "type": "Leader",
     "value": 39,
-    "gender": "M",
-    "race": "Faeler"
-},{
-    "factions": ["Haradelan Questers","Kuzaarik Forgers","Ravenblade Mercenaries"],
-    "primaryFaction": ["Falkaaran Adventurers"],
-    "name": "Shadow Hunter",
-    "displayName": "Shadow Hunter",
-    "stats": {
-        "discipline": 10,
-        "type": "Hero",
-        "talents": ["Varanic Rites: Hunter","Spelldancer"],
-        "speed": 6,
-        "melee": [{
-            "rating": 6,
-            "name": "Longsword (2h)"
-        }],
-        "casting": {
-            "rating": 10,
-            "power": 15
-        },
-        "armor": 4
-    },
-    "type": "Standard",
-    "value": 32,
     "gender": "M",
     "race": "Faeler"
 },{
@@ -2090,8 +2107,10 @@ const Models: Model[] = [{
             "name": "Longsword (1h)"
         }],
         "casting": {
+            "name": "Varanic Rites: Hunter",
             "rating": 10,
-            "power": 15
+            "power": 15,
+            "type": "spirit"
         },
         "armor": 4
     },
@@ -2102,7 +2121,7 @@ const Models: Model[] = [{
 },{
     "factions": ["Falkaaran Adventurers"],
     "primaryFaction": ["Falkaaran Adventurers"],
-    "name": "Jhenkar (Leader Companion)",
+    "name": "Jhenkar",
     "displayName": "Jhenkar (Leader Companion)",
     "stats": {
         "discipline": 10,
@@ -2126,7 +2145,7 @@ const Models: Model[] = [{
 },{
     "factions": ["Falkaaran Adventurers","Kuzaarik Forgers"],
     "primaryFaction":["Falkaaran Adventurers"],
-    "name": "Jhenkar (Caster Companion)",
+    "name": "Jhenkar",
     "displayName": "Jhenkar (Caster Companion)",
     "stats": {
         "discipline": 8,
@@ -2305,7 +2324,7 @@ const Models: Model[] = [{
     "stats": {
         "discipline": 6,
         "type": "Follower",
-        "speed": 6,
+        "speed": 7,
         "talents": ["Amphibious"],
         "melee": [{
             "rating": 6,
@@ -2362,7 +2381,11 @@ const Models: Model[] = [{
             "rating": 12,
             "name": "Morning Star"
         }],
-        "armor": 5
+        "armor": 5,
+        "veteran": [{
+            "cost": 2,
+            "name": "Menace[2]"
+        }]
     },
     "type": "Leader",
     "value": 39,
@@ -2385,10 +2408,60 @@ const Models: Model[] = [{
             "rating": 12,
             "name": "Morning Star"
         }],
-        "armor": 5
+        "armor": 5,
+        "veteran": [{
+            "cost": 2,
+            "name": "Menace[2]"
+        }]
     },
     "type": "Leader",
     "value": 43,
+    "gender": "M",
+    "race": "Symker"
+},{
+    "factions": ["Grular Invaders"],
+    "primaryFaction": ["Grular Invaders"],
+    "name": "Kor-Khan",
+    "displayName": "Kor-Khan (Dismounted)",
+    "stats": {
+        "discipline": 10,
+        "type": "Hero",
+        "speed": 6,
+        "talents": ["Parry","Menace"],
+        "melee": [{
+            "rating": 10,
+            "name": "Spikedrakh"
+        },{
+            "rating": 10,
+            "name": "Morning Star"
+        }],
+        "armor": 5
+    },
+    "type": "Standard",
+    "value": 30,
+    "gender": "M",
+    "race": "Symker"
+},{
+    "factions": ["Grular Invaders"],
+    "primaryFaction": ["Grular Invaders"],
+    "name": "Kor-Khan",
+    "displayName": "Kor-Khan (Mounted)",
+    "stats": {
+        "discipline": 10,
+        "type": "Hero",
+        "speed": 9,
+        "talents": ["Parry","Cavalry","Fast","Menace"],
+        "melee": [{
+            "rating": 10,
+            "name": "Spikedrakh"
+        },{
+            "rating": 10,
+            "name": "Morning Star"
+        }],
+        "armor": 5
+    },
+    "type": "Standard",
+    "value": 34,
     "gender": "M",
     "race": "Symker"
 },{
@@ -2410,8 +2483,10 @@ const Models: Model[] = [{
             "strength": 4
         },
         "casting": {
+            "name": "Shadow Magic",
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "spirit"
         }
     },
     "type": "Caster",
@@ -2437,8 +2512,10 @@ const Models: Model[] = [{
             "strength": 4
         },
         "casting": {
+            "name": "Shadow Magic",
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "spirit"
         }
     },
     "type": "Caster",
@@ -2467,6 +2544,9 @@ const Models: Model[] = [{
         "veteran": [{
             "name": "Deft Rider",
             "cost": 1
+        },{
+            "name": "Fleeting Target",
+            "cost": 1
         }]
     },
     "type": "Standard",
@@ -2482,22 +2562,27 @@ const Models: Model[] = [{
         "discipline": 8,
         "type": "Hero",
         "speed": 6,
-        "talents": ["Scout","Harasser","Elusive","Dodge"],
+        "talents": ["Scout","Harasser","Elusive","Hard Target","Hard Target"],
         "abilities": {
             "agility": 10
         },
         "melee": [{
-            "rating": 10,
+            "rating": 8,
             "name": "Morning Star"
         }],
         "range": [{
             "rating": 10,
             "name": "Composite Bow"
         }],
-        "armor": 4
+        "armor": 4,
+        "veteran": [{
+            "name": "Camouflage",
+            "cost": 2,
+            "rating": 8
+        }]
     },
     "type": "Standard",
-    "value": 29,
+    "value": 28,
     "gender": "M",
     "race": "Symker"
 },{
@@ -2584,7 +2669,7 @@ const Models: Model[] = [{
             "dexterity":10
         },
         "veteran": [{
-            "name": "AV7",
+            "name": "AV1+",
             "cost": 2
         }]
     },
@@ -2716,8 +2801,10 @@ const Models: Model[] = [{
             "dexterity": 6
         },
         "casting": {
+            "name": "Varanic Rites",
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "spirit"
         }
     },
     "value": 33,
@@ -3114,8 +3201,10 @@ const Models: Model[] = [{
         "discipline": 8,
         "talents": ["Treespeaking","Tree Bond","Arboreal"],
         "casting": {
+            "name": "Treespeaking",
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "spirit"
         }
     },
     "value": 32,
@@ -3138,8 +3227,10 @@ const Models: Model[] = [{
         "discipline": 8,
         "talents": ["Celestial Magic","Spellbracer","Arboreal"],
         "casting": {
+            "name": "Celestial Magic",
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "energy"
         }
     },
     "value": 32,
@@ -3391,12 +3482,12 @@ const Models: Model[] = [{
         }],
         "armor": 3,
         "discipline": 6,
-        "talents": ["Arboreal","Scout"],
+        "talents": ["Arboreal","Scout","Limited"],
         "veteran": [{
             "name": "RAR",
             "cost": 1
         },{
-            "name": "Scrounge",
+            "name": "Camouflage",
             "cost": 1
         }]
     },
@@ -3527,8 +3618,10 @@ const Models: Model[] = [{
         "discipline": 8,
         "talents": ["Bear Magic","Mystic Dance"],
         "casting": {
+            "name": "Bear Magic",
             "power":15,
-            "rating":10
+            "rating":10,
+            "type": "spirit"
         }
     },
     "value":31,
@@ -3730,8 +3823,8 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Faeler"
 },{
-    "factions": ["Koronnan Moonsworn","Ravenblade Mercenaries","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Shakrim Wavestalkers","Trilian Seekers","Urdaggar Tribes of Valor"],
-    "primaryFaction": ["Koronnan Moonsworn","Ravenblade Mercenaries"],
+    "factions": ["Koronnan Moonsworn","Ravenblade Mercenaries","Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Shakrim Wavestalkers","Trilian Seekers","Urdaggar Tribes of Valor","The Collective"],
+    "primaryFaction": ["Koronnan Moonsworn","Ravenblade Mercenaries","Wandering Allies"],
     "name": "Mizrakai",
     "displayName": "Mizrakai",
     "type": "Standard",
@@ -3754,35 +3847,8 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Faeler"
 },{
-    "factions": ["Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
-    "primaryFaction": ["Wandering Allies"],
-    "name": "Stag Warrior",
-    "displayName": "Stag Warrior",
-    "type": "Standard",
-    "stats": {
-        "type": "Hero",
-        "speed": 7,
-        "melee": [{
-            "rating": 10,
-            "name": "Hartblade"
-        }],
-        "armor": 3,
-        "discipline": 10,
-        "talents": ["Parry","Assault","Restore","Heroic Attack","Ally[Trusted]"],
-        "abilities": {
-            "endurance": 10,
-            "spirit": 10
-        },
-        "skills": [{
-            "name": "Hunt",
-            "rating": 8
-        }]
-    },
-    "gender": "F",
-    "value": 31,
-    "race": "Faeler"
-},{
-    "factions": ["Black Rose Bandits","Black Thorn Bandits","Ravenblade Mercenaries"],
+    "factions": ["Black Rose Bandits","Black Thorn Bandits","Ravenblade Mercenaries","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "trustedFactions": ["Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Ravenblade Mercenaries","Wandering Allies"],
     "name": "Stag Warrior",
     "displayName": "Stag Warrior",
@@ -3810,39 +3876,9 @@ const Models: Model[] = [{
     "value": 31,
     "race": "Faeler"
 },{
-    "factions": ["Kuzaarik Forgers"],
-    "primaryFaction": ["Wandering Allies"],
-    "name": "Truthseeker",
-    "displayName": "Truthseeker",
-    "type": "Standard",
-    "stats": {
-        "type": "Hero",
-        "speed": 7,
-        "melee": [{
-            "rating": 10,
-            "name": "Sanghara"
-        },{
-            "rating": 10,
-            "name": "Sanghara"
-        }],
-        "armor": 2,
-        "discipline": 10,
-        "talents": ["Bladedancer","Accurate Strike","Swordsman[Sanghara]","Dodge","Ally[Trusted]"],
-        "abilities": {
-            "agility": 14,
-            "knowledge": 10
-        },
-        "skills": [{
-            "name": "Find",
-            "rating": 10
-        }]
-    },
-    "gender": "F",
-    "value": 35,
-    "race": "Symker"
-},{
-    "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Trilian Seekers","Urdaggar Tribes of Valor"],
-    "primaryFaction": ["Ravenblade Mercenaries","Wandering Allies"],
+    "factions": ["Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Trilian Seekers","Urdaggar Tribes of Valor","Varkraalan Unchained"],
+    "trustedFactions": ["Kuzaarik Forgers"],
+    "primaryFaction": ["Ravenblade Mercenaries","Wandering Allies","Varkraalan Unchained"],
     "name": "Truthseeker",
     "displayName": "Truthseeker",
     "type": "Standard",
@@ -3872,8 +3908,9 @@ const Models: Model[] = [{
     "value": 35,
     "race": "Symker"
 },{
-    "factions": ["The Collective"],
-    "primaryFaction": ["The Collective"],
+    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","The Collective","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "trustedFactions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "primaryFaction": ["The Collective","Wandering Allies"],
     "name": "Wandering Bard",
     "displayName": "Wandering Bard",
     "type": "Standard",
@@ -3890,17 +3927,18 @@ const Models: Model[] = [{
         "abilities": {
             "agility": 10
         },
-        "skills": [{
-            "name": "Perform",
+        "performance": {
+            "name": "Bardsong",
             "rating": 10
-        }]
+        }
     },
     "gender": "F",
     "value": 25,
     "race": "Faeler"
 },{
-    "factions": ["The Collective"],
-    "primaryFaction": ["The Collective"],
+    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","The Collective","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+    "trustedFactions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+    "primaryFaction": ["The Collective","Wandering Allies"],
     "name": "Wandering Bard",
     "displayName": "Wandering Bard",
     "type": "Caster",
@@ -3917,64 +3955,10 @@ const Models: Model[] = [{
         "abilities": {
             "agility": 10
         },
-        "skills": [{
-            "name": "Perform",
+        "performance": {
+            "name": "Bardsong",
             "rating": 10
-        }]
-    },
-    "gender": "F",
-    "value": 25,
-    "race": "Faeler"
-},{
-    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
-    "primaryFaction": ["Wandering Allies"],
-    "name": "Wandering Bard",
-    "displayName": "Wandering Bard",
-    "type": "Standard",
-    "stats": {
-        "type": "Hero",
-        "speed": 7,
-        "melee": [{
-            "rating": 6,
-            "name": "Dagger"
-        }],
-        "armor": 2,
-        "discipline": 8,
-        "talents": ["Perform[Bardsong,3]","Dodge","Elusive","Outperform","Protected","Ally[Trusted]"],
-        "abilities": {
-            "agility": 10
-        },
-        "skills": [{
-            "name": "Perform",
-            "rating": 10
-        }]
-    },
-    "gender": "F",
-    "value": 25,
-    "race": "Faeler"
-},{
-    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
-    "primaryFaction": ["Wandering Allies"],
-    "name": "Wandering Bard",
-    "displayName": "Wandering Bard",
-    "type": "Caster",
-    "stats": {
-        "type": "Hero",
-        "speed": 7,
-        "melee": [{
-            "rating": 6,
-            "name": "Dagger"
-        }],
-        "armor": 2,
-        "discipline": 8,
-        "talents": ["Perform[Bardsong,3]","Dodge","Elusive","Outperform","Protected","Ally[Trusted]"],
-        "abilities": {
-            "agility": 10
-        },
-        "skills": [{
-            "name": "Perform",
-            "rating": 10
-        }]
+        }
     },
     "gender": "F",
     "value": 25,
@@ -4019,16 +4003,16 @@ const Models: Model[] = [{
         "abilities": {
             "agility": 12
         },
-        "skills": [{
-            "name": "Perform",
+        "performance": {
+            "name": "Bardsong",
             "rating": 10
-        }]
+        }
     },
     "gender": "F",
     "value": 33,
     "race": "Faeler"
 },{
-    "factions": ["Kuzaarik Forgers","Urdaggar Tribes of Valor"],
+    "factions": ["Kuzaarik Forgers","Urdaggar Tribes of Valor","Varkraalan Unchained"],
     "primaryFaction": ["Kuzaarik Forgers"],
     "name": "Operative",
     "displayName": "Operative",
@@ -4107,7 +4091,11 @@ const Models: Model[] = [{
         "talents": ["Cavalry","Assault","Hit and Run","Nimble","Fast"],
         "abilities": {
             "agility": 10
-        }
+        },
+        "veteran": [{
+            "name": "Hard Target",
+            "cost": 1
+        }]
     },
     "gender": "M",
     "value": 32,
@@ -4131,7 +4119,11 @@ const Models: Model[] = [{
         "talents": ["Assault","Backstep","Dodge"],
         "abilities": {
             "agility": 10
-        }
+        },
+        "veteran": [{
+            "name": "Hard Target",
+            "cost": 1
+        }]
     },
     "gender": "M",
     "value": 27,
@@ -4156,7 +4148,11 @@ const Models: Model[] = [{
         "shield": "S",
         "armor": 3,
         "discipline": 6,
-        "talents": ["Cavalry","Harasser","Light Cavalry","Elusive","Fast"]
+        "talents": ["Cavalry","Harasser","Light Cavalry","Elusive","Fast"],
+        "veteran": [{
+            "name": "Deft Rider",
+            "cost": 1
+        }]
     },
     "gender": "M",
     "value": 18,
@@ -4214,7 +4210,7 @@ const Models: Model[] = [{
     "value": 32,
     "race": "Chaler"
 },{
-    "factions": ["Kuzaarik Forgers","Urdaggar Tribes of Valor"],
+    "factions": ["Kuzaarik Forgers","Urdaggar Tribes of Valor","Varkraalan Unchained"],
     "primaryFaction": ["Kuzaarik Forgers"],
     "name": "Stoneclaw Savage",
     "displayName": "Stoneclaw Savage (Mounted)",
@@ -4242,7 +4238,7 @@ const Models: Model[] = [{
     "value": 43,
     "race": "Kuzaarik"
 },{
-    "factions": ["Kuzaarik Forgers","Urdaggar Tribes of Valor"],
+    "factions": ["Kuzaarik Forgers","Urdaggar Tribes of Valor","Varkraalan Unchained"],
     "primaryFaction": ["Kuzaarik Forgers"],
     "name": "Stoneclaw Savage",
     "displayName": "Stoneclaw Savage (Dismounted)",
@@ -4292,6 +4288,7 @@ const Models: Model[] = [{
     "race": "Chaler"
 },{
     "factions": ["Darkgrove Demons","Demons of Karelon","Grular Invaders"],
+    "trustedFactions": ["Grular Invaders"],
     "primaryFaction": ["Demons of Karelon"],
     "name": "Karbazaal",
     "displayName": "Karbazaal",
@@ -4385,8 +4382,10 @@ const Models: Model[] = [{
         "discipline": 6,
         "talents": ["Necromancy","Deathshaper","Deathbinder"],
         "casting":{
+            "name": "Necromancy",
             "rating":10,
-            "power":15
+            "power":15,
+            "type": "spirit"
         }
     },
     "gender": "M",
@@ -4593,8 +4592,10 @@ const Models: Model[] = [{
         "discipline": 8,
         "talents": ["Water Magic","Amphibious","Immune[Poison]","Water Bond"],
         "casting":{
+            "name": "Water Magic",
             "power":15,
-            "rating":10
+            "rating":10,
+            "type": "energy"
         }
     },
     "gender": "M",
@@ -4701,7 +4702,7 @@ const Models: Model[] = [{
     "value": 13,
     "race": "Shakrim"
 },{
-    "factions": ["Azura Windborne","Eclipse Sisterhood"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Mershael Corsairs","Koronnan Moonsworn"],
     "primaryFaction": ["Eclipse Sisterhood"],
     "name": "Battle Sister",
     "displayName": "Battle Sister",
@@ -4732,7 +4733,8 @@ const Models: Model[] = [{
     "value": 28,
     "race": "Chaler"
 },{
-    "factions": ["Falkaaran Adventurers","Haradelan Questers","Urdaggar Tribes of Valor"],
+    "factions": ["Falkaaran Adventurers","Haradelan Questers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "trustedFactions": ["Falkaaran Adventurers","Haradelan Questers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Wandering Allies"],
     "name": "Wildwing",
     "displayName": "Wildwing",
@@ -4746,20 +4748,21 @@ const Models: Model[] = [{
         }],
         "armor": 2,
         "discipline": 8,
-        "talents": ["Dodge","Cunning","Outperform","Protected","Perform[Wing Dances,5]","Ally[Trusted]"],
+        "talents": ["Dodge","Cunning","Outperform","Protected","Perform[Wing Dances,5]"],
         "abilities":{
             "agility":12
         },
-        "skills": [{
-            "name":"Perform",
-            "rating":10
-        }]
+        "performance": {
+            "name": "Wing Dances",
+            "rating": 10
+        }
     },
     "gender": "F",
     "value": 31,
     "race": "Faeler"
 },{
-    "factions": ["Falkaaran Adventurers","Haradelan Questers","Urdaggar Tribes of Valor"],
+    "factions": ["Falkaaran Adventurers","Haradelan Questers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "trustedFactions": ["Falkaaran Adventurers","Haradelan Questers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Wandering Allies"],
     "name": "Wildwing",
     "displayName": "Wildwing",
@@ -4773,20 +4776,21 @@ const Models: Model[] = [{
         }],
         "armor": 2,
         "discipline": 8,
-        "talents": ["Dodge","Cunning","Outperform","Protected","Perform[Wing Dances,5]","Ally[Trusted]"],
+        "talents": ["Dodge","Cunning","Outperform","Protected","Perform[Wing Dances,5]"],
         "abilities":{
             "agility":12
         },
-        "skills": [{
-            "name":"Perform",
-            "rating":10
-        }]
+        "performance": {
+            "name": "Wing Dances",
+            "rating": 10
+        }
     },
     "gender": "F",
     "value": 31,
     "race": "Faeler"
 },{
     "factions": ["Darkgrove Demons","Demons of Karelon","Grular Invaders","Shakrim Wavestalkers"],
+    "trustedFactions": ["Grular Invaders"],
     "primaryFaction": ["Demons of Karelon"],
     "name": "Zarfonax",
     "displayName": "Zarfonax",
@@ -4836,8 +4840,10 @@ const Models: Model[] = [{
         "discipline": 6,
         "talents": ["Necromancy","Skull Staff"],
         "casting": {
+            "name": "Necromancy",
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "spirit"
         }
     },
     "gender": "M",
@@ -4974,7 +4980,8 @@ const Models: Model[] = [{
     "value": 33,
     "race": "Faeler"
 },{
-    "factions": ["The Collective","Ravenblade Mercenaries"],
+    "factions": ["The Collective","Ravenblade Mercenaries","Falkaaran Adventurers","Haradelan Questers"],
+    "trustedFactions": ["Falkaaran Adventurers","Haradelan Questers"],
     "primaryFaction": ["The Collective","Ravenblade Mercenaries"],
     "name": "Ravenblade Soldier",
     "displayName": "Ravenblade Soldier",
@@ -4988,33 +4995,8 @@ const Models: Model[] = [{
         }],
         "shield": "S",
         "armor": 5,
-        "discipline": 12,
+        "discipline": 10,
         "talents": ["Parry","Parry","Deflect","Shield Bash"],
-        "veteran": [{
-            "name": "Sergeant[Faeler Swordsman]",
-            "cost": 2
-        }]
-    },
-    "gender": "M",
-    "value": 28,
-    "race": "Faeler"
-},{
-    "factions": ["Falkaaran Adventurers","Haradelan Questers"],
-    "primaryFaction": ["Ravenblade Mercenaries"],
-    "name": "Ravenblade Soldier",
-    "displayName": "Ravenblade Soldier",
-    "type": "Standard",
-    "stats": {
-        "type": "Hero",
-        "speed": 6,
-        "melee": [{
-            "rating": 10,
-            "name": "Longsword (1h)"
-        }],
-        "shield": "S",
-        "armor": 5,
-        "discipline": 12,
-        "talents": ["Parry","Parry","Deflect","Shield Bash","Ally[Trusted]"],
         "veteran": [{
             "name": "Sergeant[Faeler Swordsman]",
             "cost": 2
@@ -5173,8 +5155,10 @@ const Models: Model[] = [{
         "discipline": 12,
         "talents": ["Leader", "Vinespawn", "Regenerate", "Dodge", "Arboreal", "Demon", "Darkgrove Sorcery"],
         "casting": {
+            "name": "Darkgrove Sorcery",
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "sorcery"
         },
         "abilities": {
             "agility":10
@@ -5312,7 +5296,8 @@ const Models: Model[] = [{
     "value": 15,
     "race": "Demon"
 },{
-    "factions": ["Darkgrove Demons", "Demons of Karelon"],
+    "factions": ["Darkgrove Demons", "Demons of Karelon","Grular Invaders"],
+    "trustedFactions": ["Grular Invaders"],
     "primaryFaction": ["Darkgrove Demons", "Demons of Karelon"],
     "name": "Vineling",
     "displayName": "Vineling",
@@ -5355,7 +5340,7 @@ const Models: Model[] = [{
         "shield":"AN",
         "armor": 4,
         "discipline": 10,
-        "talents": ["Sergeant[Bludgeoneers,Krang]", "Accurate Strike", "Tough", "Tough", "Strong-arm","Active Defense","Lash Attack"]
+        "talents": ["Accurate Strike", "Tough", "Tough", "Strong-arm","Active Defense","Lash Attack","Menace","Menace"]
     },
     "gender": "M",
     "value": 30,
@@ -5377,8 +5362,10 @@ const Models: Model[] = [{
         "discipline": 8,
         "talents": ["Varanic Rites: Kantor","Battle Hymn"],
         "casting": {
+            "name": "Varanic Rites: Kantor",
             "rating": 10,
-            "power": 15
+            "power": 15,
+            "type": "spirit"
         }
     },
     "gender": "M",
@@ -5424,8 +5411,10 @@ const Models: Model[] = [{
         "discipline": 12,
         "talents": ["Leader","Moons Magic: Priestess", "Dodge","Hate[Traazorites]","Spelldancer","Spell Projector[Moons Priest]"],
         "casting": {
+            "name": "Moons Magic: Priestess",
             "power":15,
-            "rating":10
+            "rating":10,
+            "type": "spirit"
         },
         "abilities":{
             "agility":10
@@ -5451,8 +5440,10 @@ const Models: Model[] = [{
         "discipline": 8,
         "talents": ["Moons Magic: Priestess", "Dodge","Hate[Traazorites]","Spelldancer","Spell Projector[Moons Priest]"],
         "casting": {
+            "name": "Moons Magic: Priestess",
             "power":15,
-            "rating":10
+            "rating":10,
+            "type": "spirit"
         },
         "abilities":{
             "agility":10
@@ -5476,10 +5467,12 @@ const Models: Model[] = [{
         }],
         "armor": 2,
         "discipline": 12,
-        "talents": ["Leader","Moons Magic: Priest", "Dodge","Hate[Traazorites]","Spelldancer","Spell Projector[Moons Priestess]"],
+        "talents": ["Leader","Moons Magic: Priest", "Dodge","Spelldancer","Spell Projector[Moons Priestess]"],
         "casting": {
+            "name": "Moons Magic: Priest",
             "power":15,
-            "rating":10
+            "rating":10,
+            "type": "spirit"
         },
         "abilities":{
             "agility":10
@@ -5503,10 +5496,12 @@ const Models: Model[] = [{
         }],
         "armor": 2,
         "discipline": 8,
-        "talents": ["Moons Magic: Priest", "Dodge","Hate[Traazorites]","Spelldancer","Spell Projector[Moons Priestess]"],
+        "talents": ["Moons Magic: Priest", "Dodge","Spelldancer","Spell Projector[Moons Priestess]"],
         "casting": {
+            "name": "Moons Magic: Priest",
             "power":15,
-            "rating":10
+            "rating":10,
+            "type": "spirit"
         },
         "abilities":{
             "agility":10
@@ -5516,7 +5511,7 @@ const Models: Model[] = [{
     "value": 35,
     "race": "Koronnan"
 },{
-    "factions": ["Eclipse Sisterhood","Koronnan Moonsworn"],
+    "factions": ["Eclipse Sisterhood","Koronnan Moonsworn","Mershael Corsairs"],
     "primaryFaction": ["Koronnan Moonsworn"],
     "name": "Koronnan Bladebrother",
     "displayName": "Koronnan Bladebrother",
@@ -5661,7 +5656,8 @@ const Models: Model[] = [{
     "value": 12,
     "race": "Koronnan"
 },{
-    "factions": ["Haradelan Questers","Kuzaarik Forgers","Urdaggar Tribes of Valor"],
+    "factions": ["Falkaaran Adventurers","Haradelan Questers","Kuzaarik Forgers","Urdaggar Tribes of Valor","Varkraalan Unchained"],
+    "trustedFactions": ["Falkaaran Adventurers"],
     "primaryFaction": ["Kuzaarik Forgers"],
     "name": "Lightbringer",
     "displayName": "Lightbringer",
@@ -5676,30 +5672,6 @@ const Models: Model[] = [{
         "armor": 5,
         "discipline": 10,
         "talents": ["Parry","Die Hard","Alpine","Demonlore","Warden"],
-        "abilities":{
-            "agility":10,
-            "endurance":10
-        }
-    },
-    "gender": "M",
-    "value": 33,
-    "race": "Kuzaarik"
-},{
-    "factions": ["Falkaaran Adventurers"],
-    "primaryFaction": ["Kuzaarik Forgers"],
-    "name": "Lightbringer",
-    "displayName": "Lightbringer (Shadow Hunter ally)",
-    "type": "Standard",
-    "stats": {
-        "type": "Hero",
-        "speed": 5,
-        "melee": [{
-            "rating": 10,
-            "name": "Zeradrakh"
-        }],
-        "armor": 5,
-        "discipline": 10,
-        "talents": ["Parry","Die Hard","Alpine","Demonlore","Warden","Ally[Trusted]"],
         "abilities":{
             "agility":10,
             "endurance":10
@@ -5947,7 +5919,8 @@ const Models: Model[] = [{
     "value": 62,
     "race": "Beast"
 },{
-    "factions": ["Demons of Karelon"],
+    "factions": ["Demons of Karelon","Darkgrove Demons","Grular Invaders"],
+    "trustedFactions": ["Grular Invaders"],
     "primaryFaction": ["Demons of Karelon"],
     "name": "Elivai",
     "displayName": "Elivai",
@@ -5967,16 +5940,17 @@ const Models: Model[] = [{
             "agility":10,
             "spirit":10
         },
-        "skills": [{
-            "name": "Perform",
+        "performance": {
+            "name": "Siren Song",
             "rating": 10
-        }]
+        }
     },
     "gender": "F",
     "value": 37,
     "race": "Demon"
 },{
-    "factions": ["Demons of Karelon"],
+    "factions": ["Demons of Karelon","Darkgrove Demons","Grular Invaders"],
+    "trustedFactions": ["Grular Invaders"],
     "primaryFaction": ["Demons of Karelon"],
     "name": "Elivai",
     "displayName": "Elivai",
@@ -5996,10 +5970,10 @@ const Models: Model[] = [{
             "agility":10,
             "spirit":10
         },
-        "skills": [{
-            "name": "Perform",
+        "performance": {
+            "name": "Siren Song",
             "rating": 10
-        }]
+        }
     },
     "gender": "F",
     "value": 37,
@@ -6057,7 +6031,8 @@ const Models: Model[] = [{
     "value": 33,
     "race": "Koronnan"
 },{
-    "factions": ["Ravenblade Mercenaries"],
+    "factions": ["Ravenblade Mercenaries","Falkaaran Adventurers","Haradelan Questers"],
+    "trustedFactions": ["Falkaaran Adventurers","Haradelan Questers"],
     "primaryFaction": ["Ravenblade Mercenaries"],
     "name": "Sho'pel",
     "displayName": "Sho'pel",
@@ -6075,16 +6050,17 @@ const Models: Model[] = [{
         "abilities": {
             "agility":12
         },
-        "skills": [{
-            "name":"Perform",
-            "rating":12
-        }]
+        "performance": {
+            "name": "Ravensong",
+            "rating": 12
+        }
     },
     "gender": "M",
     "value": 36,
     "race": "Faeler"
 },{
-    "factions": ["Ravenblade Mercenaries"],
+    "factions": ["Ravenblade Mercenaries","Falkaaran Adventurers","Haradelan Questers"],
+    "trustedFactions": ["Falkaaran Adventurers","Haradelan Questers"],
     "primaryFaction": ["Ravenblade Mercenaries"],
     "name": "Sho'pel",
     "displayName": "Sho'pel",
@@ -6102,64 +6078,10 @@ const Models: Model[] = [{
         "abilities": {
             "agility":12
         },
-        "skills": [{
-            "name":"Perform",
-            "rating":12
-        }]
-    },
-    "gender": "M",
-    "value": 36,
-    "race": "Faeler"
-},{
-    "factions": ["Falkaaran Adventurers","Haradelan Questers"],
-    "primaryFaction": ["Ravenblade Mercenaries"],
-    "name": "Sho'pel",
-    "displayName": "Sho'pel",
-    "type": "Standard",
-    "stats": {
-        "type": "Hero",
-        "speed": 7,
-        "melee": [{
-            "rating": 6,
-            "name": "Cleaver"
-        }],
-        "armor": 2,
-        "discipline": 8,
-        "talents": ["Perform[Ravensong,5]","Protected","Dodge","Cunning","Bonded[Ravenblade Lt.]","Outperform","Ally[Trusted]"],
-        "abilities": {
-            "agility":12
-        },
-        "skills": [{
-            "name":"Perform",
-            "rating":12
-        }]
-    },
-    "gender": "M",
-    "value": 36,
-    "race": "Faeler"
-},{
-    "factions": ["Falkaaran Adventurers","Haradelan Questers"],
-    "primaryFaction": ["Ravenblade Mercenaries"],
-    "name": "Sho'pel",
-    "displayName": "Sho'pel",
-    "type": "Caster",
-    "stats": {
-        "type": "Hero",
-        "speed": 7,
-        "melee": [{
-            "rating": 6,
-            "name": "Cleaver"
-        }],
-        "armor": 2,
-        "discipline": 8,
-        "talents": ["Perform[Ravensong,5]","Protected","Dodge","Cunning","Bonded[Ravenblade Lt.]","Outperform","Ally[Trusted]"],
-        "abilities": {
-            "agility":12
-        },
-        "skills": [{
-            "name":"Perform",
-            "rating":12
-        }]
+        "performance": {
+            "name": "Ravensong",
+            "rating": 12
+        }
     },
     "gender": "M",
     "value": 36,
@@ -6249,7 +6171,7 @@ const Models: Model[] = [{
         }
     },
     "gender": "M",
-    "value": 33,
+    "value": 32,
     "race": "Beast"
 },{
     "factions": ["Kuzaarik Forgers","Urdaggar Tribes of Valor"],
@@ -6385,7 +6307,7 @@ const Models: Model[] = [{
     "value": 33,
     "race": "Faeler"
 },{
-    "factions": ["Mershael Corsairs"],
+    "factions": ["Azura Windborne", "Mershael Corsairs"],
     "primaryFaction": ["Mershael Corsairs"],
     "name": "Deck Gunner",
     "displayName": "Deck Gunner",
@@ -6513,15 +6435,43 @@ const Models: Model[] = [{
             "name": "Staff"
         }],
         "casting": {
+            "name": "Vulture Magic",
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "spirit"
         },
         "armor": 2,
         "discipline": 12,
-        "talents": ["Leader","Shoot Them!","Carrion Harvest","Dodge"]
+        "talents": ["Leader","Carrion Harvest","Dodge","Vulture Magic"]
     },
     "gender": "F",
     "value": 39,
+    "race": "Faeler"
+},{
+    "factions": ["Urdaggar Tribes of Ruin"],
+    "primaryFaction": ["Urdaggar Tribes of Ruin"],
+    "name": "Dark Herald",
+    "displayName": "Dark Herald",
+    "type": "Caster",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee": [{
+            "rating": 6,
+            "name": "Staff"
+        }],
+        "casting": {
+            "name": "Vulture Magic",
+            "power": 15,
+            "rating": 10,
+            "type": "spirit"
+        },
+        "armor": 2,
+        "discipline": 10,
+        "talents": ["Carrion Harvest","Dodge","Vulture Magic"]
+    },
+    "gender": "F",
+    "value": 32,
     "race": "Faeler"
 },{
     "factions": ["Urdaggar Tribes of Ruin"],
@@ -6550,7 +6500,7 @@ const Models: Model[] = [{
 },{
     "factions": ["Urdaggar Tribes of Ruin"],
     "primaryFaction": ["Urdaggar Tribes of Ruin"],
-    "name": "Destroyer",
+    "name": "Vanquisher",
     "displayName": "Destroyer",
     "type": "Standard",
     "stats": {
@@ -6790,19 +6740,19 @@ const Models: Model[] = [{
             "rating": 6,
             "name": "Long Knife"
         }],
-        "armor": 4,
+        "armor": 2,
         "discipline": 6,
         "talents": ["Infiltrate","Scrounge"],
         "skills": [{
             "name": "Find",
-            "rating": 8
+            "rating": 10
         }]
     },
     "gender": "M",
     "value": 10,
     "race": "Kandoran"
 },{
-    "factions": ["Koronnan Moonsworn"],
+    "factions": ["Koronnan Moonsworn", "Eclipse Sisterhood"],
     "primaryFaction": ["Koronnan Moonsworn"],
     "name": "Skirmisher",
     "displayName": "Skirmisher",
@@ -6818,7 +6768,7 @@ const Models: Model[] = [{
             "rating": 6,
             "name": "Javelin"
         }],
-        "armor": 4,
+        "armor": 2,
         "discipline": 6,
         "talents": ["Fast"]
     },
@@ -6826,7 +6776,7 @@ const Models: Model[] = [{
     "value": 10,
     "race": "Koronnan"
 },{
-    "factions": ["Kuzaarik Forgers"],
+    "factions": ["Kuzaarik Forgers","Varkraalan Unchained","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Kuzaarik Forgers"],
     "name": "Field Warden",
     "displayName": "Field Warden",
@@ -6853,7 +6803,7 @@ const Models: Model[] = [{
     "value": 31,
     "race": "Kuzaarik"
 },{
-    "factions": ["Kuzaarik Forgers"],
+    "factions": ["Kuzaarik Forgers","Varkraalan Unchained"],
     "primaryFaction": ["Kuzaarik Forgers"],
     "name": "Trapper",
     "displayName": "Trapper",
@@ -6916,8 +6866,10 @@ const Models: Model[] = [{
             "name": "Long Knife"
         }],
         "casting": {
+            "name": "Void Magic: Enshrouder",
             "power": 15,
-            "rating": 10
+            "rating": 10,
+            "type": "energy"
         },
         "armor": 2,
         "discipline": 8,
@@ -6950,7 +6902,7 @@ const Models: Model[] = [{
     "value": 35,
     "race": "Chaler"
 },{
-    "factions": ["Azura Windborne","Eclipse Sisterhood"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn","Mershael Corsairs"],
     "primaryFaction": ["Eclipse Sisterhood"],
     "name": "Sky Sister",
     "displayName": "Sky Sister",
@@ -6977,7 +6929,7 @@ const Models: Model[] = [{
     "value": 45,
     "race": "Chaler"
 },{
-    "factions": ["Falkaaran Adventurers"],
+    "factions": ["Falkaaran Adventurers","Ravenblade Mercenaries","Haradelan Questers"],
     "primaryFaction": ["Falkaaran Adventurers"],
     "name": "Knight Immolator",
     "displayName": "Knight Immolator",
@@ -7006,7 +6958,7 @@ const Models: Model[] = [{
     "value": 45,
     "race": "Chaler"
 },{
-    "factions": ["Koronnan Moonsworn"],
+    "factions": ["Koronnan Moonsworn","Eclipse Sisterhood"],
     "primaryFaction": ["Koronnan Moonsworn"],
     "name": "Red Lancer",
     "displayName": "Red Lancer",
@@ -7038,7 +6990,7 @@ const Models: Model[] = [{
     "value": 42,
     "race": "Koronnan"
 },{
-    "factions": ["Azura Windborne","Mershael Corsairs"],
+    "factions": ["Azura Windborne","Mershael Corsairs","Eclipse Sisterhood"],
     "primaryFaction": ["Mershael Corsairs"],
     "name": "Kyutokar",
     "displayName": "Kyutokar",
@@ -7114,7 +7066,7 @@ const Models: Model[] = [{
     "value": 31,
     "race": "Trilian"
 },{
-    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","The Collective","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "factions": ["Black Rose Bandits","Black Thorn Bandits","The Collective","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Wandering Allies"],
     "name": "Moon Talon",
     "displayName": "Moon Talon",
@@ -7256,8 +7208,10 @@ const Models: Model[] = [{
             "name": "Dagger"
         }],
         "casting": {
+            "name": "Air Magic",
             "rating": 10,
-            "power": 15
+            "power": 15,
+            "type": "energy"
         },
         "armor": 2,
         "discipline": 8,
@@ -7313,6 +7267,1173 @@ const Models: Model[] = [{
     "gender": "M",
     "value": 12,
     "race": "Azura"
+},{
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Mershael Corsairs"],
+    "primaryFaction": ["Azura Windborne"],
+    "name": "Hailstorm",
+    "displayName": "Hailstorm",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "range": [{
+            "rating": 8,
+            "name": "Zishoti"
+        },{
+            "rating": 8,
+            "name": "Zishoti"
+        }],
+        "armor": 3,
+        "discipline": 8,
+        "talents": ["Dodge","Elusive","Harasser","Fly[Low, SPD 5]"],
+        "abilities": {
+            "agility":12
+        },
+        "skills": [{
+            "name":"Hunt",
+            "rating":8
+        }]
+    },
+    "gender": "M",
+    "value": 35,
+    "race": "Azura"
+},{
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Mershael Corsairs"],
+    "primaryFaction": ["Azura Windborne"],
+    "name": "Thunderbolt",
+    "displayName": "Thunderbolt",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 10,
+        "melee":[{
+            "name": "Arantish",
+            "rating": 10
+        },{
+            "name":"Beak",
+            "rating":6,
+            "damage":6
+        }],
+        "armor": 5,
+        "discipline": 10,
+        "talents": ["Assult","Bounding Charge","Cavalry","Enhanced Leaper","Enhanced Leaper","Hit and Run","Fouling Strike","Fast","Light Construction"],
+        "abilities": {
+            "agility":12
+        }
+    },
+    "gender": "M",
+    "value": 43,
+    "race": "Azura"
+},{
+    "factions": ["Darkgrove Demons","Demons of Karelon"],
+    "primaryFaction": ["Darkgrove Demons"],
+    "name": "Thornripper",
+    "displayName": "Thornripper",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee":[{
+            "name": "Claw",
+            "rating": 10,
+            "damage": 8
+        }],
+        "armor": 5,
+        "discipline": 8,
+        "talents": ["Die Hard","Thorny Body","Arboreal","Demon"],
+        "veteran": [{
+            "name": "SPR",
+            "cost": 2
+        }],
+        "abilities": {
+            "endurance":10
+        }
+    },
+    "gender": "M",
+    "value": 23,
+    "race": "Demon"
+},{
+    "factions": ["Darkgrove Demons","Demons of Karelon"],
+    "primaryFaction": ["Darkgrove Demons"],
+    "name": "Hanging Lasher",
+    "displayName": "Hanging Lasher",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 7,
+        "melee":[{
+            "name": "Barbed Whip",
+            "rating": 6
+        }],
+        "armor": 2,
+        "discipline": 6,
+        "talents": ["Ambush","Entangler","Entangler","Arboreal","Demon"]
+    },
+    "gender": "M",
+    "value": 12,
+    "race": "Demon"
+},{
+    "factions": ["Ravenblade Mercenaries"],
+    "primaryFaction": ["Ravenblade Mercenaries"],
+    "name": "Deadeye",
+    "displayName": "Deadeye",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 6,
+        "melee":[{
+            "name": "Short Sword",
+            "rating": 10
+        }],
+        "range": [{
+            "name":"Crossbow",
+            "rating":10
+        }],
+        "armor": 4,
+        "discipline": 8,
+        "talents": ["Glacis","Guardian Shot","Dodge","Sharpshooter","Combat Reflexes"],
+        "abilities": {
+            "agility": 10
+        }
+    },
+    "gender": "M",
+    "value": 28,
+    "race": "Faeler"
+},{
+    "factions": ["Urdaggar Tribes of Ruin"],
+    "primaryFaction": ["Urdaggar Tribes of Ruin"],
+    "name": "Night Lurker",
+    "displayName": "Night Lurker",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 5,
+        "melee":[{
+            "name": "Ripper",
+            "rating": 10
+        }],
+        "armor": 3,
+        "discipline": 10,
+        "talents": ["Darkvision","Dodge","Dodge","Cavalry","Light Cavalry","Fly[Low, SPD 10]","Hit and Run","Piercing Screech","Scout"],
+        "abilities": {
+            "agility": 10
+        }
+    },
+    "gender": "M",
+    "value": 34,
+    "race": "Faeler"
+},{
+    "factions": ["Urdaggar Tribes of Ruin"],
+    "primaryFaction": ["Urdaggar Tribes of Ruin"],
+    "name": "Spider Rider",
+    "displayName": "Spider Rider",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee":[{
+            "name": "Bite",
+            "rating": 10,
+            "damage":8,
+            "abilities":["ven"]
+        },{
+            "name": "Web",
+            "rating": 10
+        },{
+            "name": "Short Spear",
+            "rating": 8
+        }],
+        "armor": 3,
+        "discipline": 10,
+        "talents": ["Cavalry","Die Hard","Battler","Dodge","Fearsome","Infiltrate","Spiderclimb","Tough"],
+        "abilities": {
+            "agility": 10,
+            "endurance":10
+        }
+    },
+    "gender": "M",
+    "value": 44,
+    "race": "Faeler"
+},{
+    "factions": ["Kandoran Deathmasters","Black Rose Bandits","Black Thorn Bandits"],
+    "primaryFaction": ["Kandoran Deathmasters"],
+    "name": "The Faceless",
+    "displayName": "The Faceless",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee":[{
+            "name": "Agukrich",
+            "rating": 8
+        }],
+        "range": [{
+            "name": "Agukrich",
+            "rating": 10
+        }],
+        "armor": 2,
+        "discipline": 10,
+        "talents": ["Accurate Shot","Bladedancer","Deft Hands","Dodge","Disguise","Fast Disguise"],
+        "abilities": {
+            "agility": 12,
+            "dexterity":10
+        },
+        "skills": [{
+            "name":"Thievery",
+            "rating":10
+        }]
+    },
+    "gender": "M",
+    "value": 35,
+    "race": "Faeler"
+},{
+    "factions": ["Urdaggar Tribes of Valor"],
+    "primaryFaction": ["Urdaggar Tribes of Valor"],
+    "name": "Sholakir",
+    "displayName": "Sholakir",
+    "type": "Leader",
+    "stats": {
+        "type": "Hero",
+        "speed": 5,
+        "melee":[{
+            "name": "Longspear",
+            "rating": 12
+        },{
+            "name": "Talon",
+            "rating": 8,
+            "damage": 6,
+            "abilities": ["pin"]
+        }],
+        "shield": "S",
+        "armor": 3,
+        "discipline": 12,
+        "talents": ["Leader","Dodge","Dodge","Hit and Run","Assult","Cavalry","Swoop[Talon]","Fly[Low, SPD 10]"],
+        "abilities": {
+            "agility": 10,
+            "spirit": 10
+        }
+    },
+    "gender": "M",
+    "value": 50,
+    "race": "Faeler"
+},{
+    "factions": ["Kuzaarik Forgers"],
+    "primaryFaction": ["Urdaggar Tribes of Valor"],
+    "name": "Sholakir",
+    "displayName": "Sholakir",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 5,
+        "melee":[{
+            "name": "Longspear",
+            "rating": 10
+        },{
+            "name": "Talon",
+            "rating": 8,
+            "damage": 6,
+            "abilities": ["pin"]
+        }],
+        "shield": "S",
+        "armor": 3,
+        "discipline": 10,
+        "talents": ["Dodge","Dodge","Hit and Run","Assult","Cavalry","Swoop[Talon]","Fly[Low, SPD 10]"],
+        "abilities": {
+            "agility": 10,
+            "spirit": 10
+        }
+    },
+    "gender": "M",
+    "value": 43,
+    "race": "Faeler"
+},{
+    "factions": ["Grular Invaders"],
+    "primaryFaction": ["Grular Invaders"],
+    "name": "Fear Bringer",
+    "displayName": "Fear Bringer",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 6,
+        "melee":[{
+            "name": "Morning Star",
+            "rating": 10
+        }],
+        "range":[{
+            "name": "Skullbomb",
+            "rating": 8
+        }],
+        "armor": 5,
+        "discipline": 10,
+        "talents": ["Dodge","Menace","Fearsome","Face your Fear","Face your Fear"],
+        "abilities": {
+            "agility": 10,
+            "knowledge": 10
+        }
+    },
+    "gender": "M",
+    "value": 30,
+    "race": "Faeler"
+},{
+    "factions": ["Koronnan Moonsworn"],
+    "primaryFaction": ["Koronnan Moonsworn"],
+    "name": "Spirit Owl",
+    "displayName": "Spirit Owl",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 1,
+        "melee":[{
+            "name": "Talon",
+            "rating": 6,
+            "damage": 4,
+            "abilities": ["pin"]
+        }],
+        "armor": 2,
+        "discipline": 4,
+        "talents": ["Familiar","Animal","Spirit","Insignificant","Fly[Low, SPD 10]","Starlight Vision","Dodge","Intensify Spell"],
+        "abilities": {
+            "agility": 10
+        },
+        "skills": [{
+            "name": "Hunt",
+            "rating": 6
+        }]
+    },
+    "gender": "M",
+    "value": 15,
+    "race": "Beast"
+},{
+    "factions": ["Koronnan Moonsworn"],
+    "primaryFaction": ["Koronnan Moonsworn"],
+    "name": "Spirit Wolf",
+    "displayName": "Spirit Wolf",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 8,
+        "melee":[{
+            "name": "Bite",
+            "rating": 6,
+            "damage": 8
+        }],
+        "armor": 2,
+        "discipline": 4,
+        "talents": ["Familiar","Animal","Spirit","Arboreal","Fast","Spell Shift"],
+        "skills": [{
+            "name": "Hunt",
+            "rating": 6
+        }]
+    },
+    "gender": "M",
+    "value": 15,
+    "race": "Beast"
+},{
+    "factions": ["Shakrim Wavestalkers"],
+    "primaryFaction": ["Shakrim Wavestalkers"],
+    "name": "Zaleek Warrior",
+    "displayName": "Zaleek Warrior",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee":[{
+            "name": "Toothed Sword",
+            "rating": 10
+        }],
+        "armor": 4,
+        "discipline": 10,
+        "talents": ["Confine","Constrict","Die Hard","Die Hard"],
+        "abilities": {
+            "endurance": 10
+        }
+    },
+    "gender": "M",
+    "value": 30,
+    "race": "Shakrim"
+},{
+    "factions": ["Traazorite Crusaders"],
+    "primaryFaction": ["Traazorite Crusaders"],
+    "name": "Dune Crawler",
+    "displayName": "Dune Crawler",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee":[{
+            "name": "Claw 2x",
+            "rating": 10,
+            "damage": 8
+        },{
+            "name": "Stinger",
+            "rating": 10,
+            "damage": 4,
+            "abilities": ["ven"]
+        },{
+            "name": "Whip",
+            "rating": 8
+        }],
+        "armor": 6,
+        "discipline": 10,
+        "talents": ["Battler","Tough","Hardened","Fearsome","Mountainer","Enhanced Vemon","Enhanced Vemon","Cavalry","Confine","Bear Hug"],
+        "abilities": {
+            "endurance": 10
+        }
+    },
+    "gender": "M",
+    "value": 52,
+    "race": "Chaler"
+},{
+    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "primaryFaction": ["Familiar"],
+    "name": "Iztrazal",
+    "displayName": "Iztrazal",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 5,
+        "melee":[{
+            "name": "Bite",
+            "rating": 6,
+            "damage": 4
+        }],
+        "armor": 5,
+        "discipline": 4,
+        "talents": ["Familiar","Animal","Insignificant","Disguise","Armored Deflection","Spellhammer"],
+        "abilities": {
+            "strength": 10
+        }
+    },
+    "gender": "M",
+    "value": 13,
+    "race": "Beast"
+},{
+    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "primaryFaction": ["Familiar"],
+    "name": "Owl",
+    "displayName": "Owl",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 1,
+        "melee":[{
+            "name": "Talon",
+            "rating": 6,
+            "damage": 4,
+            "abilities": ["pin"]
+        }],
+        "armor": 2,
+        "discipline": 4,
+        "talents": ["Familiar","Animal","Insignificant","Disguise","Fly[Low, SPD 10]","Starlight Vision","Dodge","Intensify Spell"],
+        "skills": [{
+            "name": "Hunt",
+            "rating": 6
+        }],
+        "abilities": {
+            "agility": 10
+        }
+    },
+    "gender": "M",
+    "value": 14,
+    "race": "Beast"
+},{
+    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "primaryFaction": ["Familiar"],
+    "name": "Suralax",
+    "displayName": "Suralax",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 4,
+        "melee":[{
+            "name": "Bite",
+            "rating": 6,
+            "damage": 4,
+            "abilities": ["acd"]
+        }],
+        "range":[{
+            "name": "Acid Spit",
+            "rating": 6,
+            "damage": 0,
+            "distance": 2
+        }],
+        "armor": 2,
+        "discipline": 4,
+        "talents": ["Familiar","Animal","Insignificant","Disguise","Dodge","Fly[Low, SPD 9]","Spellhammer"],
+        "abilities": {
+            "strength": 4
+        }
+    },
+    "gender": "M",
+    "value": 14,
+    "race": "Beast"
+},{
+    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "primaryFaction": ["Familiar"],
+    "name": "Voavar",
+    "displayName": "Voavar",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 4,
+        "melee":[{
+            "name": "Sting",
+            "rating": 6,
+            "damage": 4,
+            "abilities": ["ven"]
+        }],
+        "armor": 2,
+        "discipline": 4,
+        "talents": ["Familiar","Animal","Insignificant","Disguise","Dodge","Fly[Low, SPD 8]","Sympathetic Spell"],
+        "abilities": {
+            "strength": 4,
+            "agility": 8
+        }
+    },
+    "gender": "M",
+    "value": 10,
+    "race": "Beast"
+},{
+    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "primaryFaction": ["Familiar"],
+    "name": "Wolf",
+    "displayName": "Wolf",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 8,
+        "melee":[{
+            "name": "Bite",
+            "rating": 6,
+            "damage": 8
+        }],
+        "armor": 2,
+        "discipline": 4,
+        "talents": ["Familiar","Animal","Disguise","Arboreal","Fast","Spell Shift"],
+        "skills": [{
+            "name": "Hunt",
+            "rating": 6
+        }]
+    },
+    "gender": "M",
+    "value": 14,
+    "race": "Beast"
+},{
+    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "primaryFaction": ["Familiar"],
+    "name": "Fox",
+    "displayName": "Fox",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 8,
+        "melee":[{
+            "name": "Bite",
+            "rating": 6,
+            "damage": 6
+        }],
+        "armor": 2,
+        "discipline": 4,
+        "talents": ["Familiar","Animal","Insignificant","Disguise","Arboreal","Fast","Dodge","Spellbender"],
+        "abilities": {
+            "agility": 8
+        }
+    },
+    "gender": "M",
+    "value": 12,
+    "race": "Beast"
+},{
+    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "primaryFaction": ["Familiar"],
+    "name": "Rabbit",
+    "displayName": "Rabbit",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 8,
+        "melee":[{
+            "name": "Bite",
+            "rating": 6,
+            "damage": 4
+        }],
+        "armor": 2,
+        "discipline": 4,
+        "talents": ["Familiar","Animal","Insignificant","Disguise","Arboreal","Fast","Dodge","Selective"],
+        "abilities": {
+            "agility": 10,
+            "strength": 4
+        }
+    },
+    "gender": "M",
+    "value": 11,
+    "race": "Beast"
+},{
+    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "primaryFaction": ["Familiar"],
+    "name": "Skunk",
+    "displayName": "Skunk",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 6,
+        "melee":[{
+            "name": "Bite",
+            "rating": 6,
+            "damage": 4
+        }],
+        "armor": 2,
+        "discipline": 4,
+        "talents": ["Familiar","Animal","Insignificant","Disguise","Arboreal","Skunk Attack","Spell Emanation"]
+    },
+    "gender": "M",
+    "value": 9,
+    "race": "Beast"
+},{
+    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "primaryFaction": ["Familiar"],
+    "name": "Squirrel",
+    "displayName": "Squirrel",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 6,
+        "melee":[{
+            "name": "Bite",
+            "rating": 6,
+            "damage": 4
+        }],
+        "armor": 2,
+        "discipline": 4,
+        "talents": ["Familiar","Animal","Insignificant","Disguise","Arboreal","Dodge","Elusive","Spellstretcher"],
+        "abilities": {
+            "agility": 10,
+            "strength": 4
+        }
+    },
+    "gender": "M",
+    "value": 9,
+    "race": "Beast"
+},{
+    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "primaryFaction": ["Familiar"],
+    "name": "Stag",
+    "displayName": "Stag",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 8,
+        "melee":[{
+            "name": "Antlers",
+            "rating": 6,
+            "damage": 8
+        }],
+        "armor": 2,
+        "discipline": 4,
+        "talents": ["Familiar","Animal","Disguise","Arboreal","Fast","Wild Charge","Spellbracer"]
+    },
+    "gender": "M",
+    "value": 13,
+    "race": "Beast"
+},{
+    "factions": ["Grular Invaders"],
+    "primaryFaction": ["Grular Invaders"],
+    "name": "Falconer",
+    "displayName": "Falconer",
+    "type": "Leader",
+    "stats": {
+        "type": "Hero",
+        "speed": 10,
+        "melee": [{
+            "name": "Spikedrakh",
+            "rating": 8
+        }],
+        "range": [{
+            "name": "Composite Bow",
+            "rating": 12
+        }],
+        "armor": 4,
+        "discipline": 12,
+        "talents": ["Cavalry","Falconer","Fast","Harasser","Hard Target","Hunting Raptor","Leader","Light Cavalry","Rapid Reload","Winged Companion"],
+        "skills": [{
+            "name": "Hunt",
+            "rating": 8
+        }]
+    },
+    "value": 42,
+    "race": "Symker",
+    "gender": "M"
+},{
+    "factions": ["Grular Invaders"],
+    "primaryFaction": ["Grular Invaders"],
+    "name": "Falconer",
+    "displayName": "Falconer",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 10,
+        "melee": [{
+            "name": "Spikedrakh",
+            "rating": 8
+        }],
+        "range": [{
+            "name": "Composite Bow",
+            "rating": 10
+        }],
+        "armor": 4,
+        "discipline": 10,
+        "talents": ["Cavalry","Falconer","Fast","Harasser","Hard Target","Hunting Raptor","Light Cavalry","Rapid Reload","Winged Companion"],
+        "skills": [{
+            "name": "Hunt",
+            "rating": 8
+        }]
+    },
+    "value": 36,
+    "race": "Symker",
+    "gender": "M"
+},{
+    "factions": ["Grular Invaders"],
+    "primaryFaction": ["Grular Invaders"],
+    "name": "Firestarter",
+    "displayName": "Firestarter",
+    "type": "Caster",
+    "stats": {
+        "type": "Hero",
+        "speed": 10,
+        "melee": [{
+            "name": "Staff",
+            "rating": 6
+        }],
+        "casting": {
+            "name": "Fire Magic:Firestarter",
+            "type": "energy",
+            "power": 15,
+            "rating": 10
+        },
+        "armor": 2,
+        "discipline": 8,
+        "talents": ["Fire Magic:Firestarter","Cavalry","Fast","Spelldancer"]
+    },
+    "value": 35,
+    "race": "Symker",
+    "gender": "M"
+},{
+    "factions": ["Grular Invaders"],
+    "primaryFaction": ["Grular Invaders"],
+    "name": "Deserter",
+    "displayName": "Deserter",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 7,
+        "melee": [{
+            "name": "Cudgel",
+            "rating": 6
+        }],
+        "armor": 2,
+        "discipline": 4,
+        "talents": ["Fighting Spirit","Fodder"]
+    },
+    "value": 9,
+    "race": "Symker",
+    "gender": "M"
+},{
+    "factions": ["Koronnan Moonsworn"],
+    "primaryFaction": ["Koronnan Moonsworn"],
+    "name": "Night Fang",
+    "displayName": "Night Fang",
+    "type": "Leader",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee": [{
+            "name": "Moonsickle",
+            "rating": 12
+        }],
+        "armor": 3,
+        "discipline": 12,
+        "talents": ["Accurate Strike","Accurate Strike","Accurate Strike","Champion[Night Wing]","Expert[Parry]","Feint","Leader","Parry","Parry"],
+        "skills": [{
+            "name": "Stealth",
+            "rating": 8
+        }],
+        "abilities": {
+            "agility": 10,
+            "dexterity": 10
+        }
+    },
+    "value": 41,
+    "race": "Koronnan",
+    "gender": "M"
+},{
+    "factions": ["Koronnan Moonsworn"],
+    "primaryFaction": ["Koronnan Moonsworn"],
+    "name": "Night Wing",
+    "displayName": "Night Wing",
+    "type": "Leader",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee": [{
+            "name": "Moonsickle",
+            "rating": 12
+        }],
+        "armor": 3,
+        "discipline": 12,
+        "talents": ["Champion[Night Fang]","Dodge","Dodge","Hate[Traazorites]","Killing Strike","Killing Strike","Leader","Opportune Strike","Prowl","Weaponeer"],
+        "skills": [{
+            "name": "Stealth",
+            "rating": 8
+        }],
+        "abilities": {
+            "agility": 12
+        }
+    },
+    "value": 41,
+    "race": "Koronnan",
+    "gender": "F"
+},{
+    "factions": ["Koronnan Moonsworn"],
+    "primaryFaction": ["Koronnan Moonsworn"],
+    "name": "Night Fang",
+    "displayName": "Night Fang",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee": [{
+            "name": "Moonsickle",
+            "rating": 10
+        }],
+        "armor": 3,
+        "discipline": 10,
+        "talents": ["Accurate Strike","Accurate Strike","Accurate Strike","Champion[Night Wing]","Expert[Parry]","Feint","Parry","Parry"],
+        "skills": [{
+            "name": "Stealth",
+            "rating": 8
+        }],
+        "abilities": {
+            "agility": 10,
+            "dexterity": 10
+        }
+    },
+    "value": 34,
+    "race": "Koronnan",
+    "gender": "M"
+},{
+    "factions": ["Koronnan Moonsworn"],
+    "primaryFaction": ["Koronnan Moonsworn"],
+    "name": "Night Wing",
+    "displayName": "Night Wing",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee": [{
+            "name": "Moonsickle",
+            "rating": 10
+        }],
+        "armor": 3,
+        "discipline": 10,
+        "talents": ["Champion[Night Fang]","Dodge","Dodge","Hate[Traazorites]","Killing Strike","Killing Strike","Opportune Strike","Prowl","Weaponeer"],
+        "skills": [{
+            "name": "Stealth",
+            "rating": 8
+        }],
+        "abilities": {
+            "agility": 12
+        }
+    },
+    "value": 34,
+    "race": "Koronnan",
+    "gender": "F"
+},{
+    "factions": ["Koronnan Moonsworn"],
+    "primaryFaction": ["Koronnan Moonsworn"],
+    "name": "Shader",
+    "displayName": "Shader",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 7,
+        "melee": [{
+            "name": "Moonsickle",
+            "rating": 6
+        }],
+        "armor": 2,
+        "discipline": 6,
+        "talents": ["Ambush","Hate[Traazorites"]
+    },
+    "value": 9,
+    "race": "Koronnan",
+    "gender": "F"
+},{
+    "factions": ["Varkraalan Unchained"],
+    "primaryFaction": ["Varkraalan Unchained"],
+    "name": "Dervish",
+    "displayName": "Dervish",
+    "type": "Leader",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee": [{
+            "name": "Petadrakh",
+            "rating": 12
+        }],
+        "armor": 3,
+        "discipline": 12,
+        "talents": ["Leader","Parry","Parry","Bladedancer","Missile Parry","Swordstorm"],
+        "abilities": {
+            "agility": 10
+        }
+    },
+    "value": 39,
+    "race": "Symker",
+    "gender": "M"
+},{
+    "factions": ["Varkraalan Unchained","Kuzaarik Forgers"],
+    "primaryFaction": ["Varkraalan Unchained"],
+    "name": "Vuan Pang Monk",
+    "displayName": "Vuan Pang Monk",
+    "type": "Caster",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee": [{
+            "name": "Strike 2x",
+            "rating": 8,
+            "damage": 4
+        }],
+        "armor": 2,
+        "discipline": 8,
+        "talents": ["Focus[Vuan Pang Style]","Pure Monk","Dodge","Dampening","Aura Wave"],
+        "abilities": {
+            "agility": 10,
+            "spirit": 10
+        },
+        "focus": {
+            "name": "Vuan Pang Style",
+            "rating": 10
+        }
+    },
+    "value": 34,
+    "race": "Symker",
+    "gender": "M"
+},{
+    "factions": ["Varkraalan Unchained","Kuzaarik Forgers"],
+    "primaryFaction": ["Varkraalan Unchained"],
+    "name": "Jade Changeseeker",
+    "displayName": "Jade Changeseeker",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee": [{
+            "name": "Agukrich",
+            "rating": 10
+        }],
+        "armor": 2,
+        "discipline": 10,
+        "talents": ["Dodge","Dodging Strike","Focus[Mul Sat Style]","Freerunner","Pouncer"],
+        "skills": [{
+            "name": "Stealth",
+            "rating": 8
+        }],
+        "abilities": {
+            "agility": 12,
+            "dexterity": 10
+        },
+        "focus": {
+            "name": "Mul Sat Style",
+            "rating": 6
+        }
+    },
+    "value": 28,
+    "race": "Symker",
+    "gender": "M"
+},{
+    "factions": ["Varkraalan Unchained","Kuzaarik Forgers"],
+    "primaryFaction": ["Varkraalan Unchained"],
+    "name": "Jade Truthseeker",
+    "displayName": "Jade Truthseeker",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee": [{
+            "name": "Sanghara",
+            "rating": 10
+        },{
+            "name": "Sanghara",
+            "rating": 10
+        }],
+        "armor": 2,
+        "discipline": 10,
+        "talents": ["Bladedancer","Accurate Strike","Dodge","Dodge","Focus[Shah Zah Style]"],
+        "skills": [{
+            "name": "Find",
+            "rating": 10
+        }],
+        "abilities": {
+            "agility": 14,
+            "knowledge": 10
+        },
+        "focus": {
+            "name": "Shah Zah Style",
+            "rating": 6
+        }
+    },
+    "value": 37,
+    "race": "Symker",
+    "gender": "F"
+},{
+    "factions": ["Varkraalan Unchained","Kuzaarik Forgers"],
+    "primaryFaction": ["Varkraalan Unchained"],
+    "name": "Zevriss",
+    "displayName": "Zevriss",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee": [{
+            "name": "Zeradrakh",
+            "rating": 10
+        }],
+        "armor": 4,
+        "discipline": 10,
+        "talents": ["Parry","Fighting Spirit","Fighting Spirit","Battler","Wayfinder"]
+    },
+    "value": 27,
+    "race": "Symker",
+    "gender": "M"
+},{
+    "factions": ["Varkraalan Unchained","Kuzaarik Forgers"],
+    "primaryFaction": ["Varkraalan Unchained"],
+    "name": "Bounty Hunter",
+    "displayName": "Bounty Hunter",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee": [{
+            "name": "Spikedrakh",
+            "rating": 10
+        }],
+        "armor": 3,
+        "discipline": 10,
+        "talents": ["Dodge","Dodge","Subdue","Pouncer","Wayfinder","Scout"],
+        "skills": [{
+            "name": "Hunt",
+            "rating": 10
+        },{
+            "name": "Stealth",
+            "rating": 8
+        }],
+        "abilities": {
+            "agility": 12
+        }
+    },
+    "value": 33,
+    "race": "Symker",
+    "gender": "M"
+},{
+    "factions": ["Varkraalan Unchained","Kuzaarik Forgers"],
+    "primaryFaction": ["Varkraalan Unchained"],
+    "name": "Dread Hunter",
+    "displayName": "Dread Hunter",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee": [{
+            "name": "Dreadspear",
+            "rating": 10
+        }],
+        "range": [{
+            "name": "Composite Bow",
+            "rating": 10
+        }],
+        "armor": 3,
+        "discipline":10,
+        "talents": ["Dodge","Heroic Attack","Hunting Partner[Hunting Cat]","Raven Stance","Scout","Wayfinder"],
+        "skills": [{
+            "name": "Hunt",
+            "rating": 8
+        }],
+        "abilities": {
+            "agility": 10
+        }
+    },
+    "value": 35,
+    "race": "Symker",
+    "gender": "M"
+},{
+    "factions": ["Varkraalan Unchained","Kuzaarik Forgers"],
+    "primaryFaction": ["Varkraalan Unchained"],
+    "name": "State Spearman",
+    "displayName": "State Spearman",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 7,
+        "melee": [{
+            "name": "Longspear",
+            "rating": 6
+        }],
+        "shield": "S",
+        "armor": 3,
+        "discipline": 6,
+        "talents": ["Shieldmate"]
+    },
+    "value": 13,
+    "race": "Symker",
+    "gender": "M"
+},{
+    "factions": ["Varkraalan Unchained","Kuzaarik Forgers"],
+    "primaryFaction": ["Varkraalan Unchained"],
+    "name": "State Archer",
+    "displayName": "State Archer",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 7,
+        "melee": [{
+            "name": "Dagger",
+            "rating": 6
+        }],
+        "range": [{
+            "name": "Composite Bow",
+            "rating": 6
+        }],
+        "armor": 2,
+        "discipline": 6
+    },
+    "value": 9,
+    "race": "Symker",
+    "gender": "M"
+},{
+    "factions": ["Varkraalan Unchained","Kuzaarik Forgers"],
+    "primaryFaction": ["Varkraalan Unchained"],
+    "name": "Hunting Cat",
+    "displayName": "Hunting Cat",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 8,
+        "melee": [{
+            "name": "Claw",
+            "rating": 8,
+            "damage": 8
+        }],
+        "armor": 2,
+        "discipline": 6,
+        "talents": ["Dodge","Bonded[Dread Hunter]","Warbeast","wayfinder","Fast"],
+        "abilities": {
+            "agility": 8
+        }
+    },
+    "value": 15,
+    "race": "Beast",
+    "gender": "F"
 }];
 
 export  {Models};

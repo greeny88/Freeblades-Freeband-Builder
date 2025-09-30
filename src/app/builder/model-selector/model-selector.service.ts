@@ -86,6 +86,15 @@ export class ModelSelectorService {
                 });
                 return;
             }
+            if (advancementName === 'MD') {
+                stats.melee?.map(melee => {
+                    if ('damage' in  melee) {
+                        melee.damageBonus = 1 + (melee.damageBonus ?? 0);
+                    }
+                    return melee;
+                });
+                return;
+            }
             if (advancementName === 'RAR') {
                 stats.range?.map(range => {
                     range.rating += 2;
@@ -107,9 +116,25 @@ export class ModelSelectorService {
                 stats.speed += 1;
                 return;
             }
-            if (advancementName.startsWith('AV')) {
-                stats.armor = parseInt(advancementName.charAt(2));
+            if (advancementName === 'DEF') {
+                stats.defense = (stats.defense) ? stats.defense + 1 : 1;
                 return;
+            }
+            if (advancementName.startsWith('AV')) {
+                stats.armor += parseInt(advancementName.charAt(2));
+                return;
+            }
+            if (advancementName.startsWith('CP')) {
+                if (stats.casting) {
+                    stats.casting.power += parseInt(advancementName.charAt(2));
+                }
+                return;
+            }
+            if (advancementName === 'Rise of a Hero') {
+                for (let abilityName in abilities) {
+                    abilities[abilityName] = abilities[abilityName] + 2;
+                }
+                stats.discipline += 2;
             }
             if (!('talents' in stats)) {
                 stats.talents = [];
@@ -175,10 +200,9 @@ export class ModelSelectorService {
                 if (!item) {
                     break;
                 }
-                if (!('advancement' in item)) {
+                if ('advancement' in item) {
                     this.addAdvancement(stats, abilities, item.advancement);
                 }
-                modelValue += item.cost;
             }
         }
 
@@ -191,6 +215,9 @@ export class ModelSelectorService {
                     const abilityReference : any = {'AGL':'agility','DEX':'dexterity','END':'endurance','KNW':'knowledge','SPR':'spirit','STR':'strength'};
                     abilities[abilityReference[inj]] -= 2;
                 } else if (['Hate[faction]','Reluctant'].includes(inj)) {
+                    if (!('talents' in stats)) {
+                        stats.talents = [];
+                    }
                     stats.talents?.push(inj);
                 } else {
                     if (inj === 'DISC') {
@@ -204,6 +231,7 @@ export class ModelSelectorService {
         }
 
         let defense: number = (stats.shield === 'S' || stats.shield === 'AN' || stats.shield === 'B' || stats.shield === 'AS') ? 5 : (stats.shield === 'L') ? 6 : 4;
+        defense = stats.defense ? stats.defense + defense : defense; 
         if (abilities.agility === 4) {
             defense--;
         } else {
@@ -228,7 +256,7 @@ export class ModelSelectorService {
         let lifePoints: number = (stats.type === 'Hero') ? 2 : 1;
         if (stats.talents) {
             for (let talent of stats.talents) {
-                if (['Leader', 'Tough'].indexOf(talent) > -1) {
+                if (['Leader', 'Tough', 'Rise of a Hero'].indexOf(talent) > -1) {
                     lifePoints++;
                 }
             }
