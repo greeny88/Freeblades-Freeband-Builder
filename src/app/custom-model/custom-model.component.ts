@@ -5,6 +5,7 @@ import { Model } from 'src/app/model';
 import { Models } from 'src/app/builder/model-selector/models';
 import { ModelSelectorService } from 'src/app/builder/model-selector/model-selector.service';
 import { MeleeWeapons, RangeWeapons, Skills, Talents } from '../builder/model-selector/advancements';
+import { MatSelectChange } from '@angular/material/select';
 
 @Component({
   selector: 'app-custom-model',
@@ -35,7 +36,7 @@ export class CustomModelComponent implements OnInit {
         shield: [false],
         melee: this.fb.array([this.fb.group({ weapon: '', rating: [8] })]),
         range: this.fb.array([]),
-        talents: [[]],
+        talents: this.fb.array([]),
         skills: [[]],
         abilities: this.fb.group({
           strength: [8],
@@ -60,8 +61,8 @@ export class CustomModelComponent implements OnInit {
     // this.setAbilitiesForModelType('Hero');
   }
 
-  onTypeChange(event: Event): void {
-    const type = (event.target as HTMLSelectElement).value;
+  onTypeChange(event: MatSelectChange): void {
+    const type = event.value;
     if (type === 'Leader' || type === 'Caster') {
       this.characterForm.get('stats.type')?.setValue('Hero');
       this.characterForm.get('stats.type')?.disable();
@@ -71,8 +72,8 @@ export class CustomModelComponent implements OnInit {
     }
   }
 
-  onModelTypeChange(event: Event): void {
-    const type = (event.target as HTMLSelectElement).value;
+  onModelTypeChange(event: MatSelectChange): void {
+    const type = event.value;
     this.setAbilitiesForModelType(type);
   }
 
@@ -112,6 +113,10 @@ export class CustomModelComponent implements OnInit {
     return this.characterForm.get('stats.range') as FormArray;
   }
 
+  get talent(): FormArray {
+    return this.characterForm.get('stats.talents') as FormArray;
+  }
+
   addWeapon(weaponType: 'melee' | 'range'): void {
     const control = this.characterForm.get(`stats.${weaponType}`) as FormArray;
     control.push(this.fb.group({ weapon: '', rating: [8] }));
@@ -119,6 +124,16 @@ export class CustomModelComponent implements OnInit {
 
   removeWeapon(weaponType: 'melee' | 'range', index: number): void {
     const control = this.characterForm.get(`stats.${weaponType}`) as FormArray;
+    control.removeAt(index);
+  }
+
+  addTalent(): void {
+    const control = this.characterForm.get('stats.talents') as FormArray;
+    control.push(this.fb.control(''));
+  }
+
+  removeTalent(index: number): void {
+    const control = this.characterForm.get('stats.talents') as FormArray;
     control.removeAt(index);
   }
 }
