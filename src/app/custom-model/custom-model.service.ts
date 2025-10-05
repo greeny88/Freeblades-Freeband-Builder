@@ -63,7 +63,24 @@ export class CostPredictorService {
       character.type === 'Caster' ? 1 : 0,
       character.type === 'Leader' ? 1 : 0,
       character.stats?.talents ? character.stats.talents.reduce((acc, talent) => {
-        const value = ['Cavalry', 'Fly[Low, SPD 10]', 'Fly[Low, SPD 8]'].includes(talent) ? 2 : 1;
+        let value = 1;
+        if (['Cavalry', 'Fly[Low, SPD 10]', 'Fly[Low, SPD 8]'].includes(talent)) {
+          value++;
+        }
+        if (['Dodge'].includes(talent)) {
+          value += character.stats?.abilities?.agility! / 20;
+        }
+        if (['Die Hard'].includes(talent)) {
+          value += character.stats?.abilities?.endurance! / 20;
+        }
+        if (['Wraith'].includes(talent)) {
+          value += character.stats?.abilities?.spirit! / 20;
+        }
+        if (['Parry'].includes(talent)) {
+          if (character.stats?.melee && character.stats.melee.length > 0) {
+            value += character.stats?.melee[0].rating / 20;
+          }
+        }
         return acc + value;
       }, 0) : 0,
       character.stats?.shield ? 1 : 0, // TODO: consider shield type weighting
@@ -94,6 +111,8 @@ export class CostPredictorService {
       abilities.knowledge || 0,
       abilities.spirit || 0
     );
+
+    // TODO: add all talents as binary features
 
     return features;
   }
