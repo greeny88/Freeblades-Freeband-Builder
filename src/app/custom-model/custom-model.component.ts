@@ -51,8 +51,9 @@ export class CustomModelComponent implements OnInit, OnDestroy {
         type: ['Hero'],
         armor: [2],
         discipline: [8],
-        speed: [0],
+        speed: [5],
         shield: [false],
+        casting: [false],
         melee: this.fb.array([this.fb.group({ weapon: '', rating: [8] })]),
         range: this.fb.array([]),
         talents: this.fb.array([]),
@@ -88,12 +89,30 @@ export class CustomModelComponent implements OnInit, OnDestroy {
     }
   }
 
+  get melee(): FormArray {
+    return this.characterForm.get('stats.melee') as FormArray;
+  }
+
+  get range(): FormArray {
+    return this.characterForm.get('stats.range') as FormArray;
+  }
+
+  get talent(): FormArray {
+    return this.characterForm.get('stats.talents') as FormArray;
+  }
+
   onTypeChange(event: MatSelectChange): void {
     const type = event.value;
     if (type === 'Leader' || type === 'Caster') {
       this.characterForm.get('stats.type')?.setValue('Hero');
       this.characterForm.get('stats.type')?.disable();
       this.setAbilitiesForModelType('Hero');
+      if (type === 'Leader' && !this.talent.value.includes('Leader')) {
+        this.talent.push(this.fb.control('Leader'));
+      }
+      if (type === 'Caster') {
+        this.characterForm.get('stats.casting')?.setValue(true);
+      }
     } else {
       this.characterForm.get('stats.type')?.enable();
     }
@@ -132,18 +151,6 @@ export class CustomModelComponent implements OnInit, OnDestroy {
     this.predictedCost = this.costPredictor.predictCost(characterData);
   }
 
-  get melee(): FormArray {
-    return this.characterForm.get('stats.melee') as FormArray;
-  }
-
-  get range(): FormArray {
-    return this.characterForm.get('stats.range') as FormArray;
-  }
-
-  get talent(): FormArray {
-    return this.characterForm.get('stats.talents') as FormArray;
-  }
-
   addWeapon(weaponType: 'melee' | 'range'): void {
     const control = this.characterForm.get(`stats.${weaponType}`) as FormArray;
     control.push(this.fb.group({ weapon: '', rating: [8] }));
@@ -155,13 +162,11 @@ export class CustomModelComponent implements OnInit, OnDestroy {
   }
 
   addTalent(): void {
-    const control = this.characterForm.get('stats.talents') as FormArray;
-    control.push(this.fb.control(''));
+    this.talent.push(this.fb.control(''));
   }
 
   removeTalent(index: number): void {
-    const control = this.characterForm.get('stats.talents') as FormArray;
-    control.removeAt(index);
+    this.talent.removeAt(index);
   }
 
   private rotateLoadingText(): void {
