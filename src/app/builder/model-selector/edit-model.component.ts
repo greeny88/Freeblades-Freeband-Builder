@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-import { Abilities, Equipment, MagicItems, Skills, Talents } from './advancements';
+import { Abilities, Equipment, MagicItems, Skills, AdvancementTalents } from './advancements';
 import { Advancement, Items, Model, ModelStats } from 'src/app/model';
 import { MatRadioChange } from '@angular/material/radio';
 
@@ -10,7 +10,7 @@ import { MatRadioChange } from '@angular/material/radio';
     templateUrl: './edit-model.component.html'
 })
 export class EditModelComponent {
-    advancements: string[] = ['MAR','RAR','CAR','DISC','SPD','Rise of a Hero',...Abilities,...Skills,...Talents].sort();
+    advancements: string[] = ['MAR','RAR','CAR','DISC','SPD','Rise of a Hero',...Abilities,...Skills,...AdvancementTalents].sort();
     injuries: string[] = [...Abilities, 'DISC', 'SPD', 'Reluctant', 'Hate[faction]'].sort();
     items: any = [...Equipment, ...MagicItems].sort((a,b) => {
         if (a.name.toLowerCase() > b.name.toLowerCase()) {

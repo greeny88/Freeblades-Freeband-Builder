@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Abilities, MeleeWeapons, RangeWeapons, Skills, Talents } from './advancements';
+import { Abilities, MeleeWeapons, RangeWeapons, Skills, AdvancementTalents } from './advancements';
 import { ModelStats, Weapon } from 'src/app/model';
 
 interface stats {
@@ -56,7 +56,7 @@ export class ModelSelectorService {
             } else {
                 abilities[abilityReference[advancementName]] += 2;
             }
-        } else if (Talents.includes(advancementName)) {
+        } else if (AdvancementTalents.includes(advancementName)) {
             if (!('talents' in stats)) {
                 stats.talents = [];
             }
