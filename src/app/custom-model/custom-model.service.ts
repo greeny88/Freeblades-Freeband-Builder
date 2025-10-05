@@ -1,5 +1,6 @@
 import * as tf from '@tensorflow/tfjs';
 import { MeleeWeapon, Model, RangeWeapon } from 'src/app/model';
+import { AdvancementTalents, OtherTalents } from 'src/app/builder/model-selector/advancements';
 
 export class CostPredictorService {
   private model: tf.Sequential;
@@ -62,27 +63,6 @@ export class CostPredictorService {
       character.stats?.type === 'Hero' ? 1 : 0,
       character.type === 'Caster' ? 1 : 0,
       character.type === 'Leader' ? 1 : 0,
-      character.stats?.talents ? character.stats.talents.reduce((acc, talent) => {
-        let value = 1;
-        if (['Cavalry', 'Fly[Low, SPD 10]', 'Fly[Low, SPD 8]'].includes(talent)) {
-          value++;
-        }
-        if (['Dodge'].includes(talent)) {
-          value += character.stats?.abilities?.agility! / 20;
-        }
-        if (['Die Hard'].includes(talent)) {
-          value += character.stats?.abilities?.endurance! / 20;
-        }
-        if (['Wraith'].includes(talent)) {
-          value += character.stats?.abilities?.spirit! / 20;
-        }
-        if (['Parry'].includes(talent)) {
-          if (character.stats?.melee && character.stats.melee.length > 0) {
-            value += character.stats?.melee[0].rating / 20;
-          }
-        }
-        return acc + value;
-      }, 0) : 0,
       character.stats?.shield ? 1 : 0, // TODO: consider shield type weighting
       character.stats?.skills?.length || 0, // TODO: Weight based on rating
       character.stats?.armor || 0,
@@ -101,7 +81,6 @@ export class CostPredictorService {
       }, 0) : 0
     ];
 
-    // Add ability scores
     const abilities = character.stats?.abilities || {};
     features.push(
       abilities.strength || 0,
@@ -112,7 +91,9 @@ export class CostPredictorService {
       abilities.spirit || 0
     );
 
-    // TODO: add all talents as binary features
+    [...AdvancementTalents, ...OtherTalents].forEach(talent => {
+      features.push(character.stats?.talents?.map(t => t.split('[')[0]).reduce((acc, t) => talent.split('[')[0] === t ? acc + 1 : acc , 0) || 0);
+    });
 
     return features;
   }
