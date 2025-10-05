@@ -1,5 +1,10 @@
-<div id="custommodel" class="mat-elevation-z2">
-  <mat-progress-spinner *ngIf="!trainingDone" mode="indeterminate"></mat-progress-spinner>
+<div id="custommodel">
+  <div class="loading-container" *ngIf="!trainingDone">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+    <div class="loading-text">
+      {{ currentLoadingText }}
+    </div>
+  </div>
   
   <form [formGroup]="characterForm" *ngIf="trainingDone" class="form-container">
     <h2 class="mat-headline-4">Character Builder</h2>
@@ -26,7 +31,7 @@
 
       <h3 class="mat-subtitle-1">Melee Weapons</h3>
       <div class="weapon-selections" formArrayName="melee">
-        <button mat-raised-button class="mat-accent" type="button" (click)="addWeapon('melee')">
+        <button mat-raised-button class="mat-accent" type="button" style="margin-bottom:1em;" (click)="addWeapon('melee')">
           <mat-icon>add</mat-icon> Add Weapon
         </button>
         
@@ -54,7 +59,7 @@
 
       <h3 class="mat-subtitle-1">Ranged Weapons</h3>
       <div class="weapon-selections" formArrayName="range">
-        <button mat-raised-button class="mat-accent" type="button" (click)="addWeapon('range')">
+        <button mat-raised-button class="mat-accent" type="button" style="margin-bottom:1em;" (click)="addWeapon('range')">
           <mat-icon>add</mat-icon> Add Weapon
         </button>
         
@@ -82,7 +87,7 @@
 
       <h3 class="mat-subtitle-1">Talents</h3>
       <div formArrayName="talents" class="talent-selections">
-        <button mat-raised-button class="mat-accent" type="button" (click)="addTalent()">
+        <button mat-raised-button class="mat-accent" type="button" style="margin-bottom:1em;" (click)="addTalent()">
           <mat-icon>add</mat-icon> Add Talent
         </button>
         

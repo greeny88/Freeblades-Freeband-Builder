@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { CostPredictorService } from './custom-model.service';
 import { Model } from 'src/app/model';
 import { Models } from 'src/app/builder/model-selector/models';
 import { ModelSelectorService } from 'src/app/builder/model-selector/model-selector.service';
-import { MeleeWeapons, RangeWeapons, Skills, Talents } from '../builder/model-selector/advancements';
+import { MeleeWeapons, RangeWeapons, Skills, AdvancementTalents, OtherTalents } from '../builder/model-selector/advancements';
 import { MatSelectChange } from '@angular/material/select';
 
 @Component({
@@ -12,14 +12,33 @@ import { MatSelectChange } from '@angular/material/select';
   templateUrl: './custom-model.component.html',
   styleUrls: ['./custom-model.component.scss']
 })
-export class CustomModelComponent implements OnInit {
+export class CustomModelComponent implements OnInit, OnDestroy {
   characterForm: FormGroup;
   predictedCost: number | null = null;
   meleeWeapons = MeleeWeapons;
   rangeWeapons = RangeWeapons;
-  talents = Talents;
+  talents = [...AdvancementTalents, ...OtherTalents].sort();
   skills = Skills;
   trainingDone = false;
+  currentLoadingText: string = '';
+  private loadingTexts: string[] = [
+    "Spike and win!",
+    "Sharpening the blades...",
+    "Restringing the bows...",
+    "Polishing the armor...",
+    "Counting the gold coins...",
+    "Feeding the warbeasts...",
+    "Readying the freeband...",
+    "Preparing the ritual...",
+    "Securing the camp...",
+    "Tuning the instruments...",
+    "Studying the maps...",
+    "Scouting the battlefield...",
+    "The Gaal must be crazy...",
+    "Tarch!"
+  ];
+  private textInterval: any;
+  private currentIndex: number = 0;
 
   constructor(
     private fb: FormBuilder,
@@ -51,14 +70,22 @@ export class CustomModelComponent implements OnInit {
   }
 
   async ngOnInit() {
+    this.rotateLoadingText();
     const existingCharacters: Model[] = Models.map(m => {
       m.stats = (<any>Object).assign(m.stats, this.modelSelector.calculateStats(m.stats, m.value));
       return m;
     });
-    console.log('Existing characters for training:', existingCharacters[3]);
     await this.costPredictor.trainModel(existingCharacters);
     this.trainingDone = true;
-    // this.setAbilitiesForModelType('Hero');
+    if (this.textInterval) {
+      clearInterval(this.textInterval);
+    }
+  }
+
+  ngOnDestroy() {
+    if (this.textInterval) {
+      clearInterval(this.textInterval);
+    }
   }
 
   onTypeChange(event: MatSelectChange): void {
@@ -136,4 +163,14 @@ export class CustomModelComponent implements OnInit {
     const control = this.characterForm.get('stats.talents') as FormArray;
     control.removeAt(index);
   }
+
+  private rotateLoadingText(): void {
+    this.loadingTexts = this.loadingTexts.sort(() => Math.random() - 0.5);
+    this.currentLoadingText = this.loadingTexts[0];
+    this.textInterval = setInterval(() => {
+      this.currentIndex = (this.currentIndex + 1) % this.loadingTexts.length;
+      this.currentLoadingText = this.loadingTexts[this.currentIndex];
+    }, 3000);
+  }
+
 }
