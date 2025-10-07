@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Abilities, MeleeWeapons, RangeWeapons, Skills, Talents } from './advancements';
+import { Abilities, MeleeWeapons, RangeWeapons, Skills, AdvancementTalents } from './advancements';
 import { ModelStats, Weapon } from 'src/app/model';
 
 interface stats {
@@ -56,7 +56,7 @@ export class ModelSelectorService {
             } else {
                 abilities[abilityReference[advancementName]] += 2;
             }
-        } else if (Talents.includes(advancementName)) {
+        } else if (AdvancementTalents.includes(advancementName)) {
             if (!('talents' in stats)) {
                 stats.talents = [];
             }
@@ -143,7 +143,7 @@ export class ModelSelectorService {
         }
     }
 
-    calculateStats(originalStats: ModelStats, originalValue: number) {
+    calculateStats(originalStats: ModelStats, originalValue: number): stats {
         let stats: ModelStats = JSON.parse(JSON.stringify(originalStats));
         let ability: number = (stats.type === 'Hero') ? 8 : 6;
         let modelValue: number = originalValue;
@@ -342,7 +342,7 @@ export class ModelSelectorService {
             let melee = stats.melee;
             for (let weapon of melee) {
                 if (!('damage' in weapon)) {
-                    return;
+                    continue;
                 }
                 if (weapon.altSelected) {
                     weapon.rating += 2;
@@ -362,7 +362,7 @@ export class ModelSelectorService {
             let range = stats.range;
             for (let weapon  of range) {
                 if (!('damage' in weapon)) {
-                    return;
+                    continue;
                 }
                 if (weapon.altSelected) {
                     weapon.rating += 2;

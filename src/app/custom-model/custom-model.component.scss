@@ -1,0 +1,11 @@
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .loading-text {
+    text-align: center;
+    transition: opacity 0.3s ease-in-out;
+  }
+}

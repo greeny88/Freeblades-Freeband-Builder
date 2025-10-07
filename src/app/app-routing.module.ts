@@ -17,6 +17,10 @@ const routes: Routes = [
         loadChildren: () => import(/* webpackPrefetch: true *//* webpackChunkName: "prebuilt" */'./prebuilt/prebuilt.module').then(m => m.PrebuiltModule)
     },
     {
+        path: 'custom-model',
+        loadChildren: () => import(/* webpackPrefetch: true *//* webpackChunkName: "custommodel" */'./custom-model/custom-model.module').then(m => m.CustomModelModule)
+    },
+    {
         path: '',
         loadChildren: () => import(/* webpackPrefetch: true *//* webpackChunkName: "builder" */'./builder/builder.module').then(m => m.BuilderModule)
     },
