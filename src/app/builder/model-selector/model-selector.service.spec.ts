@@ -189,7 +189,7 @@ describe('ModelSelectedService', () => {
             return;
         }
         expect(calcdModelStats.abilities.agility).toBe(8);
-        expect(calcdModelStats.modelValue).toBe(13);
+        expect(calcdModelStats.modelValue).toBe(10);
     });
 
     it('should calculate adding injuries.', () => {
