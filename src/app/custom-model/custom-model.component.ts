@@ -54,6 +54,8 @@ export class CustomModelComponent implements OnInit, OnDestroy {
         speed: [5],
         shield: [false],
         casting: [false],
+        performance: [false],
+        focus: [false],
         melee: this.fb.array([this.fb.group({ weapon: '', rating: [8] })]),
         range: this.fb.array([]),
         talents: this.fb.array([]),

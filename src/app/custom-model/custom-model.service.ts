@@ -69,15 +69,15 @@ export class CostPredictorService {
       character.stats?.discipline || 0,
       character.stats?.speed || 0,
       character.stats?.casting? 1 : 0, // TODO: consider weighing rating and power since Mokrul is different
-      // TODO: performance
-      // TODO: pure monk
+      character.stats?.performance? 1 : 0, // TODO: consider weighing rating and dances/songs known
+      character.stats?.focus? 1 : 0, // TODO: consider weighing rating
       character.stats?.melee ? character.stats.melee.reduce((acc, wpn) => {
         // return acc + (wpn.rating * (1 + ((wpn as MeleeWeapon).damage / 100)));
         return acc + wpn.rating + (wpn as MeleeWeapon).damage;
       }, 0) : 0,
       character.stats?.range ? character.stats.range.reduce((acc, wpn) => {
         // return acc + (wpn.rating * (1 + ((wpn as RangeWeapon).damage / 100)) * (1 + ((wpn as RangeWeapon).distance / 100)));
-        return acc + wpn.rating + (wpn as RangeWeapon).damage + (wpn as RangeWeapon).distance;
+        return acc + (wpn.rating * (1 + ((wpn as RangeWeapon).distance / 12))) + (wpn as RangeWeapon).damage;
       }, 0) : 0
     ];
 
