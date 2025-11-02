@@ -49,7 +49,8 @@ export class ModelSelectorComponent {
         'Apprentice Knight of Vidunar',
         'Apprentice Knight of Barek',
         'Dark Herald',
-        'Kor-Khan'
+        'Kor-Khan',
+        'Falconer'
     ];
     private disallowedAltLeadersFactions: string[] = [
         'Darkgrove Demons',
