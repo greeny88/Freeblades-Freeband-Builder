@@ -8434,6 +8434,369 @@ const Models: Model[] = [{
     "value": 15,
     "race": "Beast",
     "gender": "F"
+},{
+    "factions": ["Azura Windborne"],
+    "primaryFaction": ["Azura Windborne"],
+    "name": "Wargull",
+    "displayName": "Wargull",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 7,
+        "melee": [{
+            "name": "Fysala",
+            "rating": 6
+        }],
+        "armor": 2,
+        "discipline": 6,
+        "talents": ["Flurry","Fly[Low, SPD 5]"]
+    },
+    "value": 9,
+    "race": "Azura",
+    "gender": "F"
+},{
+    "factions": ["Eclipse Sisterhood"],
+    "primaryFaction": ["Eclipse Sisterhood"],
+    "name": "Bladedaughter",
+    "displayName": "Bladedaughter",
+    "type": "Leader",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee": [{
+            "name": "Sakhazet",
+            "rating": 12
+        }],
+        "armor": 3,
+        "discipline": 12,
+        "talents": ["Leader","Adapt the Plan","Awareness","Dodge","Dodge","Opportune Strike","Sidestep","Opening Strike","Opening Strike"],
+        "abilities": {
+            "agility": 12
+        }
+    },
+    "value": 39,
+    "race": "Chaler",
+    "gender": "F"
+},{
+    "factions": ["Eclipse Sisterhood"],
+    "primaryFaction": ["Eclipse Sisterhood"],
+    "name": "Bladedaughter Aspirant",
+    "displayName": "Bladedaughter Aspirant",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee": [{
+            "name": "Sakhazet",
+            "rating": 10
+        }],
+        "armor": 3,
+        "discipline": 10,
+        "talents": ["Dodge","Opportune Strike","Sidestep","Opening Strike","Opening Strike"],
+        "abilities": {
+            "agility": 12
+        }
+    },
+    "value": 26,
+    "race": "Chaler",
+    "gender": "F"
+},{
+    "factions": ["Haradelan Questers"],
+    "primaryFaction": ["Haradelan Questers"],
+    "name": "High Questor of Modo",
+    "displayName": "High Questor of Modo",
+    "type": "Leader",
+    "stats": {
+        "type": "Hero",
+        "speed": 6,
+        "melee": [{
+            "name": "Hunting Spear",
+            "rating": 12
+        }],
+        "range": [{
+            "name": "Hunting Spear",
+            "rating": 10
+        }],
+        "armor": 5,
+        "discipline": 12,
+        "talents": ["Leader","Arboreal","Die Hard","Fighting Spirit","Steadfast","Vicious Strike"],
+        "abilities": {
+            "endurance": 10,
+            "spirit": 10
+        }
+    },
+    "value": 44,
+    "race": "Faeler",
+    "gender": "M"
+},{
+    "factions": ["Haradelan Questers"],
+    "primaryFaction": ["Haradelan Questers"],
+    "name": "Darkbane",
+    "displayName": "Darkbane",
+    "type": "Caster",
+    "stats": {
+        "type": "Hero",
+        "speed": 6,
+        "melee": [{
+            "name": "Hunting Spear",
+            "rating": 8
+        }],
+        "casting": {
+            "name": "Varanic Smiting",
+            "type": "spirit",
+            "power": 15,
+            "rating": 10
+        },
+        "armor": 5,
+        "discipline": 8,
+        "talents": ["Varanic Smiting","Spelldancer"]
+    },
+    "value": 37,
+    "race": "Faeler",
+    "gender": "M"
+},{
+    "factions": ["Haradelan Questers"],
+    "primaryFaction": ["Haradelan Questers"],
+    "name": "Questing Knight of Modo",
+    "displayName": "Questing Knight of Modo",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 6,
+        "melee": [{
+            "name": "Hunting Spear",
+            "rating": 10
+        }],
+        "range": [{
+            "name": "Hunting Spear",
+            "rating": 10
+        }],
+        "armor": 5,
+        "discipline": 10,
+        "talents": ["Arboreal","Die Hard","Vicious Strike"],
+        "veteran": [{
+            "name": "Fighting Spirit",
+            "cost": 2
+        }],
+        "abilities": {
+            "endurance": 10,
+            "spirit": 10
+        }
+    },
+    "value": 33,
+    "race": "Faeler",
+    "gender": "M"
+},{
+    "factions": ["Haradelan Questers"],
+    "primaryFaction": ["Haradelan Questers"],
+    "name": "Apprentice Knight of Modo",
+    "displayName": "Apprentice Knight of Modo",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 6,
+        "melee": [{
+            "name": "Hunting Spear",
+            "rating": 10
+        }],
+        "armor": 5,
+        "discipline": 10,
+        "talents": ["Arboreal","Die Hard","Vicious Strike"],
+        "abilities": {
+            "endurance": 10,
+            "spirit": 10
+        }
+    },
+    "value": 26,
+    "race": "Faeler",
+    "gender": "M"
+},{
+    "factions": ["Kandoran Deathmasters"],
+    "primaryFaction": ["Kandoran Deathmasters"],
+    "name": "Deathwail",
+    "displayName": "Deathwail",
+    "type": "Leader",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee": [{
+            "name": "Withering Touch",
+            "rating": 12,
+            "damage": 4,
+            "abilities": ["mag","wth"]
+        }],
+        "performance": {
+            "name": "Ghastly Wails",
+            "rating": 8
+        },
+        "armor": 2,
+        "discipline": 12,
+        "talents": ["Leader","Combat Performer","Perform[Ghastly Wails, 3]","Spirit","Undead","Wraith","Wraith"],
+        "abilities": {
+            "spirit": 10
+        }
+    },
+    "value": 48,
+    "race": "Faeler",
+    "gender": "M"
+},{
+    "factions": ["Kuzaarik Forgers"],
+    "primaryFaction": ["Kuzaarik Forgers"],
+    "name": "Artic Storm",
+    "displayName": "Artic Storm",
+    "type": "Leader",
+    "stats": {
+        "type": "Hero",
+        "speed": 5,
+        "melee": [{
+            "name": "Ice Mace",
+            "rating": 8
+        }],
+        "shield": "S",
+        "armor": 6,
+        "discipline": 12,
+        "talents": ["Leader","Alpine","Die Hard","Runeshield","Shatter"],
+        "veteran": [{
+            "name": "Conquer",
+            "cost": 1
+        }],
+        "abilities": {
+            "endurance": 10,
+            "strength": 10
+        }
+    },
+    "value": 39,
+    "race": "Kuzaarik",
+    "gender": "M"
+},{
+    "factions": ["Kuzaarik Forgers"],
+    "primaryFaction": ["Kuzaarik Forgers"],
+    "name": "Artic Storm",
+    "displayName": "Artic Storm",
+    "type": "Leader",
+    "stats": {
+        "type": "Hero",
+        "speed": 5,
+        "melee": [{
+            "name": "Ice Mace",
+            "rating": 8
+        }],
+        "shield": "S",
+        "armor": 6,
+        "discipline": 12,
+        "talents": ["Leader","Alpine","Die Hard","Runeshield","Shatter"],
+        "veteran": [{
+            "name": "Conquer",
+            "cost": 1
+        }],
+        "abilities": {
+            "endurance": 10,
+            "strength": 10
+        }
+    },
+    "value": 39,
+    "race": "Kuzaarik",
+    "gender": "M"
+},{
+    "factions": ["Trilian Seekers"],
+    "primaryFaction": ["Trilian Seekers"],
+    "name": "Shifter",
+    "displayName": "Shifter",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 7,
+        "melee": [{
+            "name": "Long Knife",
+            "rating": 6
+        }],
+        "armor": 2,
+        "discipline": 6,
+        "talents": ["Wild Magic[d6, Shift]"]
+    },
+    "value": 9,
+    "race": "Trilian",
+    "gender": "M"
+},{
+    "factions": ["Azura Windborne","The Collective","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "primaryFaction": ["Wandering Allies"],
+    "name": "Standard Bearer",
+    "displayName": "Standard Bearer (Rally)",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 6,
+        "melee": [{
+            "name": "Dagger",
+            "rating": 6
+        }],
+        "armor": 4,
+        "discipline": 6,
+        "talents": ["Protected", "Rally Banner"]
+    },
+    "value": 11,
+    "race": "Faeler",
+    "gender": "M"
+},{
+    "factions": ["Azura Windborne","The Collective","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "primaryFaction": ["Wandering Allies"],
+    "name": "Standard Bearer",
+    "displayName": "Standard Bearer (Steadfast)",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 6,
+        "melee": [{
+            "name": "Dagger",
+            "rating": 6
+        }],
+        "armor": 4,
+        "discipline": 6,
+        "talents": ["Protected", "Steadfast Banner"]
+    },
+    "value": 12,
+    "race": "Faeler",
+    "gender": "M"
+},{
+    "factions": ["Azura Windborne","The Collective","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "primaryFaction": ["Wandering Allies"],
+    "name": "Standard Bearer",
+    "displayName": "Standard Bearer (Howling)",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 6,
+        "melee": [{
+            "name": "Dagger",
+            "rating": 6
+        }],
+        "armor": 4,
+        "discipline": 6,
+        "talents": ["Protected", "Howling Banner"]
+    },
+    "value": 13,
+    "race": "Faeler",
+    "gender": "M"
+},{
+    "factions": ["Azura Windborne","The Collective","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "primaryFaction": ["Wandering Allies"],
+    "name": "Standard Bearer",
+    "displayName": "Standard Bearer (War)",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 6,
+        "melee": [{
+            "name": "Dagger",
+            "rating": 6
+        }],
+        "armor": 4,
+        "discipline": 6,
+        "talents": ["Protected", "War Banner"]
+    },
+    "value": 13,
+    "race": "Faeler",
+    "gender": "M"
 }];
 
 export  {Models};

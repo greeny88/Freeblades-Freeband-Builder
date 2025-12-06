@@ -756,6 +756,9 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
     damage: 10,
     abilities: ['sb']
 },{
+    name: 'Fysala',
+    damage: 4
+},{
     name: 'Great Club',
     damage: 10
 },{
@@ -783,6 +786,10 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
 },{
     name: 'Ice Axe',
     damage: 6
+},{
+    name: 'Ice Mace',
+    damage: 8,
+    abilities: ['ice']
 },{
     name: 'Impaler',
     damage: 8,
