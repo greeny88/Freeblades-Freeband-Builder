@@ -7122,29 +7122,6 @@ const Models: Model[] = [{
     "value": 39,
     "race": "Azura"
 },{
-    "factions": ["Eclipse Sisterhood","Mershael Corsairs"],
-    "primaryFaction": ["Azura Windborne"],
-    "name": "Skyrider",
-    "displayName": "Skyrider",
-    "type": "Standard",
-    "stats": {
-        "type": "Hero",
-        "speed": 7,
-        "melee": [{
-            "rating": 10,
-            "name": "Halaztaf"
-        }],
-        "armor": 3,
-        "discipline": 10,
-        "talents": ["Dodge","Dodge","Feint","Tripping Strike","Hit and Run","Fly[Low, SPD 8]"],
-        "abilities": {
-            "agility": 12
-        }
-    },
-    "gender": "M",
-    "value": 32,
-    "race": "Azura"
-},{
     "factions": ["Azura Windborne","Eclipse Sisterhood","Mershael Corsairs"],
     "primaryFaction": ["Azura Windborne"],
     "name": "Squall",
@@ -8435,7 +8412,7 @@ const Models: Model[] = [{
     "race": "Beast",
     "gender": "F"
 },{
-    "factions": ["Azura Windborne"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Mershael Corsairs"],
     "primaryFaction": ["Azura Windborne"],
     "name": "Wargull",
     "displayName": "Wargull",
@@ -8478,7 +8455,7 @@ const Models: Model[] = [{
     "race": "Chaler",
     "gender": "F"
 },{
-    "factions": ["Eclipse Sisterhood"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn","Mershael Corsairs"],
     "primaryFaction": ["Eclipse Sisterhood"],
     "name": "Bladedaughter Aspirant",
     "displayName": "Bladedaughter Aspirant",
@@ -8529,7 +8506,7 @@ const Models: Model[] = [{
     "race": "Faeler",
     "gender": "M"
 },{
-    "factions": ["Haradelan Questers"],
+    "factions": ["Falkaaran Adventurers","Haradelan Questers","Ravenblade Mercenaries"],
     "primaryFaction": ["Haradelan Questers"],
     "name": "Darkbane",
     "displayName": "Darkbane",
@@ -8555,7 +8532,7 @@ const Models: Model[] = [{
     "race": "Faeler",
     "gender": "M"
 },{
-    "factions": ["Haradelan Questers"],
+    "factions": ["Haradelan Questers","Falkaaran Adventurers","Koronnan Moonsworn","Ravenblade Mercenaries","Trilian Seekers","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Haradelan Questers"],
     "name": "Questing Knight of Modo",
     "displayName": "Questing Knight of Modo",
@@ -8587,7 +8564,7 @@ const Models: Model[] = [{
     "race": "Faeler",
     "gender": "M"
 },{
-    "factions": ["Haradelan Questers"],
+    "factions": ["Haradelan Questers","Falkaaran Adventurers","Koronnan Moonsworn","Ravenblade Mercenaries","Trilian Seekers","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Haradelan Questers"],
     "name": "Apprentice Knight of Modo",
     "displayName": "Apprentice Knight of Modo",
@@ -8669,35 +8646,6 @@ const Models: Model[] = [{
     "race": "Kuzaarik",
     "gender": "M"
 },{
-    "factions": ["Kuzaarik Forgers"],
-    "primaryFaction": ["Kuzaarik Forgers"],
-    "name": "Artic Storm",
-    "displayName": "Artic Storm",
-    "type": "Leader",
-    "stats": {
-        "type": "Hero",
-        "speed": 5,
-        "melee": [{
-            "name": "Ice Mace",
-            "rating": 8
-        }],
-        "shield": "S",
-        "armor": 6,
-        "discipline": 12,
-        "talents": ["Leader","Alpine","Die Hard","Runeshield","Shatter"],
-        "veteran": [{
-            "name": "Conquer",
-            "cost": 1
-        }],
-        "abilities": {
-            "endurance": 10,
-            "strength": 10
-        }
-    },
-    "value": 39,
-    "race": "Kuzaarik",
-    "gender": "M"
-},{
     "factions": ["Trilian Seekers"],
     "primaryFaction": ["Trilian Seekers"],
     "name": "Shifter",
@@ -8718,7 +8666,8 @@ const Models: Model[] = [{
     "race": "Trilian",
     "gender": "M"
 },{
-    "factions": ["Azura Windborne","The Collective","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "factions": ["The Collective","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Mershael Corsairs","Ravenblade Mercenaries","Traazorite Crusaders","Varkraalan Unchained"],
+    "trustedFactions": ["The Collective","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Mershael Corsairs","Ravenblade Mercenaries","Traazorite Crusaders","Varkraalan Unchained"],
     "primaryFaction": ["Wandering Allies"],
     "name": "Standard Bearer",
     "displayName": "Standard Bearer (Rally)",
@@ -8738,7 +8687,8 @@ const Models: Model[] = [{
     "race": "Faeler",
     "gender": "M"
 },{
-    "factions": ["Azura Windborne","The Collective","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "factions": ["The Collective","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Mershael Corsairs","Ravenblade Mercenaries","Traazorite Crusaders","Varkraalan Unchained"],
+    "trustedFactions": ["The Collective","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Mershael Corsairs","Ravenblade Mercenaries","Traazorite Crusaders","Varkraalan Unchained"],
     "primaryFaction": ["Wandering Allies"],
     "name": "Standard Bearer",
     "displayName": "Standard Bearer (Steadfast)",
@@ -8758,7 +8708,8 @@ const Models: Model[] = [{
     "race": "Faeler",
     "gender": "M"
 },{
-    "factions": ["Azura Windborne","The Collective","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "factions": ["The Collective","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Mershael Corsairs","Ravenblade Mercenaries","Traazorite Crusaders","Varkraalan Unchained"],
+    "trustedFactions": ["The Collective","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Mershael Corsairs","Ravenblade Mercenaries","Traazorite Crusaders","Varkraalan Unchained"],
     "primaryFaction": ["Wandering Allies"],
     "name": "Standard Bearer",
     "displayName": "Standard Bearer (Howling)",
@@ -8778,7 +8729,8 @@ const Models: Model[] = [{
     "race": "Faeler",
     "gender": "M"
 },{
-    "factions": ["Azura Windborne","The Collective","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "factions": ["The Collective","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Mershael Corsairs","Ravenblade Mercenaries","Traazorite Crusaders","Varkraalan Unchained"],
+    "trustedFactions": ["The Collective","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Mershael Corsairs","Ravenblade Mercenaries","Traazorite Crusaders","Varkraalan Unchained"],
     "primaryFaction": ["Wandering Allies"],
     "name": "Standard Bearer",
     "displayName": "Standard Bearer (War)",
