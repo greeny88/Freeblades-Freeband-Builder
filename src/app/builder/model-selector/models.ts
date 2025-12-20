@@ -1401,8 +1401,7 @@ const Models: Model[] = [{
     "race": "Demon"
 },{
     "factions": ["Darkgrove Demons","Demons of Karelon","Grular Invaders"],
-    "trustedFactions": ["Grular Invaders"],
-    "primaryFaction": ["Demons of Karelon"],
+    "primaryFaction": ["Demons of Karelon","Grular Invaders"],
     "name": "Gadarl",
     "displayName": "Gadarl",
     "stats": {
@@ -8619,15 +8618,15 @@ const Models: Model[] = [{
 },{
     "factions": ["Kuzaarik Forgers"],
     "primaryFaction": ["Kuzaarik Forgers"],
-    "name": "Artic Storm",
-    "displayName": "Artic Storm",
+    "name": "Arctic Storm",
+    "displayName": "Arctic Storm",
     "type": "Leader",
     "stats": {
         "type": "Hero",
         "speed": 5,
         "melee": [{
             "name": "Ice Mace",
-            "rating": 8
+            "rating": 12
         }],
         "shield": "S",
         "armor": 6,
