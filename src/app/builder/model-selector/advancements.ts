@@ -421,6 +421,7 @@ const AdvancementTalents: string[] = [
     'Accurate Shot',
     'Accurate Strike',
     'Active Defense',
+    'Adapt the Plan',
     'Agile Charge',
     'Alpine',
     'Ambush',
@@ -439,6 +440,7 @@ const AdvancementTalents: string[] = [
     'Bribery',
     'Bull Rush',
     'Champion[Friend]',
+    'Combat Performer',
     'Combat Reflexes',
     'Confine',
     'Conquer',
@@ -494,6 +496,7 @@ const AdvancementTalents: string[] = [
     'Missle Parry',
     'Mountaineer',
     'Nimble',
+    'Opening Strike',
     'Opportune Strike',
     'Parry',
     'Peddler',
@@ -548,6 +551,7 @@ const AdvancementTalents: string[] = [
     'Teammate[Type]',
     'Tough',
     'Tripping Strike',
+    'Vicous Strike',
     'Warden'
 ];
 
@@ -560,6 +564,9 @@ const OtherTalents: string[] = [
     "Armored Casting",
     "Arsenal Poison",
     "Asp Strike",
+    "Aura of Fear",
+    "Banner",
+    "Banshee Howl",
     "Battle Hymn",
     "Battlecry",
     "Bear Hug",
@@ -637,9 +644,11 @@ const OtherTalents: string[] = [
     "Regenerate",
     "Replace",
     "Restore",
+    "Runeshield",
     "Scavenger",
     "Scent of Prey",
     "Serpent Dance",
+    "Shatter",
     "Shoot Them!",
     "Skull Staff",
     "Skunk Attack",
@@ -756,6 +765,9 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
     damage: 10,
     abilities: ['sb']
 },{
+    name: 'Fysala',
+    damage: 4
+},{
     name: 'Great Club',
     damage: 10
 },{
@@ -783,6 +795,10 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
 },{
     name: 'Ice Axe',
     damage: 6
+},{
+    name: 'Ice Mace',
+    damage: 8,
+    abilities: ['ice']
 },{
     name: 'Impaler',
     damage: 8,
