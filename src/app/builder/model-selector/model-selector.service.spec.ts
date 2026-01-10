@@ -1,11 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 import { ModelSelectorService } from './model-selector.service';
-import { Model } from 'src/app/model';
+import { BasicModel } from 'src/app/model';
 
 describe('ModelSelectedService', () => {
     let service: ModelSelectorService;
-    let heroModel: Model;
-    let followerModel: Model;
+    let heroModel: BasicModel;
+    let followerModel: BasicModel;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
@@ -50,7 +50,7 @@ describe('ModelSelectedService', () => {
     });
     
     it('should calculate model abilities for hero.', () => {
-        const model: Model = heroModel;
+        const model: BasicModel = heroModel;
         const calcdModelStats = service.calculateStats(model.stats, model.value);
     
         expect(calcdModelStats?.abilities.agility).toBe(8);
@@ -62,7 +62,7 @@ describe('ModelSelectedService', () => {
     });
     
     it('should calculate model abilities for follower.', () => {
-        const model: Model = followerModel;
+        const model: BasicModel = followerModel;
         const calcdModelStats = service.calculateStats(model.stats, model.value);
     
         expect(calcdModelStats?.abilities.agility).toBe(6);
@@ -74,7 +74,7 @@ describe('ModelSelectedService', () => {
     });
 
     it('should calculate adding advancements.', () => {
-        const model: Model = heroModel;
+        const model: BasicModel = heroModel;
         model.stats.advancements = [{
             name: 'Active Defense',
             cost: 3
@@ -134,7 +134,7 @@ describe('ModelSelectedService', () => {
     });
 
     it('should calculate adding options.', () => {
-        const model: Model = heroModel;
+        const model: BasicModel = heroModel;
         model.stats.options = [{
             name: 'AV1',
             selected: true
@@ -152,7 +152,7 @@ describe('ModelSelectedService', () => {
     });
 
     it('should calculate adding veteran options.', () => {
-        const model: Model = followerModel;
+        const model: BasicModel = followerModel;
         model.stats.veteran = [{
             cost: 1,
             name: 'DISC',
@@ -173,7 +173,7 @@ describe('ModelSelectedService', () => {
     });
 
     it('should calculate adding items.', () => {
-        const model: Model = followerModel;
+        const model: BasicModel = followerModel;
         model.stats.items = [{
             cost: 1,
             name: 'Badge of Testing'
@@ -193,7 +193,7 @@ describe('ModelSelectedService', () => {
     });
 
     it('should calculate adding injuries.', () => {
-        const model: Model = heroModel;
+        const model: BasicModel = heroModel;
         model.stats.injuries = ['DISC','AGL','SPD','Reluctant'];
         const calcdModelStats = service.calculateStats(model.stats, model.value);
     
@@ -209,7 +209,7 @@ describe('ModelSelectedService', () => {
     });
 
     xit('should add MAR to non-calvary weapons only.', () => {
-        const model: Model = heroModel;
+        const model: BasicModel = heroModel;
         model.stats.advancements = [{
             name: 'MAR',
             cost: 0
@@ -225,7 +225,7 @@ describe('ModelSelectedService', () => {
     });
 
     it('should sum talents together with same name.', () => {
-        const model: Model = heroModel;
+        const model: BasicModel = heroModel;
         model.stats.talents = ['Die Hard', 'Die Hard', 'Not Die Hard'];
         const calcdModelStats = service.calculateStats(model.stats, model.value);
     

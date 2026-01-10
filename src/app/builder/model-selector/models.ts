@@ -1,6 +1,6 @@
-import { Model } from "src/app/model";
+import { BasicModel } from "src/app/model";
 
-const Models: Model[] = [{
+const Models: BasicModel[] = [{
     "factions": ["Kuzaarik Forgers"],
     "primaryFaction": ["Kuzaarik Forgers"],
     "name": "Forge Warden",

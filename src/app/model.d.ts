@@ -110,9 +110,7 @@ export interface ModelStats {
 
 export const Factions: ["Azura Windborne","Black Rose Bandits", "Black Thorn Bandits", "The Collective", "Darkgrove Demons", "Demons of Karelon", "Eclipse Sisterhood", "Falkaaran Adventurers", "Grular Invaders", "Haradelan Questers", "Kandoran Deathmasters", "Koronnan Moonsworn", "Kuzaarik Forgers", "Mershael Corsairs", "Ravenblade Mercenaries", "Shakrim Wavestalkers", "Traazorite Crusaders", "Trilian Seekers", "Urdaggar Tribes of Ruin", "Urdaggar Tribes of Valor", "Varkraalan Unchained"];
 
-export interface Model {
-    characterName?: string,
-    component_id?: string,
+export interface BasicModel {
     displayName: string,
     factions: (typeof Factions[number])[],
     gender: "M" | "F",
@@ -123,4 +121,9 @@ export interface Model {
     trustedFactions?: (typeof Factions[number])[],
     type: "Caster" | "Leader" | "Standard",
     value: number
+}
+
+export interface Model extends BasicModel {
+    characterName?: string,
+    component_id?: string
 }

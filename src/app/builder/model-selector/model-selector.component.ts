@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { EditModelComponent } from './edit-model.component';
 import { ModelSelectorService } from './model-selector.service';
-import { Factions, MeleeWeapon, Model } from 'src/app/model.d';
+import { BasicModel, Factions, MeleeWeapon, Model } from 'src/app/model.d';
 import { Models } from './models';
 import { MeleeWeapons } from './advancements';
 
@@ -20,11 +20,11 @@ export class ModelSelectorComponent {
     @Input() selectedModel : Model | undefined = undefined;
     @Output() onModelRemoved = new EventEmitter<any>();
     @Output() onModelSelected = new EventEmitter<any>();
-    factionModels : Model[] = Models;
+    factionModels : BasicModel[] = Models;
     model: Model | any;
     model_factions: string[] = [];
-    model_grouping: { [key: string]: Model[] };
-    models : Model[];
+    model_grouping: { [key: string]: BasicModel[] };
+    models : BasicModel[];
     originalModel: Model | undefined = undefined;
     selected : Model | undefined = undefined;
     private disallowedAltLeaders: string[] = [
