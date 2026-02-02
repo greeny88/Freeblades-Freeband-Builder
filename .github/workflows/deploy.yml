@@ -24,13 +24,13 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '18'
+          node-version: '22'
 
       - name: Install dependencies
         run: npm install
 
       - name: Build and prepare for GitHub Pages
-        run: ng build --base-href /Freeblades-Freeband-Builder/
+        run: npm run ghpages
 
       - name: Copy index.html to 404.html
         run: cp ./dist/index.html ./dist/404.html
