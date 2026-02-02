@@ -30,7 +30,10 @@ jobs:
         run: npm install
 
       - name: Build and prepare for GitHub Pages
-        run: npm run ghpages
+        run: ng build --base-href /Freeblades-Freeband-Builder/
+
+      - name: Copy index.html to 404.html
+        run: cp ./dist/index.html ./dist/404.html
 
       - name: Upload artifact to GitHub Pages
         uses: actions/upload-pages-artifact@v4
