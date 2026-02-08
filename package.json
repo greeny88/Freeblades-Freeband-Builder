@@ -12,7 +12,8 @@
     "test-coverage": "ng test --code-coverage",
     "start-sw": "ng build && http-server dist",
     "ghpages-old": "ng build --base-href /Freeblades-Freeband-Builder/ && copy dist\\index.html dist\\404.html",
-    "ghpages": "ng build --base-href /Freeblades-Freeband-Builder/"
+    "ghpages": "ng build --base-href /Freeblades-Freeband-Builder/",
+    "ghpages-test": "ng test --no-watch --no-progress --browsers=ChromeHeadless"
   },
   "author": "mgreen",
   "license": "MIT",
