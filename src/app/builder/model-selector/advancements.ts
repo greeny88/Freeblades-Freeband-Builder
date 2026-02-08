@@ -1058,6 +1058,11 @@ const RangeWeapons: Omit<RangeWeapon, 'rating'>[] = [{
     distance: 2,
     abilities: ['thr']
 },{
+    name: 'Hunting Spear',
+    damage: 8,
+    distance: 3,
+    abilities: ['thr','pin']
+},{
     name: 'Iron Pinion',
     damage: 4,
     damageBonus: 1,
