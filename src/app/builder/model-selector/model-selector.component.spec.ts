@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ModelSelectorComponent } from './model-selector.component';
-import { MatLegacyDialogModule as MatDialogModule } from '@angular/material/legacy-dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { ModelSelectorService } from './model-selector.service';
 
 import { Models } from 'src/app/builder/model-selector/models';
