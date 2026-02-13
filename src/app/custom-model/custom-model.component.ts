@@ -5,7 +5,7 @@ import { Model } from 'src/app/model';
 import { Models } from 'src/app/builder/model-selector/models';
 import { ModelSelectorService } from 'src/app/builder/model-selector/model-selector.service';
 import { MeleeWeapons, RangeWeapons, Skills, AdvancementTalents, OtherTalents } from '../builder/model-selector/advancements';
-import { MatSelectChange } from '@angular/material/select';
+import { MatLegacySelectChange as MatSelectChange } from '@angular/material/legacy-select';
 
 @Component({
   selector: 'app-custom-model',
