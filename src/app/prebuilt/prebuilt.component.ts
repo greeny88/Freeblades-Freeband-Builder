@@ -16,7 +16,8 @@ interface Freeband {
 @Component({
     selector: 'app-prebuilt',
     templateUrl: './prebuilt.component.html',
-    styleUrls: ['./prebuilt.component.scss']
+    styleUrls: ['./prebuilt.component.scss'],
+    standalone: false
 })
 export class PrebuiltComponent {
     // TODO: build ability to sort/filter list of freebands

@@ -5,7 +5,8 @@ import { Factions } from 'src/app/model.d';
 @Component({
     selector: 'freeband-setup',
     templateUrl: './freeband-setup.component.html',
-    styleUrls: ['./freeband-setup.component.scss']
+    styleUrls: ['./freeband-setup.component.scss'],
+    standalone: false
 })
 export class FreebandSetupComponent implements OnInit {
     @Input() selectedOptions : {freebandLimit: number, faction: string, altLeader: boolean} | undefined = undefined;

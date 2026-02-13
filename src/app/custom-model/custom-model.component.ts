@@ -8,9 +8,10 @@ import { MeleeWeapons, RangeWeapons, Skills, AdvancementTalents, OtherTalents } 
 import { MatSelectChange } from '@angular/material/select';
 
 @Component({
-  selector: 'app-custom-model',
-  templateUrl: './custom-model.component.html',
-  styleUrls: ['./custom-model.component.scss']
+    selector: 'app-custom-model',
+    templateUrl: './custom-model.component.html',
+    styleUrls: ['./custom-model.component.scss'],
+    standalone: false
 })
 export class CustomModelComponent implements OnInit, OnDestroy {
   characterForm: UntypedFormGroup;

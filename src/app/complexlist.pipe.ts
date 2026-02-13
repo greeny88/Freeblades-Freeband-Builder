@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-    name: 'complexlist'
+    name: 'complexlist',
+    standalone: false
 })
 export class ComplexListPipe implements PipeTransform {
     transform(value: {[key:string]: string}[], key: string, separator: string = ', '): unknown {

@@ -7,7 +7,8 @@ import { MatRadioChange } from '@angular/material/radio';
 
 @Component({
     selector: 'edit-model',
-    templateUrl: './edit-model.component.html'
+    templateUrl: './edit-model.component.html',
+    standalone: false
 })
 export class EditModelComponent {
     advancements: string[] = ['MAR','RAR','CAR','DISC','SPD','Rise of a Hero',...Abilities,...Skills,...AdvancementTalents].sort();

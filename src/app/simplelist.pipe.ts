@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-    name: 'simplelist'
+    name: 'simplelist',
+    standalone: false
 })
 export class SimpleListPipe implements PipeTransform {
     transform(value: string[], separator: string = ', '): unknown {

@@ -13,7 +13,8 @@ type FactionList = typeof Factions[number];
 @Component({
     selector: 'app-builder',
     templateUrl: './builder.component.html',
-    styleUrls: ['./builder.component.scss']
+    styleUrls: ['./builder.component.scss'],
+    standalone: false
 })
 export class BuilderComponent implements OnInit {
     altLeader: boolean = false;
@@ -752,7 +753,8 @@ export class BuilderComponent implements OnInit {
 
 @Component({
     selector: 'load-previous',
-    templateUrl: './load-previous.html'
+    templateUrl: './load-previous.html',
+    standalone: false
 })
 export class LoadPreviousDialog {
 
@@ -765,7 +767,8 @@ export class LoadPreviousDialog {
 
 @Component({
     selector: 'load-json-file',
-    templateUrl: './load-json-file.html'
+    templateUrl: './load-json-file.html',
+    standalone: false
 })
 export class LoadJsonFileDialog {
     file: any | undefined = undefined;

@@ -10,7 +10,8 @@ import { MeleeWeapons } from './advancements';
 @Component({
     selector: 'model-selector',
     templateUrl: './model-selector.component.html',
-    styleUrls: ['./model-selector.component.scss']
+    styleUrls: ['./model-selector.component.scss'],
+    standalone: false
 })
 export class ModelSelectorComponent {
     @Input() altLeader : boolean = false;
