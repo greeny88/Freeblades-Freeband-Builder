@@ -30,10 +30,6 @@ import { BuilderRoutingModule } from './builder-routing.module';
         LoadPreviousDialog,
         LoadJsonFileDialog
     ],
-    entryComponents: [
-        LoadPreviousDialog,
-        LoadJsonFileDialog
-    ],
     exports: [
         BuilderComponent,
         LoadPreviousDialog,

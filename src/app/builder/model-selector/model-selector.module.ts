@@ -35,9 +35,6 @@ import { ComplexListPipe } from 'src/app/complexlist.pipe';
     providers: [
         ModelSelectorService
     ],
-    entryComponents: [
-        EditModelComponent
-    ],
     exports: [
         ModelSelectorComponent
     ]

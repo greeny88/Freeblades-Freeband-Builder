@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { CostPredictorService } from './custom-model.service';
 import { Model } from 'src/app/model';
 import { Models } from 'src/app/builder/model-selector/models';
@@ -13,7 +13,7 @@ import { MatSelectChange } from '@angular/material/select';
   styleUrls: ['./custom-model.component.scss']
 })
 export class CustomModelComponent implements OnInit, OnDestroy {
-  characterForm: FormGroup;
+  characterForm: UntypedFormGroup;
   predictedCost: number | null = null;
   meleeWeapons = MeleeWeapons;
   rangeWeapons = RangeWeapons;
@@ -41,7 +41,7 @@ export class CustomModelComponent implements OnInit, OnDestroy {
   private currentIndex: number = 0;
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private costPredictor: CostPredictorService,
     private modelSelector: ModelSelectorService
   ) {
@@ -91,16 +91,16 @@ export class CustomModelComponent implements OnInit, OnDestroy {
     }
   }
 
-  get melee(): FormArray {
-    return this.characterForm.get('stats.melee') as FormArray;
+  get melee(): UntypedFormArray {
+    return this.characterForm.get('stats.melee') as UntypedFormArray;
   }
 
-  get range(): FormArray {
-    return this.characterForm.get('stats.range') as FormArray;
+  get range(): UntypedFormArray {
+    return this.characterForm.get('stats.range') as UntypedFormArray;
   }
 
-  get talent(): FormArray {
-    return this.characterForm.get('stats.talents') as FormArray;
+  get talent(): UntypedFormArray {
+    return this.characterForm.get('stats.talents') as UntypedFormArray;
   }
 
   onTypeChange(event: MatSelectChange): void {
@@ -154,12 +154,12 @@ export class CustomModelComponent implements OnInit, OnDestroy {
   }
 
   addWeapon(weaponType: 'melee' | 'range'): void {
-    const control = this.characterForm.get(`stats.${weaponType}`) as FormArray;
+    const control = this.characterForm.get(`stats.${weaponType}`) as UntypedFormArray;
     control.push(this.fb.group({ weapon: '', rating: [8] }));
   }
 
   removeWeapon(weaponType: 'melee' | 'range', index: number): void {
-    const control = this.characterForm.get(`stats.${weaponType}`) as FormArray;
+    const control = this.characterForm.get(`stats.${weaponType}`) as UntypedFormArray;
     control.removeAt(index);
   }
 
