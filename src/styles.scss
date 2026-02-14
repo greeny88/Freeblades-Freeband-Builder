@@ -1,68 +1,48 @@
-// TODO: clean up imports, update version, split theme into separate file 
 @use '@angular/material' as mat;
-
-// @import "node_modules/material-components-web/material-components-web";
-// Plus imports for other components in your app.
-
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
+@use '_theme-colors' as ffb-theme;
 @include mat.core();
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-// green #73c169
-// gold #f8cd6e
-$ffb-app-primary: mat.$green-palette;
-$ffb-app-accent:  mat.$yellow-palette;
-
-// The warn palette is optional (defaults to red).
-$ffb-app-warn:    mat.$red-palette;
-
-// Create the theme object (a Sass map containing all of the palettes).
-// $ffb-app-theme: mat.define-dark-theme((primary:$ffb-app-primary, accent:$ffb-app-accent, warn:$ffb-app-warn));
-
-$ffb-app-theme: mat.define-theme((
-  color: (
-    theme-type: dark,
-    primary: mat.$green-palette,
-    tertiary: mat.$yellow-palette,
-  ),
-));
-
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-:root {
-    @include mat.all-component-themes($ffb-app-theme);
-}
+// https://material.angular.dev/guide/theming-your-components for color variables
+// https://v19.material.angular.dev/guide/theming for general theming info
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-a, a:visited {
-    color: #FFF;
+html {
+    @include mat.theme((
+        color: (
+            theme-type: dark,
+            primary: ffb-theme.$primary-palette,
+            tertiary: ffb-theme.$tertiary-palette,
+        ),
+        typography: Roboto,
+        density: 0
+    ));
+    // @include mat.all-component-themes($ffb-app-theme);
 }
 
-a:hover {
-    color: #ffc107;
-}
+// a, a:visited {
+//     color: #FFF;
+// }
 
-.mat-mdc-snack-bar-container {
-  // background-color: #ffc107 !important;
-  &.invalid-build {
-      background-color: red;
-      color: #FFF;
-  }
-  &.refresh-page {
-      background-color: #ffc107
-  }
-}
+// a:hover {
+//     color: #ffc107;
+// }
 
-mat-radio-group mat-radio-button, mat-checkbox {
-    padding-right: 1em;
-}
+// .mat-mdc-snack-bar-container {
+//   // background-color: #ffc107 !important;
+//   &.invalid-build {
+//       background-color: red;
+//       color: #FFF;
+//   }
+//   &.refresh-page {
+//       background-color: #ffc107
+//   }
+// }
+
+// mat-radio-group mat-radio-button, mat-checkbox {
+//     padding-right: 1em;
+// }
 
 .bold-text {
     font-weight: bold;

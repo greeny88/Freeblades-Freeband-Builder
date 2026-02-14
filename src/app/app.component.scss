@@ -4,6 +4,7 @@ footer {
     padding-top: 1rem;
     padding-bottom: 0.5rem;
     border-top: 1px solid rgba(0, 0, 0, .42);
+    background-color: var(--mat-sys-primary);
 }
 
 mat-sidenav-container {
@@ -33,10 +34,10 @@ mat-sidenav-container {
     }
 }
 
-@media only screen and (max-width : 415px) {
-    mat-sidenav-container {
-        mat-sidenav {
-            width: 100%;
-        }
-    }
-}
+// @media only screen and (max-width : 415px) {
+//     mat-sidenav-container {
+//         mat-sidenav {
+//             width: 100%;
+//         }
+//     }
+// }
