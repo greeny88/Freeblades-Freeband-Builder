@@ -14,9 +14,9 @@
         </div>
     </div>
     <div id="optionButtons">
-        <button mat-raised-button class="mat-accent noPrint" (click)="print()">Print</button>
-        <button mat-raised-button class="mat-accent noPrint" (click)="downloadFreeband()">Download</button>
-        <button mat-raised-button class="mat-accent noPrint" (click)="loadFreeband()">Load</button>
+        <button mat-raised-button class="noPrint" (click)="print()">Print</button>
+        <button mat-raised-button class="noPrint" (click)="downloadFreeband()">Download</button>
+        <button mat-raised-button class="noPrint" (click)="loadFreeband()">Load</button>
     </div>
     <div *ngFor="let msg of errorMessages" class="noSetHeight noPrint" id="errorMessage">
         <span>{{msg}}</span>
@@ -30,12 +30,12 @@
             (onModelSelected)="modelSelected($event)" [componentId]="id" (onModelRemoved)="removeModel($event)">
         </model-selector>
     </ng-container>
-    <button mat-raised-button class="mat-accent noPrint" style="margin-left:1rem;margin-bottom:1rem;"
+    <button mat-raised-button class="noPrint" style="margin-left:1rem;margin-bottom:1rem;"
         (click)="addModel()">Add Model</button>
 </ng-container>
 <ng-template #setup>
     <div style="padding-top: 1em;">
-        <button mat-raised-button class="mat-accent noPrint" (click)="loadFreeband()">Load</button>
+        <button mat-raised-button class="noPrint" (click)="loadFreeband()">Load</button>
     </div>
     <div class="noPrint">
         <p>Start by selecting the values above so that you can begin building your freeband.</p>

@@ -1,5 +1,5 @@
 <div id="mainDisplay">
-    <mat-toolbar class="top-bar mat-primary">
+    <mat-toolbar class="top-bar">
         <mat-toolbar-row class="noPrint">
             <button mat-icon-button (click)="sidenav.toggle()">
                 <mat-icon>menu</mat-icon>
@@ -10,6 +10,7 @@
     <mat-sidenav-container id="mainContainer">
         <mat-sidenav #sidenav mode="side">
             <mat-nav-list>
+                <!-- TODO: add active property -->
                 <a mat-list-item routerLink="/builder" (click)="sidenav.close()">Builder</a>
                 <a mat-list-item routerLink="/prebuilt" (click)="sidenav.close()">Browse Prebuilt Freebands</a>
                 <a mat-list-item routerLink="/custom-model" (click)="sidenav.close()">Model Builder</a>

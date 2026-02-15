@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '@angular/material' as mat;
 @use '_theme-colors' as ffb-theme;
 @include mat.core();
@@ -11,7 +12,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 html {
     @include mat.theme((
         color: (
-            theme-type: dark,
+            theme-type: light,
             primary: ffb-theme.$primary-palette,
             tertiary: ffb-theme.$tertiary-palette,
         ),
@@ -19,6 +20,39 @@ html {
         density: 0
     ));
     // @include mat.all-component-themes($ffb-app-theme);
+}
+
+// body {
+//     background: var(--mat-sys-primary);
+//     color: var(--mat-sys-on-primary);
+// }
+
+:root {
+    @include mat.toolbar-overrides((
+        container-background-color: map.get(ffb-theme.$primary-palette, 50),
+        container-text-color: #000,
+    ));
+    @include mat.sidenav-overrides((
+        container-background-color: map.get(ffb-theme.$primary-palette, "neutral", 20),
+        container-text-color: #fff,
+        content-background-color: map.get(ffb-theme.$primary-palette, "neutral", 10),
+        content-text-color: #fff,
+    ));
+    @include mat.button-overrides((
+        filled-container-color: map.get(ffb-theme.$primary-palette, "secondary", 70),
+        filled-label-text-color: #000,
+        protected-container-color: map.get(ffb-theme.$primary-palette, "secondary", 70),
+        protected-label-text-color: #000,
+        protected-disabled-container-color: color-mix(in srgb, map.get(ffb-theme.$primary-palette, "neutral", 40) 12%, transparent),
+        protected-disabled-label-text-color: map.get(ffb-theme.$primary-palette, "neutral", 50),
+    ));
+}
+
+mat-sidenav {
+    @include mat.list-overrides((
+        list-item-label-text-color: #fff,
+        // TODO: add hover and active colors
+    ));
 }
 
 // a, a:visited {
