@@ -51,6 +51,10 @@ html {
 mat-sidenav {
     @include mat.list-overrides((
         list-item-label-text-color: #fff,
+        list-item-hover-state-layer-color: map.get(ffb-theme.$primary-palette, "secondary", 80),
+        list-item-hover-label-text-color: #000,
+        list-item-hover-state-layer-opacity: 0.5,
+        active-indicator-color: map.get(ffb-theme.$primary-palette, "secondary", 70),
         // TODO: add hover and active colors
     ));
 }
