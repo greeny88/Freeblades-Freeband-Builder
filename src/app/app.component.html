@@ -10,11 +10,10 @@
     <mat-sidenav-container id="mainContainer">
         <mat-sidenav #sidenav mode="side">
             <mat-nav-list>
-                <!-- TODO: add active property -->
-                <a mat-list-item routerLink="/builder" (click)="sidenav.close()">Builder</a>
-                <a mat-list-item routerLink="/prebuilt" (click)="sidenav.close()">Browse Prebuilt Freebands</a>
-                <a mat-list-item routerLink="/custom-model" (click)="sidenav.close()">Model Builder</a>
-                <a mat-list-item routerLink="/contact" (click)="sidenav.close()">Contact</a>
+                <a mat-list-item routerLink="/builder" routerLinkActive #builder="routerLinkActive" [activated]="builder.isActive" (click)="sidenav.close()">Builder</a>
+                <a mat-list-item routerLink="/prebuilt" routerLinkActive #prebuilt="routerLinkActive" [activated]="prebuilt.isActive" (click)="sidenav.close()">Browse Prebuilt Freebands</a>
+                <a mat-list-item routerLink="/custom-model" routerLinkActive #customModel="routerLinkActive" [activated]="customModel.isActive" (click)="sidenav.close()">Model Builder</a>
+                <a mat-list-item routerLink="/contact" routerLinkActive #contact="routerLinkActive" [activated]="contact.isActive" (click)="sidenav.close()">Contact</a>
             </mat-nav-list>
         </mat-sidenav>
         <mat-sidenav-content>
