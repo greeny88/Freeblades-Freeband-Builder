@@ -1,19 +1,39 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use 'src/_theme-colors' as ffb-theme;
+
 footer {
     text-align: center;
     font-size: 0.75rem;
     padding-top: 1rem;
     padding-bottom: 0.5rem;
     border-top: 1px solid rgba(0, 0, 0, .42);
-    background-color: var(--mat-sys-inverse-primary); // TODO: change to sidenav background color
+    background-color: map.get(ffb-theme.$primary-palette, "neutral", 20);
+
+    a {
+        color: map.get(ffb-theme.$primary-palette, 50);
+    }
 }
 
 // TODO: see if density setting if the right way to adjust this
 mat-sidenav-container {
     mat-sidenav {
         padding: 0.5rem;
+        @include mat.list-overrides((
+            list-item-label-text-color: #fff,
+            list-item-hover-state-layer-color: map.get(ffb-theme.$primary-palette, "secondary", 90),
+            list-item-hover-label-text-color: #000,
+            list-item-hover-state-layer-opacity: 0.1,
+            active-indicator-color: map.get(ffb-theme.$primary-palette, "secondary", 70),
+        ));
     }
     mat-sidenav-content {
         padding: 1rem;
+        @include mat.list-overrides((
+            list-item-label-text-color: #fff,
+            list-item-hover-label-text-color: #fff,
+            list-item-supporting-text-color: #fff,
+        ));
     }
 }
 
@@ -41,4 +61,10 @@ mat-sidenav-container {
             width: 100%;
         }
     }
+}
+
+.top-bar {
+    @include mat.icon-overrides((
+        color: #000
+    ));
 }

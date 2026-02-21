@@ -1,5 +1,9 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use 'src/_theme-colors' as ffb-theme;
+
 .freebandBox {
-    background-color: #4caf50;
+    background-color: map.get(ffb-theme.$primary-palette, 60);
     border-radius: 1rem;
     color: #000;
     margin: 1rem;

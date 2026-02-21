@@ -46,16 +46,28 @@ html {
         protected-disabled-container-color: color-mix(in srgb, map.get(ffb-theme.$primary-palette, "neutral", 40) 12%, transparent),
         protected-disabled-label-text-color: map.get(ffb-theme.$primary-palette, "neutral", 50),
     ));
+    @include mat.checkbox-overrides((
+        selected-checkmark-color: #000,
+        selected-icon-color: map.get(ffb-theme.$primary-palette, "secondary", 70),
+        selected-focus-icon-color: map.get(ffb-theme.$primary-palette, "secondary", 80),
+        selected-hover-icon-color: map.get(ffb-theme.$primary-palette, "secondary", 80),
+        label-text-color: #fff,
+        unselected-hover-state-layer-color: #fff,
+        unselected-focus-icon-color: #fff,
+    ));
 }
 
-mat-sidenav {
-    @include mat.list-overrides((
-        list-item-label-text-color: #fff,
-        list-item-hover-state-layer-color: map.get(ffb-theme.$primary-palette, "secondary", 80),
-        list-item-hover-label-text-color: #000,
-        list-item-hover-state-layer-opacity: 0.5,
-        active-indicator-color: map.get(ffb-theme.$primary-palette, "secondary", 70),
-        // TODO: add hover and active colors
+.invalid-build {
+    @include mat.snack-bar-overrides((
+        container-color: map.get(ffb-theme.$primary-palette, "error", 30),
+        supporting-text-color: #fff,
+    ));
+}
+
+.refresh-page {
+    @include mat.snack-bar-overrides((
+        container-color: map.get(ffb-theme.$primary-palette, "secondary", 70),
+        supporting-text-color: #000,
     ));
 }
 

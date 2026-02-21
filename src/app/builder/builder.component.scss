@@ -1,3 +1,7 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use 'src/_theme-colors' as ffb-theme;
+
 #optionButtons button {
     margin-right: 0.5rem;
 }
@@ -8,7 +12,7 @@
 
 #errorMessage {
     white-space: normal;
-    background-color: red;
+    background-color: map.get(ffb-theme.$primary-palette, "error", 30);
     padding: 0.5rem 0;
 }
 
