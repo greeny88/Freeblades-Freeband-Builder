@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { PrebuiltComponent } from './prebuilt.component';
@@ -12,7 +13,8 @@ describe('PrebuiltComponent', () => {
       imports: [
         RouterTestingModule
       ],
-      declarations: [ PrebuiltComponent ]
+      declarations: [ PrebuiltComponent ],
+      providers: [provideExperimentalZonelessChangeDetection()]
     })
     .compileComponents();
   });

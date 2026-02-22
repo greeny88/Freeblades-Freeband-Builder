@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
@@ -11,6 +12,7 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      providers: [provideExperimentalZonelessChangeDetection()]
       // providers: [provide: '', useClass: ''] // TODO: create mocks for CommunicatorService, DbService
     }).compileComponents();
   });

@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 
 import { ModelSelectorComponent } from './model-selector.component';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -14,7 +15,7 @@ describe('ModelSelectorComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ ModelSelectorComponent ],
       imports: [ MatDialogModule ],
-      providers: [ ModelSelectorService ]
+      providers: [ ModelSelectorService, provideExperimentalZonelessChangeDetection() ]
     })
     .compileComponents();
   });

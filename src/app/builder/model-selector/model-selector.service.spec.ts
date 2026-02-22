@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { ModelSelectorService } from './model-selector.service';
 import { Model } from 'src/app/model';
 
@@ -9,7 +10,7 @@ describe('ModelSelectedService', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            providers: [ModelSelectorService]
+            providers: [ModelSelectorService, provideExperimentalZonelessChangeDetection()]
         });
     });
     

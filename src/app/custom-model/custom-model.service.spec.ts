@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { CostPredictorService } from './custom-model.service';
 import { Model, ModelStats } from 'src/app/model';
 import { Models } from 'src/app/builder/model-selector/models';
@@ -18,7 +19,11 @@ describe('CostPredictorService', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            providers: [CostPredictorService, ModelSelectorService]
+            providers: [
+                CostPredictorService, 
+                ModelSelectorService,
+                provideExperimentalZonelessChangeDetection()
+            ]
         }).compileComponents();
 
         service = TestBed.inject(CostPredictorService);
