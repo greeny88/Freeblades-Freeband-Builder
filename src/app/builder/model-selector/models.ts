@@ -5040,7 +5040,7 @@ const Models: Model[] = [{
     "type": "Standard",
     "stats": {
         "type": "Hero",
-        "speed": 10,
+        "speed": 6,
         "melee": [{
             "rating": 10,
             "name": "Toloron"
@@ -8749,5 +8749,6 @@ const Models: Model[] = [{
     "race": "Faeler",
     "gender": "M"
 }];
+
 
 export  {Models};
