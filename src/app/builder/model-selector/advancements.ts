@@ -12,7 +12,7 @@ const Equipment: Items[] = [{
     cost: 1
 },{
     name: 'Fine Crafted Weapon',
-    cost: 3
+    cost: 2
 },{
     name: 'Forest Cloak',
     cost: 3
@@ -21,7 +21,7 @@ const Equipment: Items[] = [{
     cost: 3
 },{
     name: 'Improved Armor',
-    cost: 3
+    cost: 2
 },{
     name: 'Lantern',
     cost: 1
@@ -876,11 +876,11 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
     damage: 4,
     abilities: ['sw']
 },{
-    name: 'Petadrakh',
-    damage: 8,
-    damageBonus: 1,
-    abilities: ['qs']
-},{
+//     name: 'Petadrakh',
+//     damage: 8,
+//     damageBonus: 1,
+//     abilities: ['qs']
+// },{
     name: 'Pike',
     damage: 8,
     abilities: ['so2','imp','unw']

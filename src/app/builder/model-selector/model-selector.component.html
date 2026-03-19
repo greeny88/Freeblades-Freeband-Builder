@@ -32,13 +32,13 @@
         </div>
         <div class="modelDisplayRow" *ngFor="let weapon of model.stats.melee">
             <div><span class="bold-text">MAR: </span>d{{weapon.rating}}<span *ngIf="weapon.ratingBonus && weapon.ratingBonus > 0">&nbsp;+{{weapon.ratingBonus}}</span></div>
-            <div class="larger"><span class="bold-text">Weapon: </span>{{weapon.name}} {{weapon.abilityList}}</div>
             <div><span class="bold-text">Dmg: </span>d{{weapon.damage}}<span *ngIf="weapon.damageBonus && weapon.damageBonus > 0">&nbsp;+{{weapon.damageBonus}}</span></div>
+            <div class="larger"><span class="bold-text">Weapon: </span>{{weapon.name}} {{weapon.abilityList}}</div>
         </div>
         <div class="modelDisplayRow" *ngFor="let weapon of model.stats.range">
             <div><span class="bold-text">RAR: </span>d{{weapon.rating}}<span *ngIf="weapon.ratingBonus && weapon.ratingBonus > 0">&nbsp;+{{weapon.ratingBonus}}</span></div>
-            <div class="larger"><span class="bold-text">Weapon: </span>{{weapon.name}} {{weapon.abilityList}} {{weapon.distance}}"-{{weapon.distance*2}}"-{{weapon.distance*3}}"</div>
             <div><span class="bold-text">Dmg: </span>d{{weapon.damage}}<span *ngIf="weapon.damageBonus && weapon.damageBonus > 0">&nbsp;+{{weapon.damageBonus}}</span></div>
+            <div class="larger"><span class="bold-text">Weapon: </span>{{weapon.name}} {{weapon.abilityList}} {{weapon.distance}}"-{{weapon.distance*2}}"-{{weapon.distance*3}}"</div>
         </div>
         <div class="modelDisplayRow" *ngIf="model.stats.casting">
             <div><span class="bold-text">CAR: </span>{{model.stats.casting.name}} - d{{model.stats.casting.rating}}<span *ngIf="model.stats.casting.ratingBonus && model.stats.casting.ratingBonus > 0">&nbsp;+{{model.stats.casting.ratingBonus}}</span></div>

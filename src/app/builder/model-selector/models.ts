@@ -5040,7 +5040,7 @@ const Models: Model[] = [{
     "type": "Standard",
     "stats": {
         "type": "Hero",
-        "speed": 10,
+        "speed": 6,
         "melee": [{
             "rating": 10,
             "name": "Toloron"
@@ -6408,7 +6408,10 @@ const Models: Model[] = [{
         "speed": 7,
         "melee": [{
             "rating": 10,
-            "name": "Petadrakh"
+            "name": "Petadrakh",
+            "damage": 8,
+            "damageBonus": 1,
+            "abilities": ["qs","ven"]
         }],
         "armor": 2,
         "discipline": 10,
@@ -8153,7 +8156,10 @@ const Models: Model[] = [{
         "speed": 7,
         "melee": [{
             "name": "Petadrakh",
-            "rating": 12
+            "rating": 12,
+            "damage": 8,
+            "damageBonus": 1,
+            "abilities": ["qs"]
         }],
         "armor": 3,
         "discipline": 12,
@@ -8749,5 +8755,6 @@ const Models: Model[] = [{
     "race": "Faeler",
     "gender": "M"
 }];
+
 
 export  {Models};
