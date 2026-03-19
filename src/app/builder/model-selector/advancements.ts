@@ -12,7 +12,7 @@ const Equipment: Items[] = [{
     cost: 1
 },{
     name: 'Fine Crafted Weapon',
-    cost: 3
+    cost: 2
 },{
     name: 'Forest Cloak',
     cost: 3
@@ -21,7 +21,7 @@ const Equipment: Items[] = [{
     cost: 3
 },{
     name: 'Improved Armor',
-    cost: 3
+    cost: 2
 },{
     name: 'Lantern',
     cost: 1
