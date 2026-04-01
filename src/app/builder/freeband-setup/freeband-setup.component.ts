@@ -26,6 +26,7 @@ export class FreebandSetupComponent implements OnInit {
         // TODO: change to list based on available factions in model file
         this.factions = [
             'Azura Windborne',
+            'Black Cutlass Bandits',
             'Black Rose Bandits', 
             'Black Thorn Bandits',
             'The Collective',

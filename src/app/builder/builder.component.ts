@@ -39,6 +39,7 @@ export class BuilderComponent implements OnInit {
         this.errorMessages = [];
         this.factionRules = {
             'Azura Windborne': this.azuraRules,
+            'Black Cutlass Bandits': this.blackCutlassBanditsRule,
             'Black Rose Bandits': this.blackRoseBanditsRule,
             'Black Thorn Bandits': this.blackThornBanditsRule,
             'The Collective': this.collectiveRules,
@@ -205,7 +206,7 @@ export class BuilderComponent implements OnInit {
                 performerCount++;
             }
 
-            if (model.stats.talentList?.includes('Fly') && !model.stats.talentList.includes('Ally')) {
+            if (model.stats.talentList?.includes('Fly') && !model.stats.talentList.includes('Ally') && !model.stats.talentList?.includes('Familiar')) {
                 factionFlyFound = true;
             }
 
@@ -417,6 +418,10 @@ export class BuilderComponent implements OnInit {
     }
 
     private azuraRules(model: Model): string | undefined {
+        return undefined;
+    }
+
+    private blackCutlassBanditsRule(model: Model): string | undefined {
         return undefined;
     }
 
