@@ -607,6 +607,7 @@ const OtherTalents: string[] = [
     "Follow Through",
     "Frenzy",
     "Guardian Shot",
+    "Hammerfall",
     "Harassing Companion",
     "Hate[Faction]",
     "Hunting Raptor",
@@ -770,6 +771,10 @@ const MeleeWeapons: Omit<MeleeWeapon, 'rating'>[] = [{
 },{
     name: 'Great Club',
     damage: 10
+},{
+    name: 'Greatlance',
+    damage: 10,
+    abilities: ['lb', 'shk']
 },{
     name: 'Greatsword',
     damage: 10

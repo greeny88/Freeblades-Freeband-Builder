@@ -376,8 +376,8 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Faeler"
 },{
-    "factions": ["Black Rose Bandits", "Black Thorn Bandits", "Kandoran Deathmasters", "Shakrim Wavestalkers", "Traazorite Crusaders"],
-    "primaryFaction": ["Black Rose Bandits", "Black Thorn Bandits", "Shakrim Wavestalkers"],
+    "factions": ["Black Cutlass Bandits","Black Rose Bandits", "Black Thorn Bandits", "Kandoran Deathmasters", "Shakrim Wavestalkers", "Traazorite Crusaders"],
+    "primaryFaction": ["Black Cutlass Bandits","Black Rose Bandits", "Black Thorn Bandits", "Shakrim Wavestalkers"],
     "name": "Headhunter",
     "displayName": "Headhunter",
     "stats": {
@@ -504,8 +504,8 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Faeler"
 },{
-    "factions": ["Black Rose Bandits", "Black Thorn Bandits", "The Collective", "Ravenblade Mercenaries"],
-    "primaryFaction": ["Black Rose Bandits", "Black Thorn Bandits", "The Collective", "Ravenblade Mercenaries"],
+    "factions": ["Black Cutlass Bandits","Black Rose Bandits", "Black Thorn Bandits", "The Collective", "Ravenblade Mercenaries"],
+    "primaryFaction": ["Black Cutlass Bandits","Black Rose Bandits", "Black Thorn Bandits", "The Collective", "Ravenblade Mercenaries"],
     "name": "Outlaw",
     "displayName": "Outlaw",
     "stats": {
@@ -1193,8 +1193,8 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Chaler"
 },{
-    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn","Mershael Corsairs"],
-    "primaryFaction": ["Mershael Corsairs"],
+    "factions": ["Azura Windborne","Black Cutlass Bandits","Eclipse Sisterhood","Koronnan Moonsworn","Mershael Corsairs"],
+    "primaryFaction": ["Black Cutlass Bandits","Mershael Corsairs"],
     "name": "Seafarer",
     "displayName": "Seafarer",
     "stats": {
@@ -1263,8 +1263,8 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Chaler"
 },{
-    "factions": ["Black Rose Bandits","Black Thorn Bandits","Shakrim Wavestalkers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
-    "trustedFactions": ["Black Rose Bandits","Black Thorn Bandits","Shakrim Wavestalkers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "factions": ["Black Cutlass Bandits","Black Rose Bandits","Black Thorn Bandits","Shakrim Wavestalkers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "trustedFactions": ["Black Cutlass Bandits","Black Rose Bandits","Black Thorn Bandits","Shakrim Wavestalkers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Wandering Allies"],
     "name": "Snake Mystic",
     "displayName": "Snake Mystic",
@@ -1290,7 +1290,7 @@ const Models: Model[] = [{
     "gender": "F",
     "race": "Faeler"
 },{
-    "factions": ["Azura Windborne","The Collective","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+    "factions": ["Azura Windborne","The Collective","Black Cutlass Bandits","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
     "primaryFaction": ["The Collective", "Wandering Allies"],
     "name": "Wandering Wizard",
     "displayName": "Wandering Wizard",
@@ -1316,7 +1316,7 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Faeler"
 },{
-    "factions": ["Azura Windborne","The Collective","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "factions": ["Azura Windborne","The Collective","Black Cutlass Bandits","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
     "primaryFaction": ["The Collective","Wandering Allies"],
     "name": "Merchant",
     "displayName": "Merchant",
@@ -2316,8 +2316,8 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Faeler"
 },{
-    "factions": ["Falkaaran Adventurers","Haradelan Questers","Koronnan Moonsworn","Ravenblade Mercenaries"],
-    "primaryFaction": ["Falkaaran Adventurers","Ravenblade Mercenaries"],
+    "factions": ["Black Cutlass Bandits","Falkaaran Adventurers","Haradelan Questers","Koronnan Moonsworn","Ravenblade Mercenaries"],
+    "primaryFaction": ["Black Cutlass Bandits","Falkaaran Adventurers","Ravenblade Mercenaries"],
     "name": "Sailor",
     "displayName": "Sailor",
     "stats": {
@@ -3846,7 +3846,7 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Faeler"
 },{
-    "factions": ["Black Rose Bandits","Black Thorn Bandits","Ravenblade Mercenaries","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "factions": ["Black Cutlass Bandits","Black Rose Bandits","Black Thorn Bandits","Ravenblade Mercenaries","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
     "trustedFactions": ["Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Ravenblade Mercenaries","Wandering Allies"],
     "name": "Stag Warrior",
@@ -3907,8 +3907,8 @@ const Models: Model[] = [{
     "value": 35,
     "race": "Symker"
 },{
-    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","The Collective","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
-    "trustedFactions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "factions": ["Azura Windborne","Black Cutlass Bandits","Black Rose Bandits","Black Thorn Bandits","The Collective","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "trustedFactions": ["Azura Windborne","Black Cutlass Bandits","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
     "primaryFaction": ["The Collective","Wandering Allies"],
     "name": "Wandering Bard",
     "displayName": "Wandering Bard",
@@ -3935,8 +3935,8 @@ const Models: Model[] = [{
     "value": 25,
     "race": "Faeler"
 },{
-    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","The Collective","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
-    "trustedFactions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+    "factions": ["Azura Windborne","Black Cutlass Bandits","Black Rose Bandits","Black Thorn Bandits","The Collective","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+    "trustedFactions": ["Azura Windborne","Black Cutlass Bandits","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
     "primaryFaction": ["The Collective","Wandering Allies"],
     "name": "Wandering Bard",
     "displayName": "Wandering Bard",
@@ -4601,8 +4601,8 @@ const Models: Model[] = [{
     "value": 31,
     "race": "Shakrim"
 },{
-    "factions": ["Shakrim Wavestalkers"],
-    "primaryFaction": ["Shakrim Wavestalkers"],
+    "factions": ["Black Cutlass Bandits","Shakrim Wavestalkers"],
+    "primaryFaction": ["Black Cutlass Bandits","Shakrim Wavestalkers"],
     "name": "Shellback",
     "displayName": "Shellback",
     "type": "Standard",
@@ -4849,7 +4849,7 @@ const Models: Model[] = [{
     "value": 31,
     "race": "Kandoran"
 },{
-    "factions": ["Azura Windborne","Haradelan Questers", "Ravenblade Mercenaries","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+    "factions": ["Azura Windborne","Black Cutlass Bandits","Haradelan Questers", "Ravenblade Mercenaries","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Haradelan Questers", "Ravenblade Mercenaries", "Wandering Allies"],
     "name": "Stalker",
     "displayName": "Stalker",
@@ -4880,8 +4880,8 @@ const Models: Model[] = [{
     "value": 34,
     "race": "Faeler"
 },{
-    "factions": ["Shakrim Wavestalkers","Black Rose Bandits","Black Thorn Bandits","Kandoran Deathmasters","Traazorite Crusaders"],
-    "primaryFaction": ["Shakrim Wavestalkers"],
+    "factions": ["Black Cutlass Bandits","Shakrim Wavestalkers","Black Rose Bandits","Black Thorn Bandits","Kandoran Deathmasters","Traazorite Crusaders"],
+    "primaryFaction": ["Black Cutlass Bandits","Shakrim Wavestalkers"],
     "name": "Ghora",
     "displayName": "Ghora",
     "type": "Standard",
@@ -5082,8 +5082,8 @@ const Models: Model[] = [{
     "value": 9,
     "race": "Faeler"
 },{
-    "factions": ["Black Rose Bandits", "Black Thorn Bandits", "The Collective","Kandoran Deathmasters","Shakrim Wavestalkers"],
-    "primaryFaction": ["Black Rose Bandits", "Black Thorn Bandits", "The Collective"],
+    "factions": ["Black Cutlass Bandits","Black Rose Bandits", "Black Thorn Bandits", "The Collective","Kandoran Deathmasters","Shakrim Wavestalkers"],
+    "primaryFaction": ["Black Cutlass Bandits","Black Rose Bandits", "Black Thorn Bandits", "The Collective"],
     "name": "Freebooter",
     "displayName": "Freebooter",
     "type": "Standard",
@@ -5318,7 +5318,7 @@ const Models: Model[] = [{
         }],
         "armor": 2,
         "discipline": 4,
-        "talents": ["Elusive","Harasser","Warbeast","Arboreal","Demon"]
+        "talents": ["Elusive","Harasser","Warbeast","Arboreal","Demon","Spawn"]
     },
     "gender": "F",
     "value": 8,
@@ -5783,7 +5783,7 @@ const Models: Model[] = [{
     "value": 36,
     "race": "Faeler"
 },{
-    "factions": ["Azura Windborne","The Collective","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+    "factions": ["Azura Windborne","The Collective","Black Cutlass Bandits","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
     "primaryFaction": ["The Collective","Wandering Allies"],
     "name": "Irvlor",
     "displayName": "Irvlor",
@@ -5832,7 +5832,7 @@ const Models: Model[] = [{
     "value": 36,
     "race": "Faeler"
 },{
-    "factions": ["Azura Windborne","The Collective","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+    "factions": ["Azura Windborne","The Collective","Black Cutlass Bandits","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
     "primaryFaction": ["The Collective","Wandering Allies"],
     "name": "Keldan",
     "displayName": "Keldan",
@@ -5857,8 +5857,8 @@ const Models: Model[] = [{
     "value": 26,
     "race": "Faeler"
 },{
-    "factions": ["Black Rose Bandits", "Black Thorn Bandits","Kandoran Deathmasters","Shakrim Wavestalkers"],
-    "primaryFaction": ["Black Rose Bandits", "Black Thorn Bandits"],
+    "factions": ["Black Cutlass Bandits","Black Rose Bandits", "Black Thorn Bandits","Kandoran Deathmasters","Shakrim Wavestalkers"],
+    "primaryFaction": ["Black Cutlass Bandits","Black Rose Bandits", "Black Thorn Bandits"],
     "name": "Sea Blade",
     "displayName": "Sea Blade",
     "type": "Standard",
@@ -6114,7 +6114,7 @@ const Models: Model[] = [{
     "value": 33,
     "race": "Shakrim"
 },{
-    "factions": ["Azura Windborne","The Collective","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+    "factions": ["Azura Windborne","The Collective","Black Cutlass Bandits","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
     "primaryFaction": ["The Collective","Wandering Allies"],
     "name": "Tyrsan",
     "displayName": "Tyrsan",
@@ -6257,8 +6257,8 @@ const Models: Model[] = [{
     "value": 17,
     "race": "Shakrim"
 },{
-    "factions": ["Azura Windborne","Mershael Corsairs","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Koronnan Moonsworn"],
-    "primaryFaction": ["Mershael Corsairs"],
+    "factions": ["Azura Windborne","Black Cutlass Bandits","Mershael Corsairs","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Koronnan Moonsworn"],
+    "primaryFaction": ["Black Cutlass Bandits","Mershael Corsairs"],
     "name": "Sea Ronin",
     "displayName": "Sea Ronin",
     "type": "Standard",
@@ -6398,7 +6398,7 @@ const Models: Model[] = [{
     "value": 11,
     "race": "Faeler"
 },{
-    "factions": ["Azura Windborne","Black Rose Bandits", "Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
+    "factions": ["Azura Windborne","Black Cutlass Bandits","Black Rose Bandits", "Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Wandering Allies"],
     "name": "Tarch",
     "displayName": "Tarch",
@@ -6855,8 +6855,8 @@ const Models: Model[] = [{
     "value": 30,
     "race": "Faeler"
 },{
-    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","The Collective","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
-    "primaryFaction": ["Wandering Allies"],
+    "factions": ["Azura Windborne","Black Cutlass Bandits", "Black Rose Bandits","Black Thorn Bandits","The Collective","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "primaryFaction": ["Black Cutlass Bandits","Wandering Allies"],
     "name": "Enshrouder",
     "displayName": "Enshrouder",
     "type": "Caster",
@@ -7068,7 +7068,7 @@ const Models: Model[] = [{
     "value": 31,
     "race": "Trilian"
 },{
-    "factions": ["Black Rose Bandits","Black Thorn Bandits","The Collective","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "factions": ["Black Cutlass Bandits","Black Rose Bandits","Black Thorn Bandits","The Collective","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Wandering Allies"],
     "name": "Moon Talon",
     "displayName": "Moon Talon",
@@ -7663,7 +7663,7 @@ const Models: Model[] = [{
     "value": 52,
     "race": "Chaler"
 },{
-    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "factions": ["Azura Windborne","Black Cutlass Bandits","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Familiar"],
     "name": "Iztrazal",
     "displayName": "Iztrazal",
@@ -7687,7 +7687,7 @@ const Models: Model[] = [{
     "value": 13,
     "race": "Beast"
 },{
-    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "factions": ["Azura Windborne","Black Cutlass Bandits","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Familiar"],
     "name": "Owl",
     "displayName": "Owl",
@@ -7716,7 +7716,7 @@ const Models: Model[] = [{
     "value": 14,
     "race": "Beast"
 },{
-    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "factions": ["Azura Windborne","Black Cutlass Bandits","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Familiar"],
     "name": "Suralax",
     "displayName": "Suralax",
@@ -7747,7 +7747,7 @@ const Models: Model[] = [{
     "value": 14,
     "race": "Beast"
 },{
-    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "factions": ["Azura Windborne","Black Cutlass Bandits","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Familiar"],
     "name": "Voavar",
     "displayName": "Voavar",
@@ -7773,7 +7773,7 @@ const Models: Model[] = [{
     "value": 10,
     "race": "Beast"
 },{
-    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "factions": ["Azura Windborne","Black Cutlass Bandits","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Familiar"],
     "name": "Wolf",
     "displayName": "Wolf",
@@ -7798,7 +7798,7 @@ const Models: Model[] = [{
     "value": 14,
     "race": "Beast"
 },{
-    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "factions": ["Azura Windborne","Black Cutlass Bandits","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Familiar"],
     "name": "Fox",
     "displayName": "Fox",
@@ -7822,7 +7822,7 @@ const Models: Model[] = [{
     "value": 12,
     "race": "Beast"
 },{
-    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "factions": ["Azura Windborne","Black Cutlass Bandits","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Familiar"],
     "name": "Rabbit",
     "displayName": "Rabbit",
@@ -7847,7 +7847,7 @@ const Models: Model[] = [{
     "value": 11,
     "race": "Beast"
 },{
-    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "factions": ["Azura Windborne","Black Cutlass Bandits","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Familiar"],
     "name": "Skunk",
     "displayName": "Skunk",
@@ -7868,7 +7868,7 @@ const Models: Model[] = [{
     "value": 9,
     "race": "Beast"
 },{
-    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "factions": ["Azura Windborne","Black Cutlass Bandits","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Familiar"],
     "name": "Squirrel",
     "displayName": "Squirrel",
@@ -7893,7 +7893,7 @@ const Models: Model[] = [{
     "value": 9,
     "race": "Beast"
 },{
-    "factions": ["Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
+    "factions": ["Azura Windborne","Black Cutlass Bandits","Black Rose Bandits","Black Thorn Bandits","Darkgrove Demons","Demons of Karelon","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Ravenblade Mercenaries","Shakrim Wavestalkers","The Collective","Traazorite Crusaders","Trilian Seekers","Urdaggar Tribes of Ruin","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Familiar"],
     "name": "Stag",
     "displayName": "Stag",
@@ -8753,6 +8753,259 @@ const Models: Model[] = [{
     },
     "value": 13,
     "race": "Faeler",
+    "gender": "M"
+},{
+    "factions": ["Black Cutlass Bandits"],
+    "primaryFaction": ["Black Cutlass Bandits"],
+    "name": "Black Cutlass",
+    "displayName": "Black Cutlass",
+    "type": "Leader",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee": [{
+            "name": "Cutlass",
+            "rating": 12
+        }],
+        "armor": 3,
+        "discipline": 12,
+        "talents": ["Leader","Accurate Strike","Amphibious","Dodge","Elusive","Feint","Leaper","Parry"],
+        "skills": [{
+            "name": "Thievery",
+            "rating": 8
+        }],
+        "abilities": {
+            "agility": 12,
+            "dexterity": 10
+        }
+    },
+    "value": 39,
+    "race": "Faeler",
+    "gender": "F"
+},{
+    "factions": ["Black Cutlass Bandits","Kandoran Deathmasters","Shakrim Wavestalkers"],
+    "primaryFaction": ["Black Cutlass Bandits"],
+    "name": "Rigger",
+    "displayName": "Rigger",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee": [{
+            "name": "Cutlass",
+            "rating": 10
+        }],
+        "armor": 3,
+        "discipline": 10,
+        "talents": ["Amphibious","Dodge","Dodge","Dodging Strike","Leaper","Opening Strike","Opening Strike","Opportune Strike","Sidestep"],
+        "abilities": {
+            "agility": 14
+        }
+    },
+    "value": 31,
+    "race": "Faeler",
+    "gender": "M"
+},{
+    "factions": ["Black Cutlass Bandits","Kandoran Deathmasters","Shakrim Wavestalkers"],
+    "primaryFaction": ["Black Cutlass Bandits"],
+    "name": "Sea Dog",
+    "displayName": "Sea Dog",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee": [{
+            "name": "Cutlass",
+            "rating": 10
+        }],
+        "range": [{
+            "name": "Grappler",
+            "rating": 10
+        }],
+        "armor": 3,
+        "discipline": 10,
+        "talents": ["Amphibious","Dodge","Elusive","Harasser","Parry"],
+        "abilities": {
+            "agility": 12,
+            "dexterity": 10
+        }
+    },
+    "value": 32,
+    "race": "Faeler",
+    "gender": "M"
+},{
+    "factions": ["Darkgrove Demons"],
+    "primaryFaction": ["Darkgrove Demons"],
+    "name": "Rikoorin",
+    "displayName": "Rikoorin",
+    "type": "Leader",
+    "stats": {
+        "type": "Hero",
+        "speed": 6,
+        "melee": [{
+            "name": "Claw 2x",
+            "rating": 12,
+            "damage": 8,
+            "damageBonus": 1
+        }],
+        "armor": 4,
+        "discipline": 12,
+        "talents": ["Leader","Bear Hug","Demon","Die Hard","Slither","Steadfast"],
+        "abilities": {
+            "endurance": 12,
+            "strength": 10
+        }
+    },
+    "value": 46,
+    "race": "Demon",
+    "gender": "M"
+},{
+    "factions": ["Darkgrove Demons","Demons of Karelon"],
+    "primaryFaction": ["Darkgrove Demons"],
+    "name": "Bolotar",
+    "displayName": "Bolotar",
+    "type": "Caster",
+    "stats": {
+        "type": "Hero",
+        "speed": 5,
+        "melee": [{
+            "name": "Claw",
+            "rating": 6,
+            "damage": 8
+        }],
+        "casting": {
+            "name": "Swampshroud Sorcery",
+            "type": "sorcery",
+            "power": 15,
+            "rating": 10
+        },
+        "armor": 4,
+        "discipline": 8,
+        "talents": ["Swampshroud Sorcery","Demon","Slither","Spelldancer"]
+    },
+    "value": 36,
+    "race": "Demon",
+    "gender": "M"
+},{
+    "factions": ["Darkgrove Demons","Demons of Karelon"],
+    "primaryFaction": ["Darkgrove Demons"],
+    "name": "Gruslorg",
+    "displayName": "Gruslorg",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 6,
+        "melee": [{
+            "name": "Bite",
+            "rating": 10,
+            "damage": 10
+        }],
+        "armor": 5,
+        "discipline": 10,
+        "talents": ["Demon","Die Hard","Die Hard","Hardened","Slither","Vicious Strike","Vicious Strike","Vicious Strike"],
+        "abilities": {
+            "endurance": 10
+        }
+    },
+    "value": 34,
+    "race": "Demon",
+    "gender": "M"
+},{
+    "factions": ["Darkgrove Demons","Demons of Karelon"],
+    "primaryFaction": ["Darkgrove Demons"],
+    "name": "Gruslorg Defender",
+    "displayName": "Gruslorg Defender",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 6,
+        "melee": [{
+            "name": "Bite",
+            "rating": 12,
+            "damage": 10
+        }],
+        "armor": 5,
+        "discipline": 10,
+        "talents": ["Demon","Die Hard","Die Hard","Hardened","Slither","Spawn","Vicious Strike","Vicious Strike","Vicious Strike"],
+        "abilities": {
+            "endurance": 10
+        }
+    },
+    "value": 36,
+    "race": "Demon",
+    "gender": "M"
+},{
+    "factions": ["Varkraalan Unchained"],
+    "primaryFaction": ["Varkraalan Unchained"],
+    "name": "Varaka",
+    "displayName": "Varaka",
+    "type": "Leader",
+    "stats": {
+        "type": "Hero",
+        "speed": 6,
+        "melee": [{
+            "name": "Petadrakh",
+            "rating": 12,
+            "damage": 8,
+            "damageBonus": 1,
+            "abilities": ["qs"]
+        }],
+        "armor": 5,
+        "discipline": 12,
+        "talents": ["Leader","Confine","Contain","Hardened","Killing Strike","Killing Strike","Parry","Parry"],
+        "abilities": {
+            "agility": 10
+        }
+    },
+    "value": 41,
+    "race": "Symker",
+    "gender": "F"
+},{
+    "factions": ["Varkraalan Unchained","Kuzaarik Forgers"],
+    "primaryFaction": ["Varkraalan Unchained"],
+    "name": "Kataphrakt",
+    "displayName": "Kataphrakt",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 8,
+        "melee": [{
+            "name": "Greatlance",
+            "rating": 10
+        },{
+            "name": "Spikedrakh",
+            "rating": 10
+        }],
+        "armor": 8,
+        "discipline": 10,
+        "talents": ["Cavalry","Hammerfall","Hardened","Steadfast"]
+    },
+    "value": 38,
+    "race": "Symker",
+    "gender": "M"
+},{
+    "factions": ["Varkraalan Unchained","Kuzaarik Forgers"],
+    "primaryFaction": ["Varkraalan Unchained"],
+    "name": "Cliff Runner",
+    "displayName": "Cliff Runner",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 7,
+        "melee": [{
+            "name": "Javelin",
+            "rating": 6
+        }],
+        "range": [{
+            "name": "Javelin",
+            "rating": 8
+        }],
+        "armor": 2,
+        "discipline": 6,
+        "talents": ["Scout","Wayfinder"]
+    },
+    "value": 12,
+    "race": "Symker",
     "gender": "M"
 }];
 

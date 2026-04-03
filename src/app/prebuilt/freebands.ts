@@ -1,5 +1,6 @@
 import {Factions} from 'src/app/model';
 
+// TODO: add Black Cutlass
 const PreBuiltFreebands: {name:string, faction:typeof Factions[number], freebandLimit:number, altLeader:boolean, models:{displayName: string, type?: string}[]}[] = [{
     'name': 'Kuzaarik Starter Set',
     'faction': 'Kuzaarik Forgers',
