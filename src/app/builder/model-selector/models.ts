@@ -8945,7 +8945,10 @@ const Models: Model[] = [{
         "speed": 6,
         "melee": [{
             "name": "Petadrakh",
-            "rating": 12
+            "rating": 12,
+            "damage": 8,
+            "damageBonus": 1,
+            "abilities": ["qs"]
         }],
         "armor": 5,
         "discipline": 12,
