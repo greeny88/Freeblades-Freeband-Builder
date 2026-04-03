@@ -8781,7 +8781,7 @@ const Models: Model[] = [{
     },
     "value": 39,
     "race": "Faeler",
-    "gender": "M"
+    "gender": "F"
 },{
     "factions": ["Black Cutlass Bandits","Kandoran Deathmasters","Shakrim Wavestalkers"],
     "primaryFaction": ["Black Cutlass Bandits"],
@@ -8956,7 +8956,7 @@ const Models: Model[] = [{
     },
     "value": 41,
     "race": "Symker",
-    "gender": "M"
+    "gender": "F"
 },{
     "factions": ["Varkraalan Unchained","Kuzaarik Forgers"],
     "primaryFaction": ["Varkraalan Unchained"],
