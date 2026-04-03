@@ -159,7 +159,7 @@ export class BuilderComponent implements OnInit {
                     if (model.name === 'Keldan') {
                         keldanCount++;
                     }
-                    if (model.stats.talentList?.includes('Fly')) {
+                    if (model.stats.talentList?.includes('Fly') && !model.stats.talentList?.includes('Familiar')) {
                         allyFlyFound = true;
                     }
                 }
