@@ -481,6 +481,21 @@ export class BuilderComponent implements OnInit {
     }
 
     private darkgroveRules(model: Model): string | undefined {
+        let leaderCasterFound: boolean = false;
+        let gruslorgDefenderFound: boolean = false;
+
+        for (let key in this.models) {
+            if (this.models[key].type === 'Leader' && this.models[key].stats.casting) {
+                leaderCasterFound = true;
+            }
+            if (this.models[key].name === 'Gruslorg Defender') {
+                gruslorgDefenderFound = true;
+            }
+        }
+
+        if (gruslorgDefenderFound && !leaderCasterFound) {
+            return 'Gruslorg Defender can only be added when led by a caster.';
+        }
         return undefined;
     }
 
