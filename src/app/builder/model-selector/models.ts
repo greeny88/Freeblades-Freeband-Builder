@@ -504,8 +504,8 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Faeler"
 },{
-    "factions": ["Black Cutlass Bandits","Black Rose Bandits", "Black Thorn Bandits", "The Collective", "Ravenblade Mercenaries"],
-    "primaryFaction": ["Black Cutlass Bandits","Black Rose Bandits", "Black Thorn Bandits", "The Collective", "Ravenblade Mercenaries"],
+    "factions": ["Black Rose Bandits", "Black Thorn Bandits", "The Collective", "Ravenblade Mercenaries"],
+    "primaryFaction": ["Black Rose Bandits", "Black Thorn Bandits", "The Collective", "Ravenblade Mercenaries"],
     "name": "Outlaw",
     "displayName": "Outlaw",
     "stats": {
@@ -521,6 +521,30 @@ const Models: Model[] = [{
             "rating": 6
         }],
         "armor": 3
+    },
+    "type": "Standard",
+    "value": 11,
+    "gender": "M",
+    "race": "Faeler"
+},{
+    "factions": ["Black Cutlass Bandits"],
+    "primaryFaction": ["Black Cutlass Bandits"],
+    "name": "Outlaw",
+    "displayName": "Outlaw",
+    "stats": {
+        "discipline": 6,
+        "type": "Follower",
+        "speed": 7,
+        "melee": [{
+            "name": "Short Sword",
+            "rating": 6
+        }],
+        "range": [{
+            "name": "Crossbow",
+            "rating": 6
+        }],
+        "armor": 3,
+        "talents": ["Amphibious"]
     },
     "type": "Standard",
     "value": 11,
