@@ -40,6 +40,7 @@ export class BuilderComponent implements OnInit {
         this.errorMessages = [];
         this.factionRules = {
             'Azura Windborne': this.azuraRules,
+            'Black Cutlass Bandits': this.blackCutlassBanditsRule,
             'Black Rose Bandits': this.blackRoseBanditsRule,
             'Black Thorn Bandits': this.blackThornBanditsRule,
             'The Collective': this.collectiveRules,
@@ -159,7 +160,7 @@ export class BuilderComponent implements OnInit {
                     if (model.name === 'Keldan') {
                         keldanCount++;
                     }
-                    if (model.stats.talentList?.includes('Fly')) {
+                    if (model.stats.talentList?.includes('Fly') && !model.stats.talentList?.includes('Familiar')) {
                         allyFlyFound = true;
                     }
                 }
@@ -206,7 +207,7 @@ export class BuilderComponent implements OnInit {
                 performerCount++;
             }
 
-            if (model.stats.talentList?.includes('Fly') && !model.stats.talentList.includes('Ally')) {
+            if (model.stats.talentList?.includes('Fly') && !model.stats.talentList.includes('Ally') && !model.stats.talentList?.includes('Familiar')) {
                 factionFlyFound = true;
             }
 
@@ -421,6 +422,10 @@ export class BuilderComponent implements OnInit {
         return undefined;
     }
 
+    private blackCutlassBanditsRule(model: Model): string | undefined {
+        return undefined;
+    }
+
     private blackRoseBanditsRule(model: Model): string | undefined {
         return undefined;
     }
@@ -477,6 +482,21 @@ export class BuilderComponent implements OnInit {
     }
 
     private darkgroveRules(model: Model): string | undefined {
+        let leaderCasterFound: boolean = false;
+        let gruslorgDefenderFound: boolean = false;
+
+        for (let key in this.models) {
+            if (this.models[key].type === 'Leader' && this.models[key].stats.casting) {
+                leaderCasterFound = true;
+            }
+            if (this.models[key].name === 'Gruslorg Defender') {
+                gruslorgDefenderFound = true;
+            }
+        }
+
+        if (gruslorgDefenderFound && !leaderCasterFound) {
+            return 'Gruslorg Defender can only be added when led by a caster.';
+        }
         return undefined;
     }
 
