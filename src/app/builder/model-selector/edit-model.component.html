@@ -1,85 +1,107 @@
 <h1 mat-dialog-title>Edit Model: {{model.displayName}}</h1>
 <div mat-dialog-content>
-    <mat-form-field style="width:100%">
-        <input matInput type="text" placeholder="Character Name" [(ngModel)]="model.characterName">
+  <mat-form-field style="width:100%">
+    <input matInput type="text" placeholder="Character Name" [(ngModel)]="model.characterName">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Gender" [(value)]="model.gender">
+      @for (gender of ['M','F']; track gender) {
+        <mat-option [value]="gender">{{gender}}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+  @if (data.altLeader) {
+    <h1>Alt Leader Options</h1>
+    <mat-radio-group>
+      @for (opt of model.stats.melee; track opt; let i = $index) {
+        <mat-radio-button [checked]="opt.altSelected" [value]="opt" (change)="changeLeaderOption($event, 'melee', i)">
+          {{ opt.name }} - d{{ opt.rating }}
+        </mat-radio-button>
+      }
+      @for (opt of model.stats.range; track opt; let i = $index) {
+        <mat-radio-button [checked]="opt.altSelected" [value]="opt" (change)="changeLeaderOption($event, 'range', i)">
+          {{ opt.name }} - d{{ opt.rating }}
+        </mat-radio-button>
+      }
+      @if (model.stats.casting) {
+        <mat-radio-button (change)="changeLeaderOption($event, 'casting')">
+          Magic - d{{ model.stats.casting.rating }}
+        </mat-radio-button>
+      }
+    </mat-radio-group>
+  }
+  @if (model.stats?.options) {
+    <h1>Options</h1>
+    <mat-radio-group>
+      @for (opt of model.stats.options; track opt) {
+        <mat-radio-button [checked]="opt.selected" [value]="opt" (change)="changeOption($event)">
+          {{ opt.name }}
+        </mat-radio-button>
+      }
+    </mat-radio-group>
+  }
+  @if (model.stats?.veteran) {
+    <h1>Veteran</h1>
+    @for (vet of model.stats.veteran; track vet) {
+      <mat-checkbox [checked]="vet.selected" (change)="vet.selected = $event.checked">{{vet.name}}, Cost: {{vet.cost}}</mat-checkbox>
+    }
+  }
+  <br/>
+  <br/>
+  <button mat-button class="mat-raised-button" (click)="updateAdvancementCount()">Add advancements</button>
+  @for (ma of modelAdvancements; track ma) {
+    <br/>
+    <mat-form-field>
+      <mat-select (selectionChange)="addAdvancement()" [(value)]="ma.name">
+        @for (adv of advancements; track adv) {
+          <mat-option [value]="adv">{{adv}}</mat-option>
+        }
+      </mat-select>
     </mat-form-field>
     <mat-form-field>
-        <mat-select placeholder="Gender" [(value)]="model.gender">
-            <mat-option *ngFor="let gender of ['M','F']" [value]="gender">{{gender}}</mat-option>
-        </mat-select>
+      <input matInput type="number" placeholder="Cost" [(ngModel)]="ma.cost">
     </mat-form-field>
-    <ng-container *ngIf="data.altLeader">
-        <h1>Alt Leader Options</h1>
-        <mat-radio-group>
-            <mat-radio-button *ngFor="let opt of model.stats.melee; let i = index" [checked]="opt.altSelected" [value]="opt" (change)="changeLeaderOption($event, 'melee', i)">
-                {{ opt.name }} - d{{ opt.rating }}
-            </mat-radio-button>
-            <mat-radio-button *ngFor="let opt of model.stats.range; let i = index" [checked]="opt.altSelected" [value]="opt" (change)="changeLeaderOption($event, 'range', i)">
-                {{ opt.name }} - d{{ opt.rating }}
-            </mat-radio-button>
-            <mat-radio-button *ngIf="model.stats.casting" (change)="changeLeaderOption($event, 'casting')">
-                Magic - d{{ model.stats.casting.rating }}
-            </mat-radio-button>
-        </mat-radio-group>
-    </ng-container>
-    <ng-container *ngIf="model.stats?.options">
-        <h1>Options</h1>
-        <mat-radio-group>
-            <mat-radio-button *ngFor="let opt of model.stats.options" [checked]="opt.selected" [value]="opt" (change)="changeOption($event)">
-                {{ opt.name }}
-            </mat-radio-button>
-        </mat-radio-group>
-    </ng-container>
-    <ng-container *ngIf="model.stats?.veteran">
-        <h1>Veteran</h1>
-        <mat-checkbox *ngFor="let vet of model.stats.veteran" [checked]="vet.selected" (change)="vet.selected = $event.checked">{{vet.name}}, Cost: {{vet.cost}}</mat-checkbox>
-    </ng-container>
+    <button mat-button class="mat-raised-button" (click)="removeAdvancement(ma)">Remove</button>
+  }
+  <br/>
+  <br/>
+  <button mat-button class="mat-raised-button" (click)="updateInjuryCount()">Add injury</button>
+  @for (minj of modelInjuries; track minj; let i = $index) {
     <br/>
+    <mat-form-field>
+      <mat-select [value]="minj">
+        @for (inj of injuries; track inj) {
+          <mat-option [value]="inj" (onSelectionChange)="addInjury(inj, i)">{{inj}}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+    <button mat-button class="mat-raised-button" (click)="removeInjuries(minj)">Remove</button>
+  }
+  <br/>
+  <br/>
+  <button mat-button class="mat-raised-button" (click)="updateItemCount()">Add item</button>
+  @for (mi of modelItems; track mi; let i = $index) {
     <br/>
-    <button mat-button class="mat-raised-button" (click)="updateAdvancementCount()">Add advancements</button>
-    <ng-container *ngFor="let ma of modelAdvancements">
-        <br/>
-        <mat-form-field>
-            <mat-select (selectionChange)="addAdvancement()" [(value)]="ma.name">
-                <mat-option *ngFor="let adv of advancements" [value]="adv">{{adv}}</mat-option>
-            </mat-select>
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput type="number" placeholder="Cost" [(ngModel)]="ma.cost">
-        </mat-form-field>
-        <button mat-button class="mat-raised-button" (click)="removeAdvancement(ma)">Remove</button>
-    </ng-container>
-    <br/>
-    <br/>
-    <button mat-button class="mat-raised-button" (click)="updateInjuryCount()">Add injury</button>
-    <ng-container *ngFor="let minj of modelInjuries; index as i">
-        <br/>
-        <mat-form-field>
-            <mat-select [value]="minj">
-                <mat-option *ngFor="let inj of injuries" [value]="inj" (onSelectionChange)="addInjury(inj, i)">{{inj}}</mat-option>
-            </mat-select>
-        </mat-form-field>
-        <button mat-button class="mat-raised-button" (click)="removeInjuries(minj)">Remove</button>
-    </ng-container>
-    <br/>
-    <br/>
-    <button mat-button class="mat-raised-button" (click)="updateItemCount()">Add item</button>
-    <ng-container *ngFor="let mi of modelItems; index as i">
-        <br/>
-        <mat-form-field *ngIf="modelItems">
-            <mat-select [(value)]="modelItems[i]" (selectionChange)="addItem(i)">
-                <mat-option *ngFor="let itm of items" [value]="itm">{{itm.name}}</mat-option>
-            </mat-select>
-        </mat-form-field>
-        <mat-form-field *ngIf="modelItems">
-            <input matInput type="number" placeholder="Cost" [(ngModel)]="modelItems[i].cost">
-        </mat-form-field>
-        <button mat-button class="mat-raised-button" (click)="removeItem(mi)">Remove</button>
-    </ng-container>
-    <br/>
-    <br/>
+    @if (modelItems) {
+      <mat-form-field>
+        <mat-select [(value)]="modelItems[i]" (selectionChange)="addItem(i)">
+          @for (itm of items; track itm) {
+            <mat-option [value]="itm">{{itm.name}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    }
+    @if (modelItems) {
+      <mat-form-field>
+        <input matInput type="number" placeholder="Cost" [(ngModel)]="modelItems[i].cost">
+      </mat-form-field>
+    }
+    <button mat-button class="mat-raised-button" (click)="removeItem(mi)">Remove</button>
+  }
+  <br/>
+  <br/>
 </div>
 <div mat-dialog-actions>
-    <button mat-button class="mat-raised-button" [mat-dialog-close]="model">Update</button>
-    <button mat-button class="mat-raised-button" (click)="cancel()">Cancel</button>
+  <button mat-button class="mat-raised-button" [mat-dialog-close]="model">Update</button>
+  <button mat-button class="mat-raised-button" (click)="cancel()">Cancel</button>
 </div>
