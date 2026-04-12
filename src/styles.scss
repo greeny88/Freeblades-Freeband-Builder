@@ -1,7 +1,8 @@
 @use 'sass:map';
 @use '@angular/material' as mat;
 @use '_theme-colors' as ffb-theme;
-@include mat.core();
+@include mat.elevation-classes();
+@include mat.app-background();
 
 // https://material.angular.dev/guide/theming-your-components for color variables
 // https://v19.material.angular.dev/guide/theming for general theming info
