@@ -1,4 +1,4 @@
-import { NgModule, provideExperimentalZonelessChangeDetection } from '@angular/core';
+import { NgModule, provideZonelessChangeDetection } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -43,7 +43,7 @@ import { LRBService } from './lrb.service';
     CommunicatorService,
     DbService,
     LRBService,
-    provideExperimentalZonelessChangeDetection()
+    provideZonelessChangeDetection()
   ],
   bootstrap: [AppComponent]
 })
