@@ -16,6 +16,14 @@
     padding: 0.5rem 0;
 }
 
+#buildDescription {
+    @include mat.list-overrides((
+        list-item-label-text-color: #fff,
+        list-item-hover-label-text-color: #fff,
+        list-item-supporting-text-color: #fff,
+    ));
+}
+
 .freebandStats {
     margin-bottom: 1rem;
 

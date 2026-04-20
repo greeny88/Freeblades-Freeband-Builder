@@ -50,24 +50,28 @@
 </div>
 @for (weapon of model.stats.melee; track weapon) {
   <div class="modelDisplayRow">
-    <div><span class="bold-text">MAR: </span>d{{weapon.rating}}@if (weapon.ratingBonus && weapon.ratingBonus > 0) {
-    <span>&nbsp;+{{weapon.ratingBonus}}</span>
-  }</div>
-  <div><span class="bold-text">Dmg: </span>d{{weapon.damage}}@if (weapon.damageBonus && weapon.damageBonus > 0) {
-  <span>&nbsp;+{{weapon.damageBonus}}</span>
-}</div>
-<div class="larger"><span class="bold-text">Weapon: </span>{{weapon.name}} {{weapon.abilityList}}</div>
-</div>
+    <div class="larger">
+      <span class="bold-text">Weapon: </span>{{weapon.name}} {{weapon.abilityList}}
+    </div>
+    <div>
+      <span class="bold-text">MAR: </span>d{{weapon.rating}}@if (weapon.ratingBonus && weapon.ratingBonus > 0) {<span>&nbsp;+{{weapon.ratingBonus}}</span>}
+    </div>
+    <div>
+      <span class="bold-text">Dmg: </span>d{{weapon.damage}}@if (weapon.damageBonus && weapon.damageBonus > 0) {<span>&nbsp;+{{weapon.damageBonus}}</span>}
+    </div>
+  </div>
 }
 @for (weapon of model.stats.range; track weapon) {
   <div class="modelDisplayRow">
-    <div><span class="bold-text">RAR: </span>d{{weapon.rating}}@if (weapon.ratingBonus && weapon.ratingBonus > 0) {
-    <span>&nbsp;+{{weapon.ratingBonus}}</span>
-  }</div>
-  <div><span class="bold-text">Dmg: </span>d{{weapon.damage}}@if (weapon.damageBonus && weapon.damageBonus > 0) {
-  <span>&nbsp;+{{weapon.damageBonus}}</span>
-}</div>
-<div class="larger"><span class="bold-text">Weapon: </span>{{weapon.name}} {{weapon.abilityList}} {{weapon.distance}}"-{{weapon.distance*2}}"-{{weapon.distance*3}}"</div>
+    <div class="larger">
+      <span class="bold-text">Weapon: </span>{{weapon.name}} {{weapon.abilityList}} {{weapon.distance}}"-{{weapon.distance*2}}"-{{weapon.distance*3}}"
+    </div>
+    <div>
+      <span class="bold-text">RAR: </span>d{{weapon.rating}}@if (weapon.ratingBonus && weapon.ratingBonus > 0) {<span>&nbsp;+{{weapon.ratingBonus}}</span>}
+    </div>
+    <div>
+      <span class="bold-text">Dmg: </span>d{{weapon.damage}}@if (weapon.damageBonus && weapon.damageBonus > 0) {<span>&nbsp;+{{weapon.damageBonus}}</span>}
+    </div>
 </div>
 }
 @if (model.stats.casting) {

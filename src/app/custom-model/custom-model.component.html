@@ -6,9 +6,7 @@
         {{ currentLoadingText }}
       </div>
     </div>
-  }
-
-  @if (trainingDone) {
+  } @else {
     <form [formGroup]="characterForm" class="form-container">
       <h2 class="mat-headline-4">Character Builder</h2>
       <div class="form-section">

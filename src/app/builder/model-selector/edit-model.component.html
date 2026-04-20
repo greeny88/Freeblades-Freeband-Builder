@@ -30,7 +30,7 @@
       }
     </mat-radio-group>
   }
-  @if (model.stats?.options) {
+  @if (model.stats.options) {
     <h1>Options</h1>
     <mat-radio-group>
       @for (opt of model.stats.options; track opt) {
@@ -40,7 +40,7 @@
       }
     </mat-radio-group>
   }
-  @if (model.stats?.veteran) {
+  @if (model.stats.veteran) {
     <h1>Veteran</h1>
     @for (vet of model.stats.veteran; track vet) {
       <mat-checkbox [checked]="vet.selected" (change)="vet.selected = $event.checked">{{vet.name}}, Cost: {{vet.cost}}</mat-checkbox>

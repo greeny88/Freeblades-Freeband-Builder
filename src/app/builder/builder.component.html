@@ -38,7 +38,7 @@
   <div style="padding-top: 1em;">
     <button mat-raised-button class="noPrint" (click)="loadFreeband()">Load</button>
   </div>
-  <div class="noPrint">
+  <div class="noPrint" id="buildDescription">
     <p>Start by selecting the values above so that you can begin building your freeband.</p>
     <mat-list>
       <mat-list-item>
@@ -56,10 +56,10 @@
       </mat-list-item>
     </mat-list>
     <p>A full description on Freeband construction rules can be found in the Living Rulebook (v{{ lrbService.version }})
-      starting on page {{ lrbService.buildingRules }}. Printing this page using your browser's print option will
+    starting on page {{ lrbService.buildingRules }}. Printing this page using your browser's print option will
     give you a formatted display of your selected models.</p>
     <p><sup>1</sup> By default the Alt Leader is given the MAR increase but you can use the 'Edit' button to
     switch the increase to any weapon or CAR. You might also notice a value change in the baseline value
-  dependent on the rules around a MAR increase. Full rules are on page {{ lrbService.altLeaderRules }}.</p>
-</div>
+    dependent on the rules around a MAR increase. Full rules are on page {{ lrbService.altLeaderRules }}.</p>
+  </div>
 }
