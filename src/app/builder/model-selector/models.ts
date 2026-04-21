@@ -4966,7 +4966,7 @@ const Models: Model[] = [{
         }],
         "armor": 3,
         "discipline": 10,
-        "talents": ["Dodge","Scout","Harasser","Fly[Low, SPD 10]","Light Cavalry","Calvary"],
+        "talents": ["Dodge","Scout","Harasser","Fly[Low, SPD 10]","Light Cavalry","Cavalry"],
         "abilities": {
             "agility": 10,
             "dexterity": 10
@@ -6662,7 +6662,7 @@ const Models: Model[] = [{
         "shield": "S",
         "armor": 5,
         "discipline": 10,
-        "talents": ["Calvary","Parry","Parry","Shield Bash"],
+        "talents": ["Cavalry","Parry","Parry","Shield Bash"],
         "skills": [{
             "name": "Thievery",
             "rating": 8
@@ -6744,7 +6744,7 @@ const Models: Model[] = [{
         }],
         "armor": 4,
         "discipline": 8,
-        "talents": ["Calvary","Light Calvary","Harasser","Deft Rider","Subdue","Scout","Fast"],
+        "talents": ["Cavalry","Light Cavalry","Harasser","Deft Rider","Subdue","Scout","Fast"],
         "skills": [{
             "name": "Hunt",
             "rating": 8
