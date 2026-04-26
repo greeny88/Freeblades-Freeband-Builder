@@ -116,9 +116,7 @@ interface Stats extends RawStats {
     speed: number
 }
 
-export interface Model {
-    characterName?: string,
-    component_id?: string,
+export interface IModel {
     displayName: string,
     factions: (typeof Factions[number])[],
     gender: "M" | "F",
@@ -131,7 +129,7 @@ export interface Model {
     value: number
 }
 
-export class cModel {
+export class cModel implements IModel {
     characterName?: string;
     displayName: string;
     factions: (typeof Factions[number])[];
@@ -140,13 +138,50 @@ export class cModel {
     primaryFaction: (typeof Factions[number] | "Wandering Allies" | "Familiar")[];
     race: "Azura" | "Beast" | "Chaler" | "Demon" | "Faeler" | "Kandoran" | "Koronnan" | "Kuzaarik" | "Shakrim" | "Symker" | "Trilian";
     rawStats: RawStats;
-    stats?: Stats;
+    stats: Stats;
     trustedFactions?: (typeof Factions[number])[];
     type: "Caster" | "Leader" | "Standard";
     value: number;
 
-    constructor(name: string, type: "Caster" | "Leader" | "Standard", faction: typeof Factions[number], modelList: Model[] = Models) {
-        const model: Model | undefined = modelList.find(model => model.name === name && model.type === type && model.factions.includes(faction))
+    private static disallowedAltLeaders: string[] = [
+        'Duelist',
+        'Black Thorn',
+        'Bladerider First',
+        'Bladerider',
+        'Shadow Hunter',
+        'High Questor of Tahnar',
+        'High Questor of Vidunar',
+        'High Questor of Barek',
+        'High Questor of Glareyn',
+        'High Questor of Vasilar',
+        'High Questor of Valia',
+        'High Questor of Modo',
+        'Questing Knight of Tahnar',
+        'Questing Knight of Vidunar',
+        'Questing Knight of Barek',
+        'Questing Knight of Glareyn',
+        'Questing Knight of Sylvia',
+        'Questing Knight of Vasilar',
+        'Questing Knight of Modo',
+        'Apprentice Knight of Tahnar',
+        'Apprentice Knight of Vidunar',
+        'Apprentice Knight of Barek',
+        'Apprentice Knight of Modo',
+        'Dark Herald',
+        'Kor-Khan',
+        'Falconer',
+        'Bladedaughter Aspirant',
+        'Bladedaughter',
+    ];
+    private static disallowedAltLeadersFactions: (typeof Factions[number])[] = [
+        'Darkgrove Demons',
+        'Demons of Karelon',
+        'Koronnan Moonsworn',
+        'Ravenblade Mercenaries'
+    ];
+
+    constructor(name: string, type: "Caster" | "Leader" | "Standard", faction: typeof Factions[number], modelList: IModel[] = Models) {
+        const model: IModel | undefined = modelList.find(model => model.name === name && model.type === type && model.factions.includes(faction))
         if (model) {
             this.displayName = model.displayName;
             this.factions = model.factions;
@@ -164,14 +199,118 @@ export class cModel {
         }
     }
 
+    static getModels(faction: typeof Factions[number], type: "Caster" | "Leader" | "Standard", altLeader: boolean = false): IModel[] {
+        let models: IModel[] = [];
+        if (altLeader && !this.disallowedAltLeadersFactions.includes(faction)) {
+            for (let currentmodel of Models) {
+                // let model: IModel = Object.assign({}, currentmodel);
+                const model: cModel = new cModel(currentmodel.name, currentmodel.type, faction);
+                let allyText;
+                // TODO: need to handle for Lightbringer based on leader selected
+                // TODO: need to add ally to familiar only when caster is also an ally.
+                if (!model.stats.talents?.includes('Familiar')) {
+                    if (model.trustedFactions && model.trustedFactions.includes(faction)) {
+                        allyText = 'Ally[Trusted]';
+                        if (model.name === 'Lightbringer') {
+                            allyText = 'Ally[Trusted/Independent]';
+                        }
+                    } else if (!model.primaryFaction.includes(faction)) {
+                        allyText = 'Ally[Independent]';
+                    }
+                    if (allyText) {
+                        if (model.stats.talents) {
+                            if (!model.stats.talents.includes(allyText)) {
+                                model.stats.talents.push(allyText);
+                            }
+                        } else {
+                            model.stats.talents = [allyText];
+                        }
+                    }
+                }
+                if (model.factions.includes(faction)) {
+                    if (type === 'Leader' && (model.type === 'Standard' || model.type === 'Caster') 
+                            && model.stats.type === 'Hero' 
+                            && model.stats.talents?.every(v=> !['Animal','Demon','Feral','Warbeast','Undead'].includes(v))
+                            && model.stats.talents?.every(t => !t.includes('Ally')) 
+                            && !this.disallowedAltLeaders.includes(model.name)) {
+                        model.stats.talents.push('Leader');
+                        if (model.stats.melee) {
+                            model.stats.melee[0].altSelected = true;
+                        }
+                        if (model.stats.discipline === 8) {
+                            model.stats.discipline += 4;
+                            model.value += 8;
+                        } else if (model.stats.discipline === 6) {
+                            model.stats.discipline += 6;
+                            model.value += 9;
+                        } else {
+                            model.stats.discipline += 2;
+                            model.value += 7;
+                        }
+                        for (let talent of model.stats.talents) {
+                            if (['Die Hard', 'Dodge', 'Wraith'].includes(talent)) {
+                                model.value += 1;
+                            }
+                            if (talent === 'Sergeant') {
+                                model.value -= 2;
+                            }
+                        }
+                        model.type = 'Leader';
+                        models.push(model);
+                    } else if (type === 'Standard' && model.type === 'Leader' && this.disallowedAltLeaders.indexOf(model.name) < 0) {
+                        model.stats.talents = model.stats.talents?.filter((tal) => tal !== 'Leader');
+                        //TODO: determine which value is higher before decreasing: melee or range
+                        model.stats.melee = model.stats.melee?.map((mAtk) => {
+                            mAtk.rating -= 2;
+                            return mAtk;
+                        });
+                        model.stats.discipline -= 2;
+                        model.value -= 7;
+                        model.type = 'Standard';
+                        models.push(model);
+                    } else if (model.type === type) {
+                        models.push(model);
+                    }
+                }
+            }
+        } else {
+            models = Models.filter(model => faction && model.type === type && model.factions.includes(faction)).map((m) => {
+                let allyText;
+                const model: cModel = new cModel(m.name, m.type, faction);
+                // TODO: need to handle for Lightbringer based on leader selected
+                // TODO: need to add ally to familiar only when caster is also an ally.
+                if (!model.stats.talents?.includes('Familiar')) {
+                    if (model.trustedFactions && model.trustedFactions.includes(faction)) {
+                        allyText = 'Ally[Trusted]';
+                        if (model.name === 'Lightbringer') {
+                            allyText = 'Ally[Trusted/Independent]';
+                        }
+                    } else if (!model.primaryFaction.includes(faction)) {
+                        allyText = 'Ally[Independent]';
+                    }
+                    if (allyText) {
+                        if (model.stats.talents) {
+                            if (!model.stats.talents.includes(allyText)) {
+                                model.stats.talents.push(allyText);
+                            }
+                        } else {
+                            model.stats.talents = [allyText];
+                        }
+                    }
+                }
+                return model;
+            });
+        }
+        return models;
+    }
+
     calculateStats(originalStats: cModel["rawStats"] | cModel["stats"], originalValue: number): cModel["stats"] {
         const abilityList: string[] = ['agility', 'dexterity', 'endurance', 'knowledge', 'spirit', 'strength'];
         const abilityTiers: number[] = [10, 14, 20, 30];
 
         let stats: cModel["stats"] = JSON.parse(JSON.stringify(originalStats));
         if (!stats) {
-            // throw error
-            return;
+            throw new Error('Stats not found');
         }
         let ability: number = (stats.type === 'Hero') ? 8 : 6;
         let modelValue: number = originalValue;
