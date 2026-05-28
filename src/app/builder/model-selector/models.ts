@@ -2025,7 +2025,7 @@ const Models: Model[] = [{
     "stats": {
         "discipline": 12,
         "type": "Hero",
-        "talents": ["Leader","Active Defense","Parry","Parry","Swordcatcher","Counterattack","Missle Parry"],
+        "talents": ["Leader","Active Defense","Parry","Parry","Swordcatcher","Counterattack","Missile Parry"],
         "abilities": {
             "agility": 10
         },
@@ -2048,7 +2048,7 @@ const Models: Model[] = [{
     "stats": {
         "discipline": 10,
         "type": "Hero",
-        "talents": ["Active Defense","Parry","Parry","Swordcatcher","Counterattack","Missle Parry"],
+        "talents": ["Active Defense","Parry","Parry","Swordcatcher","Counterattack","Missile Parry"],
         "abilities": {
             "agility": 10
         },
@@ -4966,7 +4966,7 @@ const Models: Model[] = [{
         }],
         "armor": 3,
         "discipline": 10,
-        "talents": ["Dodge","Scout","Harasser","Fly[Low, SPD 10]","Light Cavalry","Calvary"],
+        "talents": ["Dodge","Scout","Harasser","Fly[Low, SPD 10]","Light Cavalry","Cavalry"],
         "abilities": {
             "agility": 10,
             "dexterity": 10
@@ -5047,7 +5047,7 @@ const Models: Model[] = [{
         }],
         "armor": 4,
         "discipline": 10,
-        "talents": ["Cavalry","Fly[Low, SPD 10]","Parry","Parry","Assault","Missle Parry","Warhorse"],
+        "talents": ["Cavalry","Fly[Low, SPD 10]","Parry","Parry","Assault","Missile Parry","Warhorse"],
         "abilities": {
             "agility":10,
             "dexterity":10
@@ -5071,7 +5071,7 @@ const Models: Model[] = [{
         }],
         "armor": 4,
         "discipline": 10,
-        "talents": ["Parry","Parry","Assault","Missle Parry"],
+        "talents": ["Parry","Parry","Assault","Missile Parry"],
         "abilities": {
             "agility":10,
             "dexterity":10
@@ -6188,7 +6188,7 @@ const Models: Model[] = [{
         }],
         "armor": 3,
         "discipline": 8,
-        "talents": ["Die Hard","Fearsome","Hardended","Warbeast","Bear Hug","Bonded[Daughter of the Bear]","Protective[Daughter of the Bear]"],
+        "talents": ["Die Hard","Fearsome","Hardened","Warbeast","Bear Hug","Bonded[Daughter of the Bear]","Protective[Daughter of the Bear]"],
         "abilities": {
             "endurance": 10
         }
@@ -6662,7 +6662,7 @@ const Models: Model[] = [{
         "shield": "S",
         "armor": 5,
         "discipline": 10,
-        "talents": ["Calvary","Parry","Parry","Shield Bash"],
+        "talents": ["Cavalry","Parry","Parry","Shield Bash"],
         "skills": [{
             "name": "Thievery",
             "rating": 8
@@ -6744,7 +6744,7 @@ const Models: Model[] = [{
         }],
         "armor": 4,
         "discipline": 8,
-        "talents": ["Calvary","Light Calvary","Harasser","Deft Rider","Subdue","Scout","Fast"],
+        "talents": ["Cavalry","Light Cavalry","Harasser","Deft Rider","Subdue","Scout","Fast"],
         "skills": [{
             "name": "Hunt",
             "rating": 8
@@ -7678,7 +7678,7 @@ const Models: Model[] = [{
         }],
         "armor": 6,
         "discipline": 10,
-        "talents": ["Battler","Tough","Hardened","Fearsome","Mountainer","Enhanced Vemon","Enhanced Vemon","Cavalry","Confine","Bear Hug"],
+        "talents": ["Battler","Tough","Hardened","Fearsome","Mountaineer","Enhanced Vemon","Enhanced Vemon","Cavalry","Confine","Bear Hug"],
         "abilities": {
             "endurance": 10
         }
@@ -8164,7 +8164,7 @@ const Models: Model[] = [{
         }],
         "armor": 2,
         "discipline": 6,
-        "talents": ["Ambush","Hate[Traazorites"]
+        "talents": ["Ambush","Hate[Traazorites]"]
     },
     "value": 9,
     "race": "Koronnan",
@@ -8432,7 +8432,7 @@ const Models: Model[] = [{
         }],
         "armor": 2,
         "discipline": 6,
-        "talents": ["Dodge","Bonded[Dread Hunter]","Warbeast","wayfinder","Fast"],
+        "talents": ["Dodge","Bonded[Dread Hunter]","Warbeast","Wayfinder","Fast"],
         "abilities": {
             "agility": 8
         }
