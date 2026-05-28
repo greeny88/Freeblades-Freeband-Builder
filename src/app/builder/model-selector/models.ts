@@ -7319,7 +7319,7 @@ const Models: Model[] = [{
         }],
         "armor": 5,
         "discipline": 10,
-        "talents": ["Assult","Bounding Charge","Cavalry","Enhanced Leaper","Enhanced Leaper","Hit and Run","Fouling Strike","Fast","Light Construction"],
+        "talents": ["Assault","Bounding Charge","Cavalry","Enhanced Leaper","Enhanced Leaper","Hit and Run","Fouling Strike","Fast","Light Construction"],
         "abilities": {
             "agility":12
         }
@@ -7335,7 +7335,7 @@ const Models: Model[] = [{
     "type": "Standard",
     "stats": {
         "type": "Hero",
-        "speed": 7,
+        "speed": 6,
         "melee":[{
             "name": "Claw",
             "rating": 10,
@@ -7510,7 +7510,7 @@ const Models: Model[] = [{
         "shield": "S",
         "armor": 3,
         "discipline": 12,
-        "talents": ["Leader","Dodge","Dodge","Hit and Run","Assult","Cavalry","Swoop[Talon]","Fly[Low, SPD 10]"],
+        "talents": ["Leader","Dodge","Dodge","Hit and Run","Assault","Cavalry","Swoop[Talon]","Fly[Low, SPD 10]"],
         "abilities": {
             "agility": 10,
             "spirit": 10
@@ -7540,7 +7540,7 @@ const Models: Model[] = [{
         "shield": "S",
         "armor": 3,
         "discipline": 10,
-        "talents": ["Dodge","Dodge","Hit and Run","Assult","Cavalry","Swoop[Talon]","Fly[Low, SPD 10]"],
+        "talents": ["Dodge","Dodge","Hit and Run","Assault","Cavalry","Swoop[Talon]","Fly[Low, SPD 10]"],
         "abilities": {
             "agility": 10,
             "spirit": 10
