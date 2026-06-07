@@ -19,18 +19,68 @@ function buildDbQueries() {
     const meleeWeapons = new Map<string, number>();
     const rangeWeapons = new Map<string, number>();
 
-    // gather unique items
+    // source canonical definitions from the imported advancement tables
+    Array.from(new Set([...AdvancementTalents, ...OtherTalents])).sort().forEach((name, index) => {
+        talents.set(name, index + 1);
+    });
+
+    Array.from(new Set(Skills)).sort().forEach((name, index) => {
+        skills.set(name, index + 1);
+    });
+
+    MeleeWeapons.forEach((weapon, index) => {
+        meleeWeapons.set(weapon.name, index + 1);
+    });
+
+    RangeWeapons.forEach((weapon, index) => {
+        rangeWeapons.set(weapon.name, index + 1);
+    });
+
+    // discover model-specific weapons not in canonical lists and add them with model-prefixed names
+    const modelSpecificMelee: Map<string, {modelName: string, weapon: any}> = new Map();
+    const modelSpecificRange: Map<string, {modelName: string, weapon: any}> = new Map();
+
     Models.forEach((model) => {
-        model.stats.talents?.forEach(t => { if (!talents.has(t)) talents.set(t, talents.size + 1); });
         model.factions?.forEach(f => { if (!factions.has(f)) factions.set(f, factions.size + 1); });
         model.primaryFaction?.forEach(f => { if (!factions.has(f)) factions.set(f, factions.size + 1); });
-        model.stats.skills?.forEach(s => { if (!skills.has(s.name)) skills.set(s.name, skills.size + 1); });
-        model.stats.melee?.forEach(w => { if (!meleeWeapons.has(w.name)) meleeWeapons.set(w.name, meleeWeapons.size + 1); });
-        model.stats.range?.forEach(w => { if (!rangeWeapons.has(w.name)) rangeWeapons.set(w.name, rangeWeapons.size + 1); });
+        
+        model.stats.melee?.forEach(w => {
+            if (!meleeWeapons.has(w.name)) {
+                const uniqueName = `${model.name}_${w.name}`;
+                if (!modelSpecificMelee.has(uniqueName)) {
+                    modelSpecificMelee.set(uniqueName, { modelName: model.name, weapon: w });
+                    meleeWeapons.set(uniqueName, meleeWeapons.size + 1);
+                }
+            }
+        });
+        
+        model.stats.range?.forEach(w => {
+            if (!rangeWeapons.has(w.name)) {
+                const uniqueName = `${model.name}_${w.name}`;
+                if (!modelSpecificRange.has(uniqueName)) {
+                    modelSpecificRange.set(uniqueName, { modelName: model.name, weapon: w });
+                    rangeWeapons.set(uniqueName, rangeWeapons.size + 1);
+                }
+            }
+        });
     });
 
     // Build insert statements
     let out: string[] = [];
+
+    // log model-specific weapons
+    if (modelSpecificMelee.size > 0) {
+        console.log(`Found ${modelSpecificMelee.size} model-specific melee weapons:`);
+        for (const [uniqueName, info] of modelSpecificMelee) {
+            console.log(`  - ${uniqueName}`);
+        }
+    }
+    if (modelSpecificRange.size > 0) {
+        console.log(`Found ${modelSpecificRange.size} model-specific range weapons:`);
+        for (const [uniqueName, info] of modelSpecificRange) {
+            console.log(`  - ${uniqueName}`);
+        }
+    }
 
     // talents
     if (talents.size > 0) {
@@ -43,21 +93,42 @@ function buildDbQueries() {
     if (skills.size > 0) {
         let srows: string[] = [];
         for (const [name, id] of skills) srows.push(`(${id}, ${esc(name)}, 'general')`);
-        out.push(`INSERT INTO "ffb"."skills" (id, name, type) VALUES\n${srows.join(',\n')};`);
+        out.push(`INSERT INTO "ffb"."skills" (id, name, skill_type) VALUES\n${srows.join(',\n')};`);
     }
 
     // melee weapons
     if (meleeWeapons.size > 0) {
         let wrows: string[] = [];
-        for (const [name, id] of meleeWeapons) wrows.push(`(${id}, ${esc(name)}, 0, 'unknown')`);
-        out.push(`INSERT INTO "ffb"."melee_weapons" (id, name, damage, "group") VALUES\n${wrows.join(',\n')};`);
+        MeleeWeapons.forEach((weapon, index) => {
+            const id = index + 1;
+            wrows.push(`(${id}, ${esc(weapon.name)}, ${esc(weapon.damage ?? 0)}, ${esc((weapon as any).group ?? 'unknown')})`);
+        });
+        // add model-specific melee weapons
+        for (const [uniqueName, info] of modelSpecificMelee) {
+            const id = meleeWeapons.get(uniqueName)!;
+            const damage = info.weapon.damage ?? 0;
+            const group = info.weapon.group ?? 'model-specific';
+            wrows.push(`(${id}, ${esc(uniqueName)}, ${esc(damage)}, ${esc(group)})`);
+        }
+        out.push(`INSERT INTO "ffb"."melee_weapons" (id, name, damage, weapon_group) VALUES\n${wrows.join(',\n')};`);
     }
 
     // range weapons
     if (rangeWeapons.size > 0) {
         let rrows: string[] = [];
-        for (const [name, id] of rangeWeapons) rrows.push(`(${id}, ${esc(name)}, 0, 'unknown')`);
-        out.push(`INSERT INTO "ffb"."range_weapons" (id, name, damage, distance, "group") VALUES\n${rrows.join(',\n')};`);
+        RangeWeapons.forEach((weapon, index) => {
+            const id = index + 1;
+            rrows.push(`(${id}, ${esc(weapon.name)}, ${esc(weapon.damage ?? 0)}, ${esc(weapon.distance ?? 0)}, ${esc((weapon as any).group ?? 'unknown')})`);
+        });
+        // add model-specific range weapons
+        for (const [uniqueName, info] of modelSpecificRange) {
+            const id = rangeWeapons.get(uniqueName)!;
+            const damage = info.weapon.damage ?? 0;
+            const distance = info.weapon.distance ?? 0;
+            const group = info.weapon.group ?? 'model-specific';
+            rrows.push(`(${id}, ${esc(uniqueName)}, ${esc(damage)}, ${esc(distance)}, ${esc(group)})`);
+        }
+        out.push(`INSERT INTO "ffb"."range_weapons" (id, name, damage, distance, weapon_group) VALUES\n${rrows.join(',\n')};`);
     }
 
     // factions
@@ -94,7 +165,7 @@ function buildDbQueries() {
         ];
         mrows.push(`(${cols.join(', ')})`);
     });
-    out.push(`INSERT INTO "ffb"."models" (id, name, displayname, type, gender, value, race, armor, discipline, shield, agility, dexterity, endurance, knowledge, spirit, strength, speed, stat_type) VALUES\n${mrows.join(',\n')};`);
+    out.push(`INSERT INTO "ffb"."models" (id, name, displayname, model_type, gender, value, race, armor, discipline, shield, agility, dexterity, endurance, knowledge, spirit, strength, speed, stat_type) VALUES\n${mrows.join(',\n')};`);
 
     // mapping tables
     const mtRows: string[] = []; // model_talents
@@ -102,8 +173,8 @@ function buildDbQueries() {
     const mpfRows: string[] = []; // model_primaryfactions
     const mafRows: string[] = []; // model_allyfactions (if present)
     const mskillRows: string[] = []; // model_skills (modelid, skillid, rating)
-    const mmwRows: string[] = []; // model_melee_weapons (modelid, weaponid)
-    const mrwRows: string[] = []; // model_range_weapons
+    const mmwRows: string[] = []; // model_melee_weapons (modelid, weaponid, rating)
+    const mrwRows: string[] = []; // model_range_weapons (modelid, weaponid, rating)
 
     Models.forEach((model, idx) => {
         const modelid = idx + 1;
@@ -128,22 +199,34 @@ function buildDbQueries() {
             if (sid) mskillRows.push(`(${modelid}, ${sid}, ${s.rating})`);
         });
         model.stats.melee?.forEach(w => {
-            const wid = meleeWeapons.get(w.name);
-            if (wid) mmwRows.push(`(${modelid}, ${wid})`);
+            let wid: number | undefined;
+            if (meleeWeapons.has(w.name)) {
+                wid = meleeWeapons.get(w.name);
+            } else {
+                const uniqueName = `${model.name}_${w.name}`;
+                wid = meleeWeapons.get(uniqueName);
+            }
+            if (wid) mmwRows.push(`(${modelid}, ${wid}, ${w.rating ?? 0})`);
         });
         model.stats.range?.forEach(w => {
-            const wid = rangeWeapons.get(w.name);
-            if (wid) mrwRows.push(`(${modelid}, ${wid})`);
+            let wid: number | undefined;
+            if (rangeWeapons.has(w.name)) {
+                wid = rangeWeapons.get(w.name);
+            } else {
+                const uniqueName = `${model.name}_${w.name}`;
+                wid = rangeWeapons.get(uniqueName);
+            }
+            if (wid) mrwRows.push(`(${modelid}, ${wid}, ${w.rating ?? 0})`);
         });
     });
 
     if (mtRows.length) out.push(`INSERT INTO "ffb"."model_talents" (modelid, talentid) VALUES\n${mtRows.join(',\n')};`);
     if (mfRows.length) out.push(`INSERT INTO "ffb"."model_factions" (factionid, modelid) VALUES\n${mfRows.join(',\n')};`);
     if (mpfRows.length) out.push(`INSERT INTO "ffb"."model_primaryfactions" (factionid, modelid) VALUES\n${mpfRows.join(',\n')};`);
-    if (mafRows.length) out.push(`INSERT INTO "ffb"."model_allyfactions" (factionid, modelid) VALUES\n${mafRows.join(',\n')};`);
+    if (mafRows.length) out.push(`INSERT INTO "ffb"."model_trustedfactions" (factionid, modelid) VALUES\n${mafRows.join(',\n')};`);
     if (mskillRows.length) out.push(`INSERT INTO "ffb"."model_skills" (modelid, skillid, rating) VALUES\n${mskillRows.join(',\n')};`);
-    if (mmwRows.length) out.push(`INSERT INTO "ffb"."model_melee_weapons" (modelid, weaponid) VALUES\n${mmwRows.join(',\n')};`);
-    if (mrwRows.length) out.push(`INSERT INTO "ffb"."model_range_weapons" (modelid, weaponid) VALUES\n${mrwRows.join(',\n')};`);
+    if (mmwRows.length) out.push(`INSERT INTO "ffb"."model_melee_weapons" (modelid, weaponid, rating) VALUES\n${mmwRows.join(',\n')};`);
+    if (mrwRows.length) out.push(`INSERT INTO "ffb"."model_range_weapons" (modelid, weaponid, rating) VALUES\n${mrwRows.join(',\n')};`);
 
     console.log('\n-- SQL Output --\n');
     console.log(out.join('\n\n'));
