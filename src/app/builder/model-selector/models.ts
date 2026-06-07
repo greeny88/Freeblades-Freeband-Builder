@@ -1802,7 +1802,7 @@ const Models: Model[] = [{
     "gender": "F",
     "race": "Chaler"
 },{
-    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn","Ravenblade Mercenaries","Black Rose Bandits","Black Thorn Bandits","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Shakrim Wavestalkers","Trilian Seekers","Urdaggar Tribes of Valor"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn","Ravenblade Mercenaries","Black Rose Bandits","Black Thorn Bandits","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Kuzaarik Forgers","Mershael Corsairs","Shakrim Wavestalkers","Trilian Seekers","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Eclipse Sisterhood","Ravenblade Mercenaries","Wandering Allies"],
     "name": "Nightwhisper",
     "displayName": "Nightwhisper",
@@ -3846,7 +3846,7 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Faeler"
 },{
-    "factions": ["Koronnan Moonsworn","Ravenblade Mercenaries","Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Shakrim Wavestalkers","Trilian Seekers","Urdaggar Tribes of Valor","The Collective"],
+    "factions": ["Koronnan Moonsworn","Ravenblade Mercenaries","Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Kuzaarik Forgers","Mershael Corsairs","Shakrim Wavestalkers","Trilian Seekers","Urdaggar Tribes of Valor","The Collective"],
     "primaryFaction": ["Koronnan Moonsworn","Ravenblade Mercenaries","Wandering Allies"],
     "name": "Mizrakai",
     "displayName": "Mizrakai",
