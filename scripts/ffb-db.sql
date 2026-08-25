@@ -112,6 +112,43 @@ CREATE TABLE "ffb"."model_talents" (
   "talentid" integer NOT NULL
 );
 
+CREATE TYPE "ffb"."casting_type" AS ENUM ('energy', 'spirit', 'sorcery');
+
+CREATE TABLE "ffb"."model_casting" (
+  "modelid" integer NOT NULL PRIMARY KEY,
+  "name" text NOT NULL,
+  "power" integer NOT NULL CHECK ("power" >= 0),
+  "rating" integer NOT NULL CHECK ("rating" >= 0),
+  "type" "ffb"."casting_type" NOT NULL
+);
+
+CREATE TABLE "ffb"."model_performance" (
+  "modelid" integer NOT NULL PRIMARY KEY,
+  "name" text NOT NULL,
+  "rating" integer NOT NULL CHECK ("rating" >= 0)
+);
+
+CREATE TABLE "ffb"."model_focus" (
+  "modelid" integer NOT NULL PRIMARY KEY,
+  "name" text NOT NULL,
+  "rating" integer NOT NULL CHECK ("rating" >= 0)
+);
+
+CREATE TABLE "ffb"."model_options" (
+  "modelid" integer NOT NULL,
+  "name" text NOT NULL,
+  "rating" integer,
+  PRIMARY KEY ("modelid", "name")
+);
+
+CREATE TABLE "ffb"."model_veterans" (
+  "modelid" integer NOT NULL,
+  "name" text NOT NULL,
+  "cost" integer NOT NULL CHECK ("cost" >= 0),
+  "rating" integer,
+  PRIMARY KEY ("modelid", "name")
+);
+
 ALTER TABLE "ffb"."model_talents" ADD FOREIGN KEY ("modelid") REFERENCES "ffb"."models" ("id") ON DELETE CASCADE;
 ALTER TABLE "ffb"."model_talents" ADD FOREIGN KEY ("talentid") REFERENCES "ffb"."talents" ("id") ON DELETE CASCADE;
 
@@ -134,6 +171,12 @@ ALTER TABLE "ffb"."model_range_weapons" ADD FOREIGN KEY ("modelid") REFERENCES "
 
 ALTER TABLE "ffb"."model_skills" ADD FOREIGN KEY ("skillid") REFERENCES "ffb"."skills" ("id") ON DELETE CASCADE;
 ALTER TABLE "ffb"."model_skills" ADD FOREIGN KEY ("modelid") REFERENCES "ffb"."models" ("id") ON DELETE CASCADE;
+
+ALTER TABLE "ffb"."model_casting" ADD FOREIGN KEY ("modelid") REFERENCES "ffb"."models" ("id") ON DELETE CASCADE;
+ALTER TABLE "ffb"."model_performance" ADD FOREIGN KEY ("modelid") REFERENCES "ffb"."models" ("id") ON DELETE CASCADE;
+ALTER TABLE "ffb"."model_focus" ADD FOREIGN KEY ("modelid") REFERENCES "ffb"."models" ("id") ON DELETE CASCADE;
+ALTER TABLE "ffb"."model_options" ADD FOREIGN KEY ("modelid") REFERENCES "ffb"."models" ("id") ON DELETE CASCADE;
+ALTER TABLE "ffb"."model_veterans" ADD FOREIGN KEY ("modelid") REFERENCES "ffb"."models" ("id") ON DELETE CASCADE;
 
 CREATE INDEX "idx_model_melee_weapons_weaponid" ON "ffb"."model_melee_weapons" ("weaponid");
 CREATE INDEX "idx_model_range_weapons_weaponid" ON "ffb"."model_range_weapons" ("weaponid");

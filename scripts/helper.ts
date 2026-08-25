@@ -6,6 +6,7 @@ import { MeleeWeapons, RangeWeapons, Skills, AdvancementTalents, OtherTalents } 
 function esc(s: any) {
     if (s === undefined || s === null) return 'NULL';
     if (typeof s === 'number') return String(s);
+    if (typeof s === 'boolean') return s ? 'TRUE' : 'FALSE';
     return `'${String(s).replace(/'/g, "''")}'`;
 }
 
@@ -175,6 +176,11 @@ function buildDbQueries() {
     const mskillRows: string[] = []; // model_skills (modelid, skillid, rating)
     const mmwRows: string[] = []; // model_melee_weapons (modelid, weaponid, rating)
     const mrwRows: string[] = []; // model_range_weapons (modelid, weaponid, rating)
+    const castingRows: string[] = [];
+    const performanceRows: string[] = [];
+    const focusRows: string[] = [];
+    const optionsRows: string[] = [];
+    const veteransRows: string[] = [];
 
     Models.forEach((model, idx) => {
         const modelid = idx + 1;
@@ -218,6 +224,33 @@ function buildDbQueries() {
             }
             if (wid) mrwRows.push(`(${modelid}, ${wid}, ${w.rating ?? 0})`);
         });
+        // casting (single)
+        if (model.stats.casting) {
+            const c = model.stats.casting;
+            castingRows.push(`(${modelid}, ${esc(c.name)}, ${esc(c.power ?? 0)}, ${esc(c.rating ?? 0)}, ${esc(c.type ?? '')})`);
+        }
+
+        // performance (single)
+        if (model.stats.performance) {
+            const p = model.stats.performance;
+            performanceRows.push(`(${modelid}, ${esc(p.name)}, ${esc(p.rating ?? 0)})`);
+        }
+
+        // focus (single)
+        if (model.stats.focus) {
+            const f = model.stats.focus;
+            focusRows.push(`(${modelid}, ${esc(f.name)}, ${esc(f.rating ?? 0)})`);
+        }
+
+        // options (array)
+        model.stats.options?.forEach(opt => {
+            optionsRows.push(`(${modelid}, ${esc(opt.name)}, ${esc(opt.rating ?? null)})`);
+        });
+
+        // veterans (array)
+        model.stats.veteran?.forEach(v => {
+            veteransRows.push(`(${modelid}, ${esc(v.name)}, ${esc(v.cost ?? 0)}, ${esc(v.rating ?? null)})`);
+        });
     });
 
     if (mtRows.length) out.push(`INSERT INTO "ffb"."model_talents" (modelid, talentid) VALUES\n${mtRows.join(',\n')};`);
@@ -227,6 +260,11 @@ function buildDbQueries() {
     if (mskillRows.length) out.push(`INSERT INTO "ffb"."model_skills" (modelid, skillid, rating) VALUES\n${mskillRows.join(',\n')};`);
     if (mmwRows.length) out.push(`INSERT INTO "ffb"."model_melee_weapons" (modelid, weaponid, rating) VALUES\n${mmwRows.join(',\n')};`);
     if (mrwRows.length) out.push(`INSERT INTO "ffb"."model_range_weapons" (modelid, weaponid, rating) VALUES\n${mrwRows.join(',\n')};`);
+    if (castingRows.length) out.push(`INSERT INTO "ffb"."model_casting" (modelid, name, power, rating, type) VALUES\n${castingRows.join(',\n')};`);
+    if (performanceRows.length) out.push(`INSERT INTO "ffb"."model_performance" (modelid, name, rating) VALUES\n${performanceRows.join(',\n')};`);
+    if (focusRows.length) out.push(`INSERT INTO "ffb"."model_focus" (modelid, name, rating) VALUES\n${focusRows.join(',\n')};`);
+    if (optionsRows.length) out.push(`INSERT INTO "ffb"."model_options" (modelid, name, rating) VALUES\n${optionsRows.join(',\n')};`);
+    if (veteransRows.length) out.push(`INSERT INTO "ffb"."model_veterans" (modelid, name, cost, rating) VALUES\n${veteransRows.join(',\n')};`);
 
     console.log('\n-- SQL Output --\n');
     console.log(out.join('\n\n'));

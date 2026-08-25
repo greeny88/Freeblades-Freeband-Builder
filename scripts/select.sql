@@ -25,7 +25,12 @@ SELECT jsonb_strip_nulls(jsonb_build_object(
             'talents', mt.talents,
             'skills', sk.skills,
             'melee', mw.melee,
-            'range', rw.range
+            'range', rw.range,
+            'casting', cst.casting,
+            'performance', perf.performance,
+            'focus', foc.focus,
+            'options', opt.options,
+            'veteran', vet.veteran
     ))
 )) AS model
 FROM ffb.models AS m
@@ -99,4 +104,49 @@ LEFT JOIN (
     JOIN ffb.factions f ON f.id = tf.factionid
     GROUP BY tf.modelid
 ) t ON t.modelid = m.id
+LEFT JOIN (
+    SELECT mc.modelid,
+           jsonb_strip_nulls(jsonb_build_object(
+               'name', mc.name,
+               'power', mc.power,
+               'rating', mc.rating,
+               'type', mc.type
+           )) AS casting
+    FROM ffb.model_casting mc
+) cst ON cst.modelid = m.id
+LEFT JOIN (
+    SELECT mp.modelid,
+           jsonb_strip_nulls(jsonb_build_object(
+               'name', mp.name,
+               'rating', mp.rating
+           )) AS performance
+    FROM ffb.model_performance mp
+) perf ON perf.modelid = m.id
+LEFT JOIN (
+    SELECT mf.modelid,
+           jsonb_strip_nulls(jsonb_build_object(
+               'name', mf.name,
+               'rating', mf.rating
+           )) AS focus
+    FROM ffb.model_focus mf
+) foc ON foc.modelid = m.id
+LEFT JOIN (
+    SELECT mo.modelid,
+           jsonb_agg(jsonb_strip_nulls(jsonb_build_object(
+               'name', mo.name,
+               'rating', mo.rating
+           )) ORDER BY mo.name) AS options
+    FROM ffb.model_options mo
+    GROUP BY mo.modelid
+) opt ON opt.modelid = m.id
+LEFT JOIN (
+    SELECT mv.modelid,
+           jsonb_agg(jsonb_strip_nulls(jsonb_build_object(
+               'name', mv.name,
+               'cost', mv.cost,
+               'rating', mv.rating
+           )) ORDER BY mv.name) AS veteran
+    FROM ffb.model_veterans mv
+    GROUP BY mv.modelid
+) vet ON vet.modelid = m.id
 WHERE m.id = 123;
