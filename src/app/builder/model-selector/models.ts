@@ -1802,7 +1802,7 @@ const Models: Model[] = [{
     "gender": "F",
     "race": "Chaler"
 },{
-    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn","Ravenblade Mercenaries","Black Rose Bandits","Black Thorn Bandits","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Shakrim Wavestalkers","Trilian Seekers","Urdaggar Tribes of Valor"],
+    "factions": ["Azura Windborne","Eclipse Sisterhood","Koronnan Moonsworn","Ravenblade Mercenaries","Black Rose Bandits","Black Thorn Bandits","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Kuzaarik Forgers","Mershael Corsairs","Shakrim Wavestalkers","Trilian Seekers","Urdaggar Tribes of Valor"],
     "primaryFaction": ["Eclipse Sisterhood","Ravenblade Mercenaries","Wandering Allies"],
     "name": "Nightwhisper",
     "displayName": "Nightwhisper",
@@ -3846,7 +3846,7 @@ const Models: Model[] = [{
     "gender": "M",
     "race": "Faeler"
 },{
-    "factions": ["Koronnan Moonsworn","Ravenblade Mercenaries","Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Koronnan Moonsworn","Kuzaarik Forgers","Mershael Corsairs","Shakrim Wavestalkers","Trilian Seekers","Urdaggar Tribes of Valor","The Collective"],
+    "factions": ["Koronnan Moonsworn","Ravenblade Mercenaries","Azura Windborne","Black Rose Bandits","Black Thorn Bandits","Eclipse Sisterhood","Falkaaran Adventurers","Grular Invaders","Haradelan Questers","Kandoran Deathmasters","Kuzaarik Forgers","Mershael Corsairs","Shakrim Wavestalkers","Trilian Seekers","Urdaggar Tribes of Valor","The Collective"],
     "primaryFaction": ["Koronnan Moonsworn","Ravenblade Mercenaries","Wandering Allies"],
     "name": "Mizrakai",
     "displayName": "Mizrakai",
@@ -5047,7 +5047,7 @@ const Models: Model[] = [{
         }],
         "armor": 4,
         "discipline": 10,
-        "talents": ["Cavalry","Fly[Low, SPD 10]","Parry","Parry","Assault","Missile Parry","Warhorse"],
+        "talents": ["Cavalry","Fly[Low, SPD 10]","Parry","Parry","Assault","Missile Parry","Warhorse","Fast"],
         "abilities": {
             "agility":10,
             "dexterity":10
@@ -9031,6 +9031,125 @@ const Models: Model[] = [{
     "value": 12,
     "race": "Symker",
     "gender": "M"
+},{
+    "factions": ["Azura Windborne"],
+    "primaryFaction": ["Azura Windborne"],
+    "name": "Sandrunner",
+    "displayName": "Sandrunner",
+    "type": "Standard",
+    "stats": {
+        "type": "Follower",
+        "speed": 8,
+        "melee": [{
+            "name": "Beak",
+            "rating": 6,
+            "damage": 6
+        }],
+        "armor": 2,
+        "discipline": 6,
+        "talents": ["Ambush","Fast","Limited"],
+        "veteran": [{
+            "name": "Scout",
+            "cost": 1
+        }],
+    },
+    "value": 10,
+    "race": "Azura",
+    "gender": "M"
+},{
+    "factions": ["Azura Windborne"],
+    "primaryFaction": ["Azura Windborne"],
+    "name": "Stormflight",
+    "displayName": "Stormflight",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 2,
+        "melee": [{
+            "name": "Beak",
+            "rating": 8,
+            "damage": 4
+        }],
+        "armor": 2,
+        "discipline": 6,
+        "talents": ["Cloud of Wings","Fearless","Fly[Low, SPD 8]","Swarm","Warbeast"],
+    },
+    "value": 31,
+    "race": "Azura",
+    "gender": "M"
+},{
+    "factions": ["Shakrim Wavestalkers"],
+    "primaryFaction": ["Shakrim Wavestalkers"],
+    "name": "Seaskimmer",
+    "displayName": "Seaskimmer",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 8,
+        "melee": [{
+            "name": "Bite",
+            "rating": 10,
+            "damage": 8,
+            "abilities": ["ven"]
+        }],
+        "armor": 3,
+        "discipline": 8,
+        "abilities": {
+            "agility": 14
+        },
+        "talents": ["Agile Charge","Amphibious","Dodge","Dodge","Fast","Hit and Run"]
+    },
+    "value": 31,
+    "race": "Shakrim",
+    "gender": "M"
+},{
+    "factions": ["Falkaaran Adventurers"],
+    "primaryFaction": ["Falkaaran Adventurers"],
+    "name": "Nightcloak",
+    "displayName": "Nightcloak",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee": [{
+            "name": "Longsword (2h)",
+            "rating": 10
+        }],
+        "armor": 3,
+        "discipline": 10,
+        "abilities": {
+            "agility": 14,
+            "knowledge": 10
+        },
+        "talents": ["Bladedancer","Dodge","Dodge","Prowl","Scout"]
+    },
+    "value": 35,
+    "race": "Faeler",
+    "gender": "M"
+},{
+    "factions": ["Mershael Corsairs"],
+    "primaryFaction": ["Mershael Corsairs"],
+    "name": "Mashedo",
+    "displayName": "Mashedo",
+    "type": "Standard",
+    "stats": {
+        "type": "Hero",
+        "speed": 7,
+        "melee": [{
+            "name": "Najana",
+            "rating": 10
+        }],
+        "armor": 5,
+        "discipline": 10,
+        "abilities": {
+            "agility": 10,
+            "dexterity": 10
+        },
+        "talents": ["Accurate Strike","Accurate Strike","Dara","Dodge","Quick","Sidestep"]
+    },
+    "value": 31,
+    "race": "Faeler",
+    "gender": "F"
 }];
 
 
